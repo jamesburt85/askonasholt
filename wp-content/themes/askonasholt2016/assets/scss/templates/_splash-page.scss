@@ -1,0 +1,19 @@
+// Splash page
+body.home {
+
+  color: #ffffff;
+
+  .splash-page-hero {
+    height: 100vh;
+    width: 100%
+  }
+
+  header#masthead, div#footer-container {
+    display: none;
+  }
+  .promo-text-container {
+    @include center;
+    max-width: 70%;
+  }
+
+}

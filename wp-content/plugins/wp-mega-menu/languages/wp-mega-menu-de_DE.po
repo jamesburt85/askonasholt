@@ -1,0 +1,2643 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Mega Menu v1.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2016-09-13 12:20:25+0000\n"
+"Last-Translator: accessadmin <qurina@access-keys.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: inc/admin/menu_settings_class.php:160
+#: inc/backend/main_page.php:46
+#: inc/backend/menu_settings/top_menu_settings.php:22
+#: inc/backend/tabs/general-settings.php:3
+#@ wp-mega-menu
+msgid "General Settings"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:161
+#@ wp-mega-menu
+msgid "Theme Settings"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:162
+#: inc/backend/how_to_use.php:8
+#@ wp-mega-menu
+msgid "How to Use"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:163
+#@ wp-mega-menu
+msgid "About"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:166
+#@ wp-mega-menu
+msgid "Edit theme"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:168
+#@ wp-mega-menu
+msgid "Create theme"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:264
+#@ wp-mega-menu
+msgid "Custom Theme imported successfully."
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:269
+#@ wp-mega-menu
+msgid "Something went wrong. Please try again later."
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:273
+#@ wp-mega-menu
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:276
+#@ wp-mega-menu
+msgid "Something went wrong. Please check the write permission of temp folder inside the plugin's folder"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:279
+#@ wp-mega-menu
+msgid "Invalid File Extension"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:282
+#@ wp-mega-menu
+msgid "No any file uploaded."
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:288
+#@ wp-mega-menu
+msgid "Restored Default Settings Successfully."
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:347
+#@ wp-mega-menu
+msgid "Option only available for top level menu."
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:348
+#@ wp-mega-menu
+msgid "Successfully Saved."
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:349
+#@ wp-mega-menu
+msgid "Saving Data."
+msgstr ""
+
+#. translators: plugin header field 'Name'
+#: inc/admin/menu_settings_class.php:350
+#: wp-mega-menu.php:0
+#@ wp-mega-menu
+msgid "WP Mega Menu"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:352
+#@ wp-mega-menu
+msgid "Please enable WP Mega Menu using the WP Mega Menu Settings on left section of this page."
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:381
+#@ wp-mega-menu
+msgid "Select WP Mega Menu Settings"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:451
+#@ wp-mega-menu
+msgid "This theme does not register any menu locations."
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:452
+#@ wp-mega-menu
+msgid "You will need to create a new menu location to enable WP Mega Menu."
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:456
+#@ wp-mega-menu
+msgid "This Menu is not assigned to any theme location yet. <br/>To Enable WP Mega Menu, First please assign this menu to theme location."
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:497
+#: inc/admin/widget-manager_class.php:599
+#: inc/backend/main_page.php:84
+#@ default
+#@ wp-mega-menu
+msgid "Save"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:538
+#: inc/backend/view/editor/flyout_settings_editor.php:47
+#: inc/backend/view/editor/main_settings_editor.php:67
+#: inc/backend/view/editor/megamenu_settings_editor.php:93
+#: inc/backend/view/editor/menubar_settings_editor.php:51
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:51
+#: inc/backend/view/editor/toplevel_settings_editor.php:53
+#: inc/backend/view/editor/toplevel_settings_editor.php:148
+#@ wp-mega-menu
+msgid "Enable"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:550
+#@ wp-mega-menu
+msgid "Orientation"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:554
+#@ wp-mega-menu
+msgid "Horizontal"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:555
+#@ wp-mega-menu
+msgid "Vertical"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:563
+#@ wp-mega-menu
+msgid "Vertical Alignment Type"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:567
+#: inc/backend/menu_settings/top_menu/flyout_settings.php:11
+#: inc/backend/menu_settings/top_menu/general_settings.php:94
+#: inc/backend/menu_settings/top_menu/general_settings.php:119
+#: inc/backend/view/editor/bottom_section_editor.php:91
+#: inc/backend/view/editor/megamenu_settings_editor.php:143
+#: inc/backend/view/editor/menubar_settings_editor.php:127
+#: inc/backend/view/editor/menubar_settings_editor.php:197
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:130
+#: inc/backend/view/editor/top_section_editor.php:89
+#@ wp-mega-menu
+msgid "Left"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:568
+#: inc/backend/menu_settings/top_menu/flyout_settings.php:12
+#: inc/backend/menu_settings/top_menu/general_settings.php:95
+#: inc/backend/menu_settings/top_menu/general_settings.php:120
+#: inc/backend/view/editor/bottom_section_editor.php:96
+#: inc/backend/view/editor/megamenu_settings_editor.php:148
+#: inc/backend/view/editor/menubar_settings_editor.php:132
+#: inc/backend/view/editor/menubar_settings_editor.php:199
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:131
+#: inc/backend/view/editor/top_section_editor.php:94
+#@ wp-mega-menu
+msgid "Right"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:576
+#@ wp-mega-menu
+msgid "Trigger Effect"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:581
+#@ wp-mega-menu
+msgid "Hover"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:582
+#@ wp-mega-menu
+msgid "Hover Indent"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:583
+#@ wp-mega-menu
+msgid "Click"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:590
+#@ wp-mega-menu
+msgid "Transition"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:596
+#@ wp-mega-menu
+msgid "Fade"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:597
+#@ wp-mega-menu
+msgid "Slide"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:604
+#@ wp-mega-menu
+msgid "Choose Theme Type"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:614
+#@ wp-mega-menu
+msgid "Available Skins"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:615
+#@ wp-mega-menu
+msgid "Custom Themes"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:620
+#@ wp-mega-menu
+msgid "Custom Theme"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:640
+#@ wp-mega-menu
+msgid "Available Skin"
+msgstr ""
+
+#: inc/admin/menu_settings_class.php:647
+#@ wp-mega-menu
+msgid "title"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:45
+#@ wp-mega-menu
+msgid "WP Mega Menu Widgets"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:46
+#@ wp-mega-menu
+msgid "Do not manually edit this area."
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:206
+#, php-format
+#@ wp-mega-menu
+msgid "Failed to add %s to %d"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:245
+#: inc/backend/menu_settings/top_menu/add-widgets_settings.php:9
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:134
+#@ wp-mega-menu
+msgid "Contract"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:249
+#: inc/backend/menu_settings/top_menu/add-widgets_settings.php:13
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:141
+#@ wp-mega-menu
+msgid "Expand"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:250
+#: inc/backend/menu_settings/top_menu/add-widgets_settings.php:14
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:143
+#: inc/backend/tabs/shortcode-menu-location.php:50
+#: inc/backend/view/theme_lists_settings.php:70
+#@ wp-mega-menu
+msgid "Edit"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:297
+#: inc/admin/widget-manager_class.php:346
+#, php-format
+#@ wp-mega-menu
+msgid "Updated %s (new columns: %d)"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:299
+#: inc/admin/widget-manager_class.php:348
+#, php-format
+#@ wp-mega-menu
+msgid "Failed to update %s"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:445
+#, php-format
+#@ wp-mega-menu
+msgid "Moved (%s)"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:447
+#@ wp-mega-menu
+msgid "Didn't move items"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:594
+#: inc/backend/view/theme_lists_settings.php:72
+#@ wp-mega-menu
+msgid "Delete"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:595
+#@ wp-mega-menu
+msgid "Close"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:616
+#, php-format
+#@ wp-mega-menu
+msgid "Deleted %s"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:618
+#, php-format
+#@ wp-mega-menu
+msgid "Failed to delete %s"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:709
+#, php-format
+#@ wp-mega-menu
+msgid "Saved %s"
+msgstr ""
+
+#: inc/admin/widget-manager_class.php:711
+#, php-format
+#@ wp-mega-menu
+msgid "Failed to save %s"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:16
+#@ wp-mega-menu
+msgid "Display WP Mega Menu Location on selected area."
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:91
+#: inc/admin/wpmegamenu-widget.php:321
+#@ wp-mega-menu
+msgid "Title:"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:94
+#@ wp-mega-menu
+msgid "Menu Location:"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:103
+#@ wp-mega-menu
+msgid "No menu locations found"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:122
+#@ wp-mega-menu
+msgid "Display WP Mega Menu Contact Information."
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:325
+#@ wp-mega-menu
+msgid "Address"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:330
+#@ wp-mega-menu
+msgid "Address Icon:"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:331
+#@ wp-mega-menu
+msgid "Use Fontawesome Class for Address Icon such as fa fa-home"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:332
+#@ wp-mega-menu
+msgid "E.g., fa fa-home"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:336
+#@ wp-mega-menu
+msgid "Phone:"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:341
+#@ wp-mega-menu
+msgid "Phone Icon:"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:342
+#@ wp-mega-menu
+msgid "Use Fontawesome Class for Phone Icon such as fa fa-phone"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:343
+#@ wp-mega-menu
+msgid "E.g., fa fa-phone"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:346
+#@ wp-mega-menu
+msgid "Email:"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:351
+#@ wp-mega-menu
+msgid "Email Icon:"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:352
+#@ wp-mega-menu
+msgid "Use Fontawesome Class for Email Icon such as fa fa-phone"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:353
+#: inc/admin/wpmegamenu-widget.php:364
+#@ wp-mega-menu
+msgid "E.g., fa fa-email"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:357
+#@ wp-mega-menu
+msgid "Webiste:"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:362
+#@ wp-mega-menu
+msgid "Website Icon:"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:363
+#@ wp-mega-menu
+msgid "Use Fontawesome Class for Website Icon such as fa fa-phone"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:369
+#@ wp-mega-menu
+msgid "Custom Title"
+msgstr ""
+
+#: inc/admin/wpmegamenu-widget.php:374
+#@ wp-mega-menu
+msgid "Custom Shortcode"
+msgstr ""
+
+#: inc/backend/about.php:12
+#@ wp-mega-menu
+msgid "About Us"
+msgstr ""
+
+#: inc/backend/about.php:14
+#@ wp-mega-menu
+msgid "- is a FREE WordPress Plugin by AccessPress Themes."
+msgstr ""
+
+#: inc/backend/about.php:16
+#@ wp-mega-menu
+msgid "AccessPress Themes is a venture of Access Keys - who has developed hundreds of Custom WordPress themes and plugins for its clients over the years. "
+msgstr ""
+
+#: inc/backend/about.php:18
+#@ wp-mega-menu
+msgid " - is a built in visual mega menu builder plugin which allows you to easily add widgets column wise on horizontal as well as vertical mega menu with multiple settings options."
+msgstr ""
+
+#: inc/backend/about.php:20
+#@ wp-mega-menu
+msgid "Please visit our product page for more details here:"
+msgstr ""
+
+#: inc/backend/about.php:25
+#@ wp-mega-menu
+msgid "Please visit our demo page here:"
+msgstr ""
+
+#: inc/backend/about.php:31
+#@ wp-mega-menu
+msgid "Plugin documentation can be found here:"
+msgstr ""
+
+#: inc/backend/about.php:47
+#@ wp-mega-menu
+msgid "AccessPress Social Icons"
+msgstr ""
+
+#: inc/backend/about.php:92
+#@ wp-mega-menu
+msgid "Get in touch"
+msgstr ""
+
+#: inc/backend/about.php:93
+#@ wp-mega-menu
+msgid "If you have any question/feedback, please get in touch:"
+msgstr ""
+
+#: inc/backend/about.php:105
+#@ wp-mega-menu
+msgid "Get social"
+msgstr ""
+
+#: inc/backend/about.php:106
+#@ wp-mega-menu
+msgid "Get connected with us on social media. Facebook is the best place to find updates on our themes/plugins: "
+msgstr ""
+
+#: inc/backend/how_to_use.php:11
+#@ wp-mega-menu
+msgid ""
+" In order to display the mega menu in the frontend for specific menu location, you need to build the menu location first.\n"
+"        To build menu location and enable WP Mega Menu settings for specific location, you have to setup options provided on WordPress menu page."
+msgstr ""
+
+#: inc/backend/how_to_use.php:17
+#@ wp-mega-menu
+msgid "There are five main settings panels that will help you to setup the plugin default setup and for the menu display in the frontend, you can set the settings for specific menu from menu location page while creating or editing menu which is briefly described below."
+msgstr ""
+
+#: inc/backend/how_to_use.php:21
+#@ wp-mega-menu
+msgid "For full documentation on the plugin, please visit "
+msgstr ""
+
+#: inc/backend/how_to_use.php:21
+#@ wp-mega-menu
+msgid "View Documentation"
+msgstr ""
+
+#: inc/backend/how_to_use.php:23
+#@ default
+msgid "Menu Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:26
+#@ wp-mega-menu
+msgid ""
+"To enable WP Mega Menu for specific menu location, on menu page, you can choose menu location and on left section you can find options settings as Select WP Mega Menu Settings Metabox Options where you\n"
+"       can enable WP Mega Menu, choose orientation as vertical or horizontal, choose trigger effect (show mega menu on hover or on click effect), transition effect(slide or fade type). Also WP Mega Menu has provided <strong>7 Free Pre Available Templates/Skins</strong> or you can even setup your own custom theme templates and choose it from this section \n"
+"       for specific menu location."
+msgstr ""
+
+#: inc/backend/how_to_use.php:30
+#@ wp-mega-menu
+msgid "To setup mega menu or flyout type for particular menu. On hover menu you can find WP Mega Menu Button where you can setup options menu wise. In these options, you can set mega menu type sub menu for top level menu only."
+msgstr ""
+
+#: inc/backend/how_to_use.php:33
+#@ wp-mega-menu
+msgid "Top Level Menu Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:34
+#@ wp-mega-menu
+msgid "This level menu includes 6 main settings."
+msgstr ""
+
+#: inc/backend/how_to_use.php:35
+#: inc/backend/how_to_use.php:78
+#@ wp-mega-menu
+msgid "This level menu includes following tab options:"
+msgstr ""
+
+#: inc/backend/how_to_use.php:37
+#@ wp-mega-menu
+msgid "* WP Mega Menu Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:39
+#@ wp-mega-menu
+msgid ""
+"In these Settings, you can set the top level menu as mega menu type or \n"
+"                  flyout type for its sub menu display."
+msgstr ""
+
+#: inc/backend/how_to_use.php:44
+#@ wp-mega-menu
+msgid "* General Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:46
+#@ wp-mega-menu
+msgid "General Settings where there is multiple options such as active link, show menu icons, menu label input field, disable menu text, hide menu on desktop, hide menu on mobile, active single menu useful for displaying custom menu, set menu alignment as left or right an sub menu alignment for flyout settings."
+msgstr ""
+
+#: inc/backend/how_to_use.php:50
+#@ wp-mega-menu
+msgid "* Mega Menu Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:52
+#@ wp-mega-menu
+msgid "In these Settings, you can even setup Mega Menu settings for horizontal position and vertical position. In Mega Menu Settings, you can even add extra top and bottom content with only text, only image or use html content to display for mega menu type only."
+msgstr ""
+
+#: inc/backend/how_to_use.php:56
+#@ wp-mega-menu
+msgid "* Flyout Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:58
+#@ wp-mega-menu
+msgid "In these Settings, you can set the flyout horizontal or vertical positions."
+msgstr ""
+
+#: inc/backend/how_to_use.php:62
+#@ wp-mega-menu
+msgid "* Menu Replacement Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:64
+#@ wp-mega-menu
+msgid "Similarly, if you want to display menu in search form then you can simply choose Menu replacement Settings options and select search type from dropdown button options where you can add shortcode to display search form as inline toggle left or right position or mega menu type. Simply you can use the provided search shortcode in textarea."
+msgstr ""
+
+#: inc/backend/how_to_use.php:68
+#: inc/backend/how_to_use.php:87
+#@ wp-mega-menu
+msgid "* Icon Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:70
+#@ wp-mega-menu
+msgid "This Settings also contain Icon Settings where you can choose menu icon from multiple font icons sets. Menu Icon Settings contains 300+ FontAwesome, 160+ Genericon and 100+ Dashicons."
+msgstr ""
+
+#: inc/backend/how_to_use.php:76
+#@ wp-mega-menu
+msgid "Other Level Menu Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:80
+#@ wp-mega-menu
+msgid "* Sub Menu Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:82
+#@ wp-mega-menu
+msgid ""
+"In this Settings, there is multiple options such as active link, show menu icons, menu label input field, disable menu text, hide menu on desktop, hide menu on mobile, active single menu useful for\n"
+"                displaying custom menu, set menu alignment as left or right(only for top level menu used) an sub menu alignment for flyout settings for sub menu."
+msgstr ""
+
+#: inc/backend/how_to_use.php:89
+#@ wp-mega-menu
+msgid ""
+"These Settings also contain Icon Settings where you can choose menu icon from multiple font icons sets for sub menus. \n"
+"                   Menu Icon Settings contains 300+ FontAwesome, 160+ Genericon and 100+ Dashicons."
+msgstr ""
+
+#: inc/backend/how_to_use.php:94
+#@ wp-mega-menu
+msgid "* Custom Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:96
+#@ wp-mega-menu
+msgid ""
+"In these Settings, you can set sub menu as custom settings type where you can extract the post details such as featured image, excerpt, display author, category name, date and read more button. Here, You can even show custom image by choosing custom image and providing\n"
+"                custom URL link. Similarly, you can display custom or featured image of particular post type sub menu on different position such as top, left or right or only image type on mega menu."
+msgstr ""
+
+#: inc/backend/how_to_use.php:101
+#@ wp-mega-menu
+msgid "* Image Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:103
+#@ wp-mega-menu
+msgid ""
+"In these image settings, you can choose either default image size settings \n"
+"               set from Main Image Settings or simply choose different settings from here for particular post type sub menu featured image or custom image size. Also, if you can use custom image on Custom settings then , you can enable to use default custom image size setup before or fill different image size."
+msgstr ""
+
+#: inc/backend/how_to_use.php:113
+#: inc/backend/view/editor/main_settings_editor.php:19
+#@ wp-mega-menu
+msgid "Main Settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:115
+#@ wp-mega-menu
+msgid ""
+"In general setting, you can setup plugin default settings. This setup includes tab section with general settings, \n"
+"      mobile settings, default image settings, menu shortcode , export and import custom theme settings."
+msgstr ""
+
+#: inc/backend/how_to_use.php:118
+#@ wp-mega-menu
+msgid "General settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:119
+#@ wp-mega-menu
+msgid ""
+"In this tab, you can set the default values such as event behavior while clicking event is \n"
+"        selected from menu location for specific theme location, menu label animation type with duration, delay, iteration counter."
+msgstr ""
+
+#: inc/backend/how_to_use.php:122
+#@ wp-mega-menu
+msgid "Mobile settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:123
+#@ wp-mega-menu
+msgid ""
+"In this settings, you can enable megamenu on mobile version, add substractor after menu,\n"
+"        choose toggle behavior, menu toggle open and close icons as overall menu locations."
+msgstr ""
+
+#: inc/backend/how_to_use.php:126
+#@ wp-mega-menu
+msgid "Image settings"
+msgstr ""
+
+#: inc/backend/how_to_use.php:127
+#@ wp-mega-menu
+msgid ""
+"In this tab you can set default settings regarding the wordpress image size options,\n"
+"        set custom default width as well as menu icon hide/show and define icon width. You can either enable or disable all menu icons. \n"
+"        If you want to change the image size according to image shown on specific menus you can even override the settings from specific \n"
+"        menu location page."
+msgstr ""
+
+#: inc/backend/how_to_use.php:132
+#: inc/backend/tabs/shortcode-menu-location.php:67
+#@ wp-mega-menu
+msgid "Shortcode"
+msgstr ""
+
+#: inc/backend/how_to_use.php:133
+#@ wp-mega-menu
+msgid ""
+"In this tab you can use shortcode provided in any page, post content editor or widgets area.\n"
+"         You can also use php function instead on your template files which specific menu location generated from shortcode tab. In order to display mega menu of specific menu location, firstly, you must need to enable WP Mega Menu from menu page for specific menu location from left section metabox options."
+msgstr ""
+
+#: inc/backend/how_to_use.php:136
+#: inc/backend/tabs/custom-theme-import.php:3
+#: inc/backend/tabs/custom-theme-import.php:26
+#@ wp-mega-menu
+msgid "Import"
+msgstr ""
+
+#: inc/backend/how_to_use.php:137
+#@ wp-mega-menu
+msgid "In this tab, you can import the custom theme json file of this plugin."
+msgstr ""
+
+#: inc/backend/how_to_use.php:139
+#: inc/backend/tabs/custom-theme-import.php:32
+#: inc/backend/tabs/custom-theme-import.php:59
+#@ wp-mega-menu
+msgid "Export"
+msgstr ""
+
+#: inc/backend/how_to_use.php:140
+#@ wp-mega-menu
+msgid "In this tab, you can export the custom theme json file of this plugin."
+msgstr ""
+
+#: inc/backend/how_to_use.php:144
+#@ default
+msgid "Widgets Information"
+msgstr ""
+
+#: inc/backend/how_to_use.php:147
+#@ wp-mega-menu
+msgid ""
+"To display WP Mega Menu of specific menu location, WP Mega Menu has provided WP Mega Menu Widget on widget page where you can\n"
+"        choose particular menu location and set on the widget area. Else you can use provided shortcode generated from shortcode tab on \n"
+"        any other page or default Text Widget."
+msgstr ""
+
+#: inc/backend/how_to_use.php:150
+#@ wp-mega-menu
+msgid "WP Mega Menu Plugin has also provided its own WP Mega Menu Contact Info widgets where you can setup your contact details with multiple font awesome icon class and any shortcode to display on mega menu."
+msgstr ""
+
+#: inc/backend/main_page.php:47
+#: inc/backend/menu_settings/submenu_settings.php:28
+#: inc/backend/menu_settings/top_menu/sub_image_settings.php:1
+#: inc/backend/tabs/image-settings.php:3
+#@ wp-mega-menu
+msgid "Image Settings"
+msgstr ""
+
+#: inc/backend/main_page.php:48
+#: inc/backend/tabs/shortcode-menu-location.php:8
+#@ wp-mega-menu
+msgid "Shortcodes"
+msgstr ""
+
+#: inc/backend/main_page.php:49
+#@ wp-mega-menu
+msgid "Import/Export"
+msgstr ""
+
+#: inc/backend/main_page.php:50
+#: inc/backend/tabs/custom-css.php:3
+#@ wp-mega-menu
+msgid "Custom CSS"
+msgstr ""
+
+#: inc/backend/main_page.php:85
+#@ wp-mega-menu
+msgid "Restore Default Settings"
+msgstr ""
+
+#: inc/backend/menu_settings/submenu_settings.php:19
+#@ wp-mega-menu
+msgid "Mega Menus can only be created on top level menu items."
+msgstr ""
+
+#: inc/backend/menu_settings/submenu_settings.php:25
+#@ wp-mega-menu
+msgid "SubMenu Settings"
+msgstr ""
+
+#: inc/backend/menu_settings/submenu_settings.php:26
+#: inc/backend/menu_settings/top_menu/icon_settings.php:1
+#: inc/backend/menu_settings/top_menu_settings.php:26
+#: inc/backend/tabs/image-settings.php:46
+#@ wp-mega-menu
+msgid "Icon Settings"
+msgstr ""
+
+#: inc/backend/menu_settings/submenu_settings.php:27
+#@ wp-mega-menu
+msgid "Custom Settings"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/flyout_settings.php:1
+#: inc/backend/menu_settings/top_menu_settings.php:24
+#: inc/backend/view/editor/flyout_settings_editor.php:28
+#@ wp-mega-menu
+msgid "Flyout Settings"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/flyout_settings.php:6
+#@ wp-mega-menu
+msgid "Flyout Horizontal Position"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/flyout_settings.php:19
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:215
+#@ wp-mega-menu
+msgid "Position Preview"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/flyout_settings.php:36
+#@ wp-mega-menu
+msgid "Flyout Vertical Position"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/flyout_settings.php:40
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:242
+#@ wp-mega-menu
+msgid "Full Height"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/flyout_settings.php:41
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:243
+#@ wp-mega-menu
+msgid "Aligned to Parent"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/flyout_settings.php:49
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:250
+#@ wp-mega-menu
+msgid "Vertical Position Preview"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:3
+#@ wp-mega-menu
+msgid "Menu Item Settings"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:6
+#@ wp-mega-menu
+msgid "Disable Menu Text"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:12
+#@ wp-mega-menu
+msgid "Note: Enabling Disable On Menu Text, the menu text neither the menu description will be not be shown as well as not height will be taken."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:16
+#@ wp-mega-menu
+msgid "Visible Hidden Menu Text"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:22
+#@ wp-mega-menu
+msgid "Note: Enabling Visible hidden on Menu text, the menu text will be hidden but the respective height of the text will be taken."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:26
+#@ wp-mega-menu
+msgid "Active Menu Link"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:36
+#@ wp-mega-menu
+msgid "Hide Arrow"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:46
+#@ wp-mega-menu
+msgid "Hide Menu On Mobile"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:56
+#@ wp-mega-menu
+msgid "Hide Menu On Desktop"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:66
+#@ wp-mega-menu
+msgid "Show Menu Icon"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:77
+#@ wp-mega-menu
+msgid "Active Single Menu"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:84
+#@ wp-mega-menu
+msgid "Enable single menu if menu is custom single menu link. Useful for Any Custom Links such as social links"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:90
+#@ wp-mega-menu
+msgid "Menu Item Alignment"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:98
+#@ wp-mega-menu
+msgid "Right aligned items will appear in reverse order on the right hand side of the menu bar.Specially for search icon and oher custom links with social icons."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:104
+#@ wp-mega-menu
+msgid "Menu Label"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:108
+#@ wp-mega-menu
+msgid "E.g., HOT!"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:109
+#@ wp-mega-menu
+msgid "Fill menu label such as HOT!, NEW!, UPDATES! and so on."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:114
+#@ wp-mega-menu
+msgid "Sub Menu Alignment"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/general_settings.php:122
+#@ wp-mega-menu
+msgid "Note: Choose individual flyout menu display position on hover/click for sub menu."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/icon_settings.php:712
+#@ wp-mega-menu
+msgid "Choose Icon"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/icon_settings.php:724
+#@ wp-mega-menu
+msgid "Font Awesome Icons"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/icon_settings.php:725
+#@ wp-mega-menu
+msgid "Generic Icons"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/icon_settings.php:726
+#@ wp-mega-menu
+msgid "DashIcons"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:7
+#@ wp-mega-menu
+msgid "Sub menu display mode"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:9
+#@ wp-mega-menu
+msgid "Flyout Menu"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:10
+#@ wp-mega-menu
+msgid "Mega Menu"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:15
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:16
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:17
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:18
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:19
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:20
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:21
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:22
+#@ wp-mega-menu
+msgid "Columns"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:31
+#@ wp-mega-menu
+msgid "ALL WIDGETS"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:33
+#@ wp-mega-menu
+msgid "WORDPRESS WIDGETS"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:34
+#@ wp-mega-menu
+msgid "WP MEGA MENU WIDGETS"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:35
+#@ wp-mega-menu
+msgid "WOOCOMMERCE WIDGETS"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/mega_menu_settings.php:152
+#@ wp-mega-menu
+msgid "No widgets found. Add a widget to this area using the ADD Widget Button (top right)."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:4
+#: inc/backend/menu_settings/top_menu_settings.php:23
+#: inc/backend/view/editor/megamenu_settings_editor.php:75
+#@ wp-mega-menu
+msgid "Mega Menu Settings"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:8
+#@ wp-mega-menu
+msgid "Show Top Content"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:18
+#@ wp-mega-menu
+msgid "Show Bottom Content"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:31
+#@ wp-mega-menu
+msgid "Select Top Content Type"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:33
+#@ wp-mega-menu
+msgid "Select top content type as text only, image only or image with text."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:34
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:122
+#@ default
+msgid "Text Only"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:35
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:123
+#@ default
+msgid "Image Only"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:36
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:124
+#@ default
+msgid "HTML"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:65
+#@ wp-mega-menu
+msgid "Top Text Content"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:73
+#@ wp-mega-menu
+msgid "Top Image"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:79
+#@ wp-mega-menu
+msgid "Recommended Image Size to fit on top section with width of 1240px and height of 150px."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:94
+#@ wp-mega-menu
+msgid "Html Content"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:118
+#@ wp-mega-menu
+msgid "Select Bottom Content Type"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:120
+#@ wp-mega-menu
+msgid "Select bottom content type as text only, image only or image with text."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:154
+#@ wp-mega-menu
+msgid "Bottom Text Content"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:162
+#@ wp-mega-menu
+msgid "Bottom Image"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:168
+#@ wp-mega-menu
+msgid "Recommended Image Size to fit on bottom section with width of 1240px and height of 150px."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:183
+#@ wp-mega-menu
+msgid "Bottom Html Content"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:201
+#@ wp-mega-menu
+msgid "Mega Menu Horizontal Position"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:205
+#@ wp-mega-menu
+msgid "Full Width"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:206
+#: inc/backend/view/editor/menubar_settings_editor.php:198
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:132
+#@ wp-mega-menu
+msgid "Center"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:207
+#@ wp-mega-menu
+msgid "Left-Edge"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:208
+#@ wp-mega-menu
+msgid "Right-Edge"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/megamenu_settings.php:238
+#@ wp-mega-menu
+msgid "Mega Menu Vertical Position"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/replacement_settings.php:1
+#: inc/backend/menu_settings/top_menu_settings.php:25
+#@ wp-mega-menu
+msgid "Menu Replacement Settings"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/replacement_settings.php:5
+#@ wp-mega-menu
+msgid "Choose Replacement"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/replacement_settings.php:11
+#@ wp-mega-menu
+msgid "Note: Choose replacement instead of default menu setup such as for search form display on menu bar."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/replacement_settings.php:30
+#@ wp-mega-menu
+msgid "Custom Content"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/replacement_settings.php:32
+#@ wp-mega-menu
+msgid "Paste Shortcode here"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/replacement_settings.php:33
+#@ wp-mega-menu
+msgid "Use Shortcode for search menu as"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/replacement_settings.php:34
+#@ wp-mega-menu
+msgid "Inline Search Toggle Left: [wp_megamenu_search_form template_type=\"inline-search\" style=\"inline-toggle-left\"]"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/replacement_settings.php:35
+#@ wp-mega-menu
+msgid "Inline toggle to Right search form:  [wp_megamenu_search_form template_type=\"inline-search\" style=\"inline-toggle-right\"]"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/replacement_settings.php:36
+#@ wp-mega-menu
+msgid "Display Search form on MegaMenu On hover/click : [wp_megamenu_search_form template_type=\"megamenu-type-search\"]"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/sub_image_settings.php:12
+#: inc/backend/tabs/image-settings.php:7
+#@ wp-mega-menu
+msgid "Image Size"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/sub_image_settings.php:17
+#@ wp-mega-menu
+msgid "Default Value"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/sub_image_settings.php:19
+#@ wp-mega-menu
+msgid "Inherit default image size settings."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/sub_image_settings.php:31
+#: inc/backend/tabs/image-settings.php:23
+#@ wp-mega-menu
+msgid "Registered image size:"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/sub_image_settings.php:40
+#@ wp-mega-menu
+msgid "Inherit Custom Default Width"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/sub_image_settings.php:42
+#@ wp-mega-menu
+msgid "On enable, default custom width you set will be used for image."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/sub_image_settings.php:55
+#@ wp-mega-menu
+msgid "Image Custom Width"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/sub_image_settings.php:59
+#: inc/backend/tabs/image-settings.php:37
+#: inc/backend/view/editor/searchbar_settings_editor.php:34
+#@ wp-mega-menu
+msgid "Width"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:1
+#@ wp-mega-menu
+msgid "Custom Menu Settings"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:4
+#@ wp-mega-menu
+msgid "Here you can select particular post featured images, excerpt, read more text and date for sub menu post selected only on megamenu type."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:7
+#@ wp-mega-menu
+msgid "Use Custom Settings"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:15
+#@ wp-mega-menu
+msgid "Note: On check , use below custom settings for this sub menu in wp mega menu."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:23
+#@ wp-mega-menu
+msgid "Display Posts Image"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:27
+#@ wp-mega-menu
+msgid "Featured Image"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:28
+#@ wp-mega-menu
+msgid "Custom Image"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:30
+#@ wp-mega-menu
+msgid "Note: Choose featured image of this menu as side image or custom image and enter custom thumbnail link below for wp mega menu."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:37
+#@ wp-mega-menu
+msgid "Default Thumbnail Image Link"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:49
+#@ wp-mega-menu
+msgid "Show Excerpt"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:58
+#@ wp-mega-menu
+msgid "Show description of posts,page or post type for wp mega menu."
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:66
+#@ wp-mega-menu
+msgid "Excerpt Length"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:78
+#@ wp-mega-menu
+msgid "Display Readmore"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:90
+#@ wp-mega-menu
+msgid "Readmore Text"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:102
+#@ wp-mega-menu
+msgid "Display Date"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:115
+#@ wp-mega-menu
+msgid "Display Author Name"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:129
+#@ wp-mega-menu
+msgid "Display Category Name"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:143
+#@ wp-mega-menu
+msgid "Image Position"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:147
+#@ wp-mega-menu
+msgid "Image Left"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:148
+#@ wp-mega-menu
+msgid "Image Right"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:149
+#@ wp-mega-menu
+msgid "Image Top"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:150
+#@ wp-mega-menu
+msgid "Only Image"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu/upload_image_settings.php:156
+#@ wp-mega-menu
+msgid "Sub Menu Text Position Preview"
+msgstr ""
+
+#: inc/backend/menu_settings/top_menu_settings.php:21
+#@ wp-mega-menu
+msgid "WP Mega Menu Settings"
+msgstr ""
+
+#: inc/backend/panel_head.php:15
+#@ wp-mega-menu
+msgid "Follow us for new updates"
+msgstr ""
+
+#: inc/backend/save-theme-settings.php:73
+#@ wp-mega-menu
+msgid "Custom Theme Created Successfully."
+msgstr ""
+
+#: inc/backend/save-theme-settings.php:97
+#@ wp-mega-menu
+msgid "Custom Theme Updated Successfully."
+msgstr ""
+
+#: inc/backend/save_settings.php:34
+#@ wp-mega-menu
+msgid "WP Mega Menu Settings Saved Successfully"
+msgstr ""
+
+#: inc/backend/tabs/custom-css.php:7
+#@ wp-mega-menu
+msgid "Enable Custom CSS"
+msgstr ""
+
+#: inc/backend/tabs/custom-css.php:8
+#: inc/backend/tabs/custom-theme-import.php:8
+#@ wp-mega-menu
+msgid "Import custom theme using json file."
+msgstr ""
+
+#: inc/backend/tabs/custom-css.php:15
+#@ wp-mega-menu
+msgid "Do you want to enable below custom css?"
+msgstr ""
+
+#: inc/backend/tabs/custom-css.php:22
+#@ wp-mega-menu
+msgid "Please write your custom css here that you want to be included for wp mega menu."
+msgstr ""
+
+#: inc/backend/tabs/custom-theme-import.php:7
+#@ wp-mega-menu
+msgid "Upload Import File"
+msgstr ""
+
+#: inc/backend/tabs/custom-theme-import.php:37
+#@ wp-mega-menu
+msgid "Choose Custom Theme to Export"
+msgstr ""
+
+#: inc/backend/tabs/custom-theme-import.php:41
+#@ wp-mega-menu
+msgid "Select One"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:7
+#@ wp-mega-menu
+msgid "Event Behaviour"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:9
+#@ wp-mega-menu
+msgid "Define what should happen when the event is set to 'click'. This also applies to mobiles."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:14
+#@ wp-mega-menu
+msgid "Open Submenu on first click and close on second click."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:15
+#@ wp-mega-menu
+msgid "Open submenu on first click and follow link on second click."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:24
+#@ wp-mega-menu
+msgid "Menu Label Animation Type"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:25
+#@ wp-mega-menu
+msgid "Choose default animation type for menu label such as Hot!,New!.Default is set as None which will disable animation."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:29
+#: inc/backend/view/editor/flyout_settings_editor.php:133
+#: inc/backend/view/editor/flyout_settings_editor.php:140
+#: inc/backend/view/editor/toplevel_settings_editor.php:118
+#: inc/backend/view/editor/toplevel_settings_editor.php:125
+#: inc/backend/view/editor/widgets_settings_editor.php:84
+#: inc/backend/view/editor/widgets_settings_editor.php:91
+#@ wp-mega-menu
+msgid "None"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:30
+#@ wp-mega-menu
+msgid "Bounce"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:31
+#@ wp-mega-menu
+msgid "Flash"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:32
+#@ wp-mega-menu
+msgid "Shake"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:33
+#@ wp-mega-menu
+msgid "Swing"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:34
+#@ wp-mega-menu
+msgid "Tada"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:35
+#@ wp-mega-menu
+msgid "BounceIn"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:36
+#@ wp-mega-menu
+msgid "FlipInX"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:37
+#@ wp-mega-menu
+msgid "FlipInY"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:38
+#@ wp-mega-menu
+msgid "SlideInUp"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:39
+#@ wp-mega-menu
+msgid "SlideInDown"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:46
+#@ wp-mega-menu
+msgid "Animation Duration"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:47
+#@ wp-mega-menu
+msgid "Choose the animation duration time in second. Default value set to 3s."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:56
+#@ wp-mega-menu
+msgid "Animation Delay"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:57
+#@ wp-mega-menu
+msgid "Choose the animation delay time in second.Default value set to 2s."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:66
+#@ wp-mega-menu
+msgid "Animation Iteration Count"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:67
+#@ wp-mega-menu
+msgid ""
+"Fill the animation Iteration count in number such as 2,3. You can also use \"infinite\" word instead of number which let the\n"
+"                            animation to repeat forever."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:69
+#@ wp-mega-menu
+msgid "The number of times the animation should repeat; this is 1 by default. Negative values are invalid. You may specify non-integer values to play part of an animation cycle (for example 0.5 will play half of the animation cycle)."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:73
+#@ wp-mega-menu
+msgid "E.g., infinite,2,3,1,2.3"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:78
+#@ wp-mega-menu
+msgid "Mobile Settings"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:82
+#@ wp-mega-menu
+msgid "Enable WP Mega Menu on Mobile"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:84
+#@ wp-mega-menu
+msgid "Enable or disable submenu on mobile version."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:96
+#@ wp-mega-menu
+msgid "Disable Submenu Retractor"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:98
+#@ wp-mega-menu
+msgid "Check to disable submenu retractor close button at last of menu after toggle open on mobile version."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:110
+#@ wp-mega-menu
+msgid "Toggle Behavior"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:112
+#@ wp-mega-menu
+msgid ""
+"Standard toggle will open sub menus even if another menu is clicked and \n"
+"                                accordion toggle will close opened submenus automatically when another one is open."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:118
+#@ wp-mega-menu
+msgid "Standard"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:119
+#@ wp-mega-menu
+msgid "Accordion"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:127
+#@ wp-mega-menu
+msgid "Toggle Menu Close Icon"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:129
+#@ wp-mega-menu
+msgid "Choose toggle close icon for responsive menubar."
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:176
+#@ wp-mega-menu
+msgid "Toggle Menu Open Icon"
+msgstr ""
+
+#: inc/backend/tabs/general-settings.php:178
+#@ wp-mega-menu
+msgid "Choose toggle open icon for responsive menubar."
+msgstr ""
+
+#: inc/backend/tabs/image-settings.php:9
+#@ wp-mega-menu
+msgid "Default image settings"
+msgstr ""
+
+#: inc/backend/tabs/image-settings.php:32
+#@ wp-mega-menu
+msgid "Set Default Custom Width"
+msgstr ""
+
+#: inc/backend/tabs/image-settings.php:33
+#@ wp-mega-menu
+msgid "Note: Set default custom image width here in px"
+msgstr ""
+
+#: inc/backend/tabs/image-settings.php:50
+#@ wp-mega-menu
+msgid "Hide All Menu Icons"
+msgstr ""
+
+#: inc/backend/tabs/image-settings.php:52
+#@ wp-mega-menu
+msgid "Check to hide all icons."
+msgstr ""
+
+#: inc/backend/tabs/image-settings.php:64
+#@ wp-mega-menu
+msgid "Icon Width"
+msgstr ""
+
+#: inc/backend/tabs/image-settings.php:66
+#@ wp-mega-menu
+msgid "Fill icon width in px.Default set as 13px."
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:10
+#@ wp-mega-menu
+msgid "Note: You can use this plugin to display menu using below shortcode."
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:15
+#@ wp-mega-menu
+msgid "Integrate Specific Theme Location"
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:16
+#@ wp-mega-menu
+msgid "Select a Theme Location below to generate the proper code below "
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:40
+#@ wp-mega-menu
+msgid "Manual Integration Code"
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:47
+#@ wp-mega-menu
+msgid "Menu Location Name: "
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:53
+#@ wp-mega-menu
+msgid "(You havenot assigned this theme location with any menu.)"
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:54
+#@ wp-mega-menu
+msgid "Assign a menu"
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:59
+#@ wp-mega-menu
+msgid "PHP Function"
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:60
+#@ wp-mega-menu
+msgid "For use in a theme template (usually header.php)"
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:68
+#@ wp-mega-menu
+msgid "Shortcodes for use in a post or page with specific menu location."
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:75
+#@ wp-mega-menu
+msgid "Widget"
+msgstr ""
+
+#: inc/backend/tabs/shortcode-menu-location.php:76
+#@ wp-mega-menu
+msgid "For Widget, add this shortcode in your widget area."
+msgstr ""
+
+#: inc/backend/view/add_theme_settings.php:41
+#@ wp-mega-menu
+msgid "Edit Custom Theme"
+msgstr ""
+
+#: inc/backend/view/add_theme_settings.php:43
+#@ wp-mega-menu
+msgid "Create Custom Theme"
+msgstr ""
+
+#: inc/backend/view/add_theme_settings.php:46
+#@ wp-mega-menu
+msgid "Back"
+msgstr ""
+
+#: inc/backend/view/add_theme_settings.php:127
+#@ wp-mega-menu
+msgid "SAVE CUSTOM THEME"
+msgstr ""
+
+#: inc/backend/view/add_theme_settings.php:131
+#@ wp-mega-menu
+msgid "Status: "
+msgstr ""
+
+#: inc/backend/view/add_theme_settings.php:131
+#@ wp-mega-menu
+msgid "Saved"
+msgstr ""
+
+#: inc/backend/view/add_theme_settings.php:132
+#@ wp-mega-menu
+msgid "Created Date: "
+msgstr ""
+
+#: inc/backend/view/add_theme_settings.php:135
+#@ wp-mega-menu
+msgid "Last Modified Date: "
+msgstr ""
+
+#: inc/backend/view/add_theme_settings.php:142
+#@ wp-mega-menu
+msgid "Save Theme"
+msgstr ""
+
+#: inc/backend/view/copy-custom-theme.php:46
+#@ wp-mega-menu
+msgid "Custom theme Copied Successfully."
+msgstr ""
+
+#: inc/backend/view/delete-theme-settings.php:6
+#@ wp-mega-menu
+msgid "Custom Theme deleted successfully."
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:3
+#@ wp-mega-menu
+msgid "Extra Bottom Section Settings"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:12
+#@ wp-mega-menu
+msgid "Bottom Content Fonts"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:14
+#: inc/backend/view/editor/top_section_editor.php:14
+#@ wp-mega-menu
+msgid "Set these font to use top section content in the mega menu."
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:20
+#: inc/backend/view/editor/flyout_settings_editor.php:70
+#: inc/backend/view/editor/megamenu_settings_editor.php:162
+#: inc/backend/view/editor/megamenu_settings_editor.php:196
+#: inc/backend/view/editor/top_section_editor.php:20
+#: inc/backend/view/editor/widgets_settings_editor.php:19
+#: inc/backend/view/editor/widgets_settings_editor.php:111
+#@ wp-mega-menu
+msgid "Color"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:26
+#: inc/backend/view/editor/flyout_settings_editor.php:82
+#: inc/backend/view/editor/top_section_editor.php:26
+#: inc/backend/view/editor/toplevel_settings_editor.php:87
+#: inc/backend/view/editor/widgets_settings_editor.php:33
+#: inc/backend/view/editor/widgets_settings_editor.php:117
+#@ wp-mega-menu
+msgid "Size"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:32
+#: inc/backend/view/editor/flyout_settings_editor.php:88
+#: inc/backend/view/editor/top_section_editor.php:32
+#: inc/backend/view/editor/widgets_settings_editor.php:39
+#@ wp-mega-menu
+msgid "Weight"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:35
+#: inc/backend/view/editor/flyout_settings_editor.php:91
+#: inc/backend/view/editor/flyout_settings_editor.php:101
+#: inc/backend/view/editor/menubar_settings_editor.php:104
+#: inc/backend/view/editor/top_section_editor.php:35
+#: inc/backend/view/editor/toplevel_settings_editor.php:97
+#: inc/backend/view/editor/widgets_settings_editor.php:42
+#: inc/backend/view/editor/widgets_settings_editor.php:52
+#@ wp-mega-menu
+msgid "Theme Default"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:36
+#: inc/backend/view/editor/flyout_settings_editor.php:92
+#: inc/backend/view/editor/flyout_settings_editor.php:102
+#: inc/backend/view/editor/menubar_settings_editor.php:105
+#: inc/backend/view/editor/top_section_editor.php:36
+#: inc/backend/view/editor/toplevel_settings_editor.php:98
+#: inc/backend/view/editor/widgets_settings_editor.php:43
+#: inc/backend/view/editor/widgets_settings_editor.php:53
+#@ wp-mega-menu
+msgid "Normal(400)"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:37
+#: inc/backend/view/editor/flyout_settings_editor.php:93
+#: inc/backend/view/editor/flyout_settings_editor.php:103
+#: inc/backend/view/editor/menubar_settings_editor.php:106
+#: inc/backend/view/editor/top_section_editor.php:37
+#: inc/backend/view/editor/toplevel_settings_editor.php:99
+#@ wp-mega-menu
+msgid "Bold(700)"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:38
+#: inc/backend/view/editor/flyout_settings_editor.php:94
+#: inc/backend/view/editor/flyout_settings_editor.php:104
+#: inc/backend/view/editor/menubar_settings_editor.php:107
+#: inc/backend/view/editor/top_section_editor.php:38
+#: inc/backend/view/editor/toplevel_settings_editor.php:100
+#: inc/backend/view/editor/widgets_settings_editor.php:45
+#: inc/backend/view/editor/widgets_settings_editor.php:55
+#@ wp-mega-menu
+msgid "Light(300)"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:43
+#: inc/backend/view/editor/flyout_settings_editor.php:109
+#: inc/backend/view/editor/top_section_editor.php:43
+#: inc/backend/view/editor/toplevel_settings_editor.php:105
+#: inc/backend/view/editor/widgets_settings_editor.php:60
+#@ wp-mega-menu
+msgid "Transform"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:46
+#: inc/backend/view/editor/flyout_settings_editor.php:112
+#: inc/backend/view/editor/top_section_editor.php:46
+#: inc/backend/view/editor/toplevel_settings_editor.php:108
+#: inc/backend/view/editor/widgets_settings_editor.php:63
+#@ wp-mega-menu
+msgid "Normal"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:47
+#: inc/backend/view/editor/flyout_settings_editor.php:113
+#: inc/backend/view/editor/top_section_editor.php:47
+#: inc/backend/view/editor/toplevel_settings_editor.php:109
+#: inc/backend/view/editor/widgets_settings_editor.php:64
+#@ wp-mega-menu
+msgid "Capitalize"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:48
+#: inc/backend/view/editor/flyout_settings_editor.php:114
+#: inc/backend/view/editor/top_section_editor.php:48
+#: inc/backend/view/editor/toplevel_settings_editor.php:110
+#: inc/backend/view/editor/widgets_settings_editor.php:65
+#@ wp-mega-menu
+msgid "Uppercase"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:49
+#: inc/backend/view/editor/flyout_settings_editor.php:115
+#: inc/backend/view/editor/top_section_editor.php:49
+#: inc/backend/view/editor/toplevel_settings_editor.php:111
+#: inc/backend/view/editor/widgets_settings_editor.php:66
+#@ wp-mega-menu
+msgid "Lowercase"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:53
+#: inc/backend/view/editor/flyout_settings_editor.php:119
+#: inc/backend/view/editor/top_section_editor.php:53
+#: inc/backend/view/editor/widgets_settings_editor.php:70
+#: inc/backend/view/editor/widgets_settings_editor.php:123
+#@ wp-mega-menu
+msgid "Family"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:74
+#: inc/backend/view/editor/top_section_editor.php:72
+#@ wp-mega-menu
+msgid "Content Margin"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:76
+#: inc/backend/view/editor/top_section_editor.php:74
+#@ wp-mega-menu
+msgid "Set margin in px if top section contain upload image."
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:81
+#: inc/backend/view/editor/megamenu_settings_editor.php:133
+#: inc/backend/view/editor/menubar_settings_editor.php:117
+#: inc/backend/view/editor/top_section_editor.php:79
+#: inc/backend/view/editor/widgets_settings_editor.php:149
+#@ wp-mega-menu
+msgid "Top"
+msgstr ""
+
+#: inc/backend/view/editor/bottom_section_editor.php:86
+#: inc/backend/view/editor/megamenu_settings_editor.php:138
+#: inc/backend/view/editor/menubar_settings_editor.php:122
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:159
+#: inc/backend/view/editor/top_section_editor.php:84
+#: inc/backend/view/editor/widgets_settings_editor.php:154
+#@ wp-mega-menu
+msgid "Bottom"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:36
+#: inc/backend/view/editor/megamenu_settings_editor.php:83
+#@ wp-mega-menu
+msgid "Background"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:37
+#@ wp-mega-menu
+msgid "Select from color for flat, to for gradient for each individual background."
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:50
+#@ wp-mega-menu
+msgid "Current Color"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:54
+#@ wp-mega-menu
+msgid "Hover Color"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:62
+#: inc/backend/view/editor/toplevel_settings_editor.php:65
+#@ wp-mega-menu
+msgid "Fonts"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:64
+#@ wp-mega-menu
+msgid "Note: Color [Hover]: Color of items that are active (hover/click depending on trigger),"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:75
+#: inc/backend/view/editor/widgets_settings_editor.php:24
+#@ wp-mega-menu
+msgid "Color [Hover]"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:98
+#: inc/backend/view/editor/toplevel_settings_editor.php:94
+#: inc/backend/view/editor/widgets_settings_editor.php:49
+#@ wp-mega-menu
+msgid "Weight On Hover"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:131
+#: inc/backend/view/editor/toplevel_settings_editor.php:116
+#: inc/backend/view/editor/widgets_settings_editor.php:82
+#@ wp-mega-menu
+msgid "Decoration"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:134
+#: inc/backend/view/editor/flyout_settings_editor.php:141
+#: inc/backend/view/editor/toplevel_settings_editor.php:119
+#: inc/backend/view/editor/toplevel_settings_editor.php:126
+#: inc/backend/view/editor/widgets_settings_editor.php:85
+#: inc/backend/view/editor/widgets_settings_editor.php:92
+#@ wp-mega-menu
+msgid "Underline"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:138
+#: inc/backend/view/editor/toplevel_settings_editor.php:123
+#: inc/backend/view/editor/widgets_settings_editor.php:89
+#@ wp-mega-menu
+msgid "Decoration On Hover"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:151
+#@ wp-mega-menu
+msgid "Flyout Item Margin"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:152
+#@ wp-mega-menu
+msgid "Set a margin around individual second items to space them out. e.g. 0px 5px"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:161
+#@ wp-mega-menu
+msgid "Flyout Item Padding"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:162
+#@ wp-mega-menu
+msgid "Set a padding around individual flyout second items to space them out. e.g. 0px 5px"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:172
+#@ wp-mega-menu
+msgid "Flyout Width"
+msgstr ""
+
+#: inc/backend/view/editor/flyout_settings_editor.php:173
+#@ wp-mega-menu
+msgid "The width of each flyout menu. This must be a fixed pixel value.E.g 210px"
+msgstr ""
+
+#: inc/backend/view/editor/main_settings_editor.php:27
+#: inc/backend/view/theme_lists_settings.php:35
+#: inc/backend/view/theme_lists_settings.php:47
+#@ wp-mega-menu
+msgid "Theme Title"
+msgstr ""
+
+#: inc/backend/view/editor/main_settings_editor.php:37
+#@ wp-mega-menu
+msgid "Line Height"
+msgstr ""
+
+#: inc/backend/view/editor/main_settings_editor.php:38
+#@ wp-mega-menu
+msgid "Set line height to use in the panel contents."
+msgstr ""
+
+#: inc/backend/view/editor/main_settings_editor.php:46
+#@ wp-mega-menu
+msgid "Z Index"
+msgstr ""
+
+#: inc/backend/view/editor/main_settings_editor.php:47
+#@ wp-mega-menu
+msgid "Set z-index to appear menu or sub menu ontop of other content such as slider."
+msgstr ""
+
+#: inc/backend/view/editor/main_settings_editor.php:57
+#@ wp-mega-menu
+msgid "Shadow"
+msgstr ""
+
+#: inc/backend/view/editor/main_settings_editor.php:58
+#@ wp-mega-menu
+msgid "Apply a shadow to mega and flyout menus."
+msgstr ""
+
+#: inc/backend/view/editor/megamenu_settings_editor.php:99
+#@ wp-mega-menu
+msgid "Select from background color ."
+msgstr ""
+
+#: inc/backend/view/editor/megamenu_settings_editor.php:104
+#: inc/backend/view/editor/menubar_settings_editor.php:62
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:54
+#: inc/backend/view/editor/toplevel_settings_editor.php:56
+#@ wp-mega-menu
+msgid "Bg Color"
+msgstr ""
+
+#: inc/backend/view/editor/megamenu_settings_editor.php:108
+#@ wp-mega-menu
+msgid "To"
+msgstr ""
+
+#: inc/backend/view/editor/megamenu_settings_editor.php:117
+#@ wp-mega-menu
+msgid "Define Width"
+msgstr ""
+
+#: inc/backend/view/editor/megamenu_settings_editor.php:118
+#@ wp-mega-menu
+msgid "Set Mega Menu Panel width in %."
+msgstr ""
+
+#: inc/backend/view/editor/megamenu_settings_editor.php:122
+#@ wp-mega-menu
+msgid "Eg., 100%"
+msgstr ""
+
+#: inc/backend/view/editor/megamenu_settings_editor.php:129
+#@ wp-mega-menu
+msgid "Inner Padding"
+msgstr ""
+
+#: inc/backend/view/editor/megamenu_settings_editor.php:158
+#@ wp-mega-menu
+msgid "Border"
+msgstr ""
+
+#: inc/backend/view/editor/megamenu_settings_editor.php:167
+#@ wp-mega-menu
+msgid "Radius"
+msgstr ""
+
+#: inc/backend/view/editor/megamenu_settings_editor.php:178
+#@ wp-mega-menu
+msgid "Box Shadow"
+msgstr ""
+
+#: inc/backend/view/editor/megamenu_settings_editor.php:192
+#@ wp-mega-menu
+msgid "Box Shadow Color"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:33
+#@ wp-mega-menu
+msgid "Menu Bar Settings"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:41
+#@ wp-mega-menu
+msgid "Menu Background"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:57
+#@ wp-mega-menu
+msgid "Select from background color."
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:71
+#@ wp-mega-menu
+msgid "Menu Font color"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:81
+#@ wp-mega-menu
+msgid "Font Family"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:99
+#@ wp-mega-menu
+msgid "Font Weight"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:113
+#@ wp-mega-menu
+msgid "Menu Padding"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:141
+#@ wp-mega-menu
+msgid "Menu Bar Width"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:142
+#@ wp-mega-menu
+msgid "Required for centering. Generally not needed.Set Menu Width in px"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:145
+#@ wp-mega-menu
+msgid "E.g 600px"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:151
+#@ wp-mega-menu
+msgid "Menu Bar Border Radius"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:152
+#@ wp-mega-menu
+msgid "Set a border radius on the menu bar in px"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:156
+#@ wp-mega-menu
+msgid "Top Left"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:161
+#@ wp-mega-menu
+msgid "Top Right"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:166
+#@ wp-mega-menu
+msgid "Bottom Right"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:171
+#@ wp-mega-menu
+msgid "Bottom Left"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:181
+#@ wp-mega-menu
+msgid "Menu Bar Border Color"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:191
+#@ wp-mega-menu
+msgid "Menu Bar Alignment"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:192
+#@ wp-mega-menu
+msgid "Align all menu items to the left (default), centrally or to the right."
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:201
+#@ wp-mega-menu
+msgid "Note: This option will apply to all menu items. To align an individual menu item to the right, edit the menu item itself and set Menu Item Align to Right"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:208
+#@ wp-mega-menu
+msgid "Menu Bar Margin Top"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:209
+#@ wp-mega-menu
+msgid "Set Menu Margin top in px.Useful for tweaking position."
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:213
+#: inc/backend/view/editor/menubar_settings_editor.php:224
+#@ wp-mega-menu
+msgid "E.g., 24px"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:219
+#@ wp-mega-menu
+msgid "Menu Bar Margin Bottom"
+msgstr ""
+
+#: inc/backend/view/editor/menubar_settings_editor.php:220
+#@ wp-mega-menu
+msgid "Set Menu Margin bottom in px.Useful for spacing out elements"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:25
+#@ wp-mega-menu
+msgid "Responsive & Mobile Settings"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:31
+#@ wp-mega-menu
+msgid "Toggle Bar Main Settings"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:41
+#@ wp-mega-menu
+msgid "Toggle Bar Background Color"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:42
+#@ wp-mega-menu
+msgid "Check enable if you want toggle bar with background color."
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:66
+#@ wp-mega-menu
+msgid "Toggle Bar Height"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:68
+#@ wp-mega-menu
+msgid "Set Toggle Bar Height in px."
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:79
+#@ wp-mega-menu
+msgid "Responsive Breakpoint"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:81
+#@ wp-mega-menu
+msgid "Set the width at which the menu turns into a mobile menu. Set to 0px to disable responsive menu.Default is set to 910px."
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:84
+#@ wp-mega-menu
+msgid "E.g., 600px"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:95
+#@ wp-mega-menu
+msgid "Toggle Icons Settings"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:105
+#@ wp-mega-menu
+msgid "Toggle Icons Font"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:106
+#@ wp-mega-menu
+msgid "Set icon color for toggle icon and text color for resposive menu content."
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:110
+#: inc/backend/view/editor/searchbar_settings_editor.php:74
+#@ wp-mega-menu
+msgid "Icon Color"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:115
+#@ wp-mega-menu
+msgid "Text Color"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:126
+#@ wp-mega-menu
+msgid "Toggle Bar Icon Alignment"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:143
+#@ wp-mega-menu
+msgid "Responsive Submenus Settings"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:152
+#@ wp-mega-menu
+msgid "Responsive Submenus Retractor"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:153
+#@ wp-mega-menu
+msgid "Display a \"Close\" button at the top or bottom of the submenu on mobile devices."
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:166
+#@ wp-mega-menu
+msgid "Responsive Submenus Retractor Text"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:167
+#@ wp-mega-menu
+msgid "Display a text after or before sub menu on mobile devices to close."
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:171
+#@ wp-mega-menu
+msgid "E.g., Close"
+msgstr ""
+
+#: inc/backend/view/editor/resposivemobile_settings_editor.php:172
+#@ wp-mega-menu
+msgid "By default, the retractor will read \"Close\", and will be translatable. You can override it here but it will no longer be translatable."
+msgstr ""
+
+#: inc/backend/view/editor/searchbar_settings_editor.php:18
+#@ wp-mega-menu
+msgid "Search Bar Settings"
+msgstr ""
+
+#: inc/backend/view/editor/searchbar_settings_editor.php:26
+#@ wp-mega-menu
+msgid "Font Size"
+msgstr ""
+
+#: inc/backend/view/editor/searchbar_settings_editor.php:44
+#@ wp-mega-menu
+msgid "Text Font Color"
+msgstr ""
+
+#: inc/backend/view/editor/searchbar_settings_editor.php:54
+#@ wp-mega-menu
+msgid "Background Color"
+msgstr ""
+
+#: inc/backend/view/editor/searchbar_settings_editor.php:64
+#@ wp-mega-menu
+msgid "Text Placeholder Color"
+msgstr ""
+
+#: inc/backend/view/editor/top_section_editor.php:3
+#@ wp-mega-menu
+msgid "Extra Top Section Settings"
+msgstr ""
+
+#: inc/backend/view/editor/top_section_editor.php:12
+#@ wp-mega-menu
+msgid "Top Content Fonts"
+msgstr ""
+
+#: inc/backend/view/editor/toplevel_settings_editor.php:32
+#@ wp-mega-menu
+msgid "Top Level Menu Items Settings"
+msgstr ""
+
+#: inc/backend/view/editor/toplevel_settings_editor.php:42
+#@ wp-mega-menu
+msgid "Background [Hover]"
+msgstr ""
+
+#: inc/backend/view/editor/toplevel_settings_editor.php:43
+#@ wp-mega-menu
+msgid "Select from background color on hover."
+msgstr ""
+
+#: inc/backend/view/editor/toplevel_settings_editor.php:67
+#@ wp-mega-menu
+msgid ""
+"Note:Bg Color [Active]:Bg Color of items that are active (hover/click depending on trigger),\n"
+"\t\t\t\t\t\t\t\t\t<br/>Font Color [Current]:Color of items current to the viewed page."
+msgstr ""
+
+#: inc/backend/view/editor/toplevel_settings_editor.php:74
+#@ wp-mega-menu
+msgid "Background Active Color"
+msgstr ""
+
+#: inc/backend/view/editor/toplevel_settings_editor.php:79
+#@ wp-mega-menu
+msgid "Color [Active]"
+msgstr ""
+
+#: inc/backend/view/editor/toplevel_settings_editor.php:137
+#@ wp-mega-menu
+msgid "Menu Left Dividers"
+msgstr ""
+
+#: inc/backend/view/editor/toplevel_settings_editor.php:138
+#@ wp-mega-menu
+msgid ""
+"Enable dividers and set color for it.<br/> For Glow Opacity:\n"
+"\t\t\t\t\t\t\t\t\tA number between 0 and 1 representing the opacity of the inner box shadow on the items left edge. Used to give the buttons a sense of depth."
+msgstr ""
+
+#: inc/backend/view/editor/toplevel_settings_editor.php:153
+#@ wp-mega-menu
+msgid "Item Divider Glow Opacity"
+msgstr ""
+
+#: inc/backend/view/editor/widgets_settings_editor.php:3
+#@ wp-mega-menu
+msgid "Widgets Settings"
+msgstr ""
+
+#: inc/backend/view/editor/widgets_settings_editor.php:11
+#@ wp-mega-menu
+msgid "Heading Title Fonts"
+msgstr ""
+
+#: inc/backend/view/editor/widgets_settings_editor.php:13
+#@ wp-mega-menu
+msgid "Set these font to use Widget headers in the mega menu.For Color[Hover]: set color for header title on hover."
+msgstr ""
+
+#: inc/backend/view/editor/widgets_settings_editor.php:44
+#: inc/backend/view/editor/widgets_settings_editor.php:54
+#@ wp-mega-menu
+msgid "Bold(600)"
+msgstr ""
+
+#: inc/backend/view/editor/widgets_settings_editor.php:103
+#@ wp-mega-menu
+msgid "Content Font"
+msgstr ""
+
+#: inc/backend/view/editor/widgets_settings_editor.php:105
+#@ wp-mega-menu
+msgid "Define any font to use for mega menu widget contents."
+msgstr ""
+
+#: inc/backend/view/editor/widgets_settings_editor.php:142
+#@ wp-mega-menu
+msgid "Widget Heading Margin"
+msgstr ""
+
+#: inc/backend/view/editor/widgets_settings_editor.php:144
+#@ wp-mega-menu
+msgid "Set the margin for the widget headings."
+msgstr ""
+
+#: inc/backend/view/save-theme-settings.php:89
+#@ wp-mega-menu
+msgid "Custom Theme Updated Successfully"
+msgstr ""
+
+#: inc/backend/view/save-theme-settings.php:111
+#@ wp-mega-menu
+msgid "Custom Theme Added Successfully."
+msgstr ""
+
+#: inc/backend/view/theme_lists_settings.php:25
+#@ wp-mega-menu
+msgid "THEME LISTS"
+msgstr ""
+
+#: inc/backend/view/theme_lists_settings.php:27
+#@ wp-mega-menu
+msgid "Create New Theme"
+msgstr ""
+
+#: inc/backend/view/theme_lists_settings.php:38
+#: inc/backend/view/theme_lists_settings.php:48
+#@ wp-mega-menu
+msgid "Menu Location"
+msgstr ""
+
+#: inc/backend/view/theme_lists_settings.php:41
+#: inc/backend/view/theme_lists_settings.php:49
+#@ wp-mega-menu
+msgid "Last Modified"
+msgstr ""
+
+#: inc/backend/view/theme_lists_settings.php:71
+#@ wp-mega-menu
+msgid "Are you sure you want to copy this theme?"
+msgstr ""
+
+#: inc/backend/view/theme_lists_settings.php:71
+#@ wp-mega-menu
+msgid "Copy"
+msgstr ""
+
+#: inc/backend/view/theme_lists_settings.php:72
+#@ wp-mega-menu
+msgid "Are you sure you want to delete this theme?"
+msgstr ""
+
+#: inc/frontend/WPMegamenuWalker_Class.php:463
+#@ wp-mega-menu
+msgid "By"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: wp-mega-menu.php:0
+#@ wp-mega-menu
+msgid "https://accesspressthemes.com/wordpress-plugins/wp-mega-menu/"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: wp-mega-menu.php:0
+#@ wp-mega-menu
+msgid "Horizontal & Vertical layout Mega menu | Responsive & User friendly | Widgetized, Drag & Drop | Built-in and custom layouts"
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: wp-mega-menu.php:0
+#@ wp-mega-menu
+msgid "AccessPress Themes"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: wp-mega-menu.php:0
+#@ wp-mega-menu
+msgid "http://accesspressthemes.com"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: wp-mega-menu.php:0
+#@ wp-mega-menu
+msgid "1.0.1"
+msgstr ""
+
+#: wp-mega-menu.php:367
+#@ wp-mega-menu
+msgid "CLOSE"
+msgstr ""
+
+#: wp-mega-menu.php:1030
+#@ wp-mega-menu
+msgid "Menu"
+msgstr ""
+

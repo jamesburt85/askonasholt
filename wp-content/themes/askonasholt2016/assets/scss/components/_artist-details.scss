@@ -1,0 +1,73 @@
+//Artist/Musician Details
+
+.artists {
+	transition: 0.5s;
+	.artist-thumb {
+	    height: 200px;
+	    @include full-bg;
+	    transition: 0.5s;
+	}
+	.artist-photo-wrapper {
+		position: relative;
+	}
+	.overlay {
+	    position: absolute;
+	    bottom: 0;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        width: 100%;
+        padding: 10px;
+        display: none;
+	}
+	.artist-photo-wrapper:hover {
+		.overlay {
+			display: block;
+		}
+	}
+
+}
+
+// MAGNIFIC POPUP STYLES *****
+
+	.image-source-link {
+		color: #98C3D1;
+	}
+
+	.mfp-with-zoom .mfp-container,
+	.mfp-with-zoom.mfp-bg {
+		opacity: 0;
+		-webkit-backface-visibility: hidden;
+		/* ideally, transition speed should match zoom duration */
+		-webkit-transition: all 0.3s ease-out; 
+		-moz-transition: all 0.3s ease-out; 
+		-o-transition: all 0.3s ease-out; 
+		transition: all 0.3s ease-out;
+	}
+
+	.mfp-with-zoom.mfp-ready .mfp-container {
+			opacity: 1;
+	}
+	.mfp-with-zoom.mfp-ready.mfp-bg {
+			opacity: 0.8;
+	}
+
+	.mfp-with-zoom.mfp-removing .mfp-container, 
+	.mfp-with-zoom.mfp-removing.mfp-bg {
+		opacity: 0;
+	}
+// MAGNIFIC POPUP STYLES END *****
+
+
+
+// ARTIST SINGLE PAGE
+.single-artists {
+	.artist-header-thumb {
+		height: 300px;
+		@include full-bg;
+	}
+	.artist-navigation li {
+		display: inline;
+	}
+}
+
+

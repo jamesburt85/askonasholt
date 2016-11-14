@@ -1,0 +1,98 @@
+// JB Nav Styles
+header#masthead {
+
+	border-bottom: 1px solid gray;
+
+	.top-bar-right {
+	    float: left;
+	}
+	.top-bar .menu a:hover:not(.button) {
+	    background-color: transparent;
+	}
+	.top-bar .menu li:not(:last-child) {
+	    border-right: none;
+	    height: $header-height;
+	}
+	//sub-item menu
+	.top-bar .dropdown.menu .submenu {
+		background: $brand-red;
+		li a {
+			width: 100%;
+			color: white;
+		}
+	}
+	//mobile-nav styles
+	.title-bar {
+		background: transparent;
+		.menu-icon::after {
+			background: #000000;
+			-webkit-box-shadow: 0 7px 0 #000000, 0 14px 0 #000000;
+			box-shadow: 0 7px 0 #000000, 0 14px 0 #000000;
+		}
+	}
+	img.nav-logo {
+	    border-right: 1px solid $brand-red;
+	    padding-right: 2em;
+	}
+	.top-bar .menu li.is-submenu-item {
+		height: 40px;
+	}
+	//social-icons
+	.social-icon {
+	    color: black;
+	    padding: 0 15px;
+	}
+	i.fa-2x {
+	    font-size: 1.3em;
+	    line-height: $header-height;
+	}
+	//search-area
+	.header-search {
+	    float: right;
+	    height: $header-height;
+	    line-height: $header-height;
+	}
+	.header-social-area.show-for-medium {
+	    float: left;
+	}
+}
+
+nav#site-navigation {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+// *****************
+//MEGA MENU STYLES *
+// *****************
+
+#mega-menu-wrap-top-bar-r {
+    background: transparent;
+	ul#mega-menu-top-bar-r {
+	    height: 100px !important;
+	    background: transparent !important;
+
+	    li.mega-menu-item {
+	    	height: 100px !important;
+	    	background: transparent !important;
+	    	a.mega-menu-link {
+	    		height: 100px !important;
+	    		line-height: 100px !important;
+	    		color: #000000 !important;
+	    	}
+	    }
+	}
+}
+
+
+// *****************
+//SEARCH AREA STYLES *
+// *****************
+.input-group {
+    display: table;
+    width: 30px;
+    margin-bottom: 1rem;
+}
+
+
+

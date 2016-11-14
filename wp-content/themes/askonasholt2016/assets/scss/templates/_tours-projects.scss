@@ -1,0 +1,27 @@
+// Tours & Project Page Styles
+
+body.post-type-archive-tours-projects {
+  .tour-hero {
+      height: 70vh;
+      @include full-bg;
+      color: white;
+      position: relative;
+  }
+  .tour-project-archive-hero {
+      height: 50vh;
+      text-align: center;
+  }
+}
+
+.single-tours-projects {
+  .tour-hero {
+      position: relative;
+      height: 300px;
+  }
+  .hero-text-area {
+      position: absolute;
+      bottom: 3em;
+      margin-left: 1em;
+      color: white;
+  }
+}

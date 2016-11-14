@@ -1,0 +1,48 @@
+//home-hero styles
+body.page {
+	div.slick-slider {
+		.center.slick-initialized.slick-slider {
+		    height: 70vh;
+		    @include full-bg;
+		}
+		.center-image {
+			height: 70vh;
+			margin: 2em 1em;
+			@include full-bg;
+		}
+		.slick-dots {
+		    bottom: 18px;
+		    li button:before {
+		    	font-size: 14px !important;
+		    }
+		}
+
+		.slick-dotted {
+		    border-bottom: 1px solid gray;
+		    .slick-slider {
+		        padding-bottom: 30px !important;
+		    }
+		}
+		button.slick-next.slick-arrow {
+			right: 76px;
+		}
+		button.slick-prev.slick-arrow {
+			left: 76px;
+			z-index: 1;
+		}
+
+	}
+	
+	.slick-dotted.slick-slider {
+	    padding-bottom: 30px;
+	    margin-bottom: 0 !important;
+	    border-bottom: 1px solid gray;
+	}
+}
+
+
+.hero-text-area {
+    position: absolute;
+    bottom: 3em;
+    margin-left: 1em;
+}	

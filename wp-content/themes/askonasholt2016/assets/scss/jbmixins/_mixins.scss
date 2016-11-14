@@ -1,0 +1,117 @@
+
+// GOLD!
+
+// background: rgba(115,60,8,1);
+// background: -moz-linear-gradient(left, rgba(115,60,8,1) 0%, rgba(115,60,8,1) 12%, rgba(194,137,68,1) 38%, rgba(172,111,14,1) 63%, rgba(194,151,71,1) 78%, rgba(146,108,2,1) 100%);
+// background: -webkit-gradient(left top, right top, color-stop(0%, rgba(115,60,8,1)), color-stop(12%, rgba(115,60,8,1)), color-stop(38%, rgba(194,137,68,1)), color-stop(63%, rgba(172,111,14,1)), color-stop(78%, rgba(194,151,71,1)), color-stop(100%, rgba(146,108,2,1)));
+// background: -webkit-linear-gradient(left, rgba(115,60,8,1) 0%, rgba(115,60,8,1) 12%, rgba(194,137,68,1) 38%, rgba(172,111,14,1) 63%, rgba(194,151,71,1) 78%, rgba(146,108,2,1) 100%);
+// background: -o-linear-gradient(left, rgba(115,60,8,1) 0%, rgba(115,60,8,1) 12%, rgba(194,137,68,1) 38%, rgba(172,111,14,1) 63%, rgba(194,151,71,1) 78%, rgba(146,108,2,1) 100%);
+// background: -ms-linear-gradient(left, rgba(115,60,8,1) 0%, rgba(115,60,8,1) 12%, rgba(194,137,68,1) 38%, rgba(172,111,14,1) 63%, rgba(194,151,71,1) 78%, rgba(146,108,2,1) 100%);
+// background: linear-gradient(to right, rgba(115,60,8,1) 0%, rgba(115,60,8,1) 12%, rgba(194,137,68,1) 38%, rgba(172,111,14,1) 63%, rgba(194,151,71,1) 78%, rgba(146,108,2,1) 100%);
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#733c08', endColorstr='#926c02', GradientType=1 );
+
+
+
+// My Mixins
+// =========
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+
+
+@mixin rounded($radius: 0.5em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+
+
+@mixin transition-sick {
+   -webkit-transition: all 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -moz-transition: all 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -ms-transition: all 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -o-transition: all 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   transition: all 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@mixin transition-all-0-25 {
+   -webkit-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -moz-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -ms-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -o-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@mixin transition-all-0-40 {
+   -webkit-transition: all 0.40s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -moz-transition: all 0.40s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -ms-transition: all 0.40s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -o-transition: all 0.40s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   transition: all 0.40s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@mixin transition-all-0-1 {
+   -webkit-transition: all 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -moz-transition: all 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -ms-transition: all 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   -o-transition: all 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+   transition: all 0.1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+@mixin full-bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-bottom: 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+@mixin center($axis: "both"){
+    position:absolute;
+    @if $axis == "y"{
+        top:50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    @if $axis == "x"{
+        left:50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    @if $axis == "both"{
+        top:50%;
+        left:50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+}

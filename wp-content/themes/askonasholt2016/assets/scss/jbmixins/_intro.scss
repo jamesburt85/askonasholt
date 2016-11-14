@@ -1,0 +1,48 @@
+// css to setup intro...
+
+
+// #homepage_slider_main,
+// #homepage_slider_small,
+// .icon-r.hero-r,
+// .icon-w.hero-w,
+// .hero-copy,
+// #site-navigation {
+//   opacity: 0;
+// }
+
+//  
+
+// .intro-element {
+// 	opacity: 0;
+// }
+
+.intro-border {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100%;
+	border: 20px solid #fff;
+	// border-width: 0;
+	// z-index: 10;
+}
+
+.intro-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: $primary-color;
+	// background-color: $white;
+}
+
+.intro-loader {
+	@include center(x);
+	bottom: 30%;
+	opacity: 0;
+	transition: opacity 0.3s;
+	&.is-loading {
+		opacity: 1;
+	}
+}
