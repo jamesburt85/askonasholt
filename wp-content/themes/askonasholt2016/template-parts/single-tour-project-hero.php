@@ -10,9 +10,9 @@
 
 <div class="tour-hero" style="background-image: url('<?php echo $image; ?>')">
 
-	<div class="hero-text-area">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<span><?php echo $blurb; ?></span>
+	<div class="hero-text-area hero-text">
+		<h1 class="entry-title hero-header"><?php the_title(); ?></h1>
+		<span class="hero-blurb"><?php echo $blurb; ?></span>
 		<span><?php echo $start_date; ?></span> - 
 		<span><?php echo $end_date; ?></span>
 	</div>

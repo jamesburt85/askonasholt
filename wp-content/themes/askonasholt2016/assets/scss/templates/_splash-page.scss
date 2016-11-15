@@ -12,13 +12,15 @@ body.home {
   header#masthead, div#footer-container {
     display: none;
   }
-  .promo-text-container {
-    @include center;
-    max-width: 70%;
-  }
+
   .row.continue-link {
       @include center (x);
       bottom: 0;
   }
 
+}
+
+.hero-text-container {
+  @include center;
+  max-width: 50%;
 }

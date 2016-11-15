@@ -38,8 +38,8 @@ if( have_rows('home_hero') ):
 			<div class="center-image" style="background-image: url('<?php echo $image['url']; ?>')">
 				<div class="hero-text-area">
 				
-					<p class="promo-sub-header"><?php echo $category; ?></p><br/>
-					<h1 class="promo-header"><?php echo $title; ?></h1><br/>
+					<span class="hero-sub-header"><?php echo $category; ?></span><br/>
+					<span class="hero-header"><?php echo $title; ?></span><br/>
 
 					<?php
 				 	// loop through the rows of data
@@ -50,7 +50,7 @@ if( have_rows('home_hero') ):
 
 					?>
 
-					<button class="promo-button">
+					<button class="hero-button">
 						<a href="<?php echo $button_destination; ?>">
 							<?php echo $button_text; ?>
 						</a>
