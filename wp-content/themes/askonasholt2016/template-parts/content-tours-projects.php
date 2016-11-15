@@ -10,16 +10,12 @@
 
 ?>
 
+<?php get_template_part( 'template-parts/tour-project-header' ); ?>
+
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
 	<header>
 		<?php //foundationpress_entry_meta(); ?>
 	</header>
-
-	<div class="tour-project-archive-hero" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg ?>')">
-		TOURS AND PROjects <br />
-		Optional Description <br />
-		Drop Down
-	</div>
 
 	<div class="entry-content">
 		<?php the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>

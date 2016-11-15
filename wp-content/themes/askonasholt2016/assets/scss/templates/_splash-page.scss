@@ -5,7 +5,8 @@ body.home {
 
   .splash-page-hero {
     height: 100vh;
-    width: 100%
+    width: 100%;
+    position: relative;
   }
 
   header#masthead, div#footer-container {
@@ -14,6 +15,10 @@ body.home {
   .promo-text-container {
     @include center;
     max-width: 70%;
+  }
+  .row.continue-link {
+      @include center (x);
+      bottom: 0;
   }
 
 }

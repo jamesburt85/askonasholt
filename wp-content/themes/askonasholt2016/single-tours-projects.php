@@ -79,6 +79,11 @@ get_header(); ?>
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>" frameborder="0" allowfullscreen></iframe>
 			</div>
 
+
+			<!-- using ACF Flexible content instead of the_content  -->
+			<?php $acf_fields = get_fields(); ?>
+			<?php include(locate_template('template-parts/acf.php')); ?>
+
 		</div>
 
 		<footer>

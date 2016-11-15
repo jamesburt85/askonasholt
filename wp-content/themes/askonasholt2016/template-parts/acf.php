@@ -11,8 +11,6 @@ $section_i=0;
 // parallax with copy variable, used to target ID of p-lax
 // $pwc = 0;
 
-
-
 # If there are sections
 if ($acf_fields['flexible_content']) {
 
@@ -94,6 +92,20 @@ if ($acf_fields['flexible_content']) {
 				<div class="row">
 					<div class="small-12 columns">
 						<h1><?php echo $section['text_block']; ?></h1>
+					</div>
+				</div>
+
+			<?php
+			break;
+
+
+			#Image_Gallery
+			case 'image_gallery': ?>
+				
+				<div class="row">
+					<div class="small-12 columns">
+						<h4>Image gallery</h4>
+						<img src="<?php echo $section['image']; ?>">
 					</div>
 				</div>
 

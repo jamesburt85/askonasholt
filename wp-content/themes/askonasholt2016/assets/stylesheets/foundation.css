@@ -10087,7 +10087,8 @@ body.home {
   color: #ffffff; }
   body.home .splash-page-hero {
     height: 100vh;
-    width: 100%; }
+    width: 100%;
+    position: relative; }
   body.home header#masthead, body.home div#footer-container {
     display: none; }
   body.home .promo-text-container {
@@ -10098,6 +10099,13 @@ body.home {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     max-width: 70%; }
+  body.home .row.continue-link {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 0; }
 
 body.post-type-archive-tours-projects .tour-hero {
   height: 70vh;
