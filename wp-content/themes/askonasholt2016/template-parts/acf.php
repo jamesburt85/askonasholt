@@ -112,6 +112,19 @@ if ($acf_fields['flexible_content']) {
 			<?php
 			break;
 
+			#Text banner
+			case 'text_banner': ?>
+				<div class="text-banner-wrapper" style="background-image: url('<?php echo $section['background_image']; ?>')">
+					<div class="row text-banner">
+						
+						<p><?php echo $section['banner_copy']; ?></p>
+
+					</div>
+				</div>
+
+			<?php
+			break;
+
 
 
 

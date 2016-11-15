@@ -13,9 +13,15 @@ body.home {
     display: none;
   }
 
-  .row.continue-link {
+  .continue-link {
       @include center (x);
       bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: $sitepadding;
+      a {
+        color: #FFFFFF;
+      }
   }
 
 }

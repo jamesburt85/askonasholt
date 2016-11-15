@@ -2590,10 +2590,6 @@ button {
     .column, .columns {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
-    float: right; }
-  .column.end:last-child:last-child, .end.columns:last-child:last-child {
-    float: left; }
 
 .column.row.row, .row.row.columns {
   float: none; }
@@ -3592,7 +3588,7 @@ kbd {
   h3 {
     page-break-after: avoid; } }
 
-.button {
+.button, .artist-categories li {
   display: inline-block;
   text-align: center;
   line-height: 1;
@@ -3608,127 +3604,127 @@ kbd {
   font-size: 0.9rem;
   background-color: #2199e8;
   color: #fff; }
-  [data-whatinput='mouse'] .button {
+  [data-whatinput='mouse'] .button, [data-whatinput='mouse'] .artist-categories li, .artist-categories [data-whatinput='mouse'] li {
     outline: 0; }
-  .button:hover, .button:focus {
+  .button:hover, .artist-categories li:hover, .button:focus, .artist-categories li:focus {
     background-color: #1583cc;
     color: #fff; }
-  .button.tiny {
+  .button.tiny, .artist-categories li.tiny {
     font-size: 0.6rem; }
-  .button.small {
+  .button.small, .artist-categories li.small {
     font-size: 0.75rem; }
-  .button.large {
+  .button.large, .artist-categories li.large {
     font-size: 1.25rem; }
-  .button.expanded {
+  .button.expanded, .artist-categories li.expanded {
     display: block;
     width: 100%;
     margin-left: 0;
     margin-right: 0; }
-  .button.primary {
+  .button.primary, .artist-categories li.primary {
     background-color: #2199e8;
     color: #fff; }
-    .button.primary:hover, .button.primary:focus {
+    .button.primary:hover, .artist-categories li.primary:hover, .button.primary:focus, .artist-categories li.primary:focus {
       background-color: #147cc0;
       color: #fff; }
-  .button.secondary {
+  .button.secondary, .artist-categories li.secondary {
     background-color: #777;
     color: #fff; }
-    .button.secondary:hover, .button.secondary:focus {
+    .button.secondary:hover, .artist-categories li.secondary:hover, .button.secondary:focus, .artist-categories li.secondary:focus {
       background-color: #5f5f5f;
       color: #fff; }
-  .button.success {
+  .button.success, .artist-categories li.success {
     background-color: #3adb76;
     color: #fff; }
-    .button.success:hover, .button.success:focus {
+    .button.success:hover, .artist-categories li.success:hover, .button.success:focus, .artist-categories li.success:focus {
       background-color: #22bb5b;
       color: #fff; }
-  .button.warning {
+  .button.warning, .artist-categories li.warning {
     background-color: #ffae00;
     color: #fff; }
-    .button.warning:hover, .button.warning:focus {
+    .button.warning:hover, .artist-categories li.warning:hover, .button.warning:focus, .artist-categories li.warning:focus {
       background-color: #cc8b00;
       color: #fff; }
-  .button.alert {
+  .button.alert, .artist-categories li.alert {
     background-color: #ec5840;
     color: #fff; }
-    .button.alert:hover, .button.alert:focus {
+    .button.alert:hover, .artist-categories li.alert:hover, .button.alert:focus, .artist-categories li.alert:focus {
       background-color: #da3116;
       color: #fff; }
-  .button.hollow {
+  .button.hollow, .artist-categories li.hollow {
     border: 1px solid #2199e8;
     color: #2199e8; }
-    .button.hollow, .button.hollow:hover, .button.hollow:focus {
+    .button.hollow, .artist-categories li.hollow, .button.hollow:hover, .artist-categories li.hollow:hover, .button.hollow:focus, .artist-categories li.hollow:focus {
       background-color: transparent; }
-    .button.hollow:hover, .button.hollow:focus {
+    .button.hollow:hover, .artist-categories li.hollow:hover, .button.hollow:focus, .artist-categories li.hollow:focus {
       border-color: #0c4d78;
       color: #0c4d78; }
-    .button.hollow.primary {
+    .button.hollow.primary, .artist-categories li.hollow.primary {
       border: 1px solid #2199e8;
       color: #2199e8; }
-      .button.hollow.primary:hover, .button.hollow.primary:focus {
+      .button.hollow.primary:hover, .artist-categories li.hollow.primary:hover, .button.hollow.primary:focus, .artist-categories li.hollow.primary:focus {
         border-color: #0c4d78;
         color: #0c4d78; }
-    .button.hollow.secondary {
+    .button.hollow.secondary, .artist-categories li.hollow.secondary {
       border: 1px solid #777;
       color: #777; }
-      .button.hollow.secondary:hover, .button.hollow.secondary:focus {
+      .button.hollow.secondary:hover, .artist-categories li.hollow.secondary:hover, .button.hollow.secondary:focus, .artist-categories li.hollow.secondary:focus {
         border-color: #3c3c3c;
         color: #3c3c3c; }
-    .button.hollow.success {
+    .button.hollow.success, .artist-categories li.hollow.success {
       border: 1px solid #3adb76;
       color: #3adb76; }
-      .button.hollow.success:hover, .button.hollow.success:focus {
+      .button.hollow.success:hover, .artist-categories li.hollow.success:hover, .button.hollow.success:focus, .artist-categories li.hollow.success:focus {
         border-color: #157539;
         color: #157539; }
-    .button.hollow.warning {
+    .button.hollow.warning, .artist-categories li.hollow.warning {
       border: 1px solid #ffae00;
       color: #ffae00; }
-      .button.hollow.warning:hover, .button.hollow.warning:focus {
+      .button.hollow.warning:hover, .artist-categories li.hollow.warning:hover, .button.hollow.warning:focus, .artist-categories li.hollow.warning:focus {
         border-color: #805700;
         color: #805700; }
-    .button.hollow.alert {
+    .button.hollow.alert, .artist-categories li.hollow.alert {
       border: 1px solid #ec5840;
       color: #ec5840; }
-      .button.hollow.alert:hover, .button.hollow.alert:focus {
+      .button.hollow.alert:hover, .artist-categories li.hollow.alert:hover, .button.hollow.alert:focus, .artist-categories li.hollow.alert:focus {
         border-color: #881f0e;
         color: #881f0e; }
-  .button.disabled, .button[disabled] {
+  .button.disabled, .artist-categories li.disabled, .button[disabled], .artist-categories li[disabled] {
     opacity: 0.25;
     cursor: not-allowed; }
-    .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
+    .button.disabled:hover, .artist-categories li.disabled:hover, .button.disabled:focus, .artist-categories li.disabled:focus, .button[disabled]:hover, .artist-categories li[disabled]:hover, .button[disabled]:focus, .artist-categories li[disabled]:focus {
       background-color: #2199e8;
       color: #fff; }
-    .button.disabled.primary, .button[disabled].primary {
+    .button.disabled.primary, .artist-categories li.disabled.primary, .button[disabled].primary, .artist-categories li[disabled].primary {
       opacity: 0.25;
       cursor: not-allowed; }
-      .button.disabled.primary:hover, .button.disabled.primary:focus, .button[disabled].primary:hover, .button[disabled].primary:focus {
+      .button.disabled.primary:hover, .artist-categories li.disabled.primary:hover, .button.disabled.primary:focus, .artist-categories li.disabled.primary:focus, .button[disabled].primary:hover, .artist-categories li[disabled].primary:hover, .button[disabled].primary:focus, .artist-categories li[disabled].primary:focus {
         background-color: #2199e8;
         color: #fff; }
-    .button.disabled.secondary, .button[disabled].secondary {
+    .button.disabled.secondary, .artist-categories li.disabled.secondary, .button[disabled].secondary, .artist-categories li[disabled].secondary {
       opacity: 0.25;
       cursor: not-allowed; }
-      .button.disabled.secondary:hover, .button.disabled.secondary:focus, .button[disabled].secondary:hover, .button[disabled].secondary:focus {
+      .button.disabled.secondary:hover, .artist-categories li.disabled.secondary:hover, .button.disabled.secondary:focus, .artist-categories li.disabled.secondary:focus, .button[disabled].secondary:hover, .artist-categories li[disabled].secondary:hover, .button[disabled].secondary:focus, .artist-categories li[disabled].secondary:focus {
         background-color: #777;
         color: #fff; }
-    .button.disabled.success, .button[disabled].success {
+    .button.disabled.success, .artist-categories li.disabled.success, .button[disabled].success, .artist-categories li[disabled].success {
       opacity: 0.25;
       cursor: not-allowed; }
-      .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
+      .button.disabled.success:hover, .artist-categories li.disabled.success:hover, .button.disabled.success:focus, .artist-categories li.disabled.success:focus, .button[disabled].success:hover, .artist-categories li[disabled].success:hover, .button[disabled].success:focus, .artist-categories li[disabled].success:focus {
         background-color: #3adb76;
         color: #fff; }
-    .button.disabled.warning, .button[disabled].warning {
+    .button.disabled.warning, .artist-categories li.disabled.warning, .button[disabled].warning, .artist-categories li[disabled].warning {
       opacity: 0.25;
       cursor: not-allowed; }
-      .button.disabled.warning:hover, .button.disabled.warning:focus, .button[disabled].warning:hover, .button[disabled].warning:focus {
+      .button.disabled.warning:hover, .artist-categories li.disabled.warning:hover, .button.disabled.warning:focus, .artist-categories li.disabled.warning:focus, .button[disabled].warning:hover, .artist-categories li[disabled].warning:hover, .button[disabled].warning:focus, .artist-categories li[disabled].warning:focus {
         background-color: #ffae00;
         color: #fff; }
-    .button.disabled.alert, .button[disabled].alert {
+    .button.disabled.alert, .artist-categories li.disabled.alert, .button[disabled].alert, .artist-categories li[disabled].alert {
       opacity: 0.25;
       cursor: not-allowed; }
-      .button.disabled.alert:hover, .button.disabled.alert:focus, .button[disabled].alert:hover, .button[disabled].alert:focus {
+      .button.disabled.alert:hover, .artist-categories li.disabled.alert:hover, .button.disabled.alert:focus, .artist-categories li.disabled.alert:focus, .button[disabled].alert:hover, .artist-categories li[disabled].alert:hover, .button[disabled].alert:focus, .artist-categories li[disabled].alert:focus {
         background-color: #ec5840;
         color: #fff; }
-  .button.dropdown::after {
+  .button.dropdown::after, .artist-categories li.dropdown::after {
     content: '';
     display: block;
     width: 0;
@@ -3742,7 +3738,7 @@ kbd {
     float: right;
     margin-left: 1em;
     display: inline-block; }
-  .button.arrow-only::after {
+  .button.arrow-only::after, .artist-categories li.arrow-only::after {
     margin-left: 0;
     float: none;
     top: -0.1em; }
@@ -4158,99 +4154,99 @@ input[type="range"] {
     display: table; }
   .button-group::after {
     clear: both; }
-  .button-group .button {
+  .button-group .button, .button-group .artist-categories li, .artist-categories .button-group li {
     margin: 0;
     margin-right: 1px;
     margin-bottom: 1px;
     font-size: 0.9rem; }
-    .button-group .button:last-child {
+    .button-group .button:last-child, .button-group .artist-categories li:last-child, .artist-categories .button-group li:last-child {
       margin-right: 0; }
-  .button-group.tiny .button {
+  .button-group.tiny .button, .button-group.tiny .artist-categories li, .artist-categories .button-group.tiny li {
     font-size: 0.6rem; }
-  .button-group.small .button {
+  .button-group.small .button, .button-group.small .artist-categories li, .artist-categories .button-group.small li {
     font-size: 0.75rem; }
-  .button-group.large .button {
+  .button-group.large .button, .button-group.large .artist-categories li, .artist-categories .button-group.large li {
     font-size: 1.25rem; }
   .button-group.expanded {
     margin-right: -1px; }
     .button-group.expanded::before, .button-group.expanded::after {
       display: none; }
-    .button-group.expanded .button:first-child:nth-last-child(2), .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button {
+    .button-group.expanded .button:first-child:nth-last-child(2), .button-group.expanded .artist-categories li:first-child:nth-last-child(2), .artist-categories .button-group.expanded li:first-child:nth-last-child(2), .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button, .button-group.expanded .artist-categories li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button, .artist-categories .button-group.expanded li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button, .button-group.expanded .artist-categories .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li, .artist-categories .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li, .button-group.expanded .artist-categories li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li, .artist-categories .button-group.expanded li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li {
       display: inline-block;
       width: calc(50% - 1px);
       margin-right: 1px; }
-      .button-group.expanded .button:first-child:nth-last-child(2):last-child, .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button:last-child {
+      .button-group.expanded .button:first-child:nth-last-child(2):last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(2):last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(2):last-child, .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button:last-child, .button-group.expanded .artist-categories .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li:last-child, .artist-categories .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li:last-child {
         margin-right: -6px; }
-    .button-group.expanded .button:first-child:nth-last-child(3), .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button {
+    .button-group.expanded .button:first-child:nth-last-child(3), .button-group.expanded .artist-categories li:first-child:nth-last-child(3), .artist-categories .button-group.expanded li:first-child:nth-last-child(3), .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button, .button-group.expanded .artist-categories li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button, .artist-categories .button-group.expanded li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button, .button-group.expanded .artist-categories .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li, .artist-categories .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li, .button-group.expanded .artist-categories li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li, .artist-categories .button-group.expanded li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li {
       display: inline-block;
       width: calc(33.33333% - 1px);
       margin-right: 1px; }
-      .button-group.expanded .button:first-child:nth-last-child(3):last-child, .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button:last-child {
+      .button-group.expanded .button:first-child:nth-last-child(3):last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(3):last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(3):last-child, .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button:last-child, .button-group.expanded .artist-categories .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li:last-child, .artist-categories .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li:last-child {
         margin-right: -6px; }
-    .button-group.expanded .button:first-child:nth-last-child(4), .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button {
+    .button-group.expanded .button:first-child:nth-last-child(4), .button-group.expanded .artist-categories li:first-child:nth-last-child(4), .artist-categories .button-group.expanded li:first-child:nth-last-child(4), .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button, .button-group.expanded .artist-categories li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button, .artist-categories .button-group.expanded li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button, .button-group.expanded .artist-categories .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li, .artist-categories .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li, .button-group.expanded .artist-categories li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li, .artist-categories .button-group.expanded li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li {
       display: inline-block;
       width: calc(25% - 1px);
       margin-right: 1px; }
-      .button-group.expanded .button:first-child:nth-last-child(4):last-child, .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button:last-child {
+      .button-group.expanded .button:first-child:nth-last-child(4):last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(4):last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(4):last-child, .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button:last-child, .button-group.expanded .artist-categories .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li:last-child, .artist-categories .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li:last-child {
         margin-right: -6px; }
-    .button-group.expanded .button:first-child:nth-last-child(5), .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button {
+    .button-group.expanded .button:first-child:nth-last-child(5), .button-group.expanded .artist-categories li:first-child:nth-last-child(5), .artist-categories .button-group.expanded li:first-child:nth-last-child(5), .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button, .button-group.expanded .artist-categories li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button, .artist-categories .button-group.expanded li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button, .button-group.expanded .artist-categories .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li, .artist-categories .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li, .button-group.expanded .artist-categories li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li, .artist-categories .button-group.expanded li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li {
       display: inline-block;
       width: calc(20% - 1px);
       margin-right: 1px; }
-      .button-group.expanded .button:first-child:nth-last-child(5):last-child, .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button:last-child {
+      .button-group.expanded .button:first-child:nth-last-child(5):last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(5):last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(5):last-child, .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button:last-child, .button-group.expanded .artist-categories .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li:last-child, .artist-categories .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li:last-child {
         margin-right: -6px; }
-    .button-group.expanded .button:first-child:nth-last-child(6), .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button {
+    .button-group.expanded .button:first-child:nth-last-child(6), .button-group.expanded .artist-categories li:first-child:nth-last-child(6), .artist-categories .button-group.expanded li:first-child:nth-last-child(6), .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button, .button-group.expanded .artist-categories li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button, .artist-categories .button-group.expanded li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button, .button-group.expanded .artist-categories .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li, .artist-categories .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li, .button-group.expanded .artist-categories li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li, .artist-categories .button-group.expanded li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li {
       display: inline-block;
       width: calc(16.66667% - 1px);
       margin-right: 1px; }
-      .button-group.expanded .button:first-child:nth-last-child(6):last-child, .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button:last-child {
+      .button-group.expanded .button:first-child:nth-last-child(6):last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(6):last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(6):last-child, .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button:last-child, .button-group.expanded .artist-categories .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li:last-child, .artist-categories .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li:last-child {
         margin-right: -6px; }
-  .button-group.primary .button {
+  .button-group.primary .button, .button-group.primary .artist-categories li, .artist-categories .button-group.primary li {
     background-color: #2199e8;
     color: #fff; }
-    .button-group.primary .button:hover, .button-group.primary .button:focus {
+    .button-group.primary .button:hover, .button-group.primary .artist-categories li:hover, .artist-categories .button-group.primary li:hover, .button-group.primary .button:focus, .button-group.primary .artist-categories li:focus, .artist-categories .button-group.primary li:focus {
       background-color: #147cc0;
       color: #fff; }
-  .button-group.secondary .button {
+  .button-group.secondary .button, .button-group.secondary .artist-categories li, .artist-categories .button-group.secondary li {
     background-color: #777;
     color: #fff; }
-    .button-group.secondary .button:hover, .button-group.secondary .button:focus {
+    .button-group.secondary .button:hover, .button-group.secondary .artist-categories li:hover, .artist-categories .button-group.secondary li:hover, .button-group.secondary .button:focus, .button-group.secondary .artist-categories li:focus, .artist-categories .button-group.secondary li:focus {
       background-color: #5f5f5f;
       color: #fff; }
-  .button-group.success .button {
+  .button-group.success .button, .button-group.success .artist-categories li, .artist-categories .button-group.success li {
     background-color: #3adb76;
     color: #fff; }
-    .button-group.success .button:hover, .button-group.success .button:focus {
+    .button-group.success .button:hover, .button-group.success .artist-categories li:hover, .artist-categories .button-group.success li:hover, .button-group.success .button:focus, .button-group.success .artist-categories li:focus, .artist-categories .button-group.success li:focus {
       background-color: #22bb5b;
       color: #fff; }
-  .button-group.warning .button {
+  .button-group.warning .button, .button-group.warning .artist-categories li, .artist-categories .button-group.warning li {
     background-color: #ffae00;
     color: #fff; }
-    .button-group.warning .button:hover, .button-group.warning .button:focus {
+    .button-group.warning .button:hover, .button-group.warning .artist-categories li:hover, .artist-categories .button-group.warning li:hover, .button-group.warning .button:focus, .button-group.warning .artist-categories li:focus, .artist-categories .button-group.warning li:focus {
       background-color: #cc8b00;
       color: #fff; }
-  .button-group.alert .button {
+  .button-group.alert .button, .button-group.alert .artist-categories li, .artist-categories .button-group.alert li {
     background-color: #ec5840;
     color: #fff; }
-    .button-group.alert .button:hover, .button-group.alert .button:focus {
+    .button-group.alert .button:hover, .button-group.alert .artist-categories li:hover, .artist-categories .button-group.alert li:hover, .button-group.alert .button:focus, .button-group.alert .artist-categories li:focus, .artist-categories .button-group.alert li:focus {
       background-color: #da3116;
       color: #fff; }
-  .button-group.stacked .button, .button-group.stacked-for-small .button, .button-group.stacked-for-medium .button {
+  .button-group.stacked .button, .button-group.stacked .artist-categories li, .artist-categories .button-group.stacked li, .button-group.stacked-for-small .button, .button-group.stacked-for-small .artist-categories li, .artist-categories .button-group.stacked-for-small li, .button-group.stacked-for-medium .button, .button-group.stacked-for-medium .artist-categories li, .artist-categories .button-group.stacked-for-medium li {
     width: 100%; }
-    .button-group.stacked .button:last-child, .button-group.stacked-for-small .button:last-child, .button-group.stacked-for-medium .button:last-child {
+    .button-group.stacked .button:last-child, .button-group.stacked .artist-categories li:last-child, .artist-categories .button-group.stacked li:last-child, .button-group.stacked-for-small .button:last-child, .button-group.stacked-for-small .artist-categories li:last-child, .artist-categories .button-group.stacked-for-small li:last-child, .button-group.stacked-for-medium .button:last-child, .button-group.stacked-for-medium .artist-categories li:last-child, .artist-categories .button-group.stacked-for-medium li:last-child {
       margin-bottom: 0; }
   @media screen and (min-width: 40em) {
-    .button-group.stacked-for-small .button {
+    .button-group.stacked-for-small .button, .button-group.stacked-for-small .artist-categories li, .artist-categories .button-group.stacked-for-small li {
       width: auto;
       margin-bottom: 0; } }
   @media screen and (min-width: 64em) {
-    .button-group.stacked-for-medium .button {
+    .button-group.stacked-for-medium .button, .button-group.stacked-for-medium .artist-categories li, .artist-categories .button-group.stacked-for-medium li {
       width: auto;
       margin-bottom: 0; } }
   @media screen and (max-width: 39.9375em) {
     .button-group.stacked-for-small.expanded {
       display: block; }
-      .button-group.stacked-for-small.expanded .button {
+      .button-group.stacked-for-small.expanded .button, .button-group.stacked-for-small.expanded .artist-categories li, .artist-categories .button-group.stacked-for-small.expanded li {
         display: block;
         margin-right: 0; } }
 
@@ -6658,6 +6654,12 @@ table.hover tbody tr:nth-of-type(even):hover {
   My custom styles:
   Add your scss files below to structure your project styles
 */
+.artists {
+  min-height: 350px; }
+
+.artist-filtering-block {
+  min-height: 300px; }
+
 body {
   outline: 1px solid #2980B9 !important; }
 
@@ -9616,7 +9618,7 @@ pre {
   transition: 0.5s;
   font-size: 1.1rem;
   line-height: 1; }
-  .top-bar .menu a:hover:not(.button) {
+  .top-bar .menu a:hover:not(.button):not(.artist-categories li) {
     background-color: #2a2a2a; }
 
 .top-bar .menu a:hover {
@@ -9726,8 +9728,15 @@ pre {
     #footer-container #footer i.fa-2x {
       font-size: 1.3em; }
     #footer-container #footer .column:last-child:not(:first-child), #footer-container #footer .columns:last-child:not(:first-child), #footer-container #footer .columns:last-child:not(:first-child) {
-      text-align: right;
+      text-align: right; }
+    #footer-container #footer div.copyright {
       font-weight: 200; }
+  #footer-container img.attachment-full.size-full {
+    max-width: 150px; }
+  #footer-container .text-widget > li {
+    display: block;
+    padding: 0.7rem 1rem;
+    line-height: 1; }
 
 .sidebar {
   width: 100%;
@@ -9738,8 +9747,6 @@ pre {
     .sidebar {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  .sidebar:last-child:not(:first-child) {
-    float: right; }
   @media screen and (min-width: 40em) {
     .sidebar {
       width: 33.33333%;
@@ -9751,9 +9758,6 @@ pre {
     .sidebar {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-  @media screen and (min-width: 40em) {
-      .sidebar:last-child:not(:first-child) {
-        float: right; } }
 
 body#tinymce {
   height: auto;
@@ -9764,7 +9768,7 @@ header#masthead {
   border-bottom: 1px solid gray; }
   header#masthead .top-bar-right {
     float: left; }
-  header#masthead .top-bar .menu a:hover:not(.button) {
+  header#masthead .top-bar .menu a:hover:not(.button):not(.artist-categories li) {
     background-color: transparent; }
   header#masthead .top-bar .menu li:not(:last-child) {
     border-right: none;
@@ -9819,6 +9823,20 @@ nav#site-navigation {
   display: table;
   width: 30px;
   margin-bottom: 1rem; }
+
+.artist-filtering-block {
+  background-color: #F2F1ED;
+  position: relative; }
+
+.artist-categories {
+  position: absolute;
+  bottom: 0;
+  list-style: none;
+  margin: 0; }
+  .artist-categories li {
+    color: #fefefe; }
+    .artist-categories li a {
+      color: #fefefe; }
 
 .sites-button {
   background: #FF6908;
@@ -9896,7 +9914,7 @@ body.page .slick-dotted.slick-slider {
 .artists {
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  margin-bottom: 30px; }
+  margin-bottom: 50px; }
   .artists .artist-thumb {
     height: 200px;
     background-position: center center;
@@ -9908,7 +9926,7 @@ body.page .slick-dotted.slick-slider {
     transition: 0.5s; }
   .artists .artist-photo-wrapper {
     position: relative;
-    margin-bottom: 15px; }
+    margin-bottom: 25px; }
   .artists .overlay {
     position: absolute;
     bottom: 0;
@@ -9978,6 +9996,15 @@ button.hero-button {
 .hero-text span, .hero-text button, .hero-text span p {
   background: rgba(186, 12, 47, 0.8); }
 
+.text-banner-wrapper {
+  width: 100%;
+  left: 0; }
+  .text-banner-wrapper .text-banner {
+    text-align: center;
+    margin: 0 7rem;
+    color: white;
+    padding: 25px; }
+
 #front-hero {
   background: url("../images/demo/hero-bg-foundation-6-small.svg") bottom center;
   -webkit-background-size: cover;
@@ -10017,8 +10044,6 @@ button.hero-button {
       #front-hero #watch {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    #front-hero #watch:last-child:not(:first-child) {
-      float: right; }
     @media screen and (min-width: 40em) {
       #front-hero #watch {
         width: 100%;
@@ -10031,9 +10056,6 @@ button.hero-button {
     #front-hero #watch {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 40em) {
-        #front-hero #watch:last-child:not(:first-child) {
-          float: right; } }
     #front-hero #watch section {
       display: inline; }
     #front-hero #watch a {
@@ -10068,8 +10090,6 @@ button.hero-button {
       #front-hero .tagline {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    #front-hero .tagline:last-child:not(:first-child) {
-      float: right; }
     @media screen and (min-width: 40em) {
       #front-hero .tagline {
         width: 41.66667%;
@@ -10081,9 +10101,6 @@ button.hero-button {
     #front-hero .tagline {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 40em) {
-        #front-hero .tagline:last-child:not(:first-child) {
-          float: right; } }
   #front-hero h1 {
     color: #fff;
     font-weight: 500;
@@ -10116,8 +10133,6 @@ button.hero-button {
       .intro .fp-intro {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    .intro .fp-intro:last-child:not(:first-child) {
-      float: right; }
     @media screen and (min-width: 40em) {
       .intro .fp-intro {
         width: 83.33333%;
@@ -10130,8 +10145,6 @@ button.hero-button {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
     @media screen and (min-width: 40em) {
-        .intro .fp-intro:last-child:not(:first-child) {
-          float: right; }
         .intro .fp-intro h2 {
           font-weight: 300;
           margin-bottom: 1.5rem; }
@@ -10161,8 +10174,6 @@ button.hero-button {
       .section-divider hr {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    .section-divider hr:last-child:not(:first-child) {
-      float: right; }
 
 .benefits {
   max-width: 75rem;
@@ -10183,8 +10194,6 @@ button.hero-button {
       .benefits header {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    .benefits header:last-child:not(:first-child) {
-      float: right; }
     .benefits header h2 {
       font-weight: 300; }
     .benefits header h4 {
@@ -10206,11 +10215,6 @@ button.hero-button {
       .benefits .professional {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    .benefits .semantic:last-child:not(:first-child),
-    .benefits .responsive:last-child:not(:first-child),
-    .benefits .customizable:last-child:not(:first-child),
-    .benefits .professional:last-child:not(:first-child) {
-      float: right; }
     @media screen and (min-width: 40em) {
       .benefits .semantic,
       .benefits .responsive,
@@ -10227,12 +10231,6 @@ button.hero-button {
     .benefits .professional {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 40em) {
-        .benefits .semantic:last-child:not(:first-child),
-        .benefits .responsive:last-child:not(:first-child),
-        .benefits .customizable:last-child:not(:first-child),
-        .benefits .professional:last-child:not(:first-child) {
-          float: right; } }
     .benefits .semantic img,
     .benefits .responsive img,
     .benefits .customizable img,
@@ -10269,8 +10267,6 @@ button.hero-button {
       .benefits .why-foundation {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    .benefits .why-foundation:last-child:not(:first-child) {
-      float: right; }
 
 #kitchen-sink {
   max-width: 75rem;
@@ -10291,8 +10287,6 @@ button.hero-button {
       #kitchen-sink header {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    #kitchen-sink header:last-child:not(:first-child) {
-      float: right; }
     #kitchen-sink header .lead {
       font-size: 125%;
       line-height: 1.6; }
@@ -10307,8 +10301,6 @@ button.hero-button {
       #kitchen-sink #components {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    #kitchen-sink #components:last-child:not(:first-child) {
-      float: right; }
     @media screen and (min-width: 64em) {
       #kitchen-sink #components {
         width: 75%;
@@ -10319,9 +10311,6 @@ button.hero-button {
     #kitchen-sink #components {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-    @media screen and (min-width: 64em) {
-        #kitchen-sink #components:last-child:not(:first-child) {
-          float: right; } }
   #kitchen-sink #kitchen-sink-nav {
     display: none; }
     @media screen and (min-width: 64em) {
@@ -10337,8 +10326,6 @@ button.hero-button {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
     @media screen and (min-width: 64em) {
-        #kitchen-sink #kitchen-sink-nav:last-child:not(:first-child) {
-          float: right; }
         #kitchen-sink #kitchen-sink-nav .docs-sub-menu {
           font-size: 0.85rem;
           margin-top: 1rem; }
@@ -10394,8 +10381,17 @@ button.hero-button {
       #page .main-content {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    #page .main-content:last-child:not(:first-child) {
-      float: right; }
+
+#archive {
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem; }
+  #archive::before, #archive::after {
+    content: ' ';
+    display: table; }
+  #archive::after {
+    clear: both; }
 
 #page-full-width {
   max-width: 75rem;
@@ -10416,8 +10412,6 @@ button.hero-button {
       #page-full-width .main-content {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    #page-full-width .main-content:last-child:not(:first-child) {
-      float: right; }
 
 #single-post {
   max-width: 75rem;
@@ -10438,8 +10432,6 @@ button.hero-button {
       #single-post .main-content {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-    #single-post .main-content:last-child:not(:first-child) {
-      float: right; }
 
 body.home {
   color: #ffffff; }
@@ -10449,13 +10441,18 @@ body.home {
     position: relative; }
   body.home header#masthead, body.home div#footer-container {
     display: none; }
-  body.home .row.continue-link {
+  body.home .continue-link {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    bottom: 0; }
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 25px; }
+    body.home .continue-link a {
+      color: #FFFFFF; }
 
 .hero-text-container {
   position: absolute;

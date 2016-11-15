@@ -1,0 +1,12 @@
+//#acf flexible text-banner
+.text-banner-wrapper {
+	width: 100%;
+    left: 0;
+    // position: absolute;
+    .text-banner {
+    	text-align: center;
+    	margin: 0 7rem;
+    	color: white;
+    	padding: $sitepadding;
+    }
+}

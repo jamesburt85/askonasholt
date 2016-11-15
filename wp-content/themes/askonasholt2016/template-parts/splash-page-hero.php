@@ -48,6 +48,12 @@
 
       <?php endwhile; ?>
 
+      <div class="continue-link" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-dark.jpg')">
+        <div class="">
+           <a href="<?php echo get_site_url(); ?>/home">Continue to Askonas Holt</a>
+        </div>
+      </div>
+
   </div>
 
 <?php }; ?>
