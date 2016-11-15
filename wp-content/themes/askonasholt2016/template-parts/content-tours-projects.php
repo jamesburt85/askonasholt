@@ -40,7 +40,7 @@
 				<span><?php echo $blurb; ?></span>
 
 				<!-- Loop through tour dates -->
-				<?php if( have_rows('tour_dates') ) { ?>
+<!-- 				<?php if( have_rows('tour_dates') ) { ?>
 
 					<?php while( have_rows('tour_dates') ) { the_row(); 
 
@@ -53,9 +53,9 @@
 
 					<?php }; ?>
 
-				<?php }; ?>
+				<?php }; ?> -->
 
-				<a href="#">View all dates</a>
+				<!-- <a href="#">View all dates</a> -->
 
 			</div>
 		</div>

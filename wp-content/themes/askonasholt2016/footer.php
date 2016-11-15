@@ -45,7 +45,7 @@
 					437 647 1 0 2 -423 2 -941z"/>
 					</g>
 					</svg>
-					<br>
+					
 					Making Music happen
 				</div>
 				<?php do_action( 'foundationpress_before_footer' ); ?>
