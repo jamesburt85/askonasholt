@@ -74,6 +74,7 @@
   My custom styles:
   Add your scss files below to structure your project styles
 */
+@import "global/temp";
 
 // JBMixins
 @import "jbmixins/debug";
@@ -90,6 +91,7 @@
 @import "modules/sidebar";
 @import "modules/editor-style";
 @import "modules/nav-bar";
+@import "modules/artist-filtering";
 
 // Components
 @import "components/buttons";
@@ -103,6 +105,7 @@
 @import "templates/front";
 @import "templates/kitchen-sink";
 @import "templates/page-default";
+@import "templates/page-archive";
 @import "templates/page-sidebar-left";
 @import "templates/page-full-width";
 @import "templates/single-post";

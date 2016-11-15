@@ -1,0 +1,21 @@
+.artist-filtering-block {
+	background-color: $lightbrown;
+	position: relative;
+}
+
+.artist-categories {
+	position: absolute;
+	bottom: 0;
+	// width: 100%;
+	list-style: none;
+	margin: 0;
+	li {
+		// SASS MAGIC RIGHT HERE!
+		@extend .button;
+		color: $white;
+		a {
+			color: $white;			
+		}
+	}
+}
+
