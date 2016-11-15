@@ -17,7 +17,11 @@
 
 get_header(); ?>
 
-<div id="page" role="main">
+<?php get_template_part( 'template-parts/artist-filtering' ); ?>
+
+<div id="archive" role="main">
+	
+
 	<article class="main-content">
 	<?php if ( have_posts() ) : ?>
 
@@ -37,14 +41,15 @@ get_header(); ?>
 			foundationpress_pagination();
 		elseif ( is_paged() ) :
 		?>
-			<nav id="post-nav">
+			<nav id="post-nav" class="row">
 				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
 				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
 			</nav>
 		<?php endif; ?>
 
+		<?php //get_sidebar(); ?>
+
 	</article>
-	<?php //get_sidebar(); ?>
 
 </div>
 

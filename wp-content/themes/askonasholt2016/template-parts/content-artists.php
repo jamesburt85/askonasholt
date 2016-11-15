@@ -16,7 +16,7 @@
 		<?php //foundationpress_entry_meta(); ?>
 	</header> -->
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
+		<?php // the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
 
 
 	<?php 
@@ -27,10 +27,20 @@
 		$name = get_field('name');
 		$bio = get_field('bio');
 
+		// if no image, use default
+		if (!$artist_photo){
+			$artist_photo = get_template_directory_uri().'/assets/images/default.jpg';
+		}
+
+		// temp. for testing. If no name, then use title.
+		if (!$name){
+			$name = get_the_title();
+		}
+
 	?>
 
 
-		<div class="row">
+		<!-- <div class="row"> -->
 			
 			<?php $category = get_the_category();
 			$firstCategory = $category[0]->cat_name;?>
@@ -62,7 +72,7 @@
 
 			</div>
 
-		</div>
+		<!-- </div> -->
 
 
 	</div>

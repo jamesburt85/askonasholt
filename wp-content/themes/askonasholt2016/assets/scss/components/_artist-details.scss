@@ -2,6 +2,8 @@
 
 .artists {
 	transition: 0.5s;
+	// margin-top: $sitepadding;
+	margin-bottom: ($sitepadding * 2);
 	.artist-thumb {
 	    height: 200px;
 	    @include full-bg;
@@ -9,6 +11,7 @@
 	}
 	.artist-photo-wrapper {
 		position: relative;
+		margin-bottom: $sitepadding;
 	}
 	.overlay {
 	    position: absolute;
@@ -24,7 +27,6 @@
 			display: block;
 		}
 	}
-
 }
 
 // MAGNIFIC POPUP STYLES *****

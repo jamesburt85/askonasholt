@@ -52,3 +52,31 @@ require_once( 'library/custom-post-types.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
+
+// options page
+if( function_exists('acf_add_options_page')) {
+
+	$page = acf_add_options_page(array(
+		'page_title' 	=> 'General Settings',
+		'menu_title' 	=> 'Settings',
+		'menu_slug' 	=> 'general-settings',
+		'capability' 	=> 'delete_others_pages', // Editor's only
+		'redirect' 	=> false
+	));
+
+}
+
+
+/// add categories to CPTs
+add_filter('pre_get_posts', 'query_post_type');
+function query_post_type($query) {
+  if( is_category() ) {
+    $post_type = get_query_var('post_type');
+    if($post_type)
+        $post_type = $post_type;
+    else
+        $post_type = array('nav_menu_item', 'artists'); // don't forget nav_menu_item to allow menus to work!
+    $query->set('post_type',$post_type);
+    return $query;
+    }
+}
