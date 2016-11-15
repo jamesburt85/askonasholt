@@ -3,6 +3,7 @@
 body.post-type-archive-tours-projects {
   .tour-hero {
       height: 70vh;
+      max-height: 400px;
       @include full-bg;
       color: white;
       position: relative;
@@ -11,12 +12,17 @@ body.post-type-archive-tours-projects {
       height: 50vh;
       text-align: center;
   }
+  .tour-thumbnail {
+      height: 500px; //Temp.....
+      @include full-bg;
+  }
 }
 
 .single-tours-projects {
   .tour-hero {
       position: relative;
-      height: 300px;
+      height: 70vh;
+      max-height: 500px;
   }
   .hero-text-area {
       position: absolute;

@@ -9990,6 +9990,9 @@ button.hero-button {
     color: white;
     padding: 10px; }
 
+.hero-text {
+  max-width: 50%; }
+
 .hero-text span p {
   padding: 10px; }
 
@@ -10465,6 +10468,7 @@ body.home {
 
 body.post-type-archive-tours-projects .tour-hero {
   height: 70vh;
+  max-height: 400px;
   background-position: center center;
   background-repeat: no-repeat;
   border-bottom: 0;
@@ -10477,9 +10481,18 @@ body.post-type-archive-tours-projects .tour-project-archive-hero {
   height: 50vh;
   text-align: center; }
 
+body.post-type-archive-tours-projects .tour-thumbnail {
+  height: 500px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-bottom: 0;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
 .single-tours-projects .tour-hero {
   position: relative;
-  height: 300px; }
+  height: 70vh;
+  max-height: 500px; }
 
 .single-tours-projects .hero-text-area {
   position: absolute;

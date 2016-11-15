@@ -9,6 +9,7 @@
 ?>
 
 
+
 <?php
 
 // check if the repeater field has rows of data
@@ -36,7 +37,7 @@ if( have_rows('home_hero') ):
 	        ?>
 
 			<div class="center-image" style="background-image: url('<?php echo $image['url']; ?>')">
-				<div class="hero-text-area">
+				<div class="hero-text-area hero-text">
 				
 					<span class="hero-sub-header"><?php echo $category; ?></span><br/>
 					<span class="hero-header"><?php echo $title; ?></span><br/>

@@ -29,7 +29,6 @@ get_header(); ?>
 				$start_date = get_field('start_date');
 				$end_date = get_field('end_date');
 				$blurb = get_field('blurb');
-				$image = get_field('background_image');
 				$video = get_field('video');
 
 			?>

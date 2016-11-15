@@ -25,14 +25,16 @@
 			// get VARS
 			$start_date = get_field('start_date');
 			$end_date = get_field('end_date');
-			$blurb = get_field('blurb')
+			$blurb = get_field('blurb');
+			$image = get_field('background_image');
 
 		?>
 
 		<div class="row">
-			<div class="small-12 medium-4 columns">
-				MAP
-			</div>
+
+			<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+			<div class="small-12 medium-4 columns tour-thumbnail" style="background-image: url('<?php echo $thumb['0'];?>')"></div>
+
 			<div class="small-12 medium-8 columns">
 				<span><?php echo $start_date; ?></span> - 
 				<span><?php echo $end_date; ?></span>
