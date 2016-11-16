@@ -30,6 +30,7 @@ get_header(); ?>
 				$end_date = get_field('end_date');
 				$blurb = get_field('blurb');
 				$video = get_field('video');
+				$tour_events = get_field('tour_events');
 
 			?>
 
@@ -56,11 +57,17 @@ get_header(); ?>
 				<div class="small-12 medium-9 columns">
 
 				<?php 
+				//print_r($tour_events);
+
+				?>
+
+				<?php 
 
 				  // Query Args
 				  $args = array(
 
 				    'post_type' => 'events',
+				    'post__in'  => $tour_events,
 				    
 				  );
 
@@ -69,13 +76,15 @@ get_header(); ?>
 
 				  // The Loop
 				  if ( $the_query->have_posts() ) {
-				    echo '<ul>';
+				    // echo '<ul>';
 				    while ( $the_query->have_posts() ) {
 				      $the_query->the_post();
-				      echo '<li>' . get_the_title() . '</li>';
+				      // echo '<li>' . get_the_title() . '</li>';
+				      get_template_part( 'template-parts/content-tour-event-listing' );
+
 				      //get_template_part( 'template-parts/.....' );
 				    }
-				    echo '</ul>';
+				    // echo '</ul>';
 				    /* Restore original Post Data */
 				    wp_reset_postdata();
 				  } else {
@@ -86,9 +95,9 @@ get_header(); ?>
 
 			</div>
 
-<!-- 			<div class="row large-video-row">
+			<div class="row large-video-row">
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>" frameborder="0" allowfullscreen></iframe>
-			</div> -->
+			</div>
 
 
 			<!-- using ACF Flexible content instead of the_content  -->
