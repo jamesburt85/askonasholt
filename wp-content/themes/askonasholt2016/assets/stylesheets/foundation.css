@@ -9762,6 +9762,16 @@ pre {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
 
+body.search-bar-is-visible .searchbar {
+  display: block; }
+
+.searchbar {
+  display: none;
+  padding: 25px;
+  background-color: #B49A81; }
+  .searchbar input.input-group-field {
+    width: 50vw; }
+
 body#tinymce {
   height: auto;
   max-width: 75rem;

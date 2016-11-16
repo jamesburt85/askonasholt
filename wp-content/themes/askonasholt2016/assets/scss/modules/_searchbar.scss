@@ -1,0 +1,14 @@
+body.search-bar-is-visible {
+  .searchbar {
+    display: block;
+  }
+}
+
+.searchbar {
+  display: none;
+  padding: $sitepadding;
+  background-color: $brown;
+  input.input-group-field  {
+    width: 50vw;
+  }
+}

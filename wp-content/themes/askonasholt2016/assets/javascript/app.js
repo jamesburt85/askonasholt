@@ -90,6 +90,28 @@
       });
     });
 
+    //*********************************** 
+    //***** SEARCH BAR TOGGLE UP ********
+    //***********************************
+    // search-bar-is-visible
+    $searchtoggle = $('#search-toggle');
+
+    $searchtoggle.on("click", function(e){
+      e.preventDefault();
+      $('body').toggleClass('search-bar-is-visible');
+    });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
