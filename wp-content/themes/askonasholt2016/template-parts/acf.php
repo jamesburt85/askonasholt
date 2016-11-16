@@ -101,16 +101,24 @@ if ($acf_fields['flexible_content']) {
 
 			#Image_Gallery
 			case 'image_gallery': ?>
-				
-				<div class="row">
-					<div class="small-12 columns">
-						<h4>Image gallery</h4>
-						<img src="<?php echo $section['image']; ?>">
-					</div>
+
+				<h4 class="section-header">Image gallery</h4>
+				<div class="multiple-items zoom-gallery">
+
+					<?php
+					# Loop through the sections
+					foreach ($section['image_repeater'] as $repeater) { ?>
+						<!-- <div class="tour-image-container" style="background-image: url('<?php echo $repeater['image']; ?>');"></div> -->
+						<a href="<?php echo $repeater['image']; ?>">
+							<img src="<?php echo $repeater['image']; ?>">
+						</a>
+					<?php } ?>
+	
 				</div>
 
 			<?php
 			break;
+
 
 			#Text banner
 			case 'text_banner': ?>

@@ -74,7 +74,10 @@
   My custom styles:
   Add your scss files below to structure your project styles
 */
+
+//Global
 @import "global/temp";
+@import "global/general";
 
 // JBMixins
 @import "jbmixins/debug";
@@ -102,6 +105,7 @@
 @import "components/artist-details";
 @import "components/general-heroes";
 @import "components/text-banner";
+@import "components/magnific-popup";
 
 // Templates
 @import "templates/front";
@@ -113,3 +117,4 @@
 @import "templates/single-post";
 @import "templates/splash-page";
 @import "templates/tours-projects";
+
