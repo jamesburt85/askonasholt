@@ -19,6 +19,19 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 
+		<h1>page navigation here</h1>
+		<ul>
+			<li>tour name</li>
+			<li>intro</li>
+			<li>etc</li>
+
+			<!-- getting ACF Flexible content navigation  -->
+			<?php $acf_fields = get_fields(); ?>
+			<?php include(locate_template('template-parts/acf-navigation.php')); ?>
+
+		</ul>
+
+
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 		<div class="entry-content">
 			<?php the_content(); ?>
@@ -98,7 +111,6 @@ get_header(); ?>
 			</div>
 
 			<!-- using ACF Flexible content instead of the_content  -->
-			<?php $acf_fields = get_fields(); ?>
 			<?php include(locate_template('template-parts/acf.php')); ?>
 
 		</div>

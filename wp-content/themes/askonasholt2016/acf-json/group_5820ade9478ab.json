@@ -292,6 +292,25 @@
                                     "mime_types": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_582c75a360323",
+                            "label": "unique section name",
+                            "name": "unique_id",
+                            "type": "text",
+                            "instructions": "e.g. '2017-video'. This is so the sub navigation bar can work (scroll to content section). Optional.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -348,6 +367,35 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "582c7402af73a",
+                    "name": "press",
+                    "label": "Press",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_582c7408af73b",
+                            "label": "",
+                            "name": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -397,5 +445,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479231055
+    "modified": 1479308831
 }

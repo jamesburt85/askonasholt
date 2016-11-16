@@ -102,7 +102,7 @@ if ($acf_fields['flexible_content']) {
 			#Image_Gallery
 			case 'image_gallery': ?>
 
-				<h4 class="section-header">Image gallery</h4>
+				<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image gallery</h4>
 				<div class="multiple-items zoom-gallery">
 
 					<?php
