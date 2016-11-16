@@ -18,11 +18,7 @@
     <?php //the_content(); ?>
     <?php get_template_part( 'template-parts/splash-page-hero' ); ?>
  </div>
- <div class="row continue-link">
-   <div class="small-12 columns">
-      <a href="<?php echo get_site_url(); ?>/home">Continue to Askonas Holt</a>
-   </div>
- </div>
+
 
 <!--  <div id="page" role="main"> -->
 

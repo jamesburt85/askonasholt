@@ -45,14 +45,16 @@
 					</li>
 				</ul>
 			</div>
+
 			<div class="top-bar-right">
-				<?php //foundationpress_top_bar_r(); ?>
-				<?php wp_nav_menu( array( 'theme_location' => 'top-bar-r' ) ); ?>
+				<?php foundationpress_top_bar_r(); ?>
+				<?php //wp_nav_menu( array( 'theme_location' => 'top-bar-r' ) ); ?>
 
 				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
 					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 				<?php endif; ?>
 			</div>
+			
 			<div class="header-social-area show-for-medium">
 				<a href="https://www.facebook.com/askonasholt/" target="_blank"><i class="fa fa-facebook fa-2x social-icon" aria-hidden="true"></i></a>
 				<a href="https://www.instagram.com/askonasholt/" target="_blank"><i class="fa fa-instagram fa-2x social-icon" aria-hidden="true"></i></a>

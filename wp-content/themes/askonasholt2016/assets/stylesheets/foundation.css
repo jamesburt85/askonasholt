@@ -9728,8 +9728,15 @@ pre {
     #footer-container #footer i.fa-2x {
       font-size: 1.3em; }
     #footer-container #footer .column:last-child:not(:first-child), #footer-container #footer .columns:last-child:not(:first-child), #footer-container #footer .columns:last-child:not(:first-child) {
-      text-align: right;
+      text-align: right; }
+    #footer-container #footer div.copyright {
       font-weight: 200; }
+  #footer-container img.attachment-full.size-full {
+    max-width: 150px; }
+  #footer-container .text-widget > li {
+    display: block;
+    padding: 0.7rem 1rem;
+    line-height: 1; }
 
 .sidebar {
   width: 100%;
@@ -9907,7 +9914,7 @@ body.page .slick-dotted.slick-slider {
 .artists {
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  margin-bottom: 30px; }
+  margin-bottom: 50px; }
   .artists .artist-thumb {
     height: 200px;
     background-position: center center;
@@ -9919,7 +9926,7 @@ body.page .slick-dotted.slick-slider {
     transition: 0.5s; }
   .artists .artist-photo-wrapper {
     position: relative;
-    margin-bottom: 15px; }
+    margin-bottom: 25px; }
   .artists .overlay {
     position: absolute;
     bottom: 0;
@@ -9962,6 +9969,44 @@ body.page .slick-dotted.slick-slider {
 
 .single-artists .artist-navigation li {
   display: inline; }
+
+.hero-sub-header {
+  text-transform: uppercase;
+  color: #b38a76;
+  padding: 10px; }
+
+.hero-header {
+  color: white;
+  font-size: 35px;
+  padding: 10px; }
+
+.hero-copy {
+  color: white;
+  padding: 10px; }
+
+button.hero-button {
+  padding: 10px; }
+  button.hero-button a {
+    color: white;
+    padding: 10px; }
+
+.hero-text {
+  max-width: 50%; }
+
+.hero-text span p {
+  padding: 10px; }
+
+.hero-text span, .hero-text button, .hero-text span p {
+  background: rgba(186, 12, 47, 0.8); }
+
+.text-banner-wrapper {
+  width: 100%;
+  left: 0; }
+  .text-banner-wrapper .text-banner {
+    text-align: center;
+    margin: 0 7rem;
+    color: white;
+    padding: 25px; }
 
 #front-hero {
   background: url("../images/demo/hero-bg-foundation-6-small.svg") bottom center;
@@ -10399,21 +10444,27 @@ body.home {
     position: relative; }
   body.home header#masthead, body.home div#footer-container {
     display: none; }
-  body.home .promo-text-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    max-width: 70%; }
-  body.home .row.continue-link {
+  body.home .continue-link {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    bottom: 0; }
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 25px; }
+    body.home .continue-link a {
+      color: #FFFFFF; }
+
+.hero-text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: 50%; }
 
 body.post-type-archive-tours-projects .tour-hero {
   height: 70vh;
@@ -10431,9 +10482,18 @@ body.post-type-archive-tours-projects .tour-project-archive-hero {
   max-height: 400px;
   text-align: center; }
 
+body.post-type-archive-tours-projects .tour-thumbnail {
+  height: 500px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-bottom: 0;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
 .single-tours-projects .tour-hero {
   position: relative;
-  height: 300px; }
+  height: 70vh;
+  max-height: 500px; }
 
 .single-tours-projects .hero-text-area {
   position: absolute;

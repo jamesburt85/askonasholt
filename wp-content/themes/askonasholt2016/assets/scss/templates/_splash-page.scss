@@ -12,13 +12,21 @@ body.home {
   header#masthead, div#footer-container {
     display: none;
   }
-  .promo-text-container {
-    @include center;
-    max-width: 70%;
-  }
-  .row.continue-link {
+
+  .continue-link {
       @include center (x);
       bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: $sitepadding;
+      a {
+        color: #FFFFFF;
+      }
   }
 
+}
+
+.hero-text-container {
+  @include center;
+  max-width: 50%;
 }

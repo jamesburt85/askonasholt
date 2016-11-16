@@ -15,7 +15,7 @@
 			<footer id="footer">
 <!-- 				<img class="footer-logo">LOGO</h1>
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/askonasholt-favi.png" class="footer-logo"> -->
-				<div class="footer-logo">
+<!-- 				<div class="footer-logo">
 					<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
 					 width="80.000000pt" height="80.000000pt" viewBox="0 0 512.000000 512.000000"
 					 preserveAspectRatio="xMidYMid meet">
@@ -47,7 +47,7 @@
 					</svg>
 					
 					Making Music happen
-				</div>
+				</div> -->
 				<?php do_action( 'foundationpress_before_footer' ); ?>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 				<?php do_action( 'foundationpress_after_footer' ); ?>

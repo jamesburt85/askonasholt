@@ -1,0 +1,38 @@
+//Repeated Hero styles
+.hero-sub-header {
+	text-transform: uppercase;
+	color: #b38a76;
+	padding: 10px;
+}
+
+.hero-header {
+	color: white;
+	font-size: 35px;
+	padding: 10px;
+}
+
+.hero-copy {
+	color: white;
+	padding: 10px;
+}
+
+
+button.hero-button {
+	padding: 10px;
+	a {
+		color: white;
+		padding: 10px;
+	}
+}
+
+.hero-text {
+	max-width: 50%;
+}
+
+.hero-text span p {
+	padding: 10px;
+}
+
+.hero-text span, .hero-text button, .hero-text span p {
+	background: $herored;
+}

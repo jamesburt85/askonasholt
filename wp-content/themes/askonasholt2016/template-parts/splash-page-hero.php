@@ -23,11 +23,11 @@
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/askonasholt-logo.png">
       </a>
 
-    <div class="promo-text-container">
+    <div class="hero-text-container hero-text">
 
-      <span class="promo-sub-header"><?php echo $sub_header; ?></span><br/>
-      <span class="promo-header"><?php echo $header; ?></span><br/>
-      <span class="promo-blurb"><?php echo $blurb; ?></span>
+      <span class="hero-sub-header"><?php echo $sub_header; ?></span><br/>
+      <span class="hero-header"><?php echo $header; ?></span><br/>
+      <span class="hero-blurb"><?php echo $blurb; ?></span>
 
         <?php
         // loop through the rows of data
@@ -38,7 +38,7 @@
 
         ?>
 
-        <button class="promo-button">
+        <button class="hero-button">
           <a href="<?php echo $button_destination; ?>">
             <?php echo $button_text; ?>
           </a>
@@ -47,6 +47,12 @@
     </div>
 
       <?php endwhile; ?>
+
+      <div class="continue-link" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-dark.jpg')">
+        <div class="">
+           <a href="<?php echo get_site_url(); ?>/home">Continue to Askonas Holt</a>
+        </div>
+      </div>
 
   </div>
 

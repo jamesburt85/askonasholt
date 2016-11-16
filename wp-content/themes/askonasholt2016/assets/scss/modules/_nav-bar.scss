@@ -15,7 +15,7 @@ header#masthead {
 	}
 	//sub-item menu
 	.top-bar .dropdown.menu .submenu {
-		background: $brand-red;
+		background: $red;
 		li a {
 			width: 100%;
 			color: white;
@@ -31,7 +31,7 @@ header#masthead {
 		}
 	}
 	img.nav-logo {
-	    border-right: 1px solid $brand-red;
+	    border-right: 1px solid $red;
 	    padding-right: 2em;
 	}
 	.top-bar .menu li.is-submenu-item {

@@ -39,7 +39,19 @@
     //align copyright to the right
     .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
         text-align: right;
-        font-weight: 200;
+    }
+    div.copyright {
+      font-weight: 200;
     }
   }
+  //Custom size of footer logo
+  img.attachment-full.size-full {
+      max-width: 150px;
+  }
+  .text-widget > li {
+      display: block;
+      padding: 0.7rem 1rem;
+      line-height: 1;
+    }
 }
+
