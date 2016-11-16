@@ -31,7 +31,16 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	}
 
 	// app.js
-		wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/javascript/app.js', array('jquery'), '2.6.1', true );
+	wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/javascript/app.js', array('jquery'), '2.6.1', true );
+
+	// Localize the script with new data
+	$theme_js_data = array(
+		// 'collapse_width' => 767,
+		'themeurl' => get_template_directory_uri(),
+		'ajaxurl' => admin_url('admin-ajax.php'),
+		'blogurl' => get_bloginfo('url')
+	);
+	wp_localize_script( 'foundation', 'js_vars', $theme_js_data );
 
 	}
 

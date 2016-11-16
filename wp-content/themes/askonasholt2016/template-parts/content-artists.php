@@ -10,7 +10,7 @@
 
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns'); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns artists'); ?>>
 <!-- 	<header>
 		<h2><a href="<?php //the_permalink(); ?>"><?php //the_title(); ?></a></h2>
 		<?php //foundationpress_entry_meta(); ?>
