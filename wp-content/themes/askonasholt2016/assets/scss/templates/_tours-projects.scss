@@ -3,12 +3,14 @@
 body.post-type-archive-tours-projects {
   .tour-hero {
       height: 70vh;
+      max-height: 400px; // temp
       @include full-bg;
       color: white;
       position: relative;
   }
   .tour-project-archive-hero {
       height: 50vh;
+      max-height: 400px; // temp
       text-align: center;
   }
 }

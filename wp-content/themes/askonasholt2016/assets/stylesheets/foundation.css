@@ -10417,6 +10417,7 @@ body.home {
 
 body.post-type-archive-tours-projects .tour-hero {
   height: 70vh;
+  max-height: 400px;
   background-position: center center;
   background-repeat: no-repeat;
   border-bottom: 0;
@@ -10427,6 +10428,7 @@ body.post-type-archive-tours-projects .tour-hero {
 
 body.post-type-archive-tours-projects .tour-project-archive-hero {
   height: 50vh;
+  max-height: 400px;
   text-align: center; }
 
 .single-tours-projects .tour-hero {
