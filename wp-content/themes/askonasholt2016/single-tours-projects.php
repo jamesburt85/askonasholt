@@ -48,8 +48,7 @@ get_header(); ?>
 			</div>
 
 
-			<div class="row schedule row">
-				
+			<div class="row schedule row">	
 				<div class="small-12 medium-3 columns">
 					Schedule
 				</div>
@@ -92,13 +91,11 @@ get_header(); ?>
 				  }
 				?>
 				</div>
-
 			</div>
 
 			<div class="row large-video-row">
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>" frameborder="0" allowfullscreen></iframe>
 			</div>
-
 
 			<!-- using ACF Flexible content instead of the_content  -->
 			<?php $acf_fields = get_fields(); ?>

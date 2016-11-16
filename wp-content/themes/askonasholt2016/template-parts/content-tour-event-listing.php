@@ -32,7 +32,6 @@
 		
 		
 		
-		
 		<?php //foundationpress_entry_meta(); ?>
 
 	</header>
