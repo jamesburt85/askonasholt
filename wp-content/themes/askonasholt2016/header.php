@@ -61,11 +61,15 @@
 				<a href="https://twitter.com/AskonasHolt?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa fa-twitter fa-2x social-icon" aria-hidden="true"></i></a>
 				<a href="https://www.youtube.com/user/AskonasHolt" target="_blank"><i class="fa fa-youtube-play fa-2x social-icon" aria-hidden="true"></i></a>
 			</div>
-			<div class="header-search show-for-medium">
-					<!-- <i class="fa fa-search" aria-hidden="true"></i> -->
-				<?php get_search_form(); ?>
+			<div id="search-toggle" class="header-search-toggle button show-for-medium">
+				<h6>SEARCH</h6>
 			</div>
 		</nav>
+
+		<div id="searchbar" class="searchbar row">
+				<?php get_search_form(); ?>
+		</div>
+
 	</header>
 
 	<section class="container">
