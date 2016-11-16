@@ -49,34 +49,46 @@ get_header(); ?>
 
 			<div class="row schedule row">
 				
-				<div class="small-12 medium-9 columns">
+				<div class="small-12 medium-3 columns">
 					Schedule
 				</div>
 				
 				<div class="small-12 medium-9 columns">
-					<!-- Loop through tour dates -->
-					<?php if( have_rows('tour_dates') ) { ?>
 
-						<?php while( have_rows('tour_dates') ) { the_row(); 
+				<?php 
 
-							?>
+				  // Query Args
+				  $args = array(
 
-							<span><?php the_sub_field('exact_date'); ?></span>
-							<span><?php the_sub_field('venue'); ?></span>, 
-							<span><?php the_sub_field('city'); ?></span>
-							<br/>
+				    'post_type' => 'events',
+				    
+				  );
 
-						<?php };
+				  // The Query
+				  $the_query = new WP_Query( $args );
 
-					}; ?>
-
+				  // The Loop
+				  if ( $the_query->have_posts() ) {
+				    echo '<ul>';
+				    while ( $the_query->have_posts() ) {
+				      $the_query->the_post();
+				      echo '<li>' . get_the_title() . '</li>';
+				      //get_template_part( 'template-parts/.....' );
+				    }
+				    echo '</ul>';
+				    /* Restore original Post Data */
+				    wp_reset_postdata();
+				  } else {
+				    // no posts found
+				  }
+				?>
 				</div>
 
 			</div>
 
-			<div class="row large-video-row">
+<!-- 			<div class="row large-video-row">
 				<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>" frameborder="0" allowfullscreen></iframe>
-			</div>
+			</div> -->
 
 
 			<!-- using ACF Flexible content instead of the_content  -->

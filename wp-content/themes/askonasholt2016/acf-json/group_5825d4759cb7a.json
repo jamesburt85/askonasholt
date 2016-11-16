@@ -74,7 +74,7 @@
             "key": "field_5825eeac308e9",
             "label": "Tour Events",
             "name": "tour_events",
-            "type": "repeater",
+            "type": "relationship",
             "instructions": "Enter tour dates",
             "required": 0,
             "conditional_logic": 0,
@@ -83,40 +83,19 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
+            "post_type": [
+                "events"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": [
+                "featured_image"
+            ],
             "min": "",
             "max": "",
-            "layout": "table",
-            "button_label": "Add Row",
-            "sub_fields": [
-                {
-                    "key": "field_5829e0288da56",
-                    "label": "examole (tour events)",
-                    "name": "examole_tour_events",
-                    "type": "relationship",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "events"
-                    ],
-                    "taxonomy": [],
-                    "filters": [
-                        "search",
-                        "post_type",
-                        "taxonomy"
-                    ],
-                    "elements": "",
-                    "min": "",
-                    "max": "",
-                    "return_format": "object"
-                }
-            ]
+            "return_format": "id"
         },
         {
             "key": "field_5825fae937c58",
@@ -228,5 +207,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479234737
+    "modified": 1479289495
 }
