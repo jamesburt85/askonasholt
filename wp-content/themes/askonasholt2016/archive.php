@@ -21,50 +21,25 @@ get_header(); ?>
 
 	# Show the correct archive title
 	if (is_day()) {
-		// printf(__('Daily Archives: %s', 'whoisandywhite'), 
-		// 	'<span>' . get_the_date() . '</span>');
+
 	} elseif (is_month()) {
-		// printf(
-		// 	__('Monthly Archives: %s', 'whoisandywhite'),
-		// 	'<span>' . get_the_date(_x('F Y', 'monthly archives date format', 'whoisandywhite')) . '</span>'
-	// );
+
 	} elseif (is_year()) {
-		// printf(
-		// 	__('Yearly Archives: %s', 'whoisandywhite'),
-		// 	'<span>' . get_the_date(_x('Y', 'yearly archives date format', 'whoisandywhite')) . '</span>'
-	// );
+
 	} elseif (is_tag()) {
-		// printf(__('Tag Archives: %s', 'whoisandywhite'), '<span>' . single_tag_title('', false) . '</span>');
-		// // Show an optional tag description
-		// $tag_description = tag_description();
-		// if ($tag_description) {
-		// 	echo apply_filters(
-		// 		'tag_archive_meta',
-		// 		'<div class="tag-archive-meta">' . $tag_description . '</div>'
-		// 	);
-		// }
+
+	} elseif ( is_tax('artist-type') ) {
+
+		get_template_part( 'template-parts/artist-filtering' );
+		
 	} elseif ( is_post_type_archive('artists') ) {
 
 		get_template_part( 'template-parts/artist-filtering' );
 		
 	} elseif (is_category()) {
-		// echo "<h1>SHABBA</h1>";
-		get_template_part( 'template-parts/artist-filtering' );
-		// printf(
-		// 	__('Category Archives: %s', 'whoisandywhite'),
-		// 	'<span>' . single_cat_title('', false) . '</span>'
-		// );
-		// // Show an optional category description
-		// $category_description = category_description();
-		// if ($category_description) {
-		// 	echo apply_filters(
-		// 		'category_archive_meta',
-		// 		'<div class="category-archive-meta">' . $category_description . '</div>'
-		// 	);
-		// }
+
 	} else {
-		// echo "<h1>RANKS</h1>";
-		// _e('Blog Archives', 'whoisandywhite');
+
 	}
 
 ?>

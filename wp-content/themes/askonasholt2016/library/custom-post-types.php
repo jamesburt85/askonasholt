@@ -38,7 +38,7 @@ function feature_init()
         'has_archive'           => true, 
         'hierarchical'          => false,
         'menu_position'         => NULL,
-        'taxonomies'            => array('category'),
+        // 'taxonomies'            => array('category'),
     );
     
     /* ----------------------------------------------------
@@ -102,6 +102,28 @@ function feature_init()
     $args['show_in_menu']           = true;
     
     register_post_type('artists', $args);
+
+    # Add a custom taxonomy
+    register_taxonomy( 'artist-type', 
+        array('artists'), # register taxonomy for these post types
+        array('hierarchical' => true, # if this is true, it acts like categories             
+            'labels' => array(
+                'name' => __( 'Artist Type', 'adstyles'),
+                'singular_name' => __( 'Artist Type', 'adstyles'), 
+                'search_items' =>  __( 'Search Artist Type', 'adstyles'),
+                'all_items' => __( 'All Artist Type', 'adstyles'), 
+                'parent_item' => __( 'Parent Artist Type', 'adstyles'), 
+                'parent_item_colon' => __( 'Parent Artist Type:', 'adstyles'), 
+                'edit_item' => __( 'Edit Artist Type', 'adstyles'), 
+                'update_item' => __( 'Update Artist Type', 'adstyles'), 
+                'add_new_item' => __( 'Add New Artist Type', 'adstyles'),
+                'new_item_name' => __( 'New Artist Type Name', 'adstyles'),
+            ),
+            'show_ui' => true,
+            'query_var' => false,
+            'rewrite' => false,
+        )
+    );
 
 
     /* ----------------------------------------------------

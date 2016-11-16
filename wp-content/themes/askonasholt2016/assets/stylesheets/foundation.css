@@ -3588,7 +3588,7 @@ kbd {
   h3 {
     page-break-after: avoid; } }
 
-.button, .artist-categories li {
+.button, .artist-categories li a {
   display: inline-block;
   text-align: center;
   line-height: 1;
@@ -3604,127 +3604,127 @@ kbd {
   font-size: 0.9rem;
   background-color: #2199e8;
   color: #fff; }
-  [data-whatinput='mouse'] .button, [data-whatinput='mouse'] .artist-categories li, .artist-categories [data-whatinput='mouse'] li {
+  [data-whatinput='mouse'] .button, [data-whatinput='mouse'] .artist-categories li a, .artist-categories li [data-whatinput='mouse'] a {
     outline: 0; }
-  .button:hover, .artist-categories li:hover, .button:focus, .artist-categories li:focus {
+  .button:hover, .artist-categories li a:hover, .button:focus, .artist-categories li a:focus {
     background-color: #1583cc;
     color: #fff; }
-  .button.tiny, .artist-categories li.tiny {
+  .button.tiny, .artist-categories li a.tiny {
     font-size: 0.6rem; }
-  .button.small, .artist-categories li.small {
+  .button.small, .artist-categories li a.small {
     font-size: 0.75rem; }
-  .button.large, .artist-categories li.large {
+  .button.large, .artist-categories li a.large {
     font-size: 1.25rem; }
-  .button.expanded, .artist-categories li.expanded {
+  .button.expanded, .artist-categories li a.expanded {
     display: block;
     width: 100%;
     margin-left: 0;
     margin-right: 0; }
-  .button.primary, .artist-categories li.primary {
+  .button.primary, .artist-categories li a.primary {
     background-color: #2199e8;
     color: #fff; }
-    .button.primary:hover, .artist-categories li.primary:hover, .button.primary:focus, .artist-categories li.primary:focus {
+    .button.primary:hover, .artist-categories li a.primary:hover, .button.primary:focus, .artist-categories li a.primary:focus {
       background-color: #147cc0;
       color: #fff; }
-  .button.secondary, .artist-categories li.secondary {
+  .button.secondary, .artist-categories li a.secondary {
     background-color: #777;
     color: #fff; }
-    .button.secondary:hover, .artist-categories li.secondary:hover, .button.secondary:focus, .artist-categories li.secondary:focus {
+    .button.secondary:hover, .artist-categories li a.secondary:hover, .button.secondary:focus, .artist-categories li a.secondary:focus {
       background-color: #5f5f5f;
       color: #fff; }
-  .button.success, .artist-categories li.success {
+  .button.success, .artist-categories li a.success {
     background-color: #3adb76;
     color: #fff; }
-    .button.success:hover, .artist-categories li.success:hover, .button.success:focus, .artist-categories li.success:focus {
+    .button.success:hover, .artist-categories li a.success:hover, .button.success:focus, .artist-categories li a.success:focus {
       background-color: #22bb5b;
       color: #fff; }
-  .button.warning, .artist-categories li.warning {
+  .button.warning, .artist-categories li a.warning {
     background-color: #ffae00;
     color: #fff; }
-    .button.warning:hover, .artist-categories li.warning:hover, .button.warning:focus, .artist-categories li.warning:focus {
+    .button.warning:hover, .artist-categories li a.warning:hover, .button.warning:focus, .artist-categories li a.warning:focus {
       background-color: #cc8b00;
       color: #fff; }
-  .button.alert, .artist-categories li.alert {
+  .button.alert, .artist-categories li a.alert {
     background-color: #ec5840;
     color: #fff; }
-    .button.alert:hover, .artist-categories li.alert:hover, .button.alert:focus, .artist-categories li.alert:focus {
+    .button.alert:hover, .artist-categories li a.alert:hover, .button.alert:focus, .artist-categories li a.alert:focus {
       background-color: #da3116;
       color: #fff; }
-  .button.hollow, .artist-categories li.hollow {
+  .button.hollow, .artist-categories li a.hollow {
     border: 1px solid #2199e8;
     color: #2199e8; }
-    .button.hollow, .artist-categories li.hollow, .button.hollow:hover, .artist-categories li.hollow:hover, .button.hollow:focus, .artist-categories li.hollow:focus {
+    .button.hollow, .artist-categories li a.hollow, .button.hollow:hover, .artist-categories li a.hollow:hover, .button.hollow:focus, .artist-categories li a.hollow:focus {
       background-color: transparent; }
-    .button.hollow:hover, .artist-categories li.hollow:hover, .button.hollow:focus, .artist-categories li.hollow:focus {
+    .button.hollow:hover, .artist-categories li a.hollow:hover, .button.hollow:focus, .artist-categories li a.hollow:focus {
       border-color: #0c4d78;
       color: #0c4d78; }
-    .button.hollow.primary, .artist-categories li.hollow.primary {
+    .button.hollow.primary, .artist-categories li a.hollow.primary {
       border: 1px solid #2199e8;
       color: #2199e8; }
-      .button.hollow.primary:hover, .artist-categories li.hollow.primary:hover, .button.hollow.primary:focus, .artist-categories li.hollow.primary:focus {
+      .button.hollow.primary:hover, .artist-categories li a.hollow.primary:hover, .button.hollow.primary:focus, .artist-categories li a.hollow.primary:focus {
         border-color: #0c4d78;
         color: #0c4d78; }
-    .button.hollow.secondary, .artist-categories li.hollow.secondary {
+    .button.hollow.secondary, .artist-categories li a.hollow.secondary {
       border: 1px solid #777;
       color: #777; }
-      .button.hollow.secondary:hover, .artist-categories li.hollow.secondary:hover, .button.hollow.secondary:focus, .artist-categories li.hollow.secondary:focus {
+      .button.hollow.secondary:hover, .artist-categories li a.hollow.secondary:hover, .button.hollow.secondary:focus, .artist-categories li a.hollow.secondary:focus {
         border-color: #3c3c3c;
         color: #3c3c3c; }
-    .button.hollow.success, .artist-categories li.hollow.success {
+    .button.hollow.success, .artist-categories li a.hollow.success {
       border: 1px solid #3adb76;
       color: #3adb76; }
-      .button.hollow.success:hover, .artist-categories li.hollow.success:hover, .button.hollow.success:focus, .artist-categories li.hollow.success:focus {
+      .button.hollow.success:hover, .artist-categories li a.hollow.success:hover, .button.hollow.success:focus, .artist-categories li a.hollow.success:focus {
         border-color: #157539;
         color: #157539; }
-    .button.hollow.warning, .artist-categories li.hollow.warning {
+    .button.hollow.warning, .artist-categories li a.hollow.warning {
       border: 1px solid #ffae00;
       color: #ffae00; }
-      .button.hollow.warning:hover, .artist-categories li.hollow.warning:hover, .button.hollow.warning:focus, .artist-categories li.hollow.warning:focus {
+      .button.hollow.warning:hover, .artist-categories li a.hollow.warning:hover, .button.hollow.warning:focus, .artist-categories li a.hollow.warning:focus {
         border-color: #805700;
         color: #805700; }
-    .button.hollow.alert, .artist-categories li.hollow.alert {
+    .button.hollow.alert, .artist-categories li a.hollow.alert {
       border: 1px solid #ec5840;
       color: #ec5840; }
-      .button.hollow.alert:hover, .artist-categories li.hollow.alert:hover, .button.hollow.alert:focus, .artist-categories li.hollow.alert:focus {
+      .button.hollow.alert:hover, .artist-categories li a.hollow.alert:hover, .button.hollow.alert:focus, .artist-categories li a.hollow.alert:focus {
         border-color: #881f0e;
         color: #881f0e; }
-  .button.disabled, .artist-categories li.disabled, .button[disabled], .artist-categories li[disabled] {
+  .button.disabled, .artist-categories li a.disabled, .button[disabled], .artist-categories li a[disabled] {
     opacity: 0.25;
     cursor: not-allowed; }
-    .button.disabled:hover, .artist-categories li.disabled:hover, .button.disabled:focus, .artist-categories li.disabled:focus, .button[disabled]:hover, .artist-categories li[disabled]:hover, .button[disabled]:focus, .artist-categories li[disabled]:focus {
+    .button.disabled:hover, .artist-categories li a.disabled:hover, .button.disabled:focus, .artist-categories li a.disabled:focus, .button[disabled]:hover, .artist-categories li a[disabled]:hover, .button[disabled]:focus, .artist-categories li a[disabled]:focus {
       background-color: #2199e8;
       color: #fff; }
-    .button.disabled.primary, .artist-categories li.disabled.primary, .button[disabled].primary, .artist-categories li[disabled].primary {
+    .button.disabled.primary, .artist-categories li a.disabled.primary, .button[disabled].primary, .artist-categories li a[disabled].primary {
       opacity: 0.25;
       cursor: not-allowed; }
-      .button.disabled.primary:hover, .artist-categories li.disabled.primary:hover, .button.disabled.primary:focus, .artist-categories li.disabled.primary:focus, .button[disabled].primary:hover, .artist-categories li[disabled].primary:hover, .button[disabled].primary:focus, .artist-categories li[disabled].primary:focus {
+      .button.disabled.primary:hover, .artist-categories li a.disabled.primary:hover, .button.disabled.primary:focus, .artist-categories li a.disabled.primary:focus, .button[disabled].primary:hover, .artist-categories li a[disabled].primary:hover, .button[disabled].primary:focus, .artist-categories li a[disabled].primary:focus {
         background-color: #2199e8;
         color: #fff; }
-    .button.disabled.secondary, .artist-categories li.disabled.secondary, .button[disabled].secondary, .artist-categories li[disabled].secondary {
+    .button.disabled.secondary, .artist-categories li a.disabled.secondary, .button[disabled].secondary, .artist-categories li a[disabled].secondary {
       opacity: 0.25;
       cursor: not-allowed; }
-      .button.disabled.secondary:hover, .artist-categories li.disabled.secondary:hover, .button.disabled.secondary:focus, .artist-categories li.disabled.secondary:focus, .button[disabled].secondary:hover, .artist-categories li[disabled].secondary:hover, .button[disabled].secondary:focus, .artist-categories li[disabled].secondary:focus {
+      .button.disabled.secondary:hover, .artist-categories li a.disabled.secondary:hover, .button.disabled.secondary:focus, .artist-categories li a.disabled.secondary:focus, .button[disabled].secondary:hover, .artist-categories li a[disabled].secondary:hover, .button[disabled].secondary:focus, .artist-categories li a[disabled].secondary:focus {
         background-color: #777;
         color: #fff; }
-    .button.disabled.success, .artist-categories li.disabled.success, .button[disabled].success, .artist-categories li[disabled].success {
+    .button.disabled.success, .artist-categories li a.disabled.success, .button[disabled].success, .artist-categories li a[disabled].success {
       opacity: 0.25;
       cursor: not-allowed; }
-      .button.disabled.success:hover, .artist-categories li.disabled.success:hover, .button.disabled.success:focus, .artist-categories li.disabled.success:focus, .button[disabled].success:hover, .artist-categories li[disabled].success:hover, .button[disabled].success:focus, .artist-categories li[disabled].success:focus {
+      .button.disabled.success:hover, .artist-categories li a.disabled.success:hover, .button.disabled.success:focus, .artist-categories li a.disabled.success:focus, .button[disabled].success:hover, .artist-categories li a[disabled].success:hover, .button[disabled].success:focus, .artist-categories li a[disabled].success:focus {
         background-color: #3adb76;
         color: #fff; }
-    .button.disabled.warning, .artist-categories li.disabled.warning, .button[disabled].warning, .artist-categories li[disabled].warning {
+    .button.disabled.warning, .artist-categories li a.disabled.warning, .button[disabled].warning, .artist-categories li a[disabled].warning {
       opacity: 0.25;
       cursor: not-allowed; }
-      .button.disabled.warning:hover, .artist-categories li.disabled.warning:hover, .button.disabled.warning:focus, .artist-categories li.disabled.warning:focus, .button[disabled].warning:hover, .artist-categories li[disabled].warning:hover, .button[disabled].warning:focus, .artist-categories li[disabled].warning:focus {
+      .button.disabled.warning:hover, .artist-categories li a.disabled.warning:hover, .button.disabled.warning:focus, .artist-categories li a.disabled.warning:focus, .button[disabled].warning:hover, .artist-categories li a[disabled].warning:hover, .button[disabled].warning:focus, .artist-categories li a[disabled].warning:focus {
         background-color: #ffae00;
         color: #fff; }
-    .button.disabled.alert, .artist-categories li.disabled.alert, .button[disabled].alert, .artist-categories li[disabled].alert {
+    .button.disabled.alert, .artist-categories li a.disabled.alert, .button[disabled].alert, .artist-categories li a[disabled].alert {
       opacity: 0.25;
       cursor: not-allowed; }
-      .button.disabled.alert:hover, .artist-categories li.disabled.alert:hover, .button.disabled.alert:focus, .artist-categories li.disabled.alert:focus, .button[disabled].alert:hover, .artist-categories li[disabled].alert:hover, .button[disabled].alert:focus, .artist-categories li[disabled].alert:focus {
+      .button.disabled.alert:hover, .artist-categories li a.disabled.alert:hover, .button.disabled.alert:focus, .artist-categories li a.disabled.alert:focus, .button[disabled].alert:hover, .artist-categories li a[disabled].alert:hover, .button[disabled].alert:focus, .artist-categories li a[disabled].alert:focus {
         background-color: #ec5840;
         color: #fff; }
-  .button.dropdown::after, .artist-categories li.dropdown::after {
+  .button.dropdown::after, .artist-categories li a.dropdown::after {
     content: '';
     display: block;
     width: 0;
@@ -3738,7 +3738,7 @@ kbd {
     float: right;
     margin-left: 1em;
     display: inline-block; }
-  .button.arrow-only::after, .artist-categories li.arrow-only::after {
+  .button.arrow-only::after, .artist-categories li a.arrow-only::after {
     margin-left: 0;
     float: none;
     top: -0.1em; }
@@ -4154,99 +4154,99 @@ input[type="range"] {
     display: table; }
   .button-group::after {
     clear: both; }
-  .button-group .button, .button-group .artist-categories li, .artist-categories .button-group li {
+  .button-group .button, .button-group .artist-categories li a, .artist-categories li .button-group a {
     margin: 0;
     margin-right: 1px;
     margin-bottom: 1px;
     font-size: 0.9rem; }
-    .button-group .button:last-child, .button-group .artist-categories li:last-child, .artist-categories .button-group li:last-child {
+    .button-group .button:last-child, .button-group .artist-categories li a:last-child, .artist-categories li .button-group a:last-child {
       margin-right: 0; }
-  .button-group.tiny .button, .button-group.tiny .artist-categories li, .artist-categories .button-group.tiny li {
+  .button-group.tiny .button, .button-group.tiny .artist-categories li a, .artist-categories li .button-group.tiny a {
     font-size: 0.6rem; }
-  .button-group.small .button, .button-group.small .artist-categories li, .artist-categories .button-group.small li {
+  .button-group.small .button, .button-group.small .artist-categories li a, .artist-categories li .button-group.small a {
     font-size: 0.75rem; }
-  .button-group.large .button, .button-group.large .artist-categories li, .artist-categories .button-group.large li {
+  .button-group.large .button, .button-group.large .artist-categories li a, .artist-categories li .button-group.large a {
     font-size: 1.25rem; }
   .button-group.expanded {
     margin-right: -1px; }
     .button-group.expanded::before, .button-group.expanded::after {
       display: none; }
-    .button-group.expanded .button:first-child:nth-last-child(2), .button-group.expanded .artist-categories li:first-child:nth-last-child(2), .artist-categories .button-group.expanded li:first-child:nth-last-child(2), .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button, .button-group.expanded .artist-categories li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button, .artist-categories .button-group.expanded li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button, .button-group.expanded .artist-categories .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li, .artist-categories .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li, .button-group.expanded .artist-categories li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li, .artist-categories .button-group.expanded li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li {
+    .button-group.expanded .button:first-child:nth-last-child(2), .button-group.expanded .artist-categories li a:first-child:nth-last-child(2), .artist-categories li .button-group.expanded a:first-child:nth-last-child(2), .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button, .button-group.expanded .artist-categories li a:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button, .artist-categories li .button-group.expanded a:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button, .button-group.expanded .artist-categories li .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ a, .artist-categories li .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ a, .button-group.expanded .artist-categories li a:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ a, .artist-categories li .button-group.expanded a:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ a {
       display: inline-block;
       width: calc(50% - 1px);
       margin-right: 1px; }
-      .button-group.expanded .button:first-child:nth-last-child(2):last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(2):last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(2):last-child, .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button:last-child, .button-group.expanded .artist-categories .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li:last-child, .artist-categories .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ li:last-child {
+      .button-group.expanded .button:first-child:nth-last-child(2):last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(2):last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(2):last-child, .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button:last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button:last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ .button:last-child, .button-group.expanded .artist-categories li .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ a:last-child, .artist-categories li .button-group.expanded .button:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ a:last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ a:last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(2):first-child:nth-last-child(2) ~ a:last-child {
         margin-right: -6px; }
-    .button-group.expanded .button:first-child:nth-last-child(3), .button-group.expanded .artist-categories li:first-child:nth-last-child(3), .artist-categories .button-group.expanded li:first-child:nth-last-child(3), .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button, .button-group.expanded .artist-categories li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button, .artist-categories .button-group.expanded li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button, .button-group.expanded .artist-categories .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li, .artist-categories .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li, .button-group.expanded .artist-categories li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li, .artist-categories .button-group.expanded li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li {
+    .button-group.expanded .button:first-child:nth-last-child(3), .button-group.expanded .artist-categories li a:first-child:nth-last-child(3), .artist-categories li .button-group.expanded a:first-child:nth-last-child(3), .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button, .button-group.expanded .artist-categories li a:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button, .artist-categories li .button-group.expanded a:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button, .button-group.expanded .artist-categories li .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ a, .artist-categories li .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ a, .button-group.expanded .artist-categories li a:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ a, .artist-categories li .button-group.expanded a:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ a {
       display: inline-block;
       width: calc(33.33333% - 1px);
       margin-right: 1px; }
-      .button-group.expanded .button:first-child:nth-last-child(3):last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(3):last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(3):last-child, .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button:last-child, .button-group.expanded .artist-categories .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li:last-child, .artist-categories .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ li:last-child {
+      .button-group.expanded .button:first-child:nth-last-child(3):last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(3):last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(3):last-child, .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button:last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button:last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ .button:last-child, .button-group.expanded .artist-categories li .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ a:last-child, .artist-categories li .button-group.expanded .button:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ a:last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ a:last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(3):first-child:nth-last-child(3) ~ a:last-child {
         margin-right: -6px; }
-    .button-group.expanded .button:first-child:nth-last-child(4), .button-group.expanded .artist-categories li:first-child:nth-last-child(4), .artist-categories .button-group.expanded li:first-child:nth-last-child(4), .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button, .button-group.expanded .artist-categories li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button, .artist-categories .button-group.expanded li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button, .button-group.expanded .artist-categories .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li, .artist-categories .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li, .button-group.expanded .artist-categories li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li, .artist-categories .button-group.expanded li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li {
+    .button-group.expanded .button:first-child:nth-last-child(4), .button-group.expanded .artist-categories li a:first-child:nth-last-child(4), .artist-categories li .button-group.expanded a:first-child:nth-last-child(4), .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button, .button-group.expanded .artist-categories li a:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button, .artist-categories li .button-group.expanded a:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button, .button-group.expanded .artist-categories li .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ a, .artist-categories li .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ a, .button-group.expanded .artist-categories li a:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ a, .artist-categories li .button-group.expanded a:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ a {
       display: inline-block;
       width: calc(25% - 1px);
       margin-right: 1px; }
-      .button-group.expanded .button:first-child:nth-last-child(4):last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(4):last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(4):last-child, .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button:last-child, .button-group.expanded .artist-categories .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li:last-child, .artist-categories .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ li:last-child {
+      .button-group.expanded .button:first-child:nth-last-child(4):last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(4):last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(4):last-child, .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button:last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button:last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ .button:last-child, .button-group.expanded .artist-categories li .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ a:last-child, .artist-categories li .button-group.expanded .button:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ a:last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ a:last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(4):first-child:nth-last-child(4) ~ a:last-child {
         margin-right: -6px; }
-    .button-group.expanded .button:first-child:nth-last-child(5), .button-group.expanded .artist-categories li:first-child:nth-last-child(5), .artist-categories .button-group.expanded li:first-child:nth-last-child(5), .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button, .button-group.expanded .artist-categories li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button, .artist-categories .button-group.expanded li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button, .button-group.expanded .artist-categories .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li, .artist-categories .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li, .button-group.expanded .artist-categories li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li, .artist-categories .button-group.expanded li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li {
+    .button-group.expanded .button:first-child:nth-last-child(5), .button-group.expanded .artist-categories li a:first-child:nth-last-child(5), .artist-categories li .button-group.expanded a:first-child:nth-last-child(5), .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button, .button-group.expanded .artist-categories li a:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button, .artist-categories li .button-group.expanded a:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button, .button-group.expanded .artist-categories li .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ a, .artist-categories li .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ a, .button-group.expanded .artist-categories li a:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ a, .artist-categories li .button-group.expanded a:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ a {
       display: inline-block;
       width: calc(20% - 1px);
       margin-right: 1px; }
-      .button-group.expanded .button:first-child:nth-last-child(5):last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(5):last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(5):last-child, .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button:last-child, .button-group.expanded .artist-categories .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li:last-child, .artist-categories .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ li:last-child {
+      .button-group.expanded .button:first-child:nth-last-child(5):last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(5):last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(5):last-child, .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button:last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button:last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ .button:last-child, .button-group.expanded .artist-categories li .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ a:last-child, .artist-categories li .button-group.expanded .button:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ a:last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ a:last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(5):first-child:nth-last-child(5) ~ a:last-child {
         margin-right: -6px; }
-    .button-group.expanded .button:first-child:nth-last-child(6), .button-group.expanded .artist-categories li:first-child:nth-last-child(6), .artist-categories .button-group.expanded li:first-child:nth-last-child(6), .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button, .button-group.expanded .artist-categories li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button, .artist-categories .button-group.expanded li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button, .button-group.expanded .artist-categories .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li, .artist-categories .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li, .button-group.expanded .artist-categories li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li, .artist-categories .button-group.expanded li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li {
+    .button-group.expanded .button:first-child:nth-last-child(6), .button-group.expanded .artist-categories li a:first-child:nth-last-child(6), .artist-categories li .button-group.expanded a:first-child:nth-last-child(6), .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button, .button-group.expanded .artist-categories li a:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button, .artist-categories li .button-group.expanded a:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button, .button-group.expanded .artist-categories li .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ a, .artist-categories li .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ a, .button-group.expanded .artist-categories li a:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ a, .artist-categories li .button-group.expanded a:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ a {
       display: inline-block;
       width: calc(16.66667% - 1px);
       margin-right: 1px; }
-      .button-group.expanded .button:first-child:nth-last-child(6):last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(6):last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(6):last-child, .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button:last-child, .button-group.expanded .artist-categories .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li:last-child, .artist-categories .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li:last-child, .button-group.expanded .artist-categories li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li:last-child, .artist-categories .button-group.expanded li:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ li:last-child {
+      .button-group.expanded .button:first-child:nth-last-child(6):last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(6):last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(6):last-child, .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button:last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button:last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ .button:last-child, .button-group.expanded .artist-categories li .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ a:last-child, .artist-categories li .button-group.expanded .button:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ a:last-child, .button-group.expanded .artist-categories li a:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ a:last-child, .artist-categories li .button-group.expanded a:first-child:nth-last-child(6):first-child:nth-last-child(6) ~ a:last-child {
         margin-right: -6px; }
-  .button-group.primary .button, .button-group.primary .artist-categories li, .artist-categories .button-group.primary li {
+  .button-group.primary .button, .button-group.primary .artist-categories li a, .artist-categories li .button-group.primary a {
     background-color: #2199e8;
     color: #fff; }
-    .button-group.primary .button:hover, .button-group.primary .artist-categories li:hover, .artist-categories .button-group.primary li:hover, .button-group.primary .button:focus, .button-group.primary .artist-categories li:focus, .artist-categories .button-group.primary li:focus {
+    .button-group.primary .button:hover, .button-group.primary .artist-categories li a:hover, .artist-categories li .button-group.primary a:hover, .button-group.primary .button:focus, .button-group.primary .artist-categories li a:focus, .artist-categories li .button-group.primary a:focus {
       background-color: #147cc0;
       color: #fff; }
-  .button-group.secondary .button, .button-group.secondary .artist-categories li, .artist-categories .button-group.secondary li {
+  .button-group.secondary .button, .button-group.secondary .artist-categories li a, .artist-categories li .button-group.secondary a {
     background-color: #777;
     color: #fff; }
-    .button-group.secondary .button:hover, .button-group.secondary .artist-categories li:hover, .artist-categories .button-group.secondary li:hover, .button-group.secondary .button:focus, .button-group.secondary .artist-categories li:focus, .artist-categories .button-group.secondary li:focus {
+    .button-group.secondary .button:hover, .button-group.secondary .artist-categories li a:hover, .artist-categories li .button-group.secondary a:hover, .button-group.secondary .button:focus, .button-group.secondary .artist-categories li a:focus, .artist-categories li .button-group.secondary a:focus {
       background-color: #5f5f5f;
       color: #fff; }
-  .button-group.success .button, .button-group.success .artist-categories li, .artist-categories .button-group.success li {
+  .button-group.success .button, .button-group.success .artist-categories li a, .artist-categories li .button-group.success a {
     background-color: #3adb76;
     color: #fff; }
-    .button-group.success .button:hover, .button-group.success .artist-categories li:hover, .artist-categories .button-group.success li:hover, .button-group.success .button:focus, .button-group.success .artist-categories li:focus, .artist-categories .button-group.success li:focus {
+    .button-group.success .button:hover, .button-group.success .artist-categories li a:hover, .artist-categories li .button-group.success a:hover, .button-group.success .button:focus, .button-group.success .artist-categories li a:focus, .artist-categories li .button-group.success a:focus {
       background-color: #22bb5b;
       color: #fff; }
-  .button-group.warning .button, .button-group.warning .artist-categories li, .artist-categories .button-group.warning li {
+  .button-group.warning .button, .button-group.warning .artist-categories li a, .artist-categories li .button-group.warning a {
     background-color: #ffae00;
     color: #fff; }
-    .button-group.warning .button:hover, .button-group.warning .artist-categories li:hover, .artist-categories .button-group.warning li:hover, .button-group.warning .button:focus, .button-group.warning .artist-categories li:focus, .artist-categories .button-group.warning li:focus {
+    .button-group.warning .button:hover, .button-group.warning .artist-categories li a:hover, .artist-categories li .button-group.warning a:hover, .button-group.warning .button:focus, .button-group.warning .artist-categories li a:focus, .artist-categories li .button-group.warning a:focus {
       background-color: #cc8b00;
       color: #fff; }
-  .button-group.alert .button, .button-group.alert .artist-categories li, .artist-categories .button-group.alert li {
+  .button-group.alert .button, .button-group.alert .artist-categories li a, .artist-categories li .button-group.alert a {
     background-color: #ec5840;
     color: #fff; }
-    .button-group.alert .button:hover, .button-group.alert .artist-categories li:hover, .artist-categories .button-group.alert li:hover, .button-group.alert .button:focus, .button-group.alert .artist-categories li:focus, .artist-categories .button-group.alert li:focus {
+    .button-group.alert .button:hover, .button-group.alert .artist-categories li a:hover, .artist-categories li .button-group.alert a:hover, .button-group.alert .button:focus, .button-group.alert .artist-categories li a:focus, .artist-categories li .button-group.alert a:focus {
       background-color: #da3116;
       color: #fff; }
-  .button-group.stacked .button, .button-group.stacked .artist-categories li, .artist-categories .button-group.stacked li, .button-group.stacked-for-small .button, .button-group.stacked-for-small .artist-categories li, .artist-categories .button-group.stacked-for-small li, .button-group.stacked-for-medium .button, .button-group.stacked-for-medium .artist-categories li, .artist-categories .button-group.stacked-for-medium li {
+  .button-group.stacked .button, .button-group.stacked .artist-categories li a, .artist-categories li .button-group.stacked a, .button-group.stacked-for-small .button, .button-group.stacked-for-small .artist-categories li a, .artist-categories li .button-group.stacked-for-small a, .button-group.stacked-for-medium .button, .button-group.stacked-for-medium .artist-categories li a, .artist-categories li .button-group.stacked-for-medium a {
     width: 100%; }
-    .button-group.stacked .button:last-child, .button-group.stacked .artist-categories li:last-child, .artist-categories .button-group.stacked li:last-child, .button-group.stacked-for-small .button:last-child, .button-group.stacked-for-small .artist-categories li:last-child, .artist-categories .button-group.stacked-for-small li:last-child, .button-group.stacked-for-medium .button:last-child, .button-group.stacked-for-medium .artist-categories li:last-child, .artist-categories .button-group.stacked-for-medium li:last-child {
+    .button-group.stacked .button:last-child, .button-group.stacked .artist-categories li a:last-child, .artist-categories li .button-group.stacked a:last-child, .button-group.stacked-for-small .button:last-child, .button-group.stacked-for-small .artist-categories li a:last-child, .artist-categories li .button-group.stacked-for-small a:last-child, .button-group.stacked-for-medium .button:last-child, .button-group.stacked-for-medium .artist-categories li a:last-child, .artist-categories li .button-group.stacked-for-medium a:last-child {
       margin-bottom: 0; }
   @media screen and (min-width: 40em) {
-    .button-group.stacked-for-small .button, .button-group.stacked-for-small .artist-categories li, .artist-categories .button-group.stacked-for-small li {
+    .button-group.stacked-for-small .button, .button-group.stacked-for-small .artist-categories li a, .artist-categories li .button-group.stacked-for-small a {
       width: auto;
       margin-bottom: 0; } }
   @media screen and (min-width: 64em) {
-    .button-group.stacked-for-medium .button, .button-group.stacked-for-medium .artist-categories li, .artist-categories .button-group.stacked-for-medium li {
+    .button-group.stacked-for-medium .button, .button-group.stacked-for-medium .artist-categories li a, .artist-categories li .button-group.stacked-for-medium a {
       width: auto;
       margin-bottom: 0; } }
   @media screen and (max-width: 39.9375em) {
     .button-group.stacked-for-small.expanded {
       display: block; }
-      .button-group.stacked-for-small.expanded .button, .button-group.stacked-for-small.expanded .artist-categories li, .artist-categories .button-group.stacked-for-small.expanded li {
+      .button-group.stacked-for-small.expanded .button, .button-group.stacked-for-small.expanded .artist-categories li a, .artist-categories li .button-group.stacked-for-small.expanded a {
         display: block;
         margin-right: 0; } }
 
@@ -9621,7 +9621,7 @@ pre {
   transition: 0.5s;
   font-size: 1.1rem;
   line-height: 1; }
-  .top-bar .menu a:hover:not(.button):not(.artist-categories li) {
+  .top-bar .menu a:hover:not(.button):not(.artist-categories li a) {
     background-color: #2a2a2a; }
 
 .top-bar .menu a:hover {
@@ -9771,7 +9771,7 @@ header#masthead {
   border-bottom: 1px solid gray; }
   header#masthead .top-bar-right {
     float: left; }
-  header#masthead .top-bar .menu a:hover:not(.button):not(.artist-categories li) {
+  header#masthead .top-bar .menu a:hover:not(.button):not(.artist-categories li a) {
     background-color: transparent; }
   header#masthead .top-bar .menu li:not(:last-child) {
     border-right: none;
@@ -9837,9 +9837,62 @@ nav#site-navigation {
   list-style: none;
   margin: 0; }
   .artist-categories li {
-    color: #fefefe; }
+    color: #fefefe;
+    float: left;
+    margin-right: 12.5px;
+    margin-bottom: 12.5px; }
     .artist-categories li a {
+      background-color: #fefefe;
+      color: #F2F1ED;
+      border: 1px solid #B49A81;
+      color: #B49A81;
+      margin-bottom: 0; }
+      .artist-categories li a:active, .artist-categories li a:focus, .artist-categories li a:hover {
+        background-color: #BA0C2F; }
+    .artist-categories li.current-cat a {
+      background-color: #BA0C2F;
       color: #fefefe; }
+  .artist-categories .children {
+    display: none;
+    list-style: none;
+    margin: 0; }
+  .artist-categories .current-cat.i-have-kids,
+  .artist-categories .current-cat-parent {
+    height: 100px; }
+  .artist-categories .current-cat a,
+  .artist-categories .current-cat-parent a {
+    background-color: #BA0C2F;
+    color: #fefefe; }
+  .artist-categories .current-cat ul.children,
+  .artist-categories .current-cat-parent ul.children {
+    position: absolute;
+    display: inline-block;
+    bottom: 20px;
+    left: 0; }
+    .artist-categories .current-cat ul.children li,
+    .artist-categories .current-cat-parent ul.children li {
+      float: left;
+      margin-bottom: 0; }
+      .artist-categories .current-cat ul.children li a,
+      .artist-categories .current-cat-parent ul.children li a {
+        background-color: #B49A81; }
+        .artist-categories .current-cat ul.children li a:active, .artist-categories .current-cat ul.children li a:focus, .artist-categories .current-cat ul.children li a:hover,
+        .artist-categories .current-cat-parent ul.children li a:active,
+        .artist-categories .current-cat-parent ul.children li a:focus,
+        .artist-categories .current-cat-parent ul.children li a:hover {
+          background-color: #BA0C2F; }
+      .artist-categories .current-cat ul.children li.current-cat a,
+      .artist-categories .current-cat-parent ul.children li.current-cat a {
+        background-color: #BA0C2F; }
+        .artist-categories .current-cat ul.children li.current-cat a:active, .artist-categories .current-cat ul.children li.current-cat a:focus, .artist-categories .current-cat ul.children li.current-cat a:hover,
+        .artist-categories .current-cat-parent ul.children li.current-cat a:active,
+        .artist-categories .current-cat-parent ul.children li.current-cat a:focus,
+        .artist-categories .current-cat-parent ul.children li.current-cat a:hover {
+          background-color: #BA0C2F; }
+
+body.post-type-archive-artists li.cat-item-all a {
+  background-color: #BA0C2F;
+  color: #fefefe; }
 
 .sites-button {
   background: #FF6908;

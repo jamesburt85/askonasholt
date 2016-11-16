@@ -3,6 +3,87 @@
 	position: relative;
 }
 
+// .artist-categories {
+// 	position: absolute;
+// 	bottom: 0;
+// 	// width: 100%;
+// 	list-style: none;
+// 	margin: 0;
+// 	li {
+// 		color: $white;
+// 		float: left;
+// 		margin-right: ($sitepadding / 2);
+// 		margin-bottom: ($sitepadding / 2);
+// 		a {
+// 			// color: $white;
+// 			@extend .button;
+// 			background-color: $white;
+// 			color: $lightbrown;
+// 			border: 1px solid $brown;
+// 			color: $brown;
+// 			margin-bottom: 0;
+// 			&:active,
+// 			&:focus,
+// 			&:hover {
+// 				background-color: $red;
+// 			}
+// 		}
+
+// 		&.current-cat {
+// 			a {
+// 				background-color: $red;
+// 				color: $white;
+// 			}
+// 		}
+		
+// 		&.current-cat-parent,
+// 		&.current-cat-ancestor {
+// 			a {
+// 				background-color: $red;
+// 				color: $white;
+// 			}
+// 			.children {
+// 				a {
+// 					background-color: $bggrey;
+// 					color: $white;
+// 					&:hover {
+// 						background-color: $red;
+// 					}
+// 				}
+				
+// 			}
+// 		}
+		
+// 	}
+
+// 	.children {
+// 		display: none;
+// 		list-style: none;
+// 		margin: 0;
+// 	}
+	
+// 	.current-cat,
+// 	.current-cat-parent {
+// 		a { 
+// 			background-color: $white;
+// 			color: $lightbrown;
+// 			border: 1px solid $brown;
+// 			color: $brown;
+// 		}
+// 		ul.children {
+// 			margin-left: ($sitepadding / 2);
+// 			display: block;
+// 			float: right;
+// 			li {
+// 				float: left;
+// 				margin-bottom: 0;
+// 			}
+// 		}
+// 	}
+
+// }
+
+
 .artist-categories {
 	position: absolute;
 	bottom: 0;
@@ -10,12 +91,136 @@
 	list-style: none;
 	margin: 0;
 	li {
-		// SASS MAGIC RIGHT HERE!
-		@extend .button;
 		color: $white;
+		float: left;
+		margin-right: ($sitepadding / 2);
+		margin-bottom: ($sitepadding / 2);
 		a {
-			color: $white;			
+			// color: $white;
+			@extend .button;
+			background-color: $white;
+			color: $lightbrown;
+			border: 1px solid $brown;
+			color: $brown;
+			margin-bottom: 0;
+			
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: $red;
+			}
+		
+		}
+
+		&.current-cat {
+			a {
+				background-color: $red;
+				color: $white;
+			}
+		}
+
+		// &.current-cat {
+		// 	a {
+		// 		background-color: $red;
+		// 		color: $white;
+		// 	}
+		// }
+		
+		// &.current-cat-parent,
+		// &.current-cat-ancestor {
+		// 	a {
+		// 		background-color: $red;
+		// 		color: $white;
+		// 	}
+		// 	.children {
+		// 		a {
+		// 			background-color: $bggrey;
+		// 			color: $white;
+		// 			&:hover {
+		// 				background-color: $red;
+		// 			}
+		// 		}
+				
+		// 	}
+		// }
+		
+	}
+
+	.children {
+		display: none;
+		list-style: none;
+		margin: 0;
+		// &:before {
+		// 	content: 'yeah';
+		// 	display: block;
+		// 	width: 100px; // temp
+		// }
+	}
+
+	// first parent
+	// .current-cat {
+	// 	// height: 100px; // temp
+	// 	// position: relative;
+	// 	// width:  100%;
+	// }
+	.current-cat.i-have-kids,
+	.current-cat-parent {
+		height: 100px; // temp
+	}
+	
+	.current-cat,
+	.current-cat-parent {
+		a { 
+			// background-color: $white;
+			// color: $lightbrown;
+			// border: 1px solid $brown;
+			// color: $brown;
+			background-color: $red;
+			color: $white;
+		}
+		ul.children {
+			// margin-left: ($sitepadding / 2);
+			position: absolute;
+			display: inline-block;
+			bottom: 20px; // temp
+			left: 0;
+
+			// float: right;
+
+			li {
+				float: left;
+				margin-bottom: 0;
+				a {
+					background-color: $brown;
+					// background-color: lighten($bggrey, 20%);
+					&:active,
+					&:focus,
+					&:hover {
+						background-color: $red;
+					}
+				}
+				&.current-cat {
+					a {
+						background-color: $red;
+						&:active,
+						&:focus,
+						&:hover {
+							background-color: $red;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+/// highlight show all on archive page
+body.post-type-archive-artists {
+	li.cat-item-all {
+		a {
+			background-color: $red;
+			color: $white;
 		}
 	}
 }
-
