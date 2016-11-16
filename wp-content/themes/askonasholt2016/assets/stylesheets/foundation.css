@@ -9839,8 +9839,57 @@ nav#site-navigation {
     margin-right: 12.5px;
     margin-bottom: 12.5px; }
     .artist-categories li a {
-      color: #fefefe;
+      background-color: #fefefe;
+      color: #F2F1ED;
+      border: 1px solid #B49A81;
+      color: #B49A81;
       margin-bottom: 0; }
+      .artist-categories li a:active, .artist-categories li a:focus, .artist-categories li a:hover {
+        background-color: #BA0C2F; }
+    .artist-categories li.current-cat a {
+      background-color: #BA0C2F;
+      color: #fefefe; }
+  .artist-categories .children {
+    display: none;
+    list-style: none;
+    margin: 0; }
+  .artist-categories .current-cat.i-have-kids,
+  .artist-categories .current-cat-parent {
+    height: 100px; }
+  .artist-categories .current-cat a,
+  .artist-categories .current-cat-parent a {
+    background-color: #BA0C2F;
+    color: #fefefe; }
+  .artist-categories .current-cat ul.children,
+  .artist-categories .current-cat-parent ul.children {
+    position: absolute;
+    display: inline-block;
+    bottom: 20px;
+    left: 0; }
+    .artist-categories .current-cat ul.children li,
+    .artist-categories .current-cat-parent ul.children li {
+      float: left;
+      margin-bottom: 0; }
+      .artist-categories .current-cat ul.children li a,
+      .artist-categories .current-cat-parent ul.children li a {
+        background-color: #B49A81; }
+        .artist-categories .current-cat ul.children li a:active, .artist-categories .current-cat ul.children li a:focus, .artist-categories .current-cat ul.children li a:hover,
+        .artist-categories .current-cat-parent ul.children li a:active,
+        .artist-categories .current-cat-parent ul.children li a:focus,
+        .artist-categories .current-cat-parent ul.children li a:hover {
+          background-color: #BA0C2F; }
+      .artist-categories .current-cat ul.children li.current-cat a,
+      .artist-categories .current-cat-parent ul.children li.current-cat a {
+        background-color: #BA0C2F; }
+        .artist-categories .current-cat ul.children li.current-cat a:active, .artist-categories .current-cat ul.children li.current-cat a:focus, .artist-categories .current-cat ul.children li.current-cat a:hover,
+        .artist-categories .current-cat-parent ul.children li.current-cat a:active,
+        .artist-categories .current-cat-parent ul.children li.current-cat a:focus,
+        .artist-categories .current-cat-parent ul.children li.current-cat a:hover {
+          background-color: #BA0C2F; }
+
+body.post-type-archive-artists li.cat-item-all a {
+  background-color: #BA0C2F;
+  color: #fefefe; }
 
 .sites-button {
   background: #FF6908;

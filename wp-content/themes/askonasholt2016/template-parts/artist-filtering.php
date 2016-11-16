@@ -17,6 +17,7 @@
 				        'title_li' => '',
 				        'exclude' => 1, // don't show uncategorised
 				        'show_option_all' => 'show all',
+				        'walker'       => new Walker_Category_Find_Parents(),
 				    ) );
 					// $args = array(
 					// 'title_li'=>'Select category',
