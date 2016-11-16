@@ -17,6 +17,11 @@
 				page_num = split_url[ split_url.length-1],
 				vars = {};
 
+
+			if ( isNaN(page_num) ){
+				page_num = split_url[ split_url.length-2];
+			}
+
 			// Set up the correct vars
 			if ( $("#wiaw_taxonomy").length >= 1) {
 				vars.taxonomy 	= $("#wiaw_taxonomy").val();
@@ -25,6 +30,7 @@
 				vars.post_type 	= $("#wiaw_post_type").val();
 			}
 
+			console.log(split_url);
 			console.log(vars);
 			console.log(page_num);
 
