@@ -10,8 +10,6 @@
 
 ?>
 
-<?php get_template_part( 'template-parts/tour-project-header' ); ?>
-
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
 	<header>
 		<?php //foundationpress_entry_meta(); ?>

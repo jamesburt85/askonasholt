@@ -17,7 +17,7 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/tour-project-header' ); ?>
+<?php get_template_part( 'template-parts/artist-filtering' ); ?>
 
 <div id="archive" role="main">
 	
