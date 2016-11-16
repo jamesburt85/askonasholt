@@ -43,6 +43,11 @@ get_header(); ?>
 		// 		'<div class="tag-archive-meta">' . $tag_description . '</div>'
 		// 	);
 		// }
+	} elseif ( is_tax('artist-type') ) {
+
+		get_template_part( 'template-parts/artist-filtering' );
+		
+
 	} elseif ( is_post_type_archive('artists') ) {
 
 		get_template_part( 'template-parts/artist-filtering' );
