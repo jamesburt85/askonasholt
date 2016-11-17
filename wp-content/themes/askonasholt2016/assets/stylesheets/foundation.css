@@ -10910,6 +10910,13 @@ body.home {
     height: 100vh;
     width: 100%;
     position: relative; }
+    body.home .splash-page-hero path#Fill-1 {
+      fill: white; }
+    body.home .splash-page-hero path#Fill-3 {
+      fill: white; }
+    body.home .splash-page-hero svg {
+      left: 2em;
+      position: absolute; }
   body.home header#masthead, body.home div#footer-container {
     display: none; }
   body.home .continue-link {
@@ -10973,6 +10980,17 @@ body.post-type-archive-tours-projects .tour-thumbnail {
 
 .image-source-link {
   color: #98C3D1; }
+
+.hidden {
+  display: none; }
+
+.expanded .hidden {
+  display: block !important; }
+
+.tour-contact-area img.tour-contact-image {
+  height: 55px;
+  width: 55px;
+  border-radius: 55px; }
 
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {

@@ -52,20 +52,61 @@ get_header(); ?>
 			<?php 
 			
 				$blurb = get_field('blurb');
+				$extra_blurb_copy = get_field('extra_blurb_copy');
 			
 			?>
 
 			<div class="row" id="introduction">
 				<div class="small-12 medium-3 columns">
-					Contact <br/>
-					Artist(s) <br/>
-					Further Info <br/>
+					<h4 class="section-header">Contact</h4>
+					<?php 
+
+					  // Query Args
+					  $args = array(
+
+					    'post_type'		=> 'people',
+					    'post__in'  	=> $projects,
+					    // 'posts_per_page' => 3,
+					    
+					  );
+
+					  // The Query
+					  $the_query = new WP_Query( $args );
+
+					  // The Loop
+					  if ( $the_query->have_posts() ) {
+
+					    while ( $the_query->have_posts() ) {
+					      $the_query->the_post();
+
+					      get_template_part( 'template-parts/content-contact-person' );
+
+					    }
+
+					    /* Restore original Post Data */
+					    wp_reset_postdata();
+					  } else {
+					    // no posts found
+					  } ?>
+
+					 <br/>
+					 
+					<h4 class="section-header">Artist(s)</h4> <br/>
+					<h4 class="section-header">Further Info</h4> <br/>
 				</div>
 				<div class="small-12 medium-9 columns">
 					About the Tour/Project
-					<div class="more">
-						<?php echo $blurb; ?>
+
+					<?php echo $blurb; ?>
+
+					<div class="blurb-area" id="menuBar" data-toggler=".expanded">
+						<div class="hidden"><?php echo $extra_blurb_copy; ?></div>
+						<p><a data-toggle="menuBar">More</a></p>
 					</div>
+
+
+
+
 				</div>
 			</div>
 

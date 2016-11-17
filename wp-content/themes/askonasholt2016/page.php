@@ -30,6 +30,7 @@
            <!-- using ACF Flexible content instead of the_content  -->
            <?php $acf_fields = get_fields(); ?>
            <?php include(locate_template('template-parts/acf.php')); ?>
+           <?php include(locate_template('template-parts/contact-page.php')); ?>
 
            <?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
        </div>

@@ -47,13 +47,24 @@ body.post-type-archive-tours-projects {
   color: #98C3D1;
 }
 
-//show more/less on blurb
-// .morecontent span {
-//     display: none;
-// }
-// .morelink {
-//     display: block;
-// }
+
+.hidden {
+    display: none;
+}
+
+.expanded {
+  .hidden {
+    display: block !important;
+  }
+}
+
+.tour-contact-area {
+  img.tour-contact-image {
+    height: 55px;
+    width: 55px;
+    border-radius: 55px;
+  }
+}
 
 
 .mfp-with-zoom .mfp-container,
@@ -78,4 +89,5 @@ body.post-type-archive-tours-projects {
 .mfp-with-zoom.mfp-removing.mfp-bg {
   opacity: 0;
 }
+
 

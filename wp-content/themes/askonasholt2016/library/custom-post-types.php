@@ -156,6 +156,38 @@ function feature_init()
     
     register_post_type('tours-projects', $args);
 
+
+    /* ----------------------------------------------------
+    People
+    ---------------------------------------------------- */
+    
+    $labels = array
+    (
+        'name'                      => 'People',
+        'singular_name'             => 'People Item',
+        'add_new'                   => _x('Add New', 'People Item'),
+        'add_new_item'              => 'Add New People Item',
+        'edit_item'                 => 'Edit People Item',
+        'new_item'                  => 'New People Item',
+        'view_item'                 => 'View People Item',
+        'search_items'              => 'Search People Items',
+        'not_found'                 => 'No People Item found',
+        'not_found_in_trash'        => 'No People Item found in Trash',
+        'parent_item_colon'         => '',
+
+        'menu_name'                 => 'People'
+    );
+    
+    $args['labels']                 = $labels;
+    $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
+    // $args['rewrite']                = array('xxx' => 'xxx');
+    $args['rewrite']                = array('slug' => 'people');
+    $args['menu_icon']              = 'dashicons-carrot';
+    $args['show_in_menu']           = true;
+    
+    register_post_type('people', $args);
+
+
 }
 
 
