@@ -51,8 +51,9 @@
 				  // Query Args
 				  $args = array(
 
-				    'post_type' => 'events',
-				    'post__in'  => $tour_events,
+				    'post_type'		=> 'events',
+				    'post__in'  	=> $tour_events,
+				    'posts_per_page' => 3,
 				    
 				  );
 

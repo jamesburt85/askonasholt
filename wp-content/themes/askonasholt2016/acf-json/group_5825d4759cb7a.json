@@ -71,6 +71,24 @@
             "media_upload": 1
         },
         {
+            "key": "field_582da5d242adb",
+            "label": "Extra Blurb Copy",
+            "name": "extra_blurb_copy",
+            "type": "wysiwyg",
+            "instructions": "Extra copy, hidden with a show more. If you have a large amount of text use this to hide initially.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
             "key": "field_5825eeac308e9",
             "label": "Tour Events",
             "name": "tour_events",
@@ -96,25 +114,6 @@
             "min": "",
             "max": "",
             "return_format": "id"
-        },
-        {
-            "key": "field_5825fae937c58",
-            "label": "Video",
-            "name": "video",
-            "type": "text",
-            "instructions": "Enter the number of the video",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         },
         {
             "key": "field_582603fd4742d",
@@ -204,8 +203,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1479289495
+    "modified": 1479389929
 }

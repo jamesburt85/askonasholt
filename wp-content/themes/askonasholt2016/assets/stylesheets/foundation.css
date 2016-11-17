@@ -9913,6 +9913,20 @@ body.post-type-archive-artists li.cat-item-all a {
   padding: 1em 6em;
   color: #ffffff; }
 
+ul.single-page-nav {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #BA0C2F;
+  margin-left: 0; }
+  ul.single-page-nav li {
+    padding: 10px 25px;
+    color: white; }
+    ul.single-page-nav li a {
+      color: white;
+      font-weight: bold; }
+
 .sites-button {
   background: #FF6908;
   font-size: 1.25rem;

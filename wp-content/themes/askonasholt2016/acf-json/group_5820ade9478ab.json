@@ -469,6 +469,73 @@
                                     "media_upload": 1
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_582d86e8282a9",
+                            "label": "Unique Section Name",
+                            "name": "unique_id",
+                            "type": "text",
+                            "instructions": "Enter name of section i.e. Press",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
+                    "key": "582d8782bad7a",
+                    "name": "video",
+                    "label": "Video",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_582d878abad7b",
+                            "label": "Video",
+                            "name": "video",
+                            "type": "text",
+                            "instructions": "Add number of video",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_582d8a4483fe0",
+                            "label": "Unique Section Name",
+                            "name": "unique_id",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -522,5 +589,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479312129
+    "modified": 1479379537
 }

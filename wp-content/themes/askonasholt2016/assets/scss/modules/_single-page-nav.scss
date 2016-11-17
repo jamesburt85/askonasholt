@@ -1,0 +1,16 @@
+//Red nav bar within tours
+
+ul.single-page-nav {
+    list-style-type: none;
+    display: flex;
+    background: $red;
+    margin-left: 0;
+    li {
+    	padding: 10px $sitepadding;
+    	color: white;
+    	a {
+    		color: white;
+    		font-weight: bold;
+    	}
+    }
+}

@@ -18,6 +18,10 @@ body.post-type-archive-tours-projects {
   }
 }
 
+
+
+//SINGLE TOURS STYLES ********************************
+
 .single-tours-projects {
   .tour-hero {
       position: relative;
@@ -42,6 +46,15 @@ body.post-type-archive-tours-projects {
 .image-source-link {
   color: #98C3D1;
 }
+
+//show more/less on blurb
+// .morecontent span {
+//     display: none;
+// }
+// .morelink {
+//     display: block;
+// }
+
 
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {

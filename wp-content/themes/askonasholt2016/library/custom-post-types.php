@@ -148,7 +148,7 @@ function feature_init()
     );
     
     $args['labels']                 = $labels;
-    $args['supports']               = array('title', 'editor', 'thumbnail');
+    $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
     // $args['rewrite']                = array('xxx' => 'xxx');
     $args['rewrite']                = array('slug' => 'tours-projects');
     $args['menu_icon']              = 'dashicons-format-audio';

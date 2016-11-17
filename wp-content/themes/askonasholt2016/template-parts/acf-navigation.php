@@ -5,7 +5,7 @@
 // print_r($acf_fields);
 // echo "</pre>";
 
-// loop throuhg each section in the ACF fields array
+// loop through each section in the ACF fields array
 $section_i=0;
 
 
@@ -25,15 +25,14 @@ if ($acf_fields['flexible_content']) {
 
 		?>
 
-		<li><a data-scroll="" data-events="scroll" href="#<?php echo $section['unique_id'] ?>"><?php echo $section['unique_id'] ?></a></li>
+		<li>
+			<a data-scroll="" data-events="scroll" href="#<?php echo $section['unique_id'] ?>"><?php echo $section['unique_id'] ?></a>
+		</li>
 
 		<?php
 
 
 		$section_i++;
-
-		# Close .clear-section
-		echo '</div>';
 
 	endforeach; // end of loop through sections 
 

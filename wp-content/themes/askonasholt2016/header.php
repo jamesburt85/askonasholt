@@ -27,6 +27,8 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
+	<div id="top"></div>
+
 	<header id="masthead" class="site-header" role="banner">
 		<div class="title-bar" data-responsive-toggle="site-navigation">
 			<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
@@ -72,7 +74,6 @@
 
 	</header>
 
-	<div id="top"></div>
 	
 	<section class="container">
 		<?php do_action( 'foundationpress_after_header' );

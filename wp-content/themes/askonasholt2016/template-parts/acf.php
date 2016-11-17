@@ -95,8 +95,24 @@ if ($acf_fields['flexible_content']) {
 					</div>
 				</div>
 
+
 			<?php
 			break;
+
+
+
+			#Video
+			case 'video': ?>
+
+				<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
+
+				<div class="row large-video-row">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
+				</div>
+
+			<?php
+			break;
+
 
 
 			#Image_Gallery
@@ -139,7 +155,7 @@ if ($acf_fields['flexible_content']) {
 			#Press Section
 			case 'press': ?>
 				
-				<h4 class="section-header">Press</h4>
+				<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Press</h4>
 				<div class="row press-row">
 					<ul class="accordion" data-accordion data-allow-all-closed="true">
 						
