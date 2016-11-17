@@ -9904,6 +9904,15 @@ body.post-type-archive-artists li.cat-item-all a {
   background-color: #BA0C2F;
   color: #fefefe; }
 
+.link-banner .link-banner-button {
+  text-align: center;
+  padding: 50px; }
+
+.link-banner button {
+  border: 1px solid #ffffff;
+  padding: 1em 6em;
+  color: #ffffff; }
+
 .sites-button {
   background: #FF6908;
   font-size: 1.25rem;
@@ -10056,14 +10065,15 @@ button.hero-button {
     color: white;
     padding: 10px; }
 
-.hero-text {
-  max-width: 50%; }
-
 .hero-text span p {
   padding: 10px; }
 
 .hero-text span, .hero-text button, .hero-text span p {
   background: rgba(186, 12, 47, 0.8); }
+
+@media screen and (min-width: 40em) {
+  .hero-text {
+    max-width: 50%; } }
 
 .text-banner-wrapper {
   width: 100%;
@@ -10944,13 +10954,8 @@ body.post-type-archive-tours-projects .tour-thumbnail {
   margin-left: 1em;
   color: white; }
 
-.single-tours-projects .tour-image-container.slick-slide.slick-active {
-  min-height: 200px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  border-bottom: 0;
-  -webkit-background-size: cover;
-  background-size: cover; }
+.single-tours-projects a.slick-slide img {
+  padding: 10px; }
 
 .image-source-link {
   color: #98C3D1; }

@@ -31,9 +31,11 @@ body.post-type-archive-tours-projects {
       color: white;
   }
   //add some padding to gallery on tours-projects
-  .tour-image-container.slick-slide.slick-active {
-      min-height: 200px;
-      @include full-bg;
+  a.slick-slide {
+      // margin: 10px;
+      img {
+          padding: 10px;
+      }
   }
 }
 

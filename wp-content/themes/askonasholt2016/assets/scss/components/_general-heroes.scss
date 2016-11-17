@@ -25,14 +25,16 @@ button.hero-button {
 	}
 }
 
-.hero-text {
-	max-width: 50%;
-}
-
 .hero-text span p {
 	padding: 10px;
 }
 
 .hero-text span, .hero-text button, .hero-text span p {
 	background: $herored;
+}
+
+@include breakpoint(medium) {
+  .hero-text {
+  	max-width: 50%;
+  }
 }

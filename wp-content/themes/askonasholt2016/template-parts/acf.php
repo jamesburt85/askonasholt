@@ -103,21 +103,23 @@ if ($acf_fields['flexible_content']) {
 			case 'image_gallery': ?>
 
 				<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image gallery</h4>
-				<div class="multiple-items zoom-gallery">
+				<div class="row">
+					<div class="multiple-items zoom-gallery">
 
-					<?php
-					# Loop through the sections
-					foreach ($section['image_repeater'] as $repeater) { ?>
-						<!-- <div class="tour-image-container" style="background-image: url('<?php echo $repeater['image']; ?>');"></div> -->
-						<a href="<?php echo $repeater['image']; ?>">
-							<img src="<?php echo $repeater['image']; ?>">
-						</a>
-					<?php } ?>
-	
+						<?php
+						# Loop through the sections
+						foreach ($section['image_repeater'] as $repeater) { ?>
+							<!-- <div class="tour-image-container" style="background-image: url('<?php echo $repeater['image']; ?>');"></div> -->
+							<a href="<?php echo $repeater['image']; ?>">
+								<img src="<?php echo $repeater['image']; ?>">
+							</a>
+						<?php } ?>
+		
+					</div>
 				</div>
-
 			<?php
 			break;
+
 
 
 			#Text banner
@@ -129,6 +131,37 @@ if ($acf_fields['flexible_content']) {
 
 					</div>
 				</div>
+
+			<?php
+			break;
+
+
+			#Press Section
+			case 'press': ?>
+				
+				<h4 class="section-header">Press</h4>
+				<div class="row press-row">
+					<ul class="accordion" data-accordion data-allow-all-closed="true">
+						
+						<?php
+						# Loop through the sections
+						foreach ($section['press_details'] as $press_section) { ?>
+
+						<li class="accordion-item" data-accordion-item>
+						  	<a href="#" class="accordion-title">
+								<?php echo $press_section['text_area_one']; ?>
+								<?php echo $press_section['text_area_two']; ?>
+								<?php echo $press_section['location']; ?>
+							</a>
+							<div class="accordion-content" data-tab-content>
+							  <?php echo $press_section['press_article']; ?>
+							</div>
+						</li>
+
+						<?php } ?>
+
+					</ul>
+				</div>	
 
 			<?php
 			break;

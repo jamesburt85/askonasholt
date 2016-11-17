@@ -72,5 +72,7 @@
 
 	</header>
 
+	<div id="top"></div>
+	
 	<section class="container">
 		<?php do_action( 'foundationpress_after_header' );
