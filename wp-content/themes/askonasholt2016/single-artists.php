@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
+<?php //get_template_part( 'template-parts/featured-image' ); ?>
 
 <div id="single-post" role="main">
 
@@ -21,29 +21,38 @@ get_header(); ?>
 		</header> -->
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 		<div class="entry-content">
-			<?php the_content(); ?>
+			<?php //the_content(); ?>
 
 			<?php 
 
 				// get VARS
-				$artist_photo = get_field('artist_photo');
+				// $artist_photo = get_field('artist_photo');
 				$main_category = get_field('main_category');
-				$name = get_field('name');
+				$name = //get_field('name');
 				$bio = get_field('bio');
 				$website = get_field('website');
 				$contact_text_area = get_field('contact_text_area');
 			?>
 
 			<div class="artist-header row">
+				
 				<div class="small-12 medium-4 columns">
-					<div class="artist-header-thumb" style="background-image: url('<?php echo $artist_photo; ?>')">
+					<div class="artist-header-thumb" style="background-image: url('<?php //the_post_thumbnail( 'thumbnail' ); ?>')">
+						<?php the_post_thumbnail( 'medium' ); ?>
 					</div>
 				</div>
+
 				<div class="small-12 medium-8 columns">
 					<div class="artist-details">
-						<span class="artist-category"><?php echo $main_category; ?></span>
+						<span class="artist-category"><?php //echo $main_category; ?>
+						<?php $categories = get_the_category();
+							 
+							if ( ! empty( $categories ) ) {
+							    echo esc_html( $categories[0]->name );   
+							} ?>
+						</span>
 						<br>
-						<span class="artist-name"><?php echo $name; ?></span>
+						<span class="artist-name"><?php the_title(); ?></span>
 					</div>
 
 					<div class="artist-social">
@@ -63,14 +72,19 @@ get_header(); ?>
 						<?php endif; ?>
 
 						<a href="http://www.<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a>
+						
+						<a href="mailto:?subject=Artist&amp;body=<?php echo get_permalink() ?>;" title="Artist">
+						  <span>Share</span>
+						</a>
 					</div>
+
 				</div>
 			</div>
 
 			<div class="artist-navigation">
 				<div>
 					<ul>
-						<li><?php echo $name; ?>:</li>
+						<li><?php the_title(); ?>:</li>
 						<li><a data-scroll href="#intro">Introduction</a></li>
 						<li><a data-scroll href="#video-audio">Video &amp; Audio</a></li>
 						<li><a data-scroll href="#performance-schedule">Schedule</a></li>
@@ -124,6 +138,9 @@ get_header(); ?>
 
 			<div class="image-gallery row" id="image-gallery">
 				Image Gallery
+				<!-- using ACF Flexible content instead of the_content  -->
+				<?php $acf_fields = get_fields(); ?>
+				<?php include(locate_template('template-parts/acf.php')); ?>
 			</div>
 
 			<div class="press row" id="press">

@@ -182,7 +182,7 @@ function feature_init()
     $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
     // $args['rewrite']                = array('xxx' => 'xxx');
     $args['rewrite']                = array('slug' => 'people');
-    $args['menu_icon']              = 'dashicons-carrot';
+    $args['menu_icon']              = 'dashicons-admin-users';
     $args['show_in_menu']           = true;
     
     register_post_type('people', $args);

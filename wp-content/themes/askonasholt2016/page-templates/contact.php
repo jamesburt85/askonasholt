@@ -1,0 +1,117 @@
+<?php
+/*
+Template Name: Contact
+*/
+get_header(); ?>
+
+<?php get_template_part( 'template-parts/featured-image' ); ?>
+
+<div id="page-full-width" role="main">
+
+<?php do_action( 'foundationpress_before_content' ); ?>
+<?php while ( have_posts() ) : the_post(); ?>
+  <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
+<!--       <header>
+          <h1 class="entry-title"><?php the_title(); ?></h1>
+      </header> -->
+      <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+      <div class="entry-content">
+          <?php the_content(); ?>
+          <!-- Contact Page -->
+          <div class="row">
+            
+            <div class="small-12 medium-4 columns contact-details">
+              
+              <span>Contact Details</span>
+              
+              <div class="contact-details">
+
+                <?php if ( have_rows('telephone_number') ); { ?>
+
+                  <div class="contact-details-section">
+                    <span class="bold">Telephone<br/></span>
+                    <?php while ( have_rows('telephone_number') ) { the_row();
+
+                      $number = get_sub_field('number');
+
+                      ?>
+
+                      <?php echo $number; ?> <br/>
+
+                    <?php } ?>
+                  </div>
+                <?php } ?>
+
+
+                <?php if ( have_rows('fax_details') ); { ?>
+                  <div class="contact-details-section">    
+                    <span class="bold">Fax<br/></span>
+                    <?php while ( have_rows('fax_details') ) { the_row();
+
+                      $fax_number = get_sub_field('fax_number');
+
+                      ?>
+
+                      
+                      <?php echo $fax_number; ?> <br/>
+
+                    <?php } ?>
+                  </div>
+                <?php } ?>
+
+                <?php if ( have_rows('e-mail_details') ); { ?>
+                  <div class="contact-details-section">  
+                    <span class="bold">E-mail<br/></span>
+                    <?php while ( have_rows('e-mail_details') ) { the_row();
+
+                      $e_mail = get_sub_field('e-mail_address');
+
+                      ?>
+
+                      
+                      <?php echo $e_mail; ?> <br/>
+
+                    <?php } ?>
+                  </div>
+                <?php } ?>
+
+                <?php
+                  // get VARS
+                  $address = get_field('address');
+
+                ?>
+                <div class="contact-details-section">
+                  <span class="bold">Address<br/></span>
+                  <span><?php echo $address; ?></span>
+                </div>
+
+              </div> <!-- Contact Details End -->
+              
+            </div>
+
+            <div class="small-12  medium-8 columns">
+              <div id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.7350865574026!2d-0.11687768422964813!3d51.51807597963692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b4a5386ade9%3A0xea4c330ceba327a2!2sAskonas+Holt!5e0!3m2!1sen!2suk!4v1479744564941" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
+            </div>
+
+        </div> <!-- Row END -->
+        
+      </div>
+
+      <footer>
+          <?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
+          <p><?php the_tags(); ?></p>
+      </footer>
+      <?php do_action( 'foundationpress_page_before_comments' ); ?>
+      <?php comments_template(); ?>
+      <?php do_action( 'foundationpress_page_after_comments' ); ?>
+  </article>
+
+<?php endwhile;?>
+
+<?php do_action( 'foundationpress_after_content' ); ?>
+
+</div>
+<?php get_template_part( 'template-parts/link-banner' ); ?>
+<?php get_footer();

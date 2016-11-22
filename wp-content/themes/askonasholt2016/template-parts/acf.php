@@ -182,6 +182,31 @@ if ($acf_fields['flexible_content']) {
 			<?php
 			break;
 
+			#Tour Thumnail Links at bottom of page
+			case 'tours_thumbnail_links': ?>
+
+				<div class="row thumbnail-links">
+					<?php
+						# Loop through the sections
+						foreach ($section['thumbnail_links'] as $links) { ?>
+					
+					<div class="small-12 medium-6 large-3 columns thumbnail-link-image" style="background-image: url('<?php echo $links['background_image']; ?>')">
+						
+							<a class="thumbnail-link" href="<?php echo $links['link_destination']; ?>">
+								<span class="thumbnail-link-text"><?php echo $links['link_text']; ?></span>
+							</a>
+
+					</div>
+
+					<?php } ?>
+
+				</div>
+
+				
+
+			<?php
+			break;
+
 
 
 

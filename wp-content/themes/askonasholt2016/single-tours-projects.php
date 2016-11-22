@@ -65,7 +65,7 @@ get_header(); ?>
 					  $args = array(
 
 					    'post_type'		=> 'people',
-					    'post__in'  	=> $projects,
+					    'post__in'  	=> $staff_member,
 					    // 'posts_per_page' => 3,
 					    
 					  );
@@ -75,22 +75,21 @@ get_header(); ?>
 
 					  // The Loop
 					  if ( $the_query->have_posts() ) {
-
+					    // echo '<ul>';
 					    while ( $the_query->have_posts() ) {
 					      $the_query->the_post();
-
+					      // echo '<li>' . get_the_title() . '</li>';
 					      get_template_part( 'template-parts/content-contact-person' );
 
+					      //get_template_part( 'template-parts/.....' );
 					    }
-
+					    // echo '</ul>';
 					    /* Restore original Post Data */
 					    wp_reset_postdata();
 					  } else {
 					    // no posts found
-					  } ?>
-
-					 <br/>
-					 
+					  }
+					?> <br/>
 					<h4 class="section-header">Artist(s)</h4> <br/>
 					<h4 class="section-header">Further Info</h4> <br/>
 				</div>

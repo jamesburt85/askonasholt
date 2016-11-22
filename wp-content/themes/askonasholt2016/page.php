@@ -12,7 +12,10 @@
 
  get_header(); ?>
 
- <?php get_template_part( 'template-parts/featured-image' ); ?>
+ <?php //get_template_part( 'template-parts/featured-image' ); ?>
+ 
+ <?php get_template_part( 'template-parts/home-hero' ); ?>
+ <?php get_template_part( 'template-parts/general-hero' ); ?>
 
  <div id="page" role="main">
 
@@ -24,13 +27,14 @@
        </header> -->
        <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
        <div class="entry-content">
-           <?php //the_content(); ?>
-           <?php get_template_part( 'template-parts/home-hero' ); ?>
+           <?php the_content(); ?>
+           
 
            <!-- using ACF Flexible content instead of the_content  -->
            <?php $acf_fields = get_fields(); ?>
            <?php include(locate_template('template-parts/acf.php')); ?>
-           <?php include(locate_template('template-parts/contact-page.php')); ?>
+
+           <?php //get_template_part( 'template-parts/contact-page' ); ?>
 
            <?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
        </div>
