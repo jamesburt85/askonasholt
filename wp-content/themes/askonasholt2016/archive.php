@@ -35,8 +35,19 @@ get_header(); ?>
 	} elseif ( is_post_type_archive('artists') ) {
 
 		get_template_part( 'template-parts/artist-filtering' );
+
+	} elseif ( is_post_type_archive('magazine') ) {
+
+		get_template_part( 'template-parts/magazine-filtering' );
 		
+	} elseif ( is_tax('magazine-content-type') ) {
+
+		get_template_part( 'template-parts/magazine-filtering' );
+
 	} elseif (is_category()) {
+
+		//get_template_part( 'template-parts/magazine-filtering' );
+
 
 	} else {
 

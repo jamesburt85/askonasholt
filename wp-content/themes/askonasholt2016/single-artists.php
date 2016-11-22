@@ -45,11 +45,17 @@ get_header(); ?>
 				<div class="small-12 medium-8 columns">
 					<div class="artist-details">
 						<span class="artist-category"><?php //echo $main_category; ?>
-						<?php $categories = get_the_category();
-							 
-							if ( ! empty( $categories ) ) {
-							    echo esc_html( $categories[0]->name );   
-							} ?>
+						<?php
+						/* FIRST
+						 * Note: This function only returns results from the default “category” taxonomy. For custom taxonomies use get_the_terms().
+						 */
+						$categories = get_the_terms( $post->ID, 'taxonomy' );
+						// now you can view your category in array:
+						// using var_dump( $categories );
+						// or you can take all with foreach:
+						foreach( $categories as $category ) {
+						    echo $category->term_id . ', ' . $category->slug . ', ' . $category->name . '<br />';
+						} ?>
 						</span>
 						<br>
 						<span class="artist-name"><?php the_title(); ?></span>

@@ -1,0 +1,36 @@
+//individual magazine posts on archive
+
+.magazine-item {
+	height: 400px; //temp
+	border: 1px solid gray;
+	margin-bottom: 2em;
+
+	.magazine-item-container {
+		padding: 1em;
+	}
+	
+	.magazine-item-thumb {
+	    height: 200px;
+	    @include full-bg;
+	}
+	
+	.magazine-category {
+		display: flex;
+		li {
+			list-style-type: none;
+			text-transform: uppercase;
+			display: flex;
+			margin-right: 10px;
+		}
+	} 
+
+}
+body.post-type-archive-magazine {
+	article.main-content {
+		position: relative;
+	}
+	.archive__load-more {
+		@include center(x);
+		bottom: 0;
+	}
+}

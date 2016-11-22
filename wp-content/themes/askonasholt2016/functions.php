@@ -130,6 +130,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
     }
 
 
+
     /**
      * Enables the Excerpt meta box in Page edit screen.
      */
@@ -138,3 +139,56 @@ class Walker_Category_Find_Parents extends Walker_Category {
     }
     add_action( 'init', 'wpcodex_add_excerpt_support_for_pages' );
 
+
+
+    /**
+     * Get taxonomies terms links.
+     *
+     * @see get_object_taxonomies()
+     */
+    function wpdocs_custom_taxonomies_terms_links() {
+        // Get post by post ID.
+        $post = get_post( $post->ID );
+     
+        // Get post type by post.
+        $post_type = $post->post_type;
+     
+        // Get post type taxonomies.
+        $taxonomies = get_object_taxonomies( $post_type, 'objects' );
+     
+        $out = array();
+     
+        foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+     
+            // Get the terms related to post.
+            $terms = get_the_terms( $post->ID, $taxonomy_slug );
+     
+            if ( ! empty( $terms ) ) {
+                // $out[] = "<h2>" . $taxonomy->label . "</h2>\n<ul>";
+                foreach ( $terms as $term ) {
+                    $out[] = sprintf( '<li>%2$s</li>',
+                        esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
+                        esc_html( $term->name )
+                    );
+                }
+                $out[] = "\n</ul>\n";
+            }
+        }
+        return implode( '', $out );
+    }
+
+
+
+    //**************************************************
+    // Limit the number of words in excerpt ************
+    //**************************************************
+
+    function custom_excerpt_length( $length ) {
+            return 15;
+        }
+        add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
+        
+
+?>
