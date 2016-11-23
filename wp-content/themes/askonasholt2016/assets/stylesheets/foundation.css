@@ -6660,6 +6660,9 @@ table.hover tbody tr:nth-of-type(even):hover {
 .artist-filtering-block {
   min-height: 300px; }
 
+.temp-testing-mp3 {
+  margin-bottom: 100vh; }
+
 .section-header {
   padding: 25px 0; }
 
