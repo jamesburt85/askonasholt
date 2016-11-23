@@ -187,6 +187,28 @@ function feature_init()
     
     register_post_type('people', $args);
 
+    # Add a custom taxonomy
+    register_taxonomy( 'people-type', 
+        array('people'), # register taxonomy for these post types
+        array('hierarchical' => true, # if this is true, it acts like categories             
+            'labels' => array(
+                'name' => __( 'People Type', 'adstyles'),
+                'singular_name' => __( 'People Type', 'adstyles'), 
+                'search_items' =>  __( 'Search People Type', 'adstyles'),
+                'all_items' => __( 'All People Type', 'adstyles'), 
+                'parent_item' => __( 'Parent People Type', 'adstyles'), 
+                'parent_item_colon' => __( 'Parent People Type:', 'adstyles'), 
+                'edit_item' => __( 'Edit People Type', 'adstyles'), 
+                'update_item' => __( 'Update People Type', 'adstyles'), 
+                'add_new_item' => __( 'Add New People Type', 'adstyles'),
+                'new_item_name' => __( 'New People Type Name', 'adstyles'),
+            ),
+            'show_ui' => true,
+            'query_var' => false,
+            'rewrite' => false,
+        )
+    );
+
 
     /* ----------------------------------------------------
     Magazine

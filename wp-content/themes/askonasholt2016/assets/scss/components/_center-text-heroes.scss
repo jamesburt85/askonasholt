@@ -1,0 +1,11 @@
+//Center Test Hero styles
+
+.center-text-hero-header {
+	position: relative;
+	height: 70vh !important;
+	max-height: 500px;
+	.center-hero-text {
+		@include center;
+		color: #ffffff;
+	}
+}

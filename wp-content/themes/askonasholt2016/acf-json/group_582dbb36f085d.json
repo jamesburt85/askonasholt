@@ -3,6 +3,22 @@
     "title": "[PEOPLE]",
     "fields": [
         {
+            "key": "field_5835b5b3190e5",
+            "label": "Staff Details",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_582dbb45ec1d6",
             "label": "Staff Member",
             "name": "staff_member",
@@ -21,30 +37,6 @@
             "layout": "table",
             "button_label": "Add Row",
             "sub_fields": [
-                {
-                    "key": "field_582dd3a0ca9b5",
-                    "label": "Staff Photo",
-                    "name": "staff_photo",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
                 {
                     "key": "field_582dbb96ec1d9",
                     "label": "Position",
@@ -92,6 +84,80 @@
                     "return_format": "object"
                 }
             ]
+        },
+        {
+            "key": "field_5835b5cd190e6",
+            "label": "Staff Contact Details",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5835b5db190e7",
+            "label": "E-Mail",
+            "name": "e-mail",
+            "type": "email",
+            "instructions": "Enter Staff E-mail address",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_5835b5ef190e8",
+            "label": "Telephone Number",
+            "name": "telephone_number",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5835b5fd190e9",
+            "label": "Languages",
+            "name": "languages",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -111,5 +177,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479398330
+    "modified": 1479915563
 }
