@@ -10,8 +10,6 @@
 	<div class="row">
 
 		<div class="small-12 columns">
-				
-			<!-- <h5>mmmm...filtering</h5> -->
 
 			<?php 
 

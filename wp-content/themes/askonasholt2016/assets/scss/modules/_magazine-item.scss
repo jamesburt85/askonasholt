@@ -34,3 +34,17 @@ body.post-type-archive-magazine {
 		bottom: 0;
 	}
 }
+
+//************************
+//Single Magazine pages **
+//************************
+
+.single-magazine-category {
+	display: flex;
+	li {
+		list-style-type: none;
+		text-transform: uppercase;
+		display: flex;
+		margin-right: 10px;
+	}
+}

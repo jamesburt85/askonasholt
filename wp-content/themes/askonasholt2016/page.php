@@ -14,7 +14,7 @@
 
  <?php //get_template_part( 'template-parts/featured-image' ); ?>
  
- <?php get_template_part( 'template-parts/home-hero' ); ?>
+ <?php //get_template_part( 'template-parts/home-hero' ); ?>
  <?php get_template_part( 'template-parts/general-hero' ); ?>
 
  <div id="page" role="main">
