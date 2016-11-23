@@ -1,0 +1,65 @@
+.quicklook-content {
+
+	// @include center;
+	// position: fixed;
+	// background-color: #bada55;
+	// display: inline-block;
+	// width: 50%;
+	// min-height: 400px;
+	// display: none;
+
+
+	position: relative;
+	background: #FFF;
+	// margin: 20px;
+	width: auto;
+	max-width: 500px;
+	// max-width: 90vw;
+	margin: 20px auto;
+
+	// padding-top: $sitepadding;
+	border-top: 44px solid $red;
+	border-bottom: 3px solid $red;
+
+}
+
+body.post-type-archive-artists {
+	
+	.mfp-close-btn-in .mfp-close {
+	    top: -44px;
+	    color: $white;
+	    opacity: 1;
+	}
+
+}
+
+.quicklook-content-profile,
+.quicklook-content-pic {
+	width: 100%;
+	height: 400px;
+	float: left;
+
+	@include breakpoint(large){
+		width: 50%;
+		height: 300px;
+	}
+
+}
+
+.quicklook-content-pic {
+	@include full-bg;
+}
+
+.quicklook-content-profile {
+	background-color: $lightbrown;
+	padding: $sitepadding;
+}
+
+.quicklook-content-bio {
+	padding: $sitepadding;
+	float: left;
+}
+
+.quicklook-content-links {
+	padding: $sitepadding;
+}

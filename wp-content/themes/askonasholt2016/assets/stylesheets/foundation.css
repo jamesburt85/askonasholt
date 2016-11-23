@@ -10920,6 +10920,49 @@ img.mfp-img {
     text-transform: uppercase;
     font-size: 1rem; }
 
+.quicklook-content {
+  position: relative;
+  background: #FFF;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+  border-top: 44px solid #BA0C2F;
+  border-bottom: 3px solid #BA0C2F; }
+
+body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
+  top: -44px;
+  color: #fefefe;
+  opacity: 1; }
+
+.quicklook-content-profile,
+.quicklook-content-pic {
+  width: 100%;
+  height: 400px;
+  float: left; }
+  @media screen and (min-width: 64em) {
+    .quicklook-content-profile,
+    .quicklook-content-pic {
+      width: 50%;
+      height: 300px; } }
+
+.quicklook-content-pic {
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-bottom: 0;
+  -webkit-background-size: cover;
+  background-size: cover; }
+
+.quicklook-content-profile {
+  background-color: #F2F1ED;
+  padding: 25px; }
+
+.quicklook-content-bio {
+  padding: 25px;
+  float: left; }
+
+.quicklook-content-links {
+  padding: 25px; }
+
 #front-hero {
   background: url("../images/demo/hero-bg-foundation-6-small.svg") bottom center;
   -webkit-background-size: cover;
