@@ -118,7 +118,11 @@
 @import "components/center-text-heroes";
 =======
 @import "components/plyr"; /// HTML5 AUDIO PLAYER
+<<<<<<< HEAD
 >>>>>>> 9d6495b3620ee4668cee9386870dc9b6ef7b79e3
+=======
+@import "components/audio-player-skin"; /// HTML5 AUDIO PLAYER
+>>>>>>> 2dd673f993f3a4458a58aaa03e000e6cf8342c8c
 
 // Templates
 @import "templates/front";
@@ -130,4 +134,5 @@
 @import "templates/single-post";
 @import "templates/splash-page";
 @import "templates/tours-projects";
+@import "templates/single-format-audio"; // audio format single post.
 
