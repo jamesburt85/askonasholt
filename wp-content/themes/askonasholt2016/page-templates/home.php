@@ -96,6 +96,7 @@ get_header(); ?>
         ?>
 
     <h2>Latest Video &amp; Audio</h2>
+    
     <!-- Video items -->
     <div class="row">
      <?php 
