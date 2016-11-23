@@ -10911,6 +10911,15 @@ img.mfp-img {
         -ms-transform: translateY(-50%);
             transform: translateY(-50%); }
 
+.audio-info {
+  border-top: 1px solid #262626;
+  background: #3E3E3E;
+  color: #fefefe;
+  padding: 0.8rem 1rem 0.5rem; }
+  .audio-info h3, .audio-info h4 {
+    text-transform: uppercase;
+    font-size: 1rem; }
+
 #front-hero {
   background: url("../images/demo/hero-bg-foundation-6-small.svg") bottom center;
   -webkit-background-size: cover;
@@ -11449,5 +11458,9 @@ body.post-type-archive-tours-projects .tour-thumbnail {
 .mfp-with-zoom.mfp-removing .mfp-container,
 .mfp-with-zoom.mfp-removing.mfp-bg {
   opacity: 0; }
+
+body.single-format-audio #single-post {
+  background-color: #262626;
+  color: #fefefe; }
 
 /*# sourceMappingURL=foundation.css.map */

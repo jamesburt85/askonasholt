@@ -113,6 +113,7 @@
 @import "components/thumbnail-links";
 @import "components/contact-map";
 @import "components/plyr"; /// HTML5 AUDIO PLAYER
+@import "components/audio-player-skin"; /// HTML5 AUDIO PLAYER
 
 // Templates
 @import "templates/front";
@@ -124,4 +125,5 @@
 @import "templates/single-post";
 @import "templates/splash-page";
 @import "templates/tours-projects";
+@import "templates/single-format-audio"; // audio format single post.
 
