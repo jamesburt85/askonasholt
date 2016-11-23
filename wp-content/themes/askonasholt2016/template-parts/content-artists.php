@@ -54,7 +54,7 @@
 					</a>
 					
 					<div class="overlay">
-						<a href="#">
+						<a href="#quicklook-<?php the_ID(); ?>" class="open-popup-link">
 							<i class="fa fa-eye" aria-hidden="true"></i>
 							<span>Quick Look</span>
 						</a>
@@ -76,7 +76,32 @@
 
 
 	</div>
-	<footer>
+	<!-- <footer>
 		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
-	</footer>
+	</footer> -->
+</div>
+
+
+<div id="quicklook-<?php the_ID(); ?>" class="quicklook-content mfp-hide">
+
+	<div class="quicklook-content-pic" style="background-image: url('<?php echo $artist_photo; ?>')"></div>
+	<div class="quicklook-content-profile">
+		<h6>CONDUCTOR</h6>
+		<h3><?php echo $name; ?></h3>
+		<ul>
+			<li>Add to shortlist</li>
+			<li>Download Press Pack</li>
+			<li>Share</li>
+		</ul>
+	</div>
+
+	<div class="quicklook-content-bio">
+		<?php echo $bio; ?>
+	</div>
+	<div class="quicklook-content-links">
+		<a class="button" href="<?php the_permalink(); ?>">View Artist Page</a>
+		<a class="button" href="#">Make Enquiry</a>		
+	</div>
+
+
 </div>
