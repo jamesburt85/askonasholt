@@ -44,6 +44,14 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/magazine-filtering' );
 
+	} elseif ( is_post_type_archive('people') ) {
+
+		get_template_part( 'template-parts/people-filtering' );
+
+	} elseif ( is_tax('people-type') ) {
+
+		get_template_part( 'template-parts/people-filtering' );
+
 	} elseif (is_category()) {
 
 		//get_template_part( 'template-parts/magazine-filtering' );

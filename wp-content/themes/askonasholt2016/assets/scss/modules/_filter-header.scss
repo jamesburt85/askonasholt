@@ -1,0 +1,12 @@
+//General filtering background styles
+
+.artist-filtering-block {
+
+	header.filter-header {
+		@include center;
+		text-align: center;
+	}
+	.artist-categories {
+		@include center(x);
+	}
+}
