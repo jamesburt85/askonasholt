@@ -16,7 +16,7 @@
                 "id": ""
             },
             "display_format": "d\/m\/Y g:i a",
-            "return_format": "d\/m\/Y g:i a",
+            "return_format": "Y-m-d H:i:s",
             "first_day": 1
         },
         {
@@ -74,6 +74,24 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1
+        },
+        {
+            "key": "field_5836bb72cd9b0",
+            "label": "Map location",
+            "name": "map_location",
+            "type": "google_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "center_lat": "51.518076",
+            "center_lng": "-0.114689",
+            "zoom": "",
+            "height": ""
         }
     ],
     "location": [
@@ -93,5 +111,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479296501
+    "modified": 1479984331
 }

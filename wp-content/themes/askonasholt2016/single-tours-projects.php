@@ -109,56 +109,66 @@ get_header(); ?>
 				</div>
 			</div>
 
-			<div class="route-map" id="route">
-				MAP
-			</div>
 
+			<?php
 
-			<div class="row schedule row" id="schedule">	
-				<div class="small-12 medium-3 columns">
-					Schedule
-				</div>
+				// get the tour events
+				$tour_events = get_field('tour_events');
+				// print_r($tour_events);
+
+			  	$args = array(
+				  	'post_status' 		=> 'publish',
+				  	'post_type'			=> 'events',
+				  	'post__in'  		=> $tour_events, // limited to array of events in tour page
+				  	'posts_per_page'	=> -1,
+				  	'meta_key'			=> 'date_time',
+				  	'orderby'			=> 'meta_value',
+				  	'order'				=> 'ASC',
+			  	);
+
+			  // The Query
+			  $the_query = new WP_Query( $args );
+
+			  // The Loop
+			  if ( $the_query->have_posts() ) {
+			    // echo '<ul>'; ?>
 				
-				<div class="small-12 medium-9 columns">
-
-				<?php 
-				//print_r($tour_events);
-
-				?>
-
-				<?php 
-
-				  // Query Args
-				  $args = array(
-
-				    'post_type' => 'events',
-				    'post__in'  => $tour_events,
-				    
-				  );
-
-				  // The Query
-				  $the_query = new WP_Query( $args );
-
-				  // The Loop
-				  if ( $the_query->have_posts() ) {
-				    // echo '<ul>';
-				    while ( $the_query->have_posts() ) {
-				      $the_query->the_post();
-				      // echo '<li>' . get_the_title() . '</li>';
-				      get_template_part( 'template-parts/content-tour-event-listing' );
-
-				      //get_template_part( 'template-parts/.....' );
-				    }
-				    // echo '</ul>';
-				    /* Restore original Post Data */
-				    wp_reset_postdata();
-				  } else {
-				    // no posts found
-				  }
-				?>
+				<div>tour map</div>
+			  	<div id="route" class="route-map acf-map">
+				
+				<?php while ( $the_query->have_posts() ) {
+			      		$the_query->the_post();
+			      		get_template_part( 'template-parts/content-tour-event-location' );
+			    } ?>
+				
 				</div>
-			</div>
 
+    			<div class="row schedule" id="schedule">	
+
+					<div class="small-12 medium-3 columns">
+						Schedule
+					</div>
+					
+					<div class="small-12 medium-9 columns">
+			    				
+				    <?php while ( $the_query->have_posts() ) {
+		          		$the_query->the_post();
+						get_template_part( 'template-parts/content-tour-event-listing' );
+			        } ?>
+
+	        		</div>
+
+	        	</div>
+
+		        <?php
+			    /* Restore original Post Data */
+			    wp_reset_postdata();
+
+			  } else {
+			    // no posts found
+			  }
+
+			?>
 
 			<!-- using ACF Flexible content instead of the_content  -->
 			<?php include(locate_template('template-parts/acf.php')); ?>

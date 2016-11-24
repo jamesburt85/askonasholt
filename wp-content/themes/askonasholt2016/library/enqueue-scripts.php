@@ -30,6 +30,10 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	// google maps js
+	wp_enqueue_script( 'googlemaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBRB0IiSoOjvO1R-3hwhjAqaEqT7bRn1Bw', array('jquery'), '2.6.1', true );
+	
+
 	// app.js
 	wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/javascript/app.js', array('jquery'), '2.6.1', true );
 
