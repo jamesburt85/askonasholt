@@ -7,3 +7,48 @@
 span.bold {
 	font-weight: bold;
 }
+
+/* Complete */
+
+@font-face {
+    font-family: "Brown-Pro-Light";
+    src:url("fonts/lineto-brown-pro-light.eot");
+    src:url("fonts/lineto-brown-pro-light.eot?#iefix") format("embedded-opentype"),
+        url("fonts/lineto-brown-pro-light.woff2") format("woff2"),
+        url("fonts/lineto-brown-pro-light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brown-Pro-Reclinlight";
+    src:url("fonts/lineto-brown-pro-reclinlight.eot");
+    src:url("fonts/lineto-brown-pro-reclinlight.eot?#iefix") format("embedded-opentype"),
+        url("fonts/lineto-brown-pro-reclinlight.woff2") format("woff2"),
+        url("fonts/lineto-brown-pro-reclinlight.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Subsetted */
+
+@font-face {
+    font-family: "Brown-Pro-Light-S";
+    src:url("fonts_subsetted/lineto-brown-pro-light.eot");
+    src:url("fonts_subsetted/lineto-brown-pro-light.eot?#iefix") format("embedded-opentype"),
+        url("fonts_subsetted/lineto-brown-pro-light.woff2") format("woff2"),
+        url("fonts_subsetted/lineto-brown-pro-light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brown-Pro-Reclinlight-S";
+    src:url("fonts_subsetted/lineto-brown-pro-reclinlight.eot");
+    src:url("fonts_subsetted/lineto-brown-pro-reclinlight.eot?#iefix") format("embedded-opentype"),
+        url("fonts_subsetted/lineto-brown-pro-reclinlight.woff2") format("woff2"),
+        url("fonts_subsetted/lineto-brown-pro-reclinlight.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
