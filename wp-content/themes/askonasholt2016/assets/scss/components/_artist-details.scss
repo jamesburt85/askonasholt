@@ -13,15 +13,7 @@
 		position: relative;
 		margin-bottom: $sitepadding;
 	}
-	.overlay {
-	    position: absolute;
-	    bottom: 0;
-        background: rgba(0,0,0,0.7);
-        color: white;
-        width: 100%;
-        padding: 10px;
-        display: none;
-	}
+	
 	.artist-photo-wrapper:hover {
 		.overlay {
 			display: block;
@@ -71,5 +63,29 @@
 		display: inline;
 	}
 }
+
+
+
+.artist-photo-wrapper, .magazine-item-thumb {
+	position: relative;
+	margin-bottom: $sitepadding;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    display: none;
+}
+
+.artist-photo-wrapper:hover, .magazine-item-thumb:hover {
+	.overlay {
+		display: block;
+	}
+}
+
 
 

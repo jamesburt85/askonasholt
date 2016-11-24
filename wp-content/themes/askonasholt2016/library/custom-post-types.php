@@ -181,7 +181,7 @@ function feature_init()
     $args['labels']                 = $labels;
     $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
     // $args['rewrite']                = array('xxx' => 'xxx');
-    $args['rewrite']                = array('slug' => 'people');
+    $args['rewrite']                = array('slug' => 'about/people');
     $args['menu_icon']              = 'dashicons-admin-users';
     $args['show_in_menu']           = true;
     
@@ -202,6 +202,58 @@ function feature_init()
                 'update_item' => __( 'Update People Type', 'adstyles'), 
                 'add_new_item' => __( 'Add New People Type', 'adstyles'),
                 'new_item_name' => __( 'New People Type Name', 'adstyles'),
+            ),
+            'show_ui' => true,
+            'query_var' => false,
+            'rewrite' => false,
+        )
+    );
+
+    /* ----------------------------------------------------
+    Clients
+    ---------------------------------------------------- */
+    
+    $labels = array
+    (
+        'name'                      => 'Clients',
+        'singular_name'             => 'Clients Item',
+        'add_new'                   => _x('Add New', 'Clients Item'),
+        'add_new_item'              => 'Add New Clients Item',
+        'edit_item'                 => 'Edit Clients Item',
+        'new_item'                  => 'New Clients Item',
+        'view_item'                 => 'View Clients Item',
+        'search_items'              => 'Search Clients Items',
+        'not_found'                 => 'No Clients Item found',
+        'not_found_in_trash'        => 'No Clients Item found in Trash',
+        'parent_item_colon'         => '',
+
+        'menu_name'                 => 'Clients'
+    );
+    
+    $args['labels']                 = $labels;
+    $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
+    // $args['rewrite']                = array('xxx' => 'xxx');
+    $args['rewrite']                = array('slug' => 'tours-and-projects/clients');
+    $args['menu_icon']              = 'dashicons-groups';
+    $args['show_in_menu']           = true;
+    
+    register_post_type('clients', $args);
+
+    # Add a custom taxonomy
+    register_taxonomy( 'clients-type', 
+        array('clients'), # register taxonomy for these post types
+        array('hierarchical' => true, # if this is true, it acts like categories             
+            'labels' => array(
+                'name' => __( 'Clients Type', 'adstyles'),
+                'singular_name' => __( 'Clients Type', 'adstyles'), 
+                'search_items' =>  __( 'Search Clients Type', 'adstyles'),
+                'all_items' => __( 'All Clients Type', 'adstyles'), 
+                'parent_item' => __( 'Parent Clients Type', 'adstyles'), 
+                'parent_item_colon' => __( 'Parent Clients Type:', 'adstyles'), 
+                'edit_item' => __( 'Edit Clients Type', 'adstyles'), 
+                'update_item' => __( 'Update Clients Type', 'adstyles'), 
+                'add_new_item' => __( 'Add New Clients Type', 'adstyles'),
+                'new_item_name' => __( 'New Clients Type Name', 'adstyles'),
             ),
             'show_ui' => true,
             'query_var' => false,

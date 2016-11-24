@@ -52,6 +52,14 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/people-filtering' );
 
+	} elseif ( is_post_type_archive('clients') ) {
+
+		get_template_part( 'template-parts/client-filtering' );
+
+	} elseif ( is_tax('clients-type') ) {
+
+		get_template_part( 'template-parts/client-filtering' );
+
 	} elseif (is_category()) {
 
 		//get_template_part( 'template-parts/magazine-filtering' );
