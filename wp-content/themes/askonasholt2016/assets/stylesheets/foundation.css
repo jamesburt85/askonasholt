@@ -10180,14 +10180,6 @@ body.page .slick-dotted.slick-slider {
   .artists .artist-photo-wrapper {
     position: relative;
     margin-bottom: 25px; }
-  .artists .overlay {
-    position: absolute;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    width: 100%;
-    padding: 10px;
-    display: none; }
   .artists .artist-photo-wrapper:hover .overlay {
     display: block; }
 
@@ -10222,6 +10214,22 @@ body.page .slick-dotted.slick-slider {
 
 .single-artists .artist-navigation li {
   display: inline; }
+
+.artist-photo-wrapper, .magazine-item-thumb {
+  position: relative;
+  margin-bottom: 25px; }
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 100%;
+  padding: 10px;
+  display: none; }
+
+.artist-photo-wrapper:hover .overlay, .magazine-item-thumb:hover .overlay {
+  display: block; }
 
 .hero-sub-header {
   text-transform: uppercase;
