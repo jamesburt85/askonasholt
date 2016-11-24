@@ -11353,7 +11353,8 @@ img.mfp-img {
   border-top: 1px solid #262626;
   background: #3E3E3E;
   color: #fefefe;
-  padding: 0.8rem 1rem 0.5rem; }
+  padding: 0.8rem 1rem 0.5rem;
+  margin-bottom: 25px; }
   .audio-info h3, .audio-info h4 {
     text-transform: uppercase;
     font-size: 1rem; }

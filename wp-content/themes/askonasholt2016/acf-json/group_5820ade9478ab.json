@@ -633,6 +633,39 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "5836b2738aaea",
+                    "name": "music_block",
+                    "label": "Music Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5836b28a8aaeb",
+                            "label": "Audio Block",
+                            "name": "audio_block",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [],
+                            "taxonomy": [
+                                "post_format:post-format-audio"
+                            ],
+                            "filters": "",
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -682,5 +715,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479737171
+    "modified": 1479980548
 }
