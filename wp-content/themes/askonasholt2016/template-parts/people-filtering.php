@@ -1,7 +1,7 @@
 <div class="artist-filtering-block">
 	
 	<header class="filter-header">
-		<h2>Magazine</h2>
+		<h2>People</h2>
 		<p>Optional Description</p>
 		<?php //foundationpress_entry_meta(); ?>
 	</header>
@@ -17,7 +17,7 @@
 				// echo "<li></li>";
 				// echo wp_list_categories( 'title_li'=>'Select category' );
 				echo wp_list_categories( array(
-						'taxonomy'     => 'magazine-content-type',
+						'taxonomy'     => 'people-type',
 				        'orderby' => 'name',
 				        'title_li' => '',
 				        'exclude' => 1, // don't show uncategorised
@@ -37,6 +37,6 @@
 
 </div>
 
-<div class="newsletter-banner row">
+<!-- <div class="newsletter-banner row">
 	Sign up to our newsletter for the latest announcements
-</div>
+</div> -->

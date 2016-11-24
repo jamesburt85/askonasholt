@@ -10067,6 +10067,22 @@ header h1 {
     -ms-transform: translateX(0);
     transform: translateX(0); } }
 
+.artist-filtering-block header.filter-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.artist-filtering-block .artist-categories {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
+
 .sites-button {
   background: #FF6908;
   font-size: 1.25rem;
