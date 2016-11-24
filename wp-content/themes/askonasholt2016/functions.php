@@ -189,6 +189,17 @@ class Walker_Category_Find_Parents extends Walker_Category {
         add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
+
+
+    
+    // add ACF Google Maps key
+    function my_acf_init() {
+        acf_update_setting('google_api_key', 'AIzaSyBRB0IiSoOjvO1R-3hwhjAqaEqT7bRn1Bw');
+    }
+
+    add_action('acf/init', 'my_acf_init');
+
+
         
 
 ?>
