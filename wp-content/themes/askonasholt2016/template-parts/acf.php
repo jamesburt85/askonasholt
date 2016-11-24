@@ -209,6 +209,61 @@ if ($acf_fields['flexible_content']) {
 
 
 
+			#Audio / Music block
+			case 'music_block': ?>
+
+				<div class="row">
+					
+					<?php 
+					// print_r( $section['audio_block'] );
+					$audioblock = $section['audio_block'];
+
+					?>
+
+					<?php 
+
+					  // Query Args
+					  $args = array(
+
+					    'post_type' => 'post', // this might need to 
+					    'post__in'  => $audioblock,
+					    
+					  );
+
+					  // The Query
+					  $the_query = new WP_Query( $args );
+
+					  // The Loop
+					  if ( $the_query->have_posts() ) {
+
+					    while ( $the_query->have_posts() ) {
+
+					      $the_query->the_post();
+					      get_template_part( 'template-parts/audio-player' );
+
+					    }
+
+					    /* Restore original Post Data */
+					    wp_reset_postdata();
+					  } else {
+					    // no posts found
+					  }
+					?>
+
+				</div>
+
+				
+
+			<?php
+			break;
+
+
+
+
+				
+
+
+
 
 			# Output PRE for anything that's left
 			default: ?>
