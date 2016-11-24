@@ -56,7 +56,7 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/client-filtering' );
 
-	} elseif ( is_tax('client-type') ) {
+	} elseif ( is_tax('clients-type') ) {
 
 		get_template_part( 'template-parts/client-filtering' );
 

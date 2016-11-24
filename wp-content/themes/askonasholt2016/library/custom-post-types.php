@@ -181,7 +181,7 @@ function feature_init()
     $args['labels']                 = $labels;
     $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
     // $args['rewrite']                = array('xxx' => 'xxx');
-    $args['rewrite']                = array('slug' => 'people');
+    $args['rewrite']                = array('slug' => 'about/people');
     $args['menu_icon']              = 'dashicons-admin-users';
     $args['show_in_menu']           = true;
     
@@ -233,27 +233,27 @@ function feature_init()
     $args['labels']                 = $labels;
     $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
     // $args['rewrite']                = array('xxx' => 'xxx');
-    $args['rewrite']                = array('slug' => 'clients');
+    $args['rewrite']                = array('slug' => 'tours-and-projects/clients');
     $args['menu_icon']              = 'dashicons-groups';
     $args['show_in_menu']           = true;
     
-    register_post_type('client', $args);
+    register_post_type('clients', $args);
 
     # Add a custom taxonomy
-    register_taxonomy( 'client-type', 
-        array('client'), # register taxonomy for these post types
+    register_taxonomy( 'clients-type', 
+        array('clients'), # register taxonomy for these post types
         array('hierarchical' => true, # if this is true, it acts like categories             
             'labels' => array(
-                'name' => __( 'Client Type', 'adstyles'),
-                'singular_name' => __( 'Client Type', 'adstyles'), 
-                'search_items' =>  __( 'Search Client Type', 'adstyles'),
-                'all_items' => __( 'All Client Type', 'adstyles'), 
-                'parent_item' => __( 'Parent Client Type', 'adstyles'), 
-                'parent_item_colon' => __( 'Parent Client Type:', 'adstyles'), 
-                'edit_item' => __( 'Edit Client Type', 'adstyles'), 
-                'update_item' => __( 'Update Client Type', 'adstyles'), 
-                'add_new_item' => __( 'Add New Client Type', 'adstyles'),
-                'new_item_name' => __( 'New Client Type Name', 'adstyles'),
+                'name' => __( 'Clients Type', 'adstyles'),
+                'singular_name' => __( 'Clients Type', 'adstyles'), 
+                'search_items' =>  __( 'Search Clients Type', 'adstyles'),
+                'all_items' => __( 'All Clients Type', 'adstyles'), 
+                'parent_item' => __( 'Parent Clients Type', 'adstyles'), 
+                'parent_item_colon' => __( 'Parent Clients Type:', 'adstyles'), 
+                'edit_item' => __( 'Edit Clients Type', 'adstyles'), 
+                'update_item' => __( 'Update Clients Type', 'adstyles'), 
+                'add_new_item' => __( 'Add New Clients Type', 'adstyles'),
+                'new_item_name' => __( 'New Clients Type Name', 'adstyles'),
             ),
             'show_ui' => true,
             'query_var' => false,

@@ -1,4 +1,5 @@
-<div class="artist-filtering-block">
+
+<div class="artist-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general-official.jpg');">
 	
 	<header class="filter-header">
 		<h2>Clients</h2>
@@ -17,7 +18,7 @@
 				// echo "<li></li>";
 				// echo wp_list_categories( 'title_li'=>'Select category' );
 				echo wp_list_categories( array(
-						'taxonomy'     => 'client-type',
+						'taxonomy'     => 'clients-type',
 				        'orderby' => 'name',
 				        'title_li' => '',
 				        'exclude' => 1, // don't show uncategorised

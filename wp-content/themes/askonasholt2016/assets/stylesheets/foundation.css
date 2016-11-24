@@ -9522,7 +9522,15 @@ nav#site-navigation {
 
 .artist-filtering-block {
   background-color: #F2F1ED;
-  position: relative; }
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-bottom: 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat-x;
+  -webkit-background-size: inherit inherit;
+          background-size: inherit; }
 
 .artist-categories {
   position: absolute;

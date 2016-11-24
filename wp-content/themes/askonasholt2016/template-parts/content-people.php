@@ -44,6 +44,7 @@
 			<div class="magazine-item-container">
 				
 				<p class="magazine-item-header">
+					<?php echo wpdocs_custom_taxonomies_terms_links(); ?>	
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
 					<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a><br/>
 					<span><?php echo $telephone_number; ?></span><br/>

@@ -15,14 +15,6 @@
 	<?php //get_template_part( 'template-parts/people-filtering' ); ?>
 
 
-	<?php 
-		$position = get_field('position');
-		$e_mail = get_field('e-mail');
-		$telephone_number = get_field('telephone_number');
-		$languages = get_field('languages');
-
-	?>
-
 	<div class="entry-content">
 
 		<div class="magazine-item">
@@ -41,12 +33,10 @@
 			<?php } ?>
 
 			<div class="magazine-item-container">
-				
+
 				<p class="magazine-item-header">
+					<?php echo wpdocs_custom_taxonomies_terms_links(); ?>
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
-					<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a><br/>
-					<span><?php echo $telephone_number; ?></span><br/>
-					<span><?php echo $languages; ?></span>
 				</p>
 					<?php the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?>
 			</div>

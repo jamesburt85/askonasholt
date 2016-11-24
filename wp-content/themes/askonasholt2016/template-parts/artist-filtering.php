@@ -1,10 +1,13 @@
-<div class="artist-filtering-block">
+<div class="artist-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general-official.jpg');">
+
+	<header class="filter-header">
+		<h2>Artists</h2>
+		<p>Optional Description</p>
+	</header>
 
 	<div class="row">
 
 		<div class="small-12 columns">
-				
-			<!-- <h5>mmmm...filtering</h5> -->
 
 			<?php 
 
