@@ -209,6 +209,58 @@ function feature_init()
         )
     );
 
+    /* ----------------------------------------------------
+    Clients
+    ---------------------------------------------------- */
+    
+    $labels = array
+    (
+        'name'                      => 'Clients',
+        'singular_name'             => 'Clients Item',
+        'add_new'                   => _x('Add New', 'Clients Item'),
+        'add_new_item'              => 'Add New Clients Item',
+        'edit_item'                 => 'Edit Clients Item',
+        'new_item'                  => 'New Clients Item',
+        'view_item'                 => 'View Clients Item',
+        'search_items'              => 'Search Clients Items',
+        'not_found'                 => 'No Clients Item found',
+        'not_found_in_trash'        => 'No Clients Item found in Trash',
+        'parent_item_colon'         => '',
+
+        'menu_name'                 => 'Clients'
+    );
+    
+    $args['labels']                 = $labels;
+    $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
+    // $args['rewrite']                = array('xxx' => 'xxx');
+    $args['rewrite']                = array('slug' => 'clients');
+    $args['menu_icon']              = 'dashicons-groups';
+    $args['show_in_menu']           = true;
+    
+    register_post_type('client', $args);
+
+    # Add a custom taxonomy
+    register_taxonomy( 'client-type', 
+        array('client'), # register taxonomy for these post types
+        array('hierarchical' => true, # if this is true, it acts like categories             
+            'labels' => array(
+                'name' => __( 'Client Type', 'adstyles'),
+                'singular_name' => __( 'Client Type', 'adstyles'), 
+                'search_items' =>  __( 'Search Client Type', 'adstyles'),
+                'all_items' => __( 'All Client Type', 'adstyles'), 
+                'parent_item' => __( 'Parent Client Type', 'adstyles'), 
+                'parent_item_colon' => __( 'Parent Client Type:', 'adstyles'), 
+                'edit_item' => __( 'Edit Client Type', 'adstyles'), 
+                'update_item' => __( 'Update Client Type', 'adstyles'), 
+                'add_new_item' => __( 'Add New Client Type', 'adstyles'),
+                'new_item_name' => __( 'New Client Type Name', 'adstyles'),
+            ),
+            'show_ui' => true,
+            'query_var' => false,
+            'rewrite' => false,
+        )
+    );
+
 
     /* ----------------------------------------------------
     Magazine

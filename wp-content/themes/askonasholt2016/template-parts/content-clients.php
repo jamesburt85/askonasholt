@@ -10,7 +10,6 @@
 
 ?>
 
-
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns'); ?>>
 
 	<?php //get_template_part( 'template-parts/people-filtering' ); ?>
@@ -26,7 +25,7 @@
 
 	<div class="entry-content">
 
-		<div class=" magazine-item">
+		<div class="magazine-item">
 			<?php if ( has_post_thumbnail() ) { ?>
 
 				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
