@@ -6669,7 +6669,7 @@ table.hover tbody tr:nth-of-type(even):hover {
 span.bold {
   font-weight: bold; }
 
-/* Complete */
+/* Complete Fonts */
 @font-face {
   font-family: "Brown-Pro-Light";
   src: url("fonts/lineto-brown-pro-light.eot");
@@ -9395,7 +9395,7 @@ pre {
   float: right; }
 
 .top-bar {
-  height: 105px; }
+  height: 135px; }
 
 .top-bar, .top-bar ul {
   background-color: white; }
@@ -9469,14 +9469,26 @@ pre {
       padding-right: 0.9375rem; } }
 
 body.search-bar-is-visible .searchbar {
+  height: 100px;
+  max-width: 100%;
+  padding: 25px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+
+body.search-bar-is-visible form#searchform {
   display: block; }
 
 .searchbar {
-  display: none;
-  padding: 25px;
+  max-width: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  height: 0px;
+  width: 100%;
   background-color: #B49A81; }
   .searchbar input.input-group-field {
     width: 50vw; }
+  .searchbar form#searchform {
+    display: none; }
 
 body#tinymce {
   height: auto;
@@ -9484,14 +9496,16 @@ body#tinymce {
   padding: 1.25rem !important; }
 
 header#masthead {
+  z-index: 5;
   border-bottom: 1px solid gray; }
   header#masthead .top-bar-right {
-    float: left; }
+    float: left;
+    padding-left: 1em; }
   header#masthead .top-bar .menu a:hover:not(.button):not(.artist-categories li a) {
     background-color: transparent; }
   header#masthead .top-bar .menu li:not(:last-child) {
     border-right: none;
-    height: 100px; }
+    height: 135px; }
   header#masthead .top-bar .dropdown.menu .submenu {
     background: #BA0C2F; }
     header#masthead .top-bar .dropdown.menu .submenu li a {
@@ -9512,12 +9526,7 @@ header#masthead {
     color: black;
     padding: 0 15px; }
   header#masthead i.fa-2x {
-    font-size: 1.3em;
-    line-height: 100px; }
-  header#masthead .header-search {
-    float: right;
-    height: 100px;
-    line-height: 100px; }
+    font-size: 1.3em; }
   header#masthead .header-social-area.show-for-medium {
     float: left; }
 
@@ -9525,30 +9534,33 @@ nav#site-navigation {
   max-width: 84.375rem;
   margin-left: auto;
   margin-right: auto;
-  margin: 0 auto; }
+  margin: 0 auto;
+  line-height: 135px; }
   nav#site-navigation::before, nav#site-navigation::after {
     content: ' ';
     display: table; }
   nav#site-navigation::after {
     clear: both; }
-
-#mega-menu-wrap-top-bar-r {
-  background: transparent; }
-  #mega-menu-wrap-top-bar-r ul#mega-menu-top-bar-r {
-    height: 100px !important;
-    background: transparent !important; }
-    #mega-menu-wrap-top-bar-r ul#mega-menu-top-bar-r li.mega-menu-item {
-      height: 100px !important;
-      background: transparent !important; }
-      #mega-menu-wrap-top-bar-r ul#mega-menu-top-bar-r li.mega-menu-item a.mega-menu-link {
-        height: 100px !important;
-        line-height: 100px !important;
-        color: #000000 !important; }
+  nav#site-navigation div#search-toggle {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    background-color: transparent;
+    float: right;
+    line-height: 135px;
+    height: 50px; }
+  nav#site-navigation .top-bar-left svg {
+    padding-right: 2em;
+    border-right: 1px solid #BA0C2F; }
+  nav#site-navigation .top-bar-left a {
+    padding: 0;
+    line-height: 135px; }
 
 .input-group {
   display: table;
   width: 30px;
-  margin-bottom: 1rem; }
+  margin: 0 auto; }
+  .input-group input#searchsubmit {
+    background-color: #BA0C2F; }
 
 .artist-filtering-block {
   background-color: #F2F1ED;
@@ -9651,7 +9663,9 @@ ul.single-page-nav {
 .magazine-item {
   height: 400px;
   border: 1px solid gray;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
   .magazine-item .magazine-item-container {
     padding: 1em; }
   .magazine-item .magazine-item-thumb {
@@ -9672,6 +9686,10 @@ ul.single-page-nav {
       display: -ms-flexbox;
       display: flex;
       margin-right: 10px; }
+
+.magazine-item:hover {
+  -webkit-box-shadow: 6px 6px 5px 0px #dbdbdb;
+  box-shadow: 6px 6px 5px 0px #dbdbdb; }
 
 body.post-type-archive-magazine article.main-content {
   position: relative; }
@@ -10305,13 +10323,24 @@ button.hero-button {
     max-width: 50%; } }
 
 .text-banner-wrapper {
-  width: 100%;
-  left: 0; }
+  max-width: 100%;
+  left: 0;
+  margin: 25px 0; }
   .text-banner-wrapper .text-banner {
     text-align: center;
-    margin: 0 7rem;
     color: white;
-    padding: 25px; }
+    max-width: 90%;
+    margin: 0 auto; }
+
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .text-banner {
+    margin: 0 4rem;
+    padding: 25px; } }
+
+@media screen and (min-width: 64em) {
+  .text-banner {
+    margin: 0 7rem;
+    padding: 25px; } }
 
 /* Magnific Popup CSS */
 .mfp-bg {

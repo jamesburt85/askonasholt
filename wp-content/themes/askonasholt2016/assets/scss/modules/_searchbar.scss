@@ -1,14 +1,28 @@
 body.search-bar-is-visible {
   .searchbar {
-    display: block;
+    //display: block;
+    height: 100px;
+    max-width: 100%;
+    padding: $sitepadding;
+    transition: 0.5s;
+  }
+
+  form#searchform {
+  	display: block;
   }
 }
 
 .searchbar {
-  display: none;
-  padding: $sitepadding;
+  max-width: 100%;
+  transition: 0.5s;
+  height: 0px;
+  width: 100%;
   background-color: $brown;
   input.input-group-field  {
     width: 50vw;
   }
+  form#searchform {
+  	display: none;
+  }
 }
+

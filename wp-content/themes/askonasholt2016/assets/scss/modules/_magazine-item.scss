@@ -4,6 +4,7 @@
 	height: 400px; //temp
 	border: 1px solid gray;
 	margin-bottom: 2em;
+	transition: 0.5s;
 
 	.magazine-item-container {
 		padding: 1em;
@@ -25,6 +26,13 @@
 	} 
 
 }
+
+.magazine-item:hover{
+	-webkit-box-shadow: 6px 6px 5px 0px rgba(219,219,219,1);
+	-moz-box-shadow: 6px 6px 5px 0px rgba(219,219,219,1);
+	box-shadow: 6px 6px 5px 0px rgba(219,219,219,1);
+}
+
 body.post-type-archive-magazine {
 	article.main-content {
 		position: relative;

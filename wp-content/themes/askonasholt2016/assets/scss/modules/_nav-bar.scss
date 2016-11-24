@@ -1,10 +1,14 @@
 // JB Nav Styles
 header#masthead {
 
+	z-index: 5;
+	// position: absolute;
+
 	border-bottom: 1px solid gray;
 
 	.top-bar-right {
 	    float: left;
+	    padding-left: 1em;
 	}
 	.top-bar .menu a:hover:not(.button) {
 	    background-color: transparent;
@@ -44,14 +48,14 @@ header#masthead {
 	}
 	i.fa-2x {
 	    font-size: 1.3em;
-	    line-height: $header-height;
+	    // line-height: $header-height;
 	}
 	//search-area
-	.header-search {
-	    float: right;
-	    height: $header-height;
-	    line-height: $header-height;
-	}
+	// .header-search {
+	//     float: right;
+	//     height: $header-height;
+	//     line-height: $header-height;
+	// }
 	.header-social-area.show-for-medium {
 	    float: left;
 	}
@@ -61,29 +65,50 @@ nav#site-navigation {
     // max-width: 75rem;
     @include grid-row();
     margin: 0 auto;
+    line-height: $header-height;
+
+    div#search-toggle {
+    	transition: 0.5s;
+    	background-color: transparent;
+    	float: right;
+    	line-height: $header-height;
+    	height: 50px;
+    }
+    .top-bar-left {
+
+    	svg {
+    		padding-right: 2em;
+    	    border-right: 1px solid $red;
+    	}
+
+    	a {
+    		padding: 0;
+    		line-height: $header-height;
+    	}
+    }
 }
 
 // *****************
 //MEGA MENU STYLES *
 // *****************
 
-#mega-menu-wrap-top-bar-r {
-    background: transparent;
-	ul#mega-menu-top-bar-r {
-	    height: 100px !important;
-	    background: transparent !important;
+// #mega-menu-wrap-top-bar-r {
+//     background: transparent;
+// 	ul#mega-menu-top-bar-r {
+// 	    height: 100px !important;
+// 	    background: transparent !important;
 
-	    li.mega-menu-item {
-	    	height: 100px !important;
-	    	background: transparent !important;
-	    	a.mega-menu-link {
-	    		height: 100px !important;
-	    		line-height: 100px !important;
-	    		color: #000000 !important;
-	    	}
-	    }
-	}
-}
+// 	    li.mega-menu-item {
+// 	    	height: 100px !important;
+// 	    	background: transparent !important;
+// 	    	a.mega-menu-link {
+// 	    		height: 100px !important;
+// 	    		line-height: 100px !important;
+// 	    		color: #000000 !important;
+// 	    	}
+// 	    }
+// 	}
+// }
 
 
 // *****************
@@ -92,8 +117,10 @@ nav#site-navigation {
 .input-group {
     display: table;
     width: 30px;
-    margin-bottom: 1rem;
+    margin: 0 auto;
+    input#searchsubmit {
+    	background-color: $red;
+    }
 }
-
 
 

@@ -1,12 +1,29 @@
 //#acf flexible text-banner
 .text-banner-wrapper {
-	width: 100%;
+	max-width: 100%;
     left: 0;
-    // position: absolute;
+    //position: absolute;
+    margin: $sitepadding 0;
     .text-banner {
     	text-align: center;
-    	margin: 0 7rem;
     	color: white;
-    	padding: $sitepadding;
+    	max-width: 90%;
+    	margin: 0 auto;
     }
+}
+
+//medium styles
+@include breakpoint(medium only) {
+	.text-banner {
+		margin: 0 4rem;
+		padding: $sitepadding;
+	}
+}
+
+//large-up styles
+@include breakpoint(large up) {
+	.text-banner {
+		margin: 0 7rem;
+		padding: $sitepadding;
+	}
 }

@@ -21,7 +21,12 @@ get_header(); ?>
           <?php the_content(); ?>
       </div>
 
-    <h2>Latest News &amp; Features</h2>
+    <h2>
+      Latest News &amp; Features 
+      <a href="<?php echo get_site_url(); ?>/magazine">View all</a>
+    </h2>
+
+    <div class="row">
     
     <!-- Get news items -->
       <?php 
@@ -59,12 +64,18 @@ get_header(); ?>
           // no posts found
         }
       ?>
+    </div>
 
+   
       <!-- using ACF Flexible content instead of the_content  -->
       <?php $acf_fields = get_fields(); ?>
       <?php include(locate_template('template-parts/acf.php')); ?>
 
-    <h2>Latest Events</h2>
+
+    <h2>
+      Latest Events
+      <a href="<?php echo get_site_url(); ?>/tours-and-projects/upcoming">View all</a>
+    </h2>
       <!-- Get Events -->
         <?php 
 
@@ -95,7 +106,10 @@ get_header(); ?>
           }
         ?>
 
-    <h2>Latest Video &amp; Audio</h2>
+    <h2>
+      Latest Video &amp; Audio
+      <a href="<?php echo get_site_url(); ?>/magazine">View all</a>
+    </h2>
     
     <!-- Video items -->
     <div class="row">
@@ -143,15 +157,17 @@ get_header(); ?>
              // Query Args
                $args = array(
 
-                 'post_type'   => 'magazine',
+                 'post_type'   => 'post',
+                 //'format' => 'audio',
+                 'post_format' => 'post-format-audio',
                  'posts_per_page' => 4,
-                 'tax_query' => array(
-                     array(
-                       'taxonomy' => 'magazine-content-type',
-                       'field'    => 'slug',
-                       'terms'    => 'audio',
-                     ),
-                   ),
+                 //'tax_query' => array(
+                     //array(
+                       //'taxonomy' => 'magazine-content-type',
+                       //'field'    => 'slug',
+                       //'terms'    => 'audio',
+                     //),
+                   //),
                );
 
                // The Query
