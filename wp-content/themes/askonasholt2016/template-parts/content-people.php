@@ -93,7 +93,6 @@
 			<a class="button" href="<?php the_permalink(); ?>">Go to Staff Page</a>	
 		</div>
 
-
 	</div>
 
 
