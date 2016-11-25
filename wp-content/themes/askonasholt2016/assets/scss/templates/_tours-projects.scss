@@ -44,6 +44,17 @@
   :last-child:not(.is-active) > .accordion-title {
       border-bottom: none;
   }
+
+  //related artist details
+  .side-bar-artist {
+      display: flex;
+      img.circle-thumb {
+          margin-right: $sitepadding;
+      }
+      .side-bar-artist-name {
+        font-weight: bold;
+      }
+  }
 }
 
 .image-source-link {
@@ -67,6 +78,12 @@
     width: 55px;
     border-radius: 55px;
   }
+}
+
+img.circle-thumb {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
 }
 
 .tour-hero {

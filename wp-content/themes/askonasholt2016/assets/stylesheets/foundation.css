@@ -12054,6 +12054,15 @@ body.home {
 .single-tours-projects :last-child:not(.is-active) > .accordion-title {
   border-bottom: none; }
 
+.single-tours-projects .side-bar-artist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .single-tours-projects .side-bar-artist img.circle-thumb {
+    margin-right: 25px; }
+  .single-tours-projects .side-bar-artist .side-bar-artist-name {
+    font-weight: bold; }
+
 .image-source-link {
   color: #98C3D1; }
 
@@ -12067,6 +12076,11 @@ body.home {
   height: 55px;
   width: 55px;
   border-radius: 55px; }
+
+img.circle-thumb {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px; }
 
 .tour-hero {
   position: relative;

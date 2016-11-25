@@ -200,6 +200,22 @@ class Walker_Category_Find_Parents extends Walker_Category {
     add_action('acf/init', 'my_acf_init');
 
 
+
+
+
+    # Change the "featured image" title on custome post types
+    # - sample
+    function eb_change_featured_image_title()
+    {
+        # artists post type
+        remove_meta_box( 'postimagediv', 'artists', 'side' );
+        add_meta_box('postimagediv', __('Artist Image'), 'post_thumbnail_meta_box', 'artists', 'normal', 'high');
+
+    }
+    add_action('do_meta_boxes', 'eb_change_featured_image_title');
+
+
+
         
 
 ?>
