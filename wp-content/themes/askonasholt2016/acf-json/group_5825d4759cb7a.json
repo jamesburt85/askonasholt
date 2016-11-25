@@ -143,6 +143,24 @@
             "return_format": "id"
         },
         {
+            "key": "field_58386c052a752",
+            "label": "Further Info",
+            "name": "further_info",
+            "type": "wysiwyg",
+            "instructions": "Enter further info, links, hastags etc.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
             "key": "field_582603fd4742d",
             "label": "Tour Contacts",
             "name": "",
@@ -235,5 +253,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1480088490
+    "modified": 1480092744
 }

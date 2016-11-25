@@ -53,6 +53,7 @@ get_header(); ?>
 			
 				$blurb = get_field('blurb');
 				$extra_blurb_copy = get_field('extra_blurb_copy');
+				$further_info = get_field( 'further_info' );
 			
 			?>
 
@@ -149,6 +150,8 @@ get_header(); ?>
 
 
 					<h4 class="section-header">Further Info</h4> <br/>
+					
+					<?php echo $further_info; ?>
 				</div>
 
 				<div class="small-12 medium-9 columns">
