@@ -11,12 +11,9 @@
 ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
-	<header>
-		<?php //foundationpress_entry_meta(); ?>
-	</header>
 
 	<div class="entry-content">
-		<?php the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
+		<?php //the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
 
 		<?php 
 
@@ -29,18 +26,18 @@
 
 		?>
 
-		<div class="row">
+		<div class="row tour-wrapper">
 
 			<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-			<div class="small-12 medium-4 columns tour-thumbnail" style="background-image: url('<?php echo $thumb['0'];?>')">
+			<div class="small-12 large-4 columns tour-thumbnail" style="background-image: url('<?php echo $thumb['0'];?>')">
 			</div>
 
-			<div class="small-12 medium-8 columns">
+			<div class="small-12 large-8 columns tour-details">
 				
 				<span><?php echo $start_date; ?></span> - 
 				<span><?php echo $end_date; ?></span>
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-				<span><?php echo $blurb; ?></span>
+				<h3><a class="section-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				<span><?php the_excerpt(); ?></span>
 				<?php 
 				//print_r($tour_events);
 
@@ -78,7 +75,14 @@
 				  }
 				?>
 
-				<a href="#">View all dates</a>
+				<a href="<?php the_permalink(); ?>">View all dates &nbsp; 
+					<svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+					        <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+					        <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+					    </g>
+					</svg>
+				</a>
 
 			</div>
 
@@ -90,5 +94,4 @@
 	<footer>
 		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
 	</footer>
-	<hr />
 </div>

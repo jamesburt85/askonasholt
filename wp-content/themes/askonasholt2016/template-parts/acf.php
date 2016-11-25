@@ -104,10 +104,15 @@ if ($acf_fields['flexible_content']) {
 			#Video
 			case 'video': ?>
 
-				<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
-
-				<div class="row large-video-row">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
+				<div class="row">
+					<div class="small-2 columns">
+						<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
+					</div>
+					<div class="small-9 columns">
+						<div class="row large-video-row">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
 				</div>
 
 			<?php

@@ -46,7 +46,7 @@ get_header(); ?>
 
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 		<div class="entry-content">
-			<?php the_content(); ?>
+			<?php //the_content(); ?>
 			<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
 
 			<?php 
@@ -94,7 +94,7 @@ get_header(); ?>
 					<h4 class="section-header">Further Info</h4> <br/>
 				</div>
 				<div class="small-12 medium-9 columns">
-					About the Tour/Project
+					<h4 class="section-header">Introduction</h4>
 
 					<?php echo $blurb; ?>
 
@@ -133,7 +133,7 @@ get_header(); ?>
 			  if ( $the_query->have_posts() ) {
 			    // echo '<ul>'; ?>
 				
-				<div>tour map</div>
+				
 			  	<div id="route" class="route-map acf-map">
 				
 				<?php while ( $the_query->have_posts() ) {
@@ -146,7 +146,7 @@ get_header(); ?>
     			<div class="row schedule" id="schedule">	
 
 					<div class="small-12 medium-3 columns">
-						Schedule
+						<h4 class="section-header">Schedule</h4>
 					</div>
 					
 					<div class="small-12 medium-9 columns">

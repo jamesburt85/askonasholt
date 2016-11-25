@@ -1,0 +1,50 @@
+// also check styles in _plyr.scss
+
+body.post-type-archive-tours-projects {
+  .tour-hero {
+      height: 70vh;
+      max-height: 400px;
+      @include full-bg;
+      color: white;
+      position: relative;
+  }
+  .tour-project-archive-hero {
+      height: 50vh;
+      text-align: center;
+  }
+  .tour-thumbnail {
+      height: 300px;
+      @include full-bg;
+  }
+  .tour-dates-basic {
+      padding: 1.25rem 0;
+      border-top: 1px solid #cacaca;
+  }
+
+}
+
+.tour-wrapper {
+	border: 1px solid #cacaca;
+	margin: $sitepadding-large 0;
+
+	.tour-details {
+		padding: $sitepadding;
+		float: right;
+	}
+}
+
+@include breakpoint(large up) {
+	body.post-type-archive-tours-projects {
+		.tour-wrapper {
+			position: relative;
+		}
+		.tour-details {
+			padding: $sitepadding;
+		}
+		.tour-thumbnail {
+			height: 100%;
+			position: absolute;
+		}
+	}
+}
+

@@ -150,7 +150,7 @@ function feature_init()
     $args['labels']                 = $labels;
     $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
     // $args['rewrite']                = array('xxx' => 'xxx');
-    $args['rewrite']                = array('slug' => 'tours-projects');
+    $args['rewrite']                = array('slug' => 'upcoming');
     $args['menu_icon']              = 'dashicons-format-audio';
     $args['show_in_menu']           = true;
     

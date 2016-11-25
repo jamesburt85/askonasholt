@@ -1,25 +1,5 @@
 // Tours & Project Page Styles
 
-body.post-type-archive-tours-projects {
-  .tour-hero {
-      height: 70vh;
-      max-height: 400px;
-      @include full-bg;
-      color: white;
-      position: relative;
-  }
-  .tour-project-archive-hero {
-      height: 50vh;
-      text-align: center;
-  }
-  .tour-thumbnail {
-      height: 500px; //Temp.....
-      @include full-bg;
-  }
-}
-
-
-
 //SINGLE TOURS STYLES ********************************
 
 .single-tours-projects {
@@ -27,6 +7,7 @@ body.post-type-archive-tours-projects {
       position: relative;
       height: 70vh;
       max-height: 500px;
+      @include full-bg;
   }
   .hero-text-area {
       position: absolute;
@@ -40,6 +21,28 @@ body.post-type-archive-tours-projects {
       img {
           padding: 10px;
       }
+  }
+  //Schedule/Accordion styles
+  .accordion-title {
+      display: block;
+      padding: 0;
+      line-height: 1;
+      font-size: inherit;
+      color: inherit;
+      position: relative;
+      border: none;
+      border-bottom: 0;
+  }
+
+  .accordion-title:before {
+    content: '^';
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+  }
+
+  :last-child:not(.is-active) > .accordion-title {
+      border-bottom: none;
   }
 }
 

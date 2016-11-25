@@ -6,10 +6,17 @@
         font-size: 17px;
         color: inherit;
     }
-    svg.red-arrow {
-        position: relative;
-        top: 3px;
-    }
+}
+
+//remove margin above footer
+#footer-container {
+    margin-top: 0 !important;
+}
+
+//Moving read more arrow down 4px
+svg.red-arrow {
+    position: relative;
+    top: 4px;
 }
 
 span.bold {

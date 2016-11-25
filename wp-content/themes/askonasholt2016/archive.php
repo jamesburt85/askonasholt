@@ -60,6 +60,10 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/client-filtering' );
 
+	} elseif ( is_post_type_archive('tours-projects') ) {
+
+		get_template_part( 'template-parts/center-text-hero' );
+
 	} elseif (is_category()) {
 
 		//get_template_part( 'template-parts/magazine-filtering' );
