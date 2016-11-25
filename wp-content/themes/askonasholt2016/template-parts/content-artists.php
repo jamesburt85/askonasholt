@@ -87,7 +87,7 @@
 	<div class="quicklook-content-pic" style="background-image: url('<?php echo $artist_photo; ?>')"></div>
 	<div class="quicklook-content-profile">
 		<h6>CONDUCTOR</h6>
-		<h3><?php echo $name; ?></h3>
+		<h5><?php echo $name; ?></h5>
 		<ul>
 			<li>Add to shortlist</li>
 			<li>Download Press Pack</li>

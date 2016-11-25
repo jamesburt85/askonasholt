@@ -143,7 +143,7 @@ if ($acf_fields['flexible_content']) {
 				<div class="text-banner-wrapper" style="background-image: url('<?php echo $section['background_image']; ?>')">
 					<div class="row text-banner">
 						<div class="small-12 columns text-banner-copy">
-							<p><?php echo $section['banner_copy']; ?></p>
+							<h4><?php echo $section['banner_copy']; ?></h4>
 						</div>
 					</div>
 				</div>

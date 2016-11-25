@@ -2,11 +2,20 @@
 
 .section-header  {
 	padding: $sitepadding 0;
+    a {
+        font-size: 17px;
+        color: inherit;
+    }
+    svg.red-arrow {
+        position: relative;
+        top: 3px;
+    }
 }
 
 span.bold {
 	font-weight: bold;
 }
+
 
 /* Complete Fonts */
 
