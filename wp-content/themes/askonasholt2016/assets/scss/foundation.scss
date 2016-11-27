@@ -104,6 +104,9 @@
 @import "modules/filter-header";
 @import "modules/route-map";
 @import "modules/schedule";
+@import "modules/main-settings";
+@import "modules/photoswipe";
+
 
 // Components
 @import "components/buttons";
@@ -134,5 +137,6 @@
 @import "templates/single-post";
 @import "templates/splash-page";
 @import "templates/tours-projects";
+@import "templates/narrow-page";
 @import "templates/single-format-audio"; // audio format single post.
 
