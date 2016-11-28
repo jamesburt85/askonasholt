@@ -6669,6 +6669,9 @@ table.hover tbody tr:nth-of-type(even):hover {
     font-size: 17px;
     color: inherit; }
 
+p {
+  font-size: 21px; }
+
 #footer-container {
   margin-top: 0 !important; }
 
@@ -9494,7 +9497,12 @@ body.search-bar-is-visible form#searchform {
   transition: 0.5s;
   height: 0px;
   width: 100%;
-  background-color: #B49A81; }
+  background-color: #B49A81;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-bottom: 0;
+  -webkit-background-size: cover;
+  background-size: cover; }
   .searchbar input.input-group-field {
     width: 50vw; }
   .searchbar form#searchform {
@@ -10132,6 +10140,20 @@ header h1 {
     -webkit-transform: translateX(0);
     -ms-transform: translateX(0);
     transform: translateX(0); } }
+
+#cd-timeline::before {
+  background: #525252; }
+
+.cd-timeline-content::before {
+  border-left-color: #BA0C2F; }
+
+.cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+  border-right-color: #BA0C2F; }
+
+.cd-timeline-content {
+  border: 1px solid;
+  -webkit-box-shadow: 0 3px 0 #d7e4ed;
+  box-shadow: 0 3px 0 #c3c3c3; }
 
 .artist-filtering-block header.filter-header {
   position: absolute;
@@ -11478,7 +11500,8 @@ img.mfp-img {
   background-repeat: no-repeat;
   border-bottom: 0;
   -webkit-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  text-align: center; }
   .center-text-hero-header .center-hero-text {
     position: absolute;
     top: 50%;

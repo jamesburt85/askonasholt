@@ -43,8 +43,9 @@ get_header(); ?>
                 <div class="cd-timeline-content">
                   
                   <h2><?php echo $section_title; ?></h2>
-                  <p><?php echo $section_copy; ?></p>
-                  <a href="#0" class="cd-read-more">Read more</a>
+                    <div class="medium-6 columns"><p><?php echo $section_copy; ?></p></div>
+                    <div class="medium-6 columns"><img src="<?php echo $image; ?>"></div>
+                    <!--  <a href="#0" class="cd-read-more">Read more</a> -->
                   <span class="cd-date"><?php echo $date; ?></span>
                   
                 </div> <!-- cd-timeline-content -->

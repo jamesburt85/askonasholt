@@ -5,6 +5,7 @@
 	height: 70vh !important;
 	max-height: 500px;
 	@include full-bg;
+	text-align: center;
 	.center-hero-text {
 		@include center;
 		color: #ffffff;

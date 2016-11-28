@@ -104,12 +104,11 @@
 			</div>
 			
 			<div class="header-social-area show-for-medium">
-				<div class="social-area">
-					<a href="https://www.facebook.com/askonasholt/" target="_blank"><i class="fa fa-facebook fa-2x social-icon" aria-hidden="true"></i></a>
-					<a href="https://www.instagram.com/askonasholt/" target="_blank"><i class="fa fa-instagram fa-2x social-icon" aria-hidden="true"></i></a>
-					<a href="https://twitter.com/AskonasHolt?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa fa-twitter fa-2x social-icon" aria-hidden="true"></i></a>
-					<a href="https://www.youtube.com/user/AskonasHolt" target="_blank"><i class="fa fa-youtube-play fa-2x social-icon" aria-hidden="true"></i></a>
-				</div>
+
+				<a href="https://www.facebook.com/askonasholt/" target="_blank"><i class="fa fa-facebook fa-2x social-icon" aria-hidden="true"></i></a>
+				<a href="https://www.instagram.com/askonasholt/" target="_blank"><i class="fa fa-instagram fa-2x social-icon" aria-hidden="true"></i></a>
+				<a href="https://twitter.com/AskonasHolt?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa fa-twitter fa-2x social-icon" aria-hidden="true"></i></a>
+				<a href="https://www.youtube.com/user/AskonasHolt" target="_blank"><i class="fa fa-youtube-play fa-2x social-icon" aria-hidden="true"></i></a>
 
 				<div id="search-toggle" class="header-search-toggle button">
 
@@ -124,9 +123,10 @@
 				</div>
 
 			</div>
+
 		</nav>
 
-		<div id="searchbar" class="searchbar row">
+		<div id="searchbar" class="searchbar row" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-dark.jpg');">
 				<?php get_search_form(); ?>
 		</div>
 

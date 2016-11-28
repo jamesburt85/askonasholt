@@ -481,3 +481,28 @@ header h1 {
     transform: translateX(0);
   }
 }
+
+
+
+//***********************************
+//********** JB's styles ************
+//***********************************
+
+// Line down the middle of timeline
+#cd-timeline::before {
+    background: #525252;
+}
+
+// @media only screen and (min-width: 1170px)
+.cd-timeline-content::before {
+    border-left-color: $brand-red;
+}
+.cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+  border-right-color: $brand-red;
+}
+
+.cd-timeline-content {
+  border: 1px solid;
+  -webkit-box-shadow: 0 3px 0 #d7e4ed;
+  box-shadow: 0 3px 0 #c3c3c3;
+}

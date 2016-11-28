@@ -18,6 +18,8 @@ body.search-bar-is-visible {
   height: 0px;
   width: 100%;
   background-color: $brown;
+  @include full-bg;
+  
   input.input-group-field  {
     width: 50vw;
   }
