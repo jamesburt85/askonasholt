@@ -92,23 +92,19 @@ nav#site-navigation {
 //MEGA MENU STYLES *
 // *****************
 
-// #mega-menu-wrap-top-bar-r {
-//     background: transparent;
-// 	ul#mega-menu-top-bar-r {
-// 	    height: 100px !important;
-// 	    background: transparent !important;
-
-// 	    li.mega-menu-item {
-// 	    	height: 100px !important;
-// 	    	background: transparent !important;
-// 	    	a.mega-menu-link {
-// 	    		height: 100px !important;
-// 	    		line-height: 100px !important;
-// 	    		color: #000000 !important;
-// 	    	}
-// 	    }
-// 	}
-// }
+li.mega-toggle-on {
+	
+	ul.mega-sub-menu {
+		left: 0px !important;
+		max-width: none !important;
+		width: 100vw !important;
+		position: fixed !important;
+	}
+	li#mega-menu-item {
+		//left: 0 !important;
+		//position: fixed;
+	}
+}
 
 
 // *****************

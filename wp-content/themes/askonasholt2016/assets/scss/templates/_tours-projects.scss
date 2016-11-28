@@ -119,3 +119,46 @@ img.circle-thumb {
 }
 
 
+
+
+
+
+//Schedule/Accordion styles Events Page
+.post-type-archive-events {
+  .accordion-title {
+      display: block;
+      padding: 0;
+      line-height: 1;
+      font-size: inherit;
+      color: inherit;
+      position: relative;
+      border: none;
+      border-bottom: 0;
+  }
+
+  .accordion-title:before {
+    content: '^';
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+  }
+
+  :last-child:not(.is-active) > .accordion-title {
+      border-bottom: none;
+  }
+
+  .accordion-title {
+      display: flex;
+    }
+}
+
+.side-bar-artist {
+    display: flex;
+    img.circle-thumb {
+        margin-right: $sitepadding;
+    }
+    .side-bar-artist-name {
+      font-weight: bold;
+    }
+}
+

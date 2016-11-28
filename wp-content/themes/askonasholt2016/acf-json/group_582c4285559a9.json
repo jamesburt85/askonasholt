@@ -92,6 +92,31 @@
             "center_lng": "-0.114689",
             "zoom": "",
             "height": ""
+        },
+        {
+            "key": "field_583c193f32f52",
+            "label": "Related Artists",
+            "name": "related_artists",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "artists"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
         }
     ],
     "location": [
@@ -111,5 +136,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1479984331
+    "modified": 1480333661
 }
