@@ -55,3 +55,19 @@
     }
 }
 
+
+
+//**********************
+// Footer Media Queries*
+//**********************
+
+@include breakpoint(small only) {
+  #footer-container, .textwidget {
+    text-align: center;
+  }
+  article {
+    margin: $sitepadding 0;
+  }
+}
+
+

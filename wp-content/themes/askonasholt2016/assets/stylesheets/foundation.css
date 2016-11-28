@@ -9460,6 +9460,12 @@ pre {
     padding: 0.7rem 1rem;
     line-height: 1; }
 
+@media screen and (max-width: 39.9375em) {
+  #footer-container, .textwidget {
+    text-align: center; }
+  article {
+    margin: 25px 0; } }
+
 .sidebar {
   width: 100%;
   float: left;
