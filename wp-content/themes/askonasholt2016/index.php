@@ -21,12 +21,14 @@ get_header(); ?>
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+			<?php //get_template_part( 'template-parts/content', get_post_format() ); ?>
 			<!-- using ACF Flexible content instead of the_content  -->
-			<?php $acf_fields = get_fields(); ?>
-			<?php include(locate_template('template-parts/acf.php')); ?>
-		<?php endwhile; ?>
+			<?php //$acf_fields = get_fields(); ?>
+			<?php //include(locate_template('template-parts/acf.php')); ?>
 
+			<?php get_template_part( 'template-parts/magazine-blocks' ); ?>
+
+		<?php endwhile; ?>
 		<?php else : ?>
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
@@ -47,6 +49,10 @@ get_header(); ?>
 	</article>
 	<?php //get_sidebar(); ?>
 
+	<h1>SIGN UP FOR NEWSLETTER HERE</h1>
+	<?php //get_template_part( 'template-parts/newsletter-banner' ); ?>
+
 </div>
+
 
 <?php get_footer();

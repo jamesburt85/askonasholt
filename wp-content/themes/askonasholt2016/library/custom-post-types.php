@@ -266,53 +266,53 @@ function feature_init()
     Magazine
     ---------------------------------------------------- */
     
-    $labels = array
-    (
-        'name'                      => 'Magazine',
-        'singular_name'             => 'Magazine Item',
-        'add_new'                   => _x('Add New', 'Magazine Item'),
-        'add_new_item'              => 'Add New Magazine Item',
-        'edit_item'                 => 'Edit Magazine Item',
-        'new_item'                  => 'New Magazine Item',
-        'view_item'                 => 'View Magazine Item',
-        'search_items'              => 'Search Magazine Items',
-        'not_found'                 => 'No Magazine Item found',
-        'not_found_in_trash'        => 'No Magazine Item found in Trash',
-        'parent_item_colon'         => '',
+    // $labels = array
+    // (
+    //     'name'                      => 'Magazine',
+    //     'singular_name'             => 'Magazine Item',
+    //     'add_new'                   => _x('Add New', 'Magazine Item'),
+    //     'add_new_item'              => 'Add New Magazine Item',
+    //     'edit_item'                 => 'Edit Magazine Item',
+    //     'new_item'                  => 'New Magazine Item',
+    //     'view_item'                 => 'View Magazine Item',
+    //     'search_items'              => 'Search Magazine Items',
+    //     'not_found'                 => 'No Magazine Item found',
+    //     'not_found_in_trash'        => 'No Magazine Item found in Trash',
+    //     'parent_item_colon'         => '',
 
-        'menu_name'                 => 'Magazine'
-    );
+    //     'menu_name'                 => 'Magazine'
+    // );
     
-    $args['labels']                 = $labels;
-    $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
-    // $args['rewrite']                = array('xxx' => 'xxx');
-    $args['rewrite']                = array('slug' => 'magazine');
-    $args['menu_icon']              = 'dashicons-playlist-video';
-    $args['show_in_menu']           = true;
+    // $args['labels']                 = $labels;
+    // $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
+    // // $args['rewrite']                = array('xxx' => 'xxx');
+    // $args['rewrite']                = array('slug' => 'magazine');
+    // $args['menu_icon']              = 'dashicons-playlist-video';
+    // $args['show_in_menu']           = true;
     
-    register_post_type('magazine', $args);
+    // register_post_type('magazine', $args);
 
-    # Add a custom taxonomy
-    register_taxonomy( 'magazine-content-type', 
-        array('magazine'), # register taxonomy for these post types
-        array('hierarchical' => true, # if this is true, it acts like categories             
-            'labels' => array(
-                'name' => __( 'Magazine-Content Type', 'adstyles'),
-                'singular_name' => __( 'Magazine-Content Type', 'adstyles'), 
-                'search_items' =>  __( 'Search Magazine-Content Type', 'adstyles'),
-                'all_items' => __( 'All Magazine-Content Type', 'adstyles'), 
-                'parent_item' => __( 'Parent Magazine-Content Type', 'adstyles'), 
-                'parent_item_colon' => __( 'Parent Magazine-Content Type:', 'adstyles'), 
-                'edit_item' => __( 'Edit Magazine-Content Type', 'adstyles'), 
-                'update_item' => __( 'Update Magazine-Content Type', 'adstyles'), 
-                'add_new_item' => __( 'Add New Magazine-Content Type', 'adstyles'),
-                'new_item_name' => __( 'New Magazine-Content Type Name', 'adstyles'),
-            ),
-            'show_ui' => true,
-            'query_var' => false,
-            'rewrite' => false,
-        )
-    );
+    // # Add a custom taxonomy
+    // register_taxonomy( 'magazine-content-type', 
+    //     array('magazine'), # register taxonomy for these post types
+    //     array('hierarchical' => true, # if this is true, it acts like categories             
+    //         'labels' => array(
+    //             'name' => __( 'Magazine-Content Type', 'adstyles'),
+    //             'singular_name' => __( 'Magazine-Content Type', 'adstyles'), 
+    //             'search_items' =>  __( 'Search Magazine-Content Type', 'adstyles'),
+    //             'all_items' => __( 'All Magazine-Content Type', 'adstyles'), 
+    //             'parent_item' => __( 'Parent Magazine-Content Type', 'adstyles'), 
+    //             'parent_item_colon' => __( 'Parent Magazine-Content Type:', 'adstyles'), 
+    //             'edit_item' => __( 'Edit Magazine-Content Type', 'adstyles'), 
+    //             'update_item' => __( 'Update Magazine-Content Type', 'adstyles'), 
+    //             'add_new_item' => __( 'Add New Magazine-Content Type', 'adstyles'),
+    //             'new_item_name' => __( 'New Magazine-Content Type Name', 'adstyles'),
+    //         ),
+    //         'show_ui' => true,
+    //         'query_var' => false,
+    //         'rewrite' => false,
+    //     )
+    // );
 
 
 }

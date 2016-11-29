@@ -26,7 +26,17 @@ get_header(); ?>
 				if ( has_post_format( 'audio' )) {
 				  // echo 'this is the AUDIO format';
 				  get_template_part( 'template-parts/audio-player' );
-				} else {
+				} 
+
+				elseif (has_post_format( 'video' )) {
+					//echo 'this is the VIDEO format';
+					the_content();
+					//getting ACF Flexible content navigation
+					$acf_fields = get_fields();
+					include(locate_template('template-parts/acf.php'));
+				}
+
+				else {
 					the_content();
 				}
 			?>

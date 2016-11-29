@@ -5,21 +5,49 @@
 	// margin-top: $sitepadding;
 	margin-bottom: ($sitepadding * 2);
 	.artist-thumb {
-	    height: 200px;
+	    height: 250px;
 	    @include full-bg;
 	    transition: 0.5s;
 	}
 	.artist-photo-wrapper {
 		position: relative;
-		margin-bottom: $sitepadding;
+		margin-bottom: $sitepadding-small;
 	}
 	
 	.artist-photo-wrapper:hover {
 		.overlay {
 			display: block;
 		}
+		//Get this to work?  *********
+		// p.artist-name {
+		// 		color: $red !important;
+		// }
 	}
+	.artist-details {
+		span.artist-category {
+			text-transform: uppercase;
+			color: #b38a76;
+			font-size: 13px;
+			letter-spacing: 1px;
+		}
+		a {
+			.artist-name {
+				color: initial;
+				transition: 0.5s;
+			}
+		}
+	}
+
+	.artist-details:hover {
+		.artist-name {
+			color: $red;
+		}
+	}
+
+
 }
+
+
 
 // MAGNIFIC POPUP STYLES *****
 
@@ -79,6 +107,15 @@
     width: 100%;
     padding: 10px;
     display: none;
+    a.open-popup-link {
+    	svg {
+    		color: $red;
+    	}
+    	span {
+    		color: #ffffff;
+    		font-weight: bold;
+    	}
+    }
 }
 
 .artist-photo-wrapper:hover, .magazine-item-thumb:hover {

@@ -37,8 +37,8 @@ get_header(); ?>
 			<div class="artist-header row">
 				
 				<div class="small-12 medium-4 columns">
-					<div class="artist-header-thumb" style="background-image: url('<?php //the_post_thumbnail( 'thumbnail' ); ?>')">
-						<?php the_post_thumbnail( 'medium' ); ?>
+					<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+					<div class="artist-header-thumb" style="background-image: url('<?php echo $thumb['0'];?>')">
 					</div>
 				</div>
 
@@ -54,11 +54,12 @@ get_header(); ?>
 						// using var_dump( $categories );
 						// or you can take all with foreach:
 						foreach( $categories as $category ) {
-						    echo $category->term_id . ', ' . $category->slug . ', ' . $category->name . '<br />';
+						    //echo $category->term_id . ', ' . $category->slug . ', ' . $category->name . '<br />';
 						} ?>
 						</span>
+						<span class="artist-category"><?php echo $main_category; ?></span>
 						<br>
-						<span class="artist-name"><?php the_title(); ?></span>
+						<h3 class="artist-name"><?php the_title(); ?></h3>
 					</div>
 
 					<div class="artist-social">

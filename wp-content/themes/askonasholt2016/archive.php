@@ -36,15 +36,16 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/artist-filtering' );
 
-	} elseif ( is_post_type_archive('magazine') ) {
+	} //elseif ( is_post_type_archive('magazine') ) {
 
-		get_template_part( 'template-parts/magazine-filtering' );
+		//get_template_part( 'template-parts/magazine-filtering' );
 		
-	} elseif ( is_tax('magazine-content-type') ) {
+	//} //elseif ( is_tax('magazine-content-type') ) {
 
-		get_template_part( 'template-parts/magazine-filtering' );
+		//get_template_part( 'template-parts/magazine-filtering' );
 
-	} elseif ( is_post_type_archive('people') ) {
+	//} 
+	elseif ( is_post_type_archive('people') ) {
 
 		get_template_part( 'template-parts/people-filtering' );
 
@@ -64,7 +65,7 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/center-text-hero' );
 
-	} elseif (is_category()) {
+	} elseif (is_category('post')) {
 
 		//get_template_part( 'template-parts/magazine-filtering' );
 

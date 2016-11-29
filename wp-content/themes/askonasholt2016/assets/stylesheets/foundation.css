@@ -9716,6 +9716,12 @@ ul.single-page-nav {
       display: -ms-flexbox;
       display: flex;
       margin-right: 10px; }
+  .magazine-item span.magazine-item-copy p {
+    font-size: 15px; }
+  .magazine-item .magazine-item-header {
+    margin: 1em 0 0 0; }
+    .magazine-item .magazine-item-header a {
+      color: inherit; }
 
 .magazine-item:hover {
   -webkit-box-shadow: 6px 6px 5px 0px #dbdbdb;
@@ -10975,7 +10981,7 @@ body.page .slick-dotted.slick-slider {
   transition: 0.5s;
   margin-bottom: 50px; }
   .artists .artist-thumb {
-    height: 200px;
+    height: 250px;
     background-position: center center;
     background-repeat: no-repeat;
     border-bottom: 0;
@@ -10985,9 +10991,20 @@ body.page .slick-dotted.slick-slider {
     transition: 0.5s; }
   .artists .artist-photo-wrapper {
     position: relative;
-    margin-bottom: 25px; }
+    margin-bottom: 12.5px; }
   .artists .artist-photo-wrapper:hover .overlay {
     display: block; }
+  .artists .artist-details span.artist-category {
+    text-transform: uppercase;
+    color: #b38a76;
+    font-size: 13px;
+    letter-spacing: 1px; }
+  .artists .artist-details a .artist-name {
+    color: initial;
+    -webkit-transition: 0.5s;
+    transition: 0.5s; }
+  .artists .artist-details:hover .artist-name {
+    color: #BA0C2F; }
 
 .image-source-link {
   color: #98C3D1; }
@@ -11033,6 +11050,11 @@ body.page .slick-dotted.slick-slider {
   width: 100%;
   padding: 10px;
   display: none; }
+  .overlay a.open-popup-link svg {
+    color: #BA0C2F; }
+  .overlay a.open-popup-link span {
+    color: #ffffff;
+    font-weight: bold; }
 
 .artist-photo-wrapper:hover .overlay, .magazine-item-thumb:hover .overlay {
   display: block; }
@@ -12203,15 +12225,37 @@ img.mfp-img {
   position: relative;
   background: #FFF;
   width: auto;
-  max-width: 500px;
+  max-width: 800px;
   margin: 20px auto;
   border-top: 44px solid #BA0C2F;
-  border-bottom: 3px solid #BA0C2F; }
+  border-bottom: 2px solid #BA0C2F;
+  -webkit-box-shadow: 0px 11px 48px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 11px 48px -5px rgba(0, 0, 0, 0.75); }
+  .quicklook-content .pop-up-category {
+    color: #BA0C2F;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase; }
+  .quicklook-content ul.quick-look-links {
+    list-style-type: none;
+    font-weight: bold;
+    margin: 25px 0; }
+    .quicklook-content ul.quick-look-links li {
+      padding: 5px 0; }
+  .quicklook-content a.button, .quicklook-content .artist-categories li a, .artist-categories li .quicklook-content a {
+    background: transparent;
+    border: 1px solid gray;
+    color: initial;
+    font-weight: bold;
+    padding: 0.85em 25px; }
 
 body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
   top: -44px;
   color: #fefefe;
   opacity: 1; }
+
+.mfp-bg {
+  background: #ffffff; }
 
 .quicklook-content-profile,
 .quicklook-content-pic {
@@ -12877,6 +12921,9 @@ img.circle-thumb {
     font-weight: bold; }
 
 .page-template-narrow-text-page #page-full-width {
+  max-width: 57.375rem; }
+
+body.single.single-post #single-post {
   max-width: 57.375rem; }
 
 body.single-format-audio #single-post {
