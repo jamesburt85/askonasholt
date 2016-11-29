@@ -2,6 +2,7 @@
 
 .section-header  {
 	padding: $sitepadding 0;
+    color: $brand-red;
     a {
         font-size: 17px;
         color: inherit;
@@ -9,7 +10,8 @@
 }
 
 p {
-    font-size: 21px;
+    font-size: 20px;
+    line-height: 1.8;
 }
 
 //remove margin above footer

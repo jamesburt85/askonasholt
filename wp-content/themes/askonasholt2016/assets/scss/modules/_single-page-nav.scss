@@ -5,9 +5,13 @@ ul.single-page-nav {
     display: flex;
     background: $red;
     margin-left: 0;
+    height: 60px;
+    position: relative;
+    
     li {
-    	padding: 10px $sitepadding;
+    	padding: 0 $sitepadding;
     	color: white;
+        line-height: 60px;
     	a {
     		color: white;
     		font-weight: bold;

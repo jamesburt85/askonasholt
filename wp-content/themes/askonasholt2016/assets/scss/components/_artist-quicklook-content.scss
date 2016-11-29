@@ -32,14 +32,6 @@
 		text-transform: uppercase;
 	}
 
-	ul.quick-look-links {
-		list-style-type: none;
-		font-weight: bold;
-		margin: $sitepadding 0;
-		li {
-			padding: 5px 0;
-		}
-	}
 	a.button {
 	    background: transparent;
 	    border: 1px solid gray;
@@ -49,6 +41,15 @@
 	}
 
 
+}
+
+ul.quick-look-links {
+	list-style-type: none;
+	font-weight: bold;
+	margin: $sitepadding 0;
+	li {
+		padding: 5px 0;
+	}
 }
 
 body.post-type-archive-artists {

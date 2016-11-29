@@ -204,3 +204,10 @@
     margin-top: 4rem;
   }
 }
+
+.header-row {
+    display: flex;
+    a.view-link {
+        font-weight: bold;
+    }
+}

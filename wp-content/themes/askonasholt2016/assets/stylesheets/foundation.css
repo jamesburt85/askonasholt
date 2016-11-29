@@ -6664,13 +6664,15 @@ table.hover tbody tr:nth-of-type(even):hover {
   margin-bottom: 100vh; }
 
 .section-header {
-  padding: 25px 0; }
+  padding: 25px 0;
+  color: #BA0C2F; }
   .section-header a {
     font-size: 17px;
     color: inherit; }
 
 p {
-  font-size: 21px; }
+  font-size: 20px;
+  line-height: 1.8; }
 
 #footer-container {
   margin-top: 0 !important; }
@@ -9682,10 +9684,13 @@ ul.single-page-nav {
   display: -ms-flexbox;
   display: flex;
   background: #BA0C2F;
-  margin-left: 0; }
+  margin-left: 0;
+  height: 60px;
+  position: relative; }
   ul.single-page-nav li {
-    padding: 10px 25px;
-    color: white; }
+    padding: 0 25px;
+    color: white;
+    line-height: 60px; }
     ul.single-page-nav li a {
       color: white;
       font-weight: bold; }
@@ -11033,10 +11038,22 @@ body.page .slick-dotted.slick-slider {
   background-repeat: no-repeat;
   border-bottom: 0;
   -webkit-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  -webkit-box-shadow: 0px 11px 48px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 11px 48px -5px rgba(0, 0, 0, 0.75); }
 
 .single-artists .artist-navigation li {
   display: inline; }
+
+.single-artists .artist-details span.artist-category {
+  color: #BA0C2F; }
+
+.single-artists .artist-social a {
+  color: #a9a8a6;
+  padding: 0 12.5px 0 0; }
+
+.single-artists .side-bar-artist-details {
+  line-height: 60px; }
 
 .artist-photo-wrapper, .magazine-item-thumb {
   position: relative;
@@ -12236,18 +12253,19 @@ img.mfp-img {
     font-size: 13px;
     letter-spacing: 1px;
     text-transform: uppercase; }
-  .quicklook-content ul.quick-look-links {
-    list-style-type: none;
-    font-weight: bold;
-    margin: 25px 0; }
-    .quicklook-content ul.quick-look-links li {
-      padding: 5px 0; }
   .quicklook-content a.button, .quicklook-content .artist-categories li a, .artist-categories li .quicklook-content a {
     background: transparent;
     border: 1px solid gray;
     color: initial;
     font-weight: bold;
     padding: 0.85em 25px; }
+
+ul.quick-look-links {
+  list-style-type: none;
+  font-weight: bold;
+  margin: 25px 0; }
+  ul.quick-look-links li {
+    padding: 5px 0; }
 
 body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
   top: -44px;
@@ -12328,6 +12346,49 @@ body.post-type-archive-tours-projects .tour-dates-basic {
   body.post-type-archive-tours-projects .tour-thumbnail {
     height: 100%;
     position: absolute; } }
+
+body.single.single-artists .artist-header.container {
+  max-width: 100%;
+  background-image: url("../images/bg-general-official.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-bottom: 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 65vh;
+  position: relative; }
+  body.single.single-artists .artist-header.container .artist-details-area {
+    width: 1100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  body.single.single-artists .artist-header.container .artist-details-container {
+    padding: 25px; }
+    body.single.single-artists .artist-header.container .artist-details-container .website {
+      font-weight: bold; }
+    body.single.single-artists .artist-header.container .artist-details-container i {
+      font-size: 1.2rem; }
+  body.single.single-artists .artist-header.container span.artist-category {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase; }
+
+body.single.single-artists .enquiry-button {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 25px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 10px 25px;
+  font-weight: bold; }
+  body.single.single-artists .enquiry-button a {
+    color: #ffffff; }
 
 #front-hero {
   background: url("../images/demo/hero-bg-foundation-6-small.svg") bottom center;
@@ -12591,6 +12652,13 @@ body.post-type-archive-tours-projects .tour-dates-basic {
       .benefits .why-foundation {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
+
+.header-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .header-row a.view-link {
+    font-weight: bold; }
 
 #kitchen-sink {
   max-width: 84.375rem;
