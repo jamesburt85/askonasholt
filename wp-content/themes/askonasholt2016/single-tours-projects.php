@@ -195,7 +195,7 @@ get_header(); ?>
 			    // echo '<ul>'; ?>
 				
 				
-			  	<div id="route" class="route-map acf-map">
+			  	<div id="route" class="route-map acf-map row">
 				
 				<?php while ( $the_query->have_posts() ) {
 			      		$the_query->the_post();
@@ -251,6 +251,7 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
 <?php //get_sidebar(); ?>
+
 </div>
 
 <?php include('template-parts/link-banner.php') ?>

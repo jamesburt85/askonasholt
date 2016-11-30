@@ -14,7 +14,7 @@
  */
 
 get_header(); ?>
-
+<?php get_template_part( 'template-parts/magazine-filtering' ); ?>
 <div id="page" role="main">
 	<article class="main-content">
 	<?php if ( have_posts() ) : ?>

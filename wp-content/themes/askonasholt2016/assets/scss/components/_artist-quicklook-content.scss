@@ -49,6 +49,12 @@ ul.quick-look-links {
 	margin: $sitepadding 0;
 	li {
 		padding: 5px 0;
+		span {
+			vertical-align: top;
+		}
+	}
+	 a.share-button {
+		color: initial;
 	}
 }
 

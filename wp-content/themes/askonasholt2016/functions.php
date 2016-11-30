@@ -71,7 +71,7 @@ if( function_exists('acf_add_options_page')) {
 
 
 /// add categories to CPTs
-add_filter('pre_get_posts', 'query_post_type');
+//add_filter('pre_get_posts', 'query_post_type');
 function query_post_type($query) {
   if( is_category() ) {
     $post_type = get_query_var('post_type');

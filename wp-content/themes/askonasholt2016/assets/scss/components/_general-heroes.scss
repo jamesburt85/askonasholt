@@ -2,13 +2,17 @@
 .hero-sub-header {
 	text-transform: uppercase;
 	color: #b38a76;
-	padding: 10px;
+	padding: 8px 8px 2px 8px;
+}
+
+span.hero-blurb p {
+	margin-bottom: 0;
 }
 
 .hero-header {
 	color: white;
 	font-size: 35px;
-	padding: 10px;
+	padding: 5px;
 }
 
 .hero-copy {
@@ -19,6 +23,8 @@
 
 button.hero-button {
 	padding: 10px;
+	margin-top: 5px;
+
 	a {
 		color: white;
 		padding: 10px;

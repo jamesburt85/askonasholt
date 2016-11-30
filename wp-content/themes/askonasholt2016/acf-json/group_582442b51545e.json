@@ -149,6 +149,42 @@
             "media_upload": 1
         },
         {
+            "key": "field_583d87f7aa6be",
+            "label": "European Management",
+            "name": "european_management",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_583d880caa6bf",
+            "label": "General Management",
+            "name": "general_management",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
             "key": "field_583d71e52cdc8",
             "label": "Related Staff",
             "name": "related_staff",
@@ -300,5 +336,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480421892
+    "modified": 1480428159
 }

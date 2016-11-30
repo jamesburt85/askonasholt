@@ -67,7 +67,7 @@ get_header(); ?>
 
 	} elseif (is_category('post')) {
 
-		//get_template_part( 'template-parts/magazine-filtering' );
+		get_template_part( 'template-parts/magazine-filtering' );
 
 
 	} else {
@@ -77,7 +77,6 @@ get_header(); ?>
 ?>
 
 <div id="archive" role="main">
-	
 
 	<article class="main-content">
 	<?php if ( have_posts() ) : ?>

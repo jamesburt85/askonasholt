@@ -30,6 +30,8 @@ get_header(); ?>
 		$name = //get_field('name');
 		$bio = get_field('bio');
 		$website = get_field('website');
+		$european_management = get_field('european_management');
+		$general_management = get_field('general_management');
 		$contact_text_area = get_field('contact_text_area');
 	?>
 
@@ -103,8 +105,15 @@ get_header(); ?>
 								<?php }
 							} ?>
 
-				<p><?php echo $contact_text_area; ?></p>
-
+				<p><?php //echo $contact_text_area; ?></p>
+				<br/>
+				<span class="side-bar-header">European Management</span>
+				<br/>
+				<span><?php echo $european_management; ?></span>
+				<br/>
+				<span class="side-bar-header">General Management</span>
+				<br/>
+				<span><?php echo $general_management; ?></span>				
 
 
 		</div>
@@ -114,12 +123,153 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="video-audio-area row" id="video-audio">
-		<h4 class="section-header">Video &amp; Audio</h4>
+	<div class="video-audio-area" id="video-audio">
+			
+		<div class="row">
+			<h4 class="section-header">Video &amp; Audio</h4>
+
+			<?php 
+
+			/*
+			*  Query posts for a relationship value.
+			*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+			*/
+
+			$videos = get_posts(array(
+				'post_type' => 'post',
+
+				'tax_query' => array(
+				        array(
+				            'taxonomy' => 'post_format',
+				            'field' => 'slug',
+				            'terms' => array( 'post-format-video' ),
+				        )
+				    ),
+
+				'meta_query' => array(
+					array(
+						'key' => 'artist', // name of custom field
+						'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+						'compare' => 'LIKE'
+					)
+				)
+			));
+
+			?>
+
+			<?php if( $videos ): ?>
+				<!-- <ul> -->
+				<?php
+					foreach( $videos as $video ): setup_postdata( $video );
+
+						//get_template_part( 'template-parts/magazine-blocks' );
+
+					?>
+					<div>
+	<!-- 					<div class="small-2 columns">
+							<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
+						</div> -->
+						<div class="small-3 columns artist-video-area">
+							<div class="row large-video-row">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
+							</div>
+							<div class="video-description">
+								<?php echo wpdocs_custom_taxonomies_terms_links(); ?>
+								<?php the_date('d-m-y'); ?>
+								<span class="magazine-item-copy"><?php the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
+							</div>
+						</div>
+					</div>
+
+					<?php
+
+					endforeach;
+
+					wp_reset_postdata(); ?>
+				<!--  </ul> -->
+			<?php endif; ?>
+
+		</div>
+
+		<div class="row">
+
+			<?php 
+
+			/*
+			*  Query posts for a relationship value.
+			*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+			*/
+
+			$tracks = get_posts(array(
+				'post_type' => 'post',
+
+				'tax_query' => array(
+				        array(
+				            'taxonomy' => 'post_format',
+				            'field' => 'slug',
+				            'terms' => array( 'post-format-audio' ),
+				        )
+				    ),
+
+				'meta_query' => array(
+					array(
+						'key' => 'artist', // name of custom field
+						'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+						'compare' => 'LIKE'
+					)
+				)
+			));
+
+			?>
+			<?php if( $tracks ): ?>
+				<!-- <ul> -->
+				<?php
+					foreach( $tracks as $post ): setup_postdata( $post );
+
+						get_template_part( 'template-parts/audio-player' );
+
+					endforeach;
+
+					wp_reset_postdata(); ?>
+				<!--  </ul> -->
+			<?php endif; ?>
+
+		</div>
+
 	</div>
 
 	<div class="performance-schedule row" id="performance-schedule">
 		Performance Schedule
+
+		<?php 
+
+		/*
+		*  Query posts for a relationship value.
+		*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+		*/
+
+		$tracks = get_posts(array(
+			'post_type' => 'events',
+
+			'tax_query' => array(
+			        array(
+			            //'taxonomy' => 'post_format',
+			            //'field' => 'slug',
+			            //'terms' => array( 'post-format-audio' ),
+			        )
+			    ),
+
+			'meta_query' => array(
+				array(
+					'key' => 'artist', // name of custom field
+					'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+					'compare' => 'LIKE'
+				)
+			)
+		));
+
+		?>
+
 	</div>
 
 	<div class="news-projects row" id="news-projects">
@@ -127,15 +277,11 @@ get_header(); ?>
 	</div>
 
 	<div class="image-gallery row" id="image-gallery">
-		Image Gallery
 		<!-- using ACF Flexible content instead of the_content  -->
 		<?php $acf_fields = get_fields(); ?>
 		<?php include(locate_template('template-parts/acf.php')); ?>
 	</div>
 
-	<div class="press row" id="press">
-		Press
-	</div>
 
 	<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
 </div>
@@ -143,7 +289,7 @@ get_header(); ?>
 			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
 			<p><?php the_tags(); ?></p>
 		</footer>
-		<?php the_post_navigation(); ?>
+		<?php //the_post_navigation(); ?>
 		<?php do_action( 'foundationpress_post_before_comments' ); ?>
 		<?php comments_template(); ?>
 		<?php do_action( 'foundationpress_post_after_comments' ); ?>

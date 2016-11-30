@@ -104,6 +104,38 @@
 	.side-bar-artist-details {
 	    line-height: 60px;
 	}
+	.side-bar-header {
+		font-weight: bold;
+	}
+	div#video-audio {
+		background: $bgdarkgrey;
+		h4.section-header {
+			color: #ffffff;
+		}
+	}
+	.magazine-item {
+		background-color: $bggrey;
+		color: #ffffff;
+	}
+
+	.artist-video-area {
+		.row.large-video-row {
+		    margin: 0;
+		    margin-left: 0;
+		    margin-right: 0;
+		}
+		.video-description {
+			background: $bggrey;
+			color: #ffffff;
+			padding: 1em;
+		}
+	}
+	.video-audio-area{
+		max-width: 100vw;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
 }
 
 

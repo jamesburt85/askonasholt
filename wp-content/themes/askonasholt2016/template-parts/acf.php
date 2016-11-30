@@ -122,9 +122,10 @@ if ($acf_fields['flexible_content']) {
 
 			#Image_Gallery
 			case 'image_gallery': ?>
-
-				<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image gallery</h4>
+				
 				<div class="row">
+					<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image gallery</h4>
+				
 					<div class="multiple-items zoom-gallery">
 
 						<?php
@@ -138,6 +139,7 @@ if ($acf_fields['flexible_content']) {
 		
 					</div>
 				</div>
+				
 			<?php
 			break;
 
@@ -159,9 +161,10 @@ if ($acf_fields['flexible_content']) {
 
 			#Press Section
 			case 'press': ?>
-				
-				<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Press</h4>
 				<div class="row press-row">
+				
+					<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Press</h4>
+				
 					<ul class="accordion" data-accordion data-allow-all-closed="true">
 						
 						<?php

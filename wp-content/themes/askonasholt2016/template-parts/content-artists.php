@@ -117,7 +117,7 @@
 				    </g>
 				</svg>
 				&nbsp;
-				Download Press Pack
+				<span>Download Press Pack</span>
 			</li>
 			<li>
 				<svg width="22px" height="22px" viewBox="0 -1 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -138,7 +138,10 @@
 				    </g>
 				</svg>
 				&nbsp;
-				Share
+				
+				<a class="share-button" href="mailto:?Subject=Artist&amp;Body=<?php the_permalink(); ?>">
+				    <span>Share</span>
+				</a>
 			</li>
 		</ul>
 	</div>

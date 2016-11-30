@@ -64,52 +64,53 @@
 					</a> -->
 				</div>
 
-				<ul class="quick-look-links">
-					<li>
-						
-						<svg width="21px" height="22px" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
-						    <desc>Created with Sketch.</desc>
-						    <defs>
-						        <polyline id="path-1" points="4 21 0 21 1.28587914e-15 0 21 0 21 21 17 21"></polyline>
-						        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="21" height="21" fill="white">
-						            <use xlink:href="#path-1"></use>
-						        </mask>
-						    </defs>
-						    <g id="Group-18" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-						        <use id="Rectangle-4-Copy-4" stroke="#000000" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
-						        <g id="Group-3-Copy" transform="translate(10.000000, 14.000000) rotate(90.000000) translate(-10.000000, -14.000000) translate(3.000000, 7.000000)" stroke="#BA0C2F">
-						            <path d="M1.89519934,11.1205667 L11.1047822,1.94539934" id="Path-2" transform="translate(6.499991, 6.532983) rotate(45.000000) translate(-6.499991, -6.532983) "></path>
-						            <polyline id="Path-3" transform="translate(7.324505, 6.521204) rotate(45.000000) translate(-7.324505, -6.521204) " points="11.5739552 10.7712037 11.5739552 2.27120371 3.07505388 2.27120371"></polyline>
-						        </g>
-						    </g>
-						</svg>
+				
+					<ul class="quick-look-links">
+						<li>
+							
+							<svg width="21px" height="22px" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+							    <desc>Created with Sketch.</desc>
+							    <defs>
+							        <polyline id="path-1" points="4 21 0 21 1.28587914e-15 0 21 0 21 21 17 21"></polyline>
+							        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="21" height="21" fill="white">
+							            <use xlink:href="#path-1"></use>
+							        </mask>
+							    </defs>
+							    <g id="Group-18" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							        <use id="Rectangle-4-Copy-4" stroke="#000000" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+							        <g id="Group-3-Copy" transform="translate(10.000000, 14.000000) rotate(90.000000) translate(-10.000000, -14.000000) translate(3.000000, 7.000000)" stroke="#BA0C2F">
+							            <path d="M1.89519934,11.1205667 L11.1047822,1.94539934" id="Path-2" transform="translate(6.499991, 6.532983) rotate(45.000000) translate(-6.499991, -6.532983) "></path>
+							            <polyline id="Path-3" transform="translate(7.324505, 6.521204) rotate(45.000000) translate(-7.324505, -6.521204) " points="11.5739552 10.7712037 11.5739552 2.27120371 3.07505388 2.27120371"></polyline>
+							        </g>
+							    </g>
+							</svg>
 
-						&nbsp;
-						Download Press Pack
-					</li>
-					<li>
-						<svg width="22px" height="22px" viewBox="0 -1 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
-						    <desc>Created with Sketch.</desc>
-						    <defs>
-						        <polyline id="path-1" points="3.55271368e-15 8 0 0 21 0 21 21 13 21"></polyline>
-						        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="21" height="21" fill="white">
-						            <use xlink:href="#path-1"></use>
-						        </mask>
-						    </defs>
-						    <g id="Group-19" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-						        <use id="Rectangle-4" stroke="#000000" mask="url(#mask-2)" stroke-width="2" transform="translate(10.500000, 10.500000) rotate(-180.000000) translate(-10.500000, -10.500000) " xlink:href="#path-1"></use>
-						        <g id="Group-6" transform="translate(7.000000, 0.000000)" stroke="#BA0C2F">
-						            <path d="M0,14 L13.0322646,1" id="Path-2"></path>
-						            <polyline id="Path-3" points="13.5 9 13.5 0.5 5.00109863 0.5"></polyline>
-						        </g>
-						    </g>
-						</svg>
-						&nbsp;
-						Share
-					</li>
-				</ul>
+							&nbsp;
+							Download Press Pack
+						</li>
+						<li>
+							<svg width="22px" height="22px" viewBox="0 -1 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+							    <desc>Created with Sketch.</desc>
+							    <defs>
+							        <polyline id="path-1" points="3.55271368e-15 8 0 0 21 0 21 21 13 21"></polyline>
+							        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="21" height="21" fill="white">
+							            <use xlink:href="#path-1"></use>
+							        </mask>
+							    </defs>
+							    <g id="Group-19" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							        <use id="Rectangle-4" stroke="#000000" mask="url(#mask-2)" stroke-width="2" transform="translate(10.500000, 10.500000) rotate(-180.000000) translate(-10.500000, -10.500000) " xlink:href="#path-1"></use>
+							        <g id="Group-6" transform="translate(7.000000, 0.000000)" stroke="#BA0C2F">
+							            <path d="M0,14 L13.0322646,1" id="Path-2"></path>
+							            <polyline id="Path-3" points="13.5 9 13.5 0.5 5.00109863 0.5"></polyline>
+							        </g>
+							    </g>
+							</svg>
+							&nbsp;
+							Share
+						</li>
+					</ul>
 
 			</div>
 		</div>
@@ -131,33 +132,33 @@
 	</div>
 </div> -->
 
-<ul class="single-page-nav">
-	
-	<li class="nav-title">
-		<?php the_title(); ?>
-	</li>
+	<ul class="single-page-nav">
+		
+		<li class="nav-title">
+			<?php the_title(); ?>
+		</li>
 
-	<li>
-		<a data-scroll="" data-events="scroll" href="#introduction">Introduction</a>
-	</li>
+		<li>
+			<a data-scroll="" data-events="scroll" href="#introduction">Introduction</a>
+		</li>
 
-	<li>
-		<a data-scroll href="#video-audio">Video &amp; Audio</a>
-	</li>
+		<li>
+			<a data-scroll href="#video-audio">Video &amp; Audio</a>
+		</li>
 
-	<li>
-		<a data-scroll="" data-events="scroll" href="#schedule">Schedule</a>
-	</li>
+		<li>
+			<a data-scroll="" data-events="scroll" href="#schedule">Schedule</a>
+		</li>
 
-	
-	<button class="enquiry-button">
-		<a href="mailto:<?php echo $artist_email; ?>?Subject=Hello%20again">
-			Make enquiry
-		</a>
-	</button>
+		
+		<button class="enquiry-button">
+			<a href="mailto:<?php echo $artist_email; ?>?Subject=Hello%20again">
+				Make enquiry
+			</a>
+		</button>
 
-	<!-- getting ACF Flexible content navigation  -->
-	<?php $acf_fields = get_fields(); ?>
-	<?php include(locate_template('template-parts/acf-navigation.php')); ?>
+		<!-- getting ACF Flexible content navigation  -->
+		<?php $acf_fields = get_fields(); ?>
+		<?php include(locate_template('template-parts/acf-navigation.php')); ?>
 
-</ul>
+	</ul>
