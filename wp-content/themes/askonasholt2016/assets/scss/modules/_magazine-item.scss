@@ -7,8 +7,29 @@
 	transition: 0.5s;
 	background-color: #ffffff;
 
+	a {
+		color: inherit;
+	}
+
 	.magazine-item-container {
 		padding: 1em;
+		.read-more {
+			font-weight: bold;
+			color: #d7d4c5;
+			transition: 0.5s;
+			span.eye {
+				opacity: 0;
+				transition: 0.5s;
+			}
+		}
+	}
+	.magazine-item-container:hover {
+		.read-more {
+			color: $brand-red;
+			span.eye {
+				opacity: 1;
+			}
+		}
 	}
 	
 	.magazine-item-thumb {

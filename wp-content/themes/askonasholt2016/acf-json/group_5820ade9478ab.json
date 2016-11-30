@@ -350,7 +350,7 @@
                             "key": "field_582b44fc2acf4",
                             "label": "Banner Copy",
                             "name": "banner_copy",
-                            "type": "wysiwyg",
+                            "type": "textarea",
                             "instructions": "Enter copy including headers",
                             "required": 0,
                             "conditional_logic": 0,
@@ -360,9 +360,10 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
                         }
                     ],
                     "min": "",
@@ -715,5 +716,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480435294
+    "modified": 1480516406
 }

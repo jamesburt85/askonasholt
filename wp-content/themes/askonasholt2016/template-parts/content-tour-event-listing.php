@@ -14,7 +14,8 @@
 	<header>
 
 		<?php 
-			$date_time = get_field('date_time');
+			$time = get_field('time');
+			$date = get_field('date');
 			$venue = get_field('venue');
 			$city = get_field('city');
 			$more_info = get_field('more_info');
@@ -27,7 +28,8 @@
 			      <li class="accordion-item" data-accordion-item>
 			      <hr />
 			        <a href="#" class="accordion-title"><?php //the_title(); ?>
-			        	<?php echo $date_time; ?>&nbsp;
+			        	<?php echo $time; ?>&nbsp;
+			        	<?php echo $date; ?>&nbsp;
 			        	<?php echo $venue; ?>&nbsp;
 			        	<?php echo $city; ?></a>
 			        <div class="accordion-content" data-tab-content>
@@ -38,7 +40,10 @@
 			<?php } else { ?>
 			    <span>
 			    	<div class="tour-dates-basic">
-				    	<?php echo $date_time; ?>&nbsp;<?php echo $venue; ?>,&nbsp;<?php echo $city; ?>
+				    	<?php echo $time; ?>&nbsp;
+				    	<?php echo $date; ?>&nbsp;
+				    	<?php echo $venue; ?>,&nbsp;
+				    	<?php echo $city; ?>
 			    	</div>
 			    </span>
 		<?php } ?>

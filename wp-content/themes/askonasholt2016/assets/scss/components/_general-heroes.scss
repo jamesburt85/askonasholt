@@ -1,6 +1,7 @@
 //Repeated Hero styles
 .hero-sub-header {
 	text-transform: uppercase;
+	font-weight: bold;
 	color: #b38a76;
 	padding: 8px 8px 2px 8px;
 }
@@ -11,8 +12,9 @@ span.hero-blurb p {
 
 .hero-header {
 	color: white;
-	font-size: 35px;
-	padding: 5px;
+	font-size: 45px;
+	padding: 12px;
+	font-family: $serif-font;
 }
 
 .hero-copy {

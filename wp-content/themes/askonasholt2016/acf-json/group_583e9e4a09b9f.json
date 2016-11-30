@@ -1,0 +1,43 @@
+{
+    "key": "group_583e9e4a09b9f",
+    "title": "[ GENERAL ] - Optional Description",
+    "fields": [
+        {
+            "key": "field_583e9e6226d9a",
+            "label": "Optional Description",
+            "name": "optional_description",
+            "type": "text",
+            "instructions": "Enter optional description in hero, beneath header",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1480501453
+}

@@ -103,7 +103,7 @@
 				<?php endif; ?>
 			</div>
 			
-			<div class="header-social-area show-for-medium">
+			<div class="header-social-area show-for-large">
 
 				<a href="https://www.facebook.com/askonasholt/" target="_blank"><i class="fa fa-facebook fa-2x social-icon" aria-hidden="true"></i></a>
 				<a href="https://www.instagram.com/askonasholt/" target="_blank"><i class="fa fa-instagram fa-2x social-icon" aria-hidden="true"></i></a>

@@ -18,7 +18,7 @@ body.page {
 		}
 
 		.slick-dotted {
-		    border-bottom: 1px solid gray;
+		    border-bottom: 1px solid #808080;
 		    .slick-slider {
 		        padding-bottom: 30px !important;
 		    }
@@ -36,7 +36,8 @@ body.page {
 	.slick-dotted.slick-slider {
 	    padding-bottom: 30px;
 	    margin-bottom: 0 !important;
-	    border-bottom: 1px solid gray;
+	    border-bottom: 1px solid #808080;
+	    background: #f2f1ed;
 	}
 }
 

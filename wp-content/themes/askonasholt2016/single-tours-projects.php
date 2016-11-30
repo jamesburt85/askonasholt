@@ -163,11 +163,8 @@ get_header(); ?>
 						<div class="hidden"><?php echo $extra_blurb_copy; ?></div>
 						<p><a data-toggle="menuBar">More</a></p>
 					</div>
-
-
-
-
 				</div>
+				
 			</div>
 
 
@@ -232,6 +229,7 @@ get_header(); ?>
 			?>
 
 			<!-- using ACF Flexible content instead of the_content  -->
+			<?php $acf_fields = get_fields(); ?>
 			<?php include(locate_template('template-parts/acf.php')); ?>
 
 		</div>
@@ -254,6 +252,7 @@ get_header(); ?>
 
 </div>
 
-<?php include('template-parts/link-banner.php') ?>
+<?php get_template_part('template-parts/link-banner') ?>
+
 
 <?php get_footer();

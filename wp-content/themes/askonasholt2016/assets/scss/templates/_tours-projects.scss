@@ -22,29 +22,7 @@
           padding: 10px;
       }
   }
-  //Schedule/Accordion styles
-  .accordion-title {
-      display: block;
-      padding: 0;
-      line-height: 1;
-      font-size: inherit;
-      color: inherit;
-      position: relative;
-      border: none;
-      border-bottom: 0;
-  }
-
-  .accordion-title:before {
-    content: '^';
-    -ms-transform: rotate(180deg); /* IE 9 */
-    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-    transform: rotate(180deg);
-  }
-
-  :last-child:not(.is-active) > .accordion-title {
-      border-bottom: none;
-  }
-
+  
   //related artist details
   .side-bar-artist {
       display: flex;
@@ -160,5 +138,57 @@ img.circle-thumb {
     .side-bar-artist-name {
       font-weight: bold;
     }
+}
+
+//Schedule/Accordion styles
+ul.accordion {
+  margin-bottom: 0;
+  
+  li.accordion-item {
+    .accordion-title {
+        display: block;
+        padding: 0;
+        line-height: 1;
+        font-size: inherit;
+        color: inherit;
+        position: relative;
+        border: none;
+        border-bottom: 0;
+    }
+    .accordion-title:hover, .accordion-title:focus {
+      background-color: transparent;
+    }
+    hr {
+      margin: 0.5em;
+    }
+  }
+  :last-child > .accordion-content:last-child {
+    border-bottom: none;
+  }
+  .accordion-content {
+    color: initial;
+    border: none;
+  }
+}
+
+.accordion-title:before {
+  content: '^';
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+  transform: rotate(180deg);
+}
+
+:last-child:not(.is-active) > .accordion-title {
+    border-bottom: none;
+}
+
+.event-listing-details {
+    display: flex !important;
+    line-height: 60px !important;
+    font-size: 19px;
+}
+
+span.side-bar-artist-name, .event-detail {
+  padding-right: $sitepadding;
 }
 

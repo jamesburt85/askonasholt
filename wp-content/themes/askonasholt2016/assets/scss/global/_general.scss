@@ -3,10 +3,15 @@
 .section-header  {
 	padding: $sitepadding 0;
     color: $brand-red;
+    font-family: $serif-font;
     a {
         font-size: 17px;
         color: inherit;
     }
+}
+
+.hero-heading {
+    font-family: $serif-font;
 }
 
 p {
@@ -74,3 +79,9 @@ span.bold {
     font-weight: normal;
     font-style: normal;
 }
+
+//Serif font
+@import url("//hello.myfonts.net/count/328e32");
+  
+@font-face {font-family: 'GeometricSlab703BT-Light';src: url('webfonts/328E32_0_0.eot');src: url('webfonts/328E32_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/328E32_0_0.woff2') format('woff2'),url('webfonts/328E32_0_0.woff') format('woff'),url('webfonts/328E32_0_0.ttf') format('truetype');}
+

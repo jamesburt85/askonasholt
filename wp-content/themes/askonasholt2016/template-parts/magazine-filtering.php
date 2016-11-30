@@ -1,7 +1,7 @@
 <div class="artist-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general-official.jpg');">
 	
 	<header class="filter-header">
-		<h2>Magazine</h2>
+		<h2 class="hero-heading">Magazine</h2>
 		<p>Optional Description</p>
 		<?php //foundationpress_entry_meta(); ?>
 	</header>

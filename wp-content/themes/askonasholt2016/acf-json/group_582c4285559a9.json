@@ -3,10 +3,10 @@
     "title": "[TOURS] Event Details",
     "fields": [
         {
-            "key": "field_582c4525af917",
-            "label": "Date Time",
-            "name": "date_time",
-            "type": "date_time_picker",
+            "key": "field_583eeb4d8033c",
+            "label": "Time",
+            "name": "time",
+            "type": "time_picker",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,8 +15,24 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "d\/m\/Y g:i a",
-            "return_format": "Y-m-d H:i:s",
+            "display_format": "g:i a",
+            "return_format": "g:i a"
+        },
+        {
+            "key": "field_582c4525af917",
+            "label": "Date",
+            "name": "date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d M Y",
+            "return_format": "d M Y",
             "first_day": 1
         },
         {
@@ -136,5 +152,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480333661
+    "modified": 1480520508
 }

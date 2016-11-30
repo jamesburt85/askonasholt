@@ -4,6 +4,9 @@
 	@include full-bg;
 	background-repeat: repeat-x;
 	background-size: inherit;
+	.hero-heading {
+		font-family: $serif-font;
+	}
 }
 
 // .artist-categories {
@@ -98,6 +101,9 @@
 		float: left;
 		margin-right: ($sitepadding / 2);
 		margin-bottom: ($sitepadding / 2);
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 1px;
 		a {
 			// color: $white;
 			@extend .button;
