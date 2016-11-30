@@ -12,12 +12,13 @@ $date 			= $acf_fields['date'];
 $location 		= $acf_fields['location'];
 
 ?>
-
-<audio controls>
-	<source src="<?php echo $mp3; ?>" type="audio/mp3">
-	<!-- <source src="/path/to/audio.ogg" type="audio/ogg"> -->
-</audio>
-<div class="audio-info">
-	<h3><?php echo $trackname; ?> - <?php echo $aristname; ?> - <?php echo $date; ?> - <?php echo $location; ?></h3>
-	<!-- <h4></h4> -->
+<div class="small-12 columns">
+	<audio controls>
+		<source src="<?php echo $mp3; ?>" type="audio/mp3">
+		<!-- <source src="/path/to/audio.ogg" type="audio/ogg"> -->
+	</audio>
+	<div class="audio-info">
+		<h3><?php echo $trackname; ?> - <?php echo $aristname; ?> - <?php echo $date; ?> - <?php echo $location; ?></h3>
+		<!-- <h4></h4> -->
+	</div>
 </div>

@@ -130,6 +130,7 @@ role="main"> -->
             ?>
           <div class="row">
             <div class="small-12 columns">
+
               <ul class="accordion" data-accordion data-allow-all-closed="true">
                 <li class="accordion-item" data-accordion-item>
                 <hr />
@@ -141,6 +142,12 @@ role="main"> -->
                       <span class="event-detail"><?php echo $time; ?></span>
                       <span class="event-detail"><?php echo $date; ?></span>
                       <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
+                      <span class="more-info show-for-large">More info &nbsp;
+                          <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                              <defs></defs>
+                              <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
+                          </svg>
+                      </span>
                     </div>
                     
                   </a>
@@ -150,6 +157,7 @@ role="main"> -->
                   </div>
                 </li>
               </ul>
+
             </div>
           </div>
        <?php }
@@ -179,6 +187,7 @@ role="main"> -->
       </div>
     </div>   
 
+  <div class="row">
       <?php 
 
       /*
@@ -208,11 +217,11 @@ role="main"> -->
             //get_template_part( 'template-parts/magazine-blocks' );
 
           ?>
-          <div>
+
   <!--          <div class="small-2 columns">
               <h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
             </div> -->
-            <div class="small-3 columns artist-video-area">
+            <div class="small-12 medium-6 large-3 columns artist-video-area">
               <div class="row large-video-row">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
               </div>
@@ -231,7 +240,7 @@ role="main"> -->
         <!--  </ul> -->
       <?php endif; ?>
 
-</div>
+  </div>
 
     <div class="row">
 

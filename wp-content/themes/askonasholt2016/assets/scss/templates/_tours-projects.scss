@@ -115,10 +115,11 @@ img.circle-thumb {
   }
 
   .accordion-title:before {
-    content: '^';
-    -ms-transform: rotate(180deg); /* IE 9 */
-    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
-    transform: rotate(180deg);
+    display: none !important;
+    // content: 'none';
+    // -ms-transform: rotate(180deg); /* IE 9 */
+    // -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    // transform: rotate(180deg);
   }
 
   :last-child:not(.is-active) > .accordion-title {
@@ -183,12 +184,43 @@ ul.accordion {
 }
 
 .event-listing-details {
-    display: flex !important;
-    line-height: 60px !important;
     font-size: 19px;
+    span.more-info {
+        right: 2em;
+        position: absolute;
+    }
 }
 
 span.side-bar-artist-name, .event-detail {
   padding-right: $sitepadding;
 }
+
+.accordion-title:before {
+  display: none !important;
+  // content: 'none';
+  // -ms-transform: rotate(180deg); /* IE 9 */
+  // -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+  // transform: rotate(180deg);
+}
+
+
+//MEDIA QUERIES
+@include breakpoint(small only) {
+  .event-listing-details {
+      font-size: 19px;
+      text-align: center;
+      padding-right: 12px;
+      .side-bar-artist-details {
+        text-align: left;   
+      }
+  }
+}
+
+@include breakpoint(large up) {
+  .event-listing-details {
+    display: flex !important;
+    line-height: 60px !important;
+  }
+}
+
 

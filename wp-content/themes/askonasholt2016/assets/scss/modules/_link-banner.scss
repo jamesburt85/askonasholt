@@ -1,12 +1,23 @@
 //bottom link banner
 .link-banner {
+	.row {
+	    max-width: 60.375rem;
+	}
 	.link-banner-button {
 		text-align: center;
-		padding: $sitepadding-large;
+		padding: 20px 0;
 	}
 	button {
 		border: 1px solid #ffffff;
-		padding: 1em 6em; 
+		padding: 1em; 
 		color: #ffffff;
+		font-weight: bold;
+		width: 65%;
+	}
+}
+
+@include breakpoint(medium only) {
+	.link-banner-button {
+		padding: $sitepadding-large;
 	}
 }

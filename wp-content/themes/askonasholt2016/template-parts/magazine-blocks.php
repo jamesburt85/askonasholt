@@ -21,7 +21,7 @@
 			<a href="<?php the_permalink(); ?>">
 				<span class="magazine-category"><?php //echo $main_category; ?>
 					<!-- *** Details in functions.php for getting taxonomy/terms *** -->
-					<?php echo wpdocs_custom_taxonomies_terms_links(); ?>
+					<span class="category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
 					<?php the_date('d-m-y'); ?>
 				</span>
 
