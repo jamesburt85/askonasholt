@@ -7,8 +7,14 @@
 		width: 80%;
 		text-align: center;
 	}
+
+	// .artist-categories {
+	// 	//@include center(x);
+	// }
+
 	.artist-categories {
 		@include center(x);
-		width: 80%;
+		//width: 80%;
 	}
+
 }

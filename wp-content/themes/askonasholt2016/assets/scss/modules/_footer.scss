@@ -47,10 +47,7 @@
     i.fa-2x {
         font-size: 1.3em;
     }
-    //align copyright to the right
-    .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
-        text-align: right;
-    }
+
     div.copyright {
       font-weight: 200;
     }
@@ -73,7 +70,7 @@
 //**********************
 
 @include breakpoint(small only) {
-  #footer-container, .textwidget {
+  #footer-container, .textwidget, .widget_nav_men {
     text-align: center;
   }
   article {
@@ -81,4 +78,12 @@
   }
 }
 
+//align copyright to the right
+@include breakpoint(medium up) {
+  #footer-container {
+    .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+        text-align: right;
+    }
+  }
+}
 

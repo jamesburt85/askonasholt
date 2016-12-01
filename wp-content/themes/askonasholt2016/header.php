@@ -103,26 +103,34 @@
 				<?php endif; ?>
 			</div>
 			
-			<div class="header-social-area show-for-large">
+			<!-- <div class="header-social-area show-for-large"> -->
+				<a class="show-for-large" href="https://www.facebook.com/askonasholt/" target="_blank">
+					<i class="fa fa-facebook fa-2x social-icon" aria-hidden="true"></i>
+				</a>
+				<a class="show-for-large" href="https://www.instagram.com/askonasholt/" target="_blank">
+					<i class="fa fa-instagram fa-2x social-icon" aria-hidden="true"></i>
+				</a>
+				<a class="show-for-large" href="https://twitter.com/AskonasHolt?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">
+					<i class="fa fa-twitter fa-2x social-icon" aria-hidden="true"></i>
+				</a>
+				<a class="show-for-large" href="https://www.youtube.com/user/AskonasHolt" target="_blank">
+					<i class="fa fa-youtube-play fa-2x social-icon" aria-hidden="true"></i>
+				</a>
+			<!-- </div> -->
 
-				<a href="https://www.facebook.com/askonasholt/" target="_blank"><i class="fa fa-facebook fa-2x social-icon" aria-hidden="true"></i></a>
-				<a href="https://www.instagram.com/askonasholt/" target="_blank"><i class="fa fa-instagram fa-2x social-icon" aria-hidden="true"></i></a>
-				<a href="https://twitter.com/AskonasHolt?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa fa-twitter fa-2x social-icon" aria-hidden="true"></i></a>
-				<a href="https://www.youtube.com/user/AskonasHolt" target="_blank"><i class="fa fa-youtube-play fa-2x social-icon" aria-hidden="true"></i></a>
+			<div id="search-toggle" class="header-search-toggle button">
 
-				<div id="search-toggle" class="header-search-toggle button">
+				<svg width="23px" height="24px" viewBox="1377 56 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
-					<svg width="23px" height="24px" viewBox="1377 56 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-					    <g id="Group-23" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(1378.000000, 57.000000)">
-					        <rect id="Rectangle-Copy-5" stroke="#000000" x="3" y="0" width="18" height="18" rx="9"></rect>
-					        <path d="M0,16 L5.5,21.5" id="Line" stroke="#000000" stroke-linecap="square" transform="translate(2.750000, 18.750000) scale(-1, 1) translate(-2.750000, -18.750000) "></path>
-					    </g>
-					</svg>
-					
-				</div>
-
+				    <g id="Group-23" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(1378.000000, 57.000000)">
+				        <rect id="Rectangle-Copy-5" stroke="#000000" x="3" y="0" width="18" height="18" rx="9"></rect>
+				        <path d="M0,16 L5.5,21.5" id="Line" stroke="#000000" stroke-linecap="square" transform="translate(2.750000, 18.750000) scale(-1, 1) translate(-2.750000, -18.750000) "></path>
+				    </g>
+				</svg>
+				
 			</div>
+
+			
 
 		</nav>
 

@@ -285,6 +285,60 @@ function feature_init()
 
 
     /* ----------------------------------------------------
+    Online Performances
+    ---------------------------------------------------- */
+    
+    $labels = array
+    (
+        'name'                      => 'Online',
+        'singular_name'             => 'Online Item',
+        'add_new'                   => _x('Add New', 'Online Item'),
+        'add_new_item'              => 'Add New Online Item',
+        'edit_item'                 => 'Edit Online Item',
+        'new_item'                  => 'New Online Item',
+        'view_item'                 => 'View Online Item',
+        'search_items'              => 'Search Online Items',
+        'not_found'                 => 'No Online Item found',
+        'not_found_in_trash'        => 'No Online Item found in Trash',
+        'parent_item_colon'         => '',
+
+        'menu_name'                 => 'Online'
+    );
+    
+    $args['labels']                 = $labels;
+    $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
+    // $args['rewrite']                = array('xxx' => 'xxx');
+    $args['rewrite']                = array('slug' => 'events/online');
+    $args['menu_icon']              = 'dashicons-welcome-view-site';
+    $args['show_in_menu']           = true;
+    
+    register_post_type('online', $args);
+
+    # Add a custom taxonomy
+    register_taxonomy( 'online-type', 
+        array('online'), # register taxonomy for these post types
+        array('hierarchical' => true, # if this is true, it acts like categories             
+            'labels' => array(
+                'name' => __( 'Online Type', 'adstyles'),
+                'singular_name' => __( 'Online Type', 'adstyles'), 
+                'search_items' =>  __( 'Search Online Type', 'adstyles'),
+                'all_items' => __( 'All Online Type', 'adstyles'), 
+                'parent_item' => __( 'Parent Online Type', 'adstyles'), 
+                'parent_item_colon' => __( 'Parent Online Type:', 'adstyles'), 
+                'edit_item' => __( 'Edit Online Type', 'adstyles'), 
+                'update_item' => __( 'Update Online Type', 'adstyles'), 
+                'add_new_item' => __( 'Add New Online Type', 'adstyles'),
+                'new_item_name' => __( 'New Online Type Name', 'adstyles'),
+            ),
+            'show_ui' => true,
+            'query_var' => false,
+            'rewrite' => false,
+        )
+    );
+
+
+
+    /* ----------------------------------------------------
     Magazine
     ---------------------------------------------------- */
     

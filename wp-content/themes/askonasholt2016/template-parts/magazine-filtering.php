@@ -40,7 +40,3 @@
 	</div>
 
 </div>
-
-<div class="newsletter-banner row">
-	Sign up to our newsletter for the latest announcements
-</div>
