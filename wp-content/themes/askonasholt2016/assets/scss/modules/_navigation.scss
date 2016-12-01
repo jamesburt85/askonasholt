@@ -15,12 +15,18 @@
   }
 }
 
-.title-bar-title {
-  a {
-    font-size: 1rem;
-    color: #B9B9B9;
+.title-bar {
+  position: relative;
+  .title-bar-title {
+    margin: 2em;
+    a {
+      font-size: 1rem;
+      color: #B9B9B9;
+      @include center;
+    }
   }
 }
+
 
 // Tablet and desktop menu
 .top-bar {

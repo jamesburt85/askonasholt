@@ -9,6 +9,31 @@
 	}
 }
 
+.artist-filtering-block  {
+	min-height: 28em;
+}
+
+//making categoried fit on one line
+
+@include breakpoint(medium up) {
+	.artist-categories {
+		display: -webkit-box;
+	}
+
+	.artist-categories li {
+		float: none !important;
+	}
+	.artist-categories {
+		@include center(x);
+	}
+	.artist-filtering-block {
+		min-height: 20em;
+	}
+}
+
+//making categoried fit on one line END
+
+
 // .artist-categories {
 // 	position: absolute;
 // 	bottom: 0;
