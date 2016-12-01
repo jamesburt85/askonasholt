@@ -4,9 +4,11 @@
 
 	header.filter-header {
 		@include center;
+		width: 80%;
 		text-align: center;
 	}
 	.artist-categories {
 		@include center(x);
+		width: 80%;
 	}
 }
