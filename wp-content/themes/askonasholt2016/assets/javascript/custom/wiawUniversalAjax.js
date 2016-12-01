@@ -81,7 +81,6 @@
 						btn.attr('href', btn_url);
 
 
-
 						// Insert the HTML
 						$("#ajax-before-me").before( html);
 

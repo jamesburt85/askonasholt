@@ -1,6 +1,7 @@
 // also check styles in _plyr.scss
 
-body.post-type-archive-tours-projects {
+// dont need this body class 
+// body.post-type-archive-tours-projects {
   .tour-hero {
       height: 70vh;
       max-height: 400px;
@@ -21,7 +22,7 @@ body.post-type-archive-tours-projects {
       border-top: 1px solid #cacaca;
   }
 
-}
+// }
 
 .tour-wrapper {
 	border: 1px solid #cacaca;
@@ -34,7 +35,7 @@ body.post-type-archive-tours-projects {
 }
 
 @include breakpoint(large up) {
-	body.post-type-archive-tours-projects {
+	// body.post-type-archive-tours-projects {
 		.tour-wrapper {
 			position: relative;
 		}
@@ -45,6 +46,6 @@ body.post-type-archive-tours-projects {
 			height: 100%;
 			position: absolute;
 		}
-	}
+	// }
 }
 

@@ -63,8 +63,11 @@ get_header(); ?>
 
 	} elseif ( is_post_type_archive('tours-projects') ) {
 
-		//get_template_part( 'template-parts/center-text-hero' );
-		get_template_part( 'template-parts/options-hero' );
+		get_template_part( 'template-parts/tours-projects-filtering' );
+
+	} elseif ( is_tax('tour-season') ) {
+
+		get_template_part( 'template-parts/tours-projects-filtering' );
 
 	} elseif (is_category()) {
 

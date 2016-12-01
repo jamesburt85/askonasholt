@@ -150,11 +150,33 @@ function feature_init()
     $args['labels']                 = $labels;
     $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
     // $args['rewrite']                = array('xxx' => 'xxx');
-    $args['rewrite']                = array('slug' => 'upcoming');
+    $args['rewrite']                = array('slug' => 'tours-and-projects/upcoming');
     $args['menu_icon']              = 'dashicons-format-audio';
     $args['show_in_menu']           = true;
     
     register_post_type('tours-projects', $args);
+
+    # Add a custom taxonomy
+    register_taxonomy( 'tour-season', 
+        array('tours-projects'), # register taxonomy for these post types
+        array('hierarchical' => true, # if this is true, it acts like categories             
+            'labels' => array(
+                'name' => __( 'Tour Season', 'adstyles'),
+                'singular_name' => __( 'Tour Season', 'adstyles'), 
+                'search_items' =>  __( 'Search Tour Season', 'adstyles'),
+                'all_items' => __( 'All Tour Season', 'adstyles'), 
+                'parent_item' => __( 'Parent Tour Season', 'adstyles'), 
+                'parent_item_colon' => __( 'Parent Tour Season:', 'adstyles'), 
+                'edit_item' => __( 'Edit Tour Season', 'adstyles'), 
+                'update_item' => __( 'Update Tour Season', 'adstyles'), 
+                'add_new_item' => __( 'Add New Tour Season', 'adstyles'),
+                'new_item_name' => __( 'New Tour Season Name', 'adstyles'),
+            ),
+            'show_ui' => true,
+            'query_var' => false,
+            'rewrite' => false,
+        )
+    );
 
 
     /* ----------------------------------------------------

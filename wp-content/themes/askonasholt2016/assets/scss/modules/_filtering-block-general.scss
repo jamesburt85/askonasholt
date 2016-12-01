@@ -1,0 +1,17 @@
+.filtering-block {
+	background-color: $lightbrown;
+	position: relative;
+	@include full-bg;
+	min-height: 200px;
+	height: 40vh;
+	max-height: 500px;
+	background-repeat: repeat-x;
+	background-size: inherit;
+	text-align: center;
+	.hero-heading {
+		font-family: $serif-font;
+	}
+	.filter-header {
+		@include center();
+	}
+}

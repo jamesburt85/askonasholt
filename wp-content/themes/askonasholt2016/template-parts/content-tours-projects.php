@@ -27,9 +27,16 @@
 		?>
 
 		<div class="row tour-wrapper">
+			
+			<?php
+				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+				$thumb = $thumb['0'];
+				if (!$thumb){ // giving default image if no image is set.
+					$thumb = get_template_directory_uri() . '/assets/images/default.jpg';
+				}
 
-			<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-			<div class="small-12 large-4 columns tour-thumbnail" style="background-image: url('<?php echo $thumb['0'];?>')">
+			?>
+			<div class="small-12 large-4 columns tour-thumbnail" style="background-image: url('<?php echo $thumb;?>')">
 			</div>
 
 			<div class="small-12 large-8 columns tour-details">
