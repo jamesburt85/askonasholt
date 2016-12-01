@@ -168,6 +168,8 @@ div#video-audio {
     padding: 10px;
     display: none;
     a.open-popup-link {
+    	display: block;
+    	width: 100%;
     	svg {
     		color: $red;
     	}

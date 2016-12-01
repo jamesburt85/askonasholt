@@ -49,8 +49,15 @@
 				
 				<div class="artist-photo-wrapper">
 					<a href="<?php the_permalink(); ?>">
-						<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-						<div class="artist-thumb image-popup-no-margins" style="background-image: url('<?php echo $thumb['0'];?>')">
+						<?php
+							$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+							$thumb = $thumb['0'];
+							if (!$thumb){ // giving default image if no image is set.
+								$thumb = get_template_directory_uri() . '/assets/images/default.jpg';
+							}
+
+						?>
+						<div class="artist-thumb image-popup-no-margins" style="background-image: url('<?php echo $thumb;?>')">
 					
 
 						</div>
@@ -94,7 +101,7 @@
 
 <div id="quicklook-<?php the_ID(); ?>" class="quicklook-content mfp-hide">
 
-	<div class="quicklook-content-pic" style="background-image: url('<?php echo $thumb['0'];?>')"></div>
+	<div class="quicklook-content-pic" style="background-image: url('<?php echo $thumb;?>')"></div>
 	<div class="quicklook-content-profile">
 		<h6 class="pop-up-category"><?php echo $main_category; ?></h6>
 		<h4 class="artist-category"><?php //echo $name; ?><?php the_title() ; ?></h4>
