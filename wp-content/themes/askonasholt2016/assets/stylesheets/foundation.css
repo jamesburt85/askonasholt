@@ -9697,7 +9697,7 @@ body.post-type-archive-artists li.cat-item-all a {
 
 .link-banner .link-banner-button {
   text-align: center;
-  padding: 20px 0; }
+  padding: 50px 0; }
 
 .link-banner button {
   border: 1px solid #ffffff;
@@ -12951,11 +12951,15 @@ body.single.single-artists .enquiry-button {
     padding-left: 0.625rem;
     padding-right: 0.625rem;
     padding-left: 0 !important;
-    padding-right: 0 !important; }
+    padding-right: 0 !important;
+    float: none; }
     @media screen and (min-width: 40em) {
       #single-post .main-content {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
+  #single-post article {
+    margin-top: 50px;
+    margin-bottom: 50px; }
 
 body.home {
   color: #ffffff; }
@@ -13158,10 +13162,12 @@ span.side-bar-artist-name, .event-detail {
     line-height: 60px !important; } }
 
 .page-template-narrow-text-page #page-full-width {
-  max-width: 57.375rem; }
+  max-width: 57.375rem;
+  margin: 0 auto; }
 
 body.single.single-post #single-post {
-  max-width: 57.375rem; }
+  max-width: 57.375rem;
+  margin: 0 auto; }
 
 body.single-format-audio #single-post {
   background-color: #262626;

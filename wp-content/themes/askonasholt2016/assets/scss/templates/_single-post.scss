@@ -7,10 +7,15 @@
       @include grid-column(12);
       padding-left: 0 !important;
       padding-right: 0 !important;
+      float: none;
     }
 
     @include breakpoint(medium) {
       //@include grid-column(8);
     }
+  }
+  article {
+    margin-top: $sitepadding-large;
+    margin-bottom: $sitepadding-large;
   }
 }
