@@ -1,0 +1,153 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Taxonomy Terms Order\n"
+"POT-Creation-Date: 2015-05-01 18:06+0200\n"
+"PO-Revision-Date: 2015-05-01 18:06+0200\n"
+"Last-Translator: NspCode <electronice_delphi@yahoo.com>\n"
+"Language-Team: Nsp Code <electronice_delphi@yahoo.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: include/functions.php:65
+msgid ""
+"There is a new version of Advanced Taxonomy Terms Order. Use your personal "
+"link to update or contact us for recover."
+msgstr ""
+
+#: include/interface.php:62
+msgid "Order type for"
+msgstr ""
+
+#: include/interface.php:62
+msgid "Switched to"
+msgstr ""
+
+#: include/interface.php:75
+msgid "Order updated"
+msgstr ""
+
+#: include/interface.php:121
+msgid "Taxonomy Order"
+msgstr ""
+
+#: include/interface.php:127
+msgid ""
+"This plugin can't work without javascript, because it's use drag and drop "
+"and AJAX."
+msgstr ""
+
+#: include/interface.php:153 include/interface.php:158
+msgid "Taxonomy Title"
+msgstr ""
+
+#: include/interface.php:153 include/interface.php:158
+msgid "Total Terms"
+msgstr ""
+
+#: include/interface.php:231
+msgid "Automatic Order"
+msgstr ""
+
+#: include/interface.php:232
+msgid "Manual Order"
+msgstr ""
+
+#: include/interface.php:243
+msgid "Order By"
+msgstr ""
+
+#: include/interface.php:252
+msgid "Default"
+msgstr ""
+
+#: include/interface.php:255
+msgid "Creation Time / ID"
+msgstr ""
+
+#: include/interface.php:258
+msgid "Name"
+msgstr ""
+
+#: include/interface.php:261
+msgid "Count"
+msgstr ""
+
+#: include/interface.php:264
+msgid "Slug"
+msgstr ""
+
+#: include/interface.php:267
+msgid "Random"
+msgstr ""
+
+#: include/interface.php:274
+msgid "Order"
+msgstr ""
+
+#: include/interface.php:284
+msgid "Descending"
+msgstr ""
+
+#: include/interface.php:287
+msgid "Ascending"
+msgstr ""
+
+#: include/interface.php:296 include/interface.php:328
+#: include/interface.php:354
+msgid "Update"
+msgstr ""
+
+#: include/interface.php:404
+msgid "Items Order Updated"
+msgstr ""
+
+#: include/options.php:16
+msgid "Settings Saved"
+msgstr ""
+
+#: include/options.php:36
+msgid "General Settings"
+msgstr ""
+
+#: include/options.php:44
+msgid "Minimum Level to use this plugin"
+msgstr ""
+
+#: include/options.php:63
+msgid "Auto Sort"
+msgstr ""
+
+#: include/options.php:67 include/options.php:79
+msgid "OFF"
+msgstr ""
+
+#: include/options.php:68 include/options.php:80
+msgid "ON"
+msgstr ""
+
+#: include/options.php:69
+msgid ""
+"If checked, the plug-in automatically update the WordPress queries to use "
+"the new sort (<b>No code update is necessarily</b>)"
+msgstr ""
+
+#: include/options.php:69
+msgid "Additional details about this setting can be found at"
+msgstr ""
+
+#: include/options.php:75
+msgid "Admin Sort"
+msgstr ""
+
+#: include/options.php:82
+msgid "Update order of terms within the admin interface per customised sort"
+msgstr ""
+
+#: include/options.php:92
+msgid "Save Settings"
+msgstr ""

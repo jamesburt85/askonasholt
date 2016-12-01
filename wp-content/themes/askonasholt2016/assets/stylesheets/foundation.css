@@ -9612,7 +9612,7 @@ li.mega-toggle-on ul.mega-sub-menu {
   .input-group input#searchsubmit {
     background-color: #BA0C2F; }
 
-.artist-filtering-block {
+.filtering-block {
   background-color: #F2F1ED;
   position: relative;
   background-position: center center;
@@ -9620,11 +9620,22 @@ li.mega-toggle-on ul.mega-sub-menu {
   border-bottom: 0;
   -webkit-background-size: cover;
   background-size: cover;
+  min-height: 200px;
+  height: 40vh;
+  max-height: 500px;
   background-repeat: repeat-x;
   -webkit-background-size: inherit inherit;
-          background-size: inherit; }
-  .artist-filtering-block .hero-heading {
+          background-size: inherit;
+  text-align: center; }
+  .filtering-block .hero-heading {
     font-family: "GeometricSlab703BT-Light"; }
+  .filtering-block .filter-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
 
 .artist-categories {
   position: absolute;
@@ -12440,7 +12451,7 @@ body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
 .quicklook-content-links {
   padding: 25px; }
 
-body.post-type-archive-tours-projects .tour-hero {
+.tour-hero {
   height: 70vh;
   max-height: 400px;
   background-position: center center;
@@ -12451,11 +12462,11 @@ body.post-type-archive-tours-projects .tour-hero {
   color: white;
   position: relative; }
 
-body.post-type-archive-tours-projects .tour-project-archive-hero {
+.tour-project-archive-hero {
   height: 50vh;
   text-align: center; }
 
-body.post-type-archive-tours-projects .tour-thumbnail {
+.tour-thumbnail {
   height: 300px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -12463,7 +12474,7 @@ body.post-type-archive-tours-projects .tour-thumbnail {
   -webkit-background-size: cover;
   background-size: cover; }
 
-body.post-type-archive-tours-projects .tour-dates-basic {
+.tour-dates-basic {
   padding: 1.25rem 0;
   border-top: 1px solid #cacaca; }
 
@@ -12475,11 +12486,11 @@ body.post-type-archive-tours-projects .tour-dates-basic {
     float: right; }
 
 @media screen and (min-width: 64em) {
-  body.post-type-archive-tours-projects .tour-wrapper {
+  .tour-wrapper {
     position: relative; }
-  body.post-type-archive-tours-projects .tour-details {
+  .tour-details {
     padding: 25px; }
-  body.post-type-archive-tours-projects .tour-thumbnail {
+  .tour-thumbnail {
     height: 100%;
     position: absolute; } }
 
@@ -12966,7 +12977,12 @@ body.home {
   body.home .splash-page-hero {
     height: 100vh;
     width: 100%;
-    position: relative; }
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-bottom: 0;
+    -webkit-background-size: cover;
+    background-size: cover; }
     body.home .splash-page-hero path#Fill-1 {
       fill: white; }
     body.home .splash-page-hero path#Fill-3 {

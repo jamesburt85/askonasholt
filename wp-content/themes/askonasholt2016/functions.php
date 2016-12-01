@@ -216,6 +216,36 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
 
 
+    # filter the default archive tours-projects archive to just show from one cat
+    # // adstyles
+
+    function testing_filter_get_posts($query) {
+        // only change tours-projects. if its admin, dont do it, if its a template (like PAST TOURS template) then don't do it.
+        if ( !$query->is_post_type_archive('tours-projects') || is_admin() || is_page_template() )
+            return $query;
+
+        // so this shoudl just effect the /tours-and-projects/upcoming/ which is the main archive...
+        $upcomingSeason = get_field('upcoming_season', 'option');
+
+        // echo $upcomingSeason;
+        // print_r($upcomingSeason);
+
+        $upcomingSeasonID = $upcomingSeason->term_id;
+
+        $taxquery = array(
+            array(
+                'taxonomy' => 'tour-season',
+                'field' => 'id',
+                'terms' => array( $upcomingSeasonID ),
+                'operator'=> 'IN'
+            )
+        );
+
+        $query->set( 'tax_query', $taxquery );
+
+    }
+    add_action( 'pre_get_posts', 'testing_filter_get_posts' );
+
         
 
 ?>
