@@ -387,7 +387,14 @@ var map = null;
     });
 
 
-  
+
+    //*********************************************
+    //***** ADD CLASSES TO PAGE NAV TILES  ********
+    //*********************************************
+
+    // poss overkill?
+    // $( "li.page_item" ).addClass( "small-12 medium-6 columns" );
+
 
 
 

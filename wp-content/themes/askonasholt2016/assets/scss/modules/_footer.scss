@@ -80,8 +80,10 @@
 
 //align copyright to the right
 @include breakpoint(medium up) {
-  .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
-      text-align: right;
+  #footer-container {
+    .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+        text-align: right;
+    }
   }
 }
 

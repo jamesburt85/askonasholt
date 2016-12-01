@@ -1,0 +1,35 @@
+//In-page nav tiles at bottom of page
+.more-page-links {
+	margin: $sitepadding-large 0;
+	border-top: 1px solid #3E3E3E;
+	text-align: center;
+	ul.submenu.page-nav-buttons {
+		list-style-type: none;
+		text-align: center;
+		li {
+			@include breakpoint(small) {
+				@include grid-column(12);
+			}
+			@include breakpoint(medium) {
+				@include grid-column(6);
+			}
+			@include breakpoint(large) {
+				@include grid-column(3);
+			}
+			padding-top: 1em;
+			padding-bottom: 1em;
+			
+			a {
+				color: initial;
+				display: block;
+				border: 1px solid #3E3E3E;
+				padding: 5em 0;
+			}
+		}
+
+		li.page_item.page-item-54.current_page_item.active {
+		    display: none;
+		}
+
+	}
+}
