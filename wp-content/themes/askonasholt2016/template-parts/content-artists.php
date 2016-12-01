@@ -101,7 +101,7 @@
 
 <div id="quicklook-<?php the_ID(); ?>" class="quicklook-content mfp-hide">
 
-	<div class="quicklook-content-pic" style="background-image: url('<?php echo $thumb['0'];?>')"></div>
+	<div class="quicklook-content-pic" style="background-image: url('<?php echo $thumb;?>')"></div>
 	<div class="quicklook-content-profile">
 		<h6 class="pop-up-category"><?php echo $main_category; ?></h6>
 		<h4 class="artist-category"><?php //echo $name; ?><?php the_title() ; ?></h4>

@@ -66,7 +66,7 @@ get_header(); ?>
 		//get_template_part( 'template-parts/center-text-hero' );
 		get_template_part( 'template-parts/options-hero' );
 
-	} elseif (is_category('post')) {
+	} elseif (is_category()) {
 
 		get_template_part( 'template-parts/magazine-filtering' );
 

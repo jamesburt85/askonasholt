@@ -11153,11 +11153,14 @@ div#video-audio {
   width: 100%;
   padding: 10px;
   display: none; }
-  .overlay a.open-popup-link svg {
-    color: #BA0C2F; }
-  .overlay a.open-popup-link span {
-    color: #ffffff;
-    font-weight: bold; }
+  .overlay a.open-popup-link {
+    display: block;
+    width: 100%; }
+    .overlay a.open-popup-link svg {
+      color: #BA0C2F; }
+    .overlay a.open-popup-link span {
+      color: #ffffff;
+      font-weight: bold; }
 
 .artist-photo-wrapper:hover .overlay, .magazine-item-thumb:hover .overlay {
   display: block; }
