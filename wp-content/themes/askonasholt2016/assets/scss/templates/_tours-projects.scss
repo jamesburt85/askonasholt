@@ -155,6 +155,10 @@ ul.accordion {
         position: relative;
         border: none;
         border-bottom: 0;
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        line-height: 60px !important;
     }
     .accordion-title:hover, .accordion-title:focus {
       background-color: transparent;

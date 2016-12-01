@@ -36,7 +36,8 @@
 		
 
 		<?php 
-			$date_time = get_field('date_time');
+			$date = get_field('date');
+			$time = get_field('time');
 			$venue = get_field('venue');
 			$city = get_field('city');
 			$more_info = get_field('more_info');
@@ -55,6 +56,8 @@
 			    			
 			    	<?php get_template_part( 'template-parts/event-related-artist' ); ?>		
 
+			    	<?php echo $time; ?>
+			    	<?php echo $date; ?>
 			    	<?php echo $venue; ?>,&nbsp;
 			    	<?php echo $city; ?>
 			    </a>

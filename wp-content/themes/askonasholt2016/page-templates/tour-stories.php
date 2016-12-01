@@ -21,52 +21,49 @@ get_header(); ?>
           
           <div class="artist-filtering-block">
             
-            <header class="magazine-header">
+<!--             <header class="magazine-header">
               <h2><?php the_title(); ?></h2>
               <p>Optional Description</p>
               <?php //foundationpress_entry_meta(); ?>
-            </header>
+            </header> -->
 
-
-
+            <?php get_template_part( 'template-parts/magazine-filtering' ); ?>
 
           </div>
 
-    <!-- Getting all items with Tour category -->
-          <?php 
-            // Query Args
-              $args = array(
+          <!-- Getting all items with Tour category -->
+          <div class="row">
+          
+          <!-- Get news items -->
+            <?php 
 
-                'post_type'   => 'magazine',
-                //'posts_per_page' => 4,
-                'tax_query' => array(
-                    array(
-                      'taxonomy' => 'magazine-content-type',
-                      'field'    => 'slug',
-                      'terms'    => 'tour',
-                    ),
-                  ),
-              );
+              // Query Args
+                $args = array(
 
-              // The Query
-              $the_query = new WP_Query( $args );
+                  'post_type'   => 'post',
+                  'category_name' => 'tour',
+                );
 
-            // The Loop
-            if ( $the_query->have_posts() ) {
+                // The Query
+                $the_query = new WP_Query( $args );
 
-              while ( $the_query->have_posts() ) {
-                $the_query->the_post();
+              // The Loop
+              if ( $the_query->have_posts() ) {
 
-                get_template_part( 'template-parts/magazine-blocks' );
+                while ( $the_query->have_posts() ) {
+                  $the_query->the_post();
 
+                  get_template_part( 'template-parts/magazine-blocks' );
+
+                }
+
+                /* Restore original Post Data */
+                wp_reset_postdata();
+              } else {
+                // no posts found
               }
-
-              /* Restore original Post Data */
-              wp_reset_postdata();
-            } else {
-              // no posts found
-            }
-          ?>
+            ?>
+          </div>
       </div>
       <footer>
           <?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>

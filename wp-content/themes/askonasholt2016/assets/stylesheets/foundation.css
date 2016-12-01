@@ -13091,7 +13091,11 @@ ul.accordion {
     color: inherit;
     position: relative;
     border: none;
-    border-bottom: 0; }
+    border-bottom: 0;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    line-height: 60px !important; }
   ul.accordion li.accordion-item .accordion-title:hover, ul.accordion li.accordion-item .accordion-title:focus {
     background-color: transparent; }
   ul.accordion li.accordion-item hr {
