@@ -12,6 +12,12 @@
 	.artist-photo-wrapper {
 		position: relative;
 		margin-bottom: $sitepadding-small;
+		// a {
+			transition: all 0.2s;
+			&:hover {
+				opacity: 0.9;
+			}
+		// }
 	}
 	
 	.artist-photo-wrapper:hover {
@@ -170,6 +176,10 @@ div#video-audio {
     a.open-popup-link {
     	display: block;
     	width: 100%;
+    	transition: padding 0.2s;
+    	&:hover {
+    		padding: 0px 0px 10px;
+    	}
     	svg {
     		color: $red;
     	}

@@ -4,9 +4,17 @@
 
 	header.filter-header {
 		@include center;
+		width: 80%;
 		text-align: center;
 	}
+<<<<<<< HEAD
 	// .artist-categories {
 	// 	//@include center(x);
 	// }
+=======
+	.artist-categories {
+		@include center(x);
+		width: 80%;
+	}
+>>>>>>> 58f7bd0baab25e498d328259621bae57520f3633
 }

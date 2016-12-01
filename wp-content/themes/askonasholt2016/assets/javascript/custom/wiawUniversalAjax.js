@@ -85,6 +85,8 @@
 						// Insert the HTML
 						$("#ajax-before-me").before( html);
 
+						QuickLookInit(); // added this so that the quicklook works after load more. See app.js function called QuickLookInit
+
 					// No results
 					} else {
 
