@@ -286,7 +286,7 @@ function feature_init()
     $args['labels']                 = $labels;
     $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
     // $args['rewrite']                = array('xxx' => 'xxx');
-    $args['rewrite']                = array('slug' => 'events/online');
+    $args['rewrite']                = array('slug' => 'online-performances');
     $args['menu_icon']              = 'dashicons-welcome-view-site';
     $args['show_in_menu']           = true;
     

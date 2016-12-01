@@ -11004,6 +11004,88 @@ a.pswp__share--download:hover {
   display: -ms-flexbox;
   display: flex; }
 
+.online-item {
+  border: 1px solid gray;
+  margin-bottom: 2em;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #ffffff;
+  position: relative; }
+  .online-item a {
+    color: inherit; }
+  .online-item .online-item-container {
+    padding: 1em;
+    position: absolute;
+    bottom: 0;
+    background: rgba(186, 12, 47, 0.8);
+    color: #ffffff; }
+  .online-item .online-item-thumb {
+    height: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-bottom: 0;
+    -webkit-background-size: cover;
+    background-size: cover; }
+  .online-item .online-category {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .online-item .online-category li {
+      list-style-type: none;
+      text-transform: uppercase;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin-right: 10px; }
+    .online-item .online-category span.category {
+      font-weight: bold; }
+  .online-item span.online-item-copy p {
+    font-size: 15px; }
+  .online-item .online-item-header {
+    margin: 1em 0 0 0; }
+    .online-item .online-item-header a {
+      color: inherit; }
+
+.row.online-performance-header {
+  text-align: center; }
+
+.online-performances-link {
+  text-align: center; }
+  .online-performances-link button {
+    background: transparent;
+    border: 1px solid gray;
+    color: initial;
+    font-weight: bold;
+    padding: 0.85em 25px;
+    margin: 50px; }
+
+.online-item:hover {
+  -webkit-box-shadow: 6px 6px 5px 0px #dbdbdb;
+  box-shadow: 6px 6px 5px 0px #dbdbdb; }
+
+body.post-type-archive-online article.main-content {
+  position: relative; }
+
+body.post-type-archive-online .archive__load-more {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 0; }
+
+.single-online-category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .single-online-category li {
+    list-style-type: none;
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 10px; }
+
 .sites-button {
   background: #FF6908;
   font-size: 1.25rem;

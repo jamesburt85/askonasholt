@@ -12,28 +12,52 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry small-12 columns'); ?>>
 	<header>
+
 		<h2><a href="<?php //the_permalink(); ?>"><?php //the_title(); ?></a></h2>
 		<?php //foundationpress_entry_meta(); ?>
-
-		<div class="row">
-			<h3>Online Performances</h3>
+		<div class="row online-performance-header">
+			<h3 class="section-header">Online Performances</h3>
 			<p>In partnership with ......</p>
 		</div>
-		<div class="row live-events">
-			<h4>Latest 3 Live Events here...</h4>
-			<div class="small-12 medium-4 columns">
-				Event 1				
-			</div>
-			<div class="small-12 medium-4 columns">
-				Event 2				
-			</div>
-			<div class="small-12 medium-4 columns">
-				Event 3				
-			</div>
 
-			<a href="#">View All</a> -links to archive page
+		<div class="row live-events">
+
+			<?php
+			  // Query Args
+			  $args = array(
+
+			    'post_type'		=> 'online',
+			    //'post__in'  	=> $tour_artists,
+			    'posts_per_page' => 3,
+			    
+			  );
+
+			  // The Query
+			  $the_query = new WP_Query( $args );
+
+			  // The Loop
+			  if ( $the_query->have_posts() ) {
+			   // echo '<ul>';
+			    while ( $the_query->have_posts() ) {
+			      $the_query->the_post();
+			      //echo '<li>' . get_the_title() . '</li>';
+			      get_template_part( 'template-parts/online-blocks' );
+
+			      //get_template_part( 'template-parts/.....' );
+			    }
+			    //echo '</ul>';
+			    /* Restore original Post Data */
+			    wp_reset_postdata();
+			  } else {
+			    // no posts found
+			  }
+			?>
+
 		</div>
-		
+
+		<div class="online-performances-link">
+			<a href="<?php echo site_url(); ?>/online-performances"><button>View All</button></a>
+		</div>
 
 		<?php 
 			$date = get_field('date');
