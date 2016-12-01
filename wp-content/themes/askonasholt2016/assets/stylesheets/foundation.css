@@ -9432,6 +9432,19 @@ pre {
 .top-bar, .top-bar ul {
   background-color: white; }
 
+#mega-menu-wrap-top-bar-r #mega-menu-top-bar-r {
+  line-height: 135px;
+  color: initial;
+  background: transparent; }
+
+#mega-menu-wrap-top-bar-r {
+  background: transparent !important; }
+  #mega-menu-wrap-top-bar-r a {
+    color: #000000 !important; }
+
+#mega-menu-wrap-top-bar-r #mega-menu-top-bar-r > li.mega-menu-item.mega-toggle-on > a.mega-menu-link, #mega-menu-wrap-top-bar-r #mega-menu-top-bar-r > li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-top-bar-r #mega-menu-top-bar-r > li.mega-menu-item > a.mega-menu-link:focus {
+  background: transparent !important; }
+
 #footer-container {
   max-width: 100%;
   width: 100%;

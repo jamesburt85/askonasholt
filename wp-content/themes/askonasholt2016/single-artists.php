@@ -169,7 +169,7 @@ get_header(); ?>
 	<!-- 					<div class="small-2 columns">
 							<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
 						</div> -->
-						<div class="small-3 columns artist-video-area">
+						<div class="small-12 medium-6 large-3 columns artist-video-area">
 							<div class="row large-video-row">
 								<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
 							</div>
@@ -238,38 +238,11 @@ get_header(); ?>
 
 	</div>
 
-	<div class="performance-schedule row" id="performance-schedule">
+	<div class="performance-schedule row" id="schedule">
 		Performance Schedule
 
-		<?php 
 
-		/*
-		*  Query posts for a relationship value.
-		*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
-		*/
-
-		$tracks = get_posts(array(
-			'post_type' => 'events',
-
-			'tax_query' => array(
-			        array(
-			            //'taxonomy' => 'post_format',
-			            //'field' => 'slug',
-			            //'terms' => array( 'post-format-audio' ),
-			        )
-			    ),
-
-			'meta_query' => array(
-				array(
-					'key' => 'artist', // name of custom field
-					'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-					'compare' => 'LIKE'
-				)
-			)
-		));
-
-		?>
-
+		
 	</div>
 
 	<div class="news-projects row" id="news-projects">
