@@ -11010,11 +11010,6 @@ a.pswp__share--download:hover {
 .my-gallery figcaption {
   display: none; }
 
-.mc4wp-form-fields {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
 .sites-button {
   background: #FF6908;
   font-size: 1.25rem;
@@ -12579,52 +12574,6 @@ body.single.single-artists .enquiry-button {
   font-weight: bold; }
   body.single.single-artists .enquiry-button a {
     color: #ffffff; }
-
-.more-page-links {
-  margin: 50px 0;
-  border-top: 1px solid #3E3E3E;
-  text-align: center; }
-  .more-page-links ul.submenu.page-nav-buttons {
-    list-style-type: none;
-    text-align: center; }
-    .more-page-links ul.submenu.page-nav-buttons li {
-      width: 100%;
-      float: left;
-      padding-left: 0.625rem;
-      padding-right: 0.625rem;
-      padding-top: 1em;
-      padding-bottom: 1em; }
-      @media screen and (min-width: 40em) {
-        .more-page-links ul.submenu.page-nav-buttons li {
-          padding-left: 0.9375rem;
-          padding-right: 0.9375rem; } }
-      @media screen and (min-width: 40em) {
-        .more-page-links ul.submenu.page-nav-buttons li {
-          width: 50%;
-          float: left;
-          padding-left: 0.625rem;
-          padding-right: 0.625rem; } }
-  @media screen and (min-width: 40em) and (min-width: 40em) {
-    .more-page-links ul.submenu.page-nav-buttons li {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-      @media screen and (min-width: 64em) {
-        .more-page-links ul.submenu.page-nav-buttons li {
-          width: 25%;
-          float: left;
-          padding-left: 0.625rem;
-          padding-right: 0.625rem; } }
-  @media screen and (min-width: 64em) and (min-width: 40em) {
-    .more-page-links ul.submenu.page-nav-buttons li {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
-      .more-page-links ul.submenu.page-nav-buttons li a {
-        color: initial;
-        display: block;
-        border: 1px solid #3E3E3E;
-        padding: 5em 0; }
-    .more-page-links ul.submenu.page-nav-buttons li.page_item.page-item-54.current_page_item.active {
-      display: none; }
 
 #front-hero {
   background: url("../images/demo/hero-bg-foundation-6-small.svg") bottom center;
