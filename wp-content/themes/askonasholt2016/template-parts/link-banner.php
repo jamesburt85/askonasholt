@@ -15,15 +15,15 @@
 <div class="link-banner" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-red.jpg');">
 	<div class="row">
 		
-		<div class="small-12 medium-6 columns link-banner-button">
+<!-- 		<div class="small-12 medium-6 columns link-banner-button">
 			<a href="<?php echo site_url(); ?>/contact">
 				<button>
 					Contact Askonas Holt
 				</button>
 			</a>
-		</div>
+		</div> -->
 
-		<div class="small-12 medium-6 columns link-banner-button">
+		<div class="small-12 columns link-banner-button">
 			<a data-scroll data-events="scroll" href="#top">
 				<button>
 					Back to top

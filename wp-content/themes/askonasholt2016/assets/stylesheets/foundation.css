@@ -9658,6 +9658,22 @@ li.mega-toggle-on ul.mega-sub-menu {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+  .filtering-block button.button {
+    background-color: #fefefe;
+    color: #F2F1ED;
+    border: 1px solid #B49A81;
+    color: #B49A81;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold; }
+  .filtering-block button.button:hover {
+    background-color: #BA0C2F;
+    color: #ffffff; }
+  .filtering-block ul#example-dropdown {
+    list-style-type: none;
+    text-align: left; }
+    .filtering-block ul#example-dropdown a {
+      color: initial; }
 
 .artist-filtering-block {
   min-height: 28em; }
@@ -9751,10 +9767,9 @@ body.post-type-archive-artists li.cat-item-all a {
 
 .link-banner button {
   border: 1px solid #ffffff;
-  padding: 1em;
+  padding: 1em 4em;
   color: #ffffff;
-  font-weight: bold;
-  width: 65%; }
+  font-weight: bold; }
 
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   .link-banner-button {

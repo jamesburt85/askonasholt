@@ -14,4 +14,24 @@
 	.filter-header {
 		@include center();
 	}
+	button.button {
+	    background-color: #fefefe;
+	    color: #F2F1ED;
+	    border: 1px solid #B49A81;
+	    color: #B49A81;
+	    text-transform: uppercase;
+	    letter-spacing: 1px;
+	    font-weight: bold;
+	}
+	button.button:hover {
+		background-color: #BA0C2F;
+		color: #ffffff;
+	}
+	ul#example-dropdown {
+	    list-style-type: none;
+	    text-align: left;
+	    a {
+	    	color: initial;
+	    }
+	}
 }

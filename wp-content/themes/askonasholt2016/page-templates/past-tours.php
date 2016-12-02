@@ -30,7 +30,7 @@ get_header(); ?>
 	?>
 
 
-<h1>PAST TOURS yeah?</h1>
+<h1>PAST TOURS go here</h1>
 
 <div id="archive" role="main">
 
@@ -57,5 +57,7 @@ get_header(); ?>
 	</article>
 
 </div>
+
+<?php get_template_part( 'template-parts/link-banner' ); ?>
 
 <?php get_footer();
