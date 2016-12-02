@@ -18,7 +18,7 @@
 // var flightPlanCoordinates = [];
 var flightPlanCoordinates = new Array();
 
-function new_map( $el ) {
+function new_map( $el, showflightpath ) {
   
   // var
   var $markers = $el.find('.marker');
@@ -67,7 +67,9 @@ function new_map( $el ) {
     
   });
 
-  add_flightpath( map );
+  if(showflightpath){
+    add_flightpath( map );
+  }
   
   
   // center map
@@ -383,8 +385,14 @@ var map = null;
 
     $('.acf-map').each(function(){
 
+      $showFlightPath = false;
+
+      if($(this).hasClass('show-flightpath')){
+        $showFlightPath = true;
+      }
+
       // create map
-      map = new_map( $(this) );
+      map = new_map( $(this), $showFlightPath );
 
     });
 
