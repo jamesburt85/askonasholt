@@ -216,10 +216,13 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
 
 
-    # filter the default archive tours-projects archive to just show from one cat
+    //**************************************************
+    // filter the default archive tours-projects archive to just show from one cat
+    //**************************************************
+    # 
     # // adstyles
 
-    function testing_filter_get_posts($query) {
+    function filter_tours_archive_filter_get_posts($query) {
         // only change tours-projects. if its admin, dont do it, if its a template (like PAST TOURS template) then don't do it.
         if ( !$query->is_post_type_archive('tours-projects') || is_admin() || is_page_template() )
             return $query;
@@ -244,8 +247,74 @@ class Walker_Category_Find_Parents extends Walker_Category {
         $query->set( 'tax_query', $taxquery );
 
     }
-    add_action( 'pre_get_posts', 'testing_filter_get_posts' );
+    add_action( 'pre_get_posts', 'filter_tours_archive_filter_get_posts' );
 
+
+
+    //**************************************************
+    // only show events that end date is either today or in future...
+    //**************************************************
+    # 
+    # // adstyles
+
+      function be_event_query( $query ) {
         
+        if( $query->is_main_query() && !$query->is_feed() && !is_admin() && $query->is_post_type_archive( 'events' ) ) {
+            
+            $current_meta = $query->get('meta_query');
+
+            $custom_meta = array(
+               'key' => 'adstyles_end_date',
+               'value' => date('Ymd'),
+               'compare' => '>='
+            );
+
+            $meta_query = $current_meta[] = $custom_meta;
+            $query->set( 'meta_query', array($meta_query) );
+        
+            $query->set( 'orderby', 'meta_value_num' );
+            $query->set( 'meta_key', 'date' );
+            $query->set( 'order', 'ASC' );
+            // $query->set( 'posts_per_page', '4' );
+        }
+      }
+      add_action( 'pre_get_posts', 'be_event_query' );  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>

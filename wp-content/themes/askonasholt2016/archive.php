@@ -73,7 +73,6 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/magazine-filtering' );
 
-
 	} else {
 
 	}
@@ -83,7 +82,40 @@ get_header(); ?>
 <div id="archive" role="main">
 
 	<article class="main-content">
-	<?php if ( have_posts() ) : ?>
+
+	<?php if ( is_post_type_archive('events') ) {
+
+		// adding in the live events block, if we're on the events archive.
+		get_template_part( 'template-parts/live-events-listing' ); ?>
+
+		<h2>Browse Upcoming Events</h2>
+
+		<div class="events-filtering-bar">
+			Upcoming events:
+			<button class="button" type="#">This Week</button>
+			<button class="button" type="#">Cal</button>
+			In:
+			<input type="#">City/Venue</input>
+			<button class="button" type="#">MAP</button>
+			<button class="button" type="#">LIST</button>
+		</div>
+
+		<div id="events-map" class="events-map">EVENTS MAP</div>
+
+		<?php 
+
+			// $wp_query = get_posts(array(
+			//   'numberposts' => -1,
+			//   'post_type' => 'directory_listings',
+			//   'meta_key' => 'membership_type',
+			//   'orderby' => 'meta_value',
+			// ));
+
+		?>
+
+	<?php }
+
+	if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
