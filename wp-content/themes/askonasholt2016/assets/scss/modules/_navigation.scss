@@ -28,6 +28,70 @@
 }
 
 
+//// styling mobile menu ///////
+//// this is a bit hacky, but that's mega menu for you :) ///////
+
+.title-bar {
+  // height: 100px;
+}
+
+// .title-bar .title-bar-title {
+//   display: none;
+// }
+
+header#masthead .top-bar-right {
+  padding-left: 0 !important;
+  position: absolute;
+  z-index: 10;
+  // top: 10px;
+  // left: 10px;
+  top: 0;
+  left: 0;
+  .mega-toggle-block {
+    height: $mob-header-height;
+  }
+
+}
+
+#mega-menu-wrap-top-bar-r .mega-menu-toggle {
+  background-color: transparent;
+  // ul {
+  //   background-color: $white;
+  // }
+}
+
+#mega-menu-wrap-top-bar-r #mega-menu-top-bar-r {
+  li {
+    background-color: $white !important;
+  }
+}
+
+#mega-menu-wrap-top-bar-r .mega-menu-toggle .mega-toggle-block-1:before,
+#mega-menu-wrap-top-bar-r .mega-menu-toggle .mega-toggle-block-1:after {
+  color: $black;
+}
+
+.header-search-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#mega-menu-wrap-top-bar-r .mega-menu-toggle {
+  width: 100px;
+  position: absolute;
+  right: 0;
+}
+
+#mega-menu-wrap-top-bar-r .mega-menu-toggle.mega-menu-open + #mega-menu-top-bar-r {
+  top: $mob-header-height;
+  position: absolute;
+  width: 100%;
+}
+
+//// end styling mobile menu ///////
+
+
 // Tablet and desktop menu
 .top-bar {
   .menu .home a {
@@ -133,7 +197,9 @@
 //JBURT NAV STYLES 
 .top-bar {
     // min-height: $header-height;
-    height: $header-height;
+    @include breakpoint(large){
+      height: $header-height;
+    }
     // border-bottom: 1px solid gray;
 }
 

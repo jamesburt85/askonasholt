@@ -9348,6 +9348,40 @@ pre {
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
 
+header#masthead .top-bar-right {
+  padding-left: 0 !important;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0; }
+  header#masthead .top-bar-right .mega-toggle-block {
+    height: 82px; }
+
+#mega-menu-wrap-top-bar-r .mega-menu-toggle {
+  background-color: transparent; }
+
+#mega-menu-wrap-top-bar-r #mega-menu-top-bar-r li {
+  background-color: #fefefe !important; }
+
+#mega-menu-wrap-top-bar-r .mega-menu-toggle .mega-toggle-block-1:before,
+#mega-menu-wrap-top-bar-r .mega-menu-toggle .mega-toggle-block-1:after {
+  color: #0a0a0a; }
+
+.header-search-toggle {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+#mega-menu-wrap-top-bar-r .mega-menu-toggle {
+  width: 100px;
+  position: absolute;
+  right: 0; }
+
+#mega-menu-wrap-top-bar-r .mega-menu-toggle.mega-menu-open + #mega-menu-top-bar-r {
+  top: 82px;
+  position: absolute;
+  width: 100%; }
+
 .top-bar .menu .home a {
   font-size: 1rem;
   color: #B9B9B9; }
@@ -9429,8 +9463,9 @@ pre {
 .nav-next {
   float: right; }
 
-.top-bar {
-  height: 135px; }
+@media screen and (min-width: 64em) {
+  .top-bar {
+    height: 135px; } }
 
 .top-bar, .top-bar ul {
   background-color: white; }
@@ -9615,7 +9650,6 @@ nav#site-navigation {
     transition: 0.5s;
     background-color: transparent;
     float: right;
-    line-height: 135px;
     height: 50px; }
   nav#site-navigation .top-bar-left svg {
     padding-right: 2em;
