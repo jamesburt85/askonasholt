@@ -121,17 +121,6 @@ get_header(); ?>
 
 		</div>
 
-		<?php 
-
-			// $wp_query = get_posts(array(
-			//   'numberposts' => -1,
-			//   'post_type' => 'directory_listings',
-			//   'meta_key' => 'membership_type',
-			//   'orderby' => 'meta_value',
-			// ));
-
-		?>
-
 	<?php }
 
 	if ( have_posts() ) : ?>
