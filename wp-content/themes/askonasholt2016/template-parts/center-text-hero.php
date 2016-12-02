@@ -11,8 +11,9 @@
 
 </div> -->
 
-<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-<div class="center-text-hero-header" style="background-image: url('<?php echo $thumb['0'];?>')">
+<?php //$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+<div class="center-text-hero-header" style="background-image: url('<?php //echo $thumb['0'];?><?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg')">
+
 	<header class="center-hero-text">
 	  <h2 class="hero-heading"><?php the_title(); ?></h2>
 	  <p>Optional Description</p>

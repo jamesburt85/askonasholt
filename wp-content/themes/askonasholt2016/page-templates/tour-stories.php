@@ -27,7 +27,8 @@ get_header(); ?>
               <?php //foundationpress_entry_meta(); ?>
             </header> -->
 
-            <?php get_template_part( 'template-parts/magazine-filtering' ); ?>
+            <?php //get_template_part( 'template-parts/magazine-filtering' ); ?>
+            <?php get_template_part( 'template-parts/center-text-hero' ); ?>
 
           </div>
 

@@ -30,7 +30,7 @@ get_header(); ?>
 	?>
 
 
-<h1>PAST TOURS go here</h1>
+<!-- <h1>PAST TOURS go here</h1> -->
 
 <div id="archive" role="main">
 

@@ -49,7 +49,7 @@ get_header(); ?>
 	</article>
 	<?php //get_sidebar(); ?>
 
-	<h1>SIGN UP FOR NEWSLETTER HERE</h1>
+	<!-- <h1>SIGN UP FOR NEWSLETTER HERE</h1> -->
 	<?php //get_template_part( 'template-parts/newsletter-banner' ); ?>
 
 </div>

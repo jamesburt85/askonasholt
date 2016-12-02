@@ -13,6 +13,11 @@
 	min-height: 28em;
 }
 
+.artist-filtering-block {
+    position: relative;
+}
+
+
 //making categoried fit on one line
 
 @include breakpoint(medium up) {
