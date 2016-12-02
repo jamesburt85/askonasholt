@@ -12549,8 +12549,9 @@ ul.quick-look-links {
   margin: 25px 0; }
   ul.quick-look-links li {
     padding: 5px 0; }
-    ul.quick-look-links li span {
-      vertical-align: top; }
+    ul.quick-look-links li span, ul.quick-look-links li a {
+      vertical-align: top;
+      color: initial; }
   ul.quick-look-links a.share-button {
     color: initial; }
 
