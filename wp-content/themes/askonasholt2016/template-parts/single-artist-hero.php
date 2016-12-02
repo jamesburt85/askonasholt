@@ -9,6 +9,7 @@
 	$bio = get_field('bio');
 	$website = get_field('website');
 	$contact_text_area = get_field('contact_text_area');
+	$manager_email = get_field('manager_email');
 	$artist_email = get_field('artist_email');
 ?>
 
@@ -38,7 +39,7 @@
 					</span>
 					<span class="artist-category"><?php echo $main_category; ?></span>
 					<br>
-					<h2 class="artist-name"><?php the_title(); ?></h2>
+					<h2 class="artist-name hero-heading"><?php the_title(); ?></h2>
 				</div>
 
 				<div class="artist-social">
@@ -87,7 +88,7 @@
 							</svg>
 
 							&nbsp;
-							Download Press Pack
+							Download Publicity Pack
 						</li>
 						<li>
 							<svg width="22px" height="22px" viewBox="0 -1 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -152,7 +153,7 @@
 
 		
 		<button class="enquiry-button">
-			<a href="mailto:<?php echo $artist_email; ?>?Subject=Hello%20again">
+			<a href="mailto:<?php echo $artist_email; ?>?Subject=Enquiry">
 				Make enquiry
 			</a>
 		</button>

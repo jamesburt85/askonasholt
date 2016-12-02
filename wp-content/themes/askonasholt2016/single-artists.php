@@ -272,4 +272,7 @@ get_header(); ?>
 <?php do_action( 'foundationpress_after_content' ); ?>
 <?php //get_sidebar(); ?>
 </div>
+
+<?php get_template_part( 'template-parts/artist-link-banner' ); ?>
+
 <?php get_footer();
