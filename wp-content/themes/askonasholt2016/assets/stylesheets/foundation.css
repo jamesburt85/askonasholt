@@ -6672,6 +6672,9 @@ table.hover tbody tr:nth-of-type(even):hover {
 .hero-heading {
   font-family: "GeometricSlab703BT-Light"; }
 
+.serif {
+  font-family: "GeometricSlab703BT-Light"; }
+
 p {
   font-size: 20px;
   line-height: 1.8; }
@@ -9627,6 +9630,9 @@ li.mega-toggle-on ul.mega-sub-menu {
   width: 100vw !important;
   position: fixed !important; }
 
+#mega-menu-wrap-top-bar-r #mega-menu-top-bar-r > li.mega-menu-item > a.mega-menu-link {
+  font-size: 20px; }
+
 .input-group {
   display: table;
   width: 30px;
@@ -9794,7 +9800,7 @@ ul.single-page-nav {
 
 .magazine-item {
   height: 450px;
-  border: 1px solid gray;
+  border: 1px solid #dddddd;
   margin-bottom: 2em;
   -webkit-transition: 0.5s;
   transition: 0.5s;

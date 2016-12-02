@@ -83,7 +83,7 @@
 					<a href="<?php the_permalink(); ?>">
 						<span class="artist-category"><?php echo $main_category; ?></span>
 						<br>
-						<p class="artist-name"><?php //echo $name; ?> <?php the_title() ; ?> </p>
+						<p class="artist-name serif"><?php //echo $name; ?> <?php the_title() ; ?> </p>
 					</a>
 				</div>
 
@@ -104,7 +104,7 @@
 	<div class="quicklook-content-pic" style="background-image: url('<?php echo $thumb;?>')"></div>
 	<div class="quicklook-content-profile">
 		<h6 class="pop-up-category"><?php echo $main_category; ?></h6>
-		<h4 class="artist-category"><?php //echo $name; ?><?php the_title() ; ?></h4>
+		<h4 class="artist-category serif"><?php //echo $name; ?><?php the_title() ; ?></h4>
 		<ul class="quick-look-links">
 			<li>
 				<svg width="21px" height="22px" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
