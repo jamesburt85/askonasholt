@@ -99,8 +99,27 @@ get_header(); ?>
 			<button class="button" type="#">MAP</button>
 			<button class="button" type="#">LIST</button>
 		</div>
+		
+		<div id="events-map" class="events-map acf-map row">
 
-		<div id="events-map" class="events-map">EVENTS MAP</div>
+			<?php 
+
+				if ( have_posts() ) : ?>
+
+					<?php /* Start the Loop */ ?>
+					<?php while ( have_posts() ) : the_post(); ?>
+						<?php //  sthe_title(); ?>
+						<?php get_template_part( 'template-parts/content-events-location'); ?>
+					<?php endwhile; ?>
+
+					<?php else : ?>
+						<?php get_template_part( 'template-parts/content', 'none' ); ?>
+
+					<?php endif; // End have_posts() check.
+
+			?>
+
+		</div>
 
 		<?php 
 

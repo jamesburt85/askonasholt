@@ -192,7 +192,7 @@ get_header(); ?>
 			    // echo '<ul>'; ?>
 				
 				
-			  	<div id="route" class="route-map acf-map row">
+			  	<div id="route" class="route-map show-flightpath acf-map row">
 				
 				<?php while ( $the_query->have_posts() ) {
 			      		$the_query->the_post();

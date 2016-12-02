@@ -36,6 +36,23 @@
             "first_day": 1
         },
         {
+            "key": "field_584185198caee",
+            "label": "End Date",
+            "name": "adstyles_end_date",
+            "type": "date_picker",
+            "instructions": "This won't appear on the site, it's just for the inner workings of the site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        },
+        {
             "key": "field_582c4568af918",
             "label": "Venue",
             "name": "venue",
@@ -133,39 +150,6 @@
             "min": "",
             "max": "",
             "return_format": "object"
-        },
-        {
-            "key": "field_584185198caee",
-            "label": "End Date",
-            "name": "adstyles_end_date",
-            "type": "date_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "display_format": "d\/m\/Y",
-            "return_format": "Ymd",
-            "first_day": 1
-        },
-        {
-            "key": "field_5841879fbef01",
-            "label": "adstyles_testing",
-            "name": "adstyles_testing",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0
         }
     ],
     "location": [
@@ -185,5 +169,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480690408
+    "modified": 1480690591
 }
