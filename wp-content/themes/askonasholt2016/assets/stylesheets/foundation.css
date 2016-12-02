@@ -6672,6 +6672,9 @@ table.hover tbody tr:nth-of-type(even):hover {
 .hero-heading {
   font-family: "GeometricSlab703BT-Light"; }
 
+.serif {
+  font-family: "GeometricSlab703BT-Light"; }
+
 p {
   font-size: 20px;
   line-height: 1.8; }
@@ -9627,6 +9630,9 @@ li.mega-toggle-on ul.mega-sub-menu {
   width: 100vw !important;
   position: fixed !important; }
 
+#mega-menu-wrap-top-bar-r #mega-menu-top-bar-r > li.mega-menu-item > a.mega-menu-link {
+  font-size: 20px; }
+
 .input-group {
   display: table;
   width: 30px;
@@ -9794,7 +9800,7 @@ ul.single-page-nav {
 
 .magazine-item {
   height: 450px;
-  border: 1px solid gray;
+  border: 1px solid #dddddd;
   margin-bottom: 2em;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -11358,16 +11364,37 @@ span.hero-blurb p {
 .hero-header {
   color: white;
   font-size: 45px;
-  padding: 12px;
+  padding: 11px;
   font-family: "GeometricSlab703BT-Light"; }
 
 .hero-copy {
   color: white;
   padding: 10px; }
 
+i.fa.fa-angle-left.slick-arrow {
+  left: 1em;
+  position: absolute;
+  top: 42%;
+  z-index: 99999;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  cursor: pointer; }
+
+i.fa.fa-angle-right.slick-arrow {
+  right: 1em;
+  position: absolute;
+  top: 42%;
+  z-index: 99999;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  cursor: pointer; }
+
 button.hero-button {
   padding: 10px;
-  margin-top: 5px; }
+  margin-top: 5px;
+  font-weight: bold; }
   button.hero-button a {
     color: white;
     padding: 10px; }
@@ -12549,8 +12576,9 @@ ul.quick-look-links {
   margin: 25px 0; }
   ul.quick-look-links li {
     padding: 5px 0; }
-    ul.quick-look-links li span {
-      vertical-align: top; }
+    ul.quick-look-links li span, ul.quick-look-links li a {
+      vertical-align: top;
+      color: initial; }
   ul.quick-look-links a.share-button {
     color: initial; }
 
@@ -13204,18 +13232,40 @@ body.home {
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding: 25px; }
+    padding: 25px;
+    font-weight: bold; }
     body.home .continue-link a {
       color: #FFFFFF; }
 
-.hero-text-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  max-width: 50%; }
+@media screen and (min-width: 64em) {
+  .hero-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 50%; } }
+
+@media screen and (max-width: 39.9375em) {
+  .hero-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 90%; } }
+
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .hero-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 90%; } }
 
 .single-tours-projects .tour-hero {
   position: relative;

@@ -8,7 +8,9 @@ body.home {
     width: 100%;
     position: relative;
     @include full-bg;
-
+    .hero-text-container {
+      // /@include center (y);
+    }
     //SVG
     path#Fill-1 {
         fill: white;
@@ -32,6 +34,7 @@ body.home {
       width: 100%;
       text-align: center;
       padding: $sitepadding;
+      font-weight: bold;
       a {
         color: #FFFFFF;
       }
@@ -39,7 +42,23 @@ body.home {
 
 }
 
-.hero-text-container {
-  @include center;
-  max-width: 50%;
+@include breakpoint(large up) {
+  .hero-text-container {
+    @include center;
+    max-width: 50%;
+  }
+}
+
+@include breakpoint(small only) {
+  .hero-text-container {
+    @include center;
+    max-width: 90%;
+  }
+}
+
+@include breakpoint(medium only) {
+  .hero-text-container {
+    @include center;
+    max-width: 90%;
+  }
 }

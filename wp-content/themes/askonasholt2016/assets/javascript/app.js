@@ -237,6 +237,8 @@ var map = null;
       arrows: true,
       dots: true,
   	  autoplaySpeed: 4000,
+      nextArrow: '<i class="fa fa-angle-right fa-2x"></i>',
+      prevArrow: '<i class="fa fa-angle-left fa-2x"></i>',
       //prevArrow:"<img class='a-left control-c prev slick-prev' src='<?php echo get_template_directory_uri(); ?>/assets/images/arrow-left.png'>",
       //nextArrow:"<img class='a-right control-c next slick-next' src='<?php echo get_template_directory_uri(); ?>/assets/images/arrow-right.png'>",
   	  responsive: [

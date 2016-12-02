@@ -228,6 +228,24 @@
             "append": ""
         },
         {
+            "key": "field_58415e3157f55",
+            "label": "Manager Email",
+            "name": "manager_email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_5824580a9af17",
             "label": "External Links",
             "name": "",
@@ -317,6 +335,25 @@
                     "placeholder": ""
                 }
             ]
+        },
+        {
+            "key": "field_584163b1dbd9d",
+            "label": "Publicity Pack",
+            "name": "publicity_pack",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -336,5 +373,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480428159
+    "modified": 1480680722
 }
