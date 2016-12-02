@@ -13,7 +13,7 @@ span.hero-blurb p {
 .hero-header {
 	color: white;
 	font-size: 45px;
-	padding: 12px;
+	padding: 11px;
 	font-family: $serif-font;
 }
 
@@ -22,10 +22,36 @@ span.hero-blurb p {
 	padding: 10px;
 }
 
+//Arrows on home slider
+i.fa.fa-angle-left.slick-arrow {
+	left: 1em;
+	position: absolute;
+	top: 42%;
+	// font-size: 50px;
+	z-index: 99999;
+	color: white;
+	background: rgba(0,0,0,0.8);
+	padding: 10px;
+	cursor: pointer;
+}
+
+i.fa.fa-angle-right.slick-arrow {
+	right: 1em;
+	position: absolute;
+	top: 42%;
+	// font-size: 50px;
+	z-index: 99999;
+	color: white;
+	background: rgba(0,0,0,0.8);
+	padding: 10px;
+	cursor: pointer;
+}
+
 
 button.hero-button {
 	padding: 10px;
 	margin-top: 5px;
+	font-weight: bold;
 
 	a {
 		color: white;

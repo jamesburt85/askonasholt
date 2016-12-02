@@ -11358,16 +11358,37 @@ span.hero-blurb p {
 .hero-header {
   color: white;
   font-size: 45px;
-  padding: 12px;
+  padding: 11px;
   font-family: "GeometricSlab703BT-Light"; }
 
 .hero-copy {
   color: white;
   padding: 10px; }
 
+i.fa.fa-angle-left.slick-arrow {
+  left: 1em;
+  position: absolute;
+  top: 42%;
+  z-index: 99999;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  cursor: pointer; }
+
+i.fa.fa-angle-right.slick-arrow {
+  right: 1em;
+  position: absolute;
+  top: 42%;
+  z-index: 99999;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  cursor: pointer; }
+
 button.hero-button {
   padding: 10px;
-  margin-top: 5px; }
+  margin-top: 5px;
+  font-weight: bold; }
   button.hero-button a {
     color: white;
     padding: 10px; }
@@ -13188,18 +13209,40 @@ body.home {
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding: 25px; }
+    padding: 25px;
+    font-weight: bold; }
     body.home .continue-link a {
       color: #FFFFFF; }
 
-.hero-text-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  max-width: 50%; }
+@media screen and (min-width: 64em) {
+  .hero-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 50%; } }
+
+@media screen and (max-width: 39.9375em) {
+  .hero-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 90%; } }
+
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .hero-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    max-width: 90%; } }
 
 .single-tours-projects .tour-hero {
   position: relative;
