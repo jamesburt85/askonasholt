@@ -9535,7 +9535,7 @@ pre {
 body.search-bar-is-visible .searchbar {
   height: 100px;
   max-width: 100%;
-  padding: 25px;
+  padding: 30px;
   -webkit-transition: 0.5s;
   transition: 0.5s; }
 
