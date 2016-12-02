@@ -11025,8 +11025,7 @@ a.pswp__share--download:hover {
 .my-gallery figure {
   display: block;
   float: left;
-  margin: 0 5px 5px 0;
-  width: 150px; }
+  margin: 0 5px 5px 0; }
 
 .my-gallery figcaption {
   display: none; }
