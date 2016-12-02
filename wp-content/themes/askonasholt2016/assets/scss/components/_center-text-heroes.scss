@@ -6,8 +6,9 @@
 	max-height: 500px;
 	@include full-bg;
 	text-align: center;
+	margin-bottom: $sitepadding-large;
 	.center-hero-text {
 		@include center;
-		color: #ffffff;
+		// /color: #ffffff;
 	}
 }

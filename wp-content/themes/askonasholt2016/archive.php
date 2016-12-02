@@ -36,7 +36,11 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/artist-filtering' );
 
-	} //elseif ( is_post_type_archive('magazine') ) {
+	} elseif ( is_post_type_archive('online') ) {
+
+		get_template_part( 'template-parts/center-text-hero' );
+
+	}  //elseif ( is_post_type_archive('magazine') ) {
 
 		//get_template_part( 'template-parts/magazine-filtering' );
 		
@@ -45,7 +49,7 @@ get_header(); ?>
 		//get_template_part( 'template-parts/magazine-filtering' );
 
 	//} 
-	elseif ( is_post_type_archive('people') ) {
+		elseif ( is_post_type_archive('people') ) {
 
 		get_template_part( 'template-parts/people-filtering' );
 
@@ -106,16 +110,16 @@ get_header(); ?>
 
 				if ( have_posts() ) : ?>
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
-						<?php //  sthe_title(); ?>
-						<?php get_template_part( 'template-parts/content-events-location'); ?>
-					<?php endwhile; ?>
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<?php //  sthe_title(); ?>
+					<?php get_template_part( 'template-parts/content-events-location'); ?>
+				<?php endwhile; ?>
 
-					<?php else : ?>
-						<?php get_template_part( 'template-parts/content', 'none' ); ?>
+				<?php else : ?>
+					<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-					<?php endif; // End have_posts() check.
+				<?php endif; // End have_posts() check.
 
 			?>
 

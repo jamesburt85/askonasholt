@@ -9713,6 +9713,9 @@ li.mega-toggle-on ul.mega-sub-menu {
 .artist-filtering-block {
   min-height: 28em; }
 
+.artist-filtering-block {
+  position: relative; }
+
 @media screen and (min-width: 40em) {
   .artist-categories {
     display: -webkit-box; }
@@ -9882,10 +9885,10 @@ ul.single-page-nav {
   -webkit-box-shadow: 6px 6px 5px 0px #dbdbdb;
   box-shadow: 6px 6px 5px 0px #dbdbdb; }
 
-body.post-type-archive-magazine article.main-content {
+body.blog article.main-content {
   position: relative; }
 
-body.post-type-archive-magazine .archive__load-more {
+body.blog .archive__load-more {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -11890,15 +11893,15 @@ img.mfp-img {
   border-bottom: 0;
   -webkit-background-size: cover;
   background-size: cover;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 50px; }
   .center-text-hero-header .center-hero-text {
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    color: #ffffff; }
+    transform: translate(-50%, -50%); }
 
 @-webkit-keyframes plyr-progress {
   to {
@@ -13192,26 +13195,6 @@ body.single.single-artists .enquiry-button {
     display: table; }
   #archive::after {
     clear: both; }
-
-#page-full-width {
-  max-width: 84.375rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 3rem; }
-  #page-full-width::before, #page-full-width::after {
-    content: ' ';
-    display: table; }
-  #page-full-width::after {
-    clear: both; }
-  #page-full-width .main-content {
-    width: 100%;
-    float: left;
-    padding-left: 0.625rem;
-    padding-right: 0.625rem; }
-    @media screen and (min-width: 40em) {
-      #page-full-width .main-content {
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem; } }
 
 #single-post {
   margin-top: 3rem; }
