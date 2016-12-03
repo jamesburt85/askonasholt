@@ -11193,7 +11193,8 @@ body.page div.slick-slider .center-image {
   background-repeat: no-repeat;
   border-bottom: 0;
   -webkit-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
 
 body.page div.slick-slider .slick-dots {
   bottom: 18px; }

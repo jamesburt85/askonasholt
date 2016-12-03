@@ -259,7 +259,7 @@ var map = null;
   	        arrows: false,
   	        centerMode: false,
   	        centerPadding: '40px',
-  	        slidesToShow: 1
+  	        slidesToShow: 1,
   	      }
   	    }
   	  ]

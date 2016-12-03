@@ -9,6 +9,7 @@ body.page {
 			height: 70vh;
 			margin: 2em 1em;
 			@include full-bg;
+			position: relative;
 		}
 		.slick-dots {
 		    bottom: 18px;
