@@ -51,8 +51,24 @@ body.home {
 
 @include breakpoint(small only) {
   .hero-text-container {
-    @include center;
-    max-width: 90%;
+    @include center (y);
+    margin: 0 1em;
+    //max-width: 90%;
+    p {
+        line-height: 1.1;
+    }
+  }
+  body.home .splash-page-hero svg {
+      left: 0;
+      position: relative;
+      height: auto;
+      width: 190px; 
+  }
+  .hero-logo-link {
+      text-align: center;
+  }
+  body.home .continue-link {
+    padding: 10px;
   }
 }
 

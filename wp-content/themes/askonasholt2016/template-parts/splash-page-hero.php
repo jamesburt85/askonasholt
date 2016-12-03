@@ -18,7 +18,7 @@
 ?>
 
   <div class="splash-page-hero" style="background-image: url('<?php echo $image['url']; ?>')">
-      
+    <div class="hero-logo-link">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
         <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/askonasholt-logo.png"> -->
         <svg width="250px" height="100px" viewBox="0 0 225 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -44,7 +44,8 @@
             </g>
         </svg>
       </a>
-
+    </div>
+    
     <div class="hero-text-container hero-text">
 
       <span class="hero-sub-header"><?php echo $sub_header; ?></span><br/>

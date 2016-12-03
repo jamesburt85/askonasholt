@@ -9669,6 +9669,17 @@ li.mega-toggle-on ul.mega-sub-menu {
   .input-group input#searchsubmit {
     background-color: #BA0C2F; }
 
+@media screen and (min-width: 40em) {
+  div#search-toggle {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0; }
+  nav#site-navigation {
+    position: relative; } }
+
 .filtering-block {
   background-color: #F2F1ED;
   position: relative;
@@ -13263,11 +13274,21 @@ body.home {
   .hero-text-container {
     position: absolute;
     top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    max-width: 90%; } }
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: 0 1em; }
+    .hero-text-container p {
+      line-height: 1.1; }
+  body.home .splash-page-hero svg {
+    left: 0;
+    position: relative;
+    height: auto;
+    width: 190px; }
+  .hero-logo-link {
+    text-align: center; }
+  body.home .continue-link {
+    padding: 10px; } }
 
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   .hero-text-container {

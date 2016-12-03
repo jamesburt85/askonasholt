@@ -66,6 +66,7 @@ nav#site-navigation {
     @include grid-row();
     margin: 0 auto;
     line-height: $header-height;
+    // /position: relative;
 
     div#search-toggle {
     	transition: 0.5s;
@@ -123,4 +124,14 @@ li.mega-toggle-on {
     }
 }
 
+//MEDIA QUERIES
+@include breakpoint(medium up){
+	div#search-toggle {
+		@include center (y);
+		right: 0;
+	}
+	nav#site-navigation {
+		position: relative;
+	}
+}
 
