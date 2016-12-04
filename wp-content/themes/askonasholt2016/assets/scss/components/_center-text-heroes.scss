@@ -2,7 +2,7 @@
 
 .center-text-hero-header {
 	position: relative;
-	height: 70vh !important;
+	height: 25vh !important;
 	max-height: 500px;
 	@include full-bg;
 	text-align: center;
@@ -10,5 +10,15 @@
 	.center-hero-text {
 		@include center;
 		// /color: #ffffff;
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// MEDIA QUERIES
+@include breakpoint(medium up) {
+	.center-text-hero-header {
+		height: 50vh !important;
 	}
 }

@@ -11928,7 +11928,7 @@ div#mega-toggle-block-1:after {
 
 .center-text-hero-header {
   position: relative;
-  height: 70vh !important;
+  height: 25vh !important;
   max-height: 500px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -11944,6 +11944,12 @@ div#mega-toggle-block-1:after {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+    .center-text-hero-header .center-hero-text p {
+      margin-bottom: 0; }
+
+@media screen and (min-width: 40em) {
+  .center-text-hero-header {
+    height: 50vh !important; } }
 
 @-webkit-keyframes plyr-progress {
   to {
@@ -12846,6 +12852,26 @@ body.single.single-artists .enquiry-button {
   width: 100%;
   background-color: #F2F1ED;
   margin: 25px 0; }
+
+div.staff-header li {
+  text-transform: uppercase;
+  color: #b38a76;
+  font-size: 13px;
+  letter-spacing: 1px;
+  list-style-type: none; }
+
+.staff-category li {
+  text-transform: uppercase;
+  color: #b38a76;
+  font-size: 13px;
+  letter-spacing: 1px;
+  list-style-type: none; }
+
+.quicklook-content-profile ul {
+  margin-left: 0; }
+
+.quicklook-content-profile li {
+  list-style-type: none; }
 
 #front-hero {
   background: url("../images/demo/hero-bg-foundation-6-small.svg") bottom center;

@@ -54,11 +54,11 @@
 
 			<?php } ?>
 
-			<div class="magazine-item-container">
+			<div class="magazine-item-container staff-header">
 				
 				<p class="magazine-item-header">
-					<?php echo wpdocs_custom_taxonomies_terms_links(); ?>	
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
+					<span class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
+					<a class="serif" href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a><br/>
 					<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a><br/>
 					<span><?php echo $telephone_number; ?></span><br/>
 					<span><?php echo $languages; ?></span>
@@ -75,8 +75,8 @@
 
 		<div class="quicklook-content-pic" style="background-image: url('<?php echo $thumb['0'];?>')"></div>
 		<div class="quicklook-content-profile">
-			<h3><?php the_title(); ?></h3>
-			<h6><?php echo wpdocs_custom_taxonomies_terms_links(); ?></h6>
+			<h6 class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></h6>
+			<h4 class="serif"><?php the_title(); ?></h4>
 			<ul>
 				<li><a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a></li>
 				<li><?php echo $telephone_number; ?></li>
