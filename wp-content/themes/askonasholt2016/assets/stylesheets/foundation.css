@@ -11160,6 +11160,20 @@ body.post-type-archive-online .archive__load-more {
     display: flex;
     margin-right: 10px; }
 
+.press-row {
+  font-size: 19px;
+  border-top: 1px solid; }
+  .press-row span.text_area_one, .press-row span.text_area_two, .press-row span.text_area_three {
+    padding: 0 25px; }
+  .press-row .press-details span:last-child {
+    font-weight: bold; }
+  .press-row .press-details span:not(:last-child) {
+    border-right: 1px solid; }
+  .press-row li.accordion-item {
+    border-top: 1px solid #cccccc; }
+  .press-row li.accordion-item:last-child {
+    border-bottom: 1px solid #cccccc; }
+
 .sites-button {
   background: #FF6908;
   font-size: 1.25rem;
@@ -11291,7 +11305,8 @@ body.page .slick-dotted.slick-slider {
   opacity: 0; }
 
 .single-artists .artist-header-thumb {
-  height: 300px;
+  height: 200px;
+  margin-top: 2em;
   background-position: center center;
   background-repeat: no-repeat;
   border-bottom: 0;
@@ -11394,6 +11409,13 @@ div#video-audio {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     bottom: 0; }
+
+@media screen and (min-width: 40em) {
+  .single-artists .artist-header-thumb {
+    height: 300px;
+    max-width: 400px;
+    margin-top: 0;
+    margin: 0 auto; } }
 
 .hero-sub-header {
   text-transform: uppercase;
@@ -12716,13 +12738,7 @@ body.single.single-artists .artist-header.container {
   height: 65vh;
   position: relative; }
   body.single.single-artists .artist-header.container .artist-details-area {
-    width: 1100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    width: 100%; }
   body.single.single-artists .artist-header.container .artist-details-container {
     padding: 25px; }
     body.single.single-artists .artist-header.container .artist-details-container .website {
@@ -12747,6 +12763,15 @@ body.single.single-artists .enquiry-button {
   font-weight: bold; }
   body.single.single-artists .enquiry-button a {
     color: #ffffff; }
+
+@media screen and (min-width: 40em) {
+  body.single.single-artists .artist-header.container .artist-details-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); } }
 
 .more-page-links {
   margin: 50px 0;
@@ -13438,9 +13463,10 @@ ul.accordion {
 
 .event-listing-details {
   font-size: 19px; }
-  .event-listing-details span.more-info {
-    right: 2em;
-    position: absolute; }
+
+span.more-info {
+  right: 2em;
+  position: absolute; }
 
 span.side-bar-artist-name, .event-detail {
   padding-right: 25px; }

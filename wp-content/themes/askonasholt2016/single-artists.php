@@ -32,7 +32,7 @@ get_header(); ?>
 		$website = get_field('website');
 		$european_management = get_field('european_management');
 		$general_management = get_field('general_management');
-		$contact_text_area = get_field('contact_text_area');
+		//$contact_text_area = get_field('contact_text_area');
 	?>
 
 	<div class="bio-row row" id="intro">
@@ -105,7 +105,7 @@ get_header(); ?>
 								<?php }
 							} ?>
 
-				<p><?php //echo $contact_text_area; ?></p>
+				<!-- <p><?php //echo $contact_text_area; ?></p> -->
 				<br/>
 				<span class="side-bar-header">European Management</span>
 				<br/>
@@ -239,10 +239,7 @@ get_header(); ?>
 	</div>
 
 	<div class="performance-schedule row" id="schedule">
-		Performance Schedule
-
-
-		
+		Performance Schedule		
 	</div>
 
 	<div class="news-projects row" id="news-projects">

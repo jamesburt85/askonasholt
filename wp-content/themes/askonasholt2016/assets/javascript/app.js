@@ -224,7 +224,7 @@ var map = null;
 
   $(document).ready(function(){
 
-  	console.log('Run the Jewels fast ...');
+  	console.log('Site is live ...');
 
 
 //***********************************
@@ -266,11 +266,13 @@ var map = null;
   	});
 
 
-    //Tours and Projects Slider
+    //Tours and Projects Slider /  Artists Slider
     $('.multiple-items').slick({
       infinite: true,
       slidesToShow: 3,
-      slidesToScroll: 3
+      slidesToScroll: 1,
+      nextArrow: '<i class="fa fa-angle-right fa-2x"></i>',
+      prevArrow: '<i class="fa fa-angle-left fa-2x"></i>',
     });
 
 

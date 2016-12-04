@@ -72,83 +72,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_58244cbdcd376",
-            "label": "Contact People",
-            "name": "contact_people",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": "",
-            "max": "",
-            "layout": "table",
-            "button_label": "Add Row",
-            "sub_fields": [
-                {
-                    "key": "field_5824540e4d9c9",
-                    "label": "Contact name",
-                    "name": "contact_name",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5824541d4d9ca",
-                    "label": "Contact Position",
-                    "name": "contact_position",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
-        },
-        {
-            "key": "field_58246a1227d80",
-            "label": "Contact Text Area",
-            "name": "contact_text_area",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1
-        },
-        {
             "key": "field_583d87f7aa6be",
             "label": "European Management",
             "name": "european_management",
@@ -304,7 +227,7 @@
                     "label": "Social Media Name",
                     "name": "social_media_name",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Enter in lowercase, i.e. instagram, facebook, twitter",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -373,5 +296,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480680722
+    "modified": 1480859516
 }

@@ -1,0 +1,19 @@
+.press-row {
+	font-size: 19px;
+	border-top: 1px solid ;
+	span.text_area_one, span.text_area_two, span.text_area_three {
+		padding: 0 $sitepadding;
+	}
+	.press-details span:last-child {
+		font-weight: bold;
+	}
+	.press-details span:not(:last-child) {
+		border-right: 1px solid;
+	}
+	li.accordion-item {
+	    border-top: 1px solid #cccccc;
+	}
+	li.accordion-item:last-child {
+		border-bottom: 1px solid #cccccc;
+	}
+}

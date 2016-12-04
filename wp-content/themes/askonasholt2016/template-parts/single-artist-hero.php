@@ -72,7 +72,6 @@
 							<a href="<?php echo $publicity_pack; ?>" target="_blank">
 								<svg width="21px" height="22px" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
-								    <desc>Created with Sketch.</desc>
 								    <defs>
 								        <polyline id="path-1" points="4 21 0 21 1.28587914e-15 0 21 0 21 21 17 21"></polyline>
 								        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="21" height="21" fill="white">
@@ -87,10 +86,8 @@
 								        </g>
 								    </g>
 								</svg>
-
 								&nbsp;
 								Download Publicity Pack
-
 							</a>
 						</li>
 						<li>

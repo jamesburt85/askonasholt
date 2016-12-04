@@ -45,12 +45,12 @@
         </svg>
       </a>
     </div>
-    
+
     <div class="hero-text-container hero-text">
 
       <span class="hero-sub-header"><?php echo $sub_header; ?></span><br/>
       <span class="hero-header"><?php echo $header; ?></span><br/>
-      <span class="hero-blurb"><?php echo $blurb; ?></span>
+      <span class="hero-blurb show-for-medium"><?php echo $blurb; ?></span>
 
         <?php
         // loop through the rows of data

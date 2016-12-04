@@ -26,6 +26,8 @@
 		$main_category = get_field('main_category');
 		$name = get_field('name');
 		$bio = get_field('bio');
+		$publicity_pack = get_field('publicity_pack');
+		$manager_email = get_field('manager_email');
 
 		// if no image, use default
 		if (!$artist_photo){
@@ -58,8 +60,6 @@
 
 						?>
 						<div class="artist-thumb image-popup-no-margins" style="background-image: url('<?php echo $thumb;?>')">
-					
-
 						</div>
 					</a>
 					
@@ -107,24 +107,26 @@
 		<h4 class="artist-category serif"><?php //echo $name; ?><?php the_title() ; ?></h4>
 		<ul class="quick-look-links">
 			<li>
-				<svg width="21px" height="22px" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-				    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
-				    <defs>
-				        <polyline id="path-1" points="4 21 0 21 1.28587914e-15 0 21 0 21 21 17 21"></polyline>
-				        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="21" height="21" fill="white">
-				            <use xlink:href="#path-1"></use>
-				        </mask>
-				    </defs>
-				    <g id="Group-18" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-				        <use id="Rectangle-4-Copy-4" stroke="#000000" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
-				        <g id="Group-3-Copy" transform="translate(10.000000, 14.000000) rotate(90.000000) translate(-10.000000, -14.000000) translate(3.000000, 7.000000)" stroke="#BA0C2F">
-				            <path d="M1.89519934,11.1205667 L11.1047822,1.94539934" id="Path-2" transform="translate(6.499991, 6.532983) rotate(45.000000) translate(-6.499991, -6.532983) "></path>
-				            <polyline id="Path-3" transform="translate(7.324505, 6.521204) rotate(45.000000) translate(-7.324505, -6.521204) " points="11.5739552 10.7712037 11.5739552 2.27120371 3.07505388 2.27120371"></polyline>
-				        </g>
-				    </g>
-				</svg>
-				&nbsp;
-				<span>Download Press Pack</span>
+				<a href="<?php echo $publicity_pack; ?>" target="_blank">
+					<svg width="21px" height="22px" viewBox="0 0 21 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+					    <defs>
+					        <polyline id="path-1" points="4 21 0 21 1.28587914e-15 0 21 0 21 21 17 21"></polyline>
+					        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="21" height="21" fill="white">
+					            <use xlink:href="#path-1"></use>
+					        </mask>
+					    </defs>
+					    <g id="Group-18" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <use id="Rectangle-4-Copy-4" stroke="#000000" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+					        <g id="Group-3-Copy" transform="translate(10.000000, 14.000000) rotate(90.000000) translate(-10.000000, -14.000000) translate(3.000000, 7.000000)" stroke="#BA0C2F">
+					            <path d="M1.89519934,11.1205667 L11.1047822,1.94539934" id="Path-2" transform="translate(6.499991, 6.532983) rotate(45.000000) translate(-6.499991, -6.532983) "></path>
+					            <polyline id="Path-3" transform="translate(7.324505, 6.521204) rotate(45.000000) translate(-7.324505, -6.521204) " points="11.5739552 10.7712037 11.5739552 2.27120371 3.07505388 2.27120371"></polyline>
+					        </g>
+					    </g>
+					</svg>
+					&nbsp;
+					<span>Download Press Pack</span>
+				</a>
 			</li>
 			<li>
 				<svg width="22px" height="22px" viewBox="0 -1 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -160,7 +162,8 @@
 		<a class="button" href="<?php the_permalink(); ?>">View Artist Page</a>
 		&nbsp;
 		&nbsp;
-		<a class="button" href="#">Make Enquiry</a>		
+		<!-- <a class="button" href="#">Make Enquiry</a> -->
+		<a class="button" href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">Make Enquiry</a>
 	</div>
 
 

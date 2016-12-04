@@ -123,33 +123,35 @@ if ($acf_fields['flexible_content']) {
 			#Image_Gallery
 			case 'image_gallery': ?>
 				
-				<div class="row">
-					<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image gallery</h4>
+					<!-- <div class="row"> -->
+						<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image gallery</h4>
+					
+						<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+							<div class="multiple-items">
+						    <?php
+						    # Loop through the sections
+						    foreach ($section['image_repeater'] as $repeater) { ?>
+						    	
+						    	<!-- <pre>
+						    	<?php //print_r($repeater['image']); ?>
+						    	</pre> -->
+								
+								<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+								    <a href="<?php echo $repeater['image']['url']; ?>" itemprop="contentUrl" data-size="<?php echo $repeater['image']['width'] ?>x<?php echo $repeater['image']['height'] ?>">
+								       <img src="<?php echo $repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" />
+								      <!--   <div itemprop="thumbnail" alt="Image description"  style="background-image: url('<?php echo $repeater['image']['sizes']['large']; ?>');"></div> -->
+								    </a>
+								    <figcaption itemprop="caption description">Image caption</figcaption>
+								</figure>
+
+
+						    <?php } ?>
+
+							</div>
+						</div>
+
+				<!-- 	</div> -->
 				
-					<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-
-					    <?php
-					    # Loop through the sections
-					    foreach ($section['image_repeater'] as $repeater) { ?>
-					    	
-					    	<!-- <pre>
-					    	<?php //print_r($repeater['image']); ?>
-					    	</pre> -->
-							
-							<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-							    <a href="<?php echo $repeater['image']['url']; ?>" itemprop="contentUrl" data-size="<?php echo $repeater['image']['width'] ?>x<?php echo $repeater['image']['height'] ?>">
-							        <img src="<?php echo $repeater['image']['sizes']['medium']; ?>" itemprop="thumbnail" alt="Image description" />
-							    </a>
-							    <figcaption itemprop="caption description">Image caption</figcaption>
-							</figure>
-
-
-					    <?php } ?>
-
-
-					</div>
-
-				</div>
 
 
 				<script type="text/javascript">
@@ -456,31 +458,45 @@ if ($acf_fields['flexible_content']) {
 
 			#Press Section
 			case 'press': ?>
-				<div class="row press-row">
-				
-					<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Press</h4>
-				
-					<ul class="accordion" data-accordion data-allow-all-closed="true">
-						
-						<?php
-						# Loop through the sections
-						foreach ($section['press_details'] as $press_section) { ?>
+				<!-- <div class="row"> -->
+					<div class="press-row">
+					
+						<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Press</h4>
+					
+						<ul class="accordion" data-accordion data-allow-all-closed="true">
+							
+							<?php
+							# Loop through the sections
+							foreach ($section['press_details'] as $press_section) { ?>
 
-						<li class="accordion-item" data-accordion-item>
-						  	<a href="#" class="accordion-title">
-								<?php echo $press_section['text_area_one']; ?>
-								<?php echo $press_section['text_area_two']; ?>
-								<?php echo $press_section['location']; ?>
-							</a>
-							<div class="accordion-content" data-tab-content>
-							  <?php echo $press_section['press_article']; ?>
-							</div>
-						</li>
+							<li class="accordion-item" data-accordion-item>
+							  	<a href="#" class="accordion-title">
+									
+									<div class="press-details">
+										<span class="text_area_one"><?php echo $press_section['text_area_one']; ?></span>
+										<span class="text_area_two"><?php echo $press_section['text_area_two']; ?></span>
+										<span class="text_area_three"><?php echo $press_section['location']; ?></span>
+									</div>	
 
-						<?php } ?>
+									<span class="more-info">
+										<span class="show-for-large">More info &nbsp;</span>
+									    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									        <defs></defs>
+									        <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
+									    </svg>
+									</span>
 
-					</ul>
-				</div>	
+								</a>
+								<div class="accordion-content" data-tab-content>
+								  <?php echo $press_section['press_article']; ?>
+								</div>
+							</li>
+
+							<?php } ?>
+
+						</ul>
+					</div>
+				<!-- </div> -->
 
 			<?php
 			break;
