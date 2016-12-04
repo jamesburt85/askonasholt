@@ -161,7 +161,7 @@ get_header(); ?>
 
 					<div class="blurb-area" id="menuBar" data-toggler=".expanded">
 						<div class="hidden"><?php echo $extra_blurb_copy; ?></div>
-						<p><a data-toggle="menuBar">More</a></p>
+						<p class="more"><a data-toggle="menuBar"><span class="more">More</span><span class="less">Less</span></a></p>
 					</div>
 				</div>
 				

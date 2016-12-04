@@ -9371,7 +9371,8 @@ pre {
   #mega-menu-wrap-top-bar-r .mega-menu-toggle {
     width: 100px;
     position: absolute;
-    right: 0; }
+    right: 0;
+    top: 1em; }
   #mega-menu-wrap-top-bar-r .mega-menu-toggle.mega-menu-open + #mega-menu-top-bar-r {
     top: 82px;
     position: absolute;
@@ -11922,6 +11923,9 @@ img.mfp-img {
 .contact-details-section {
   padding: 10px 0; }
 
+div#mega-toggle-block-1:after {
+  display: none; }
+
 .center-text-hero-header {
   position: relative;
   height: 70vh !important;
@@ -13350,6 +13354,15 @@ body.home {
   .single-tours-projects .hero-text-area span.hero-text-dates {
     padding: 2px 11px 11px; }
 
+.single-tours-projects span.less {
+  opacity: 0; }
+
+.single-tours-projects div.blurb-area.expanded span.less {
+  opacity: 1; }
+
+.single-tours-projects div.blurb-area.expanded span.more {
+  display: none; }
+
 .single-tours-projects a.slick-slide img {
   padding: 10px; }
 
@@ -13472,6 +13485,8 @@ ul.accordion {
 
 .event-listing-details {
   font-size: 19px; }
+  .event-listing-details .side-bar-artist-details {
+    line-height: 30px; }
 
 span.more-info {
   right: 2em;

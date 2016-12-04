@@ -7,3 +7,8 @@
 	padding: 10px 0;
 }
 
+//remove text 'MENU' next to burger
+div#mega-toggle-block-1:after {
+	display: none;
+}
+

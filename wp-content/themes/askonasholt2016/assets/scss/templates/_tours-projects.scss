@@ -18,6 +18,21 @@
           padding: 2px 11px 11px;
       }
   }
+
+  //hide/reveal of more/less on project description
+  span.less {
+      opacity: 0;
+  }
+  div.blurb-area.expanded {
+    span.less {
+      opacity: 1;
+    }
+    span.more {
+      display: none;
+    }
+  }
+
+
   //add some padding to gallery on tours-projects
   a.slick-slide {
       // margin: 10px;
@@ -192,6 +207,9 @@ ul.accordion {
 
 .event-listing-details {
     font-size: 19px;
+    .side-bar-artist-details {
+        line-height: 30px;
+    }
 }
 
 span.more-info {
