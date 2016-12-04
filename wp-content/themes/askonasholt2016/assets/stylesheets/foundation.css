@@ -9812,11 +9812,12 @@ body.post-type-archive-artists li.cat-item-all a {
 
 .link-banner .link-banner-button {
   text-align: center;
-  padding: 50px 0; }
+  padding: 25px 0; }
 
 .link-banner button {
   border: 1px solid #ffffff;
-  padding: 1em 4em;
+  padding: 1em;
+  width: 75%;
   color: #ffffff;
   font-weight: bold; }
 

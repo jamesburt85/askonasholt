@@ -5,11 +5,12 @@
 	}
 	.link-banner-button {
 		text-align: center;
-		padding: $sitepadding-large 0;
+		padding: $sitepadding 0;
 	}
 	button {
 		border: 1px solid #ffffff;
-		padding: 1em 4em; 
+		padding: 1em;
+		width: 75%;
 		color: #ffffff;
 		font-weight: bold;
 	}

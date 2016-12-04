@@ -239,12 +239,20 @@ get_header(); ?>
 	</div>
 
 	<div class="performance-schedule row" id="schedule">
-		Performance Schedule		
+		<h4 class="section-header">Performance Schedule</h4>	
 	</div>
 
+
+
+
 	<div class="news-projects row" id="news-projects">
-		News &amp; Projects
+		<h4 class="section-header">News &amp; Projects</h4>
+
+		<!-- Do as above section, getting posts related to artist. May have to add relational field in ACF first -->
 	</div>
+
+
+
 
 	<div class="image-gallery row" id="image-gallery">
 		<!-- using ACF Flexible content instead of the_content  -->
