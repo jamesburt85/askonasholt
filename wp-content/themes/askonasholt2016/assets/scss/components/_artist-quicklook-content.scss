@@ -76,7 +76,6 @@ body.post-type-archive-artists {
 .quicklook-content-profile,
 .quicklook-content-pic {
 	width: 100%;
-	height: 400px;
 	float: left;
 
 	@include breakpoint(large){
@@ -85,6 +84,16 @@ body.post-type-archive-artists {
 	}
 
 }
+
+@include breakpoint(small only){
+	.quicklook-content-pic {
+		height: 400px;
+	}
+}
+
+// .quicklook-content-profile {
+// 	max-height: 400px !important;
+// }
 
 .quicklook-content-pic {
 	@include full-bg;

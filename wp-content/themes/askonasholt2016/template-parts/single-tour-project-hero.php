@@ -13,9 +13,10 @@
 
 	<div class="hero-text-area hero-text">
 		<span class="entry-title hero-header"><?php the_title(); ?></span>
-		<span class="hero-blurb"><?php the_excerpt(); ?></span>
-		<span><?php echo $start_date; ?></span> - 
-		<span><?php echo $end_date; ?></span>
+		<span class="hero-blurb"><?php the_excerpt(); ?></span><br/>
+
+		<span class="hero-text-dates"><?php echo $start_date; ?> - <?php echo $end_date; ?></span>  
+
 	</div>
 
 </div>

@@ -7,10 +7,14 @@
 		text-align: center;
 		padding: $sitepadding 0;
 	}
+	.small-12.medium-6.columns.link-banner-button {
+		button {
+			width: 75%;
+		}
+	}
 	button {
 		border: 1px solid #ffffff;
 		padding: 1em;
-		width: 75%;
 		color: #ffffff;
 		font-weight: bold;
 	}
