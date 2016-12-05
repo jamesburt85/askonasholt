@@ -1,0 +1,26 @@
+// ONLINE Page Styles
+
+//SINGLE ONLINE STRESMS ********************************
+
+body.single-online {
+  article.main-content {
+    max-width: 57.375rem;
+    margin: 0 auto;
+    header {
+      margin-bottom: $sitepadding;
+    }
+    .side-bar-artist {
+      border-top: 1px solid #cccccc;
+      border-bottom: 1px solid #cccccc;
+      padding: $sitepadding 0;
+      margin: $sitepadding-large 0;
+    }
+  }
+  #share-buttons img {
+  width: 35px;
+  padding: 5px;
+  border: 0;
+  box-shadow: 0;
+  display: inline;
+  }
+}

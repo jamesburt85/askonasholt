@@ -13507,7 +13507,8 @@ img.circle-thumb {
 .side-bar-artist {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  line-height: 60px; }
   .side-bar-artist img.circle-thumb {
     margin-right: 25px; }
   .side-bar-artist .side-bar-artist-name {
@@ -13567,7 +13568,6 @@ span.side-bar-artist-name, .event-detail {
 @media screen and (max-width: 39.9375em) {
   .event-listing-details {
     font-size: 19px;
-    text-align: center;
     padding-right: 12px; }
     .event-listing-details .side-bar-artist-details {
       text-align: left; } }
@@ -13586,5 +13586,24 @@ span.side-bar-artist-name, .event-detail {
 body.single.single-post #single-post {
   max-width: 57.375rem;
   margin: 0 auto; }
+
+body.single-online article.main-content {
+  max-width: 57.375rem;
+  margin: 0 auto; }
+  body.single-online article.main-content header {
+    margin-bottom: 25px; }
+  body.single-online article.main-content .side-bar-artist {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    padding: 25px 0;
+    margin: 50px 0; }
+
+body.single-online #share-buttons img {
+  width: 35px;
+  padding: 5px;
+  border: 0;
+  -webkit-box-shadow: 0;
+          box-shadow: 0;
+  display: inline; }
 
 /*# sourceMappingURL=foundation.css.map */
