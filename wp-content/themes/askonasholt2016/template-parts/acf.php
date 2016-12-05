@@ -110,7 +110,7 @@ if ($acf_fields['flexible_content']) {
 					</div>
 					<div class="small-9 columns">
 						<div class="row large-video-row">
-							<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe> -->
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
 						</div>
 					</div>
 				</div>

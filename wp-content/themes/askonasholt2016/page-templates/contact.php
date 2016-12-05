@@ -18,12 +18,14 @@ get_header(); ?>
       <div class="entry-content">
           <?php the_content(); ?>
 
-          <!-- Contact Page -->
           <div class="row">
+            <h4 class="section-header small-12 columns">Contact Details</h4>
+          </div>
+
+          <!-- Contact Page -->
+          <div class="row contact-page-wrapper">
             
             <div class="small-12 medium-3 columns contact-details">
-              
-              <h4 class="section-header">Contact Details</h4>
               
               <div class="contact-details">
 
@@ -92,7 +94,7 @@ get_header(); ?>
 
             <div class="small-12  medium-9 columns">
               <div id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.7350865574026!2d-0.11687768422964813!3d51.51807597963692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b4a5386ade9%3A0xea4c330ceba327a2!2sAskonas+Holt!5e0!3m2!1sen!2suk!4v1479744564941" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.7350865574026!2d-0.11687768422964813!3d51.51807597963692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b4a5386ade9%3A0xea4c330ceba327a2!2sAskonas+Holt!5e0!3m2!1sen!2suk!4v1479744564941" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
               </div>
             </div>
 
@@ -114,5 +116,9 @@ get_header(); ?>
 <?php do_action( 'foundationpress_after_content' ); ?>
 
 </div>
+
+<?php get_template_part( 'template-parts/page-nav-tiles' ); ?>
+
 <?php get_template_part( 'template-parts/link-banner' ); ?>
+
 <?php get_footer();

@@ -46,7 +46,7 @@ get_header(); ?>
           $args = array(
 
             'post_type'   => 'post',
-            'category_name' => array( 'news', 'interviews', 'features' ),
+            'category_slug' => array( 'news', 'interviews', 'features' ),
             'posts_per_page' => 4,
             'tax_query' => array(
                 //array(
@@ -196,6 +196,7 @@ role="main"> -->
       */
       $videos = get_posts(array(
         'post_type' => 'post',
+        'category_slug' => 'audio',
         'posts_per_page' => 4,
 
         // 'meta_query' => array(
@@ -228,6 +229,7 @@ role="main"> -->
               <div class="video-description">
                 <?php echo wpdocs_custom_taxonomies_terms_links(); ?>
                 <?php the_date('d-m-y'); ?>
+                <?php the_title(); ?>
                 <span class="magazine-item-copy"><?php the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
               </div>
             </div>

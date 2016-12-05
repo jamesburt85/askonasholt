@@ -1,7 +1,7 @@
 <!-- //Nav tiles at bottom of pages -->
 
 
-<div class="more-page-links">
+<div class="more-page-links row">
     <h3 class="section-header">Find out more</h3>
     <?php
      
@@ -18,7 +18,7 @@
      
     /* if we ended up with any pages from the queries above */
     if ($children) { ?>
-      <ul class="submenu page-nav-buttons row">
+      <ul class="submenu page-nav-buttons">
         <?php echo $children; /*print list of pages*/ ?>
       </ul>
     <?php } ?>

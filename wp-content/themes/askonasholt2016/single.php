@@ -20,7 +20,7 @@ get_header(); ?>
 			<?php foundationpress_entry_meta(); ?>
 		</header>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
-		<div class="entry-content">
+		<div class="entry-content row">
 
 			<?php 
 				if ( has_post_format( 'audio' )) {
@@ -38,6 +38,9 @@ get_header(); ?>
 
 				else {
 					the_content();
+					//getting ACF Flexible content navigation
+					$acf_fields = get_fields();
+					include(locate_template('template-parts/acf.php'));
 				}
 			?>
 

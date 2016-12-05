@@ -9888,7 +9888,8 @@ ul.single-page-nav {
       display: flex;
       margin-right: 10px; }
     .magazine-item .magazine-category span.category {
-      font-weight: bold; }
+      font-weight: bold;
+      text-transform: capitalize; }
   .magazine-item span.magazine-item-copy p {
     font-size: 15px; }
   .magazine-item .magazine-item-header {
@@ -11941,7 +11942,7 @@ img.mfp-img {
   background: rgba(0, 0, 0, 0.3); }
 
 #map {
-  height: 400px;
+  height: 500px;
   background-color: #000000; }
 
 .contact-details-section {
@@ -12815,9 +12816,9 @@ body.single.single-artists .enquiry-button {
     transform: translate(-50%, -50%); } }
 
 .more-page-links {
-  margin: 50px 0;
-  border-top: 1px solid #3E3E3E;
-  text-align: center; }
+  border-top: 1px solid #cccccc;
+  text-align: center;
+  margin: 2em; }
   .more-page-links ul.submenu.page-nav-buttons {
     list-style-type: none;
     text-align: center; }
@@ -12825,9 +12826,7 @@ body.single.single-artists .enquiry-button {
       width: 100%;
       float: left;
       padding-left: 0.625rem;
-      padding-right: 0.625rem;
-      padding-top: 1em;
-      padding-bottom: 1em; }
+      padding-right: 0.625rem; }
       @media screen and (min-width: 40em) {
         .more-page-links ul.submenu.page-nav-buttons li {
           padding-left: 0.9375rem;
@@ -12852,13 +12851,26 @@ body.single.single-artists .enquiry-button {
     .more-page-links ul.submenu.page-nav-buttons li {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
-      .more-page-links ul.submenu.page-nav-buttons li a {
-        color: initial;
-        display: block;
-        border: 1px solid #3E3E3E;
-        padding: 5em 0; }
     .more-page-links ul.submenu.page-nav-buttons li.page_item.page-item-54.current_page_item.active {
       display: none; }
+    .more-page-links ul.submenu.page-nav-buttons li.page_item {
+      background-color: #fefefe;
+      color: #B49A81 !important;
+      margin-bottom: 50px;
+      margin-top: 50px; }
+      .more-page-links ul.submenu.page-nav-buttons li.page_item a {
+        color: #B49A81;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        width: 100%;
+        border: 1px solid #B49A81;
+        line-height: 1;
+        padding: 1.85em 2em;
+        -webkit-transition: 0.5s;
+        transition: 0.5s; }
+      .more-page-links ul.submenu.page-nav-buttons li.page_item a:hover {
+        background-color: #9e0a28;
+        color: #fff; }
 
 .events-filtering-bar {
   background: #F2F1ED;
@@ -13166,8 +13178,12 @@ div.staff-header li {
   display: flex; }
   .header-row a.view-link {
     font-weight: bold;
-    line-height: 95px;
+    line-height: 78px;
     color: initial; }
+
+@media screen and (min-width: 40em) {
+  .header-row a.view-link {
+    line-height: 95px; } }
 
 #kitchen-sink {
   max-width: 84.375rem;
@@ -13570,9 +13586,5 @@ span.side-bar-artist-name, .event-detail {
 body.single.single-post #single-post {
   max-width: 57.375rem;
   margin: 0 auto; }
-
-body.single-format-audio #single-post {
-  background-color: #262626;
-  color: #fefefe; }
 
 /*# sourceMappingURL=foundation.css.map */

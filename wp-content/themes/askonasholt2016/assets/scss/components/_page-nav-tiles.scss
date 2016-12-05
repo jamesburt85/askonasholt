@@ -1,8 +1,9 @@
 //In-page nav tiles at bottom of page
 .more-page-links {
-	margin: $sitepadding-large 0;
-	border-top: 1px solid #3E3E3E;
+	// margin: $sitepadding-large 0;
+	border-top: 1px solid #cccccc;
 	text-align: center;
+	margin: 2em;
 	ul.submenu.page-nav-buttons {
 		list-style-type: none;
 		text-align: center;
@@ -16,20 +17,41 @@
 			@include breakpoint(large) {
 				@include grid-column(3);
 			}
-			padding-top: 1em;
-			padding-bottom: 1em;
+			// padding-top: 1em;
+			// padding-bottom: 1em;
 			
-			a {
-				color: initial;
-				display: block;
-				border: 1px solid #3E3E3E;
-				padding: 5em 0;
-			}
+			// a {
+			// 	color: initial;
+			// 	display: block;
+			// 	border: 1px solid #3E3E3E;
+			// 	padding: 5em 0;
+			// }
 		}
 
 		li.page_item.page-item-54.current_page_item.active {
 		    display: none;
 		}
 
+		//styling page nav buttons similar to filter buttons
+		li.page_item {
+		    background-color: #fefefe;
+		    color: #B49A81 !important;
+		    margin-bottom: $sitepadding-large;
+		    margin-top: $sitepadding-large;
+		    a {
+		    	color: #B49A81;
+		    	text-transform: uppercase;
+		    	letter-spacing: 1px;
+		    	width: 100%;
+		    	border: 1px solid #B49A81;
+		    	line-height: 1;
+		    	padding: 1.85em 2em;
+		    	transition: 0.5s;
+		    }
+		    a:hover {
+		    	background-color: #9e0a28;
+		    	color: #fff;
+		    }
+		}
 	}
 }

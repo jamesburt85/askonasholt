@@ -209,7 +209,15 @@
     display: flex;
     a.view-link {
         font-weight: bold;
-        line-height: 95px;
+        line-height: 78px;
         color: initial;
     }
+}
+
+@include breakpoint(medium) {
+  .header-row {
+      a.view-link {
+          line-height: 95px;
+      }
+  }
 }
