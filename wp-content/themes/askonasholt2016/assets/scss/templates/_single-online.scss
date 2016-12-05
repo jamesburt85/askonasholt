@@ -30,3 +30,11 @@ body.single-online {
   display: inline;
   }
 }
+
+.online-item-thumb {
+  transition: 0.5s;
+}
+
+.online-item-thumb:hover {
+  opacity: 0.8;
+}

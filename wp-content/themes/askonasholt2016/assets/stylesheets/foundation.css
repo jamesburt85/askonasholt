@@ -13609,4 +13609,11 @@ body.single-online #share-buttons img {
           box-shadow: 0;
   display: inline; }
 
+.online-item-thumb {
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+
+.online-item-thumb:hover {
+  opacity: 0.8; }
+
 /*# sourceMappingURL=foundation.css.map */

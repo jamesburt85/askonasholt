@@ -24,14 +24,43 @@
 						<!-- *** Details in functions.php for getting taxonomy/terms *** -->
 						<span class="category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
 						<?php //the_date('d-m-y'); ?>
-						ARTIST
+						
+						<?php 
+
+							$artist = get_field('artist');
+							//print_r($artist);
+
+							if (!empty($artist)) {
+								foreach ($artist as $artist_id) { ?> 
+									
+
+					
+									
+									<!-- <img class="circle-thumb" src="<?php echo $thumb_url ?>"> -->
+									
+						
+										<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>&nbsp;
+									
+										<?php # If this artist has an artist-type
+										# - Will only EVER return the first result in the artist type array
+										//if ( !empty( $artist_types)): ?>
+											<span><?php //echo $artist_types[0]->name ?></span>
+										<?php //endif ?>
+						
+		
+						
+							<?php
+							}
+						} ?>
+
+
 					</span>
 
 					<?php //foundationpress_entry_meta(); ?>
 					
-					<p class="online-item-header">
+					<span class="online-item-header">
 						<?php the_title(); ?>
-					</p>
+					</span>
 					<span class="online-item-copy"><?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
 					
 				
