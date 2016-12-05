@@ -105,7 +105,7 @@ if ( !function_exists('wiaw_universal_ajax')) {
             <?php else: // it's the index.php page ?>
                 <input type="hidden" name="post_type" id="wiaw_post_type" value="post">
             <?php endif; ?>
-
+            
             <hr/>
 
         <?php endif;

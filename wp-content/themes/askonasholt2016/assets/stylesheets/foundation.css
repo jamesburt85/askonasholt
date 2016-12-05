@@ -11414,6 +11414,30 @@ div#video-audio {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     bottom: 0; }
+  .post-type-archive-artists article hr {
+    opacity: 0; }
+
+.post-type-archive-people article {
+  position: relative; }
+  .post-type-archive-people article .archive__load-more {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 0; }
+    .post-type-archive-people article .archive__load-more a {
+      color: #BA0C2F;
+      font-weight: bold; }
+  .post-type-archive-people article .alert.alert-warning {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 0; }
+  .post-type-archive-people article hr {
+    opacity: 0; }
 
 @media screen and (min-width: 40em) {
   .single-artists .artist-header-thumb {

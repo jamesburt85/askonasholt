@@ -1,6 +1,6 @@
 <div class="artist-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general-official.jpg');">
 
-<?php	
+<!-- <?php	
 	$description = get_field( "optional_description" );
 
 	if( $description ) {
@@ -12,7 +12,8 @@
 	    echo 'empty';
 	    
 	}
-?>
+?> -->
+
 
 	<header class="filter-header">
 		<h2 class="hero-heading">People</h2>

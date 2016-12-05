@@ -215,6 +215,30 @@ div#video-audio {
 			@include center(x);
 			bottom: 0;
 		}
+		hr {
+			opacity: 0;
+		}
+	}
+}
+
+.post-type-archive-people {
+	article {
+		position: relative;
+		.archive__load-more {
+			@include center(x);
+			bottom: 0;
+			a {
+				color: $brand-red;
+				font-weight: bold;
+			}
+		}
+		.alert.alert-warning {
+			@include center(x);
+			bottom: 0;
+		}
+		hr {
+			opacity: 0;
+		}
 	}
 }
 
