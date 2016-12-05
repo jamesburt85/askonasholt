@@ -13594,9 +13594,12 @@ body.single-online article.main-content {
     margin-bottom: 25px; }
   body.single-online article.main-content .side-bar-artist {
     border-top: 1px solid #cccccc;
+    padding: 25px 0; }
+  body.single-online article.main-content .side-bar-artist:last-child {
     border-bottom: 1px solid #cccccc;
-    padding: 25px 0;
-    margin: 50px 0; }
+    margin-bottom: 25px; }
+  body.single-online article.main-content .side-bar-artist:first-child {
+    margin-top: 25px; }
 
 body.single-online #share-buttons img {
   width: 35px;

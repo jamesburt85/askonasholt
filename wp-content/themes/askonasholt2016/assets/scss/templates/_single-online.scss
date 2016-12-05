@@ -9,11 +9,17 @@ body.single-online {
     header {
       margin-bottom: $sitepadding;
     }
+
     .side-bar-artist {
       border-top: 1px solid #cccccc;
-      border-bottom: 1px solid #cccccc;
       padding: $sitepadding 0;
-      margin: $sitepadding-large 0;
+    }
+    .side-bar-artist:last-child {
+      border-bottom: 1px solid #cccccc;
+      margin-bottom: $sitepadding;
+    }
+    .side-bar-artist:first-child {
+      margin-top: $sitepadding;
     }
   }
   #share-buttons img {
