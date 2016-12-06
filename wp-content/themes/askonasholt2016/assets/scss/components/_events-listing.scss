@@ -1,8 +1,11 @@
 .events-listing {
-	padding: 1rem 0;
-	border-top: 1px solid $red;
+	padding: 0.5rem 0;
+	// border-top: 1px solid $red;
 	.accordion {
 		padding: 1rem 0;
+	}
+	.accordion {
+	    font-size: 19px;
 	}
 }
 
