@@ -13430,6 +13430,9 @@ body.home {
   .single-tours-projects .hero-text-area span.hero-text-dates {
     padding: 2px 11px 11px; }
 
+.single-tours-projects .project-intro .section-header {
+  padding: 0; }
+
 .single-tours-projects div.tour-intro-sidebar .section-header {
   padding: 0px 0; }
 

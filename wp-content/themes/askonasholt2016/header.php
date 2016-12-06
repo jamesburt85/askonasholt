@@ -104,6 +104,7 @@
 			</div>
 			
 			<!-- <div class="header-social-area show-for-large"> -->
+			<div class="header-social-area">
 				<a class="show-for-large" href="https://www.facebook.com/askonasholt/" target="_blank">
 					<i class="fa fa-facebook fa-2x social-icon" aria-hidden="true"></i>
 				</a>
@@ -116,6 +117,7 @@
 				<a class="show-for-large" href="https://www.youtube.com/user/AskonasHolt" target="_blank">
 					<i class="fa fa-youtube-play fa-2x social-icon" aria-hidden="true"></i>
 				</a>
+			</div>
 			<!-- </div> -->
 
 			<div id="search-toggle" class="header-search-toggle button">

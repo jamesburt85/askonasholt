@@ -175,7 +175,7 @@ get_header(); ?>
 					<?php echo $further_info; ?>
 				</div>
 
-				<div class="small-12 medium-9 columns">
+				<div class="small-12 medium-9 columns project-intro">
 					<h4 class="section-header">Introduction</h4>
 
 					<?php echo $blurb; ?>
