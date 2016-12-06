@@ -12,7 +12,7 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
 
-	<?php get_template_part( 'template-parts/magazine-blocks' ); ?>
+	<?php get_template_part( 'template-parts/content-post' ); ?>
 
 	<footer>
 		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>

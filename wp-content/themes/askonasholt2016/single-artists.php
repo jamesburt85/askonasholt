@@ -162,7 +162,7 @@ get_header(); ?>
 				<?php
 					foreach( $videos as $video ): setup_postdata( $video );
 
-						//get_template_part( 'template-parts/magazine-blocks' );
+						//get_template_part( 'template-parts/content-post' );
 
 					?>
 					<div>

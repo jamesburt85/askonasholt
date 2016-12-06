@@ -54,7 +54,7 @@ get_header(); ?>
                 while ( $the_query->have_posts() ) {
                   $the_query->the_post();
 
-                  get_template_part( 'template-parts/magazine-blocks' );
+                  get_template_part( 'template-parts/content-post' );
 
                 }
 
