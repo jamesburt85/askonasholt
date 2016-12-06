@@ -123,6 +123,8 @@ get_header(); ?>
 		</div>
 	</div>
 
+
+
 	<div class="video-audio-area" id="video-audio">
 			
 		<div class="row">
@@ -156,7 +158,7 @@ get_header(); ?>
 			));
 
 			?>
-
+	
 			<?php if( $videos ): ?>
 				<!-- <ul> -->
 				<?php
@@ -221,7 +223,7 @@ get_header(); ?>
 			));
 
 			?>
-			<?php if( $tracks ): ?>
+			<?php if( !empty($tracks) ): ?>
 				<!-- <ul> -->
 				<?php
 					foreach( $tracks as $post ): setup_postdata( $post );

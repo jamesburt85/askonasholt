@@ -22,7 +22,14 @@
 			$end_date = get_field('end_date');
 			$blurb = get_field('blurb');
 			$image = get_field('background_image');
+			$tour_events = null;
 			$tour_events = get_field('tour_events');
+
+			// if($tour_events){
+			// 	$tour_events = $tour_events;
+			// } else {
+			// 	$tour_events = null;
+			// }
 
 		?>
 
@@ -52,34 +59,50 @@
 
 				<?php 
 
-				  // Query Args
-				  $args = array(
+					// AD note to self - do this in an object loop rather than WP_Query. Less wasteful / quicker...
 
-				    'post_type'		=> 'events',
-				    'post__in'  	=> $tour_events,
-				    'posts_per_page' => 3,
-				    
-				  );
+				  	if( !empty($tour_events) ){
 
-				  // The Query
-				  $the_query = new WP_Query( $args );
 
-				  // The Loop
-				  if ( $the_query->have_posts() ) {
-				    // echo '<ul>';
-				    while ( $the_query->have_posts() ) {
-				      $the_query->the_post();
-				      // echo '<li>' . get_the_title() . '</li>';
-				      get_template_part( 'template-parts/content-tour-event-listing' );
+						// Query Args
+						$args = array(
 
-				      //get_template_part( 'template-parts/.....' );
-				    }
-				    // echo '</ul>';
-				    /* Restore original Post Data */
-				    wp_reset_postdata();
-				  } else {
-				    // no posts found
-				  }
+						    'post_type'		=> 'events',
+						    'posts_per_page' => 3,
+						    'post__in'  	=> $tour_events
+						    
+						);
+
+						  // echo "<h3>";
+						  // print_r($tour_events);
+						  // echo "</h3>";
+
+						  // The Query
+						  $the_query = new WP_Query( $args );
+
+						  // The Loop
+						  if ( $the_query->have_posts() ) {
+						    // echo '<ul>';
+						    while ( $the_query->have_posts() ) {
+						      $the_query->the_post();
+
+						      // echo '<h1>'.the_ID().'</h1>';
+
+						      // echo '<li>' . get_the_title() . '</li>';
+						      get_template_part( 'template-parts/content-tour-event-listing' );
+
+						      // get_template_part( 'template-parts/.....' );
+						    }
+						    // echo '</ul>';
+						    /* Restore original Post Data */
+						    wp_reset_postdata();
+						  } else {
+						    // no posts found
+						  }
+
+				}
+
+
 				?>
 
 				<a href="<?php the_permalink(); ?>">View all dates &nbsp; 
