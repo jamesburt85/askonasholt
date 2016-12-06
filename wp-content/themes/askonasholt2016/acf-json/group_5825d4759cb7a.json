@@ -143,6 +143,31 @@
             "return_format": "id"
         },
         {
+            "key": "field_5846865731ba6",
+            "label": "Tour Staff",
+            "name": "tour_staff",
+            "type": "relationship",
+            "instructions": "Enter staff associated with this tour",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "people"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
             "key": "field_58386c052a752",
             "label": "Further Info",
             "name": "further_info",
@@ -253,5 +278,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1480092744
+    "modified": 1481016973
 }

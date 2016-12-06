@@ -1,8 +1,11 @@
 // Tours & Project Page Styles
 
+//****************************************************
 //SINGLE TOURS STYLES ********************************
+//****************************************************
 
 .single-tours-projects {
+  
   .tour-hero {
       position: relative;
       height: 70vh;
@@ -19,6 +22,15 @@
       }
   }
 
+  div.tour-intro-sidebar {
+    .section-header {
+      padding: 0px 0;
+    }
+    .side-bar-artist {
+      padding-bottom: $sitepadding-small;
+    }
+  }
+
   //hide/reveal of more/less on project description
   span.less {
       opacity: 0;
@@ -31,7 +43,6 @@
       display: none;
     }
   }
-
 
   //add some padding to gallery on tours-projects
   a.slick-slide {

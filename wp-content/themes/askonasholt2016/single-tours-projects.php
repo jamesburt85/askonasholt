@@ -59,99 +59,119 @@ get_header(); ?>
 			?>
 
 			<div class="row" id="introduction">
-				<div class="small-12 medium-3 columns">
+				<div class="small-12 medium-3 columns tour-intro-sidebar">
 					<h4 class="section-header">Contact</h4>
 
-					<?php
-					  // Query Args
-					  $args = array(
+						<?php 
 
-					    'post_type'		=> 'people',
-					    //'post__in'  	=> $tour_artists,
-					    // 'posts_per_page' => 3,
-					    
-					  );
+							$tour_staff = get_field('tour_staff');
+							//print_r($tour_staff);
 
-					  // The Query
-					  $the_query = new WP_Query( $args );
+							if (!empty($tour_staff)) {
+								foreach ($tour_staff as $staff_id) { ?> 
 
-					  // The Loop
-					  if ( $the_query->have_posts() ) {
-					    // echo '<ul>';
-					    while ( $the_query->have_posts() ) {
-					      $the_query->the_post();
-					      // echo '<li>' . get_the_title() . '</li>';
-					      //get_template_part( 'template-parts/content-contact-person' );
+									<div class="side-bar-artist"> <?php
+										# Get featured image id
+										$thumb_id = get_post_thumbnail_id($staff_id);
+										# If theere is not a featured image
+										if ( empty( $thumb_id)) {
+											$thumb_url = 'http://placehold.it/150x150';
+										# Yeay, we haven image ID
+										} else {
+											# Get the image from the image ID
+											$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
+											$thumb_url = $thumb_url_array[0];
+										}
+										//echo $thumb_url;
 
-					      //get_template_part( 'template-parts/.....' );
-					    }
-					    // echo '</ul>';
-					    /* Restore original Post Data */
-					    wp_reset_postdata();
-					  } else {
-					    // no posts found
-					  }
-					?>
+										# Get post terms as array
+										$artist_types = get_the_terms( $staff_id, 'artist-type');
+
+										?>
+										
+											<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										<div class="side-bar-artist-details">
+											<span class="side-bar-artist-name"><?php echo get_the_title( $staff_id) ?></span><br/>
+										
+											<?php # If this artist has an artist-type
+											# - Will only EVER return the first result in the artist type array
+											if ( !empty( $artist_types)): ?>
+												<span><?php echo $artist_types[0]->name ?></span>
+											<?php endif ?>
+										</div>
+									</div>
+				<!-- 					<?php # If the artist has an artist type
+									if ( !empty( $artist_types)): ?>
+										<ul>
+										<?php # Loop through all the artist types for this artist,
+										# - and output them all!
+										foreach ($artist_types as $type): ?>
+											<li><?php echo $type->name ?></li>
+										<?php endforeach ?>
+										</ul>
+									<?php endif ?> -->
+								
+									<?php
+								}
+							} ?>
 
 					<br/>
 
-					<h4 class="section-header">Artist(s)</h4> <br/>
-							<?php 
+					<h4 class="section-header">Artist(s)</h4>
+						<?php 
 
-								$tour_artists = get_field('tour_artists');
-								//print_r($tour_artists);
+							$tour_artists = get_field('tour_artists');
+							//print_r($tour_artists);
 
-								if (!empty($tour_artists)) {
-									foreach ($tour_artists as $artist_id) { ?> 
+							if (!empty($tour_artists)) {
+								foreach ($tour_artists as $artist_id) { ?> 
 
-										<div class="side-bar-artist"> <?php
-											# Get featured image id
-											$thumb_id = get_post_thumbnail_id($artist_id);
-											# If theere is not a featured image
-											if ( empty( $thumb_id)) {
-												$thumb_url = 'http://placehold.it/150x150';
-											# Yeay, we haven image ID
-											} else {
-												# Get the image from the image ID
-												$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
-												$thumb_url = $thumb_url_array[0];
-											}
-											//echo $thumb_url;
+									<div class="side-bar-artist"> <?php
+										# Get featured image id
+										$thumb_id = get_post_thumbnail_id($artist_id);
+										# If theere is not a featured image
+										if ( empty( $thumb_id)) {
+											$thumb_url = 'http://placehold.it/150x150';
+										# Yeay, we haven image ID
+										} else {
+											# Get the image from the image ID
+											$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
+											$thumb_url = $thumb_url_array[0];
+										}
+										//echo $thumb_url;
 
-											# Get post terms as array
-											$artist_types = get_the_terms( $artist_id, 'artist-type');
+										# Get post terms as array
+										$artist_types = get_the_terms( $artist_id, 'artist-type');
 
-											?>
-											
-												<img class="circle-thumb" src="<?php echo $thumb_url ?>">
-											<div class="side-bar-artist-details">
-												<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span><br/>
-											
-												<?php # If this artist has an artist-type
-												# - Will only EVER return the first result in the artist type array
-												if ( !empty( $artist_types)): ?>
-													<span><?php echo $artist_types[0]->name ?></span>
-												<?php endif ?>
-											</div>
+										?>
+										
+											<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										<div class="side-bar-artist-details">
+											<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span><br/>
+										
+											<?php # If this artist has an artist-type
+											# - Will only EVER return the first result in the artist type array
+											if ( !empty( $artist_types)): ?>
+												<span><?php echo $artist_types[0]->name ?></span>
+											<?php endif ?>
 										</div>
-					<!-- 					<?php # If the artist has an artist type
-										if ( !empty( $artist_types)): ?>
-											<ul>
-											<?php # Loop through all the artist types for this artist,
-											# - and output them all!
-											foreach ($artist_types as $type): ?>
-												<li><?php echo $type->name ?></li>
-											<?php endforeach ?>
-											</ul>
-										<?php endif ?> -->
-									
-										<?php
-									}
-								} ?>
+									</div>
+				<!-- 					<?php # If the artist has an artist type
+									if ( !empty( $artist_types)): ?>
+										<ul>
+										<?php # Loop through all the artist types for this artist,
+										# - and output them all!
+										foreach ($artist_types as $type): ?>
+											<li><?php echo $type->name ?></li>
+										<?php endforeach ?>
+										</ul>
+									<?php endif ?> -->
+								
+									<?php
+								}
+							} ?>
 
-
-					<h4 class="section-header">Further Info</h4> <br/>
-					
+					<h4 class="section-header">Further Info</h4>
 					<?php echo $further_info; ?>
 				</div>
 
