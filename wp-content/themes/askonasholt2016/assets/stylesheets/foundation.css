@@ -9845,6 +9845,13 @@ ul.single-page-nav {
       color: white;
       font-weight: bold; }
 
+#sticky.stick {
+  margin-top: 0 !important;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%; }
+
 .magazine-item {
   height: 450px;
   border: 1px solid #dddddd;
@@ -10334,7 +10341,7 @@ header h1 {
     transform: translateX(0); } }
 
 #cd-timeline::before {
-  background: #525252; }
+  background: #cccccc; }
 
 .cd-timeline-content::before {
   border-left-color: #BA0C2F; }
@@ -10343,9 +10350,12 @@ header h1 {
   border-right-color: #BA0C2F; }
 
 .cd-timeline-content {
-  border: 1px solid;
+  border: 1px solid #cccccc;
   -webkit-box-shadow: 0 3px 0 #d7e4ed;
   box-shadow: 0 3px 0 #c3c3c3; }
+  .cd-timeline-content .columns {
+    padding-left: 0;
+    padding-right: 0; }
 
 .artist-filtering-block header.filter-header {
   position: absolute;
@@ -13615,5 +13625,17 @@ body.single-online #share-buttons img {
 
 .online-item-thumb:hover {
   opacity: 0.8; }
+
+body.single-people article.main-content {
+  max-width: 57.375rem;
+  margin: 0 auto; }
+
+body.single-people .single-staff-header {
+  margin: 50px 0; }
+
+@media screen and (max-width: 39.9375em) {
+  body.single div#single-post {
+    max-width: 90%;
+    margin: 0 auto; } }
 
 /*# sourceMappingURL=foundation.css.map */

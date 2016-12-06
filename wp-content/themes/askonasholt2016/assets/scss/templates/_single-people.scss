@@ -1,0 +1,22 @@
+// ONLINE Page Styles
+
+//SINGLE ONLINE STRESMS ********************************
+
+body.single-people{
+  article.main-content {
+    max-width: 57.375rem;
+    margin: 0 auto;
+  }
+  .single-staff-header {
+    margin: $sitepadding-large 0;
+  }
+}
+
+@include breakpoint(small only) {
+  body.single{
+    div#single-post {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+}

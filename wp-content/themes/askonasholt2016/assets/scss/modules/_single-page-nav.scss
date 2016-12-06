@@ -18,3 +18,12 @@ ul.single-page-nav {
     	}
     }
 }
+
+//styles for sticking nav after scroll
+#sticky.stick {
+    margin-top: 0 !important;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}

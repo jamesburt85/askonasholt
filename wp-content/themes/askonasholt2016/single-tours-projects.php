@@ -12,8 +12,9 @@ get_header(); ?>
 
 
 <?php get_template_part( 'template-parts/single-tour-project-hero' ); ?>
-
-	<ul class="single-page-nav">
+	
+	<div id="sticky-anchor"></div>
+	<ul class="single-page-nav" id="sticky">
 		
 		<li class="nav-title">
 			<?php the_title(); ?>

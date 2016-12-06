@@ -490,7 +490,7 @@ header h1 {
 
 // Line down the middle of timeline
 #cd-timeline::before {
-    background: #525252;
+    background: #cccccc;
 }
 
 // @media only screen and (min-width: 1170px)
@@ -502,7 +502,11 @@ header h1 {
 }
 
 .cd-timeline-content {
-  border: 1px solid;
+  border: 1px solid #cccccc;
   -webkit-box-shadow: 0 3px 0 #d7e4ed;
   box-shadow: 0 3px 0 #c3c3c3;
+  .columns {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
