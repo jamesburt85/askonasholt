@@ -12888,10 +12888,11 @@ body.single.single-artists .enquiry-button {
   margin: 25px 0; }
 
 .events-listing {
-  padding: 1rem 0;
-  border-top: 1px solid #BA0C2F; }
+  padding: 0.5rem 0; }
   .events-listing .accordion {
     padding: 1rem 0; }
+  .events-listing .accordion {
+    font-size: 19px; }
 
 .online-performances-link button {
   background-color: #fefefe;
@@ -13580,8 +13581,6 @@ ul.accordion {
 
 .event-listing-details {
   font-size: 19px; }
-  .event-listing-details .side-bar-artist-details {
-    line-height: 30px; }
 
 span.more-info {
   right: 2em;

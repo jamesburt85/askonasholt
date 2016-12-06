@@ -35,26 +35,30 @@
 
 		?>
 
-		<div class="small-12 medium-4 columns">
+		<div class="small-12 medium-3 columns">
 			<h5><?php echo $date; ?> | <?php echo $time; ?></h5>
 			<h3><?php the_title(); ?></h3>
 		</div>
 
-		<div class="small-12 medium-8 columns">
+		<div class="small-12 medium-9 columns">
 			<ul class="accordion" data-accordion data-allow-all-closed="true">
 			  <li class="accordion-item" data-accordion-item>
-
-			  	<div class="event-related-artists">
-			    	<?php get_template_part( 'template-parts/event-related-artist' ); ?>		
-			  	</div>
-			    			
-			  	<div class="event-time"><?php echo $time; ?></div>
-			    <div class="event-date"><?php echo $date; ?></div>
-			    <div class="event-venue"><?php echo $venue; ?></div>
-			    <div class="event-city"><?php echo $city; ?></div>
-
+			    
 			    <a href="#" class="accordion-title">
-			    	More info
+		    		<div class="event-related-artists">
+		    	  		<?php get_template_part( 'template-parts/event-related-artist' ); ?>		
+		    		</div>			
+				  	<div class="event-time event-detail"><?php echo $time; ?></div>
+				    <div class="event-date event-detail"><?php echo $date; ?></div>
+				    <div class="event-venue event-detail"><?php echo $venue; ?></div>
+				    <div class="event-city event-detail"><?php echo $city; ?></div>
+
+			    	<span class="more-info">More info &nbsp;
+			    	    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			    	        <defs></defs>
+			    	        <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
+			    	    </svg>
+			    	</span>
 			    </a>
 
 			    <div class="accordion-content" data-tab-content>
