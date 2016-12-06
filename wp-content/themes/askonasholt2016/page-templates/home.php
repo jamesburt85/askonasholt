@@ -66,7 +66,7 @@ get_header(); ?>
           while ( $the_query->have_posts() ) {
             $the_query->the_post();
 
-            get_template_part( 'template-parts/magazine-blocks' );
+            get_template_part( 'template-parts/content-post' );
 
           }
 
@@ -249,7 +249,7 @@ role="main"> -->
         <?php
           foreach( $videos as $video ): setup_postdata( $video );
 
-            //get_template_part( 'template-parts/magazine-blocks' );
+            //get_template_part( 'template-parts/content-post' );
 
           ?>
 

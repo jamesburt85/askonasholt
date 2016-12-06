@@ -26,7 +26,7 @@ get_header(); ?>
 			<?php //$acf_fields = get_fields(); ?>
 			<?php //include(locate_template('template-parts/acf.php')); ?>
 
-			<?php get_template_part( 'template-parts/magazine-blocks' ); ?>
+			<?php get_template_part( 'template-parts/content-post' ); ?>
 
 		<?php endwhile; ?>
 		<?php else : ?>
@@ -35,16 +35,20 @@ get_header(); ?>
 		<?php endif; // End have_posts() check. ?>
 
 		<?php /* Display navigation to next/previous pages when applicable */ ?>
+
+		<?php # Paging
+		wiaw_archive_nav(); ?>
+
 		<?php
-		if ( function_exists( 'foundationpress_pagination' ) ) :
-			foundationpress_pagination();
-		elseif ( is_paged() ) :
+		// if ( function_exists( 'foundationpress_pagination' ) ) :
+		// 	foundationpress_pagination();
+		// elseif ( is_paged() ) :
 		?>
-			<nav id="post-nav">
-				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-			</nav>
-		<?php endif; ?>
+			<!-- <nav id="post-nav">
+				<div class="post-previous"><?php //next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
+				<div class="post-next"><?php //previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+			</nav> -->
+		<?php // endif; ?>
 
 	</article>
 	<?php //get_sidebar(); ?>
