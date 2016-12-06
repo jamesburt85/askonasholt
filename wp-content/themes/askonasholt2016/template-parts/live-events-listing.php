@@ -2,7 +2,7 @@
 <?php //foundationpress_entry_meta(); ?>
 <div class="row online-performance-header">
 	<h3 class="section-header">Online Performances</h3>
-	<p>In partnership with ......</p>
+	<!-- <p>In partnership with ......</p> -->
 </div>
 
 <div class="row live-events">
@@ -41,5 +41,5 @@
 </div>
 
 <div class="online-performances-link">
-	<a href="<?php echo site_url(); ?>/online-performances"><button>View All</button></a>
+	<a href="<?php echo site_url(); ?>/online-performances"><button class="button">View All</button></a>
 </div>

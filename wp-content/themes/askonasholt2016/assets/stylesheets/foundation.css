@@ -12893,6 +12893,15 @@ body.single.single-artists .enquiry-button {
   .events-listing .accordion {
     padding: 1rem 0; }
 
+.online-performances-link button {
+  background-color: #fefefe;
+  color: #F2F1ED;
+  border: 1px solid #B49A81;
+  color: #B49A81;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold; }
+
 .events-map {
   min-height: 50vh;
   width: 100%;
