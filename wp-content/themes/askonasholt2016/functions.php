@@ -203,7 +203,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
 
 
-    # Change the "featured image" title on custome post types
+    # Change the "featured image" title on custom post types
     # - sample
     function eb_change_featured_image_title()
     {

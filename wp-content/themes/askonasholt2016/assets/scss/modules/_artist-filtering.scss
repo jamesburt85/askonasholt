@@ -264,3 +264,20 @@ body.post-type-archive-artists {
 		}
 	}
 }
+
+
+
+//MEDIA QUERIES **************
+
+@include breakpoint(small only) {
+  ul.artist-categories {
+  	width: 100%;
+  	li {
+  		margin-right: 2.5px;
+  		margin-bottom: 2.5px;
+  		a {
+  			padding: 0.85em 0.5em;
+  		}
+  	}
+  }
+}
