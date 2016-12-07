@@ -9808,6 +9808,15 @@ body.post-type-archive-artists li.cat-item-all a {
   background-color: #BA0C2F;
   color: #fefefe; }
 
+@media screen and (max-width: 39.9375em) {
+  ul.artist-categories {
+    width: 100%; }
+    ul.artist-categories li {
+      margin-right: 2.5px;
+      margin-bottom: 2.5px; }
+      ul.artist-categories li a {
+        padding: 0.85em 0.5em; } }
+
 .link-banner .row {
   max-width: 60.375rem; }
 
@@ -9917,7 +9926,13 @@ body.blog .archive__load-more {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  bottom: 0; }
+  bottom: 5px; }
+
+body.blog section.container hr {
+  opacity: 0; }
+
+.archive__load-more {
+  font-weight: bold; }
 
 .single-magazine-category {
   display: -webkit-box;
@@ -11480,7 +11495,7 @@ i.fa.fa-angle-left.slick-arrow {
   left: 1em;
   position: absolute;
   top: 42%;
-  z-index: 99999;
+  z-index: 9;
   color: white;
   background: rgba(0, 0, 0, 0.8);
   padding: 10px;
@@ -11490,7 +11505,7 @@ i.fa.fa-angle-right.slick-arrow {
   right: 1em;
   position: absolute;
   top: 42%;
-  z-index: 99999;
+  z-index: 9;
   color: white;
   background: rgba(0, 0, 0, 0.8);
   padding: 10px;

@@ -75,9 +75,42 @@ body.blog {
 	}
 	.archive__load-more {
 		@include center(x);
-		bottom: 0;
+		bottom: 5px;
 	}
 }
+
+body.blog {
+	section.container {
+		hr {
+			opacity: 0;
+		}
+	}
+}
+
+ .archive__load-more {
+ 	font-weight: bold;
+// 	background-color: #fefefe;
+// 	border: 1px solid #B49A81;
+// 	margin-bottom: 0;
+// 	text-transform: uppercase;
+// 	font-weight: bold;
+// 	letter-spacing: 1px;
+// 	transition: 0.5s;
+// 	a {
+// 		color: #B49A81;
+// 		height: 100%;
+// 		width: 100%;
+// 		padding: 0.85em 1em;
+// 	}
+ }
+
+// .archive__load-more:hover {
+// 	background-color: #9e0a28;
+// 	a {
+// 		color: #fff;
+// 	}
+// }
+
 
 //************************
 //Single Magazine pages **
