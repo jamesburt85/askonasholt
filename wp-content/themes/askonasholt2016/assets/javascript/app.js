@@ -450,6 +450,13 @@ var map = null;
       }
     });
 
+    $(function() {
+      if( $('body').hasClass('single-tours-projects') ){
+        $(window).scroll(sticky_relocate);
+        sticky_relocate();
+      }
+    });
+
 
 
 
