@@ -126,6 +126,7 @@ if ($acf_fields['flexible_content']) {
 					<!-- <div class="row"> -->
 						<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image gallery</h4>
 					
+					<div class="image-gallery row" id="image-gallery">
 						<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
 							<div class="multiple-items">
 						    <?php
@@ -150,7 +151,7 @@ if ($acf_fields['flexible_content']) {
 							</div>
 						</div>
 
-				<!-- 	</div> -->
+					</div>
 				
 
 
@@ -459,7 +460,7 @@ if ($acf_fields['flexible_content']) {
 			#Press Section
 			case 'press': ?>
 				<!-- <div class="row"> -->
-					<div class="press-row">
+					<div class="press-row row">
 					
 						<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Press</h4>
 					
