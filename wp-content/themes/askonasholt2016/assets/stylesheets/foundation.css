@@ -9932,26 +9932,7 @@ body.blog section.container hr {
   opacity: 0; }
 
 .archive__load-more {
-  background-color: #fefefe;
-  border: 1px solid #B49A81;
-  margin-bottom: 0;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-  -webkit-transition: 0.5;
-  transition: 0.5; }
-  .archive__load-more a {
-    color: #B49A81;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    height: 100%;
-    width: 100%;
-    padding: 0.85em 1em; }
-
-.archive__load-more:hover {
-  background-color: #9e0a28; }
-  .archive__load-more:hover a {
-    color: #fff; }
+  font-weight: bold; }
 
 .single-magazine-category {
   display: -webkit-box;
