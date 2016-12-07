@@ -6662,9 +6662,18 @@ table.hover tbody tr:nth-of-type(even):hover {
   margin-bottom: 100vh; }
 
 .section-header {
-  padding: 25px 0;
+  width: 100%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  padding-top: 25px;
+  padding-bottom: 25px;
   color: #BA0C2F;
   font-family: "GeometricSlab703BT-Light"; }
+  @media screen and (min-width: 40em) {
+    .section-header {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
   .section-header a {
     font-size: 17px;
     color: inherit; }

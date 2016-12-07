@@ -1,7 +1,9 @@
 //General styles throughout site
 
 .section-header  {
-	padding: $sitepadding 0;
+    @include grid-column(12);
+    padding-top: $sitepadding;
+    padding-bottom: $sitepadding;
     color: $brand-red;
     font-family: $serif-font;
     a {
