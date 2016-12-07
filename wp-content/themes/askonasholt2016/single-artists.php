@@ -150,7 +150,7 @@ get_header(); ?>
 
 				'meta_query' => array(
 					array(
-						'key' => 'artist', // name of custom field
+						'key' => 'related_artist', // name of custom field
 						'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
 						'compare' => 'LIKE'
 					)
@@ -202,6 +202,8 @@ get_header(); ?>
 			*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
 			*/
 
+			// $theID = get_the_ID();
+
 			$tracks = get_posts(array(
 				'post_type' => 'post',
 
@@ -215,12 +217,17 @@ get_header(); ?>
 
 				'meta_query' => array(
 					array(
-						'key' => 'artist', // name of custom field
+						'key' => 'related_artist', // name of custom field
 						'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
 						'compare' => 'LIKE'
 					)
 				)
 			));
+
+			// echo "<pre>";
+			// the_ID();
+			// print_r($tracks);
+			// echo "</pre>";
 
 			?>
 			<?php if( !empty($tracks) ): ?>

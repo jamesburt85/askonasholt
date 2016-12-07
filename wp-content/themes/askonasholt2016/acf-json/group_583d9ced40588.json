@@ -5,7 +5,7 @@
         {
             "key": "field_583d9cfceebf9",
             "label": "Artist",
-            "name": "artist",
+            "name": "related_artist",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -45,5 +45,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480435394
+    "modified": 1481100082
 }

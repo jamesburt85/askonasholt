@@ -43,7 +43,7 @@
         {
             "key": "field_5835a2104b792",
             "label": "Artist",
-            "name": "artist",
+            "name": "related_artist",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -59,7 +59,6 @@
             "taxonomy": [],
             "filters": [
                 "search",
-                "post_type",
                 "taxonomy"
             ],
             "elements": "",
@@ -123,5 +122,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1479980402
+    "modified": 1481099988
 }
