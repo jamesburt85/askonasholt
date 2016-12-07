@@ -64,7 +64,8 @@ header#masthead {
 nav#site-navigation {
     // max-width: 75rem;
     @include grid-row();
-    margin: 0 auto;
+    // margin: 0 auto;
+    margin: 0 2em; // adding some padding
     line-height: $header-height;
     // /position: relative;
 

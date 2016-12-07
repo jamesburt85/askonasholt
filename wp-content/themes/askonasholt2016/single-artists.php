@@ -128,7 +128,7 @@ get_header(); ?>
 	<div class="video-audio-area" id="video-audio">
 			
 		<div class="row">
-			<h4 class="section-header">Video &amp; Audio</h4>
+			<h4 class="section-header small-12 columns">Video &amp; Audio</h4>
 
 			<?php 
 
