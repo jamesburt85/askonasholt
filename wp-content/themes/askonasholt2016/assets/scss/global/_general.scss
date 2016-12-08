@@ -4,6 +4,7 @@
 	padding: $sitepadding 0;
     color: $brand-red;
     font-family: $serif-font;
+    @include grid-column(12);
     a {
         font-size: 17px;
         color: inherit;

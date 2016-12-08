@@ -105,7 +105,7 @@
 </div> -->
 
 	<div id="sticky-anchor"></div>
-	<ul class="single-page-nav" id="sticky">
+	<ul class="single-page-nav show-for-medium" id="sticky">
 		
 		<li class="nav-title">
 			<?php the_title(); ?>
@@ -124,7 +124,7 @@
 		</li>
 
 		
-		<button class="enquiry-button">
+		<button class="enquiry-button show-for-large">
 			<a href="mailto:<?php echo $artist_email; ?>?Subject=Enquiry">
 				Make enquiry
 			</a>

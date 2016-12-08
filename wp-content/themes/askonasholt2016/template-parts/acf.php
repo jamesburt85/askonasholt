@@ -124,9 +124,11 @@ if ($acf_fields['flexible_content']) {
 			case 'image_gallery': ?>
 				
 					<!-- <div class="row"> -->
-						<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image gallery</h4>
-					
+
 					<div class="image-gallery row" id="image-gallery">
+						
+						<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image gallery</h4>
+
 						<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
 							<div class="multiple-items">
 						    <?php

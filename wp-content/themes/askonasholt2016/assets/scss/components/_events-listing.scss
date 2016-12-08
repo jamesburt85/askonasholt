@@ -20,3 +20,18 @@
 		font-weight: bold;
 	}
 }
+
+body.post-type-archive-events {
+	ul.accordion li.accordion-item .accordion-title {
+	    display: flex;
+	}
+}
+
+.single-online {
+	.artist-list {
+		display: block;
+		.side-bar-artist {
+		    display: flex;
+		}
+	}
+}
