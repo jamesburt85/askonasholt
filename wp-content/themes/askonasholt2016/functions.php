@@ -282,6 +282,23 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
 
 
+      //**************************************************
+      // Cookie to only show new users the Splash page
+      //**************************************************
+
+      // function o99_set_newvisitor_cookie() {
+      //     if ( !is_admin() && !isset($_COOKIE['sitename_newvisitor'])) {
+      //         setcookie('sitename_newvisitor', 1, time()+3600*24*100, COOKIEPATH, COOKIE_DOMAIN, false);
+      //     }
+      // }
+      // add_action( 'init', 'o99_set_newvisitor_cookie');
+
+      // if (isset($_COOKIE['sitename_newvisitor'])) {
+      //      echo 'Welcome back!'; or redirect using wp_redirect( 'some_url/' ); exit;
+      // }
+      // else {
+      //      echo 'Hello new visitor!'; // or redirect using wp_redirect( home_url() ); exit;
+      // }
 
 
 
