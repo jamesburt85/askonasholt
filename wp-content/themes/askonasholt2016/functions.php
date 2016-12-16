@@ -283,25 +283,38 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
 
       //**************************************************
-      // Cookie to only show new users the Splash page
+      // Set Cookie and if cookie count is more than 'X', redirect to homepage... 
       //**************************************************
 
-      // function o99_set_newvisitor_cookie() {
-      //     if ( !is_admin() && !isset($_COOKIE['sitename_newvisitor'])) {
-      //         setcookie('sitename_newvisitor', 1, time()+3600*24*100, COOKIEPATH, COOKIE_DOMAIN, false);
-      //     }
-      // }
-      // add_action( 'init', 'o99_set_newvisitor_cookie');
 
-      // if (isset($_COOKIE['sitename_newvisitor'])) {
-      //      echo 'Welcome back!'; or redirect using wp_redirect( 'some_url/' ); exit;
-      // }
-      // else {
-      //      echo 'Hello new visitor!'; // or redirect using wp_redirect( home_url() ); exit;
-      // }
+        add_action( 'template_redirect', 'my_cookie_redirect' );
+
+        function my_cookie_redirect() {
+            // if the cookie count is greater or equal to 3 and we're on the splash page...
+            if ($_COOKIE['number_of_visits'] >= 3 && is_front_page()) {
+                $homeID = get_field('homepage', 'option');
+                wp_redirect( get_permalink($homeID) );
+                exit;
+            }
+        }
 
 
 
+        add_action( 'init', 'num_visits_cookie' );
+
+        function num_visits_cookie() {
+            if( !is_admin() && !isset($_COOKIE['number_of_visits'])){
+                // new visitor! set a new cookie!
+                $cookieCount = 1;
+                setcookie( 'number_of_visits', $cookieCount, time()+3600*24*100, COOKIEPATH, COOKIE_DOMAIN );
+            } else {
+                // get cookie count
+                $cookieCount = $_COOKIE['number_of_visits'];
+                $cookieCount++;
+                // and set this new number in the cookie count...
+                setcookie( 'number_of_visits', $cookieCount, time()+3600*24*100, COOKIEPATH, COOKIE_DOMAIN );
+            }
+        }
 
 
 
