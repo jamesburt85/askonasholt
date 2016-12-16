@@ -667,6 +667,91 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "58541aa2b00c0",
+                    "name": "discography",
+                    "label": "Discography",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_58541aacb00c1",
+                            "label": "Discography details",
+                            "name": "discography_details",
+                            "type": "repeater",
+                            "instructions": "Enter a link and the name of the link, i.e Amazon, Spotify etc.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": "",
+                            "max": "",
+                            "layout": "table",
+                            "button_label": "Add Row",
+                            "sub_fields": [
+                                {
+                                    "key": "field_58541ad4b00c2",
+                                    "label": "Link Title",
+                                    "name": "link_title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_58541ae4b00c3",
+                                    "label": "Link destination",
+                                    "name": "link_destination",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_58541bfadc4a8",
+                            "label": "Unique Section Name",
+                            "name": "unique_id",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -716,5 +801,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480695672
+    "modified": 1481907214
 }

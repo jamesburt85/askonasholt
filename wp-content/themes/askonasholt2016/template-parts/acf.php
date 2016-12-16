@@ -529,6 +529,31 @@ if ($acf_fields['flexible_content']) {
 			<?php
 			break;
 
+			#Individual Artist's Discography Section
+			case 'discography': ?>
+				
+				<div class="row">
+					<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Discography</h4>
+				</div>
+
+				<div class="discography row">
+						
+					<?php
+					# Loop through the sections
+					foreach ($section['discography_details'] as $discography) { ?>
+
+							<div class="">
+								<a target="_blank" href="<?php echo $discography['link_destination']; ?>"><?php echo $discography['link_title']; ?>
+								</a>
+							</div>	
+
+					<?php } ?>
+
+				</div>
+
+			<?php
+			break;
+
 
 
 			#Audio / Music block
