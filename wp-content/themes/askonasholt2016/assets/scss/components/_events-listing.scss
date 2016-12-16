@@ -20,3 +20,12 @@
 		font-weight: bold;
 	}
 }
+
+.single-online {
+	.artist-list {
+		display: block;
+		.side-bar-artist {
+		    display: flex;
+		}
+	}
+}

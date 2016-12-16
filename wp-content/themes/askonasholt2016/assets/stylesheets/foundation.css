@@ -6662,14 +6662,13 @@ table.hover tbody tr:nth-of-type(even):hover {
   margin-bottom: 100vh; }
 
 .section-header {
+  padding: 25px 0;
+  color: #BA0C2F;
+  font-family: "GeometricSlab703BT-Light";
   width: 100%;
   float: left;
   padding-left: 0.625rem;
-  padding-right: 0.625rem;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  color: #BA0C2F;
-  font-family: "GeometricSlab703BT-Light"; }
+  padding-right: 0.625rem; }
   @media screen and (min-width: 40em) {
     .section-header {
       padding-left: 0.9375rem;
@@ -11202,7 +11201,9 @@ body.post-type-archive-online .archive__load-more {
 .press-row {
   font-size: 19px;
   border-top: 1px solid; }
-  .press-row span.text_area_one, .press-row span.text_area_two, .press-row span.text_area_three {
+  .press-row span.text_area_one {
+    padding: 0 25px 0 0.9375rem; }
+  .press-row span.text_area_two, .press-row span.text_area_three {
     padding: 0 25px; }
   .press-row .press-details span:last-child {
     font-weight: bold; }
@@ -12793,6 +12794,8 @@ body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
   .tour-wrapper .tour-details {
     padding: 25px;
     float: right; }
+    .tour-wrapper .tour-details a.section-header {
+      padding-left: 0; }
 
 @media screen and (min-width: 64em) {
   .tour-wrapper {
@@ -12926,6 +12929,13 @@ body.single.single-artists .enquiry-button {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold; }
+
+.single-online .artist-list {
+  display: block; }
+  .single-online .artist-list .side-bar-artist {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
 
 .events-map {
   min-height: 50vh;
@@ -13485,14 +13495,11 @@ body.home {
 .single-tours-projects a.slick-slide img {
   padding: 10px; }
 
-.single-tours-projects .side-bar-artist {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-  .single-tours-projects .side-bar-artist img.circle-thumb {
-    margin-right: 25px; }
-  .single-tours-projects .side-bar-artist .side-bar-artist-name {
-    font-weight: bold; }
+.single-tours-projects .side-bar-artist img.circle-thumb {
+  margin-right: 25px; }
+
+.single-tours-projects .side-bar-artist .side-bar-artist-name {
+  font-weight: bold; }
 
 .image-source-link {
   color: #98C3D1; }
@@ -13557,10 +13564,13 @@ img.circle-thumb {
   display: -ms-flexbox;
   display: flex; }
 
+.press-details {
+  display: inline-block; }
+
 .side-bar-artist {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   line-height: 60px; }
   .side-bar-artist img.circle-thumb {
     margin-right: 25px; }
@@ -13578,9 +13588,6 @@ ul.accordion {
     position: relative;
     border: none;
     border-bottom: 0;
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
     line-height: 60px !important; }
   ul.accordion li.accordion-item .accordion-title:hover, ul.accordion li.accordion-item .accordion-title:focus {
     background-color: transparent; }
@@ -13591,6 +13598,11 @@ ul.accordion {
   ul.accordion .accordion-content {
     color: initial;
     border: none; }
+
+body.post-type-archive-events ul.accordion li.accordion-item .accordion-title {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
 
 .accordion-title:before {
   content: '^';

@@ -60,7 +60,7 @@
   
   //related artist details
   .side-bar-artist {
-      display: flex;
+      //display: flex;
       img.circle-thumb {
           margin-right: $sitepadding;
       }
@@ -166,8 +166,12 @@ img.circle-thumb {
     }
 }
 
+.press-details {
+  display: inline-block;
+}
+
 .side-bar-artist {
-    display: flex;
+    display: inline-flex;
     line-height: 60px;
     img.circle-thumb {
         margin-right: $sitepadding;
@@ -191,9 +195,9 @@ ul.accordion {
         position: relative;
         border: none;
         border-bottom: 0;
-        display: -webkit-box !important;
-        display: -ms-flexbox !important;
-        display: flex !important;
+        // display: -webkit-box !important;
+        // display: -ms-flexbox !important;
+        // display: flex !important;
         line-height: 60px !important;
     }
     .accordion-title:hover, .accordion-title:focus {
@@ -209,6 +213,14 @@ ul.accordion {
   .accordion-content {
     color: initial;
     border: none;
+  }
+}
+
+body.post-type-archive-events {
+  ul.accordion {
+    li.accordion-item .accordion-title {
+      display: flex !important;
+    }
   }
 }
 

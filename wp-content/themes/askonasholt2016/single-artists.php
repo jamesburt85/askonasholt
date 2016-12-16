@@ -128,7 +128,7 @@ get_header(); ?>
 	<div class="video-audio-area" id="video-audio">
 			
 		<div class="row">
-			<h4 class="section-header">Video &amp; Audio</h4>
+			<h4 class="section-header small-12 columns">Video &amp; Audio</h4>
 
 			<?php 
 
@@ -260,14 +260,12 @@ get_header(); ?>
 		<!-- Do as above section, getting posts related to artist. May have to add relational field in ACF first -->
 	</div>
 
+	
 
+	<!-- using ACF Flexible content instead of the_content  -->
+	<?php $acf_fields = get_fields(); ?>
+	<?php include(locate_template('template-parts/acf.php')); ?>
 
-
-	<!-- <div class="image-gallery row" id="image-gallery"> -->
-		<!-- using ACF Flexible content instead of the_content  -->
-		<?php $acf_fields = get_fields(); ?>
-		<?php include(locate_template('template-parts/acf.php')); ?>
-	<!-- </div> -->
 
 
 	<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>

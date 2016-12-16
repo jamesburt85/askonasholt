@@ -1,7 +1,10 @@
 .press-row {
 	font-size: 19px;
-	border-top: 1px solid ;
-	span.text_area_one, span.text_area_two, span.text_area_three {
+	border-top: 1px solid;
+	span.text_area_one {
+		padding: 0 $sitepadding 0 0.9375rem;
+	}
+	span.text_area_two, span.text_area_three {
 		padding: 0 $sitepadding;
 	}
 	.press-details span:last-child {

@@ -31,6 +31,9 @@
 	.tour-details {
 		padding: $sitepadding;
 		float: right;
+    a.section-header {
+      padding-left: 0;
+    }
 	}
 }
 
