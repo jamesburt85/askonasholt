@@ -12794,6 +12794,8 @@ body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
   .tour-wrapper .tour-details {
     padding: 25px;
     float: right; }
+    .tour-wrapper .tour-details a.section-header {
+      padding-left: 0; }
 
 @media screen and (min-width: 64em) {
   .tour-wrapper {
@@ -12927,11 +12929,6 @@ body.single.single-artists .enquiry-button {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold; }
-
-body.post-type-archive-events ul.accordion li.accordion-item .accordion-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
 
 .single-online .artist-list {
   display: block; }
@@ -13601,6 +13598,11 @@ ul.accordion {
   ul.accordion .accordion-content {
     color: initial;
     border: none; }
+
+body.post-type-archive-events ul.accordion li.accordion-item .accordion-title {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
 
 .accordion-title:before {
   content: '^';

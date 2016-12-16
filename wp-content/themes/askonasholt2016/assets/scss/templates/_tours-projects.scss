@@ -216,6 +216,14 @@ ul.accordion {
   }
 }
 
+body.post-type-archive-events {
+  ul.accordion {
+    li.accordion-item .accordion-title {
+      display: flex !important;
+    }
+  }
+}
+
 .accordion-title:before {
   content: '^';
   -ms-transform: rotate(180deg); /* IE 9 */
