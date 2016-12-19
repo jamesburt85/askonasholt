@@ -14,7 +14,7 @@
       margin: 0;
       padding: 0;
     }
-    .menu > li {
+    li {
         display: block;
         vertical-align: middle;
         padding: 0 0 1.4rem 1rem !important;
@@ -25,6 +25,7 @@
     h6 {
       padding: 0 0 1.4rem 1rem !important;
       margin-bottom: 0;
+      line-height: 1;
     }
     a {
       color: inherit;
@@ -56,11 +57,17 @@
   img.attachment-full.size-full {
       max-width: 150px;
   }
-  .text-widget > li {
-      display: block;
-      padding: 0.7rem 1rem;
-      line-height: 1;
+
+}
+
+article#widget_text {
+  div.text-widget {
+    ul li {
+      display: block !important;
+      vertical-align: middle !important;
+      padding: 0 0 1.4rem 1rem !important;
     }
+  }
 }
 
 

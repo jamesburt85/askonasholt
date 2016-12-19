@@ -6662,17 +6662,10 @@ table.hover tbody tr:nth-of-type(even):hover {
   margin-bottom: 100vh; }
 
 .section-header {
-  padding: 25px 0;
+  padding-top: 25px;
+  padding-bottom: 25px;
   color: #BA0C2F;
-  font-family: "GeometricSlab703BT-Light";
-  width: 100%;
-  float: left;
-  padding-left: 0.625rem;
-  padding-right: 0.625rem; }
-  @media screen and (min-width: 40em) {
-    .section-header {
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; } }
+  font-family: "GeometricSlab703BT-Light"; }
   .section-header a {
     font-size: 17px;
     color: inherit; }
@@ -9507,15 +9500,16 @@ pre {
       list-style-type: none;
       margin: 0;
       padding: 0; }
-    #footer-container #footer .menu > li {
+    #footer-container #footer li {
       display: block;
       vertical-align: middle;
       padding: 0 0 1.4rem 1rem !important; }
-      #footer-container #footer .menu > li a {
+      #footer-container #footer li a {
         padding: 0; }
     #footer-container #footer h6 {
       padding: 0 0 1.4rem 1rem !important;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      line-height: 1; }
     #footer-container #footer a {
       color: inherit; }
     #footer-container #footer .footer-logo {
@@ -9535,10 +9529,11 @@ pre {
       font-weight: 200; }
   #footer-container img.attachment-full.size-full {
     max-width: 150px; }
-  #footer-container .text-widget > li {
-    display: block;
-    padding: 0.7rem 1rem;
-    line-height: 1; }
+
+article#widget_text div.text-widget ul li {
+  display: block !important;
+  vertical-align: middle !important;
+  padding: 0 0 1.4rem 1rem !important; }
 
 @media screen and (max-width: 39.9375em) {
   #footer-container, .textwidget, .widget_nav_men {
@@ -9605,7 +9600,7 @@ body#tinymce {
 
 header#masthead {
   z-index: 5;
-  border-bottom: 1px solid gray; }
+  border-bottom: 1px solid #cccccc; }
   header#masthead .top-bar-right {
     float: left;
     padding-left: 1em; }
@@ -9634,7 +9629,9 @@ header#masthead {
     color: black;
     padding: 0 15px; }
   header#masthead i.fa-2x {
-    font-size: 1.3em; }
+    font-size: 1.3em;
+    vertical-align: middle;
+    line-height: 135px; }
   header#masthead .header-social-area.show-for-medium {
     float: left; }
 
@@ -9884,15 +9881,12 @@ ul.single-page-nav {
       font-weight: bold;
       color: #d7d4c5;
       -webkit-transition: 0.5s;
-      transition: 0.5s; }
+      transition: 0.5s;
+      margin-top: 1em; }
       .magazine-item .magazine-item-container .read-more span.eye {
         opacity: 0;
         -webkit-transition: 0.5s;
         transition: 0.5s; }
-  .magazine-item .magazine-item-container:hover .read-more {
-    color: #BA0C2F; }
-    .magazine-item .magazine-item-container:hover .read-more span.eye {
-      opacity: 1; }
   .magazine-item .magazine-item-thumb {
     height: 200px;
     background-position: center center;
@@ -9924,6 +9918,10 @@ ul.single-page-nav {
 .magazine-item:hover {
   -webkit-box-shadow: 6px 6px 5px 0px #dbdbdb;
   box-shadow: 6px 6px 5px 0px #dbdbdb; }
+  .magazine-item:hover .read-more {
+    color: #BA0C2F; }
+    .magazine-item:hover .read-more span.eye {
+      opacity: 1; }
 
 body.blog article.main-content {
   position: relative; }
@@ -11523,8 +11521,7 @@ i.fa.fa-angle-right.slick-arrow {
 
 button.hero-button {
   padding: 10px;
-  margin-top: 5px;
-  font-weight: bold; }
+  margin-top: 5px; }
   button.hero-button a {
     color: white;
     padding: 10px; }
@@ -11537,7 +11534,7 @@ button.hero-button {
 
 @media screen and (min-width: 40em) {
   .hero-text {
-    max-width: 50%; } }
+    max-width: 80%; } }
 
 .text-banner-wrapper {
   max-width: 100%;
@@ -12808,7 +12805,7 @@ body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
 
 body.single.single-artists .artist-header.container {
   max-width: 100%;
-  background-image: url("../images/bg-general-official.jpg");
+  background-image: url("../images/bg-general.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   border-bottom: 0;
@@ -13233,7 +13230,8 @@ div.staff-header li {
   .header-row a.view-link {
     font-weight: bold;
     line-height: 78px;
-    color: initial; }
+    color: initial;
+    font-family: "Brown-Pro-Light", AdobeBlank; }
 
 @media screen and (min-width: 40em) {
   .header-row a.view-link {
@@ -13400,6 +13398,8 @@ body.home {
     body.home .splash-page-hero svg {
       left: 2em;
       position: absolute; }
+    body.home .splash-page-hero span.hero-blurb p {
+      line-height: 1.6; }
   body.home header#masthead, body.home div#footer-container {
     display: none; }
   body.home .continue-link {
@@ -13411,8 +13411,7 @@ body.home {
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding: 25px;
-    font-weight: bold; }
+    padding: 25px; }
     body.home .continue-link a {
       color: #FFFFFF; }
 

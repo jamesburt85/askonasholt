@@ -5,20 +5,21 @@
 		<?php if ( has_post_thumbnail() ) { ?>
 
 			<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+			<a href="<?php the_permalink(); ?>">
 			<div class="magazine-item-thumb" style="background-image: url('<?php echo $thumb['0'];?>')"></div>
 
 
 		<?php } 
 
 		else { ?>
-			
+			<a href="<?php the_permalink(); ?>">
 			<div class="magazine-item-thumb" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/images/default.jpg');"></div>
 
 		<?php } ?>
 
 
 		<div class="magazine-item-container">
-			<a href="<?php the_permalink(); ?>">
+			
 				<span class="magazine-category"><?php //echo $main_category; ?>
 					<!-- *** Details in functions.php for getting taxonomy/terms *** -->
 					<span class="category">
@@ -35,8 +36,8 @@
 
 						?>
 
-					<?php echo $css_slug; ?></span> &nbsp;
-					<?php the_date('d-m-y'); ?>
+					<?php echo $css_slug; ?></span>&nbsp;-
+					<?php the_date('d M y'); ?>
 				</span>
 
 				<?php //foundationpress_entry_meta(); ?>
@@ -48,7 +49,7 @@
 				
 				<div class="read-more">Read &nbsp;
 				
-					<span class="eye">
+<!-- 					<span class="eye">
 						<svg width="18px" height="12px" viewBox="-1 -1 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 						    <defs></defs>
 						    <g id="Group-20" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -56,7 +57,7 @@
 						        <circle id="Oval-4" fill="#BA0C2F" cx="8" cy="5" r="3"></circle>
 						    </g>
 						</svg>
-					</span>
+					</span> -->
 
 				</div>
 			</a>

@@ -17,17 +17,10 @@
 			font-weight: bold;
 			color: #d7d4c5;
 			transition: 0.5s;
+			margin-top: 1em;
 			span.eye {
 				opacity: 0;
 				transition: 0.5s;
-			}
-		}
-	}
-	.magazine-item-container:hover {
-		.read-more {
-			color: $brand-red;
-			span.eye {
-				opacity: 1;
 			}
 		}
 	}
@@ -67,6 +60,13 @@
 	-webkit-box-shadow: 6px 6px 5px 0px rgba(219,219,219,1);
 	-moz-box-shadow: 6px 6px 5px 0px rgba(219,219,219,1);
 	box-shadow: 6px 6px 5px 0px rgba(219,219,219,1);
+
+	.read-more {
+		color: $brand-red;
+		span.eye {
+			opacity: 1;
+		}
+	}
 }
 
 body.blog {

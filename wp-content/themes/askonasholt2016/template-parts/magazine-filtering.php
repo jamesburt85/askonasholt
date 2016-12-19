@@ -1,4 +1,4 @@
-<div class="filtering-block magazine-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general-official.jpg');">
+<div class="filtering-block magazine-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg');">
 	
 	<header class="filter-header">
 		<h2 class="hero-heading">Magazine</h2>

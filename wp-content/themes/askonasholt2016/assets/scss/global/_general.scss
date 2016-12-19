@@ -1,12 +1,12 @@
 //General styles throughout site
 
 .section-header  {
-    @include grid-column(12);
+    //@include grid-column(12);
     padding-top: $sitepadding;
     padding-bottom: $sitepadding;
     color: $brand-red;
     font-family: $serif-font;
-    @include grid-column(12);
+    //@include grid-column(12);
     a {
         font-size: 17px;
         color: inherit;

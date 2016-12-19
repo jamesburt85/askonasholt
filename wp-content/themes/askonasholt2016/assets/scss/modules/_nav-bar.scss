@@ -3,8 +3,7 @@ header#masthead {
 
 	z-index: 5;
 	// position: absolute;
-
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #cccccc;
 
 	.top-bar-right {
 	    float: left;
@@ -48,7 +47,9 @@ header#masthead {
 	}
 	i.fa-2x {
 	    font-size: 1.3em;
-	    // line-height: $header-height;
+	    vertical-align: middle;
+	    //line-height: 135px;
+	    line-height: $header-height;
 	}
 	//search-area
 	// .header-search {
