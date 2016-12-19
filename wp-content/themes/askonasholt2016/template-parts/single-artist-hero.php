@@ -1,7 +1,6 @@
 <!-- Hero for single artists page -->
 
 <?php 
-
 	// get VARS
 	// $artist_photo = get_field('artist_photo');
 	$main_category = get_field('main_category');

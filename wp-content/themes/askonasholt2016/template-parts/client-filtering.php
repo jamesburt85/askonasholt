@@ -4,6 +4,7 @@
 	<header class="filter-header">
 		<h2>Clients</h2>
 		<p>Optional Description</p>
+
 		<?php //foundationpress_entry_meta(); ?>
 	</header>
 
@@ -22,7 +23,7 @@
 				        'orderby' => 'name',
 				        'title_li' => '',
 				        'exclude' => 1, // don't show uncategorised
-				        'show_option_all' => 'show all',
+				        'show_option_all' => 'all',
 				        'walker'       => new Walker_Category_Find_Parents(),
 				    ) );
 					// $args = array(

@@ -100,26 +100,6 @@ if ($acf_fields['flexible_content']) {
 			break;
 
 
-
-			#Video
-			case 'video': ?>
-
-				<div class="row">
-					<div class="small-2 columns">
-						<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
-					</div>
-					<div class="small-9 columns">
-						<div class="row large-video-row">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
-						</div>
-					</div>
-				</div>
-
-			<?php
-			break;
-
-
-
 			#Image_Gallery
 			case 'image_gallery': ?>
 				
@@ -604,8 +584,71 @@ if ($acf_fields['flexible_content']) {
 			<?php
 			break;
 
+			#Audio / Music block
+			case 'video': ?>
+
+				<div class="row">
+					
+					<?php 
+					print_r( $section['video'] );
+					$video = $section['video'];
+
+					?>
+
+					<?php 
+
+					  // Query Args
+					  $args = array(
+
+					    'post_type' => 'post', // this might need to 
+					    'post__in'  => $video,
+					    
+					  );
+
+					  // The Query
+					  $the_query = new WP_Query( $args );
+
+					  // The Loop
+					  if ( $the_query->have_posts() ) {
+
+					    while ( $the_query->have_posts() ) {
+
+					      $the_query->the_post();
+					      get_template_part( 'template-parts/video-player' );
+
+					    }
+
+					    /* Restore original Post Data */
+					    wp_reset_postdata();
+					  } else {
+					    // no posts found
+					  }
+					?>
+
+				</div>
+
+				
+
+			<?php
+			break;
 
 
+			#Video
+			//case 'video': ?>
+
+<!-- 				<div class="row">
+					<div class="small-2 columns">
+						<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
+					</div>
+					<div class="small-9 columns">
+						<div class="row large-video-row">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/hello<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div> -->
+
+			<?php
+			//break;
 
 				
 

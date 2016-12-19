@@ -215,7 +215,7 @@ role="main"> -->
         <h3 class="section-header">
           Latest Video &amp; Audio &nbsp;
         </h3>
-          <a class="view-link" href="<?php echo get_site_url(); ?>/magazine">View all &nbsp;
+          <a class="view-link" href="<?php echo get_site_url(); ?>/the-green-room">View all &nbsp;
           <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
                     <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
@@ -235,8 +235,10 @@ role="main"> -->
       */
       $videos = get_posts(array(
         'post_type' => 'post',
-        'category_slug' => 'audio',
+        'category_slug' => 'video',
         'posts_per_page' => 4,
+        'category'         => 'video',
+        'category_name'    => 'video',
 
         // 'meta_query' => array(
         //   array(
@@ -262,15 +264,9 @@ role="main"> -->
               <h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
             </div> -->
             <div class="small-12 medium-6 large-3 columns artist-video-area">
-              <div class="row large-video-row">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
-              </div>
-              <div class="video-description">
-                <?php echo wpdocs_custom_taxonomies_terms_links(); ?>
-                <?php the_date('d-m-y'); ?>
-                <?php the_title(); ?>
-                <span class="magazine-item-copy"><?php the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
-              </div>
+             
+              <?php get_template_part( 'template-parts/video-player' ); ?>
+
             </div>
 
           <?php
@@ -294,7 +290,10 @@ role="main"> -->
 
       $tracks = get_posts(array(
         'post_type' => 'post',
+        'category_slug' => 'audio',
         'posts_per_page' => 3,
+        'category'         => 'audio',
+        'category_name'    => 'audio',
 
         // 'meta_query' => array(
         //   array(
