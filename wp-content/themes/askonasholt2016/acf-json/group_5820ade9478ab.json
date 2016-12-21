@@ -751,6 +751,34 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "585abaea18fa0",
+                    "name": "free_text_area",
+                    "label": "Free Text Area",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_585abaf418fa1",
+                            "label": "Free Text",
+                            "name": "free_text",
+                            "type": "wysiwyg",
+                            "instructions": "Insert any content text you wish",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -800,5 +828,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1482150388
+    "modified": 1482341568
 }

@@ -11132,10 +11132,19 @@ a.pswp__share--download:hover {
 .my-gallery figure {
   display: block;
   float: left;
-  margin: 0 5px 5px 0; }
+  margin: 5px 5px 5px 5px; }
 
 .my-gallery figcaption {
   display: none; }
+
+div#image-gallery {
+  padding-bottom: 50px;
+  border-top: 1px solid #ccc; }
+  div#image-gallery div.gallery-image {
+    height: 200px;
+    -webkit-background-size: cover;
+            background-size: cover;
+    background-position: center; }
 
 .mc4wp-form-fields {
   display: -webkit-box;

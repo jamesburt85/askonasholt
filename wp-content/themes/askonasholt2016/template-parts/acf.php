@@ -121,8 +121,11 @@ if ($acf_fields['flexible_content']) {
 								
 								<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 								    <a href="<?php echo $repeater['image']['url']; ?>" itemprop="contentUrl" data-size="<?php echo $repeater['image']['width'] ?>x<?php echo $repeater['image']['height'] ?>">
-								       <img src="<?php echo $repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" />
-								      <!--   <div itemprop="thumbnail" alt="Image description"  style="background-image: url('<?php echo $repeater['image']['sizes']['large']; ?>');"></div> -->
+							       	
+								      <!--  	<img src="<?php echo $repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" /> -->
+
+								      	<div class="gallery-image" itemprop="thumbnail" alt="Image description"  style="background-image: url('<?php echo $repeater['image']['sizes']['large']; ?>');"></div>
+
 								    </a>
 								    <figcaption itemprop="caption description">Image caption</figcaption>
 								</figure>
@@ -534,6 +537,16 @@ if ($acf_fields['flexible_content']) {
 			<?php
 			break;
 
+
+			#Individual Artist's Discography Section
+			case 'free_text_area': ?>
+				
+				<div class="row">
+					<p class="free-text-area narrow-text"><?php echo $section['free_text'] ?></p>
+				</div>
+
+			<?php
+			break;
 
 
 			#Audio / Music block

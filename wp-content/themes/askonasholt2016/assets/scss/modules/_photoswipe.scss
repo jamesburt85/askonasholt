@@ -675,9 +675,26 @@
     .my-gallery figure {
       display: block;
       float: left;
-      margin: 0 5px 5px 0;
-      // width: 150px;
+      margin: 5px 5px 5px 5px;
+      // width: 150px ;
     }
     .my-gallery figcaption {
       display: none;
     }
+
+
+
+//***************************
+// JB Custom Styles *********
+//***************************
+div#image-gallery {
+    padding-bottom: 50px;
+    border-top: 1px solid #ccc;
+
+    div.gallery-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+}
