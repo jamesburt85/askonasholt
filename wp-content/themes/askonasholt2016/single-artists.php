@@ -1,4 +1,4 @@
-<?php
+	<?php
 /**
  * The template for displaying all single posts and attachments
  *
@@ -32,7 +32,7 @@ get_header(); ?>
 		$website = get_field('website');
 		$european_management = get_field('european_management');
 		$general_management = get_field('general_management');
-		//$contact_text_area = get_field('contact_text_area');
+		$contact_text_area = get_field('contact_text_area');
 	?>
 
 	<div class="bio-row row" id="intro">
@@ -105,15 +105,8 @@ get_header(); ?>
 								<?php }
 							} ?>
 
-				<!-- <p><?php //echo $contact_text_area; ?></p> -->
-				<br/>
-				<span class="side-bar-header">European Management</span>
-				<br/>
-				<span><?php echo $european_management; ?></span>
-				<br/>
-				<span class="side-bar-header">General Management</span>
-				<br/>
-				<span><?php echo $general_management; ?></span>				
+				<span><?php echo $contact_text_area; ?></span>
+				<br/>			
 
 
 		</div>

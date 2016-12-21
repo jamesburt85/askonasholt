@@ -251,6 +251,11 @@ div#video-audio {
 			margin: 0 auto;
 		}
 	}
+	body.page-template-home {
+		div#video-audio {
+			margin-top: $sitepadding-large;
+		}
+	}
 }
 
 

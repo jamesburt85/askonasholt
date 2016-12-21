@@ -113,6 +113,9 @@ role="main"> -->
 
         'post_type'   => 'events',
         'posts_per_page' => 4,
+        'meta_key'      => 'date',
+        'orderby'     => 'meta_value',
+        'order'       => 'ASC'
       );
 
       // The Query
@@ -132,6 +135,14 @@ role="main"> -->
               $venue = get_field('venue');
               $city = get_field('city');
               $more_info = get_field('more_info');
+
+              // if data isn't there, but some TBC info instead
+              if(!$date){      $date = 'date TBC'; }
+              if(!$time){      $time = 'time TBC'; }
+              if(!$venue){     $venue = 'venue TBC'; }
+              if(!$city){      $city = 'city TBC'; }
+              if(!$more_info){ $more_info = 'More Info Coming Soon...'; }
+
             ?>
 
           <div class="row show-for-large">
@@ -326,10 +337,10 @@ role="main"> -->
 
 
 
-      <footer>
+<!--       <footer>
           <?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
           <p><?php the_tags(); ?></p>
-      </footer>
+      </footer> -->
       <?php do_action( 'foundationpress_page_before_comments' ); ?>
       <?php comments_template(); ?>
       <?php do_action( 'foundationpress_page_after_comments' ); ?>

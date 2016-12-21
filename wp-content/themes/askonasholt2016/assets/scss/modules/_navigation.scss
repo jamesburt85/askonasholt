@@ -232,7 +232,7 @@
 
 
 
-
+//Adding triangle to dropdown from Nav
 ul.dropdown.menu.vertical.submenu.is-dropdown-submenu.first-sub:before {
   //position: absolute;
   content: "";
@@ -247,6 +247,11 @@ ul.dropdown.menu.vertical.submenu.is-dropdown-submenu.first-sub:before {
   z-index: 99;
   @include center(x);
 }
+
+
+//************************
+// MEDIA QUERIES *********
+//************************
 
 @include breakpoint(medium up) {
   header#masthead .top-bar .dropdown.menu .submenu li a {

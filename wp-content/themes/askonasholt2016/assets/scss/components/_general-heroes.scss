@@ -47,6 +47,29 @@ i.fa.fa-angle-right.slick-arrow {
 	cursor: pointer;
 }
 
+//Arrows on Single Artist slider
+i.fa.fa-angle-left.slick-arrow {
+	left: 0;
+	position: absolute;
+	top: 42%;
+	z-index: 9;
+	color: white;
+	background: rgba(186,12,47,0.8);
+	padding: 10px;
+	cursor: pointer;
+}
+
+i.fa.fa-angle-right.slick-arrow {
+	right: 0;
+	position: absolute;
+	top: 42%;
+	z-index: 9;
+	color: white;
+	background: rgba(186,12,47,0.8);
+	padding: 10px;
+	cursor: pointer;
+}
+
 
 button.hero-button {
 	padding: 10px;

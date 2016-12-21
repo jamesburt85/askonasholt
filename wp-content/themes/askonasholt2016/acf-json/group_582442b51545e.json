@@ -72,29 +72,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_583d87f7aa6be",
-            "label": "European Management",
-            "name": "european_management",
+            "key": "field_585aa7f889409",
+            "label": "Contact Text Area",
+            "name": "contact_text_area",
             "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1
-        },
-        {
-            "key": "field_583d880caa6bf",
-            "label": "General Management",
-            "name": "general_management",
-            "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "Add management details, email addresses etc.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -296,5 +278,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480859516
+    "modified": 1482336313
 }

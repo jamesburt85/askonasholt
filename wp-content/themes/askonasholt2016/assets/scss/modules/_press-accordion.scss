@@ -1,6 +1,6 @@
 .press-row {
 	font-size: 19px;
-	border-top: 1px solid;
+	border-top: 1px solid #cccccc;
 	span.text_area_one {
 		padding: 0 $sitepadding 0 0.9375rem;
 	}
@@ -11,7 +11,7 @@
 		font-weight: bold;
 	}
 	.press-details span:not(:last-child) {
-		border-right: 1px solid;
+		border-right: 1px solid #cccccc;
 	}
 	li.accordion-item {
 	    border-top: 1px solid #cccccc;
