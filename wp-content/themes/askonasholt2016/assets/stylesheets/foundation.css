@@ -9480,6 +9480,34 @@ pre {
 #mega-menu-wrap-top-bar-r #mega-menu-top-bar-r > li.mega-menu-item.mega-toggle-on > a.mega-menu-link, #mega-menu-wrap-top-bar-r #mega-menu-top-bar-r > li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-top-bar-r #mega-menu-top-bar-r > li.mega-menu-item > a.mega-menu-link:focus {
   background: transparent !important; }
 
+ul.dropdown.menu.vertical.submenu.is-dropdown-submenu.first-sub:before {
+  content: "";
+  display: block;
+  width: 16;
+  height: 16;
+  border: inset 12px;
+  border-color: transparent transparent #BA0C2F transparent;
+  border-bottom-style: solid;
+  position: absolute;
+  top: -22px;
+  z-index: 99;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
+
+@media screen and (min-width: 40em) {
+  header#masthead .top-bar .dropdown.menu .submenu li a {
+    vertical-align: middle;
+    line-height: 10px; }
+  header#masthead .top-bar .menu li.is-submenu-item {
+    border-bottom: 1px solid rgba(204, 204, 204, 0.4);
+    -webkit-transition: 0.5s;
+    transition: 0.5s; }
+  header#masthead .top-bar .menu li.is-submenu-item:hover {
+    background: #da183f; } }
+
 #footer-container {
   max-width: 100%;
   width: 100%;
