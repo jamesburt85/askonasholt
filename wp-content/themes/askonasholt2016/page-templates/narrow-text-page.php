@@ -16,7 +16,12 @@ get_header(); ?>
       </header> -->
       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
       <div class="entry-content">
-          <?php the_content(); ?>
+        <div class="row">
+          <div class="small-12 columns">
+            <?php the_content(); ?>
+          </div>
+        </div>
+          
       </div>
       <footer>
           <?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
