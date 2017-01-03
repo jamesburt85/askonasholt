@@ -526,8 +526,10 @@ if ($acf_fields['flexible_content']) {
 					foreach ($section['discography_details'] as $discography) { ?>
 
 							<div class="">
-								<a target="_blank" href="<?php echo $discography['link_destination']; ?>"><?php echo $discography['link_title']; ?>
-								</a>
+								<button class="normal-button">
+									<a target="_blank" href="<?php echo $discography['link_destination']; ?>"><?php echo $discography['link_title']; ?>
+									</a>
+								</button>
 							</div>	
 
 					<?php } ?>

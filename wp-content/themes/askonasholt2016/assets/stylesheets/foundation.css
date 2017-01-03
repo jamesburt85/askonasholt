@@ -9654,6 +9654,11 @@ nav#site-navigation {
     padding: 0;
     line-height: 135px; }
 
+.header-social-area {
+  width: auto;
+  margin: 0 auto;
+  text-align: center; }
+
 .menu .active > a {
   color: #BA0C2F;
   background: transparent !important; }
@@ -9685,6 +9690,13 @@ nav#site-navigation {
     height: 135px; }
   nav#site-navigation {
     position: relative; } }
+
+.menu-item.menu-item-has-children.is-dropdown-submenu-parent:after {
+  content: url("../images/down-arrow-small.png");
+  display: block;
+  position: absolute;
+  top: 42%;
+  right: 0; }
 
 .filtering-block {
   background-color: #F2F1ED;
@@ -11229,6 +11241,24 @@ body.post-type-archive-online .archive__load-more {
           box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2) inset;
   border-radius: 3px;
   border: none; }
+
+.normal-button a {
+  background-color: #fefefe;
+  color: #B49A81;
+  border: 1px solid #B49A81;
+  color: #B49A81;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  padding: 0.85em 1em;
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+
+.normal-button a:hover {
+  background-color: #BA0C2F;
+  color: #ffffff; }
 
 #featured-hero {
   -webkit-background-size: cover;

@@ -63,10 +63,10 @@ get_header(); ?>
 									<div class="side-bar-artist"> <?php
 										# Get featured image id
 										$thumb_id = get_post_thumbnail_id($artist_id);
-										# If theere is not a featured image
+										# If there is not a featured image
 										if ( empty( $thumb_id)) {
 											$thumb_url = 'http://placehold.it/150x150';
-										# Yeay, we haven image ID
+										# Yeay, we have an image ID
 										} else {
 											# Get the image from the image ID
 											$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
@@ -83,14 +83,15 @@ get_header(); ?>
 										
 										<div class="side-bar-artist-details">
 											<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?>
-													<a href="#">&nbsp;
-												        <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-												            <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
-												                <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
-												                <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
-												            </g>
-												        </svg>
-												      </a>
+											
+											<a href="#">&nbsp;
+										        <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										            <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+										                <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+										                <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+										            </g>
+										        </svg>
+										      </a>
 											</span><br/>
 										
 											<?php # If this artist has an artist-type
