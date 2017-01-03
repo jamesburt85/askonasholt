@@ -9372,6 +9372,9 @@ pre {
 .top-bar .menu a:active, .top-bar .current-menu-item a {
   color: #BA0C2F !important; }
 
+.top-bar .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item {
+  color: white; }
+
 .top-bar .menu > li:not(.menu-text) > a {
   padding: 1rem; }
 
@@ -10892,7 +10895,7 @@ a.pswp__share--download:hover {
   color: #BBB; }
 
 .pswp__caption__center {
-  text-align: left;
+  text-align: center;
   max-width: 420px;
   margin: 0 auto;
   font-size: 13px;
@@ -11218,10 +11221,9 @@ body.post-type-archive-online .archive__load-more {
     margin-right: 10px; }
 
 .press-row {
-  font-size: 19px;
-  border-top: 1px solid #cccccc; }
+  font-size: 19px; }
   .press-row span.text_area_one {
-    padding: 0 25px 0 0; }
+    padding: 0 25px 0 0.9375rem; }
   .press-row span.text_area_two, .press-row span.text_area_three {
     padding: 0 25px; }
   .press-row .press-details span:last-child {

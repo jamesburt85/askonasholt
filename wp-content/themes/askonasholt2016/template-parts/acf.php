@@ -122,12 +122,14 @@ if ($acf_fields['flexible_content']) {
 								<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 								    <a href="<?php echo $repeater['image']['url']; ?>" itemprop="contentUrl" data-size="<?php echo $repeater['image']['width'] ?>x<?php echo $repeater['image']['height'] ?>">
 							       	
-								      <!--  	<img src="<?php echo $repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" /> -->
+								        	<img src="<?php echo $repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" />
 
-								      	<div class="gallery-image" itemprop="thumbnail" alt="Image description"  style="background-image: url('<?php echo $repeater['image']['sizes']['large']; ?>');"></div>
+								      <!-- 	<div class="gallery-image" itemprop="thumbnail" alt="Image description"  style="background-image: url('<?php echo $repeater['image']['sizes']['large']; ?>');"></div> -->
 
 								    </a>
-								    <figcaption itemprop="caption description">Image caption</figcaption>
+								    <figcaption itemprop="caption description">
+								    	<?php echo $repeater['image_credit']; ?>
+								    </figcaption>
 								</figure>
 
 
@@ -550,16 +552,51 @@ if ($acf_fields['flexible_content']) {
 			<?php
 			break;
 
+
+
 			#Individual Artist's Repertoire Section
 			case 'repertoire': ?>
 				
-				<div class="row free-text-repertoire">
-				<h4 class="section-header">Repertoire</h4>
-					<span class="free-text-area narrow-text"><?php echo $section['repertoire'] ?></span>
+				<div class="press-row row">
+					
+					<h4 class="section-header">Repertoire</h4>
+				
+					<ul class="accordion" data-accordion data-allow-all-closed="true">
+						
+						<?php
+						# Loop through the sections
+						foreach ($section['repertoire'] as $repertoire) { ?>
+
+						<li class="accordion-item" data-accordion-item>
+						  	<a href="#" class="accordion-title">
+								
+								<div class="press-details">
+									<span class="text_area_one"><?php echo $repertoire['repertoire_title']; ?></span>
+								</div>	
+
+								<span class="more-info">
+									<span class="show-for-large">More info &nbsp;</span>
+								    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								        <defs></defs>
+								        <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
+								    </svg>
+								</span>
+
+							</a>
+							<div class="accordion-content" data-tab-content>
+							  <?php echo $repertoire['repertoire_details']; ?>
+							</div>
+						</li>
+
+						<?php } ?>
+
+					</ul>
+					
 				</div>
 
 			<?php
 			break;
+
 
 
 			#Audio / Music block

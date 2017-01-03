@@ -127,6 +127,11 @@
     color: $brand-red !important;
   }
 
+  .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item {
+    color: white;
+
+  }
+
   .menu>li:not(.menu-text)>a {
     padding: 1rem;
   }

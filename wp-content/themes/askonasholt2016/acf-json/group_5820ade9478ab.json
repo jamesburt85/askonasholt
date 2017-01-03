@@ -290,6 +290,25 @@
                                     "max_height": "",
                                     "max_size": "",
                                     "mime_types": ""
+                                },
+                                {
+                                    "key": "field_586bd857d18f6",
+                                    "label": "Image Credit",
+                                    "name": "image_credit",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
                                 }
                             ]
                         },
@@ -790,7 +809,7 @@
                             "key": "field_586bbc609d20f",
                             "label": "Repertoire",
                             "name": "repertoire",
-                            "type": "wysiwyg",
+                            "type": "repeater",
                             "instructions": "Enter details of Artist's repertiore",
                             "required": 0,
                             "conditional_logic": 0,
@@ -799,10 +818,50 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1
+                            "collapsed": "",
+                            "min": "",
+                            "max": "",
+                            "layout": "table",
+                            "button_label": "Add Row",
+                            "sub_fields": [
+                                {
+                                    "key": "field_586bc92dc184a",
+                                    "label": "Repertoire Title",
+                                    "name": "repertoire_title",
+                                    "type": "text",
+                                    "instructions": "i.e Bach",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_586bc952c184b",
+                                    "label": "Repertoire Details",
+                                    "name": "repertoire_details",
+                                    "type": "wysiwyg",
+                                    "instructions": "e.g. Mass in B Minor",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -856,5 +915,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483455615
+    "modified": 1483462760
 }

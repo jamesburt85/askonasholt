@@ -1,8 +1,8 @@
 .press-row {
 	font-size: 19px;
-	border-top: 1px solid #cccccc;
+	//border-top: 1px solid #cccccc;
 	span.text_area_one {
-		padding: 0 $sitepadding 0 0;
+		padding: 0 $sitepadding 0 0.9375rem;
 	}
 	span.text_area_two, span.text_area_three {
 		padding: 0 $sitepadding;
