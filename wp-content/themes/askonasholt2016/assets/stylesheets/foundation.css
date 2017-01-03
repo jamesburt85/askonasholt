@@ -11221,7 +11221,7 @@ body.post-type-archive-online .archive__load-more {
   font-size: 19px;
   border-top: 1px solid #cccccc; }
   .press-row span.text_area_one {
-    padding: 0 25px 0 0.9375rem; }
+    padding: 0 25px 0 0; }
   .press-row span.text_area_two, .press-row span.text_area_three {
     padding: 0 25px; }
   .press-row .press-details span:last-child {
