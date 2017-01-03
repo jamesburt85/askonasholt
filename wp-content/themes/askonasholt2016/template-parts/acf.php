@@ -543,8 +543,19 @@ if ($acf_fields['flexible_content']) {
 			#Individual Artist's Discography Section
 			case 'free_text_area': ?>
 				
-				<div class="row">
-					<p class="free-text-area narrow-text"><?php echo $section['free_text'] ?></p>
+				<div class="row free-text">
+					<span class="free-text-area narrow-text"><?php echo $section['free_text'] ?></span>
+				</div>
+
+			<?php
+			break;
+
+			#Individual Artist's Repertoire Section
+			case 'repertoire': ?>
+				
+				<div class="row free-text-repertoire">
+				<h4 class="section-header">Repertoire</h4>
+					<span class="free-text-area narrow-text"><?php echo $section['repertoire'] ?></span>
 				</div>
 
 			<?php

@@ -11412,10 +11412,6 @@ body.page .slick-dotted.slick-slider {
 .single-artists .side-bar-header {
   font-weight: bold; }
 
-.single-artists .magazine-item {
-  background-color: #3E3E3E;
-  color: #ffffff; }
-
 div#video-audio {
   background: #262626;
   margin-top: 25px; }
@@ -11514,6 +11510,13 @@ div#video-audio {
     bottom: 0; }
   .post-type-archive-people article hr {
     opacity: 0; }
+
+div.row.free-text {
+  margin: 50px auto;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc; }
+  div.row.free-text p {
+    margin: 25px 0; }
 
 @media screen and (min-width: 40em) {
   .single-artists .artist-header-thumb {

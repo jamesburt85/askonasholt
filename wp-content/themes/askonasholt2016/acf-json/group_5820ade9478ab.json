@@ -779,6 +779,34 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                {
+                    "key": "586bbc579d20e",
+                    "name": "repertoire",
+                    "label": "Repertoire",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_586bbc609d20f",
+                            "label": "Repertoire",
+                            "name": "repertoire",
+                            "type": "wysiwyg",
+                            "instructions": "Enter details of Artist's repertiore",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             ]
         }
@@ -828,5 +856,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1482341568
+    "modified": 1483455615
 }

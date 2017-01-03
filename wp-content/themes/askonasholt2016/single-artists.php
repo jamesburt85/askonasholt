@@ -337,7 +337,7 @@ get_header(); ?>
 		                      <div class="event-listing-details">
 		                        <?php get_template_part( 'template-parts/event-related-artist' ); ?>
 
-		                        <span class="event-detail"><?php echo $time; ?></span><br/>
+		                        <span class="event-detail"><?php echo $time; ?></span><!-- <br/> -->
 		                        <span class="event-detail"><?php echo $date; ?></span><br/>
 		                        <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
 		                        <span class="more-info">
@@ -372,7 +372,7 @@ get_header(); ?>
 
 
 	<div class="news-projects row" id="news-projects">
-		<h4 class="section-header">News &amp; Projects</h4>
+		<h4 class="section-header">From The Green Room</h4>
 		<div class="row">
 		
 		<!-- Get news items -->
