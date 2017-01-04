@@ -654,7 +654,7 @@ if ($acf_fields['flexible_content']) {
 				<div class="row">
 					
 					<?php 
-					print_r( $section['video'] );
+					//print_r( $section['video'] );
 					$video = $section['video'];
 
 					?>
@@ -698,23 +698,21 @@ if ($acf_fields['flexible_content']) {
 
 
 			#Video
-			//case 'video': ?>
-
-<!-- 				<div class="row">
-					<div class="small-2 columns">
+			case 'extra_video': ?>
+			<hr>
+ 				<div class="row">
+					<div class="small-3 columns">
 						<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
 					</div>
 					<div class="small-9 columns">
 						<div class="row large-video-row">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/hello<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['extra_video']; ?>" frameborder="0" allowfullscreen></iframe>
 						</div>
 					</div>
-				</div> -->
+				</div>
 
 			<?php
-			//break;
-
-				
+			break;
 
 
 

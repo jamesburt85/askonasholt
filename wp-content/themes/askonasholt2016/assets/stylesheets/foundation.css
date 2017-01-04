@@ -11479,26 +11479,26 @@ div#video-audio {
 .artist-photo-wrapper:hover .overlay, .magazine-item-thumb:hover .overlay {
   display: block; }
 
-.post-type-archive-artists article {
+.post-type-archive-artists article, .post-type-archive-clients article {
   position: relative; }
-  .post-type-archive-artists article .archive__load-more {
+  .post-type-archive-artists article .archive__load-more, .post-type-archive-clients article .archive__load-more {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     bottom: 0; }
-    .post-type-archive-artists article .archive__load-more a {
+    .post-type-archive-artists article .archive__load-more a, .post-type-archive-clients article .archive__load-more a {
       color: #BA0C2F;
       font-weight: bold; }
-  .post-type-archive-artists article .alert.alert-warning {
+  .post-type-archive-artists article .alert.alert-warning, .post-type-archive-clients article .alert.alert-warning {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     bottom: 0; }
-  .post-type-archive-artists article hr {
+  .post-type-archive-artists article hr, .post-type-archive-clients article hr {
     opacity: 0; }
 
 .post-type-archive-people article {

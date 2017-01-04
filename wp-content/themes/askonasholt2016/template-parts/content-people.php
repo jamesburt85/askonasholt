@@ -20,7 +20,6 @@
 		$e_mail = get_field('e-mail');
 		$telephone_number = get_field('telephone_number');
 		$languages = get_field('languages');
-
 	?>
 
 	<div class="entry-content">

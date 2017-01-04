@@ -561,6 +561,54 @@
                     "max": ""
                 },
                 {
+                    "key": "586d186066f09",
+                    "name": "extra_video",
+                    "label": "Extra Video",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_586d186b66f0a",
+                            "label": "Extra Video",
+                            "name": "extra_video",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_586d187c66f0b",
+                            "label": "Unique Section Name",
+                            "name": "unique_id",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                {
                     "key": "5832fef5ba328",
                     "name": "tours_thumbnail_links",
                     "label": "Tours Thumbnail links",
@@ -915,5 +963,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483462760
+    "modified": 1483544720
 }

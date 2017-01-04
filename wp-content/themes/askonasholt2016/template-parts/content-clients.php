@@ -18,7 +18,7 @@
 
 	<div class="entry-content">
 
-		<div class="magazine-item">
+		<div class=" magazine-item">
 			<?php if ( has_post_thumbnail() ) { ?>
 
 				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
@@ -59,13 +59,14 @@
 
 			<?php } ?>
 
-			<div class="magazine-item-container">
-
+			<div class="magazine-item-container staff-header">
+				
 				<p class="magazine-item-header">
-					<?php echo wpdocs_custom_taxonomies_terms_links(); ?>
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br/>
+					<span class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
+					<a class="serif" href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a><br/>
 				</p>
 					<?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?>
+
 			</div>
 
 		</div>
@@ -89,7 +90,7 @@
 			<?php the_content(); ?>
 		</div>
 		<div class="quicklook-content-links">
-			<a class="button" href="<?php the_permalink(); ?>">Go to Staff Page</a>	
+			<a class="button" href="<?php the_permalink(); ?>">Go to Client Page</a>	
 		</div>
 
 	</div>

@@ -2,7 +2,7 @@
 <div class="artist-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg');">
 	
 	<header class="filter-header">
-		<h2>Clients</h2>
+		<h2 class="hero-heading">Clients</h2>
 		<p>Optional Description</p>
 
 		<?php //foundationpress_entry_meta(); ?>

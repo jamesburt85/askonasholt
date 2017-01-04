@@ -117,7 +117,6 @@ get_header(); ?>
 
 					<br/>
 
-					<h4 class="section-header">Artist(s)</h4>
 						<?php 
 
 							$tour_artists = get_field('tour_artists');
@@ -125,8 +124,12 @@ get_header(); ?>
 
 							if (!empty($tour_artists)) {
 								foreach ($tour_artists as $artist_id) { ?> 
+								
+								<h4 class="section-header">Artist(s)</h4>
+									<div class="side-bar-artist"> 
+										
 
-									<div class="side-bar-artist"> <?php
+									<?php
 										# Get featured image id
 										$thumb_id = get_post_thumbnail_id($artist_id);
 										# If theere is not a featured image
