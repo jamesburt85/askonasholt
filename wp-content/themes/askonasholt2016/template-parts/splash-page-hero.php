@@ -46,10 +46,10 @@
       </a>
     </div>
 
-    <div class="hero-text-container hero-text">
+    <div class="hero-text-container hero-text padded-text">
 
-      <span class="hero-sub-header"><?php echo $sub_header; ?></span><br/>
-      <span class="hero-header"><?php echo $header; ?></span><br/>
+      <span class="hero-sub-header"><?php echo $sub_header; ?></span>
+      <span class="hero-header"><?php echo $header; ?></span>
       <span class="hero-blurb show-for-medium"><?php echo $blurb; ?></span>
 
         <?php

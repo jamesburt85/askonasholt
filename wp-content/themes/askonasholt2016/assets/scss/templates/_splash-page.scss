@@ -47,6 +47,7 @@ body.home {
 
 }
 
+
 @include breakpoint(large up) {
   .hero-text-container {
     @include center;
