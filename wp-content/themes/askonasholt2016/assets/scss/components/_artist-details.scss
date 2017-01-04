@@ -203,36 +203,18 @@ div#video-audio {
 
 
 //Load more button styles
-.post-type-archive-artists, .post-type-archive-clients {
+.post-type-archive-artists, .post-type-archive-clients, .post-type-archive-people {
 	article {
 		position: relative;
+		padding-bottom: 5em;
 		.archive__load-more {
 			@include center(x);
-			bottom: 0;
+			bottom: 3em;
 			a {
 				color: $brand-red;
 				font-weight: bold;
-			}
-		}
-		.alert.alert-warning {
-			@include center(x);
-			bottom: 0;
-		}
-		hr {
-			opacity: 0;
-		}
-	}
-}
-
-.post-type-archive-people {
-	article {
-		position: relative;
-		.archive__load-more {
-			@include center(x);
-			bottom: 0;
-			a {
-				color: $brand-red;
-				font-weight: bold;
+				border: 1px solid $brand-red;
+				padding: 1em;
 			}
 		}
 		.alert.alert-warning {

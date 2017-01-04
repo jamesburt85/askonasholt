@@ -11479,48 +11479,29 @@ div#video-audio {
 .artist-photo-wrapper:hover .overlay, .magazine-item-thumb:hover .overlay {
   display: block; }
 
-.post-type-archive-artists article, .post-type-archive-clients article {
-  position: relative; }
-  .post-type-archive-artists article .archive__load-more, .post-type-archive-clients article .archive__load-more {
+.post-type-archive-artists article, .post-type-archive-clients article, .post-type-archive-people article {
+  position: relative;
+  padding-bottom: 5em; }
+  .post-type-archive-artists article .archive__load-more, .post-type-archive-clients article .archive__load-more, .post-type-archive-people article .archive__load-more {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    bottom: 0; }
-    .post-type-archive-artists article .archive__load-more a, .post-type-archive-clients article .archive__load-more a {
+    bottom: 3em; }
+    .post-type-archive-artists article .archive__load-more a, .post-type-archive-clients article .archive__load-more a, .post-type-archive-people article .archive__load-more a {
       color: #BA0C2F;
-      font-weight: bold; }
-  .post-type-archive-artists article .alert.alert-warning, .post-type-archive-clients article .alert.alert-warning {
+      font-weight: bold;
+      border: 1px solid #BA0C2F;
+      padding: 1em; }
+  .post-type-archive-artists article .alert.alert-warning, .post-type-archive-clients article .alert.alert-warning, .post-type-archive-people article .alert.alert-warning {
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     bottom: 0; }
-  .post-type-archive-artists article hr, .post-type-archive-clients article hr {
-    opacity: 0; }
-
-.post-type-archive-people article {
-  position: relative; }
-  .post-type-archive-people article .archive__load-more {
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    bottom: 0; }
-    .post-type-archive-people article .archive__load-more a {
-      color: #BA0C2F;
-      font-weight: bold; }
-  .post-type-archive-people article .alert.alert-warning {
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    bottom: 0; }
-  .post-type-archive-people article hr {
+  .post-type-archive-artists article hr, .post-type-archive-clients article hr, .post-type-archive-people article hr {
     opacity: 0; }
 
 div.row.free-text {
@@ -13040,6 +13021,22 @@ div.staff-header li {
 .quicklook-content-profile li {
   list-style-type: none; }
 
+.blog-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .blog-meta ul.post-categories {
+    list-style: none;
+    margin-left: 0;
+    text-transform: uppercase; }
+  .blog-meta a {
+    color: initial; }
+  .blog-meta p {
+    font-size: inherit;
+    line-height: 1.6; }
+  .blog-meta time.updated, .blog-meta li, .blog-meta p {
+    margin-right: 1em; }
+
 #front-hero {
   background: url("../images/demo/hero-bg-foundation-6-small.svg") bottom center;
   -webkit-background-size: cover;
@@ -13732,21 +13729,31 @@ body.single.single-post #single-post {
   max-width: 57.375rem;
   margin: 0 auto; }
 
-body.single-online article.main-content {
+body.single-online article.main-content, body.single-post article.main-content {
   max-width: 57.375rem;
   margin: 0 auto; }
-  body.single-online article.main-content header {
+  body.single-online article.main-content header, body.single-post article.main-content header {
     margin-bottom: 25px; }
-  body.single-online article.main-content .side-bar-artist {
+  body.single-online article.main-content .side-bar-artist, body.single-post article.main-content .side-bar-artist {
     border-top: 1px solid #cccccc;
-    padding: 25px 0; }
-  body.single-online article.main-content .side-bar-artist:last-child {
+    padding: 25px 0;
+    width: 100%;
+    position: relative; }
+  body.single-online article.main-content span.more-info, body.single-post article.main-content span.more-info {
+    right: 0em;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute; }
+  body.single-online article.main-content .side-bar-artist:last-child, body.single-post article.main-content .side-bar-artist:last-child {
     border-bottom: 1px solid #cccccc;
     margin-bottom: 25px; }
-  body.single-online article.main-content .side-bar-artist:first-child {
+  body.single-online article.main-content .side-bar-artist:first-child, body.single-post article.main-content .side-bar-artist:first-child {
     margin-top: 25px; }
 
-body.single-online #share-buttons img {
+body.single-online #share-buttons img, body.single-post #share-buttons img {
   width: 35px;
   padding: 5px;
   border: 0;

@@ -1,8 +1,8 @@
 // ONLINE Page Styles
 
-//SINGLE ONLINE STRESMS ********************************
+//SINGLE ONLINE STREAMS ********************************
 
-body.single-online {
+body.single-online, body.single-post {
   article.main-content {
     max-width: 57.375rem;
     margin: 0 auto;
@@ -13,7 +13,16 @@ body.single-online {
     .side-bar-artist {
       border-top: 1px solid #cccccc;
       padding: $sitepadding 0;
+      width: 100%;
+      position: relative;
     }
+
+    span.more-info {
+        right: 0em;
+        @include center(y);
+        position: absolute;
+    }
+
     .side-bar-artist:last-child {
       border-bottom: 1px solid #cccccc;
       margin-bottom: $sitepadding;
