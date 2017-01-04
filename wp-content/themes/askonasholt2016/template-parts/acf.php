@@ -435,7 +435,8 @@ if ($acf_fields['flexible_content']) {
 					<div class="row text-banner">
 						<div class="small-12 columns text-banner-area">
 							<!-- <span class="banner-header">Making Music Happen</span><br/> -->
-							<div class="banner-copy"><?php echo $section['banner_copy']; ?></div>
+							<div class="banner-copy"><?php echo $section['banner_copy']; ?>
+							</div>
 						</div>
 					</div>
 				</div>

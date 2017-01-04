@@ -13551,7 +13551,10 @@ body.home {
   margin-left: 1em;
   color: white; }
   .single-tours-projects .hero-text-area span.hero-text-dates {
-    padding: 2px 11px 11px; }
+    padding: 11px 11px; }
+
+.single-tours-projects .hero-text-dates {
+  background: rgba(186, 12, 47, 0.8); }
 
 .single-tours-projects .project-intro .section-header {
   padding: 0; }

@@ -48,8 +48,14 @@
 
 			<div class="small-12 large-8 columns tour-details">
 				
-				<span><?php echo $start_date; ?></span> - 
-				<span><?php echo $end_date; ?></span>
+				<span><?php echo $start_date; ?></span>
+				<?php 
+					if ($end_date) { ?>
+						
+						<span> - <?php echo $end_date; ?></span>
+					
+					<?php } ?>
+				
 				<h3><a class="section-header" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<span><?php the_excerpt(); ?></span>
 				<?php 

@@ -59,7 +59,7 @@
 					</svg>
 				</a>
 			</div>
-			<div id="search-toggle" class="header-search-toggle button hide-for-medium">
+<!-- 			<div id="search-toggle" class="header-search-toggle button hide-for-medium">
 
 				<svg width="23px" height="24px" viewBox="1377 56 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -69,7 +69,7 @@
 				    </g>
 				</svg>
 				
-			</div>
+			</div> -->
 		</div>
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">

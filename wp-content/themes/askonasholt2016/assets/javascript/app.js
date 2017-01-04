@@ -459,9 +459,6 @@ var map = null;
 
 
 
-
-
-
   	})
 
 }(window.jQuery);

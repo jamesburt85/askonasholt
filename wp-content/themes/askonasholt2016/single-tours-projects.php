@@ -46,7 +46,7 @@ get_header(); ?>
 
 
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
-		<div class="entry-content">
+		<div class="entry-content"  id="introduction">
 			<?php //the_content(); ?>
 			<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
 
@@ -58,7 +58,7 @@ get_header(); ?>
 			
 			?>
 
-			<div class="row" id="introduction">
+			<div class="row">
 				<div class="small-12 medium-3 columns tour-intro-sidebar">
 					<h4 class="section-header">Contact</h4>
 
