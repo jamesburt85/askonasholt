@@ -2,7 +2,7 @@
 .hero-sub-header {
 	text-transform: uppercase;
 	font-weight: bold;
-	color: #b38a76;
+	color: #b38a76 !important;
 	padding: 8px 8px 2px 8px;
 }
 
@@ -76,6 +76,7 @@ body.single-artists {
 button.hero-button {
 	padding: 10px;
 	margin-top: 5px;
+	background: rgba(186, 12, 47, 0.8);
 	//font-weight: bold;
 
 	a {
@@ -89,11 +90,11 @@ button.hero-button {
 }
 
 .hero-text span, .hero-text button, .hero-text span p {
-	background: $herored;
+	//background: $herored;
 }
 
-@include breakpoint(medium) {
+//@include breakpoint(medium) {
   .hero-text {
   	max-width: 80%;
   }
-}
+//}

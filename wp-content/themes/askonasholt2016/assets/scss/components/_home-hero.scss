@@ -32,6 +32,8 @@ body.page {
 			z-index: 1;
 		}
 
+
+
 	}
 	
 	.slick-dotted.slick-slider {
@@ -41,6 +43,31 @@ body.page {
 	    background: #f2f1ed;
 	}
 }
+
+
+//fiddle to make text backgrounds not overlap
+
+div.padded-text { 
+	line-height: 1.0;
+	padding: 2px 0;
+	// border-left: 20px solid rgba(186, 12, 47, 0.8);
+	// display:inline-block;
+	span { 
+		background-color: rgba(186, 12, 47, 0.8); 
+		color: #fff;
+		//display: inline;
+		display: table;
+		margin: 0; 
+	}
+}
+
+
+ // h1 strong {
+ // 	position: relative;
+ // 	//left:-10px;
+ // }
+
+
 
 
 .hero-text-area {

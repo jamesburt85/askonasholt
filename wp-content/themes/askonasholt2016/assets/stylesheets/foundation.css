@@ -9644,18 +9644,19 @@ nav#site-navigation {
     display: table; }
   nav#site-navigation::after {
     clear: both; }
-  nav#site-navigation div#search-toggle {
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    background-color: transparent;
-    float: right;
-    height: 50px; }
   nav#site-navigation .top-bar-left svg {
     padding-right: 2em;
     border-right: 1px solid #BA0C2F; }
   nav#site-navigation .top-bar-left a {
     padding: 0;
     line-height: 135px; }
+
+div#search-toggle {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: transparent;
+  float: right;
+  height: 50px; }
 
 .header-social-area {
   width: auto;
@@ -11323,6 +11324,15 @@ body.page .slick-dotted.slick-slider {
   border-bottom: 1px solid #808080;
   background: #f2f1ed; }
 
+div.padded-text {
+  line-height: 1.0;
+  padding: 2px 0; }
+  div.padded-text span {
+    background-color: rgba(186, 12, 47, 0.8);
+    color: #fff;
+    display: table;
+    margin: 0; }
+
 .hero-text-area {
   position: absolute;
   bottom: 3em;
@@ -11532,7 +11542,7 @@ div.row.free-text {
 .hero-sub-header {
   text-transform: uppercase;
   font-weight: bold;
-  color: #b38a76;
+  color: #b38a76 !important;
   padding: 8px 8px 2px 8px; }
 
 span.hero-blurb p {
@@ -11590,7 +11600,8 @@ body.single-artists i.fa.fa-angle-right.slick-arrow {
 
 button.hero-button {
   padding: 10px;
-  margin-top: 5px; }
+  margin-top: 5px;
+  background: rgba(186, 12, 47, 0.8); }
   button.hero-button a {
     color: white;
     padding: 10px; }
@@ -11598,12 +11609,8 @@ button.hero-button {
 .hero-text span p {
   padding: 10px; }
 
-.hero-text span, .hero-text button, .hero-text span p {
-  background: rgba(186, 12, 47, 0.8); }
-
-@media screen and (min-width: 40em) {
-  .hero-text {
-    max-width: 80%; } }
+.hero-text {
+  max-width: 80%; }
 
 .text-banner-wrapper {
   max-width: 100%;

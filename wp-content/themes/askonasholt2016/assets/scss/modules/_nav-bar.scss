@@ -66,13 +66,6 @@ nav#site-navigation {
     line-height: $header-height;
     // /position: relative;
 
-    div#search-toggle {
-    	transition: 0.5s;
-    	background-color: transparent;
-    	float: right;
-    	// line-height: $header-height;
-    	height: 50px;
-    }
     .top-bar-left {
 
     	svg {
@@ -85,6 +78,14 @@ nav#site-navigation {
     		line-height: $header-height;
     	}
     }
+}
+
+div#search-toggle {
+	transition: 0.5s;
+	background-color: transparent;
+	float: right;
+	// line-height: $header-height;
+	height: 50px;
 }
 
 //social media icons spacing

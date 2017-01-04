@@ -38,9 +38,14 @@ if( have_rows('home_hero') ):
 
 			<div class="center-image" style="background-image: url('<?php echo $image['url']; ?>')">
 				<div class="hero-text-area hero-text">
-				
-					<span class="hero-sub-header"><?php echo $category; ?></span><br/>
-					<span class="hero-header"><?php echo $title; ?></span><br/>
+					
+					<div class="padded-text">
+						<span class="hero-sub-header"><?php echo $category; ?></span>
+						<span class="hero-header"><?php echo $title; ?></span>
+					</div>
+				<!-- 	<div class="padded-text">
+					  <h1><strong>How do I add padding to subsequent lines of an inline text element?</strong></h1>
+					</div> -->
 
 					<?php
 				 	// loop through the rows of data

@@ -59,6 +59,17 @@
 					</svg>
 				</a>
 			</div>
+			<div id="search-toggle" class="header-search-toggle button hide-for-medium">
+
+				<svg width="23px" height="24px" viewBox="1377 56 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+				    <g id="Group-23" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(1378.000000, 57.000000)">
+				        <rect id="Rectangle-Copy-5" stroke="#000000" x="3" y="0" width="18" height="18" rx="9"></rect>
+				        <path d="M0,16 L5.5,21.5" id="Line" stroke="#000000" stroke-linecap="square" transform="translate(2.750000, 18.750000) scale(-1, 1) translate(-2.750000, -18.750000) "></path>
+				    </g>
+				</svg>
+				
+			</div>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
@@ -120,7 +131,7 @@
 			</div>
 			<!-- </div> -->
 
-			<div id="search-toggle" class="header-search-toggle button">
+			<div id="search-toggle" class="header-search-toggle button show-for-medium">
 
 				<svg width="23px" height="24px" viewBox="1377 56 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
