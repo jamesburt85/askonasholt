@@ -417,7 +417,7 @@
                                     "label": "Text area one",
                                     "name": "text_area_one",
                                     "type": "text",
-                                    "instructions": "",
+                                    "instructions": "eg. Beethoven",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -436,7 +436,7 @@
                                     "label": "Text Area Two",
                                     "name": "text_area_two",
                                     "type": "text",
-                                    "instructions": "",
+                                    "instructions": "e.g. Concentus Musicus Wien",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -474,7 +474,7 @@
                                     "label": "Press article",
                                     "name": "press_article",
                                     "type": "wysiwyg",
-                                    "instructions": "",
+                                    "instructions": "Input details, links, articles of Press",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -963,5 +963,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483544720
+    "modified": 1483651365
 }

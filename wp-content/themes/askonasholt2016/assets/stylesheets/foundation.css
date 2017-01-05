@@ -6670,6 +6670,9 @@ table.hover tbody tr:nth-of-type(even):hover {
     font-size: 17px;
     color: inherit; }
 
+body.search .blogpost-entry {
+  display: inline; }
+
 .hero-heading {
   font-family: "GeometricSlab703BT-Light"; }
 
@@ -9507,11 +9510,11 @@ ul.dropdown.menu.vertical.submenu.is-dropdown-submenu.first-sub:before {
     #footer-container #footer li {
       display: block;
       vertical-align: middle;
-      padding: 0 0 1.4rem 1rem !important; }
+      padding: 0 0 1.4rem 0 !important; }
       #footer-container #footer li a {
         padding: 0; }
     #footer-container #footer h6 {
-      padding: 0 0 1.4rem 1rem !important;
+      padding: 0 0 1.4rem 0 !important;
       margin-bottom: 0;
       line-height: 1; }
     #footer-container #footer a {

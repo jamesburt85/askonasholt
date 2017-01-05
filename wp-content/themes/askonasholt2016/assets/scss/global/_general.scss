@@ -13,6 +13,14 @@
     }
 }
 
+//Search Page Styles to make all inline
+body.search {
+  .blogpost-entry {
+    display: inline;
+  }
+}
+
+
 .hero-heading {
     font-family: $serif-font;
 }

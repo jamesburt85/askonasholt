@@ -86,8 +86,8 @@
                     "key": "field_5835a2332b348",
                     "label": "Date",
                     "name": "date",
-                    "type": "date_picker",
-                    "instructions": "",
+                    "type": "text",
+                    "instructions": "Input the year of event eg. 1987.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -95,9 +95,11 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "Y",
-                    "return_format": "Y",
-                    "first_day": 1
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -121,5 +123,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1481047913
+    "modified": 1483650814
 }
