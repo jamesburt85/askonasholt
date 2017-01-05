@@ -7,13 +7,17 @@
  */
 
 get_header(); ?>
-
+<div class="center-text-hero-header" style="background-image: url('<?php //echo $thumb['0'];?><?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg')">
+	<div class="center-hero-text">
+		<h2 class="hero-heading"><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h2>
+	</div>
+</div>
 <div class="row">
-	<div class="small-12 large-8 columns" role="main">
+	<div class="small-12 large-12 columns" role="main">
 
 		<?php do_action( 'foundationpress_before_content' ); ?>
 
-		<h2><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h2>
+		
 
 	<?php if ( have_posts() ) : ?>
 
@@ -43,6 +47,6 @@ get_header(); ?>
 	<?php do_action( 'foundationpress_after_content' ); ?>
 
 	</div>
-	<?php get_sidebar(); ?>
+	<?php //get_sidebar(); ?>
 </div>
 <?php get_footer();

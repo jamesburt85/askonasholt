@@ -6680,6 +6680,9 @@ p {
   font-size: 20px;
   line-height: 1.8; }
 
+li {
+  font-size: 20px; }
+
 #footer-container {
   margin-top: 0 !important; }
 
@@ -9699,7 +9702,7 @@ div#search-toggle {
   content: url("../images/down-arrow-small.png");
   display: block;
   position: absolute;
-  top: 42%;
+  top: 39%;
   right: 0; }
 
 .filtering-block {
@@ -12971,7 +12974,7 @@ body.single.single-artists .enquiry-button {
         width: 100%;
         border: 1px solid #B49A81;
         line-height: 1;
-        padding: 1.85em 2em;
+        padding: 1em 1em;
         -webkit-transition: 0.5s;
         transition: 0.5s; }
       .more-page-links ul.submenu.page-nav-buttons li.page_item a:hover {

@@ -39,7 +39,7 @@ get_header(); ?>
 
                       ?>
 
-                      <?php echo $number; ?> <br/>
+                      <p><?php echo $number; ?></p>
 
                     <?php } ?>
                   </div>
@@ -56,7 +56,7 @@ get_header(); ?>
                       ?>
 
                       
-                      <?php echo $fax_number; ?> <br/>
+                      <p><?php echo $fax_number; ?></p>
 
                     <?php } ?>
                   </div>
@@ -72,7 +72,7 @@ get_header(); ?>
                       ?>
 
                       
-                      <?php echo $e_mail; ?> <br/>
+                      <p><?php echo $e_mail; ?></p>
 
                     <?php } ?>
                   </div>
@@ -99,6 +99,12 @@ get_header(); ?>
             </div>
 
         </div> <!-- Row END -->
+
+        <div class="row">
+          <div class="small-12 columns">
+            <p>To get in touch with one of our staff directly please go to the <a href="<?php echo site_url(); ?>/people">People</a> page</p>
+          </div>
+        </div>
         
       </div>
 

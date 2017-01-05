@@ -22,7 +22,7 @@
 	<?php elseif ( is_search() ) : ?>
 
 	<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'foundationpress' ); ?></p>
-	<?php get_search_form(); ?>
+	<?php //get_search_form(); ?>
 
 	<?php else : ?>
 

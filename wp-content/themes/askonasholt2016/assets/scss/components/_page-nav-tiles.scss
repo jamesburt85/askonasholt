@@ -17,15 +17,6 @@
 			@include breakpoint(large) {
 				@include grid-column(3);
 			}
-			// padding-top: 1em;
-			// padding-bottom: 1em;
-			
-			// a {
-			// 	color: initial;
-			// 	display: block;
-			// 	border: 1px solid #3E3E3E;
-			// 	padding: 5em 0;
-			// }
 		}
 
 		li.page_item.page-item-54.current_page_item.active {
@@ -45,7 +36,7 @@
 		    	width: 100%;
 		    	border: 1px solid #B49A81;
 		    	line-height: 1;
-		    	padding: 1.85em 2em;
+		    	padding: 1em 1em;
 		    	transition: 0.5s;
 		    }
 		    a:hover {
