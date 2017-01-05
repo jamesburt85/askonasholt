@@ -12,12 +12,25 @@
 		color: inherit;
 	}
 
-	.online-item-container {
-		padding: 1em;
-	    position: absolute;
-	    bottom: 0;
-	    background: rgba(186, 12, 47, 0.8);
-	    color: #ffffff;
+	.bottom-left {
+		position: absolute;
+		bottom: 0;
+		.media-type-indicator {
+			i {
+				color: white;
+				background: rgba(186, 12, 47, 0.8);
+				padding: 0.5em;
+				margin-bottom: 1px;
+			}
+		}
+		.online-item-container {
+			padding: 1em;
+		    background: rgba(186, 12, 47, 0.8);
+		    color: #ffffff;
+		    span.side-bar-artist-name {
+		    	text-transform: uppercase;
+		    }
+		}
 	}
 	
 	.online-item-thumb {

@@ -17,53 +17,64 @@
 
 			<?php } ?>
 
+			<div class="bottom-left">
+				<!-- Use a different symbol for audio and video items -->
+				<div class="media-type-indicator">
+					<?php if( get_field('media_choice') == 'Video' ): ?>
 
-			<div class="online-item-container">
-				
-					<span class="online-category"><?php //echo $main_category; ?>
-						<!-- *** Details in functions.php for getting taxonomy/terms *** -->
-						<span class="category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
-						<?php //the_date('d-m-y'); ?>
-						
-						<?php 
+						<i class="fa fa-play fa-2x" aria-hidden="true"></i>
 
-							$artist = get_field('artist');
-							//print_r($artist);
+					<?php elseif ( get_field('media_choice') == 'Audio' ): { ?>
 
-							if (!empty($artist)) {
-								foreach ($artist as $artist_id) { ?> 
-									
+						<i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
 
+					<?php } ?>
 					
-									
-									<!-- <img class="circle-thumb" src="<?php echo $thumb_url ?>"> -->
-									
-						
-										<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>&nbsp;
+					<?php endif; ?>
+				</div>
+
+				<div class="online-item-container">
+					
+						<span class="online-category"><?php //echo $main_category; ?>
+							<!-- *** Details in functions.php for getting taxonomy/terms *** -->
+							<span class="category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
+							<?php //the_date('d-m-y'); ?>
+							
+							<?php 
+
+								$artist = get_field('artist');
+								//print_r($artist);
+
+								if (!empty($artist)) {
+									//foreach ($artist as $artist_id) { ?>
+										
+										<!-- <img class="circle-thumb" src="<?php echo $thumb_url ?>"> -->
+										
+										<!-- Only empty the first artist in array -->
+										<span class="side-bar-artist-name"><?php echo get_the_title( $artist[0]) ?></span>&nbsp;
 									
 										<?php # If this artist has an artist-type
 										# - Will only EVER return the first result in the artist type array
 										//if ( !empty( $artist_types)): ?>
 											<span><?php //echo $artist_types[0]->name ?></span>
 										<?php //endif ?>
+							
+									<?php //}
+								} ?>
+
+
+						</span>
+
+						<?php //foundationpress_entry_meta(); ?>
 						
-		
+						<span class="online-item-header">
+							<?php the_title(); ?>
+						</span>
+
+						<span class="online-item-copy"><?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
 						
-							<?php
-							}
-						} ?>
-
-
-					</span>
-
-					<?php //foundationpress_entry_meta(); ?>
 					
-					<span class="online-item-header">
-						<?php the_title(); ?>
-					</span>
-					<span class="online-item-copy"><?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
-					
-				
+				</div>
 			</div>
 		</a>
 	</div>

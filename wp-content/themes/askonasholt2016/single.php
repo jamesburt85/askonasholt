@@ -17,7 +17,7 @@ get_header(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header>
 			
-			<h4 class="entry-title section-header"><?php the_title(); ?></h4>
+			<h3 class="entry-title section-header"><?php the_title(); ?></h3>
 			
 			<div class="blog-meta">
 				<?php the_category(); ?>
@@ -27,44 +27,7 @@ get_header(); ?>
 		</header>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 
-		<div id="share-buttons">
-		    Share Article
-		    <hr>
-		    <ul>
-			    <!-- Email -->
-			    <li>
-				    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=Askonas%20Holt%20 <?php the_permalink(); ?>">
-				        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
-				    </a>
-				</li>
-			    <!-- Facebook -->
-			    <li>
-				    <a href="http://www.facebook.com/sharer.php?u=https:<?php the_permalink(); ?>" target="_blank">
-				        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-				    </a>
-			    </li>
-			    <!-- Google+ -->
-			    <li>
-				    <a href="https://plus.google.com/share?url=https:<?php the_permalink(); ?>" target="_blank">
-				        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-				    </a>
-			   </li>
-			    <!-- LinkedIn -->
-			    <li>
-				    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https:<?php the_permalink(); ?>" target="_blank">
-				        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
-				    </a
-			    </li>
-
-			    <!-- Twitter -->
-			    <li>
-				    <a href="https://twitter.com/share?url=https:<?php the_permalink(); ?>&amp;text=Askona%20Holt&amp;hashtags=askonasholt" target="_blank">
-				        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
-				    </a
-			    </li>
-
-		    </ul>
-		</div>
+		<?php get_template_part('template-parts/sharing-block' ); ?>
 
 		<div class="entry-content row">
 

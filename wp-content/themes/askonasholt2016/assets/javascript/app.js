@@ -458,6 +458,11 @@ var map = null;
     });
 
 
+
+    //*********************************************
+    //***** HIDE SHARE ICONS AFETR 200px   ********
+    //*********************************************
+
     $(document).scroll(function () {
         var y = $(this).scrollTop();
         if (y < 200) {

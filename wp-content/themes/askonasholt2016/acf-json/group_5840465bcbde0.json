@@ -28,11 +28,11 @@
             "return_format": "object"
         },
         {
-            "key": "field_5840474c34fd2",
-            "label": "Link",
-            "name": "link",
-            "type": "url",
-            "instructions": "",
+            "key": "field_586e488508783",
+            "label": "Media Choice",
+            "name": "media_choice",
+            "type": "radio",
+            "instructions": "Click whether Online item is audio or video",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -40,8 +40,67 @@
                 "class": "",
                 "id": ""
             },
+            "choices": {
+                "Audio": "Audio",
+                "Video": "Video"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5840474c34fd2",
+            "label": "Link",
+            "name": "link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_586e488508783",
+                        "operator": "==",
+                        "value": "Video"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_586e486df150e",
+            "label": "Audio File",
+            "name": "audio_file",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_586e488508783",
+                        "operator": "==",
+                        "value": "Audio"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -61,5 +120,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480607579
+    "modified": 1483627714
 }

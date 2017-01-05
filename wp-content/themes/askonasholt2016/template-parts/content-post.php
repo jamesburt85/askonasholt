@@ -37,7 +37,7 @@
 						?>
 
 					<?php echo $css_slug; ?></span>&nbsp;-
-					<?php the_date('d M y'); ?>
+					<?php the_date('d M Y'); ?>
 				</span>
 
 				<?php //foundationpress_entry_meta(); ?>

@@ -11148,12 +11148,20 @@ div#image-gallery {
   position: relative; }
   .online-item a {
     color: inherit; }
-  .online-item .online-item-container {
-    padding: 1em;
+  .online-item .bottom-left {
     position: absolute;
-    bottom: 0;
-    background: rgba(186, 12, 47, 0.8);
-    color: #ffffff; }
+    bottom: 0; }
+    .online-item .bottom-left .media-type-indicator i {
+      color: white;
+      background: rgba(186, 12, 47, 0.8);
+      padding: 0.5em;
+      margin-bottom: 1px; }
+    .online-item .bottom-left .online-item-container {
+      padding: 1em;
+      background: rgba(186, 12, 47, 0.8);
+      color: #ffffff; }
+      .online-item .bottom-left .online-item-container span.side-bar-artist-name {
+        text-transform: uppercase; }
   .online-item .online-item-thumb {
     height: 300px;
     background-position: center center;

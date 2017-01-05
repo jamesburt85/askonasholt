@@ -18,13 +18,13 @@ get_header(); ?>
 		
 		<header>
 			
-			<h1 class="entry-title"><?php the_title(); ?></h1>
+			<h3 class="section-header"><?php the_title(); ?></h3>
 			<?php //foundationpress_entry_meta(); ?>
 			
 			<span class="single-magazine-category"><?php //echo $main_category; ?>
 				<!-- *** Details in functions.php for getting taxonomy/terms *** -->
 				<?php echo wpdocs_custom_taxonomies_terms_links(); ?>
-				<?php the_date('d-m-y'); ?>
+				<?php //the_date('d-m-y'); ?>
 			</span>
 
 		</header>
@@ -33,36 +33,34 @@ get_header(); ?>
 		
 		<div class="entry-content">
 
-			<iframe width="560" height="315" src="<?php the_field('link'); ?>" frameborder="0" allowfullscreen></iframe>
+			<?php 
 
-			<div id="share-buttons">
-			    
-			    <!-- Email -->
-			    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=Askonas%20Holt%20 <?php the_permalink(); ?>">
-			        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
-			    </a>
-			 
-			    <!-- Facebook -->
-			    <a href="http://www.facebook.com/sharer.php?u=https:<?php the_permalink(); ?>" target="_blank">
-			        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-			    </a>
+			if ( get_field('media_choice') == 'Video' ) { ?>
 
-			    <!-- Google+ -->
-			    <a href="https://plus.google.com/share?url=https:<?php the_permalink(); ?>" target="_blank">
-			        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-			    </a>
-			    
-			    <!-- LinkedIn -->
-			    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https:<?php the_permalink(); ?>" target="_blank">
-			        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
-			    </a>
+				<div class="row large-video-row">
+				  <iframe width="560" height="315" src="<?php the_field('link'); ?>" frameborder="0" allowfullscreen></iframe>
+				</div>
 
-			    <!-- Twitter -->
-			    <a href="https://twitter.com/share?url=https:<?php the_permalink(); ?>&amp;text=Askona%20Holt&amp;hashtags=askonasholt" target="_blank">
-			        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
-			    </a>
+			<?php }
 
-			</div>
+			elseif ( get_field('media_choice') == 'Audio' ) { ?>
+			 	
+			 	<?php //$audio = the_field('audio'); ?>
+
+			 	<div class="small-12 columns">
+			 		<audio controls>
+			 			<source src="<?php the_field('audio'); ?>" type="audio/mp3">
+			 		</audio>
+			 		<div class="audio-info">
+			 			<h3><?php echo $trackname; ?> - <?php echo $aristname; ?> - <?php echo $date; ?> - <?php echo $location; ?></h3>
+			 		</div>
+			 	</div>
+
+			<?php } ?>
+
+    		<?php get_template_part('template-parts/sharing-block' ); ?>
+
+			
 		<div class="artist-list">
 			<?php 
 

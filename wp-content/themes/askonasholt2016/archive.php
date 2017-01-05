@@ -92,7 +92,7 @@ get_header(); ?>
 		// adding in the live events block, if we're on the events archive.
 		get_template_part( 'template-parts/live-events-listing' ); ?>
 
-		<h2>Browse Upcoming Events</h2>
+		<h4 class="section-header center">Browse Upcoming Events</h4>
 
 		<div class="events-filtering-bar">
 			Upcoming events:

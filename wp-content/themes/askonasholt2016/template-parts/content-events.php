@@ -36,11 +36,11 @@
 		?>
 
 		<div class="small-12 medium-3 columns">
-			<h5><?php echo $date; ?> | <?php echo $time; ?></h5>
-			<h3><?php the_title(); ?></h3>
+			<h5><?php //echo $date; ?> <!-- | --> <?php //echo $time; ?></h5>
+			<h3><?php //the_title(); ?></h3>
 		</div>
 
-		<div class="small-12 medium-9 columns">
+		<div class="small-12 columns">
 			<ul class="accordion" data-accordion data-allow-all-closed="true">
 			  <li class="accordion-item" data-accordion-item>
 			    
