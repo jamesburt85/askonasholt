@@ -33,6 +33,8 @@ get_header(); ?>
 		
 		<div class="entry-content">
 
+
+
 			<?php 
 
 			if ( get_field('media_choice') == 'Video' ) { ?>
@@ -47,16 +49,13 @@ get_header(); ?>
 			 	
 			 	<?php //$audio = the_field('audio'); ?>
 
-			 	<div class="small-12 columns">
-			 		<audio controls>
-			 			<source src="<?php the_field('audio'); ?>" type="audio/mp3">
-			 		</audio>
-			 		<div class="audio-info">
-			 			<h3><?php echo $trackname; ?> - <?php echo $aristname; ?> - <?php echo $date; ?> - <?php echo $location; ?></h3>
-			 		</div>
-			 	</div>
+			 	<?php get_template_part('template-parts/audio-player' ); ?>
+
 
 			<?php } ?>
+
+
+
 
     		<?php get_template_part('template-parts/sharing-block' ); ?>
 
@@ -94,6 +93,10 @@ get_header(); ?>
 								
 								<div class="side-bar-artist-details">
 									<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
+
+									<a href="<?php the_permalink(); ?>">
+										<span class="more-info">Visit Artist Page</span>
+									</a>
 								
 									<?php # If this artist has an artist-type
 									# - Will only EVER return the first result in the artist type array

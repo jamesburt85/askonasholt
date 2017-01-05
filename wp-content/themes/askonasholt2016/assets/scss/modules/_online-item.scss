@@ -99,6 +99,12 @@ body.post-type-archive-online {
 //Single online pages **
 //************************
 
+body.single-online {
+	.small-12.columns.audio-player {
+		padding: 0;
+	}
+}
+
 .single-online-category {
 	display: flex;
 	li {

@@ -77,8 +77,8 @@
         },
         {
             "key": "field_586e486df150e",
-            "label": "Audio File",
-            "name": "audio_file",
+            "label": "Audio",
+            "name": "audio",
             "type": "file",
             "instructions": "",
             "required": 0,
@@ -120,5 +120,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483627714
+    "modified": 1483635336
 }

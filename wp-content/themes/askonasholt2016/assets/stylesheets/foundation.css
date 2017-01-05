@@ -11217,6 +11217,9 @@ body.post-type-archive-online .archive__load-more {
   transform: translateX(-50%);
   bottom: 0; }
 
+body.single-online .small-12.columns.audio-player {
+  padding: 0; }
+
 .single-online-category {
   display: -webkit-box;
   display: -ms-flexbox;

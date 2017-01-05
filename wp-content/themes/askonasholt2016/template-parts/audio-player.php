@@ -11,8 +11,13 @@ $aristname 		= $acf_fields['artist'][0]->post_title;
 $date 			= $acf_fields['date'];
 $location 		= $acf_fields['location'];
 
+if ( is_array($mp3) ) {
+	$mp3 		= $acf_fields['audio']['url'];
+}
+
 ?>
-<div class="small-12 columns">
+
+<div class="small-12 columns audio-player">
 	<audio controls>
 		<source src="<?php echo $mp3; ?>" type="audio/mp3">
 		<!-- <source src="/path/to/audio.ogg" type="audio/ogg"> -->

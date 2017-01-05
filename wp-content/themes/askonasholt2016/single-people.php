@@ -16,13 +16,26 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header>
+
+			<?php 
+				$position = get_field('position');
+				$e_mail = get_field('e-mail');
+				$telephone_number = get_field('telephone_number');
+				$languages = get_field('languages');
+				$position = get_field ('position');
+			?>
+
 			<div class="row single-staff-header">
 				<div class="small-12 medium-2 columns">
 					<?php the_post_thumbnail( 'thumbnail' ); ?>
 				</div>
 
 				<div class="small-12 medium-10 columns">
+					<span class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
 					<h1 class="entry-title serif"><?php the_title(); ?></h1>
+					<?php echo $position; ?><br/>
+					<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a><br/>
+					<span><?php echo $telephone_number; ?></span><br/>
 				</div>
 			</div>
 			

@@ -127,7 +127,7 @@
             "key": "field_5835b5ef190e8",
             "label": "Telephone Number",
             "name": "telephone_number",
-            "type": "number",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -140,9 +140,7 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "maxlength": ""
         },
         {
             "key": "field_5835b5fd190e9",
@@ -181,5 +179,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1480421569
+    "modified": 1483637576
 }

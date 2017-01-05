@@ -20,6 +20,7 @@
 		$e_mail = get_field('e-mail');
 		$telephone_number = get_field('telephone_number');
 		$languages = get_field('languages');
+		$position = get_field ('position');
 	?>
 
 	<div class="entry-content">
@@ -69,7 +70,9 @@
 				
 				<p class="magazine-item-header">
 					<span class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
-					<a class="serif" href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a><br/>
+					<a class="serif" href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a>
+					<span class="staff-category"><?php echo $position; ?></span>
+					<br/><br/>
 					<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a><br/>
 					<span><?php echo $telephone_number; ?></span><br/>
 					<span><?php echo $languages; ?></span>
@@ -88,6 +91,7 @@
 		<div class="quicklook-content-profile">
 			<h6 class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></h6>
 			<h4 class="serif"><?php the_title(); ?></h4>
+			<?php echo $position; ?>
 			<ul>
 				<li><a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a></li>
 				<li><?php echo $telephone_number; ?></li>
