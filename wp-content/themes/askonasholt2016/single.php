@@ -51,14 +51,17 @@ get_header(); ?>
 			?>
 			
 			<div class="artist-list">
+				
 				<?php 
 
 					$artist = get_field('artist');
 					//print_r($artist);
 
-					if (!empty($artist)) {
-						foreach ($artist as $artist_id) { ?> 
-							
+					if (!empty($artist)) { ?>
+
+						<h4 class="section-header">Featured Artist(s)</h4>
+
+						<?php foreach ($artist as $artist_id) { ?> 
 
 								<div class="side-bar-artist"> <?php
 									# Get featured image id
@@ -90,8 +93,9 @@ get_header(); ?>
 											<span><?php //echo $artist_types[0]->name ?></span>
 										<?php //endif ?>
 
-										<span class="more-info">Visit Artist Page</span>
-										
+										<a href="<?php the_permalink(); ?>">
+											<span class="more-info">Visit Artist Page</span>
+										</a>
 									</div>
 
 								</div>
@@ -111,6 +115,26 @@ get_header(); ?>
 						}
 					} ?>
 				</div>
+
+				<hr>
+				<h4 class="section-header">Related Articles</h4>
+				<?php
+
+				$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 4, 'post__not_in' => array($post->ID) ) );
+				if( $related ) foreach( $related as $post ) {
+				setup_postdata($post); ?>
+<!-- 				 <ul> 
+				        <li>
+				        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+				            <?php the_content('Read the rest of this entry &raquo;'); ?>
+				        </li>
+				    </ul>    -->
+
+
+				    <?php get_template_part( 'template-parts/content-post' ); ?>
+
+				<?php }
+				wp_reset_postdata(); ?>
 
 
 			<?php // the_content(); ?>
