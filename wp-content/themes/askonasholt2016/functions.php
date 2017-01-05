@@ -317,8 +317,20 @@ class Walker_Category_Find_Parents extends Walker_Category {
         }
 
 
+        //**************************************************
+        // Aplhebetise People Post types by last names
+        //**************************************************
 
+        add_action('pre_get_posts','wpse56753_businesses_default_order');
+        function wpse56753_businesses_default_order( $query ){
+            if( 'people' == $query->get('post_type') ){
+                if( $query->get('orderby') == '' )
+                    $query->set('orderby','wpse_last_word');
 
+                if( $query->get('order') == '' )
+                    $query->set('order','ASC');
+            }
+        }
 
 
 
