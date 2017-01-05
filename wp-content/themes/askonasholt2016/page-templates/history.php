@@ -43,8 +43,22 @@ get_header(); ?>
                 <div class="cd-timeline-content">
                   
                   <h2><?php echo $section_title; ?></h2>
-                    <div class="medium-6 columns"><p><?php echo $section_copy; ?></p></div>
-                    <div class="medium-6 columns"><img src="<?php echo $image; ?>"></div>
+
+                  <!-- If no image then let text go full-width -->
+                    <?php 
+                      if (!$image) { ?>
+
+                        <div class="medium-12 columns"><p><?php echo $section_copy; ?></p></div>
+
+                      <?php }
+
+                      else { ?>
+
+                        <div class="medium-6 columns"><p><?php echo $section_copy; ?></p></div>
+                        <div class="medium-6 columns"><img src="<?php echo $image; ?>"></div>
+                        
+                    <?php  } ?>
+
                     <!--  <a href="#0" class="cd-read-more">Read more</a> -->
                   <span class="cd-date"><?php echo $date; ?></span>
                   

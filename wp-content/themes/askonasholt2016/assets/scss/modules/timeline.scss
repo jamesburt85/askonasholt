@@ -137,7 +137,8 @@ header h1 {
 
 .cd-timeline-img {
   position: absolute;
-  top: 0;
+  top: 15px;
+  //top: 0;
   left: 0;
   width: 40px;
   height: 40px;
@@ -165,10 +166,10 @@ header h1 {
 }
 @media only screen and (min-width: 1170px) {
   .cd-timeline-img {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     left: 50%;
-    margin-left: -30px;
+    margin-left: -15px;
     /* Force Hardware Acceleration in WebKit */
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;

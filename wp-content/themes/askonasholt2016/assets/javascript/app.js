@@ -359,8 +359,8 @@ var map = null;
     //***********************************
 
     //jQuery(document).ready(function($){
-      var timelineBlocks = $('.cd-timeline-block'),
-        offset = 0.8;
+      // var timelineBlocks = $('.cd-timeline-block'),
+      //   offset = 0.8;
 
       //hide timeline blocks which are outside the viewport
       hideBlocks(timelineBlocks, offset);
