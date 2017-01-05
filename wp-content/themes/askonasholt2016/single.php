@@ -26,6 +26,46 @@ get_header(); ?>
 			
 		</header>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
+
+		<div id="share-buttons">
+		    Share Article
+		    <hr>
+		    <ul>
+			    <!-- Email -->
+			    <li>
+				    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=Askonas%20Holt%20 <?php the_permalink(); ?>">
+				        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+				    </a>
+				</li>
+			    <!-- Facebook -->
+			    <li>
+				    <a href="http://www.facebook.com/sharer.php?u=https:<?php the_permalink(); ?>" target="_blank">
+				        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+				    </a>
+			    </li>
+			    <!-- Google+ -->
+			    <li>
+				    <a href="https://plus.google.com/share?url=https:<?php the_permalink(); ?>" target="_blank">
+				        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+				    </a>
+			   </li>
+			    <!-- LinkedIn -->
+			    <li>
+				    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https:<?php the_permalink(); ?>" target="_blank">
+				        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+				    </a
+			    </li>
+
+			    <!-- Twitter -->
+			    <li>
+				    <a href="https://twitter.com/share?url=https:<?php the_permalink(); ?>&amp;text=Askona%20Holt&amp;hashtags=askonasholt" target="_blank">
+				        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+				    </a
+			    </li>
+
+		    </ul>
+		</div>
+
 		<div class="entry-content row">
 
 			<?php 
@@ -114,28 +154,9 @@ get_header(); ?>
 							<?php
 						}
 					} ?>
-				</div>
+			</div>
 
-				<hr>
-				<h4 class="section-header">Related Articles</h4>
-				<?php
-
-				$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 4, 'post__not_in' => array($post->ID) ) );
-				if( $related ) foreach( $related as $post ) {
-				setup_postdata($post); ?>
-<!-- 				 <ul> 
-				        <li>
-				        <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-				            <?php the_content('Read the rest of this entry &raquo;'); ?>
-				        </li>
-				    </ul>    -->
-
-
-				    <?php get_template_part( 'template-parts/content-post' ); ?>
-
-				<?php }
-				wp_reset_postdata(); ?>
-
+			
 
 			<?php // the_content(); ?>
 			<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
@@ -154,6 +175,22 @@ get_header(); ?>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
 <?php //get_sidebar(); ?>
+
+</div>
+
+<div class="full-width row">
+	<hr>
+	<h4 class="section-header center">Related Articles</h4>
+	<?php
+
+	$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 4, 'post__not_in' => array($post->ID) ) );
+	if( $related ) foreach( $related as $post ) {
+	setup_postdata($post); ?>
+
+	    <?php get_template_part( 'template-parts/content-post' ); ?>
+
+	<?php }
+	wp_reset_postdata(); ?>
 
 </div>
 

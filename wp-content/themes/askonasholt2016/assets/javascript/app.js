@@ -458,6 +458,19 @@ var map = null;
     });
 
 
+    $(document).scroll(function () {
+        var y = $(this).scrollTop();
+        if (y < 200) {
+            $('#single-post div#share-buttons').fadeIn();
+        } else {
+            $('#single-post div#share-buttons').fadeOut();
+        }
+
+    });
+
+
+
+
 
   	})
 

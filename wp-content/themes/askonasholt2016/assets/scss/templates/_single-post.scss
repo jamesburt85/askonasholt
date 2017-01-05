@@ -18,4 +18,16 @@
     margin-top: $sitepadding-large;
     margin-bottom: $sitepadding-large;
   }
+  div#share-buttons {
+      position: fixed;
+      right: 4em;
+      top: 50%;
+      ul {
+          list-style: none;
+      }
+  }
+}
+
+h4.section-header.center {
+    text-align: center;
 }

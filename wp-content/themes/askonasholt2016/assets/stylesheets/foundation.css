@@ -13456,6 +13456,15 @@ div.staff-header li {
   #single-post article {
     margin-top: 50px;
     margin-bottom: 50px; }
+  #single-post div#share-buttons {
+    position: fixed;
+    right: 4em;
+    top: 50%; }
+    #single-post div#share-buttons ul {
+      list-style: none; }
+
+h4.section-header.center {
+  text-align: center; }
 
 body.home {
   color: #ffffff; }
