@@ -6661,6 +6661,10 @@ table.hover tbody tr:nth-of-type(even):hover {
 .temp-testing-mp3 {
   margin-bottom: 100vh; }
 
+div#page-full-width {
+  max-width: 52rem;
+  margin: 0 auto; }
+
 .section-header {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -6686,8 +6690,11 @@ p {
 li {
   font-size: 20px; }
 
-li.accordion-item, ul#sticky li, footer#footer li, ul.quick-look-links li {
+li.accordion-item, ul#sticky li, footer#footer li, ul.quick-look-links li, ul.post-categories li {
   font-size: inherit; }
+
+.entry-title.section-header.small-gap {
+  padding-bottom: 0; }
 
 #footer-container {
   margin-top: 0 !important; }
@@ -9513,9 +9520,11 @@ ul.dropdown.menu.vertical.submenu.is-dropdown-submenu.first-sub:before {
     #footer-container #footer li {
       display: block;
       vertical-align: middle;
-      padding: 0 0 1.4rem 0 !important; }
+      line-height: 1; }
       #footer-container #footer li a {
         padding: 0; }
+    #footer-container #footer li:not(:last-child) {
+      padding: 0 0 1.4rem 0 !important; }
     #footer-container #footer h6 {
       padding: 0 0 1.4rem 0 !important;
       margin-bottom: 0;

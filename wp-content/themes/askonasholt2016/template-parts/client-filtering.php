@@ -1,9 +1,16 @@
 
 <div class="artist-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg');">
 	
+	<?php 
+		$myvar = get_field('clients','option');
+		//print_r($myvar);
+		$description = get_field('optional_description',$myvar);
+		//print_r($description);
+	?>
+
 	<header class="filter-header">
 		<h2 class="hero-heading">Clients</h2>
-		<p>Optional Description</p>
+		<p><?php echo $description; ?></p>
 
 		<?php //foundationpress_entry_meta(); ?>
 	</header>

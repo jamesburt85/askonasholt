@@ -122,9 +122,9 @@ if ($acf_fields['flexible_content']) {
 								<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 								    <a href="<?php echo $repeater['image']['url']; ?>" itemprop="contentUrl" data-size="<?php echo $repeater['image']['width'] ?>x<?php echo $repeater['image']['height'] ?>">
 							       	
-								        	<img src="<?php echo $repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" />
+								        	<!-- <img src="<?php echo $repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" /> -->
 
-								      <!-- 	<div class="gallery-image" itemprop="thumbnail" alt="Image description"  style="background-image: url('<?php echo $repeater['image']['sizes']['large']; ?>');"></div> -->
+								     <div class="gallery-image" itemprop="thumbnail" alt="Image description"  style="background-image: url('<?php echo $repeater['image']['url']; ?>');"></div>
 
 								    </a>
 								    <figcaption itemprop="caption description">

@@ -1,8 +1,15 @@
 <div class="filtering-block artist-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg');">
 
+	<?php 
+		$myvar = get_field('artists','option');
+		//print_r($myvar);
+		$description = get_field('optional_description',$myvar);
+		//print_r($description);
+	?>
+
 	<header class="filter-header">
 		<h2 class="hero-heading">Artists</h2>
-		<p>Optional Description</p>
+		<p><?php echo $description; ?></p>
 	</header>
 
 	<div class="row">

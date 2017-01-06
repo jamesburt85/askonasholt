@@ -1,9 +1,20 @@
 <div class="filtering-block magazine-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg');">
 	
+
+
+	<?php
+		//getting id of page
+		$myvar = get_field('the_green_room','option');
+		//print_r($myvar);
+		
+		//getting description from that page
+		$description = get_field('optional_description',$myvar);
+		//print_r($description);
+	?>
+
 	<header class="filter-header">
 		<h2 class="hero-heading">The Green Room</h2>
-		<p>Optional Description</p>
-		<?php //foundationpress_entry_meta(); ?>
+		<p><?php echo $description ?></p>
 	</header>
 
 

@@ -17,11 +17,16 @@
     li {
         display: block;
         vertical-align: middle;
-        padding: 0 0 1.4rem 0 !important;
+        line-height: 1;
         a {
           padding: 0;
         }
     }
+    //keeps even spacing at top and bottom of footer
+    li:not(:last-child) {
+      padding: 0 0 1.4rem 0 !important;
+    }
+    
     h6 {
       padding: 0 0 1.4rem 0 !important;
       margin-bottom: 0;

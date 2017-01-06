@@ -17,12 +17,14 @@ get_header(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header>
 			
-			<h3 class="entry-title section-header"><?php the_title(); ?></h3>
+			<h3 class="entry-title section-header small-gap"><?php the_title(); ?></h3>
 			
 			<div class="blog-meta">
 				<?php the_category(); ?>
 				<?php foundationpress_entry_meta(); ?>
 			</div>
+
+			<hr/>
 			
 		</header>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>

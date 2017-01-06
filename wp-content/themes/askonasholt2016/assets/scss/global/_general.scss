@@ -1,5 +1,10 @@
 //General styles throughout site
 
+div#page-full-width {
+    max-width: 52rem;
+    margin: 0 auto;
+}
+
 .section-header  {
     //@include grid-column(12);
     padding-top: $sitepadding;
@@ -38,8 +43,13 @@ li {
     font-size: 20px;
 }
 
-li.accordion-item, ul#sticky li, footer#footer li, ul.quick-look-links li {
+li.accordion-item, ul#sticky li, footer#footer li, ul.quick-look-links li, ul.post-categories li {
     font-size: inherit;
+}
+
+//reduce gap before entry meta on Green Room single post-categories
+.entry-title.section-header.small-gap {
+    padding-bottom: 0;
 }
 
 //remove margin above footer
