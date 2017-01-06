@@ -30,7 +30,7 @@
 	<div id="top"></div>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="title-bar" data-responsive-toggle="site-navigation">
+		<div class="title-bar" data-responsive-toggle="site-navigation" data-hide-for="large">
 			<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
 			<div class="title-bar-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -115,7 +115,7 @@
 			</div>
 			
 			<!-- <div class="header-social-area show-for-large"> -->
-			<div class="header-social-area">
+			<div class="header-social-area show-for-large">
 				<a class="show-for-large" href="https://www.facebook.com/askonasholt/" target="_blank">
 					<i class="fa fa-facebook fa-2x social-icon" aria-hidden="true"></i>
 				</a>
@@ -131,7 +131,7 @@
 			</div>
 			<!-- </div> -->
 
-			<div id="search-toggle" class="header-search-toggle button show-for-medium">
+			<div id="search-toggle" class="header-search-toggle button">
 
 				<svg width="23px" height="24px" viewBox="1377 56 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 

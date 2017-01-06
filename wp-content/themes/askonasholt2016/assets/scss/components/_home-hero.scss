@@ -7,7 +7,7 @@ body.page {
 		}
 		.center-image {
 			height: 70vh;
-			margin: 2em 1em;
+			margin: 1em 1em;
 			@include full-bg;
 			position: relative;
 		}
@@ -61,17 +61,19 @@ div.padded-text {
 	}
 }
 
-
- // h1 strong {
- // 	position: relative;
- // 	//left:-10px;
- // }
-
-
-
-
 .hero-text-area {
     position: absolute;
     bottom: 3em;
     margin-left: 1em;
-}	
+}
+
+@include breakpoint(medium) {
+	body.page {
+		div.slick-slider {
+			.center-image {
+				margin: 2em 1em;
+			}
+		}
+	}
+}
+

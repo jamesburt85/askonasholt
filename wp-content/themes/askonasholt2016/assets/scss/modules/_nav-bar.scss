@@ -152,10 +152,15 @@ div#search-toggle {
 	}
 	.top-bar .menu li:not(:last-child) {
 	    border-right: none;
-	    height: $header-height;
 	}
 	nav#site-navigation {
 		position: relative;
+	}
+}
+
+@include breakpoint(large up){
+	.top-bar .menu li:not(:last-child) {
+	    height: $header-height;
 	}
 }
 

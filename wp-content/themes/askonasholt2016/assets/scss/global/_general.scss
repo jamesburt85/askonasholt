@@ -38,6 +38,10 @@ li {
     font-size: 20px;
 }
 
+li.accordion-item, ul#sticky li, footer#footer li {
+    font-size: inherit;
+}
+
 //remove margin above footer
 #footer-container {
     margin-top: 0 !important;
