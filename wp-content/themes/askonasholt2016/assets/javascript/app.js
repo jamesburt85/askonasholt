@@ -291,7 +291,7 @@ var map = null;
           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
           if (target.length) {
             $('html, body').animate({
-              scrollTop: target.offset().top
+              scrollTop: target.offset().top-60
             }, 1000);
             return false;
           }
@@ -460,7 +460,7 @@ var map = null;
 
 
     //*********************************************
-    //***** HIDE SHARE ICONS AFETR 200px   ********
+    //***** HIDE SHARE ICONS AFTER 200px   ********
     //*********************************************
 
     $(document).scroll(function () {

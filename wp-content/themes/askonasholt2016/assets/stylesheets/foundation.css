@@ -6686,7 +6686,7 @@ p {
 li {
   font-size: 20px; }
 
-li.accordion-item, ul#sticky li, footer#footer li {
+li.accordion-item, ul#sticky li, footer#footer li, ul.quick-look-links li {
   font-size: inherit; }
 
 #footer-container {
