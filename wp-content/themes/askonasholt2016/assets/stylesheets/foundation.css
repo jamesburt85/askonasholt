@@ -9765,7 +9765,7 @@ div#search-toggle {
       color: initial; }
 
 .artist-filtering-block {
-  min-height: 28em; }
+  min-height: 20em; }
 
 .artist-filtering-block {
   position: relative; }
@@ -9788,7 +9788,8 @@ div#search-toggle {
   position: absolute;
   bottom: 0;
   list-style: none;
-  margin: 0; }
+  margin: 0;
+  max-width: 95%; }
   .artist-categories li {
     color: #fefefe;
     float: left;
@@ -9857,7 +9858,13 @@ body.post-type-archive-artists li.cat-item-all a {
       margin-right: 2.5px;
       margin-bottom: 2.5px; }
       ul.artist-categories li a {
-        padding: 0.85em 0.5em; } }
+        padding: 0.85em 0.5em; }
+  h2.hero-heading {
+    font-size: 2rem; } }
+
+@media screen and (min-width: 40em) {
+  .artist-filtering-block {
+    min-height: 28em; } }
 
 .link-banner .row {
   max-width: 60.375rem; }
@@ -10417,7 +10424,7 @@ header h1 {
 
 .artist-filtering-block header.filter-header {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -10431,6 +10438,17 @@ header h1 {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%); }
+
+@media screen and (min-width: 40em) {
+  .artist-filtering-block header.filter-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center; } }
 
 .acf-map {
   width: 100%;
