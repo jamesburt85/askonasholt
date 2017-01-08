@@ -9732,7 +9732,7 @@ div#search-toggle {
   -webkit-background-size: cover;
   background-size: cover;
   min-height: 200px;
-  height: 40vh;
+  height: 45vh;
   max-height: 500px;
   background-repeat: repeat-x;
   -webkit-background-size: inherit inherit;
@@ -9746,7 +9746,8 @@ div#search-toggle {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    width: 90%; }
   .filtering-block button.button {
     background-color: #fefefe;
     color: #F2F1ED;
@@ -10429,7 +10430,7 @@ header h1 {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 90%;
   text-align: center; }
 
 .artist-filtering-block .artist-categories {
@@ -11586,7 +11587,7 @@ span.hero-blurb p {
 
 .hero-header {
   color: white;
-  font-size: 45px;
+  font-size: 35px;
   padding: 11px;
   font-family: "GeometricSlab703BT-Light"; }
 
@@ -11647,6 +11648,10 @@ button.hero-button {
 
 .hero-text {
   max-width: 80%; }
+
+@media screen and (min-width: 40em) {
+  .hero-text {
+    font-size: 45px; } }
 
 .text-banner-wrapper {
   max-width: 100%;
@@ -13486,13 +13491,16 @@ div.staff-header li {
 #archive {
   max-width: 84.375rem;
   margin-left: auto;
-  margin-right: auto;
-  margin-top: 3rem; }
+  margin-right: auto; }
   #archive::before, #archive::after {
     content: ' ';
     display: table; }
   #archive::after {
     clear: both; }
+
+@media screen and (min-width: 40em) {
+  #archive {
+    margin-top: 3rem; } }
 
 #single-post {
   margin-top: 3rem; }

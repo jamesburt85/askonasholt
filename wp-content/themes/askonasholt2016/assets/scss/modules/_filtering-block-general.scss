@@ -3,7 +3,7 @@
 	position: relative;
 	@include full-bg;
 	min-height: 200px;
-	height: 40vh;
+	height: 45vh;
 	max-height: 500px;
 	background-repeat: repeat-x;
 	background-size: inherit;
@@ -13,6 +13,7 @@
 	}
 	.filter-header {
 		@include center();
+		width: 90%;
 	}
 	button.button {
 	    background-color: #fefefe;

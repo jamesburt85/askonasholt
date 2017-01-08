@@ -50,12 +50,19 @@
 			    </ul>
 			<?php } else { ?>
 			    <span>
-			    	<div class="tour-dates-basic">
-				    	<?php echo $time; ?>&nbsp;
-				    	<?php echo $date; ?>&nbsp;
-				    	<?php echo $venue; ?>,&nbsp;
-				    	<?php echo $city; ?>
-			    	</div>
+		        	<div class="tour-dates-basic hide-for-medium">
+		    	    	<?php echo $time; ?>&nbsp;
+		    	    	<?php echo $date; ?>&nbsp;<br/>
+		    	    	<?php echo $venue; ?>,&nbsp;
+		    	    	<?php echo $city; ?>
+		        	</div>
+		        	
+		        	<div class="tour-dates-basic show-for-medium">
+		    	    	<?php echo $time; ?>&nbsp;
+		    	    	<?php echo $date; ?>&nbsp;
+		    	    	<?php echo $venue; ?>,&nbsp;
+		    	    	<?php echo $city; ?>
+		        	</div>
 			    </span>
 		<?php } ?>
 
