@@ -189,8 +189,8 @@ role="main"> -->
                       <div class="event-listing-details">
                         <?php get_template_part( 'template-parts/event-related-artist' ); ?>
 
-                        <span class="event-detail"><?php echo $time; ?></span><br/>
-                        <span class="event-detail"><?php echo $date; ?></span><br/>
+                        <span class="event-detail"><?php echo $time; ?></span>
+                        <span class="event-detail"><?php echo $date; ?></span>
                         <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
                         <span class="more-info">
                             <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -225,15 +225,16 @@ role="main"> -->
       <div class="small-12 columns header-row">
         <h3 class="section-header">
           Latest Video &amp; Audio &nbsp;
+            <a class="view-link" href="<?php echo get_site_url(); ?>/the-green-room">View all &nbsp;
+            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+                      <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+                      <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+                  </g>
+              </svg>
+            </a>
         </h3>
-          <a class="view-link" href="<?php echo get_site_url(); ?>/the-green-room">View all &nbsp;
-          <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
-                    <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
-                    <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
-                </g>
-            </svg>
-          </a>
+          
       </div>
     </div>   
 

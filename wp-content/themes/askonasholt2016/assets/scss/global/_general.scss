@@ -1,9 +1,9 @@
 //General styles throughout site
 
-div#page-full-width {
-    max-width: 52rem;
-    margin: 0 auto;
-}
+// div#page-full-width {
+//     max-width: 57.375rem;
+//     margin: 0 auto;
+// }
 
 .section-header  {
     //@include grid-column(12);
@@ -35,8 +35,14 @@ body.search {
 }
 
 p {
-    font-size: 20px;
-    line-height: 1.8;
+    font-size: 1.15rem;
+}
+
+@include breakpoint(medium) {
+    p {
+        font-size: 1.27rem;
+        line-height: 1.8;
+    }
 }
 
 li {

@@ -153,7 +153,6 @@ div#video-audio {
 		background: $bggrey;
 		color: #ffffff;
 		padding: 1em;
-		height: 235px;
 	}
 }
 
@@ -245,6 +244,11 @@ div.row.free-text {
 			max-width: 400px;
 			margin-top: 0;
 			margin: 0 auto;
+		}
+	}
+	.artist-video-area {
+		.video-description {
+			height: 235px;
 		}
 	}
 	body.page-template-home {

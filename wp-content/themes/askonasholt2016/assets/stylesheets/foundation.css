@@ -6661,10 +6661,6 @@ table.hover tbody tr:nth-of-type(even):hover {
 .temp-testing-mp3 {
   margin-bottom: 100vh; }
 
-div#page-full-width {
-  max-width: 52rem;
-  margin: 0 auto; }
-
 .section-header {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -6684,8 +6680,12 @@ body.search .blogpost-entry {
   font-family: "GeometricSlab703BT-Light"; }
 
 p {
-  font-size: 20px;
-  line-height: 1.8; }
+  font-size: 1.15rem; }
+
+@media screen and (min-width: 40em) {
+  p {
+    font-size: 1.27rem;
+    line-height: 1.8; } }
 
 li {
   font-size: 20px; }
@@ -11479,8 +11479,7 @@ div#video-audio {
   .artist-video-area .video-description {
     background: #3E3E3E;
     color: #ffffff;
-    padding: 1em;
-    height: 235px; }
+    padding: 1em; }
 
 .video-audio-area {
   max-width: 100vw;
@@ -11553,6 +11552,8 @@ div.row.free-text {
     max-width: 400px;
     margin-top: 0;
     margin: 0 auto; }
+  .artist-video-area .video-description {
+    height: 235px; }
   body.page-template-home div#video-audio {
     margin-top: 50px; } }
 
@@ -13342,7 +13343,7 @@ div.staff-header li {
   display: flex; }
   .header-row a.view-link {
     font-weight: bold;
-    line-height: 78px;
+    line-height: 1;
     color: initial;
     font-family: "Brown-Pro-Light", AdobeBlank; }
 
@@ -13692,9 +13693,9 @@ img.circle-thumb {
   display: inline-block; }
 
 .side-bar-artist {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 60px; }
   .side-bar-artist img.circle-thumb {
     margin-right: 25px; }
@@ -13712,7 +13713,7 @@ ul.accordion {
     position: relative;
     border: none;
     border-bottom: 0;
-    line-height: 60px !important; }
+    line-height: 2 !important; }
   ul.accordion li.accordion-item .accordion-title:hover, ul.accordion li.accordion-item .accordion-title:focus {
     background-color: transparent; }
   ul.accordion li.accordion-item hr {
@@ -13743,11 +13744,8 @@ body.post-type-archive-events ul.accordion li.accordion-item .accordion-title {
   font-size: 19px; }
 
 span.more-info {
-  right: 2em;
+  right: 1em;
   position: absolute; }
-
-span.side-bar-artist-name, .event-detail {
-  padding-right: 25px; }
 
 .accordion-title:before {
   display: none !important; }
@@ -13757,7 +13755,18 @@ span.side-bar-artist-name, .event-detail {
     font-size: 19px;
     padding-right: 12px; }
     .event-listing-details .side-bar-artist-details {
-      text-align: left; } }
+      text-align: left; }
+  a.view-link {
+    padding-top: 25px;
+    padding-bottom: 25px; } }
+
+@media screen and (min-width: 40em) {
+  span.side-bar-artist-name, .event-detail {
+    padding-right: 25px; }
+  li.accordion-item .accordion-title {
+    line-height: 60px !important; }
+  span.more-info {
+    right: 2em; } }
 
 @media screen and (min-width: 64em) {
   .event-listing-details {

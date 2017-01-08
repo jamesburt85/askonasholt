@@ -175,7 +175,7 @@ img.circle-thumb {
 }
 
 .side-bar-artist {
-    display: inline-flex;
+    display: flex;
     line-height: 60px;
     img.circle-thumb {
         margin-right: $sitepadding;
@@ -202,7 +202,7 @@ ul.accordion {
         // display: -webkit-box !important;
         // display: -ms-flexbox !important;
         // display: flex !important;
-        line-height: 60px !important;
+        line-height: 2 !important;
     }
     .accordion-title:hover, .accordion-title:focus {
       background-color: transparent;
@@ -247,12 +247,8 @@ body.post-type-archive-events {
 }
 
 span.more-info {
-    right: 2em;
+    right: 1em;
     position: absolute;
-}
-
-span.side-bar-artist-name, .event-detail {
-  padding-right: $sitepadding;
 }
 
 .accordion-title:before {
@@ -274,6 +270,23 @@ span.side-bar-artist-name, .event-detail {
         text-align: left;   
       }
   }
+  a.view-link {
+      padding-top: 25px;
+      padding-bottom: 25px;
+  }
+}
+@include breakpoint(medium) {
+  span.side-bar-artist-name, .event-detail {
+    padding-right: $sitepadding;
+  }
+  li.accordion-item {
+    .accordion-title {
+      line-height: 60px !important;
+    }
+  }
+  span.more-info {
+      right: 2em;
+    }
 }
 
 @include breakpoint(large up) {
