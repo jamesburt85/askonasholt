@@ -109,6 +109,14 @@ div#search-toggle {
     background: transparent;
 }
 
+
+.top-bar .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item {
+	background: #da183f !important;
+	a {
+		color: #ffffff !important;
+	}
+}
+
 // *****************
 //MEGA MENU STYLES *
 // *****************

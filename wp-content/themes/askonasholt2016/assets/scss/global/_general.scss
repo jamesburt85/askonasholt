@@ -18,6 +18,11 @@
     }
 }
 
+div#narrow-text-page {
+    max-width: 57rem;
+    margin: 0 auto;
+}
+
 @include breakpoint(medium up) {
     .section-header  {
         padding-top: $sitepadding;

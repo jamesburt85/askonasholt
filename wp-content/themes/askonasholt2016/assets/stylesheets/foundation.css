@@ -6670,6 +6670,10 @@ table.hover tbody tr:nth-of-type(even):hover {
     font-size: 17px;
     color: inherit; }
 
+div#narrow-text-page {
+  max-width: 57rem;
+  margin: 0 auto; }
+
 @media screen and (min-width: 40em) {
   .section-header {
     padding-top: 25px;
@@ -9699,6 +9703,11 @@ div#search-toggle {
   color: #BA0C2F !important;
   background: transparent; }
 
+.top-bar .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item {
+  background: #da183f !important; }
+  .top-bar .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item a {
+    color: #ffffff !important; }
+
 .input-group {
   display: table;
   width: 30px;
@@ -9776,13 +9785,22 @@ div#search-toggle {
   min-height: 20em; }
 
 .artist-filtering-block {
-  position: relative; }
+  position: relative;
+  -webkit-background-size: cover;
+          background-size: cover; }
+
+.filter-area {
+  text-align: center;
+  width: 100%; }
 
 @media screen and (min-width: 40em) {
   .artist-categories {
-    display: -webkit-box; }
+    width: 100%;
+    padding-left: 0; }
   .artist-categories li {
-    float: none !important; }
+    float: none !important;
+    display: inline;
+    text-align: center; }
   .artist-categories {
     position: absolute;
     left: 50%;
@@ -9794,7 +9812,7 @@ div#search-toggle {
 
 .artist-categories {
   position: absolute;
-  bottom: 0;
+  bottom: 1em;
   list-style: none;
   margin: 0;
   max-width: 95%; }
@@ -9919,7 +9937,6 @@ ul.single-page-nav {
   width: 100%; }
 
 .magazine-item {
-  height: 450px;
   border: 1px solid #dddddd;
   margin-bottom: 2em;
   -webkit-transition: 0.5s;
@@ -10003,6 +10020,10 @@ body.blog section.container hr {
     display: -ms-flexbox;
     display: flex;
     margin-right: 10px; }
+
+@media screen and (min-width: 40em) {
+  .magazine-item {
+    height: 450px; } }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -13070,7 +13091,9 @@ div.staff-header li {
   color: #b38a76;
   font-size: 13px;
   letter-spacing: 1px;
-  list-style-type: none; }
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 10px; }
 
 .staff-category li {
   text-transform: uppercase;
@@ -13720,7 +13743,10 @@ img.circle-thumb {
   display: flex; }
 
 .press-details {
-  display: inline-block; }
+  display: inline-block;
+  line-height: 60px !important; }
+  .press-details span.more-info {
+    line-height: 60px !important; }
 
 .side-bar-artist {
   display: -webkit-box;

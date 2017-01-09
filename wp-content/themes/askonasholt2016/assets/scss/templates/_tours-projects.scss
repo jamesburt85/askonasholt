@@ -172,6 +172,10 @@ img.circle-thumb {
 
 .press-details {
   display: inline-block;
+  line-height: 60px !important;
+  span.more-info {
+      line-height: 60px !important;
+  }
 }
 
 .side-bar-artist {

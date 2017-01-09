@@ -1,7 +1,6 @@
 //individual magazine posts on archive
 
 .magazine-item {
-	height: 450px; //temp
 	border: 1px solid #dddddd;
 	margin-bottom: 2em;
 	transition: 0.5s;
@@ -89,27 +88,7 @@ body.blog {
 
  .archive__load-more {
  	font-weight: bold;
-// 	background-color: #fefefe;
-// 	border: 1px solid #B49A81;
-// 	margin-bottom: 0;
-// 	text-transform: uppercase;
-// 	font-weight: bold;
-// 	letter-spacing: 1px;
-// 	transition: 0.5s;
-// 	a {
-// 		color: #B49A81;
-// 		height: 100%;
-// 		width: 100%;
-// 		padding: 0.85em 1em;
-// 	}
  }
-
-// .archive__load-more:hover {
-// 	background-color: #9e0a28;
-// 	a {
-// 		color: #fff;
-// 	}
-// }
 
 
 //************************
@@ -125,3 +104,16 @@ body.blog {
 		margin-right: 10px;
 	}
 }
+
+
+//****************************************
+//Media Queries **************************
+//****************************************
+
+@include breakpoint(medium) {
+	.magazine-item {
+		height: 450px;
+	}
+}
+
+

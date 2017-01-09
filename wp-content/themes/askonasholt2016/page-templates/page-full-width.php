@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Narrow Text Page
+Template Name: Page Full Width
 */
 get_header(); ?>
 

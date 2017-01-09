@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Narrow Text Page
+Template Name: Narrow Simple
 */
 get_header(); ?>
 
@@ -36,7 +36,5 @@ get_header(); ?>
 <?php do_action( 'foundationpress_after_content' ); ?>
 
 </div>
-
-<?php get_template_part( 'template-parts/page-nav-tiles' ); ?>
 
 <?php get_footer();
