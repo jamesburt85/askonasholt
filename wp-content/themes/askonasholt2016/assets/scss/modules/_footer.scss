@@ -23,8 +23,8 @@
         }
     }
     //keeps even spacing at top and bottom of footer
-    li:not(:last-child) {
-      padding: 0 0 1.4rem 0 !important;
+    li {
+      padding: 0 0 1rem 0 !important;
     }
     
     h6 {
@@ -86,7 +86,7 @@ article#widget_text {
     text-align: center;
   }
   article {
-    margin: $sitepadding 0;
+    margin: $sitepadding-small 0;
   }
 }
 
@@ -95,6 +95,9 @@ article#widget_text {
   #footer-container {
     .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
         text-align: right;
+    }
+    li:not(:last-child) {
+      padding: 0 0 1.4rem 0 !important;
     }
   }
 }

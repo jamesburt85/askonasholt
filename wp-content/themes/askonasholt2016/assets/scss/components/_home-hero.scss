@@ -61,10 +61,17 @@ div.padded-text {
 	}
 }
 
-.hero-text-area {
+.hero-text-area.hero-text {
     position: absolute;
     bottom: 3em;
     margin-left: 1em;
+	
+	// span.hero-sub-header {
+	//     font-size: 0.7em;
+	// }
+	// span.hero-header {
+	//     font-size: 35px;
+	// }
 }
 
 @include breakpoint(medium) {

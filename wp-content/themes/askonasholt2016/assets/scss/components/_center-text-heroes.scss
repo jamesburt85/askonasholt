@@ -2,14 +2,13 @@
 
 .center-text-hero-header {
 	position: relative;
-	height: 25vh !important;
+	height: 30vh !important;
 	max-height: 500px;
 	@include full-bg;
 	text-align: center;
-	margin-bottom: $sitepadding-large;
 	.center-hero-text {
 		@include center;
-		// /color: #ffffff;
+		width: 90%;
 		p {
 			margin-bottom: 0;
 		}
@@ -20,5 +19,6 @@
 @include breakpoint(medium up) {
 	.center-text-hero-header {
 		height: 50vh !important;
+		margin-bottom: $sitepadding-large;
 	}
 }

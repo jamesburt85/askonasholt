@@ -7,14 +7,21 @@
 
 .section-header  {
     //@include grid-column(12);
-    padding-top: $sitepadding;
-    padding-bottom: $sitepadding;
+    padding-top: $sitepadding-small;
+    padding-bottom: $sitepadding-small;
     color: $brand-red;
     font-family: $serif-font;
     //@include grid-column(12);
     a {
         font-size: 17px;
         color: inherit;
+    }
+}
+
+@include breakpoint(medium up) {
+    .section-header  {
+        padding-top: $sitepadding;
+        padding-bottom: $sitepadding;
     }
 }
 
