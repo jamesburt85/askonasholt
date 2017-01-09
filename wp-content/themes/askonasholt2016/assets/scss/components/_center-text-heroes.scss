@@ -6,6 +6,7 @@
 	max-height: 500px;
 	@include full-bg;
 	text-align: center;
+	border-bottom: 1px solid #cccccc;
 	.center-hero-text {
 		@include center;
 		width: 90%;

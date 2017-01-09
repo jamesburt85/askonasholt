@@ -6,7 +6,7 @@ body.page {
 		    @include full-bg;
 		}
 		.center-image {
-			height: 70vh;
+			height: 69vh;
 			margin: 1em 1em;
 			@include full-bg;
 			position: relative;
@@ -31,8 +31,6 @@ body.page {
 			left: 76px;
 			z-index: 1;
 		}
-
-
 
 	}
 	
@@ -84,3 +82,8 @@ div.padded-text {
 	}
 }
 
+//avoid flash of content further down page
+.home-hero-container {
+	min-height: 500px;
+	background-color: #808080;
+}

@@ -197,7 +197,7 @@ ul.accordion {
     .accordion-title {
         display: block;
         padding: 0;
-        line-height: 1;
+        //line-height: 1;
         font-size: inherit;
         color: inherit;
         position: relative;
@@ -206,7 +206,7 @@ ul.accordion {
         // display: -webkit-box !important;
         // display: -ms-flexbox !important;
         // display: flex !important;
-        line-height: 2 !important;
+        //line-height: 2 !important;
     }
     .accordion-title:hover, .accordion-title:focus {
       background-color: transparent;

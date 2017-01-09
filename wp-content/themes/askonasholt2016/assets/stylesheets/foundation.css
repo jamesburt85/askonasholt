@@ -9753,7 +9753,8 @@ div#search-toggle {
   background-repeat: repeat-x;
   -webkit-background-size: inherit inherit;
           background-size: inherit;
-  text-align: center; }
+  text-align: center;
+  border-bottom: 1px solid #cccccc; }
   .filtering-block .hero-heading {
     font-family: "GeometricSlab703BT-Light"; }
   .filtering-block .filter-header {
@@ -9782,12 +9783,11 @@ div#search-toggle {
       color: initial; }
 
 .artist-filtering-block {
-  min-height: 20em; }
-
-.artist-filtering-block {
   position: relative;
   -webkit-background-size: cover;
-          background-size: cover; }
+          background-size: cover;
+  min-height: 20em;
+  border-bottom: 1px solid #cccccc; }
 
 .filter-area {
   text-align: center;
@@ -9966,7 +9966,10 @@ ul.single-page-nav {
   .magazine-item .magazine-category {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px; }
     .magazine-item .magazine-category li {
       list-style-type: none;
       text-transform: uppercase;
@@ -9975,12 +9978,12 @@ ul.single-page-nav {
       display: flex;
       margin-right: 10px; }
     .magazine-item .magazine-category span.category {
-      font-weight: bold;
-      text-transform: capitalize; }
+      font-weight: bold; }
   .magazine-item span.magazine-item-copy p {
-    font-size: 15px; }
+    font-size: 1.1rem; }
   .magazine-item .magazine-item-header {
-    margin: 1em 0 0 0; }
+    margin: 1em 0 0 0;
+    font-size: 1.1rem; }
     .magazine-item .magazine-item-header a {
       color: inherit; }
 
@@ -11371,7 +11374,7 @@ body.page div.slick-slider .center.slick-initialized.slick-slider {
   background-size: cover; }
 
 body.page div.slick-slider .center-image {
-  height: 70vh;
+  height: 69vh;
   margin: 1em 1em;
   background-position: center center;
   background-repeat: no-repeat;
@@ -11420,6 +11423,10 @@ div.padded-text {
 @media screen and (min-width: 40em) {
   body.page div.slick-slider .center-image {
     margin: 2em 1em; } }
+
+.home-hero-container {
+  min-height: 500px;
+  background-color: #808080; }
 
 .artists {
   -webkit-transition: 0.5s;
@@ -12141,7 +12148,8 @@ div#mega-toggle-block-1:after {
   border-bottom: 0;
   -webkit-background-size: cover;
   background-size: cover;
-  text-align: center; }
+  text-align: center;
+  border-bottom: 1px solid #cccccc; }
   .center-text-hero-header .center-hero-text {
     position: absolute;
     top: 50%;
@@ -13767,13 +13775,11 @@ ul.accordion {
   ul.accordion li.accordion-item .accordion-title {
     display: block;
     padding: 0;
-    line-height: 1;
     font-size: inherit;
     color: inherit;
     position: relative;
     border: none;
-    border-bottom: 0;
-    line-height: 2 !important; }
+    border-bottom: 0; }
   ul.accordion li.accordion-item .accordion-title:hover, ul.accordion li.accordion-item .accordion-title:focus {
     background-color: transparent; }
   ul.accordion li.accordion-item hr {
