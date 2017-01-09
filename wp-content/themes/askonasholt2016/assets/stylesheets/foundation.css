@@ -11677,6 +11677,10 @@ button.hero-button {
 .hero-text {
   max-width: 80%; }
 
+@media screen and (min-width: 40em) {
+  .hero-header {
+    font-size: 45px; } }
+
 .text-banner-wrapper {
   max-width: 100%;
   left: 0;

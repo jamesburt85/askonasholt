@@ -100,7 +100,7 @@ button.hero-button {
 //}
 
 @include breakpoint(medium) {
-	.hero-text {
-		//font-size: 45px;
+	.hero-header {
+		font-size: 45px;
 	}
 }
