@@ -24,14 +24,15 @@ get_header(); ?>
             <?php if ( have_rows('vacancy_accordion') ); { ?>
             
               <h4 class="section-header">Vacancies</h4>
-            
+              <div class="press-row">
+                <ul class="accordion" data-accordion data-allow-all-closed="true">
             <?php while ( have_rows('vacancy_accordion') ) { the_row();
 
               $vacancy_title = get_sub_field('vacancy_title');
               $vacancy_details = get_sub_field('vacancy_details'); ?>
               
-                <div class="press-row">
-                  <ul class="accordion" data-accordion data-allow-all-closed="true">
+                
+                  
                     <li class="accordion-item" data-accordion-item>
                       
                       <a href="#" class="accordion-title"><?php //the_title(); ?> 
@@ -52,10 +53,12 @@ get_header(); ?>
                       </div>
 
                     </li>
-                  </ul>
-                </div>
+                 
+               
 
               <?php } ?>
+                </ul>
+              </div>
 
             <?php } ?>
 
