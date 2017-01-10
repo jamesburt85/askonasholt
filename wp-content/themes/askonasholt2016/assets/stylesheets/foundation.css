@@ -13010,6 +13010,12 @@ body.single.single-artists .enquiry-button {
   body.single.single-artists .enquiry-button a {
     color: #ffffff; }
 
+div.side-bar-text-area {
+  margin-top: 25px; }
+  div.side-bar-text-area p {
+    font-size: 1rem;
+    margin-bottom: 0; }
+
 @media screen and (min-width: 40em) {
   body.single.single-artists .artist-header.container .artist-details-area {
     position: absolute;

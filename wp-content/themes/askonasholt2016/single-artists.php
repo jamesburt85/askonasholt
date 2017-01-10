@@ -97,10 +97,10 @@ get_header(); ?>
 						<?php }
 					} ?>
 
-		<span><?php echo $contact_text_area; ?></span>
+		<div class="side-bar-text-area"><?php echo $contact_text_area; ?></div>
 		<br/>
 
-		
+
 		<div class="artist-social">
 
 			<?php if( have_rows('social_buttons') ): ?>
