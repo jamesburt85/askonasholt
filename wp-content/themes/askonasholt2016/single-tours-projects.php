@@ -21,7 +21,7 @@ get_header(); ?>
 		</li>
 
 		<li>
-			<a data-scroll="" data-events="scroll" href="#introduction">Introduction</a>
+			<a data-scroll data-events="scroll" href="#introduction">Introduction</a>
 		</li>
 
 		<li>
@@ -47,7 +47,7 @@ get_header(); ?>
 
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 
-				<div class="entry-content hide-for-medium"  id="introduction">
+				<div class="entry-content hide-for-medium">
 					<?php //the_content(); ?>
 					<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
 
@@ -217,7 +217,7 @@ get_header(); ?>
 					    // echo '<ul>'; ?>
 						
 						
-					  	<div id="route" class="route-map show-flightpath acf-map row">
+					  	<div class="route-map show-flightpath acf-map row">
 						
 						<?php while ( $the_query->have_posts() ) {
 					      		$the_query->the_post();
@@ -226,7 +226,7 @@ get_header(); ?>
 						
 						</div>
 
-		    			<div class="row schedule" id="schedule">	
+		    			<div class="row schedule">	
 
 							<div class="small-12 medium-3 columns">
 								<h4 class="section-header">Schedule</h4>

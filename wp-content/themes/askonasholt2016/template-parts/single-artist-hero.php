@@ -41,47 +41,23 @@
 					<br>
 					<h2 class="artist-name hero-heading"><?php the_title(); ?></h2>
 				</div>
-
-				<div class="artist-social">
-
-					<?php if( have_rows('social_buttons') ): ?>
-
-						<?php while( have_rows('social_buttons') ): the_row(); 
-
-							?>
-
-							<a href="<?php the_sub_field('social_media_link'); ?>" target="_blank">
-								<i class="fa fa-<?php the_sub_field('social_media_name'); ?>" aria-hidden="true"></i>
-							</a>
-
-						<?php endwhile; ?>
-
-					<?php endif; ?>
-
-					<a class="website" href="http://www.<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a>
-					
-	<!-- 						<a href="mailto:?subject=Artist&amp;body=<?php echo get_permalink() ?>;" title="Artist">
-					  <span>Share</span>
-					</a> -->
-				</div>
-
 				
-					<ul class="quick-look-links">
-						<li>
-							<a href="<?php echo $publicity_pack; ?>" target="_blank">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/download-arrow.png">
-								&nbsp;
-								Download Publicity Pack
-							</a>
-						</li>
-						<li>
-							<a href="mailto:?subject= <?php the_title(); ?> &amp;body=C<?php the_permalink(); ?>">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/share-arrow.png">
-								&nbsp;
-								Share
-							</a>
-						</li>
-					</ul>
+				<ul class="quick-look-links">
+					<li>
+						<a href="<?php echo $publicity_pack; ?>" target="_blank">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/download-arrow.png">
+							&nbsp;
+							Download Publicity Pack
+						</a>
+					</li>
+					<li>
+						<a href="mailto:?subject= <?php the_title(); ?> &amp;body=C<?php the_permalink(); ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/share-arrow.png">
+							&nbsp;
+							Share
+						</a>
+					</li>
+				</ul>
 
 			</div>
 		</div>

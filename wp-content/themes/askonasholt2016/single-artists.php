@@ -98,7 +98,28 @@ get_header(); ?>
 					} ?>
 
 		<span><?php echo $contact_text_area; ?></span>
-		<br/>			
+		<br/>
+
+		
+		<div class="artist-social">
+
+			<?php if( have_rows('social_buttons') ): ?>
+
+				<?php while( have_rows('social_buttons') ): the_row(); 
+
+					?>
+
+					<a href="<?php the_sub_field('social_media_link'); ?>" target="_blank">
+						<i class="fa fa-<?php the_sub_field('social_media_name'); ?>" aria-hidden="true"></i>
+					</a>
+
+				<?php endwhile; ?>
+
+			<?php endif; ?>
+
+			<a class="website" href="http://www.<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a>
+			
+		</div>			
 
 
 		</div>

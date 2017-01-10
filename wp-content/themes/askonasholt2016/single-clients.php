@@ -8,15 +8,10 @@
 
 get_header(); ?>
 
-<?php
-/*
-Template Name: Narrow
-*/
-get_header(); ?>
 
 <?php get_template_part( 'template-parts/center-text-hero' ); ?>
 
-<div id="page-full-width" role="main">
+<div id="narrow-text-page" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
