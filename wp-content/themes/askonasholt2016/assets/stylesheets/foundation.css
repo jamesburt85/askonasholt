@@ -13776,7 +13776,7 @@ img.circle-thumb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  line-height: 60px; }
+  line-height: 30px; }
   .side-bar-artist img.circle-thumb {
     margin-right: 25px; }
   .side-bar-artist .side-bar-artist-name {

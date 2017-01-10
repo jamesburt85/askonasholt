@@ -25,7 +25,9 @@ get_header(); ?>
 			</div>
 
 			<hr/>
-			
+
+			<?php the_content(); ?>
+
 		</header>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 
@@ -47,7 +49,7 @@ get_header(); ?>
 					include(locate_template('template-parts/acf.php'));
 				}
 
-				else {
+				elseif (has_post_format( 'standard' )) {
 					the_content();
 					//getting ACF Flexible content navigation
 					$acf_fields = get_fields();

@@ -97,7 +97,7 @@ get_header(); ?>
 												//echo $thumb_url;
 
 												# Get post terms as array
-												$artist_types = get_the_terms( $staff_id, 'artist-type');
+												$artist_types = get_the_terms( $staff_id, 'people-type');
 
 												?>
 												
@@ -299,7 +299,7 @@ get_header(); ?>
 										//echo $thumb_url;
 
 										# Get post terms as array
-										$artist_types = get_the_terms( $staff_id, 'artist-type');
+										$artist_types = get_the_terms( $staff_id, 'people-type');
 
 										?>
 										
