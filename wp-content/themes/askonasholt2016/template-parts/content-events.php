@@ -41,7 +41,7 @@
 		</div>
 
 		<div class="small-12 columns">
-			<ul class="accordion" data-accordion data-allow-all-closed="true">
+			<ul class="accordion press-row" data-accordion data-allow-all-closed="true">
 			  <li class="accordion-item" data-accordion-item>
 			    
 			    <a href="#" class="accordion-title">
@@ -73,5 +73,5 @@
 	<footer>
 		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
 	</footer>
-	<hr />
+	<!-- <hr /> -->
 </div>

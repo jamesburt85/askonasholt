@@ -7,7 +7,7 @@
             "label": "Artist",
             "name": "related_artist",
             "type": "relationship",
-            "instructions": "",
+            "instructions": "Add the artist associated with this video to show the video on the artist's page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -34,6 +34,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
+            },
+            {
+                "param": "post_format",
+                "operator": "==",
+                "value": "video"
             }
         ]
     ],
@@ -45,5 +50,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1481100082
+    "modified": 1484056914
 }
