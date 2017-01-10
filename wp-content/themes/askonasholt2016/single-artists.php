@@ -36,82 +36,73 @@ get_header(); ?>
 	?>
 
 	<div class="bio-row row" id="intro">
-		<div class="small-12 medium-3 columns artist-contacts">
+		<div class="small-12 large-9 columns hide-for-large" id="introduction">
+			<h4 class="section-header">Introduction</h4>
+			<p><?php echo $bio; ?></p>
+		</div>
+		<div class="small-12 large-3 columns artist-contacts">
 			<h4 class="section-header">Contact</h4>
 
-				<!-- <?php if( have_rows('contact_people') ): ?>
+				<?php 
 
-					<?php while( have_rows('contact_people') ): the_row(); 
+					$related_staff = get_field('related_staff');
+					//print_r($related_staff);
 
-						?>
+					if (!empty($related_staff)) {
+						foreach ($related_staff as $artist_id) { ?> 
 
-						<p class="caption"><?php the_sub_field('contact_name'); ?></p>
-						<p class="caption"><?php the_sub_field('contact_position'); ?></p>
+							<div class="side-bar-artist"> <?php
+								# Get featured image id
+								$thumb_id = get_post_thumbnail_id($artist_id);
+								# If there is not a featured image
+								if ( empty( $thumb_id)) {
+									$thumb_url = 'http://placehold.it/150x150';
+								# Yeay, we have an image ID
+								} else {
+									# Get the image from the image ID
+									$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
+									$thumb_url = $thumb_url_array[0];
+								}
+								//echo $thumb_url;
 
-					<?php endwhile; ?>
-
-				<?php endif; ?> -->
-
-						<?php 
-
-							$related_staff = get_field('related_staff');
-							//print_r($related_staff);
-
-							if (!empty($related_staff)) {
-								foreach ($related_staff as $artist_id) { ?> 
-
-									<div class="side-bar-artist"> <?php
-										# Get featured image id
-										$thumb_id = get_post_thumbnail_id($artist_id);
-										# If there is not a featured image
-										if ( empty( $thumb_id)) {
-											$thumb_url = 'http://placehold.it/150x150';
-										# Yeay, we have an image ID
-										} else {
-											# Get the image from the image ID
-											$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
-											$thumb_url = $thumb_url_array[0];
-										}
-										//echo $thumb_url;
-
-										# Get post terms as array
-										$artist_types = get_the_terms( $artist_id, 'artist-type');
-
-										?>
-										
-										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
-										
-										<div class="side-bar-artist-details">
-											<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?>
-											
-											<a href="#">&nbsp;
-										        <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-										            <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
-										                <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
-										                <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
-										            </g>
-										        </svg>
-										      </a>
-											</span><br/>
-										
-											<?php # If this artist has an artist-type
-											# - Will only EVER return the first result in the artist type array
-											if ( !empty( $artist_types)): ?>
-												<span><?php echo $artist_types[0]->name ?></span>
-											<?php endif ?>
-										</div>
-
-									</div>
+								# Get post terms as array
+								$artist_types = get_the_terms( $artist_id, 'people-type');
+								//print_r($artist_types);
+								?>
 								
-								<?php }
-							} ?>
+								<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+								
+								<div class="side-bar-artist-details contact">
+									<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?>
+									
+									<a href="#">&nbsp;
+								        <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								            <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+								                <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+								                <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+								            </g>
+								        </svg>
+								      </a>
+									</span><br/>
+								
+									<?php # If this artist has an artist-type
+									# - Will only EVER return the first result in the artist type array
+									if ( !empty( $artist_types)): ?>
+										<span><?php echo $artist_types[0]->name ?></span>
+									<?php endif ?>
+								</div>
 
-				<span><?php echo $contact_text_area; ?></span>
-				<br/>			
+							</div>
+						
+						<?php }
+					} ?>
+
+		<span><?php echo $contact_text_area; ?></span>
+		<br/>			
 
 
 		</div>
-		<div class="small-12 medium-9 columns" id="introduction">
+		<div class="small-12 large-9 columns show-for-large" id="introduction">
 			<h4 class="section-header">Introduction</h4>
 			<p><?php echo $bio; ?></p>
 		</div>
@@ -156,16 +147,17 @@ get_header(); ?>
 			<?php if( $videos ): ?>
 				<!-- <ul> -->
 				<?php
-					foreach( $videos as $video ): setup_postdata( $video );
+					foreach( $videos as $video ): setup_postdata( $video ); ?>
+						<div class="small-12 medium-6 large-3 columns artist-video-area">
+							<?php get_template_part( 'template-parts/video-player' ); ?>
+						</div>
 
-						// /get_template_part( 'template-parts/video-player' );
-
-					?>
+					
 					<div>
 	<!-- 					<div class="small-2 columns">
 							<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
 						</div> -->
-						<div class="small-12 medium-6 large-3 columns artist-video-area">
+						<!-- <div class="small-12 medium-6 large-3 columns artist-video-area">
 							<div class="row large-video-row">
 								<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
 							</div>
@@ -174,7 +166,7 @@ get_header(); ?>
 								<?php the_date('d-m-y'); ?>
 								<span class="magazine-item-copy"><?php the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
 							</div>
-						</div>
+						</div> -->
 					</div>
 
 					<?php
@@ -273,7 +265,7 @@ get_header(); ?>
 		    if ( $the_query->have_posts() ) { ?>
 		    	
 		    	<div class="row press-row show-for-large"><!-- Show for large -->
-		    	<h4 class="section-header">Performance Schedule</h4>
+		    	<h4 class="section-header small-12 columns">Performance Schedule</h4>
 		    	  <div class="small-12 columns"><!-- Show for large -->
 		    	    <ul class="accordion" data-accordion data-allow-all-closed="true"><!-- Show for large -->
 		      
@@ -375,7 +367,7 @@ get_header(); ?>
 
 		    	<div class="row press-row hide-for-large"><!-- side for large -->
 
-		    	<h4 class="section-header">Performance Schedule</h4>
+		    	<h4 class="section-header small-12 columns">Performance Schedule</h4>
 		    	  <div class="small-12 columns"><!-- side for large -->
 		    	    <ul class="accordion" data-accordion data-allow-all-closed="true"><!-- side for large -->
 		      

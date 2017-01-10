@@ -11318,6 +11318,12 @@ body.single-online .small-12.columns.audio-player {
   .press-row li.accordion-item:last-child {
     border-bottom: 1px solid #cccccc; }
 
+@media screen and (max-width: 39.9375em) {
+  .press-row li.accordion-item {
+    padding: 1em 0; }
+  .event-listing-details {
+    line-height: 2; } }
+
 .sites-button {
   background: #FF6908;
   font-size: 1.25rem;
@@ -11459,6 +11465,8 @@ div.padded-text {
     color: initial;
     -webkit-transition: 0.5s;
     transition: 0.5s; }
+  .artists .side-bar-artist-details.contact {
+    line-height: 30px; }
   .artists .artist-details:hover .artist-name {
     color: #BA0C2F; }
 
@@ -11596,6 +11604,13 @@ div.row.free-text {
   border-bottom: 1px solid #cccccc; }
   div.row.free-text p {
     margin: 25px 0; }
+
+.video-meta {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px; }
+  .video-meta span.video-title {
+    font-weight: bold; }
 
 @media screen and (min-width: 40em) {
   .single-artists .artist-header-thumb {

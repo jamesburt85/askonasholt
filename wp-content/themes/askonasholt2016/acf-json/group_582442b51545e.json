@@ -125,8 +125,7 @@
                 "people"
             ],
             "taxonomy": [
-                "people-type:board-of-directors",
-                "people-type:consultants"
+                "people-type:board-of-directors||people-type:consultants"
             ],
             "filters": [
                 "search"
@@ -281,5 +280,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483650626
+    "modified": 1484045744
 }

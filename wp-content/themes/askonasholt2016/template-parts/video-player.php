@@ -14,9 +14,13 @@ $video = $acf_fields['video'];
 </div>
 
 <div class="video-description">
-  <?php echo wpdocs_custom_taxonomies_terms_links(); ?>
-  <?php the_date('d-m-y'); ?>
-  <?php the_title(); ?>
+  <?php //echo wpdocs_custom_taxonomies_terms_links(); ?>
+  	<div class="video-meta">
+	  <span class="video-title">
+	  	<?php the_title(); ?>
+	  </span>
+	  <?php the_date('d M Y'); ?>
+	</div>
   <span class="magazine-item-copy"><?php the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
 </div>
 
