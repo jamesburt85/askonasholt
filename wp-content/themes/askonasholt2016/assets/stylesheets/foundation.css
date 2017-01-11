@@ -9797,8 +9797,7 @@ div#search-toggle {
   position: relative;
   -webkit-background-size: cover;
           background-size: cover;
-  min-height: 20em;
-  border-bottom: 1px solid #cccccc; }
+  min-height: 20em; }
 
 .filter-area {
   text-align: center;

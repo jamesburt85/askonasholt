@@ -22,9 +22,9 @@ if ( is_array($mp3) ) {
 		<source src="<?php echo $mp3; ?>" type="audio/mp3">
 		<!-- <source src="/path/to/audio.ogg" type="audio/ogg"> -->
 	</audio>
-	<div class="audio-info">
-		<h3><?php echo $trackname; ?> - <?php echo $aristname; ?> - <?php echo $date; ?> - <?php echo $location; ?></h3>
-		<!-- <h4></h4> -->
+	<div class="audio-info video-meta">
+		<span class="video-title"><?php echo $aristname; ?></span>
+		<?php //the_date('d M Y'); ?> <?php echo $date; ?> <?php echo $trackname; ?> <?php echo $location; ?>
 	</div>
 </div>
 
