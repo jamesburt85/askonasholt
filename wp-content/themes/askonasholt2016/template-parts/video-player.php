@@ -5,7 +5,11 @@ $acf_fields = get_fields();
 // print_r($acf_fields);
 // echo "</pre>";
 
-$video = $acf_fields['video'];
+$video = $acf_fields['flexible_content'][0]['video'];
+
+// echo "<pre>";
+// print_r($video);
+// echo "</pre>";
 
 ?>
 
