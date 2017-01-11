@@ -35,7 +35,7 @@
 				</a>
 					
 					<div class="side-bar-artist-details simple-listing">
-						<a href="<?php echo $artist_url; ?>">
+						<a class="side-bar-link" href="<?php echo $artist_url; ?>">
 							<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
 						<?php # If this artist has an artist-type
 						# - Will only EVER return the first result in the artist type array

@@ -13798,6 +13798,9 @@ img.circle-thumb {
   .side-bar-artist .side-bar-artist-name {
     font-weight: bold; }
 
+a.side-bar-link {
+  color: initial !important; }
+
 ul.accordion {
   margin-bottom: 0; }
   ul.accordion li.accordion-item .accordion-title {

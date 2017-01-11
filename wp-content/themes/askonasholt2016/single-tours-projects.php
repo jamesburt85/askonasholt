@@ -80,7 +80,12 @@ get_header(); ?>
 									//print_r($tour_staff);
 
 									if (!empty($tour_staff)) {
-										foreach ($tour_staff as $staff_id) { ?> 
+										foreach ($tour_staff as $staff_id) { 
+
+											# Get Permalink to artist page:
+											$staff_url = get_permalink($staff_id);
+
+											?> 
 
 											<div class="side-bar-artist"> <?php
 												# Get featured image id
@@ -101,9 +106,13 @@ get_header(); ?>
 
 												?>
 												
-													<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+												<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+												
 												<div class="side-bar-artist-details">
-													<span class="side-bar-artist-name"><?php echo get_the_title( $staff_id) ?></span><br/>
+													<a class="side-bar-link" href="<?php echo $staff_url; ?>">
+														<span class="side-bar-artist-name"><?php echo get_the_title( $staff_id) ?></span>
+													</a>
+													<br/>
 												
 													<?php # If this artist has an artist-type
 													# - Will only EVER return the first result in the artist type array
@@ -135,7 +144,12 @@ get_header(); ?>
 									//print_r($tour_artists);
 
 									if (!empty($tour_artists)) {
-										foreach ($tour_artists as $artist_id) { ?> 
+										foreach ($tour_artists as $artist_id) { 
+
+											# Get Permalink to artist page:
+											$artist_url = get_permalink($artist_id);
+
+											?> 
 										
 										<h4 class="section-header">Artist(s)</h4>
 											<div class="side-bar-artist"> 
@@ -162,7 +176,10 @@ get_header(); ?>
 												
 													<img class="circle-thumb" src="<?php echo $thumb_url ?>">
 												<div class="side-bar-artist-details">
-													<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span><br/>
+													<a class="side-bar-link" href="<?php echo $artist_url; ?>">
+														<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>
+													</a>
+													<br/>
 												
 													<?php # If this artist has an artist-type
 													# - Will only EVER return the first result in the artist type array
@@ -285,6 +302,10 @@ get_header(); ?>
 								foreach ($tour_staff as $staff_id) { ?> 
 
 									<div class="side-bar-artist"> <?php
+
+										# Get Permalink to artist page:
+										$staff_url = get_permalink($staff_id);
+
 										# Get featured image id
 										$thumb_id = get_post_thumbnail_id($staff_id);
 										# If theere is not a featured image
@@ -305,7 +326,10 @@ get_header(); ?>
 										
 											<img class="circle-thumb" src="<?php echo $thumb_url ?>">
 										<div class="side-bar-artist-details">
-											<span class="side-bar-artist-name"><?php echo get_the_title( $staff_id) ?></span><br/>
+											<a class="side-bar-link" href="<?php echo $staff_url; ?>">
+												<span class="side-bar-artist-name"><?php echo get_the_title( $staff_id) ?></span>
+											</a>
+											<br/>
 										
 											<?php # If this artist has an artist-type
 											# - Will only EVER return the first result in the artist type array
@@ -337,7 +361,11 @@ get_header(); ?>
 							//print_r($tour_artists);
 
 							if (!empty($tour_artists)) {
-								foreach ($tour_artists as $artist_id) { ?> 
+								foreach ($tour_artists as $artist_id) { 
+									# Get Permalink to artist page:
+									$artist_url = get_permalink($artist_id);
+
+									?> 
 								
 								<h4 class="section-header">Artist(s)</h4>
 									<div class="side-bar-artist"> 
@@ -364,7 +392,10 @@ get_header(); ?>
 										
 											<img class="circle-thumb" src="<?php echo $thumb_url ?>">
 										<div class="side-bar-artist-details">
-											<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span><br/>
+											<a class="side-bar-link" href="<?php echo $artist_url; ?>">
+												<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>
+											</a>
+											<br/>
 										
 											<?php # If this artist has an artist-type
 											# - Will only EVER return the first result in the artist type array
