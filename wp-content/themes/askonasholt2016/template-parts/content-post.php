@@ -6,14 +6,46 @@
 
 			<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
 			<a href="<?php the_permalink(); ?>">
-			<div class="magazine-item-thumb" style="background-image: url('<?php echo $thumb['0'];?>')"></div>
+			<div class="magazine-item-thumb online-item" style="background-image: url('<?php echo $thumb['0'];?>')">
+				<div class="bottom-left">
+					<div class="media-type-indicator">
+						<?php if( get_field('media_choice') == 'Video' ): ?>
+
+							<i class="fa fa-play fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( get_field('media_choice') == 'Audio' ): { ?>
+
+							<i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
+
+						<?php } ?>
+						
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
 
 
 		<?php } 
 
 		else { ?>
 			<a href="<?php the_permalink(); ?>">
-			<div class="magazine-item-thumb" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/images/default.jpg');"></div>
+			<div class="magazine-item-thumb online-item" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/images/default.jpg');">
+				<div class="bottom-left">
+					<div class="media-type-indicator">
+						<?php if( get_field('media_choice') == 'Video' ): ?>
+
+							<i class="fa fa-play fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( get_field('media_choice') == 'Audio' ): { ?>
+
+							<i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
+
+						<?php } ?>
+						
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
 
 		<?php } ?>
 
@@ -36,7 +68,8 @@
 
 						?>
 
-					<?php echo $css_slug; ?></span>&nbsp;-
+					<?php echo $css_slug; ?></span>
+
 					<?php the_date('d M Y'); ?>
 				</span>
 
