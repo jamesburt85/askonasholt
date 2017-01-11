@@ -153,7 +153,7 @@ role="main"> -->
                 <hr />
                   <a href="#" class="accordion-title"><?php //the_title(); ?>
                     
-                    <div class="event-listing-details">
+                    <div class="event-listing-details simple-listing">
                       <?php get_template_part( 'template-parts/event-related-artist' ); ?>
 
                       <span class="event-detail"><?php echo $time; ?></span>

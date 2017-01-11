@@ -48,17 +48,6 @@
 				<span class="magazine-item-copy"><?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
 				
 				<div class="read-more">Read &nbsp;
-				
-<!-- 					<span class="eye">
-						<svg width="18px" height="12px" viewBox="-1 -1 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-						    <defs></defs>
-						    <g id="Group-20" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-						        <path d="M8,10.3299999 C12.418278,10.3299999 16,5.16499996 16,5.16499996 C16,5.16499996 12.418278,0 8,0 C3.581722,0 0,5.16499996 0,5.16499996 C0,5.16499996 3.581722,10.3299999 8,10.3299999 Z" id="Oval-3" stroke="#BA0C2F"></path>
-						        <circle id="Oval-4" fill="#BA0C2F" cx="8" cy="5" r="3"></circle>
-						    </g>
-						</svg>
-					</span> -->
-
 				</div>
 			</a>
 		</div>

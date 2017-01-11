@@ -5,6 +5,16 @@
 //     margin: 0 auto;
 // }
 
+.event-listing-details.simple-listing {
+    .side-bar-artist {
+        line-height: 60px;
+    }
+}
+
+.simple-listing {
+    line-height: 60px;
+}
+
 .section-header  {
     //@include grid-column(12);
     padding-top: $sitepadding-small;

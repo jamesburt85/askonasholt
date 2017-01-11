@@ -92,7 +92,7 @@ get_header(); ?>
 									<img class="circle-thumb" src="<?php echo $thumb_url ?>">
 									
 									<div class="side-bar-artist-details">
-										<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
+										<span class="side-bar-artist-name simple-listing"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
 									
 										<?php # If this artist has an artist-type
 										# - Will only EVER return the first result in the artist type array

@@ -91,7 +91,7 @@ get_header(); ?>
 								
 								<img class="circle-thumb" src="<?php echo $thumb_url ?>">
 								
-								<div class="side-bar-artist-details">
+								<div class="side-bar-artist-details simple-listing">
 									<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
 
 									<a href="<?php the_permalink(); ?>">

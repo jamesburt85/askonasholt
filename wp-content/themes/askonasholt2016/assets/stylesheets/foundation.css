@@ -6661,6 +6661,12 @@ table.hover tbody tr:nth-of-type(even):hover {
 .temp-testing-mp3 {
   margin-bottom: 100vh; }
 
+.event-listing-details.simple-listing .side-bar-artist {
+  line-height: 60px; }
+
+.simple-listing {
+  line-height: 60px; }
+
 .section-header {
   padding-top: 12.5px;
   padding-bottom: 12.5px;
@@ -10326,7 +10332,7 @@ header h1 {
 .cd-timeline-content::before {
   content: '';
   position: absolute;
-  top: 16px;
+  top: 28px;
   right: 100%;
   height: 0;
   width: 0;

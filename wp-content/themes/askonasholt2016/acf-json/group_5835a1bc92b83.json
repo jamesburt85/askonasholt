@@ -7,7 +7,7 @@
             "label": "Timeline Item",
             "name": "timeline_item",
             "type": "repeater",
-            "instructions": "Insert timeline items",
+            "instructions": "Insert timeline items. These can be re-ordered by dragging and dropping if you hover on the number (left-hand side).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -26,7 +26,7 @@
                     "label": "Section Title",
                     "name": "section_title",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Main Header of timeline item",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -41,29 +41,11 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5835a2052b346",
-                    "label": "Section Copy",
-                    "name": "section_copy",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1
-                },
-                {
                     "key": "field_5835a2242b347",
                     "label": "Section Image",
                     "name": "section_image",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "*optional",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -81,6 +63,24 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_5835a2052b346",
+                    "label": "Section Copy",
+                    "name": "section_copy",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0
                 },
                 {
                     "key": "field_5835a2332b348",
@@ -123,5 +123,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1483650814
+    "modified": 1484131176
 }
