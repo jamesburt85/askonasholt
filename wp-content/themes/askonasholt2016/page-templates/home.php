@@ -266,7 +266,8 @@ role="main"> -->
       <?php if( $videos ): ?>
         <!-- <ul> -->
         <?php
-          foreach( $videos as $video ): setup_postdata( $video );
+          foreach( $videos as $post ):
+            setup_postdata( $post );
 
             //get_template_part( 'template-parts/content-post' );
 
@@ -285,7 +286,9 @@ role="main"> -->
 
           endforeach;
 
-          wp_reset_postdata(); ?>
+          wp_reset_postdata();
+
+          ?>
         <!--  </ul> -->
       <?php endif; ?>
 

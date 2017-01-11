@@ -46,7 +46,7 @@ get_header(); ?>
 				<?php 
 
 					$related_staff = get_field('related_staff');
-					//print_r($related_staff);
+					// print_r($related_staff);
 
 					if (!empty($related_staff)) {
 						foreach ($related_staff as $artist_id) { ?> 
@@ -255,6 +255,8 @@ get_header(); ?>
 	</div>
 
 	<div class="performance-schedule row" id="schedule">
+
+		<div class="small-12 columns">
 		
 		<!-- Get Events -->
 		  <?php 
@@ -352,10 +354,15 @@ get_header(); ?>
 		      // no posts found
 		    }
 		  ?>
+
+		</div>
+
 	</div>
 
 
 	<div class="performance-schedule row" id="schedule">
+
+		<div class="small-12 columns">
 		
 		<!-- Get Events -->
 		  <?php 
@@ -452,6 +459,8 @@ get_header(); ?>
 		      // no posts found
 		    }
 		  ?>
+
+		 </div>
 	</div>
 
 <!-- 	<div class="row hide-for-large">
@@ -489,47 +498,49 @@ get_header(); ?>
 
 
 
-	<div class="news-projects row" id="news-projects">
-		<h4 class="section-header">From The Green Room</h4>
+	<div class="news-projects" id="news-projects">
 		<div class="row">
+			<div class="small-12 columns">
 		
-		<!-- Get news items -->
-		  <?php 
+				<h4 class="section-header">From The Green Room</h4>
+		
+			<!-- Get news items -->
+			  <?php 
 
-		    // Query Args
-		      $args = array(
+			    // Query Args
+			      $args = array(
 
-		        'post_type'   => 'post',
-		        'category_slug' => array( 'news', 'interviews', 'features' ),
-		        'posts_per_page' => 4,
-		        'tax_query' => array(
-		            //array(
-		              //'taxonomy' => 'magazine-content-type',
-		              //'field'    => 'slug',
-		              //'terms'    => 'news',
-		            //),
-		          ),
-		      );
+			        'post_type'   => 'post',
+			        'category_slug' => array( 'news', 'interviews', 'features' ),
+			        'posts_per_page' => 4,
+			        'tax_query' => array(
+			            //array(
+			              //'taxonomy' => 'magazine-content-type',
+			              //'field'    => 'slug',
+			              //'terms'    => 'news',
+			            //),
+			          ),
+			      );
 
-		      // The Query
-		      $the_query = new WP_Query( $args );
+			      // The Query
+			      $the_query = new WP_Query( $args );
 
-		    // The Loop
-		    if ( $the_query->have_posts() ) {
+			    // The Loop
+			    if ( $the_query->have_posts() ) {
 
-		      while ( $the_query->have_posts() ) {
-		        $the_query->the_post();
+			      while ( $the_query->have_posts() ) {
+			        $the_query->the_post();
 
-		        get_template_part( 'template-parts/content-post' );
+			        get_template_part( 'template-parts/content-post' );
 
-		      }
+			      }
 
-		      /* Restore original Post Data */
-		      wp_reset_postdata();
-		    } else {
-		      // no posts found
-		    }
-		  ?>
+			      /* Restore original Post Data */
+			      wp_reset_postdata();
+			    } else {
+			      // no posts found
+			    } ?>
+			</div>
 		</div>
 		<!-- Do as above section, getting posts related to artist. May have to add relational field in ACF first -->
 	</div>
