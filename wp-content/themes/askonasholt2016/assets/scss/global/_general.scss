@@ -18,6 +18,13 @@
     }
 }
 
+@include breakpoint(small only){
+    .section-header  {
+        padding-bottom: 0;
+        font-size: 1.4rem;
+    }
+}
+
 div#narrow-text-page {
     max-width: 57rem;
     margin: 0 auto;

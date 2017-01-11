@@ -6670,6 +6670,11 @@ table.hover tbody tr:nth-of-type(even):hover {
     font-size: 17px;
     color: inherit; }
 
+@media screen and (max-width: 39.9375em) {
+  .section-header {
+    padding-bottom: 0;
+    font-size: 1.4rem; } }
+
 div#narrow-text-page {
   max-width: 57rem;
   margin: 0 auto; }
