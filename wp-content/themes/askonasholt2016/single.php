@@ -68,7 +68,12 @@ get_header(); ?>
 
 						<h4 class="section-header">Featured Artist(s)</h4>
 
-						<?php foreach ($artist as $artist_id) { ?> 
+						<?php foreach ($artist as $artist_id) { 
+
+							# Get Permalink to artist page:
+							$artist_url = get_permalink($artist_id);	
+
+							?> 
 
 								<div class="side-bar-artist"> <?php
 									# Get featured image id
@@ -92,15 +97,16 @@ get_header(); ?>
 									<img class="circle-thumb" src="<?php echo $thumb_url ?>">
 									
 									<div class="side-bar-artist-details">
-										<span class="side-bar-artist-name simple-listing"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
-									
+										<a class="side-bar-link" href="<?php echo $artist_url; ?>">
+											<span class="side-bar-artist-name simple-listing"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
+										</a>
 										<?php # If this artist has an artist-type
 										# - Will only EVER return the first result in the artist type array
 										//if ( !empty( $artist_types)): ?>
 											<span><?php //echo $artist_types[0]->name ?></span>
 										<?php //endif ?>
 
-										<a href="<?php the_permalink(); ?>">
+										<a href="<?php echo $artist_url; ?>">
 											<span class="more-info">Visit Artist Page</span>
 										</a>
 									</div>

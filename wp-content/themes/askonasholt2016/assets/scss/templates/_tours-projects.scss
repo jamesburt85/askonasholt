@@ -297,6 +297,14 @@ span.more-info {
     }
 }
 
+//single artist page give space between multiple related staff
+.single-artists {
+  .side-bar-artist {
+      padding: 5px 0;
+  }
+}
+
+
 @include breakpoint(large up) {
   .event-listing-details {
     display: flex !important;

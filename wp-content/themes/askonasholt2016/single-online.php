@@ -67,7 +67,12 @@ get_header(); ?>
 				//print_r($artist);
 
 				if (!empty($artist)) {
-					foreach ($artist as $artist_id) { ?> 
+					foreach ($artist as $artist_id) { 
+
+						# Get Permalink to artist page:
+						$artist_url = get_permalink($artist_id);
+
+						?> 
 						
 
 							<div class="side-bar-artist"> <?php
@@ -92,9 +97,10 @@ get_header(); ?>
 								<img class="circle-thumb" src="<?php echo $thumb_url ?>">
 								
 								<div class="side-bar-artist-details simple-listing">
-									<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
-
-									<a href="<?php the_permalink(); ?>">
+									<a class="side-bar-link" href="<?php echo $artist_url; ?>">
+										<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
+									</a>
+									<a href="<?php echo $artist_url; ?>">
 										<span class="more-info">Visit Artist Page</span>
 									</a>
 								

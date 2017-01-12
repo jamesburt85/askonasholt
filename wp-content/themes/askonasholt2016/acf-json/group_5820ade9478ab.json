@@ -253,7 +253,7 @@
                             "label": "Image Repeater",
                             "name": "image_repeater",
                             "type": "repeater",
-                            "instructions": "",
+                            "instructions": "Images must all be the same dimensions in order for the slider to remain uniform without stretching\/pixelating.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -963,5 +963,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484129979
+    "modified": 1484208651
 }

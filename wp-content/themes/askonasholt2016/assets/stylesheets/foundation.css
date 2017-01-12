@@ -10456,6 +10456,18 @@ header h1 {
 .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
   border-right-color: #BA0C2F; }
 
+@media screen and (max-width: 39.9375em) {
+  .cd-timeline-block .cd-timeline-content::before {
+    border-right-color: #BA0C2F; }
+  .cd-timeline-content::before {
+    border-left-color: transparent; } }
+
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .cd-timeline-block .cd-timeline-content::before {
+    border-right-color: #BA0C2F; }
+  .cd-timeline-content::before {
+    border-left-color: transparent; } }
+
 .cd-timeline-content {
   border: 1px solid #cccccc;
   -webkit-box-shadow: 0 3px 0 #d7e4ed;
@@ -11221,7 +11233,6 @@ div#image-gallery {
   display: flex; }
 
 .online-item {
-  border: 1px solid gray;
   margin-bottom: 2em;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -13864,6 +13875,9 @@ span.more-info {
     line-height: 60px !important; }
   span.more-info {
     right: 2em; } }
+
+.single-artists .side-bar-artist {
+  padding: 5px 0; }
 
 @media screen and (min-width: 64em) {
   .event-listing-details {

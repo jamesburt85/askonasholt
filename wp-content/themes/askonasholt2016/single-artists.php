@@ -49,7 +49,12 @@ get_header(); ?>
 					// print_r($related_staff);
 
 					if (!empty($related_staff)) {
-						foreach ($related_staff as $artist_id) { ?> 
+						foreach ($related_staff as $artist_id) { 
+
+							# Get Permalink to artist page:
+							$artist_url = get_permalink($artist_id);
+
+							?> 
 
 							<div class="side-bar-artist"> <?php
 								# Get featured image id
@@ -73,9 +78,10 @@ get_header(); ?>
 								<img class="circle-thumb" src="<?php echo $thumb_url ?>">
 								
 								<div class="side-bar-artist-details contact">
-									<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?>
+									<a class="side-bar-link" href="<?php echo $artist_url; ?>">
+										<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?>
 									
-									<a href="#">&nbsp;
+									&nbsp;
 								        <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								            <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
 								                <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>

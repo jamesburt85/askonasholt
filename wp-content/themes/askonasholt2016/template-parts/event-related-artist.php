@@ -10,7 +10,7 @@
 			<div class="side-bar-artist"> <?php
 
 				# Get Permalink to artist page:
-				$artist_url = get_permalink($artist_id);
+				//$artist_url = get_permalink($artist_id);
 
 				# Get featured image id
 				$thumb_id = get_post_thumbnail_id($artist_id);
@@ -30,19 +30,19 @@
 
 				?>
 				
-				<a href="<?php echo $artist_url; ?>">
+				<!-- <a href="<?php echo $artist_url; ?>"> -->
 					<img class="circle-thumb" src="<?php echo $thumb_url ?>">
-				</a>
+			<!-- 	</a> -->
 					
 					<div class="side-bar-artist-details simple-listing">
-						<a class="side-bar-link" href="<?php echo $artist_url; ?>">
+						<!-- <a class="side-bar-link" href="<?php echo $artist_url; ?>"> -->
 							<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
 						<?php # If this artist has an artist-type
 						# - Will only EVER return the first result in the artist type array
 						//if ( !empty( $artist_types)): ?>
 							<span><?php //echo $artist_types[0]->name ?></span>
 						<?php //endif ?>
-						</a>				
+					<!-- 	</a>	 -->			
 					</div>
 				
 

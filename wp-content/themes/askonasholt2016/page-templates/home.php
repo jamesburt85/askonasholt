@@ -187,7 +187,7 @@ role="main"> -->
                   <a href="#" class="accordion-title"><?php //the_title(); ?>
 
                       <div class="press-details">
-                        <?php get_template_part( 'template-parts/event-related-artist' ); ?>
+                        <?php //get_template_part( 'template-parts/event-related-artist' ); ?>
 
                         <span class="event-detail"><?php echo $time; ?></span>
                         <span class="event-detail"><?php echo $date; ?></span>

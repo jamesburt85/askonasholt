@@ -502,6 +502,24 @@ header h1 {
   border-right-color: $brand-red;
 }
 
+@include breakpoint(small only) {
+  .cd-timeline-block .cd-timeline-content::before {
+    border-right-color: $brand-red;
+  }
+  .cd-timeline-content::before {
+      border-left-color: transparent;
+  }
+}
+
+@include breakpoint(medium only) {
+  .cd-timeline-block .cd-timeline-content::before {
+    border-right-color: $brand-red;
+  }
+  .cd-timeline-content::before {
+      border-left-color: transparent;
+  }
+}
+
 .cd-timeline-content {
   border: 1px solid #cccccc;
   -webkit-box-shadow: 0 3px 0 #d7e4ed;
