@@ -16,21 +16,15 @@ get_header(); ?>
           <h1 class="entry-title"><?php the_title(); ?></h1>
       </header> -->
       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
+      
+      <div class="artist-filtering-block">
+        
+        <?php get_template_part( 'template-parts/center-text-hero' ); ?>
+
+      </div>
+
       <div class="entry-content">
           <?php the_content(); ?>
-          
-          <div class="artist-filtering-block">
-            
-<!--             <header class="magazine-header">
-              <h2><?php the_title(); ?></h2>
-              <p>Optional Description</p>
-              <?php //foundationpress_entry_meta(); ?>
-            </header> -->
-
-            <?php //get_template_part( 'template-parts/magazine-filtering' ); ?>
-            <?php get_template_part( 'template-parts/center-text-hero' ); ?>
-
-          </div>
 
           <!-- Getting all items with Tour category -->
           <div class="row">

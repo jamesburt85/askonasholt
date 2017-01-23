@@ -25,7 +25,7 @@ if ($acf_fields['flexible_content']) {
 
 		?>
 
-		<li>
+		<li class="single-page-nav_link">
 			<a data-scroll="" data-events="scroll" href="#<?php echo $section['unique_id'] ?>"><?php echo $section['unique_id'] ?></a>
 		</li>
 

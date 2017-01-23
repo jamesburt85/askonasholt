@@ -26,7 +26,7 @@ get_header(); ?>
         <h3 class="section-header">
           
           Latest News &amp; Features &nbsp;
-
+          <br class="hide-for-medium" />
           <a class="view-link" href="<?php echo get_site_url(); ?>/the-green-room">View all &nbsp;
             <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
@@ -92,7 +92,7 @@ role="main"> -->
   <div class="small-12 columns header-row">
     <h3 class="section-header">
       Latest Events &nbsp;
-
+      
       <a class="view-link" href="<?php echo get_site_url(); ?>/events/">View all &nbsp;
         <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
@@ -168,7 +168,7 @@ role="main"> -->
                     </div>
                     
                   </a>
-
+                  
                   <div class="accordion-content" data-tab-content>
                     <?php echo $more_info; ?>
                   </div>
@@ -191,6 +191,7 @@ role="main"> -->
 
                         <span class="event-detail"><?php echo $time; ?></span>
                         <span class="event-detail"><?php echo $date; ?></span>
+                        <br class="hide-for-medium" />
                         <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
                         <span class="more-info">
                             <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -223,8 +224,9 @@ role="main"> -->
     
     <div class="row">
       <div class="small-12 columns header-row">
-        <h3 class="section-header">
+        <h4 class="section-header">
           Latest Video &amp; Audio &nbsp;
+          <br class="hide-for-medium" />
             <a class="view-link" href="<?php echo get_site_url(); ?>/the-green-room">View all &nbsp;
             <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
@@ -233,7 +235,7 @@ role="main"> -->
                   </g>
               </svg>
             </a>
-        </h3>
+        </h4>
           
       </div>
     </div>   

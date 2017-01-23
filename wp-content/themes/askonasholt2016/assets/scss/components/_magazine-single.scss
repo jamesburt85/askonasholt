@@ -1,6 +1,6 @@
 // Single Blog / Magazine / Green Room
 .blog-meta {
-    display: flex;
+    display: block;
    	ul.post-categories {
    	    list-style: none;
    	    margin-left: 0;
@@ -16,4 +16,13 @@
    	time.updated, li, p {
    		margin-right: 1em;
    	}
+}
+
+
+//MEDIA QUERIES **********************
+
+@include breakpoint(medium) {
+   .blog-meta {
+      display: flex;
+   }
 }

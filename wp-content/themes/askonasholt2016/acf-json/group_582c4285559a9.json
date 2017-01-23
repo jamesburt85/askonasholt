@@ -131,7 +131,7 @@
             "label": "Related Artists",
             "name": "related_artists",
             "type": "relationship",
-            "instructions": "",
+            "instructions": "Choose any Artists relate to the tour",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -169,5 +169,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484061697
+    "modified": 1484998017
 }

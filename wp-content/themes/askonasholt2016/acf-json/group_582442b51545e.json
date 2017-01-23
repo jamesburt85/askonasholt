@@ -19,25 +19,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_58244c99cd372",
-            "label": "Main Category",
-            "name": "main_category",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_58244ca6cd374",
             "label": "Bio",
             "name": "bio",
@@ -135,7 +116,7 @@
             "label": "Artist Email",
             "name": "artist_email",
             "type": "email",
-            "instructions": "",
+            "instructions": "This will be used for the 'Make Enquiry' button near the top of the artist's page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -153,7 +134,7 @@
             "label": "Manager Email",
             "name": "manager_email",
             "type": "email",
-            "instructions": "",
+            "instructions": "This will be used for the 'Contact Manager' button at the bottom of the artist's page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -225,7 +206,7 @@
                     "label": "Social Media Name",
                     "name": "social_media_name",
                     "type": "text",
-                    "instructions": "Enter in lowercase, i.e. instagram, facebook, twitter",
+                    "instructions": "Pick an icon from http:\/\/fontawesome.io\/icons\/   \r\ni.e. instagram, facebook, twitter",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -235,7 +216,7 @@
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "prepend": "",
+                    "prepend": "fa-",
                     "append": "",
                     "maxlength": ""
                 },
@@ -244,7 +225,7 @@
                     "label": "Social Media Link",
                     "name": "social_media_link",
                     "type": "url",
-                    "instructions": "",
+                    "instructions": "Enter the full page URL e.g. https:\/\/www.facebook.com\/askonasholt\/",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -275,5 +256,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484169566
+    "modified": 1484937201
 }

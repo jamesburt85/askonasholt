@@ -1,17 +1,17 @@
 // Single Artist Header area
-body.single.single-artists {
+body.single.single-artists, body.single.single-clients {
 	.artist-header.container {
 	    max-width: 100%;
-	    background-image: url("../images/bg-general.jpg");
+	    background-image: url("../images/light-pattern.png");
 	    @include full-bg;
-	    height: 65vh;
+	    height: 28em;
 	    position: relative;
 	    .artist-details-area {
 	    	width: 100%;
 	    	//@include center;
 	    }
 	    .artist-details-container {
-	    	padding: $sitepadding;
+	    	padding: $sitepadding-small;
 	    	.website {
 	    		font-weight: bold;
 	    	}
@@ -49,7 +49,10 @@ div.side-bar-text-area {
 //MEDIA QUERIES
 
 @include breakpoint(medium) {
-	body.single.single-artists .artist-header.container .artist-details-area {
+	body.single.single-artists .artist-header.container .artist-details-area, body.single.single-clients .artist-header.container .artist-details-area {
 		@include center;
+		.artist-details-container {
+			padding: $sitepadding;
+		}
 	}
 }

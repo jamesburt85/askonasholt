@@ -109,7 +109,9 @@ if ($acf_fields['flexible_content']) {
 
 						<div class="small-12 columns">
 						
-							<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image gallery</h4>
+							<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image Gallery</h4>
+
+							<p><?php echo $section['gallery_description'] ?></p>
 
 							<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
 								<div class="multiple-items">
@@ -472,6 +474,7 @@ if ($acf_fields['flexible_content']) {
 										<div class="press-details">
 											<span class="text_area_one"><?php echo $press_section['text_area_one']; ?></span>
 											<span class="text_area_two"><?php echo $press_section['text_area_two']; ?></span>
+											<br class="hide-for-medium" />
 											<span class="text_area_three"><?php echo $press_section['location']; ?></span>
 										</div>	
 
@@ -532,32 +535,57 @@ if ($acf_fields['flexible_content']) {
 						<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Discography</h4>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="small-12 columns">
 						<div class="discography">
 								
-							<?php
-							# Loop through the sections
-							foreach ($section['discography_details'] as $discography) { ?>
+							<ul class="accordion" data-accordion data-allow-all-closed="true">
+							
+								<?php
+								# Loop through the sections
+								foreach ($section['discography_details'] as $discography) { ?>
 
-									<div class="">
-										<button class="normal-button">
-											<a target="_blank" href="<?php echo $discography['link_destination']; ?>"><?php echo $discography['link_title']; ?>
-											</a>
-										</button>
-									</div>	
+								<li class="accordion-item" data-accordion-item>
+								  	<a href="#" class="accordion-title">
+										<div class="press-details">
+											<div class="discography-image small-2 columns" style="background-image: url('<?php echo $discography['image']; ?>'); "></div>
+											<span class="discoraphy_title"><?php echo $discography['title']; ?></span>
 
-							<?php } ?>
+											<span class="more-info">
+												<span class="show-for-large">More info &nbsp;</span>
+											    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+											        <defs></defs>
+											        <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
+											    </svg>
+											</span>
+
+										</div>	
+									</a>
+
+									<div class="accordion-content" data-tab-content>
+									  <?php echo $discography['details']; ?>
+									  <a target="_blank" href="<?php echo $discography['link_destination']; ?>">View here</a>
+									</div>
+
+								</li>
+
+								<?php } ?>
+
+							</ul>
 
 						</div>
 					</div>
 				</div>
 
+
+
+
 			<?php
 			break;
 
 
-			#Individual Artist's Discography Section
+			#Free Text Section
 			case 'free_text_area': ?>
 				
 				<div class="row free-text">

@@ -7,7 +7,7 @@
  */
 
 get_header(); ?>
-<div class="center-text-hero-header" style="background-image: url('<?php //echo $thumb['0'];?><?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg')">
+<div class="center-text-hero-header" style="background-image: url('<?php //echo $thumb['0'];?><?php echo get_template_directory_uri(); ?>/assets/images/light-pattern.png')">
 	<div class="center-hero-text">
 		<h2 class="hero-heading"><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h2>
 	</div>
@@ -49,4 +49,7 @@ get_header(); ?>
 	</div>
 	<?php //get_sidebar(); ?>
 </div>
+
+<?php get_template_part('template-parts/link-banner' ); ?>
+
 <?php get_footer();

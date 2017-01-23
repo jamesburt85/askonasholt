@@ -27,3 +27,15 @@ ul.single-page-nav {
     z-index: 10;
     width: 100%;
 }
+
+//remove in-page nav links when screen too small
+@media screen and (max-width: 1120px) {
+    ul.single-page-nav {
+        li.single-page-nav_link {
+            display: none;
+        }
+        li.nav-title {
+            display: block;
+        }
+    }
+}

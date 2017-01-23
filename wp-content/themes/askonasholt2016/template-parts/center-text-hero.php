@@ -11,8 +11,7 @@
 
 </div> -->
 
-<?php //$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-<div class="center-text-hero-header" style="background-image: url('<?php //echo $thumb['0'];?><?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg')">
+<div class="center-text-hero-header" style="background-image: url('<?php //echo $thumb['0'];?><?php echo get_template_directory_uri(); ?>/assets/images/light-pattern.png')">
 
 	<header class="center-hero-text">
 	  <h2 class="hero-heading"><?php the_title(); ?></h2>
@@ -24,7 +23,10 @@
 		elseif (is_page_template( 'what_we_do' )) {
 			$myvar = get_field('what_we_do','option');
 		}
-	  	
+		elseif (is_page_template( 'contact' )) {
+			$myvar = get_field('contact','option');
+		}
+
 		//print_r($myvar);
 	  	$description = get_field('optional_description',$myvar);
 	  	//print_r($description);

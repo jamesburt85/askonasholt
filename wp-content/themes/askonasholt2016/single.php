@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<?php //get_template_part( 'template-parts/featured-image' ); ?>
+<?php get_template_part( 'template-parts/center-text-hero' ); ?>
 
 <div id="single-post" role="main">
 
@@ -17,16 +17,23 @@ get_header(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header>
 			
-			<h3 class="entry-title section-header small-gap"><?php the_title(); ?></h3>
+			<h3 class="entry-title section-header small-gap"><?php //the_title(); ?></h3>
 			
 			<div class="blog-meta">
-				<?php the_category(); ?>
-				<?php foundationpress_entry_meta(); ?>
+				<div class="small-12 columns">
+					<?php the_category(); ?>
+					<?php foundationpress_entry_meta(); ?>
+				</div>
 			</div>
 
 			<hr/>
 
-			<?php the_content(); ?>
+			<div class="row">
+				<div class="small-12 columns">
+					<?php the_content(); ?>
+				</div>
+			</div>
+			
 
 		</header>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
@@ -34,6 +41,7 @@ get_header(); ?>
 		<?php get_template_part('template-parts/sharing-block' ); ?>
 
 		<div class="entry-content row">
+			<div class="small-12 columns">
 
 			<?php 
 				if ( has_post_format( 'audio' )) {
@@ -107,7 +115,8 @@ get_header(); ?>
 										<?php //endif ?>
 
 										<a href="<?php echo $artist_url; ?>">
-											<span class="more-info">Visit Artist Page</span>
+											<span class="more-info show-for-medium">Visit Artist Page</span>
+											<span class="more-info hide-for-medium">View</span>
 										</a>
 									</div>
 
@@ -134,6 +143,7 @@ get_header(); ?>
 			<?php // the_content(); ?>
 			<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
+	</div>
 		
 		<footer>
 			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
@@ -151,19 +161,22 @@ get_header(); ?>
 
 </div>
 
-<div class="full-width row">
+<div class="full-width">
 	<hr>
-	<h4 class="section-header center">Related Articles</h4>
-	<?php
 
-	$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 4, 'post__not_in' => array($post->ID) ) );
-	if( $related ) foreach( $related as $post ) {
-	setup_postdata($post); ?>
+	<div class="row">
+		<h4 class="section-header center">Related Articles</h4>
+		<?php
 
-	    <?php get_template_part( 'template-parts/content-post' ); ?>
+		$related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 4, 'post__not_in' => array($post->ID) ) );
+		if( $related ) foreach( $related as $post ) {
+		setup_postdata($post); ?>
 
-	<?php }
-	wp_reset_postdata(); ?>
+		    <?php get_template_part( 'template-parts/content-post' ); ?>
+
+		<?php }
+		wp_reset_postdata(); ?>
+	</div>
 
 </div>
 

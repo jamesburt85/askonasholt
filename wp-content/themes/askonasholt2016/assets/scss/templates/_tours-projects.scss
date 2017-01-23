@@ -8,7 +8,7 @@
   
   .tour-hero {
       position: relative;
-      height: 70vh;
+      height: 28em;
       max-height: 500px;
       @include full-bg;
   }
@@ -171,7 +171,6 @@ img.circle-thumb {
 }
 
 .press-details {
-  display: inline-block;
   line-height: 60px !important;
   span.more-info {
       line-height: 60px !important;
@@ -283,6 +282,9 @@ span.more-info {
       padding-bottom: 25px;
   }
 }
+
+
+
 @include breakpoint(medium) {
   span.side-bar-artist-name, .event-detail {
     padding-right: $sitepadding;
@@ -295,6 +297,9 @@ span.more-info {
   span.more-info {
       right: 2em;
     }
+    .press-details {
+      display: inline-block;
+    }
 }
 
 //single artist page give space between multiple related staff
@@ -304,11 +309,20 @@ span.more-info {
   }
 }
 
-
 @include breakpoint(large up) {
   .event-listing-details {
     display: flex !important;
     line-height: 60px !important;
+  }
+}
+
+@include breakpoint(small only) {
+  .press-details {
+    line-height: 2 !important;
+    display: initial;
+    span.more-info {
+        //line-height: 1 !important;
+    }
   }
 }
 

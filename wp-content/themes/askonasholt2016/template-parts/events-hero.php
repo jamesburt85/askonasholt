@@ -1,66 +1,28 @@
-<!-- //Hero for single tour / project -->
+<!-- //Hero for Events -->
 
+<div class="center-text-hero-header" style="background-image: url('<?php //echo $thumb['0'];?><?php echo get_template_directory_uri(); ?>/assets/images/light-pattern.png')">
 
-<!-- <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-<div class="tour-hero" style="background-image: url('<?php echo $thumb['0'];?>')">
-
-	<div class="hero-text-area hero-text">
-		<span class="entry-title hero-header"><?php the_title(); ?></span>
-		<span class="hero-blurb"><?php the_excerpt(); ?></span>
-	</div>
-
-</div> -->
-
-<!-- <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-<div class="center-text-hero-header" style="background-image: url('<?php echo $thumb['0'];?>')">
 	<header class="center-hero-text">
-	  <h2 class="hero-heading"><?php the_title(); ?></h2>
-	  <p>Optional Description</p>
+	  <h2 class="hero-heading">Events</h2>
+
+	<?php 
+		if (is_page_template( 'tour_stories' )) {
+			$myvar = get_field('tour_stories','option');
+		}
+		elseif (is_page_template( 'what_we_do' )) {
+			$myvar = get_field('what_we_do','option');
+		}
+		elseif (is_post_type_archive( 'events' )) {
+			$myvar = get_field('events','option');
+		}
+
+	  	
+		//print_r($myvar);
+	  	$description = get_field('optional_description',$myvar);
+	  	//print_r($description);
+	  ?>
+
+	  <p><?php echo $description; ?></p>
 	  <?php //foundationpress_entry_meta(); ?>
 	</header>
-</div> -->
-
-
-<div class="row online-performance-header">
-	<h3 class="section-header">Online Performances</h3>
-	<p>In partnership with ......</p>
-</div>
-
-<div class="row live-events">
-
-	<?php
-	  // Query Args
-	  $args = array(
-
-	    'post_type'		=> 'online',
-	    //'post__in'  	=> $tour_artists,
-	    'posts_per_page' => 3,
-	    
-	  );
-
-	  // The Query
-	  $the_query = new WP_Query( $args );
-
-	  // The Loop
-	  if ( $the_query->have_posts() ) {
-	   // echo '<ul>';
-	    while ( $the_query->have_posts() ) {
-	      $the_query->the_post();
-	      //echo '<li>' . get_the_title() . '</li>';
-	      get_template_part( 'template-parts/content-post' );
-
-	      //get_template_part( 'template-parts/.....' );
-	    }
-	    //echo '</ul>';
-	    /* Restore original Post Data */
-	    wp_reset_postdata();
-	  } else {
-	    // no posts found
-	  }
-	?>
-
-</div>
-
-<div class="online-performances-link">
-	<a href="<?php echo site_url(); ?>/online-performances"><button>View All</button></a>
 </div>

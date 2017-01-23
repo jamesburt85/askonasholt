@@ -16,20 +16,26 @@
 
 
 	<?php 
-		$position = get_field('position');
-		$e_mail = get_field('e-mail');
+		$position 	= get_field('position');
+		$e_mail 	= get_field('e-mail');
 		$telephone_number = get_field('telephone_number');
-		$languages = get_field('languages');
-		$position = get_field ('position');
+		$languages 	= get_field('languages');
+		$position 	= get_field ('position');
+		$languages 		= get_field ('languages');
 	?>
 
 	<div class="entry-content">
 
-		<div class=" magazine-item">
+		<div class="magazine-item">
 			<?php if ( has_post_thumbnail() ) { ?>
 
 				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-				<div class="magazine-item-thumb" style="background-image: url('<?php echo $thumb['0'];?>')">
+				<div class="people-link-item">
+					<a class="serif" href="<?php the_permalink(); ?>">
+						<div class="magazine-item-thumb" style="background-image: url('<?php echo $thumb['0'];?>')">
+						</div>
+					</a>
+
 					<div class="overlay">
 						<a href="#quicklook-<?php the_ID(); ?>" class="open-popup-link">
 							<svg width="18px" height="12px" viewBox="51 823 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -43,13 +49,19 @@
 						</a>
 					</div>
 				</div>
+			
 
 
 			<?php } 
 
 			else { ?>
-				
-				<div class="magazine-item-thumb" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/images/default.jpg');">
+			
+				<div class="people-link-item">
+					<a class="serif" href="<?php the_permalink(); ?>">
+						<div class="magazine-item-thumb" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/images/default.jpg');">
+						</div>
+					</a>
+							
 					<div class="overlay">
 						<a href="#quicklook-<?php the_ID(); ?>" class="open-popup-link">
 							<svg width="18px" height="12px" viewBox="51 823 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -68,15 +80,27 @@
 
 			<div class="magazine-item-container staff-header">
 				
-				<p class="magazine-item-header">
+				<div class="magazine-item-header">
 					<span class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
 					<a class="serif" href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a>
 					<span class="staff-category"><?php echo $position; ?></span>
 					<br/><br/>
 					<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a><br/>
 					<span><?php echo $telephone_number; ?></span><br/>
-					<span><?php echo $languages; ?></span>
-				</p>
+					
+
+						<?php if( have_rows('languages') ): ?>
+							<div class="flag-area">
+							<span>Languages:</span>
+							<?php while( have_rows('languages') ): the_row(); ?>
+
+									<img class="flag" src="<?php echo get_template_directory_uri(); ?>/assets/images/flags/4x3/<?php the_sub_field('flags'); ?>.svg" alt="Albania Flag">
+
+								<?php endwhile; ?>
+							</div>
+						<?php endif; ?>
+
+				</div>
 					<?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?>
 
 			</div>
@@ -95,7 +119,18 @@
 			<ul>
 				<li><a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a></li>
 				<li><?php echo $telephone_number; ?></li>
-				<li><?php echo $languages; ?></li>
+				<li>
+					<?php if( have_rows('languages') ): ?>
+						<div class="flag-area">
+						<span>Languages:</span>
+						<?php while( have_rows('languages') ): the_row(); ?>
+
+								<img class="flag" src="<?php echo get_template_directory_uri(); ?>/assets/images/flags/4x3/<?php the_sub_field('flags'); ?>.svg" alt="Albania Flag">
+
+							<?php endwhile; ?>
+						</div>
+					<?php endif; ?>
+				</li>
 			</ul>
 		</div>
 

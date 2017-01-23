@@ -4,12 +4,11 @@
 	// get VARS
 	// $artist_photo = get_field('artist_photo');
 	$main_category = get_field('main_category');
-	$name = //get_field('name');
-	$bio = get_field('bio');
 	$website = get_field('website');
 	$contact_text_area = get_field('contact_text_area');
 	$manager_email = get_field('manager_email');
-	$artist_email = get_field('artist_email');
+	$email = get_field('artist_email');
+	$email = get_field('client_email');
 	$publicity_pack = get_field('publicity_pack');
 ?>
 
@@ -29,15 +28,16 @@
 					/* FIRST
 					 * Note: This function only returns results from the default “category” taxonomy. For custom taxonomies use get_the_terms().
 					 */
-					$categories = get_the_terms( $post->ID, 'taxonomy' );
+					$categories = get_the_terms( $post->ID, 'artist-type' );
+					$categories = get_the_terms( $post->ID, 'clients-type' );
 					// now you can view your category in array:
 					// using var_dump( $categories );
 					// or you can take all with foreach:
 					foreach( $categories as $category ) {
-					    //echo $category->term_id . ', ' . $category->slug . ', ' . $category->name . '<br />';
+					    echo $category->name . '<br />';
 					} ?>
 					</span>
-					<span class="artist-category"><?php echo $main_category; ?></span>
+					<span class="artist-category"><?php //echo $main_category; ?></span>
 					<br>
 					<h2 class="artist-name hero-heading"><?php the_title(); ?></h2>
 				</div>
@@ -64,21 +64,7 @@
 	</div> <!-- Row END -->
 </div> <!-- Container END -->
 
-<!-- <div class="artist-navigation">
-	<div>
-		<ul>
-			<li><?php the_title(); ?>:</li>
-			<li><a data-scroll href="#intro">Introduction</a></li>
-			<li><a data-scroll href="#video-audio">Video &amp; Audio</a></li>
-			<li><a data-scroll href="#performance-schedule">Schedule</a></li>
-			<li><a data-scroll href="#news-projects">News &amp; Projects</a></li>
-			<li><a data-scroll href="#image-gallery">Image Gallery</a></li>
-			<li><a data-scroll href="#press">Press</a></li>
-			<li><button>Make enquiry</button></li>
-		</ul>
-	</div>
-</div> -->
-
+	
 	<div id="sticky-anchor"></div>
 	<ul class="single-page-nav show-for-medium" id="sticky">
 		
@@ -86,21 +72,21 @@
 			<?php the_title(); ?>
 		</li>
 
-		<li>
+		<li class="single-page-nav_link">
 			<a data-scroll="" data-events="scroll" href="#introduction">Introduction</a>
 		</li>
 
-		<li>
+		<li class="single-page-nav_link">
 			<a data-scroll href="#video-audio">Video &amp; Audio</a>
 		</li>
 
-		<li>
+		<li class="single-page-nav_link">
 			<a data-scroll="" data-events="scroll" href="#schedule">Schedule</a>
 		</li>
 
 		
-		<button class="enquiry-button show-for-large">
-			<a href="mailto:<?php echo $artist_email; ?>?Subject=Enquiry">
+		<button class="enquiry-button show-for-medium">
+			<a href="mailto:<?php echo $email; ?>?Subject=Enquiry">
 				Make enquiry
 			</a>
 		</button>

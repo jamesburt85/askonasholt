@@ -249,11 +249,30 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_58299ee9800ec",
+                            "key": "field_5879fa3898867",
+                            "label": "Gallery Description",
+                            "name": "gallery_description",
+                            "type": "text",
+                            "instructions": "Brief description of the gallery contents e.g. naming the concert\/location in which they were taken",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5879f29281c7c",
                             "label": "Image Repeater",
                             "name": "image_repeater",
                             "type": "repeater",
-                            "instructions": "Images must all be the same dimensions in order for the slider to remain uniform without stretching\/pixelating.",
+                            "instructions": "Upload images of the same dimensions in order to keep the gallery tidy",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -268,7 +287,7 @@
                             "button_label": "Add Row",
                             "sub_fields": [
                                 {
-                                    "key": "field_5829a0592151c",
+                                    "key": "field_5879f76368aff",
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
@@ -292,11 +311,11 @@
                                     "mime_types": ""
                                 },
                                 {
-                                    "key": "field_586bd857d18f6",
+                                    "key": "field_5879f9776026b",
                                     "label": "Image Credit",
                                     "name": "image_credit",
                                     "type": "text",
-                                    "instructions": "",
+                                    "instructions": "Image credit can be prefixed with \u00a9 and will appear below the image after it is clicked.",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -313,11 +332,11 @@
                             ]
                         },
                         {
-                            "key": "field_582c75a360323",
-                            "label": "unique section name",
+                            "key": "field_5879f9b0e3214",
+                            "label": "Unique Section Name",
                             "name": "unique_id",
                             "type": "text",
-                            "instructions": "e.g. '2017-video'. This is so the sub navigation bar can work (scroll to content section). Optional.",
+                            "instructions": "Enter name of section i.e. Press. Text will appear in the red bar at the top of the page and allow the page to scroll to this section",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -409,7 +428,7 @@
                             "collapsed": "",
                             "min": "",
                             "max": "",
-                            "layout": "table",
+                            "layout": "row",
                             "button_label": "Add Row",
                             "sub_fields": [
                                 {
@@ -494,7 +513,7 @@
                             "label": "Unique Section Name",
                             "name": "unique_id",
                             "type": "text",
-                            "instructions": "Enter name of section i.e. Press",
+                            "instructions": "Enter name of section i.e. Press. Text will appear in the red bar at the top of the page and allow the page to scroll to this section",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -542,7 +561,7 @@
                             "label": "Unique Section Name",
                             "name": "unique_id",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "Enter name of section i.e. Press. Text will appear in the red bar at the top of the page and allow the page to scroll to this section",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -590,7 +609,7 @@
                             "label": "Unique Section Name",
                             "name": "unique_id",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "Enter name of section i.e. Press. Text will appear in the red bar at the top of the page and allow the page to scroll to this section",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -745,7 +764,7 @@
                             "label": "Discography details",
                             "name": "discography_details",
                             "type": "repeater",
-                            "instructions": "Enter a link and the name of the link, i.e Amazon, Spotify etc.",
+                            "instructions": "Enter an image, link and details of the Discography item, i.e Amazon, Spotify etc.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -756,13 +775,13 @@
                             "collapsed": "",
                             "min": "",
                             "max": "",
-                            "layout": "table",
+                            "layout": "row",
                             "button_label": "Add Row",
                             "sub_fields": [
                                 {
-                                    "key": "field_58541ad4b00c2",
-                                    "label": "Link Title",
-                                    "name": "link_title",
+                                    "key": "field_58835a2d0d786",
+                                    "label": "Title",
+                                    "name": "title",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
@@ -777,6 +796,48 @@
                                     "prepend": "",
                                     "append": "",
                                     "maxlength": ""
+                                },
+                                {
+                                    "key": "field_588350536d7ac",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_588350616d7ad",
+                                    "label": "Details",
+                                    "name": "details",
+                                    "type": "wysiwyg",
+                                    "instructions": "Full details go here...",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1
                                 },
                                 {
                                     "key": "field_58541ae4b00c3",
@@ -801,7 +862,7 @@
                             "label": "Unique Section Name",
                             "name": "unique_id",
                             "type": "text",
-                            "instructions": "",
+                            "instructions": "Enter name of section i.e. Press. Text will appear in the red bar at the top of the page and allow the page to scroll to this section",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -953,6 +1014,13 @@
                 "operator": "==",
                 "value": "post"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "clients"
+            }
         ]
     ],
     "menu_order": 0,
@@ -963,5 +1031,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484208651
+    "modified": 1485004967
 }

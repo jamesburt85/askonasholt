@@ -22,7 +22,7 @@
 	if (is_page_template()){
 		$pageName = $pastSeasonOBJ->slug;
 	} else if (is_post_type_archive('tours-projects')) {
-		$pageName = $upcomingSeasonOBJ->slug;
+		$pageName = $currentSeasonOBJ->slug;
 	} else {
 		$pageName = $thisPageIs->slug;
 	}
@@ -31,9 +31,7 @@
 ?>
 
 
-
-
-<div class="filtering-block tours-projects-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg');">
+<div class="filtering-block tours-projects-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/light-pattern.png');">
 
 	<header class="filter-header">
 
@@ -56,7 +54,7 @@
 
 						<h2 class="hero-heading">Past Tours &amp; Projects</h2>
 						<p><?php echo $description; ?></p>
-						<p><?php echo $pageName; ?></p>
+						<p><?php echo str_replace("-"," / ",$pageName); ?></p>
 
 						<script>
 							$(document).ready(function(){
@@ -83,7 +81,8 @@
 							//print_r($description);
 						?>
 						<p><?php echo $description; ?></p>
-						<p><?php echo $pageName; ?></p>
+						<!-- <h2><?php //echo $pageName; ?></h2> -->
+						<p><?php echo str_replace("-"," / ",$pageName); ?></p>
 
 						<script>
 							$(document).ready(function(){
@@ -99,6 +98,7 @@
 
 							});
 						</script>
+
 
 					<?php }
 
@@ -118,6 +118,7 @@
 					        'exclude' => 1, // don't show uncategorised
 					        'walker'       => new Walker_Category_Find_Parents(),
 					    ) );
+				
 					echo "</ul>";
 
 				?>
@@ -129,11 +130,4 @@
 
 	</header>
 
-
-
-
 </div>
-
-<!-- <div class="newsletter-banner row">
-	Sign up to our newsletter for the latest announcements
-</div> -->

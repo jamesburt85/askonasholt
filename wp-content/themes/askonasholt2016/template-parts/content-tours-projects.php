@@ -44,6 +44,7 @@
 
 			?>
 			<div class="small-12 large-4 columns tour-thumbnail" style="background-image: url('<?php echo $thumb;?>')">
+			
 			</div>
 
 			<div class="small-12 large-8 columns tour-details">

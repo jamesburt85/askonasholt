@@ -7,15 +7,46 @@ body.single-people{
     max-width: 57.375rem;
     margin: 0 auto;
   }
-  .single-staff-header {
-    margin: $sitepadding-large 0;
+  // .single-staff-header {
+  //   margin: $sitepadding-large 0;
+  //   height: 28rem;
+  //   .header-info {
+  //     @include center;
+  //     margin: 0 auto
+  //   }
+  // }
+
+  .artist-header.people.container {
+    height: 28em;
+    @include full-bg;
+    position: relative;
+    border-bottom: 1px solid #cccccc;
+    .artist-details-area {
+       @include center;
+       margin: 0 auto;
+       width: 100%;
+     }
+     .people-details-container {
+      padding: 25px;
+     }
+     .artist-header-thumb {
+      height: 300px;
+      max-width: 400px;
+      margin: 0 auto;
+      -webkit-box-shadow: 0px 11px 48px -5px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 11px 48px -5px rgba(0, 0, 0, 0.75);
+      @include full-bg;
+     }
+     span.staff-category li {
+      color: #BA0C2F;
+    }
   }
 }
 
 @include breakpoint(small only) {
   body.single{
     div#single-post {
-      max-width: 90%;
+      //max-width: 90%;
       margin: 0 auto;
     }
   }

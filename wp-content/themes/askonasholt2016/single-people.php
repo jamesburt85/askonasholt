@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<?php //get_template_part( 'template-parts/featured-image' ); ?>
+<?php get_template_part( 'template-parts/single-people-hero' ); ?>
 
 <div id="single-post" role="main">
 
@@ -17,7 +17,7 @@ get_header(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header>
 
-			<?php 
+			<!-- <?php 
 				$position = get_field('position');
 				$e_mail = get_field('e-mail');
 				$telephone_number = get_field('telephone_number');
@@ -37,7 +37,7 @@ get_header(); ?>
 					<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a><br/>
 					<span><?php echo $telephone_number; ?></span><br/>
 				</div>
-			</div>
+			</div> -->
 			
 			
 			<?php //foundationpress_entry_meta(); ?>

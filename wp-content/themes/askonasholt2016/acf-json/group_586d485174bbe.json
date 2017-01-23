@@ -1,13 +1,13 @@
 {
     "key": "group_586d485174bbe",
-    "title": "[GREEN ROOM] Green Room Artists",
+    "title": "[GREEN ROOM] Details",
     "fields": [
         {
             "key": "field_586d48517a63d",
             "label": "Artist",
             "name": "artist",
             "type": "relationship",
-            "instructions": "",
+            "instructions": "Choose any Artists relating to the item",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -28,11 +28,11 @@
             "return_format": "object"
         },
         {
-            "key": "field_586d48517a656",
-            "label": "Link",
-            "name": "link",
-            "type": "url",
-            "instructions": "",
+            "key": "field_588345ae5dff2",
+            "label": "Related Client",
+            "name": "related_client",
+            "type": "relationship",
+            "instructions": "Choose any Clients relating to the item",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -40,8 +40,17 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": ""
+            "post_type": [
+                "clients"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
         }
     ],
     "location": [
@@ -61,5 +70,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483557016
+    "modified": 1484999077
 }

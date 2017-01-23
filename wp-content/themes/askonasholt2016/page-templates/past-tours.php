@@ -12,7 +12,7 @@ get_header(); ?>
 		$pastSeason 		= get_field('past_season', 'option');
 		$pastSeasonID 		= $pastSeason->term_id;
 
-		echo $pastSeasonID;
+		//echo $pastSeasonID;
 
 		$args = array(
 			'post_type' => 'tours-projects',

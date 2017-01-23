@@ -2,10 +2,10 @@
 	font-size: 19px;
 	//border-top: 1px solid #cccccc;
 	span.text_area_one {
-		padding: 0 $sitepadding 0 0.9375rem;
+		padding: 0 $sitepadding-small 0 0.9375rem;
 	}
 	span.text_area_two, span.text_area_three {
-		padding: 0 $sitepadding;
+		padding: 0 $sitepadding-small;
 	}
 	.press-details span:last-child {
 		font-weight: bold;
@@ -28,4 +28,18 @@
 	.event-listing-details {
 	    line-height: 2;
 	}
+
+}
+
+@include breakpoint(medium up) {
+	span.text_area_one {
+		padding: 0 $sitepadding-small 0 0.9375rem;
+	}
+	span.text_area_two, span.text_area_three {
+		padding: 0 $sitepadding-small;
+	}
+}
+//padding to vacancies accordion on careers page
+.press-row.vacancies {
+    margin-bottom: 50px;
 }

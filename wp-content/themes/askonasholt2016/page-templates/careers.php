@@ -24,37 +24,33 @@ get_header(); ?>
             <?php if ( have_rows('vacancy_accordion') ); { ?>
             
               <h4 class="section-header">Vacancies</h4>
-              <div class="press-row">
+              <div class="press-row vacancies">
                 <ul class="accordion" data-accordion data-allow-all-closed="true">
             <?php while ( have_rows('vacancy_accordion') ) { the_row();
 
               $vacancy_title = get_sub_field('vacancy_title');
               $vacancy_details = get_sub_field('vacancy_details'); ?>
               
-                
-                  
-                    <li class="accordion-item" data-accordion-item>
-                      
-                      <a href="#" class="accordion-title"><?php //the_title(); ?> 
+                  <li class="accordion-item" data-accordion-item>
+                    
+                    <a href="#" class="accordion-title"><?php //the_title(); ?> 
 
-                        <?php echo $vacancy_title; ?>
-                          
-                          <span class="more-info">More info &nbsp;
-                              <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                  <defs></defs>
-                                  <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
-                              </svg>
-                          </span>
+                      <?php echo $vacancy_title; ?>
+                        
+                        <span class="more-info">More info &nbsp;
+                            <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs></defs>
+                                <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
+                            </svg>
+                        </span>
 
-                      </a>
+                    </a>
 
-                      <div class="accordion-content" data-tab-content>
-                        <p><?php echo $vacancy_details; ?></p>
-                      </div>
+                    <div class="accordion-content" data-tab-content>
+                      <p><?php echo $vacancy_details; ?></p>
+                    </div>
 
-                    </li>
-                 
-               
+                  </li>
 
               <?php } ?>
                 </ul>
@@ -79,5 +75,9 @@ get_header(); ?>
 <?php do_action( 'foundationpress_after_content' ); ?>
 
 </div>
+
+<?php get_template_part( 'template-parts/page-nav-tiles' ); ?>
+
+<?php get_template_part( 'template-parts/link-banner' ); ?>
 
 <?php get_footer();

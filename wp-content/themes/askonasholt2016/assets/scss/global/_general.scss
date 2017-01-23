@@ -5,9 +5,43 @@
 //     margin: 0 auto;
 // }
 
+#cookie-notice .button.bootstrap {
+    background-color: #ffffff;
+    background-image: none;
+    color: $brand-red;
+}
+
+#cookie-notice .button.bootstrap:hover {
+    background-color: #ffffff;
+    background-image: none;
+    color: $brand-red;
+}
+
+//remove padding as 'columns' will add this
+#single-post .main-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 .event-listing-details.simple-listing {
     .side-bar-artist {
         line-height: 60px;
+    }
+}
+
+.link-banner {
+    margin-top: $sitepadding-large;
+}
+
+.page-template-home {
+    .link-banner {
+        margin-top: 0;
+    }
+}
+
+.full-width {
+    hr {
+        max-width: 100%;
     }
 }
 
@@ -17,8 +51,8 @@
 
 .section-header  {
     //@include grid-column(12);
-    padding-top: $sitepadding-small;
-    padding-bottom: $sitepadding-small;
+    padding-top: $sitepadding;
+    padding-bottom: $sitepadding;
     color: $brand-red;
     font-family: $serif-font;
     //@include grid-column(12);
@@ -30,7 +64,7 @@
 
 @include breakpoint(small only){
     .section-header  {
-        padding-bottom: 0;
+       //padding-bottom: 0;
         font-size: 1.4rem;
     }
 }

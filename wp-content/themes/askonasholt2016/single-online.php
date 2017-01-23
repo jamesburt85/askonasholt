@@ -8,56 +8,44 @@
 
 get_header(); ?>
 
-<?php //get_template_part( 'template-parts/featured-image' ); ?>
+<?php get_template_part( 'template-parts/center-text-hero' ); ?>
 
 <div id="single-post" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-		
-		<header>
-			
-			<h3 class="section-header"><?php the_title(); ?></h3>
-			<?php //foundationpress_entry_meta(); ?>
-			
-			<span class="single-magazine-category"><?php //echo $main_category; ?>
-				<!-- *** Details in functions.php for getting taxonomy/terms *** -->
-				<?php echo wpdocs_custom_taxonomies_terms_links(); ?>
-				<?php //the_date('d-m-y'); ?>
-			</span>
-
-		</header>
 
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 		
-		<div class="entry-content">
+		<div class="entry-content row">
+			<div class="small-12 columns">
+
+			<h4 class="section-header">About the Performance</h4>
+			
+			<?php the_content(); ?>
 
 
+				<?php 
 
-			<?php 
+				if ( get_field('media_choice') == 'Video' ) { ?>
 
-			if ( get_field('media_choice') == 'Video' ) { ?>
+					<div class="row large-video-row">
+					  <iframe width="560" height="315" src="<?php the_field('link'); ?>" frameborder="0" allowfullscreen></iframe>
+					</div>
 
-				<div class="row large-video-row">
-				  <iframe width="560" height="315" src="<?php the_field('link'); ?>" frameborder="0" allowfullscreen></iframe>
-				</div>
+				<?php }
 
-			<?php }
+				elseif ( get_field('media_choice') == 'Audio' ) { ?>
+				 	
+				 	<?php //$audio = the_field('audio'); ?>
 
-			elseif ( get_field('media_choice') == 'Audio' ) { ?>
-			 	
-			 	<?php //$audio = the_field('audio'); ?>
-
-			 	<?php get_template_part('template-parts/audio-player' ); ?>
-
-
-			<?php } ?>
+				 	<?php get_template_part('template-parts/audio-player' ); ?>
 
 
+				<?php } ?>
 
-
-    		<?php get_template_part('template-parts/sharing-block' ); ?>
+	    		<?php get_template_part('template-parts/sharing-block' ); ?>
 
 			
 		<div class="artist-list">
@@ -101,7 +89,8 @@ get_header(); ?>
 										<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
 									</a>
 									<a href="<?php echo $artist_url; ?>">
-										<span class="more-info">Visit Artist Page</span>
+										<span class="more-info show-for-medium">Visit Artist Page</span>
+										<span class="more-info hide-for-medium">View</span>
 									</a>
 								
 									<?php # If this artist has an artist-type
@@ -128,12 +117,10 @@ get_header(); ?>
 					}
 				} ?>
 			</div>
-			<h4 class="section-header">About the Performance</h4>
-
 			
-			<?php the_content(); ?>
 
 			<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+			</div>
 		</div>
 
 

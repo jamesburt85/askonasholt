@@ -1,6 +1,6 @@
 //Artist/Musician Details
 
-.artists {
+.artists, .clients {
 	transition: 0.5s;
 	// margin-top: $sitepadding;
 	margin-bottom: ($sitepadding * 2);
@@ -92,7 +92,7 @@
 
 
 // ARTIST SINGLE PAGE
-.single-artists {
+.single-artists, .single-clients {
 	.artist-header-thumb {
 		height: 200px;
 		margin-top: 2em;
@@ -249,9 +249,19 @@ div.row.free-text {
 	}
 }
 
+div.people-link-item {
+	position: relative;
+}
+
+div.people-link-item:hover {
+	.overlay {
+		display: block !important;
+	}
+}
+
 
 @include breakpoint(medium) {
-	.single-artists {
+	.single-artists, .single-clients {
 		.artist-header-thumb {
 			height: 300px;
 			max-width: 400px;
@@ -259,11 +269,11 @@ div.row.free-text {
 			margin: 0 auto;
 		}
 	}
-	.artist-video-area {
-		.video-description {
-			height: 235px;
-		}
-	}
+	// .artist-video-area {
+	// 	.video-description {
+	// 		height: auto;
+	// 	}
+	// }
 	body.page-template-home {
 		div#video-audio {
 			margin-top: $sitepadding-large;

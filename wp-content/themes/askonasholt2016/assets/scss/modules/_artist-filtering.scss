@@ -1,20 +1,16 @@
-// .artist-filtering-block {
-// 	background-color: $lightbrown;
-// 	position: relative;
-// 	@include full-bg;
-// 	background-repeat: repeat-x;
-// 	background-size: inherit;
-// 	.hero-heading {
-// 		font-family: $serif-font;
-// 	}
-// }
-
+body.post-type-archive-events {
+	div#archive {
+	    margin: 0;
+	    max-width: 100%;
+	}
+}
 
 .artist-filtering-block {
     position: relative;
-    background-size: cover;
+    @include full-bg;
     min-height: 20em;
-    //border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+
 }
 
 .filter-area {
@@ -24,7 +20,7 @@
 
 
 
-//making categoried fit on one line
+//making categories fit on one line
 
 @include breakpoint(medium up) {
 	.artist-categories {
@@ -46,7 +42,7 @@
 	}
 }
 
-//making categoried fit on one line END
+//making categoried fit on one line //END
 
 
 // .artist-categories {
@@ -132,7 +128,7 @@
 
 .artist-categories {
 	position: absolute;
-	bottom: 1em;
+	bottom: 4em;
 	// width: 100%;
 	list-style: none;
 	margin: 0;
@@ -140,7 +136,7 @@
 	li {
 		color: $white;
 		float: left;
-		margin-right: ($sitepadding / 2);
+		//margin-right: ($sitepadding / 2);
 		margin-bottom: ($sitepadding / 2);
 		text-transform: uppercase;
 		font-weight: bold;
@@ -229,20 +225,17 @@
 			color: $white;
 		}
 		ul.children {
-			// margin-left: ($sitepadding / 2);
 			position: absolute;
 			display: inline-block;
-			bottom: 20px; // temp
-			left: 0;
-
-			// float: right;
+			bottom: -2.5em; 
+			@include center(x);
+			width: 100%;
 
 			li {
 				float: left;
 				margin-bottom: 0;
 				a {
 					background-color: $brown;
-					// background-color: lighten($bggrey, 20%);
 					&:active,
 					&:focus,
 					&:hover {
@@ -263,6 +256,13 @@
 		}
 	}
 
+}
+
+//Styles for when instrumentalists term is clicked. Move row up to allow children room underneath
+.term-instrumentalists {
+	.artist-categories {
+		bottom: 4em;
+	}
 }
 
 /// highlight show all on archive page
@@ -296,6 +296,7 @@ body.post-type-archive-artists {
 }
 @include breakpoint(medium) {
 	.artist-filtering-block  {
-		min-height: 28em;
+		height: 28em;
+		margin-bottom: 3em;
 	}
 }

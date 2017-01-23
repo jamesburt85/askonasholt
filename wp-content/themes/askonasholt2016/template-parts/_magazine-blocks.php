@@ -22,16 +22,16 @@
 				<span class="magazine-category"><?php //echo $main_category; ?>
 					<!-- *** Details in functions.php for getting taxonomy/terms *** -->
 					<span class="category">
-				<?php
-					$category = get_the_category(); 
-						$category_parent_id = $category[0]->category_parent;
-						if ( $category_parent_id != 0 ) {
-						    $category_parent = get_term( $category_parent_id, 'category' );
-						    $css_slug = $category_parent->slug;
-						} else {
-						    $css_slug = $category[0]->slug;
-						}
-						//echo $category_parent;
+						<?php
+							$category = get_the_category(); 
+								$category_parent_id = $category[0]->category_parent;
+								if ( $category_parent_id != 0 ) {
+								    $category_parent = get_term( $category_parent_id, 'category' );
+								    $css_slug = $category_parent->slug;
+								} else {
+								    $css_slug = $category[0]->slug;
+								}
+								//echo $category_parent;
 
 						?>
 

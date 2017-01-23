@@ -7,9 +7,14 @@
  */
 
 get_header(); ?>
+<div class="center-text-hero-header" style="background-image: url('<?php //echo $thumb['0'];?><?php echo get_template_directory_uri(); ?>/assets/images/light-pattern.png')">
+	<div class="center-hero-text">
+		<h1 class="entry-title"><?php _e( 'File Not Found', 'foundationpress' ); ?></h1>
+	</div>
+</div>
 
 <div class="row">
-	<div class="small-12 large-8 columns" role="main">
+	<div class="small-12 large-12 columns" role="main">
 
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<header>
@@ -29,6 +34,9 @@ get_header(); ?>
 		</article>
 
 	</div>
-	<?php get_sidebar(); ?>
+	<?php //get_sidebar(); ?>
 </div>
+
+<?php get_template_part('template-parts/link-banner' ); ?>
+
 <?php get_footer();

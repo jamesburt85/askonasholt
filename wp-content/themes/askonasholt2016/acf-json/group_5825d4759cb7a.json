@@ -168,13 +168,45 @@
             "return_format": "object"
         },
         {
+            "key": "field_587bd455a2767",
+            "label": "Further Information?",
+            "name": "further_information",
+            "type": "radio",
+            "instructions": "If there is any further information, click 'yes' and then enter the info. e.g. hashtags",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Yes": "Yes",
+                "No": "No"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
             "key": "field_58386c052a752",
             "label": "Further Info",
             "name": "further_info",
             "type": "wysiwyg",
             "instructions": "Enter further info, links, hastags etc.",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_587bd455a2767",
+                        "operator": "==",
+                        "value": "Yes"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -276,5 +308,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484061713
+    "modified": 1484510711
 }

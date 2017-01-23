@@ -20,7 +20,15 @@
 	}
 }
 
-@include breakpoint(medium only) {
+@include breakpoint(small only) {
+	body.single-artists {
+		.link-banner-button:last-child {
+			padding-top: 0;
+		}
+	}
+}
+
+@include breakpoint(medium up) {
 	.link-banner-button {
 		padding: $sitepadding-large;
 	}

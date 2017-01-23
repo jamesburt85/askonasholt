@@ -203,3 +203,62 @@ div#search-toggle {
     right: 0
 }
 
+
+//making main menu dropdowns tranistion open
+@include breakpoint(large up){
+
+	.fd-animate ul li ul li {
+	  max-height: 0;
+	  position: absolute;
+	  -webkit-transition: max-height 5s ease-out;
+	  -moz-transition: max-height 5s ease-out;
+	  -ms-transition: max-height 5s ease-out;
+	  -o-transition: max-height 5s ease-out;
+	  transition: max-height 5s ease-out;
+	}
+	 
+	.fd-animate ul li ul li:hover > ul > li {
+	  max-height: 100px;
+	  height:auto;
+	  position: relative;
+	}
+	 
+	.fd-animate > ul > li:hover > ul {
+	  left: 0;
+	}
+	.fd-animate > ul > li:hover > ul > li {
+	  max-height: 100px;
+	  height:auto;
+	  position: relative;
+	}
+	 
+	.fd-animate > ul > li > ul {
+	  width: auto;
+	  min-width:200px;
+	  display: block;
+	}
+
+	ul.dropdown.menu.vertical.submenu.is-dropdown-submenu.first-sub {
+	    z-index: -1;
+	}
+
+	.menu-item-has-children:hover {
+		ul.dropdown.menu.vertical.submenu.is-dropdown-submenu.first-sub {
+		    z-index: 1;
+		}
+	}
+}
+
+
+// Media Queries
+
+//Removing Social area and search overlap
+@media screen and (max-width: 1175px) {
+	.header-social-area {
+		display: none;
+	}
+}
+
+
+
+

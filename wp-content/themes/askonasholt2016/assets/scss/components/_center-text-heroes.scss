@@ -19,7 +19,7 @@
 // MEDIA QUERIES
 @include breakpoint(medium up) {
 	.center-text-hero-header {
-		height: 50vh !important;
+		height: 28em !important;
 		margin-bottom: $sitepadding-large;
 	}
 }

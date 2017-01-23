@@ -105,7 +105,7 @@
 				</ul>
 			</div>
 
-			<div class="top-bar-right">
+			<div class="top-bar-right fd-animate">
 				<?php foundationpress_top_bar_r(); ?>
 				<?php //wp_nav_menu( array( 'theme_location' => 'top-bar-r' ) ); ?>
 
@@ -147,7 +147,7 @@
 
 		</nav>
 
-		<div id="searchbar" class="searchbar row" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-dark.jpg');">
+		<div id="searchbar" class="searchbar row" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/dark-pattern.png');">
 				<?php get_search_form(); ?>
 		</div>
 

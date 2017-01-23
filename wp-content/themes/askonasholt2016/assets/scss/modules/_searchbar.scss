@@ -28,3 +28,26 @@ body.search-bar-is-visible {
   }
 }
 
+ul.ui-autocomplete {
+  margin: 0;
+  opacity: 0.9;
+  li.ui-menu-item {
+      font-family: "Brown-Pro-Light";;
+      font-size: 0.9em;
+      background: $brand-red;
+      padding: 2px;
+      color: #ffffff;
+      transition: 0.5s;
+  }
+  li.ui-menu-item:hover {
+    border: none;
+    font-weight: bold;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+}
+
+.ui-menu {
+  padding: 0;
+}
+

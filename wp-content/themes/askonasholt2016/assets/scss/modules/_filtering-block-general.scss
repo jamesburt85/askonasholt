@@ -3,10 +3,7 @@
 	position: relative;
 	@include full-bg;
 	min-height: 200px;
-	height: 45vh;
-	max-height: 500px;
-	background-repeat: repeat-x;
-	background-size: inherit;
+	height: 28em;
 	text-align: center;
 	border-bottom: 1px solid #cccccc;
 	.hero-heading {

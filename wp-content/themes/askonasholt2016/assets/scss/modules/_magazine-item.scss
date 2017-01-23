@@ -48,14 +48,30 @@
 	    font-size: 1.1rem;
 	}
 	.magazine-item-header {
-		margin: 1em 0 0 0;
+		//margin: 1em 0 0 0;
 		font-size: 1.1rem;
 		
 		a {
 			color: inherit;
 		}
 	}
+	//flags for people page
+	.flag-area {
+	    .flag {
+	    	height: 30px;
+	    	width: 30px;
+	    }
+	}
+}
 
+.quicklook-content-profile {
+	//flags for people page
+	.flag-area {
+	    .flag {
+	    	height: 30px;
+	    	width: 30px;
+	    }
+	}
 }
 
 .magazine-item:hover{
@@ -68,6 +84,13 @@
 		span.eye {
 			opacity: 1;
 		}
+	}
+}
+
+//staff blocks
+.magazine-item-container.staff-header {
+	.magazine-item-header p {
+		margin-bottom: 0;
 	}
 }
 
@@ -93,6 +116,28 @@ body.blog {
  	font-weight: bold;
  }
 
+ body.blog {
+ 	article.main-content {
+ 		position: relative;
+ 		padding-bottom: 5em;
+ 	}
+ 	.archive__load-more {
+ 		@include center(x);
+ 		bottom: 3em;
+ 		a {
+ 			color: #BA0C2F;
+ 			font-weight: bold;
+ 			border: 1px solid #BA0C2F;
+ 			padding: 1em;
+ 			transition: 0.5s;
+ 		}
+ 	}
+ 	.archive__load-more a:hover {
+ 		color: #ffffff;
+ 		background: $brand-red;
+ 	}
+ }
+
 
 //************************
 //Single Magazine pages **
@@ -114,9 +159,17 @@ body.blog {
 //****************************************
 
 @include breakpoint(medium) {
-	.magazine-item {
-		height: 450px;
+	body.page-template-home .magazine-item, body.single-artists .magazine-item, body.page-template-home .video-description {
+		//height: 450px;
+		vertical-align:top;
+	    display: inline-block;
+	    width:100%;
+	    //height:auto;
+	    float: left;
 	}
+	// .magazine-item {
+	// 	height: 450px;
+	// }
 }
 
 

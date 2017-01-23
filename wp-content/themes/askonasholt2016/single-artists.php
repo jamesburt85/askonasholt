@@ -10,6 +10,7 @@ get_header(); ?>
 
 <?php get_template_part( 'template-parts/single-artist-hero' ); ?>
 
+
 <div id="single-post" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
@@ -25,13 +26,8 @@ get_header(); ?>
 
 	<?php 
 		// get VARS
-		// $artist_photo = get_field('artist_photo');
-		$main_category = get_field('main_category');
-		$name = //get_field('name');
 		$bio = get_field('bio');
 		$website = get_field('website');
-		$european_management = get_field('european_management');
-		$general_management = get_field('general_management');
 		$contact_text_area = get_field('contact_text_area');
 	?>
 
@@ -39,6 +35,7 @@ get_header(); ?>
 		<div class="small-12 large-9 columns hide-for-large" id="introduction">
 			<h4 class="section-header">Introduction</h4>
 			<p><?php echo $bio; ?></p>
+			<hr>
 		</div>
 		<div class="small-12 large-3 columns artist-contacts">
 			<h4 class="section-header">Contact</h4>
@@ -98,49 +95,47 @@ get_header(); ?>
 									<?php endif ?>
 								</div>
 
-							</div>
+							</div> <!-- Side bar Artist END -->
 						
 						<?php }
 					} ?>
 
-		<div class="side-bar-text-area"><?php echo $contact_text_area; ?></div>
-		<br/>
+			<div class="side-bar-text-area"><?php echo $contact_text_area; ?></div>
+			<br/>
 
 
-		<div class="artist-social">
+			<div class="artist-social">
 
-			<?php if( have_rows('social_buttons') ): ?>
+				<?php if( have_rows('social_buttons') ): ?>
 
-				<?php while( have_rows('social_buttons') ): the_row(); 
+					<?php while( have_rows('social_buttons') ): the_row(); 
 
-					?>
+						?>
 
-					<a href="<?php the_sub_field('social_media_link'); ?>" target="_blank">
-						<i class="fa fa-<?php the_sub_field('social_media_name'); ?>" aria-hidden="true"></i>
-					</a>
+						<a href="<?php the_sub_field('social_media_link'); ?>" target="_blank">
+							<i class="fa fa-<?php the_sub_field('social_media_name'); ?>" aria-hidden="true"></i>
+						</a>
 
-				<?php endwhile; ?>
+					<?php endwhile; ?>
 
-			<?php endif; ?>
+				<?php endif; ?>
 
-			<a class="website" href="http://www.<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a>
+				<a class="website" href="http://www.<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a>
 			
-		</div>			
-
+			</div>	<!-- artist-social END	 -->
 
 		</div>
 		<div class="small-12 large-9 columns show-for-large" id="introduction">
 			<h4 class="section-header">Introduction</h4>
 			<p><?php echo $bio; ?></p>
 		</div>
-	</div>
+	</div> <!-- Bio Row END -->
 
 
 
-	<div class="video-audio-area" id="video-audio">
+	
 			
-		<div class="row">
-			<h4 class="section-header small-12 columns">Video &amp; Audio</h4>
+		
 
 			<?php 
 
@@ -172,39 +167,28 @@ get_header(); ?>
 			?>
 	
 			<?php if( $videos ): ?>
-				<!-- <ul> -->
-				<?php
-					foreach( $videos as $video ): setup_postdata( $video ); ?>
-						<div class="small-12 medium-6 large-3 columns artist-video-area">
-							<?php get_template_part( 'template-parts/video-player' ); ?>
-						</div>
 
-					
-					<div>
-	<!-- 					<div class="small-2 columns">
-							<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
-						</div> -->
-						<!-- <div class="small-12 medium-6 large-3 columns artist-video-area">
-							<div class="row large-video-row">
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $section['video']; ?>" frameborder="0" allowfullscreen></iframe>
-							</div>
-							<div class="video-description">
-								<?php echo wpdocs_custom_taxonomies_terms_links(); ?>
-								<?php the_date('d-m-y'); ?>
-								<span class="magazine-item-copy"><?php the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
-							</div>
-						</div> -->
-					</div>
+				<div class="video-audio-area" id="video-audio">
+
+					<div class="row">
+						<h4 class="section-header small-12 columns">Video &amp; Audio</h4>
 
 					<?php
+						foreach( $videos as $post ): setup_postdata( $post ); ?>
+							
+							<div class="small-12 medium-6 large-3 columns artist-video-area">
+								<?php get_template_part( 'template-parts/video-player' ); ?>
+							</div>
 
-					endforeach;
+						<?php
 
-					wp_reset_postdata(); ?>
-				<!--  </ul> -->
+						endforeach;
+
+						wp_reset_postdata(); ?>
+					<!--  </ul> -->
+					</div>
 			<?php endif; ?>
 
-		</div>
 
 		<div class="row">
 
@@ -366,6 +350,8 @@ get_header(); ?>
 	</div>
 
 
+
+
 	<div class="performance-schedule row" id="schedule">
 
 		<div class="small-12 columns">
@@ -469,47 +455,12 @@ get_header(); ?>
 		 </div>
 	</div>
 
-<!-- 	<div class="row hide-for-large">
-	  <div class="small-12 columns">
-
-	    <ul class="accordion" data-accordion data-allow-all-closed="true">
-	      <li class="accordion-item" data-accordion-item>
-	      <hr />
-	        <a href="#" class="accordion-title"><?php //the_title(); ?>
-
-	            <div class="event-listing-details">
-	              <?php get_template_part( 'template-parts/event-related-artist' ); ?>
-
-	              <span class="event-detail"><?php echo $time; ?></span><!-- <br/> -->
-	             <!--  <span class="event-detail"><?php echo $date; ?></span><br/>
-	              <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
-	              <span class="more-info">
-	                  <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-	                      <defs></defs>
-	                      <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
-	                  </svg>
-	              </span>
-	            </div>
-	          </a>
-
-	          <div class="accordion-content" data-tab-content>
-	            <?php echo $more_info; ?>
-	          </div>
-	        </li>
-	      </ul>
-
-	    </div>
-	  </div> -->
-
-
-
 
 	<div class="news-projects" id="news-projects">
 		<div class="row">
 			<div class="small-12 columns">
-		
 				<h4 class="section-header">From The Green Room</h4>
-		
+			</div>
 			<!-- Get news items -->
 			  <?php 
 
@@ -517,15 +468,18 @@ get_header(); ?>
 			      $args = array(
 
 			        'post_type'   => 'post',
-			        'category_slug' => array( 'news', 'interviews', 'features' ),
+			        //'category_slug' => array( 'news', 'interviews', 'features' ),
+			        'category_name'    => 'news, interviews, features, innovation, tour, uncategorized',
 			        'posts_per_page' => 4,
-			        'tax_query' => array(
-			            //array(
-			              //'taxonomy' => 'magazine-content-type',
-			              //'field'    => 'slug',
-			              //'terms'    => 'news',
-			            //),
-			          ),
+			        
+			        'meta_query' => array(
+			          array(
+			            'key' => 'artist', // name of custom field
+			            'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+			            'compare' => 'LIKE',
+			            'category_slug' => array( 'news', 'interviews', 'features' ),
+			          )
+			        )
 			      );
 
 			      // The Query
@@ -546,11 +500,59 @@ get_header(); ?>
 			    } else {
 			      // no posts found
 			    } ?>
-			</div>
+			
 		</div>
 		<!-- Do as above section, getting posts related to artist. May have to add relational field in ACF first -->
 	</div>
 
+	
+
+	<div class="row live-events">
+
+		<?php
+		  // Query Args
+		  $args = array(
+
+		    'post_type'		=> 'online',
+		    //'post__in'  	=> $tour_artists,
+		    'posts_per_page' => 4,
+		    'meta_query' => array(
+		    	array(
+		    		'key' => 'artist', // name of custom field
+		    		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+		    		'compare' => 'LIKE'
+		    	)
+		    )
+		    
+		  );
+
+		  // The Query
+		  $the_query = new WP_Query( $args );
+
+		  // The Loop
+		  if ( $the_query->have_posts() ) {
+		   // echo '<ul>'; ?>
+		  	<div class="small-12 columns">
+		  		<h4 class="section-header">Online Performances</h4>
+		  	</div>
+		  	<?php
+		    
+		    while ( $the_query->have_posts() ) {
+		      $the_query->the_post();
+		      //echo '<li>' . get_the_title() . '</li>';
+		      get_template_part( 'template-parts/content-post' );
+
+		      //get_template_part( 'template-parts/.....' );
+		    }
+		    //echo '</ul>';
+		    /* Restore original Post Data */
+		    wp_reset_postdata();
+		  } else {
+		    // no posts found
+		  }
+		?>
+
+	</div>
 	
 
 	<!-- using ACF Flexible content instead of the_content  -->

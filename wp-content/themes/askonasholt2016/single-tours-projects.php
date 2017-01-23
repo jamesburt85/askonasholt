@@ -70,6 +70,8 @@ get_header(); ?>
 						</div>
 					</div>
 
+					<hr/>
+
 					<div class="row">
 						<div class="small-12 medium-3 columns tour-intro-sidebar">
 							<h4 class="section-header">Contact</h4>
@@ -203,8 +205,11 @@ get_header(); ?>
 										}
 									} ?>
 
-							<h4 class="section-header">Further Info</h4>
-							<?php echo $further_info; ?>
+							<?php if( get_field('further_information') == 'yes' ): ?>
+								<h4 class="section-header">Further Info</h4>
+									<?php echo $further_info; ?>
+							<?php endif; ?>
+							
 						</div>
 						
 					</div>
@@ -419,8 +424,13 @@ get_header(); ?>
 								}
 							} ?>
 
-					<h4 class="section-header">Further Info</h4>
-					<?php echo $further_info; ?>
+					<br/>
+
+					<?php if( get_field('further_information') == 'Yes' ): ?>
+						<h4 class="section-header">Further Info</h4>
+							<?php echo $further_info; ?>
+					<?php endif; ?>
+
 				</div>
 
 				<div class="small-12 medium-9 columns project-intro">

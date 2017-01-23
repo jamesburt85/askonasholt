@@ -1,4 +1,4 @@
-<div class="artist-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg');">
+<div class="artist-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/light-pattern.png');">
 
 	<?php 
 		$myvar = get_field('people','option');

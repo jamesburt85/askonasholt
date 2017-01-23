@@ -281,7 +281,7 @@ var map = null;
         {
           breakpoint: 768,
           settings: {
-            arrows: false,
+            arrows: true,
             centerMode: true,
             centerPadding: '40px',
             slidesToShow: 1
@@ -290,7 +290,7 @@ var map = null;
         {
           breakpoint: 480,
           settings: {
-            arrows: false,
+            arrows: true,
             centerMode: false,
             centerPadding: '40px',
             slidesToShow: 1,
@@ -487,7 +487,7 @@ var map = null;
 
     $(document).scroll(function () {
         var y = $(this).scrollTop();
-        if (y < 200) {
+        if (y < 400) {
             $('#single-post div#share-buttons').fadeIn();
         } else {
             $('#single-post div#share-buttons').fadeOut();
@@ -495,6 +495,28 @@ var map = null;
 
     });
 
+
+    //*******************************************************
+    //***** HMAGAZINE ITEMS MAKE HEIGHT OF TALLEST   ********
+    //*******************************************************
+    var maxheight = 0;
+
+    $('div div.magazine-item').each(function () {
+        maxheight = ($(this).height() > maxheight ? $(this).height() : maxheight); 
+    });
+
+    $('div div.magazine-item').height(maxheight);
+
+
+
+    //video blocks
+    var maxheight = 0;
+
+    $('.video-description').each(function () {
+        maxheight = ($(this).height() > maxheight ? $(this).height() : maxheight); 
+    });
+
+    $('.video-description').height(maxheight);
 
 
 

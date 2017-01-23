@@ -89,6 +89,7 @@ get_header(); ?>
 
 	<?php if ( is_post_type_archive('events') ) {
 
+		get_template_part( 'template-parts/events-hero');
 		// adding in the live events block, if we're on the events archive.
 		get_template_part( 'template-parts/live-events-listing' ); ?>
 

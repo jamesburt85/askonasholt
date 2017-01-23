@@ -91,7 +91,7 @@
         },
         {
             "key": "field_5835b5cd190e6",
-            "label": "Staff Contact Details",
+            "label": "Contact Details And Languages",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -143,11 +143,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5835b5fd190e9",
+            "key": "field_587a28fc31ca2",
             "label": "Languages",
             "name": "languages",
-            "type": "text",
-            "instructions": "",
+            "type": "repeater",
+            "instructions": "Add spoken languages",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -155,11 +155,32 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "collapsed": "",
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_587a290e31ca3",
+                    "label": "Flags",
+                    "name": "flags",
+                    "type": "text",
+                    "instructions": "Add a flag for each spoken language. Enter 2 digit code from this website: http:\/\/flag-icon-css.lip.is\/\r\n\r\ne.g. English = gb, French = fr, German = de\r\n\r\nALL LOWER CASE",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -179,5 +200,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483637576
+    "modified": 1484588336
 }

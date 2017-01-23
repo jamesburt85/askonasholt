@@ -211,6 +211,9 @@ class Walker_Category_Find_Parents extends Walker_Category {
         remove_meta_box( 'postimagediv', 'artists', 'side' );
         add_meta_box('postimagediv', __('Artist Image'), 'post_thumbnail_meta_box', 'artists', 'normal', 'high');
 
+        # clients post type
+        remove_meta_box( 'postimagediv', 'clients', 'side' );
+        add_meta_box('postimagediv', __('Client Image'), 'post_thumbnail_meta_box', 'clients', 'normal', 'high');
     }
     add_action('do_meta_boxes', 'eb_change_featured_image_title');
 
@@ -331,9 +334,6 @@ class Walker_Category_Find_Parents extends Walker_Category {
                     $query->set('order','ASC');
             }
         }
-
-
-
 
 
 
