@@ -23,21 +23,27 @@
 
 			<div class="small-12 medium-7 columns artist-details-container">
 				<div class="artist-details">
-					<span class="artist-category"><?php //echo $main_category; ?>
+					<span class="artist-category"><?php echo $main_category; ?>
+					
 					<?php
 					/* FIRST
 					 * Note: This function only returns results from the default “category” taxonomy. For custom taxonomies use get_the_terms().
 					 */
-					$categories = get_the_terms( $post->ID, 'artist-type' );
-					$categories = get_the_terms( $post->ID, 'clients-type' );
+					//$artist_categories = get_the_terms( $post->ID, 'artist-type' );
+
+					//$client_categories = get_the_terms( $post->ID, 'clients-type' );
+
 					// now you can view your category in array:
 					// using var_dump( $categories );
 					// or you can take all with foreach:
-					foreach( $categories as $category ) {
-					    echo $category->name . '<br />';
-					} ?>
+					//foreach( $artist_categories as $category ) {
+					    //echo $category->name;
+					//}
+					//foreach( $client_categories as $category ) {
+					    //echo $category->name;
+					//} //?>
 					</span>
-					<span class="artist-category"><?php //echo $main_category; ?></span>
+					
 					<br>
 					<h2 class="artist-name hero-heading"><?php the_title(); ?></h2>
 				</div>

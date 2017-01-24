@@ -10,7 +10,6 @@
 
 ?>
 
-
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns'); ?>>
 
 	<?php //get_template_part( 'template-parts/people-filtering' ); ?>
@@ -22,7 +21,12 @@
 			<?php if ( has_post_thumbnail() ) { ?>
 
 				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-				<div class="magazine-item-thumb" style="background-image: url('<?php echo $thumb['0'];?>')">
+				<div class="client-photo-wrapper">
+					<a class="client-link" href="<?php the_permalink(); ?>">
+						<div class="magazine-item-thumb" style="background-image: url('<?php echo $thumb['0'];?>')">
+						</div>
+					</a>
+
 					<div class="overlay">
 						<a href="#quicklook-<?php the_ID(); ?>" class="open-popup-link">
 							<svg width="18px" height="12px" viewBox="51 823 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -42,7 +46,12 @@
 
 			else { ?>
 				
-				<div class="magazine-item-thumb" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/images/default.jpg');">
+				<div class="client-photo-wrapper">
+					<a class="client-link" href="<?php the_permalink(); ?>">
+						<div class="magazine-item-thumb" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/images/default.jpg');">
+						</div>
+					</a>
+
 					<div class="overlay">
 						<a href="#quicklook-<?php the_ID(); ?>" class="open-popup-link">
 							<svg width="18px" height="12px" viewBox="51 823 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

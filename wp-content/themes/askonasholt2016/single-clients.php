@@ -453,6 +453,7 @@
        </div>
     </div>
 
+
     <div class="news-projects" id="news-projects">
       <div class="row">
         <div class="small-12 columns">

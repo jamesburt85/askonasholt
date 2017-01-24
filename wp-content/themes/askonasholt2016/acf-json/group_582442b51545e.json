@@ -3,6 +3,25 @@
     "title": "[ARTISTS] Artist Details",
     "fields": [
         {
+            "key": "field_588637e854b37",
+            "label": "Main Category",
+            "name": "main_category",
+            "type": "text",
+            "instructions": "Enter the main category",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "e.g. Conductors",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_58244c3dcd370",
             "label": "About",
             "name": "",
@@ -256,5 +275,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484937201
+    "modified": 1485191243
 }

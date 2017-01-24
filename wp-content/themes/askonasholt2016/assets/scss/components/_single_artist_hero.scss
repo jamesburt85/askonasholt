@@ -4,7 +4,7 @@ body.single.single-artists, body.single.single-clients {
 	    max-width: 100%;
 	    background-image: url("../images/light-pattern.png");
 	    @include full-bg;
-	    height: 28em;
+	    height: auto;
 	    position: relative;
 	    .artist-details-area {
 	    	width: 100%;
@@ -53,6 +53,11 @@ div.side-bar-text-area {
 		@include center;
 		.artist-details-container {
 			padding: $sitepadding;
+		}
+	}
+	body.single.single-artists, body.single.single-clients {
+		.artist-header.container {
+			height: 28em
 		}
 	}
 }

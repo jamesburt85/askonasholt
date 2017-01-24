@@ -112,3 +112,12 @@ body.post-type-archive-artists {
 .quicklook-content-links {
 	padding: $sitepadding;
 }
+
+.client-photo-wrapper {
+    position: relative;
+}
+.client-photo-wrapper:hover {
+	.overlay {
+		display: block;
+	}
+}

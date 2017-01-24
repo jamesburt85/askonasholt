@@ -6661,6 +6661,19 @@ table.hover tbody tr:nth-of-type(even):hover {
 .temp-testing-mp3 {
   margin-bottom: 100vh; }
 
+.title-bar {
+  display: none; }
+
+@media screen and (min-width: 40em) {
+  .title-bar {
+    display: none; } }
+
+.top-bar {
+  display: none; }
+  @media screen and (min-width: 40em) {
+    .top-bar {
+      display: block; } }
+
 #cookie-notice .button.bootstrap, #cookie-notice .artist-categories li a.bootstrap, .artist-categories li #cookie-notice a.bootstrap {
   background-color: #ffffff;
   background-image: none;
@@ -11365,7 +11378,8 @@ div#image-gallery {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   background-color: #ffffff;
-  position: relative; }
+  position: relative;
+  margin-bottom: 25px; }
   .online-item a {
     color: inherit; }
   .online-item .bottom-left {
@@ -11432,6 +11446,10 @@ body.post-type-archive-online .archive__load-more {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   bottom: 0; }
+
+@media screen and (max-width: 39.9375em) {
+  .online-item {
+    margin-bottom: 25px; } }
 
 body.single-online .audio-player, body.single-online .large-video-row {
   padding: 0;
@@ -13126,6 +13144,12 @@ body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
 .quicklook-content-links {
   padding: 25px; }
 
+.client-photo-wrapper {
+  position: relative; }
+
+.client-photo-wrapper:hover .overlay {
+  display: block; }
+
 .tour-hero {
   height: 70vh;
   max-height: 400px;
@@ -13179,7 +13203,7 @@ body.single.single-artists .artist-header.container, body.single.single-clients 
   border-bottom: 0;
   -webkit-background-size: cover;
   background-size: cover;
-  height: 28em;
+  height: auto;
   position: relative; }
   body.single.single-artists .artist-header.container .artist-details-area, body.single.single-clients .artist-header.container .artist-details-area {
     width: 100%; }
@@ -13223,7 +13247,9 @@ div.side-bar-text-area {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
     body.single.single-artists .artist-header.container .artist-details-area .artist-details-container, body.single.single-clients .artist-header.container .artist-details-area .artist-details-container {
-      padding: 25px; } }
+      padding: 25px; }
+  body.single.single-artists .artist-header.container, body.single.single-clients .artist-header.container {
+    height: 28em; } }
 
 .more-page-links {
   border-top: 1px solid #cccccc;

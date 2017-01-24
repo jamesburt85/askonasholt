@@ -7,6 +7,7 @@
 	transition: 0.5s;
 	background-color: #ffffff;
 	position: relative;
+	margin-bottom: 25px;
 
 	a {
 		color: inherit;
@@ -86,6 +87,12 @@ body.post-type-archive-online {
 	.archive__load-more {
 		@include center(x);
 		bottom: 0;
+	}
+}
+
+@include breakpoint(small only){
+	.online-item {
+		margin-bottom: 25px;
 	}
 }
 

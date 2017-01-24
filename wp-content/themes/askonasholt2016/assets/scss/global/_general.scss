@@ -5,6 +5,25 @@
 //     margin: 0 auto;
 // }
 
+//stopping flash of dropdown on small devices
+.title-bar {
+    display: none;
+}
+
+.title-bar {    
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+
+.top-bar {
+    display: none;
+
+    @include breakpoint(medium) {
+        display: block;
+    }
+}
+
 #cookie-notice .button.bootstrap {
     background-color: #ffffff;
     background-image: none;
