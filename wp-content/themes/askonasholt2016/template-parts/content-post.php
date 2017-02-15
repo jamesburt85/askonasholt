@@ -1,5 +1,5 @@
 
-<div class="entry-content small-12 medium-6 large-3 columns">
+<div class="entry-content small-12 medium-6 large-3 columns animated waypoint is-hidden-onload" id="waypoint">
 
 	<div class=" magazine-item">
 		<?php if ( has_post_thumbnail() ) { ?>
@@ -29,7 +29,7 @@
 
 		else { ?>
 			<a href="<?php the_permalink(); ?>">
-			<div class="magazine-item-thumb online-item" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/images/default.jpg');">
+			<div class="magazine-item-thumb online-item animated waypoint is-hidden-onload" id="waypoint" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/images/default.jpg');">
 				<div class="bottom-left">
 					<div class="media-type-indicator">
 						<?php if( get_field('media_choice') == 'Video' ): ?>

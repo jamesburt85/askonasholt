@@ -4,6 +4,7 @@
 	// get VARS
 	// $artist_photo = get_field('artist_photo');
 	$main_category = get_field('main_category');
+	$photo_credit = get_field('photo_credit');
 	$website = get_field('website');
 	$contact_text_area = get_field('contact_text_area');
 	$manager_email = get_field('manager_email');
@@ -18,6 +19,12 @@
 			<div class="small-12 medium-5 columns">
 				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
 				<div class="artist-header-thumb" style="background-image: url('<?php echo $thumb['0'];?>')">
+					<?php if( get_field('photo_credit') ): ?>
+						<div class="credit-wrapper">
+							<span class="photo_credit">Credit: <?php echo $photo_credit;?></span>
+						</div>
+						
+					<?php endif; ?>
 				</div>
 			</div>
 

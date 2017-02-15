@@ -10,11 +10,8 @@
 
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns artists'); ?>>
-<!-- 	<header>
-		<h2><a href="<?php //the_permalink(); ?>"><?php //the_title(); ?></a></h2>
-		<?php //foundationpress_entry_meta(); ?>
-	</header> -->
+<div id="post-<?php the_ID(); ?> waypoint" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns artists animated waypoint is-hidden-onload'); ?>>
+
 	<div class="entry-content">
 		<?php // the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
 
@@ -22,6 +19,7 @@
 	<?php 
 
 		// get VARS
+		$photo_credit = get_field('photo_credit');
 		$artist_image = get_field('artist_image');
 		$main_category = get_field('main_category');
 		$name = get_field('name');

@@ -278,7 +278,7 @@ role="main"> -->
   <!--          <div class="small-2 columns">
               <h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
             </div> -->
-            <div class="small-12 medium-6 large-3 columns artist-video-area">
+            <div class="small-12 medium-6 large-3 columns artist-video-area animated waypoint is-hidden-onload" id="waypoint">
              
               <?php get_template_part( 'template-parts/video-player' ); ?>
 

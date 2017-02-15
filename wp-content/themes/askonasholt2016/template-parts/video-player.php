@@ -13,7 +13,7 @@ $video = $acf_fields['flexible_content'][0]['video'];
 
 ?>
 
-<div class="row large-video-row">
+<div class="row large-video-row animated waypoint is-hidden-onload" id="waypoint">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>" frameborder="0" allowfullscreen></iframe>
 </div>
 

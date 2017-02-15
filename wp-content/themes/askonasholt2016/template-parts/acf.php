@@ -113,7 +113,8 @@ if ($acf_fields['flexible_content']) {
 
 							<p><?php echo $section['gallery_description'] ?></p>
 
-							<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+							<div class="my-gallery animated waypoint is-hidden-onload" id="waypoint" itemscope itemtype="http://schema.org/ImageGallery">
+
 								<div class="multiple-items">
 							    <?php
 							    # Loop through the sections

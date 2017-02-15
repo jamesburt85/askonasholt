@@ -33,7 +33,7 @@
 
 		?>
 
-		<div class="row tour-wrapper">
+		<div class="row tour-wrapper animated waypoint is-hidden-onload" id="waypoint">
 			
 			<?php
 				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );

@@ -521,6 +521,27 @@ var map = null;
 
 
 
+    //**********************************************
+    //       FADE IN UP ****************************
+    //**********************************************
+    var waypoints = $('.waypoint').waypoint(function(direction) {
+
+
+      console.log(this.element + ' hit');
+      $(this.element).addClass('fadeInUp');
+      this.destroy();
+
+     }, {
+       offset: '80%'
+     })
+
+
+
+
+
+
+
+
   	})
 
 }(window.jQuery);

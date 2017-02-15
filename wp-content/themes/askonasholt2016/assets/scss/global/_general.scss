@@ -5,6 +5,11 @@
 //     margin: 0 auto;
 // }
 
+//don't showanimated items until js loads
+.is-hidden-onload {
+  opacity: 0;
+}
+
 //stopping flash of dropdown on small devices
 .title-bar {
     display: none;

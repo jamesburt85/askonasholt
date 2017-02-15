@@ -40,7 +40,7 @@ get_header(); ?>
                    <!-- <img src="/assets/images/cd-icon-picture.svg" alt="Picture"> -->
                 </div> <!-- cd-timeline-img -->
 
-                <div class="cd-timeline-content">
+                <div class="cd-timeline-content animated waypoint is-hidden-onload" id="waypoint">
                   
                   <h2><?php echo $section_title; ?></h2>
 

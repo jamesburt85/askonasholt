@@ -5,7 +5,7 @@
 	<!-- <p>In partnership with ......</p> -->
 </div>
 
-<div class="row live-events">
+<div class="row live-events animated waypoint is-hidden-onload" id="waypoint">
 
 	<?php
 	  // Query Args

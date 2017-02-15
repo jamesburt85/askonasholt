@@ -10,7 +10,7 @@
 
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns'); ?>>
+<div id="post-<?php the_ID(); ?> waypoint" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns animated waypoint is-hidden-onload'); ?>>
 
 	<?php //get_template_part( 'template-parts/people-filtering' ); ?>
 

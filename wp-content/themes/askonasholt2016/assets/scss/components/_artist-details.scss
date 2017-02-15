@@ -94,12 +94,23 @@
 // ARTIST SINGLE PAGE
 .single-artists, .single-clients {
 	.artist-header-thumb {
+		position: relative;
 		height: 200px;
 		margin-top: 2em;
 		@include full-bg;
 		-webkit-box-shadow: 0px 11px 48px -5px rgba(0, 0, 0, 0.75);
 		box-shadow: 0px 11px 48px -5px rgba(0, 0, 0, 0.75);
 		margin: 25px;
+		div.credit-wrapper {
+			bottom: 0px;
+			right: 0px;
+			position: absolute;
+			span.photo_credit {
+			    //padding-bottom: 10px;
+		        padding-right: 10px;
+		        color: #b7b7b7;
+			}
+		}
 	}
 	div#schedule {
 		//border-bottom: 1px solid #cccccc;

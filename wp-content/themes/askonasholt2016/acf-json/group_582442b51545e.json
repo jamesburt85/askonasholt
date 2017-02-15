@@ -3,6 +3,25 @@
     "title": "[ARTISTS] Artist Details",
     "fields": [
         {
+            "key": "field_58a40ca8dcbf7",
+            "label": "Photo Credit",
+            "name": "photo_credit",
+            "type": "text",
+            "instructions": "Ad name of photo credit",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_588637e854b37",
             "label": "Main Category",
             "name": "main_category",
@@ -275,5 +294,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1485191243
+    "modified": 1487146314
 }
