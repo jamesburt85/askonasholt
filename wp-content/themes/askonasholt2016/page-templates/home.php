@@ -40,7 +40,7 @@ get_header(); ?>
       </div>
     </div>
     
-    <div class="row">
+    <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
     
     <!-- Get news items -->
       <?php 
@@ -240,7 +240,7 @@ role="main"> -->
       </div>
     </div>   
 
-  <div class="row">
+  <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
       <?php 
 
       /*
@@ -276,9 +276,9 @@ role="main"> -->
           ?>
 
   <!--          <div class="small-2 columns">
-              <h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Video</h4>
+              <h4 class="section-header" id="<?php //echo $section['unique_id'] ?>">Video</h4>
             </div> -->
-            <div class="small-12 medium-6 large-3 columns artist-video-area animated waypoint is-hidden-onload" id="waypoint">
+            <div class="small-12 medium-6 large-3 columns artist-video-area animated waypoint is-hidden-onload" data-equalizer-watch>
               <a href="<?php the_permalink(); ?>"> 
                 <?php get_template_part( 'template-parts/video-player' ); ?>
               </a>

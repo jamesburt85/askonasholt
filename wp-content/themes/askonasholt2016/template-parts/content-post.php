@@ -1,7 +1,7 @@
 
-<div class="entry-content small-12 medium-6 large-3 columns animated waypoint is-hidden-onload" id="waypoint">
+<div class="entry-content small-12 medium-6 large-3 columns animated waypoint is-hidden-onload">
 
-	<div class="magazine-item">
+	<div class="magazine-item" data-equalizer-watch>
 		<?php if ( has_post_thumbnail() ) { ?>
 
 			<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>

@@ -497,27 +497,28 @@ var map = null;
     });
 
 
+
     //*******************************************************
     //***** MAGAZINE ITEMS MAKE HEIGHT OF TALLEST    ********
     //*******************************************************
-    var maxheight = 0;
+    // var maxheight = 0;
 
-    $('div div.magazine-item').each(function () {
-        maxheight = ($(this).height() > maxheight ? $(this).height() : maxheight); 
-    });
+    // $('div div.magazine-item').each(function () {
+    //     maxheight = ($(this).height() > maxheight ? $(this).height() : maxheight); 
+    // });
 
-    $('div div.magazine-item').height(maxheight);
+    // $('div div.magazine-item').height(maxheight);
 
 
 
-    //video blocks
-    var maxheight = 0;
+    // //video blocks
+    // var maxheight = 0;
 
-    $('.video-description').each(function () {
-        maxheight = ($(this).height() > maxheight ? $(this).height() : maxheight); 
-    });
+    // $('.video-description').each(function () {
+    //     maxheight = ($(this).height() > maxheight ? $(this).height() : maxheight); 
+    // });
 
-    $('.video-description').height(maxheight);
+    // $('.video-description').height(maxheight);
 
 
 
