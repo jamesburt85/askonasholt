@@ -205,6 +205,21 @@
   }
 }
 
+
+//animating svg arrow on hover
+a.view-link {
+  svg {
+    transition: 0.5s;
+  }
+}
+
+a.view-link:hover {
+  svg {
+      transform: translate(5px, 0);
+  }
+}
+
+
 .header-row {
     display: flex;
     a.view-link {

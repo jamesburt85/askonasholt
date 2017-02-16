@@ -20,18 +20,18 @@ get_header(); ?>
 			<h3 class="entry-title section-header small-gap"><?php //the_title(); ?></h3>
 			
 			<div class="blog-meta">
-				<div class="small-12 columns">
+				<!-- <div class="small-12 columns"> -->
 					<?php the_category(); ?>
 					<?php foundationpress_entry_meta(); ?>
-				</div>
+			<!-- 	</div> -->
 			</div>
 
 			<hr/>
 
 			<div class="row">
-				<div class="small-12 columns">
+				<!-- <div class="small-12 columns"> -->
 					<?php the_content(); ?>
-				</div>
+			<!-- 	</div> -->
 			</div>
 			
 
@@ -41,7 +41,7 @@ get_header(); ?>
 		<?php get_template_part('template-parts/sharing-block' ); ?>
 
 		<div class="entry-content row">
-			<div class="small-12 columns">
+			<!-- <div class="small-12 columns"> -->
 
 			<?php 
 				if ( has_post_format( 'audio' )) {
@@ -51,7 +51,7 @@ get_header(); ?>
 
 				elseif (has_post_format( 'video' )) {
 					//echo 'this is the VIDEO format';
-					the_content();
+					//the_content();
 					//getting ACF Flexible content navigation
 					$acf_fields = get_fields();
 					include(locate_template('template-parts/acf.php'));
@@ -142,7 +142,7 @@ get_header(); ?>
 
 			<?php // the_content(); ?>
 			<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
-		</div>
+	<!-- 	</div> -->
 	</div>
 		
 		<footer>

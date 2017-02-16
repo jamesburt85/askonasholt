@@ -24,6 +24,7 @@
 				echo wp_list_categories( array(
 						'taxonomy'     => 'artist-type',
 				        'orderby' => 'name',
+				        'order'=>'ASC',
 				        'title_li' => '',
 				        'exclude' => 1, // don't show uncategorised
 				        'show_option_all' => 'all',

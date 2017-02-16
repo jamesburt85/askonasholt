@@ -17,6 +17,17 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+		
+		<div id="loading-delay">
+			<div class="loader">
+				<div class="ball-scale-ripple-multiple">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+		
 	<?php do_action( 'foundationpress_after_body' ); ?>
 
 	<?php //if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>

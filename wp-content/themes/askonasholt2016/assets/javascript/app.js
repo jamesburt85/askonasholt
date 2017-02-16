@@ -238,7 +238,8 @@ var map = null;
   	  centerMode: true,
   	  centerPadding: '60px',
   	  slidesToShow: 1,
-  	  autoplay: false,
+  	  autoplay: true,
+      pauseOnHover: false,
       arrows: true,
       dots: true,
   	  autoplaySpeed: 4000,
@@ -497,7 +498,7 @@ var map = null;
 
 
     //*******************************************************
-    //***** HMAGAZINE ITEMS MAKE HEIGHT OF TALLEST   ********
+    //***** MAGAZINE ITEMS MAKE HEIGHT OF TALLEST    ********
     //*******************************************************
     var maxheight = 0;
 
@@ -522,7 +523,7 @@ var map = null;
 
 
     //**********************************************
-    //       FADE IN UP ****************************
+    //       FADE IN UP                   **********
     //**********************************************
     var waypoints = $('.waypoint').waypoint(function(direction) {
 
@@ -535,7 +536,14 @@ var map = null;
        offset: '80%'
      })
 
+    //**********************************************
+    //    PAGE LOAD DELAY TO AVOID FOUC        *****
+    //**********************************************
 
+     $(window).load(function() {
+       // When the page has loaded
+       $("#loading-delay").fadeOut(100);
+     });
 
 
 
