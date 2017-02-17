@@ -35,7 +35,7 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "e.g. Conductors",
+            "placeholder": "e.g. Conductor",
             "prepend": "",
             "append": "",
             "maxlength": ""
@@ -294,5 +294,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1487146314
+    "modified": 1487269676
 }

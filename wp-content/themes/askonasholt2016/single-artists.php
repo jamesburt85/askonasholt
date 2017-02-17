@@ -43,6 +43,7 @@ get_header(); ?>
 				<?php 
 
 					$related_staff = get_field('related_staff');
+					
 					// print_r($related_staff);
 
 					if (!empty($related_staff)) {
@@ -93,6 +94,7 @@ get_header(); ?>
 									if ( !empty( $artist_types)): ?>
 										<span><?php echo $artist_types[0]->name ?></span>
 									<?php endif ?>
+
 								</div>
 
 							</div> <!-- Side bar Artist END -->

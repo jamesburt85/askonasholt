@@ -17,7 +17,7 @@ $video = $acf_fields['flexible_content'][0]['video'];
   <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>" frameborder="0" allowfullscreen></iframe>
 </div>
 
-<div class="video-description">
+<div class="video-description" data-equalizer-watch>
   <?php //echo wpdocs_custom_taxonomies_terms_links(); ?>
   	<div class="video-meta">
 	  <span class="video-title">

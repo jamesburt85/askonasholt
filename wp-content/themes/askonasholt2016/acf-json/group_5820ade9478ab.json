@@ -42,6 +42,30 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_5879f77668b00",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_5823466af533e",
                             "label": "Artist Photo",
                             "name": "artist_photo",
@@ -249,30 +273,11 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5879fa3898867",
-                            "label": "Gallery Description",
-                            "name": "gallery_description",
-                            "type": "text",
-                            "instructions": "Brief description of the gallery contents e.g. naming the concert\/location in which they were taken",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5879f29281c7c",
-                            "label": "Image Repeater",
-                            "name": "image_repeater",
+                            "key": "field_58a6a9b4d9033",
+                            "label": "Gallery Section",
+                            "name": "gallery_section",
                             "type": "repeater",
-                            "instructions": "Upload images of the same dimensions in order to keep the gallery tidy",
+                            "instructions": "Add all galleries required",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -287,35 +292,11 @@
                             "button_label": "Add Row",
                             "sub_fields": [
                                 {
-                                    "key": "field_5879f76368aff",
-                                    "label": "Image",
-                                    "name": "image",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "preview_size": "thumbnail",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": ""
-                                },
-                                {
-                                    "key": "field_5879f9776026b",
-                                    "label": "Image Credit",
-                                    "name": "image_credit",
+                                    "key": "field_58a6a9d8d9034",
+                                    "label": "Gallery Description",
+                                    "name": "gallery_description",
                                     "type": "text",
-                                    "instructions": "Image credit can be prefixed with \u00a9 and will appear below the image after it is clicked.",
+                                    "instructions": "Short description of gallery",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -328,6 +309,70 @@
                                     "prepend": "",
                                     "append": "",
                                     "maxlength": ""
+                                },
+                                {
+                                    "key": "field_58a6a9efd9035",
+                                    "label": "Images",
+                                    "name": "image_repeater",
+                                    "type": "repeater",
+                                    "instructions": "Upload images of the same dimensions in order to keep the gallery tidy",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "",
+                                    "min": "",
+                                    "max": "",
+                                    "layout": "table",
+                                    "button_label": "Add Row",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_58a6aa11d9036",
+                                            "label": "Image",
+                                            "name": "image",
+                                            "type": "image",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "array",
+                                            "preview_size": "thumbnail",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": ""
+                                        },
+                                        {
+                                            "key": "field_58a6aa2ed9037",
+                                            "label": "Image Credit",
+                                            "name": "image_credit",
+                                            "type": "text",
+                                            "instructions": "Image credit can be prefixed with \u00a9 and will appear below the image after it is clicked.",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -840,11 +885,11 @@
                                     "media_upload": 1
                                 },
                                 {
-                                    "key": "field_58541ae4b00c3",
-                                    "label": "Link destination",
-                                    "name": "link_destination",
-                                    "type": "url",
-                                    "instructions": "",
+                                    "key": "field_58a5f23538094",
+                                    "label": "Links",
+                                    "name": "links",
+                                    "type": "repeater",
+                                    "instructions": "Enter links relating to discography",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -852,8 +897,48 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": ""
+                                    "collapsed": "",
+                                    "min": "",
+                                    "max": "",
+                                    "layout": "table",
+                                    "button_label": "Add Row",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_58a5f26338095",
+                                            "label": "Link Text",
+                                            "name": "link_text",
+                                            "type": "text",
+                                            "instructions": "e.g. Amazon",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_58a5f27538096",
+                                            "label": "Link Destination",
+                                            "name": "link_destination",
+                                            "type": "url",
+                                            "instructions": "Full link, e.g. https:\/\/www.amazon.co.uk\/xxxxxxx",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": ""
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -903,6 +988,25 @@
                             "tabs": "all",
                             "toolbar": "full",
                             "media_upload": 1
+                        },
+                        {
+                            "key": "field_58a5ffac586d1",
+                            "label": "Unique Section Name",
+                            "name": "unique_id",
+                            "type": "text",
+                            "instructions": "Enter name of section i.e. Press. Text will appear in the red bar at the top of the page and allow the page to scroll to this section",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -971,6 +1075,25 @@
                                     "media_upload": 1
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_58a5ffc8586d2",
+                            "label": "Unique Section Name",
+                            "name": "unique_id",
+                            "type": "text",
+                            "instructions": "Enter name of section i.e. Press. Text will appear in the red bar at the top of the page and allow the page to scroll to this section",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -1031,5 +1154,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1485004967
+    "modified": 1487317666
 }

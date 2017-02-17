@@ -102,52 +102,65 @@ if ($acf_fields['flexible_content']) {
 
 			#Image_Gallery
 			case 'image_gallery': ?>
+
+			<div class="image-gallery row" id="image-gallery">
+
+				<div class="small-12 columns">
 				
-					<!-- <div class="row"> -->
+					<h4 id="<?php echo $gallery_section['unique_id'] ?>" class="section-header">Gallery</h4>
+				
+						<?php
+						# Loop through the sections
+						foreach ($section['gallery_section'] as $gallery_section) { ?>			
 
-					<div class="image-gallery row" id="image-gallery">
+							<ul class="accordion" data-accordion data-allow-all-closed="true">
+								<li class="accordion-item" data-accordion-item>
+								  	<a href="#" class="accordion-title">
+										<p><?php echo $gallery_section['gallery_description'] ?></p>
+									</a>
 
-						<div class="small-12 columns">
-						
-							<h4 id="<?php echo $section['unique_id'] ?>" class="section-header">Image Gallery</h4>
+									<div class="accordion-content" data-tab-content>
+										<div class="my-gallery"  itemscope itemtype="http://schema.org/ImageGallery">
+										
+											<div class="multiple-items">
+												<?php
+												# Loop through the sections
+												foreach ($gallery_section['image_repeater'] as $image_repeater) { ?>
+										   		    	
+										    	<!-- <pre>
+										    	<?php //print_r($repeater['image']); ?>
+										    	</pre> -->
+												
+													<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+													    <a href="<?php echo $image_repeater['image']['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image_repeater['image']['width'] ?>x<?php echo $image_repeater['image']['height'] ?>">
+												       	
+												       		<!-- you need it to be an image as the transition takes this image and animates from it -->
+													        <img src="<?php echo $image_repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" />
 
-							<p><?php echo $section['gallery_description'] ?></p>
+													     <!-- <div class="gallery-image" itemprop="thumbnail" alt="Image description"  style="background-image: url('<?php echo $image_repeater['image']['url']; ?>');"></div> -->
 
-							<div class="my-gallery animated waypoint is-hidden-onload" id="waypoint" itemscope itemtype="http://schema.org/ImageGallery">
+													    </a>
+													    <figcaption itemprop="caption description">
+													    	<?php echo $image_repeater['image_credit']; ?>
+													    </figcaption>
+													</figure>
 
-								<div class="multiple-items">
-							    <?php
-							    # Loop through the sections
-							    foreach ($section['image_repeater'] as $repeater) { ?>
-							    	
-							    	<!-- <pre>
-							    	<?php //print_r($repeater['image']); ?>
-							    	</pre> -->
-									
-									<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-									    <a href="<?php echo $repeater['image']['url']; ?>" itemprop="contentUrl" data-size="<?php echo $repeater['image']['width'] ?>x<?php echo $repeater['image']['height'] ?>">
-								       	
-								       		<!-- you need it to be an image as the transition takes this image and animates from it -->
-									        <img src="<?php echo $repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" />
+												<?php } ?>
 
-									     <!-- <div class="gallery-image" itemprop="thumbnail" alt="Image description"  style="background-image: url('<?php echo $repeater['image']['url']; ?>');"></div> -->
+											</div>
+										</div>
+										
+									</div>
+								</li>	
+							</ul>
 
-									    </a>
-									    <figcaption itemprop="caption description">
-									    	<?php echo $repeater['image_credit']; ?>
-									    </figcaption>
-									</figure>
-
-
-							    <?php } ?>
-
-								</div>
-
-							</div>
-
-						</div>
+						<?php } ?>
 
 					</div>
+
+				</div>
+
+				
 				
 
 
@@ -566,7 +579,17 @@ if ($acf_fields['flexible_content']) {
 
 									<div class="accordion-content" data-tab-content>
 									  <?php echo $discography['details']; ?>
-									  <a target="_blank" href="<?php echo $discography['link_destination']; ?>">View here</a>
+
+									  <?php
+										  # Loop through the sections of nested repeater
+										  foreach ($discography['links'] as $links) { ?>
+
+										  <a target="_blank" href="<?php echo $links['link_destination']; ?>">
+										  	<button class="button"><?php echo $links['link_text']; ?></button>
+										  </a>
+
+									  <?php } ?>
+
 									</div>
 
 								</li>
@@ -589,7 +612,7 @@ if ($acf_fields['flexible_content']) {
 			#Free Text Section
 			case 'free_text_area': ?>
 				
-				<div class="row free-text">
+				<div class="row free-text" id="<?php echo $section['unique_id'] ?>">
 					<div class="small-12 columns">
 						<span class="free-text-area narrow-text"><?php echo $section['free_text'] ?></span>
 					</div>
@@ -603,7 +626,7 @@ if ($acf_fields['flexible_content']) {
 			#Individual Artist's Repertoire Section
 			case 'repertoire': ?>
 				
-				<div class="press-row row">
+				<div class="press-row row" id="<?php echo $section['unique_id'] ?>">
 
 					<div class="small-12 columns">
 					

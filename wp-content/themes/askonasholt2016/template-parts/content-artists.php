@@ -80,6 +80,17 @@
 				<div class="artist-details">
 					<a href="<?php the_permalink(); ?>">
 						<span class="artist-category"><?php echo $main_category; ?></span>
+				
+				<!-- If Primary categories required to pull through automatically, use the below, if using ACF text field to enter category, use above -->
+				
+				<!-- 		<span class="artist-category"> -->
+							<?php
+								//$cat = new WPSEO_Primary_Term('artist-type', get_the_ID());
+								//$cat = $cat->get_primary_term();
+								//$catName = get_cat_name($cat);
+								//echo $catName;
+							?>
+				<!-- 		</span> -->
 						<br>
 						<p class="artist-name serif"><?php //echo $name; ?> <?php the_title() ; ?> </p>
 					</a>

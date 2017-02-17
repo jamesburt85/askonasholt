@@ -244,11 +244,9 @@ div#video-audio {
 //free-text area in Artist's page
 div.row.free-text {
     margin: $sitepadding-large auto;
+    padding: $sitepadding 0;
     border-top: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
-    p {
-    	margin: 25px 0;
-    }
 }
 
 .video-meta {
