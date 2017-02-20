@@ -27,8 +27,10 @@ get_header(); ?>
 	<?php 
 		// get VARS
 		$bio = get_field('bio');
+		$position = get_field('position');
 		$website = get_field('website');
 		$contact_text_area = get_field('contact_text_area');
+		$publicity_pack = get_field('publicity_pack');
 	?>
 
 	<div class="bio-row row" id="intro">
@@ -94,6 +96,14 @@ get_header(); ?>
 									if ( !empty( $artist_types)): ?>
 										<span><?php echo $artist_types[0]->name ?></span>
 									<?php endif ?>
+									
+									<?php 
+										//$position = //get_the_terms( $artist_id, $position);
+									?>
+
+									<span>
+										<?php //echo $position; ?>
+									</span>
 
 								</div>
 
@@ -121,10 +131,29 @@ get_header(); ?>
 					<?php endwhile; ?>
 
 				<?php endif; ?>
-
+				
+				<br/>
+				
 				<a class="website" href="http://www.<?php echo $website; ?>" target="_blank"><?php echo $website; ?></a>
-			
+
 			</div>	<!-- artist-social END	 -->
+
+			<ul class="quick-look-links">
+				<li>
+					<a href="<?php echo $publicity_pack; ?>" target="_blank">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/download-arrow.png">
+						&nbsp;
+						Download Publicity Pack
+					</a>
+				</li>
+				<li>
+					<a href="mailto:?subject= <?php the_title(); ?> &amp;body=C<?php the_permalink(); ?>">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/share-arrow.png">
+						&nbsp;
+						Share
+					</a>
+				</li>
+			</ul>
 
 		</div>
 		<div class="small-12 large-9 columns show-for-large" id="introduction">
@@ -134,65 +163,60 @@ get_header(); ?>
 	</div> <!-- Bio Row END -->
 
 
+	<?php 
 
-	
-			
-		
+	/*
+	*  Query posts for a relationship value.
+	*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+	*/
 
-			<?php 
+	$videos = get_posts(array(
+		'post_type' => 'post',
 
-			/*
-			*  Query posts for a relationship value.
-			*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
-			*/
+		'tax_query' => array(
+		        array(
+		            'taxonomy' => 'post_format',
+		            'field' => 'slug',
+		            'terms' => array( 'post-format-video' ),
+		        )
+		    ),
 
-			$videos = get_posts(array(
-				'post_type' => 'post',
+		'meta_query' => array(
+			array(
+				'key' => 'related_artist', // name of custom field
+				'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+				'compare' => 'LIKE'
+			)
+		)
+	));
 
-				'tax_query' => array(
-				        array(
-				            'taxonomy' => 'post_format',
-				            'field' => 'slug',
-				            'terms' => array( 'post-format-video' ),
-				        )
-				    ),
+	?>
 
-				'meta_query' => array(
-					array(
-						'key' => 'related_artist', // name of custom field
-						'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-						'compare' => 'LIKE'
-					)
-				)
-			));
+	<?php if( $videos ): ?>
 
-			?>
-	
-			<?php if( $videos ): ?>
+		<div class="video-audio-area" id="video-audio">
 
-				<div class="video-audio-area" id="video-audio">
+			<div class="row">
+				<h4 class="section-header small-12 columns">Video &amp; Audio</h4>
 
-					<div class="row">
-						<h4 class="section-header small-12 columns">Video &amp; Audio</h4>
-
-					<?php
-						foreach( $videos as $post ): setup_postdata( $post ); ?>
-							
-							<div class="small-12 medium-6 large-3 columns artist-video-area">
-								<?php get_template_part( 'template-parts/video-player' ); ?>
-							</div>
-
-						<?php
-
-						endforeach;
-
-						wp_reset_postdata(); ?>
-					<!--  </ul> -->
+			<?php
+				foreach( $videos as $post ): setup_postdata( $post ); ?>
+					
+					<div class="small-12 medium-6 large-3 columns artist-video-area">
+						<?php get_template_part( 'template-parts/video-player' ); ?>
 					</div>
-			<?php endif; ?>
+
+				<?php
+
+				endforeach;
+
+				wp_reset_postdata(); ?>
+			<!--  </ul> -->
+			</div>
+	<?php endif; ?>
 
 
-		<div class="row">
+	<div class="row">
 
 			<?php 
 

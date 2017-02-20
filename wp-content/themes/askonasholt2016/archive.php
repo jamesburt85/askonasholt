@@ -57,11 +57,11 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/people-filtering' );
 
-	} elseif ( is_post_type_archive('clients') ) {
+	} elseif ( is_post_type_archive('touring-partners') ) {
 
 		get_template_part( 'template-parts/client-filtering' );
 
-	} elseif ( is_tax('clients-type') ) {
+	} elseif ( is_tax('touring-partners-type') ) {
 
 		get_template_part( 'template-parts/client-filtering' );
 
@@ -95,7 +95,11 @@ get_header(); ?>
 
 		<h4 class="section-header center">Browse Upcoming Events</h4>
 
-		<div class="events-filtering-bar">
+		<?php get_template_part( 'template-parts/content-events-home'); ?>
+
+
+
+<!-- 		<div class="events-filtering-bar">
 			Upcoming events:
 			<button class="button" type="#">This Week</button>
 			<button class="button" type="#">Cal</button>
@@ -103,9 +107,9 @@ get_header(); ?>
 			<input type="#">City/Venue</input>
 			<button class="button" type="#">MAP</button>
 			<button class="button" type="#">LIST</button>
-		</div>
+		</div> -->
 		
-		<div id="events-map" class="events-map acf-map row">
+<!-- 		<div id="events-map" class="events-map acf-map row">
 
 			<?php 
 
@@ -124,7 +128,7 @@ get_header(); ?>
 
 			?>
 
-		</div>
+		</div> -->
 
 	<?php }
 
@@ -137,7 +141,7 @@ get_header(); ?>
 		<?php endwhile; ?>
 
 		<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+			<?php //get_template_part( 'template-parts/content', 'none' ); ?>
 
 		<?php endif; // End have_posts() check. ?>
 

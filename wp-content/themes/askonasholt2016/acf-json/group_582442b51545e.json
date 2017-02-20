@@ -3,6 +3,86 @@
     "title": "[ARTISTS] Artist Details",
     "fields": [
         {
+            "key": "field_58a99f4a07a70",
+            "label": "First Name",
+            "name": "first_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58a99f5107a71",
+            "label": "Last Name",
+            "name": "last_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58a9bc2a2928c",
+            "label": "Optional Description?",
+            "name": "optional_description",
+            "type": "true_false",
+            "instructions": "Click if this section is required beneath the artist name",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        },
+        {
+            "key": "field_58a9bc002928b",
+            "label": "Optional Text Area",
+            "name": "optional_text_area",
+            "type": "wysiwyg",
+            "instructions": "Enter text area under the Artist Name",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58a9bc2a2928c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
             "key": "field_58a40ca8dcbf7",
             "label": "Photo Credit",
             "name": "photo_credit",
@@ -294,5 +374,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1487269676
+    "modified": 1487518805
 }

@@ -92,7 +92,7 @@
 
 
 // ARTIST SINGLE PAGE
-.single-artists, .single-clients {
+.single-clients {
 	.artist-header-thumb {
 		position: relative;
 		height: 200px;
@@ -270,7 +270,7 @@ div.people-link-item:hover {
 
 
 @include breakpoint(medium) {
-	.single-artists, .single-clients {
+	.single-clients {
 		.artist-header-thumb {
 			height: 300px;
 			max-width: 400px;

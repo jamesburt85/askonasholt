@@ -15,10 +15,11 @@
 	<div class="entry-content">
 		<?php // the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
 
-
 	<?php 
 
 		// get VARS
+		$first_name = get_field('first_name');
+		$last_name = get_field('last_name');
 		$photo_credit = get_field('photo_credit');
 		$artist_image = get_field('artist_image');
 		$main_category = get_field('main_category');
@@ -92,21 +93,24 @@
 							?>
 				<!-- 		</span> -->
 						<br>
-						<p class="artist-name serif"><?php //echo $name; ?> <?php the_title() ; ?> </p>
+						<p class="artist-name serif"><?php //echo $name; ?>
+							<?php echo $first_name; ?>
+							<?php echo $last_name; ?>
+							<?php //the_title() ; ?> 
+						</p>
 					</a>
 				</div>
 
 			</div>
 
-		<!-- </div> -->
-
+		<!-- </div> -->				
 
 	</div>
-	<!-- <footer>
-		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
-	</footer> -->
+
 </div>
 
+
+<!-- HERE -->
 
 <div id="quicklook-<?php the_ID(); ?>" class="quicklook-content mfp-hide">
 
@@ -146,3 +150,4 @@
 
 
 </div>
+

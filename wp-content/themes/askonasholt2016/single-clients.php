@@ -575,6 +575,6 @@
   <?php //get_sidebar(); ?>
   </div>
 
-  <?php get_template_part( 'template-parts/artist-link-banner' ); ?>
+  <?php //get_template_part( 'template-parts/artist-link-banner' ); ?>
 
   <?php get_footer();

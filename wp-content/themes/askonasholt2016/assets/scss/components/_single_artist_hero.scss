@@ -2,7 +2,7 @@
 body.single.single-artists, body.single.single-clients {
 	.artist-header.container {
 	    max-width: 100%;
-	    background-image: url("../images/light-pattern.png");
+	    //background-image: url("../images/light-pattern.png");
 	    @include full-bg;
 	    height: auto;
 	    position: relative;
@@ -23,6 +23,10 @@ body.single.single-artists, body.single.single-clients {
     	    font-size: 13px;
     	    letter-spacing: 1px;
     	    text-transform: uppercase;
+	    }
+	    .credit-wrapper {
+	        bottom: 0;
+	        position: absolute;
 	    }
 	}
 	.enquiry-button {
@@ -46,11 +50,17 @@ div.side-bar-text-area {
 	}
 }
 
+.artist-social {
+	i {
+		padding-right: 7px;
+	}
+}
+
 //MEDIA QUERIES
 
 @include breakpoint(medium) {
 	body.single.single-artists .artist-header.container .artist-details-area, body.single.single-clients .artist-header.container .artist-details-area {
-		@include center;
+		// /@include center;
 		.artist-details-container {
 			padding: $sitepadding;
 		}
@@ -61,3 +71,39 @@ div.side-bar-text-area {
 		}
 	}
 }
+
+
+
+
+//New Artist Header Styles
+.artist-hero-image {
+	padding-left: 0;
+	//position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	max-height: 28em; //temp
+	overflow: hidden; //temp
+	svg {
+	    top: 0;
+	    position: absolute;
+	    z-index: -1;
+	}
+}
+
+.small-12.medium-6.columns.artist-details-container {
+	//position: absolute;
+	left: 50%;
+}
+
+img.artist-header-thumb {
+	height: 100% !important;
+	width: 100% !important;
+	box-shadow: none;
+	z-index: 9999;
+}
+
+
+
+
+

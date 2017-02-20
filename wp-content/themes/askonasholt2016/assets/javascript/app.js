@@ -501,24 +501,24 @@ var map = null;
     //*******************************************************
     //***** MAGAZINE ITEMS MAKE HEIGHT OF TALLEST    ********
     //*******************************************************
-    // var maxheight = 0;
+    var maxheight = 0;
 
-    // $('div div.magazine-item').each(function () {
-    //     maxheight = ($(this).height() > maxheight ? $(this).height() : maxheight); 
-    // });
+    $('div div.magazine-item').each(function () {
+        maxheight = ($(this).height() > maxheight ? $(this).height() : maxheight); 
+    });
 
-    // $('div div.magazine-item').height(maxheight);
+    $('div div.magazine-item').height(maxheight);
 
 
 
-    // //video blocks
-    // var maxheight = 0;
+    //video blocks
+    var maxheight = 0;
 
-    // $('.video-description').each(function () {
-    //     maxheight = ($(this).height() > maxheight ? $(this).height() : maxheight); 
-    // });
+    $('.video-description').each(function () {
+        maxheight = ($(this).height() > maxheight ? $(this).height() : maxheight); 
+    });
 
-    // $('.video-description').height(maxheight);
+    $('.video-description').height(maxheight);
 
 
 
@@ -547,6 +547,27 @@ var map = null;
      });
 
 
+
+
+     
+      $('.popup-gallery').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        tLoading: 'Loading image #%curr%...',
+        mainClass: 'mfp-img-mobile',
+        gallery: {
+          enabled: true,
+          navigateByImgClick: true,
+          preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+          tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+          titleSrc: function(item) {
+            return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+          }
+        }
+      });
+      
 
 
 

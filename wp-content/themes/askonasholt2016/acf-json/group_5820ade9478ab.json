@@ -342,7 +342,7 @@
                                                 "class": "",
                                                 "id": ""
                                             },
-                                            "return_format": "array",
+                                            "return_format": "url",
                                             "preview_size": "thumbnail",
                                             "library": "all",
                                             "min_width": "",
@@ -476,6 +476,23 @@
                             "layout": "row",
                             "button_label": "Add Row",
                             "sub_fields": [
+                                {
+                                    "key": "field_58a976d4e70fa",
+                                    "label": "Date",
+                                    "name": "date",
+                                    "type": "date_picker",
+                                    "instructions": "Enter Date",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "display_format": "d M y",
+                                    "return_format": "d M y",
+                                    "first_day": 1
+                                },
                                 {
                                     "key": "field_582c7408af73b",
                                     "label": "Text area one",
@@ -867,6 +884,42 @@
                                     "mime_types": ""
                                 },
                                 {
+                                    "key": "field_58a97b7ecf508",
+                                    "label": "Label",
+                                    "name": "label",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_58a97b87cf509",
+                                    "label": "Release Date",
+                                    "name": "release_date",
+                                    "type": "date_picker",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "display_format": "d M y",
+                                    "return_format": "d M y",
+                                    "first_day": 1
+                                },
+                                {
                                     "key": "field_588350616d7ad",
                                     "label": "Details",
                                     "name": "details",
@@ -1019,11 +1072,11 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_586bbc609d20f",
+                            "key": "field_58a81eb76f865",
                             "label": "Repertoire",
                             "name": "repertoire",
-                            "type": "repeater",
-                            "instructions": "Enter details of Artist's repertiore",
+                            "type": "wysiwyg",
+                            "instructions": "Enter details, headings, text",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1031,50 +1084,10 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "collapsed": "",
-                            "min": "",
-                            "max": "",
-                            "layout": "table",
-                            "button_label": "Add Row",
-                            "sub_fields": [
-                                {
-                                    "key": "field_586bc92dc184a",
-                                    "label": "Repertoire Title",
-                                    "name": "repertoire_title",
-                                    "type": "text",
-                                    "instructions": "i.e Bach",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                },
-                                {
-                                    "key": "field_586bc952c184b",
-                                    "label": "Repertoire Details",
-                                    "name": "repertoire_details",
-                                    "type": "wysiwyg",
-                                    "instructions": "e.g. Mass in B Minor",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1
-                                }
-                            ]
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1
                         },
                         {
                             "key": "field_58a5ffc8586d2",
@@ -1142,7 +1155,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "clients"
+                "value": "post"
             }
         ]
     ],
@@ -1154,5 +1167,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1487317666
+    "modified": 1487527859
 }

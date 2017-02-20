@@ -232,50 +232,50 @@ function feature_init()
     );
 
     /* ----------------------------------------------------
-    Clients
+    Touring Partners
     ---------------------------------------------------- */
     
     $labels = array
     (
-        'name'                      => 'Clients',
-        'singular_name'             => 'Clients Item',
-        'add_new'                   => _x('Add New', 'Clients Item'),
-        'add_new_item'              => 'Add New Clients Item',
-        'edit_item'                 => 'Edit Clients Item',
-        'new_item'                  => 'New Clients Item',
-        'view_item'                 => 'View Clients Item',
-        'search_items'              => 'Search Clients Items',
-        'not_found'                 => 'No Clients Item found',
-        'not_found_in_trash'        => 'No Clients Item found in Trash',
+        'name'                      => 'Touring-Partners',
+        'singular_name'             => 'Touring-Partners Item',
+        'add_new'                   => _x('Add New', 'Touring-Partners Item'),
+        'add_new_item'              => 'Add New Touring-Partners Item',
+        'edit_item'                 => 'Edit Touring-Partners Item',
+        'new_item'                  => 'New Touring-Partners Item',
+        'view_item'                 => 'View Touring-Partners Item',
+        'search_items'              => 'Search Touring-Partners Items',
+        'not_found'                 => 'No Touring-Partners Item found',
+        'not_found_in_trash'        => 'No Touring-Partners Item found in Trash',
         'parent_item_colon'         => '',
 
-        'menu_name'                 => 'Clients'
+        'menu_name'                 => 'Touring Partners'
     );
     
     $args['labels']                 = $labels;
     $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
     // $args['rewrite']                = array('xxx' => 'xxx');
-    $args['rewrite']                = array('slug' => 'tours-and-projects/clients');
+    $args['rewrite']                = array('slug' => 'tours-and-projects/touring-partners');
     $args['menu_icon']              = 'dashicons-groups';
     $args['show_in_menu']           = true;
     
-    register_post_type('clients', $args);
+    register_post_type('touring-partners', $args);
 
     # Add a custom taxonomy
-    register_taxonomy( 'clients-type', 
-        array('clients'), # register taxonomy for these post types
+    register_taxonomy( 'touring-partners-type',
+        array('touring-partners'), # register taxonomy for these post types
         array('hierarchical' => true, # if this is true, it acts like categories             
             'labels' => array(
-                'name' => __( 'Clients Type', 'adstyles'),
-                'singular_name' => __( 'Clients Type', 'adstyles'), 
-                'search_items' =>  __( 'Search Clients Type', 'adstyles'),
-                'all_items' => __( 'All Clients Type', 'adstyles'), 
-                'parent_item' => __( 'Parent Clients Type', 'adstyles'), 
-                'parent_item_colon' => __( 'Parent Clients Type:', 'adstyles'), 
-                'edit_item' => __( 'Edit Clients Type', 'adstyles'), 
-                'update_item' => __( 'Update Clients Type', 'adstyles'), 
-                'add_new_item' => __( 'Add New Clients Type', 'adstyles'),
-                'new_item_name' => __( 'New Clients Type Name', 'adstyles'),
+                'name' => __( 'Touring Partners Type', 'adstyles'),
+                'singular_name' => __( 'Touring Partners Type', 'adstyles'), 
+                'search_items' =>  __( 'Search Touring Partners Type', 'adstyles'),
+                'all_items' => __( 'All Touring Partners Type', 'adstyles'), 
+                'parent_item' => __( 'Parent Touring Partners Type', 'adstyles'), 
+                'parent_item_colon' => __( 'Parent Touring Partners Type:', 'adstyles'), 
+                'edit_item' => __( 'Edit Touring Partners Type', 'adstyles'), 
+                'update_item' => __( 'Update Touring Partners Type', 'adstyles'), 
+                'add_new_item' => __( 'Add New Touring Partners Type', 'adstyles'),
+                'new_item_name' => __( 'New Touring Partners Type Name', 'adstyles'),
             ),
             'show_ui' => true,
             'query_var' => false,
