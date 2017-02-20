@@ -8,7 +8,6 @@ body.post-type-archive-events {
 .artist-filtering-block {
     position: relative;
     @include full-bg;
-    min-height: 20em;
     border-bottom: 1px solid #cccccc;
 
 }
@@ -37,9 +36,7 @@ body.post-type-archive-events {
 	.artist-categories {
 		@include center(x);
 	}
-	.artist-filtering-block {
-		min-height: 20em;
-	}
+
 }
 
 //making categoried fit on one line //END
@@ -128,7 +125,7 @@ body.post-type-archive-events {
 
 .artist-categories {
 	position: absolute;
-	bottom: 4em;
+	bottom: 1em;
 	// width: 100%;
 	list-style: none;
 	margin: 0;
@@ -296,7 +293,7 @@ body.post-type-archive-artists {
 }
 @include breakpoint(medium) {
 	.artist-filtering-block  {
-		height: 28em;
+		height: 182px;
 		margin-bottom: 3em;
 	}
 }

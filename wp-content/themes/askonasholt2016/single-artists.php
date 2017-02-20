@@ -36,7 +36,7 @@ get_header(); ?>
 	<div class="bio-row row" id="intro">
 		<div class="small-12 large-9 columns hide-for-large" id="introduction">
 			<h4 class="section-header">Introduction</h4>
-			<p><?php echo $bio; ?></p>
+			<?php echo $bio; ?>
 			<hr>
 		</div>
 		<div class="small-12 large-3 columns artist-contacts">

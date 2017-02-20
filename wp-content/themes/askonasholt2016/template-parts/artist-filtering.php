@@ -1,4 +1,4 @@
-<div class="filtering-block artist-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/light-pattern.png');">
+<div class="filtering-block artist-filtering-block">
 
 	<?php 
 		$myvar = get_field('artists','option');
@@ -9,7 +9,7 @@
 
 	<header class="filter-header">
 		<h2 class="hero-heading">Artists</h2>
-		<p><?php echo $description; ?></p>
+		<p><?php //echo $description; ?></p>
 	</header>
 
 	<div class="row">

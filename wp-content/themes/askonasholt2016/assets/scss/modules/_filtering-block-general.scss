@@ -1,9 +1,9 @@
 .filtering-block {
-	background-color: $lightbrown;
+	background-color: $header-beige;
 	position: relative;
 	@include full-bg;
-	min-height: 200px;
-	height: 28em;
+	//min-height: 200px;
+	height: 182px;
 	text-align: center;
 	border-bottom: 1px solid #cccccc;
 	.hero-heading {

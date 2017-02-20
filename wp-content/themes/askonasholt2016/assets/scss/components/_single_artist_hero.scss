@@ -67,7 +67,7 @@ div.side-bar-text-area {
 	}
 	body.single.single-artists, body.single.single-clients {
 		.artist-header.container {
-			height: 28em
+			height: 450px;
 		}
 	}
 }
@@ -103,7 +103,13 @@ img.artist-header-thumb {
 	z-index: 9999;
 }
 
-
-
-
+body.single-artists {
+	.magazine-item {
+		margin-bottom: 0;
+	}
+	.artist-header.container {
+		background: $header-beige;
+		z-index: -2;
+	}
+}
 

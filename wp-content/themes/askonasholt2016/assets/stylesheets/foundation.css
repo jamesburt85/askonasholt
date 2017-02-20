@@ -6710,7 +6710,8 @@ table.hover tbody tr:nth-of-type(even):hover {
   padding-top: 25px;
   padding-bottom: 25px;
   color: #BA0C2F;
-  font-family: "GeometricSlab703BT-Light"; }
+  font-family: "GeometricSlab703BT-Light";
+  margin-bottom: 0; }
   .section-header a {
     font-size: 17px;
     color: inherit; }
@@ -9839,15 +9840,14 @@ div#search-toggle {
     display: none; } }
 
 .filtering-block {
-  background-color: #F2F1ED;
+  background-color: #FBFAF6;
   position: relative;
   background-position: center center;
   background-repeat: no-repeat;
   border-bottom: 0;
   -webkit-background-size: cover;
   background-size: cover;
-  min-height: 200px;
-  height: 28em;
+  height: 182px;
   text-align: center;
   border-bottom: 1px solid #cccccc; }
   .filtering-block .hero-heading {
@@ -9888,7 +9888,6 @@ body.post-type-archive-events div#archive {
   border-bottom: 0;
   -webkit-background-size: cover;
   background-size: cover;
-  min-height: 20em;
   border-bottom: 1px solid #cccccc; }
 
 .filter-area {
@@ -9908,13 +9907,11 @@ body.post-type-archive-events div#archive {
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
-    transform: translateX(-50%); }
-  .artist-filtering-block {
-    min-height: 20em; } }
+    transform: translateX(-50%); } }
 
 .artist-categories {
   position: absolute;
-  bottom: 4em;
+  bottom: 1em;
   list-style: none;
   margin: 0;
   max-width: 95%; }
@@ -9999,7 +9996,7 @@ body.post-type-archive-artists li.cat-item-all a {
 
 @media screen and (min-width: 40em) {
   .artist-filtering-block {
-    height: 28em;
+    height: 182px;
     margin-bottom: 3em; } }
 
 .link-banner .row {
@@ -11363,14 +11360,11 @@ a.pswp__share--download:hover {
 .my-gallery figcaption {
   display: none; }
 
-div#image-gallery {
-  padding-bottom: 50px;
-  border-top: 1px solid #ccc; }
-  div#image-gallery div.gallery-image {
-    height: 200px;
-    -webkit-background-size: cover;
-            background-size: cover;
-    background-position: center; }
+div#image-gallery div.gallery-image {
+  height: 200px;
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-position: center; }
 
 .mc4wp-form-fields {
   display: -webkit-box;
@@ -15747,7 +15741,7 @@ div#video-audio {
     opacity: 0; }
 
 div.row.free-text {
-  margin: 50px auto;
+  margin: 25px auto 0 auto;
   padding: 25px 0;
   border-top: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc; }
@@ -17185,7 +17179,7 @@ div.side-bar-text-area {
   body.single.single-artists .artist-header.container .artist-details-area .artist-details-container, body.single.single-clients .artist-header.container .artist-details-area .artist-details-container {
     padding: 25px; }
   body.single.single-artists .artist-header.container, body.single.single-clients .artist-header.container {
-    height: 28em; } }
+    height: 450px; } }
 
 .artist-hero-image {
   padding-left: 0;
@@ -17208,6 +17202,13 @@ img.artist-header-thumb {
   -webkit-box-shadow: none;
           box-shadow: none;
   z-index: 9999; }
+
+body.single-artists .magazine-item {
+  margin-bottom: 0; }
+
+body.single-artists .artist-header.container {
+  background: #FBFAF6;
+  z-index: -2; }
 
 .more-page-links {
   border-top: 1px solid #cccccc;

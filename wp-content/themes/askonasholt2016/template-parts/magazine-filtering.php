@@ -1,6 +1,4 @@
-<div class="filtering-block magazine-filtering-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/light-pattern.png');">
-	
-
+<div class="filtering-block magazine-filtering-block">
 
 	<?php
 		//getting id of page
@@ -14,7 +12,7 @@
 
 	<header class="filter-header">
 		<h2 class="hero-heading">The Green Room</h2>
-		<p><?php echo $description ?></p>
+		<p><?php //echo $description ?></p>
 	</header>
 
 

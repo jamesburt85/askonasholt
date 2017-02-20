@@ -230,13 +230,45 @@
             "ui": 1
         },
         {
-            "key": "field_583d6464e83bc",
-            "label": "Artist Email",
-            "name": "artist_email",
-            "type": "email",
-            "instructions": "This will be used for the 'Make Enquiry' button near the top of the artist's page",
+            "key": "field_58aa96b854f1d",
+            "label": "Email or page link ?",
+            "name": "email_or_page_link",
+            "type": "radio",
+            "instructions": "Select whether Make Enquiry and Contact Manager buttons will be linked to email address or page link",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Email": "Email",
+                "Link": "Link"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
+            "key": "field_58415e3157f55",
+            "label": "Manager Email",
+            "name": "manager_email",
+            "type": "email",
+            "instructions": "This will be used for the 'Contact Manager' and 'Make Enquiry' buttons on the artist's page",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58aa96b854f1d",
+                        "operator": "==",
+                        "value": "Email"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -248,22 +280,33 @@
             "append": ""
         },
         {
-            "key": "field_58415e3157f55",
-            "label": "Manager Email",
-            "name": "manager_email",
-            "type": "email",
-            "instructions": "This will be used for the 'Contact Manager' button at the bottom of the artist's page",
+            "key": "field_58aa965a54f1c",
+            "label": "Staff Contact",
+            "name": "staff_contact",
+            "type": "page_link",
+            "instructions": "Use page link for Make Enquiry and Contact Manager Buttons",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58aa96b854f1d",
+                        "operator": "==",
+                        "value": "Link"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "post_type": [
+                "people"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
         },
         {
             "key": "field_5824580a9af17",
@@ -374,5 +417,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1487518805
+    "modified": 1487576529
 }

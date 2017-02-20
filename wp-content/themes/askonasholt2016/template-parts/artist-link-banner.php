@@ -19,11 +19,25 @@
 	<div class="row">
 		
 		<div class="small-12 medium-6 columns link-banner-button">
-			<a href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">
-				<button>
-					Contact Manager
-				</button>
-			</a>
+			
+			<?php if( get_field('email_or_page_link') == 'Email' ): ?>
+				<a href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">
+					<button>
+							Contact Manager
+					</button>
+				</a>
+			<?php endif; ?>
+
+			<?php if( get_field('email_or_page_link') == 'Link' ): ?>
+
+				<?php $staff_contact = get_field('staff_contact'); ?>
+				<a href="<?php echo $staff_contact ?>">
+					<button>
+						Contact Manager
+					</button>
+				</a>
+			<?php endif; ?>
+
 		</div>
 
 		<div class="small-12 medium-6 columns link-banner-button">

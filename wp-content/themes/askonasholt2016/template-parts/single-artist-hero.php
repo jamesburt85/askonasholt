@@ -126,12 +126,26 @@
 			<a data-scroll="" data-events="scroll" href="#schedule">Schedule</a>
 		</li>
 
-		
-		<button class="enquiry-button show-for-medium">
-			<a href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">
-				Make enquiry
-			</a>
-		</button>
+			
+		<?php if( get_field('email_or_page_link') == 'Email' ): ?>
+			<button class="enquiry-button show-for-medium">
+				<a href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">
+					Make enquiry
+				</a>
+			</button>
+		<?php endif; ?>
+
+		<?php if( get_field('email_or_page_link') == 'Link' ): ?>
+
+			<?php $staff_contact = get_field('staff_contact'); ?>
+			<button class="enquiry-button show-for-medium">
+				<a href="<?php echo $staff_contact ?>">
+					Make enquiry
+				</a>
+			</button>
+		<?php endif; ?>
+
+
 
 		<!-- getting ACF Flexible content navigation  -->
 		<?php $acf_fields = get_fields(); ?>
