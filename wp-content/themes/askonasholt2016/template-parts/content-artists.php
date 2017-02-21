@@ -110,8 +110,6 @@
 </div>
 
 
-<!-- HERE -->
-
 <div id="quicklook-<?php the_ID(); ?>" class="quicklook-content mfp-hide">
 
 	<div class="quicklook-content-pic" style="background-image: url('<?php echo $thumb;?>')"></div>
@@ -145,7 +143,26 @@
 		&nbsp;
 		&nbsp;
 		<!-- <a class="button" href="#">Make Enquiry</a> -->
-		<a class="button" href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">Make Enquiry</a>
+		<!-- <a class="button" href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">Make Enquiry</a> -->
+
+		<?php if( get_field('email_or_page_link') == 'Email' ): ?>
+			
+				<a class="button" href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">
+					Make enquiry
+				</a>
+
+		<?php endif; ?>
+
+		<?php if( get_field('email_or_page_link') == 'Link' ): ?>
+
+			<?php $staff_contact = get_field('staff_contact'); ?>
+	
+				<a class="button" href="<?php echo $staff_contact ?>">
+					Make enquiry
+				</a>
+		<?php endif; ?>
+
+
 	</div>
 
 
