@@ -119,7 +119,7 @@ if ($acf_fields['flexible_content']) {
 								  	<a href="#" class="accordion-title">
 										<span><?php echo $gallery_section['gallery_description'] ?></span>
 										<span class="more-info">
-											<span class="show-for-large">More info &nbsp;</span>
+											<span class="show-for-large">View Gallery &nbsp;</span>
 										    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 										        <defs></defs>
 										        <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>

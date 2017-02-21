@@ -70,8 +70,9 @@
 
 						<?php echo $css_slug; ?>&nbsp;		
 					</span>
-					
-					<?php the_date('d M Y'); ?>
+					<span class="magazine-date">
+						<?php the_date('d M Y'); ?>
+					</span>
 				</span>
 
 				<?php //foundationpress_entry_meta(); ?>

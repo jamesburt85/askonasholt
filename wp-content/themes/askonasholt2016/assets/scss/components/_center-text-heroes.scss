@@ -2,11 +2,11 @@
 
 .center-text-hero-header {
 	position: relative;
-	height: 30vh !important;
-	max-height: 500px;
+	height: 182px !important;
 	@include full-bg;
 	text-align: center;
 	border-bottom: 1px solid #cccccc;
+	background: $header-beige;
 	.center-hero-text {
 		@include center;
 		width: 90%;
@@ -19,7 +19,7 @@
 // MEDIA QUERIES
 @include breakpoint(medium up) {
 	.center-text-hero-header {
-		height: 28em !important;
+		height: 182px !important;
 		margin-bottom: $sitepadding-large;
 	}
 }

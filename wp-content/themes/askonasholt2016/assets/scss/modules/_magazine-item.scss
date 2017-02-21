@@ -10,7 +10,7 @@
 	}
 
 	.magazine-item-container {
-		padding: 1em;
+		padding: 0 1em 1em;
 		.read-more {
 			font-weight: bold;
 			color: #d7d4c5;
@@ -29,7 +29,7 @@
 	}
 	
 	.magazine-category {
-		display: flex;
+		//display: flex;
 		text-transform: uppercase;
 	    font-size: 0.8rem;
 	    letter-spacing: 1px;
@@ -42,6 +42,11 @@
 		span.category {
 			font-weight: bold;
 			//text-transform: capitalize;
+		}
+		span.magazine-date {
+		    float: right;
+		    color: $brand-gold;
+		    font-weight: bold;
 		}
 	}
 	span.magazine-item-copy p {

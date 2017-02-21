@@ -125,8 +125,13 @@
 				<?php endif; ?>
 			</div>
 			
-			<!-- <div class="header-social-area show-for-large"> -->
-			<div class="header-social-area show-for-large">
+		<!-- 	<div class="header-social-area show-for-large"> -->
+			
+<!-- 			</div> -->
+
+
+			<div id="search-toggle" class="header-search-toggle button">
+
 				<a class="show-for-large" href="https://www.facebook.com/askonasholt/" target="_blank">
 					<i class="fa fa-facebook fa-2x social-icon" aria-hidden="true"></i>
 				</a>
@@ -139,12 +144,8 @@
 				<a class="show-for-large" href="https://www.youtube.com/user/AskonasHolt" target="_blank">
 					<i class="fa fa-youtube-play fa-2x social-icon" aria-hidden="true"></i>
 				</a>
-			</div>
-			<!-- </div> -->
 
-			<div id="search-toggle" class="header-search-toggle button">
-
-				<svg width="23px" height="24px" viewBox="1377 56 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<svg width="20px" height="20px" viewBox="1377 56 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 				    <g id="Group-23" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(1378.000000, 57.000000)">
 				        <rect id="Rectangle-Copy-5" stroke="#000000" x="3" y="0" width="18" height="18" rx="9"></rect>

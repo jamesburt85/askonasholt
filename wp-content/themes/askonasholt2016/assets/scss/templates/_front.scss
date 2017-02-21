@@ -222,18 +222,23 @@ a.view-link:hover, .side-bar-artist-name:hover {
 
 .header-row {
     display: flex;
+}
+
+.view-all {
+    text-align: right;
+    line-height: 90px;
+    font-weight: bold;
+    //line-height: 1;
+    font-family: "Brown-Pro-Light", AdobeBlank;
     a.view-link {
-        font-weight: bold;
-        line-height: 1;
         color: initial;
-        font-family: "Brown-Pro-Light", AdobeBlank;
     }
 }
 
-@include breakpoint(medium) {
-  .header-row {
-      a.view-link {
-          line-height: 95px;
-      }
-  }
-}
+// @include breakpoint(medium) {
+//   .header-row {
+//       a.view-link {
+//           line-height: 95px;
+//       }
+//   }
+// }

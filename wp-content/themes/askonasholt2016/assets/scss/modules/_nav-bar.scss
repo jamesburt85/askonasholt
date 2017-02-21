@@ -43,9 +43,9 @@ header#masthead {
 	}
 	i.fa-2x {
 	    font-size: 1.3em;
-	    vertical-align: middle;
+	    //vertical-align: middle;
 	    //line-height: 135px;
-	    line-height: $header-height;
+	    //line-height: $header-height;
 	}
 	//search-area
 	// .header-search {
@@ -83,9 +83,16 @@ nav#site-navigation {
 div#search-toggle {
 	transition: 0.5s;
 	background-color: transparent;
-	float: right;
-	// line-height: $header-height;
 	height: 50px;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 0;
+	svg {
+	    vertical-align: bottom;
+	}
 }
 
 //social media icons spacing
@@ -117,27 +124,6 @@ div#search-toggle {
 	}
 }
 
-// *****************
-//MEGA MENU STYLES *
-// *****************
-
-// li.mega-toggle-on {
-	
-// 	ul.mega-sub-menu {
-// 		left: 0px !important;
-// 		max-width: none !important;
-// 		width: 100vw !important;
-// 		position: fixed !important;
-// 	}
-// 	li#mega-menu-item {
-// 		//left: 0 !important;
-// 		//position: fixed;
-// 	}
-// }
-
-// #mega-menu-wrap-top-bar-r #mega-menu-top-bar-r > li.mega-menu-item > a.mega-menu-link {
-// 	font-size: 20px;
-// }
 
 
 // *****************
@@ -198,7 +184,7 @@ div#search-toggle {
     // border-top-style: solid;
     // border-bottom-width: 0;
     position: absolute;
-    top: 39%;
+    top: 31%;
     //margin-top: 0;
     right: 0
 }
@@ -239,7 +225,7 @@ div#search-toggle {
 	}
 
 	ul.dropdown.menu.vertical.submenu.is-dropdown-submenu.first-sub {
-	    z-index: -1;
+	    z-index: -3;
 	}
 
 	.menu-item-has-children:hover {

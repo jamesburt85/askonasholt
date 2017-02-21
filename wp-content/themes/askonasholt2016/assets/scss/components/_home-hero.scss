@@ -27,7 +27,7 @@ body.page {
 			position: relative;
 		}
 		.slick-dots {
-		    bottom: 18px;
+		    bottom: 3px;
 		    li button:before {
 		    	font-size: 14px !important;
 		    }
@@ -50,7 +50,7 @@ body.page {
 	}
 	
 	.slick-dotted.slick-slider {
-	    padding-bottom: 30px;
+	    //padding-bottom: 30px;
 	    margin-bottom: 0 !important;
 	    border-bottom: 1px solid #808080;
 	    background: #f2f1ed;
@@ -99,6 +99,6 @@ div.padded-text {
 
 //avoid flash of content further down page
 .home-hero-container {
-	min-height: 500px;
+	min-height: 510px;
 	background-color: #808080;
 }
