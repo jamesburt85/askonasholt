@@ -486,16 +486,17 @@ var map = null;
     //***** HIDE SHARE ICONS AFTER 200px   ********
     //*********************************************
 
-    $(document).scroll(function () {
-        var y = $(this).scrollTop();
-        if (y < 400) {
-            $('#single-post div#share-buttons').fadeIn();
-        } else {
-            $('#single-post div#share-buttons').fadeOut();
-        }
+    // $(document).scroll(function () {
+    //     var y = $(this).scrollTop();
+    //     if (y < 400) {
+    //         $('#single-post div#share-buttons').fadeIn();
+    //     } else {
+    //         $('#single-post div#share-buttons').fadeOut();
+    //     }
 
-    });
+    // });
 
+    $(".social a").wrapInner("<span></span>");
 
 
     //*******************************************************

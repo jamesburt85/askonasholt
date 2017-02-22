@@ -19,16 +19,13 @@
   }
 }
 
-div#share-buttons {
-    display: none;
-}
 
 
 @media only screen and (min-width: 1200px) {
   div#share-buttons {
       position: absolute;
       right: 4em;
-      top: 40em;
+      top: 25em;
       ul {
           list-style: none;
       }
