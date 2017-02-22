@@ -15,140 +15,143 @@ get_header(); ?>
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-		<header>
-			
-			<h3 class="entry-title section-header small-gap"><?php //the_title(); ?></h3>
-			
-			<div class="blog-meta">
-				<?php the_category(); ?>
-				<?php foundationpress_entry_meta(); ?>
-				<br>
-				<?php if( get_field('add_author_name') ): ?>	
-					<p> Author: <?php the_field('author_name'); ?></p> 
-				<?php endif; ?>
-			</div>
-
-			<hr/>
-
-			<div class="row">
-				<?php the_content(); ?>
-			</div>
-			
-		</header>
 		
-		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
-
-		<?php get_template_part('template-parts/sharing-block' ); ?>
-
-		<div class="entry-content row">
-			<!-- <div class="small-12 columns"> -->
-
-			<?php 
-				if ( has_post_format( 'audio' )) {
-				  // echo 'this is the AUDIO format';
-				  get_template_part( 'template-parts/audio-player' );
-				} 
-
-				elseif (has_post_format( 'video' )) {
-					//echo 'this is the VIDEO format';
-					//the_content();
-					//getting ACF Flexible content navigation
-					$acf_fields = get_fields();
-					include(locate_template('template-parts/acf.php'));
-				}
-
-				elseif (has_post_format( 'standard' )) {
-					the_content();
-					//getting ACF Flexible content navigation
-					$acf_fields = get_fields();
-					include(locate_template('template-parts/acf.php'));
-				}
-			?>
-
-			<!-- using ACF Flexible content instead of the_content  -->
-			<?php $acf_fields = get_fields(); ?>
-			<?php include(locate_template('template-parts/acf.php')); ?>
-			
-			<div class="artist-list">
+		<div class="small-12 columns">
+			<header>
 				
+				<h3 class="entry-title section-header small-gap"><?php //the_title(); ?></h3>
+				
+				<div class="blog-meta">
+					<?php the_category(); ?>
+					<?php foundationpress_entry_meta(); ?>
+					<br>
+					<?php if( get_field('add_author_name') ): ?>	
+						<p> Author: <?php the_field('author_name'); ?></p> 
+					<?php endif; ?>
+				</div>
+
+				<hr/>
+
+				<div class="row">
+					<?php the_content(); ?>
+				</div>
+				
+			</header>
+
+			<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
+
+			<?php get_template_part('template-parts/sharing-block' ); ?>
+
+			<div class="entry-content row">
+				<!-- <div class="small-12 columns"> -->
+
 				<?php 
+					if ( has_post_format( 'audio' )) {
+					  // echo 'this is the AUDIO format';
+					  get_template_part( 'template-parts/audio-player' );
+					} 
 
-					$artist = get_field('artist');
-					//print_r($artist);
+					elseif (has_post_format( 'video' )) {
+						//echo 'this is the VIDEO format';
+						//the_content();
+						//getting ACF Flexible content navigation
+						$acf_fields = get_fields();
+						include(locate_template('template-parts/acf.php'));
+					}
 
-					if (!empty($artist)) { ?>
+					elseif (has_post_format( 'standard' )) {
+						the_content();
+						//getting ACF Flexible content navigation
+						$acf_fields = get_fields();
+						include(locate_template('template-parts/acf.php'));
+					}
+				?>
 
-						<h4 class="section-header">Featured Artist(s)</h4>
+				<!-- using ACF Flexible content instead of the_content  -->
+				<?php $acf_fields = get_fields(); ?>
+				<?php include(locate_template('template-parts/acf.php')); ?>
+				
+				<div class="artist-list">
+					
+					<?php 
 
-						<?php foreach ($artist as $artist_id) { 
+						$artist = get_field('artist');
+						//print_r($artist);
 
-							# Get Permalink to artist page:
-							$artist_url = get_permalink($artist_id);	
+						if (!empty($artist)) { ?>
 
-							?> 
+							<h4 class="section-header">Featured Artist(s)</h4>
 
-								<div class="side-bar-artist"> <?php
-									# Get featured image id
-									$thumb_id = get_post_thumbnail_id($artist_id);
-									# If theere is not a featured image
-									if ( empty( $thumb_id)) {
-										$thumb_url = 'http://placehold.it/150x150';
-									# Yeay, we haven image ID
-									} else {
-										# Get the image from the image ID
-										$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
-										$thumb_url = $thumb_url_array[0];
-									}
-									//echo $thumb_url;
+							<?php foreach ($artist as $artist_id) { 
 
-									# Get post terms as array
-									$artist_types = get_the_terms( $artist_id, 'artist-type');
+								# Get Permalink to artist page:
+								$artist_url = get_permalink($artist_id);	
 
-									?>
-									
-									<img class="circle-thumb" src="<?php echo $thumb_url ?>">
-									
-									<div class="side-bar-artist-details">
-										<a class="side-bar-link" href="<?php echo $artist_url; ?>">
-											<span class="side-bar-artist-name simple-listing"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
-										</a>
-										<?php # If this artist has an artist-type
-										# - Will only EVER return the first result in the artist type array
-										//if ( !empty( $artist_types)): ?>
-											<span><?php //echo $artist_types[0]->name ?></span>
-										<?php //endif ?>
+								?> 
 
-										<a href="<?php echo $artist_url; ?>">
-											<span class="more-info show-for-medium">Visit Artist Page</span>
-											<span class="more-info hide-for-medium">View</span>
-										</a>
+									<div class="side-bar-artist"> <?php
+										# Get featured image id
+										$thumb_id = get_post_thumbnail_id($artist_id);
+										# If theere is not a featured image
+										if ( empty( $thumb_id)) {
+											$thumb_url = 'http://placehold.it/150x150';
+										# Yeay, we haven image ID
+										} else {
+											# Get the image from the image ID
+											$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
+											$thumb_url = $thumb_url_array[0];
+										}
+										//echo $thumb_url;
+
+										# Get post terms as array
+										$artist_types = get_the_terms( $artist_id, 'artist-type');
+
+										?>
+										
+										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										
+										<div class="side-bar-artist-details">
+											<a class="side-bar-link" href="<?php echo $artist_url; ?>">
+												<span class="side-bar-artist-name simple-listing"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
+											</a>
+											<?php # If this artist has an artist-type
+											# - Will only EVER return the first result in the artist type array
+											//if ( !empty( $artist_types)): ?>
+												<span><?php //echo $artist_types[0]->name ?></span>
+											<?php //endif ?>
+
+											<a href="<?php echo $artist_url; ?>">
+												<span class="more-info show-for-medium">Visit Artist Page</span>
+												<span class="more-info hide-for-medium">View</span>
+											</a>
+										</div>
+
 									</div>
-
-								</div>
+								
+					<!-- 					<?php # If the artist has an artist type
+								if ( !empty( $artist_types)): ?>
+									<ul>
+									<?php # Loop through all the artist types for this artist,
+									# - and output them all!
+									foreach ($artist_types as $type): ?>
+										<li><?php echo $type->name ?></li>
+									<?php endforeach ?>
+									</ul>
+								<?php endif ?> -->
 							
-				<!-- 					<?php # If the artist has an artist type
-							if ( !empty( $artist_types)): ?>
-								<ul>
-								<?php # Loop through all the artist types for this artist,
-								# - and output them all!
-								foreach ($artist_types as $type): ?>
-									<li><?php echo $type->name ?></li>
-								<?php endforeach ?>
-								</ul>
-							<?php endif ?> -->
-						
-							<?php
-						}
-					} ?>
+								<?php
+							}
+						} ?>
+				</div>
+
+				
+
+				<?php // the_content(); ?>
+				<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+		<!-- 	</div> -->
 			</div>
+		</div>
 
-			
-
-			<?php // the_content(); ?>
-			<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
-	<!-- 	</div> -->
-	</div>
-		
 		<footer>
 			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
 			<p><?php the_tags(); ?></p>

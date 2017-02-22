@@ -6670,6 +6670,9 @@ table.hover tbody tr:nth-of-type(even):hover {
 p.byline.author {
   display: none; }
 
+.large-video-row {
+  margin: 50px 0; }
+
 @media screen and (min-width: 40em) {
   .title-bar {
     display: none; } }
@@ -17775,15 +17778,22 @@ a.view-link:hover svg, .side-bar-artist-name:hover svg, a.tours-details-link:hov
   #single-post article {
     margin-bottom: 50px; }
 
+div#share-buttons ul {
+  list-style: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
+
 @media only screen and (min-width: 1200px) {
   div#share-buttons {
     position: absolute;
     right: 4em;
     top: 25em; }
     div#share-buttons ul {
-      list-style: none; } }
+      list-style: none;
+      display: block; } }
 
-h4.section-header.center {
+.section-header.center {
   text-align: center; }
 
 body.home {

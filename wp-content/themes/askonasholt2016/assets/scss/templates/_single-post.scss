@@ -19,6 +19,15 @@
   }
 }
 
+div#share-buttons {
+    // position: absolute;
+    // right: 4em;
+    // top: 25em;
+    ul {
+        list-style: none;
+        display: inline-flex;
+    }
+}
 
 
 @media only screen and (min-width: 1200px) {
@@ -28,12 +37,13 @@
       top: 25em;
       ul {
           list-style: none;
+          display: block;
       }
   }
 }
 
 
-h4.section-header.center {
+.section-header.center {
     text-align: center;
 }
 

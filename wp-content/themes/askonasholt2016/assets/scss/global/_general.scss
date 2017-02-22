@@ -18,6 +18,12 @@
 //hiding post author
 p.byline.author { display: none; }
 
+
+//add margin to video in acf
+.large-video-row {
+    margin: 50px 0;
+}
+
 .title-bar {    
     @include breakpoint(medium) {
         display: none;
