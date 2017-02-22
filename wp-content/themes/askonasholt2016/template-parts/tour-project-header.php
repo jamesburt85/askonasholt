@@ -8,7 +8,7 @@
 
 ?>
 
-<div class="tour-project-archive-hero" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/bg-general.jpg ?>')">
+<div class="tour-project-archive-hero">
 	TOURS AND PROjects <br />
 	Optional Description <br />
 	Drop Down

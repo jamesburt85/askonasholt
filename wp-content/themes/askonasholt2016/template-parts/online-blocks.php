@@ -1,5 +1,5 @@
 
-<div class="entry-content small-12 medium-6 large-4 columns">
+<div class="entry-content small-12 large-4 columns">
 
 	<div class="online-item">
 		<a href="<?php the_permalink(); ?>">
@@ -7,7 +7,6 @@
 
 				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
 				<div class="online-item-thumb" style="background-image: url('<?php echo $thumb['0'];?>')"></div>
-
 
 			<?php } 
 

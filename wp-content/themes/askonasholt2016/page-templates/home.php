@@ -148,7 +148,7 @@ role="main"> -->
           <div class="row show-for-large">
             <div class="small-12 columns">
 
-              <ul class="accordion" data-accordion data-allow-all-closed="true">
+              <ul class="accordion animated waypoint is-hidden-onload" data-accordion data-allow-all-closed="true">
                 <li class="accordion-item" data-accordion-item>
                 <hr />
                   <a href="#" class="accordion-title"><?php //the_title(); ?>

@@ -32,7 +32,7 @@
 	  	//print_r($description);
 	  ?>
 
-	  <p><?php echo $description; ?></p>
+<!-- 	  <p><?php //echo $description; ?></p> -->
 	  <?php //foundationpress_entry_meta(); ?>
 	</header>
 </div>

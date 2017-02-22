@@ -17607,11 +17607,11 @@ div.staff-header li {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
 
-a.view-link svg, .side-bar-artist-name svg {
+a.view-link svg, .side-bar-artist-name svg, a.tours-details-link svg {
   -webkit-transition: 0.5s;
   transition: 0.5s; }
 
-a.view-link:hover svg, .side-bar-artist-name:hover svg {
+a.view-link:hover svg, .side-bar-artist-name:hover svg, a.tours-details-link:hover svg {
   -webkit-transform: translate(5px, 0);
       -ms-transform: translate(5px, 0);
           transform: translate(5px, 0); }
@@ -18009,11 +18009,6 @@ ul.accordion {
   ul.accordion .accordion-content {
     color: initial;
     border: none; }
-
-body.post-type-archive-events ul.accordion li.accordion-item .accordion-title {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important; }
 
 .accordion-title:before {
   content: '^';

@@ -20,7 +20,6 @@
 
 		    // Query Args
 		      $args = array(
-
 		        'post_type'   => 'events',
 		        'posts_per_page' => 4,
 		        'meta_key'      => 'date',
@@ -28,14 +27,19 @@
 		        'order'       => 'ASC'
 		      );
 
-		      // The Query
-		      $the_query = new WP_Query( $args );
+			// The Query
+			$the_query = new WP_Query( $args );
 
 		    // The Loop
-		    if ( $the_query->have_posts() ) {
-		      //echo '<ul>';
-		      while ( $the_query->have_posts() ) {
-		        $the_query->the_post(); ?>
+		    if ( $the_query->have_posts() ) { ?>
+		    	
+		    	<div class="row">
+		    	  <div class="small-12 columns">
+		    	    <ul class="accordion" data-accordion data-allow-all-closed="true">
+
+			<?php //echo '<ul>';
+			while ( $the_query->have_posts() ) {
+			$the_query->the_post(); ?>
 		<!--         //echo '<li>' . get_the_title() . '</li>';
 
 		        //get_template_part( 'template-parts/.....' ); -->
@@ -52,22 +56,18 @@
 		              if(!$venue){     $venue = 'venue TBC'; }
 		              if(!$city){      $city = 'city TBC'; }
 		              if(!$more_info){ $more_info = 'More Info Coming Soon...'; }
-
 		            ?>
 
-		          <div class="row show-for-large">
-		            <div class="small-12 columns">
-
-		              <ul class="accordion" data-accordion data-allow-all-closed="true">
-		                <li class="accordion-item" data-accordion-item>
+		                <li class="accordion-item animated waypoint is-hidden-onload" data-accordion-item>
 		                <hr />
 		                  <a href="#" class="accordion-title"><?php //the_title(); ?>
 		                    
 		                    <div class="event-listing-details simple-listing">
-		                      <?php get_template_part( 'template-parts/event-related-artist' ); ?>
-
 		                      <span class="event-detail"><?php echo $time; ?></span>
 		                      <span class="event-detail"><?php echo $date; ?></span>
+		                      <div class="show-for-large">
+		                      	<?php get_template_part( 'template-parts/event-related-artist' ); ?>
+		                      </div>
 		                      <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
 		                      <span class="more-info">More info &nbsp;
 		                          <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -83,12 +83,9 @@
 		                    <?php echo $more_info; ?>
 		                  </div>
 		                </li>
-		              </ul>
+		             
 
-		            </div>
-		          </div>
-
-		          <div class="row hide-for-large">
+<!-- 		          <div class="row hide-for-large">
 		            <div class="small-12 columns">
 
 		              <ul class="accordion" data-accordion data-allow-all-closed="true">
@@ -119,10 +116,15 @@
 		                </ul>
 
 		              </div>
-		            </div>
+		            </div> -->
 
-		       <?php }
-		      //echo '</ul>';
+		       <?php } ?>
+
+		           </ul>
+
+		         </div>
+		       </div>
+		      <? //echo '</ul>';
 		      /* Restore original Post Data */
 		      wp_reset_postdata();
 		    } else {

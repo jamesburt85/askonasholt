@@ -136,10 +136,6 @@ img.circle-thumb {
 }
 
 
-
-
-
-
 //Schedule/Accordion styles Events Page
 .post-type-archive-events {
   .accordion-title {
@@ -230,7 +226,7 @@ ul.accordion {
 body.post-type-archive-events {
   ul.accordion {
     li.accordion-item .accordion-title {
-      display: flex !important;
+      //display: flex !important;
     }
   }
 }

@@ -31,7 +31,7 @@
 ?>
 
 
-<div class="filtering-block tours-projects-block" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/light-pattern.png');">
+<div class="filtering-block tours-projects-block">
 
 	<header class="filter-header">
 
@@ -53,7 +53,7 @@
 						?>
 
 						<h2 class="hero-heading">Past Tours &amp; Projects</h2>
-						<p><?php echo $description; ?></p>
+						<!-- <p><?php //echo $description; ?></p> -->
 						<p><?php echo str_replace("-"," / ",$pageName); ?></p>
 
 						<script>
@@ -80,7 +80,7 @@
 							$description = get_field('optional_description',$myvar);
 							//print_r($description);
 						?>
-						<p><?php echo $description; ?></p>
+						<!-- <p><?php //echo $description; ?></p> -->
 						<!-- <h2><?php //echo $pageName; ?></h2> -->
 						<p><?php echo str_replace("-"," / ",$pageName); ?></p>
 

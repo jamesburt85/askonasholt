@@ -207,13 +207,13 @@
 
 
 //animating svg arrow on hover
-a.view-link, .side-bar-artist-name {
+a.view-link, .side-bar-artist-name, a.tours-details-link {
   svg {
     transition: 0.5s;
   }
 }
 
-a.view-link:hover, .side-bar-artist-name:hover {
+a.view-link:hover, .side-bar-artist-name:hover, a.tours-details-link:hover {
   svg {
       transform: translate(5px, 0);
   }

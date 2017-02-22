@@ -9,15 +9,16 @@
 			<div class="magazine-item-thumb online-item" style="background-image: url('<?php echo $thumb['0'];?>')">
 				<div class="bottom-left">
 					<div class="media-type-indicator">
+
 						<?php if( get_field('media_choice') == 'Video' ): ?>
+						<?php elseif ( has_category( 'Video' )) : ?>
 
 							<i class="fa fa-play fa-2x" aria-hidden="true"></i>
 
-						<?php elseif ( get_field('media_choice') == 'Audio' ): { ?>
+						<?php elseif ( get_field('media_choice') == 'Audio' ):  ?>
+						<?php elseif ( has_category( 'Audio' )) : ?>
 
 							<i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
-
-						<?php } ?>
 						
 						<?php endif; ?>
 					</div>
@@ -32,15 +33,16 @@
 			<div class="magazine-item-thumb online-item" style="background-image: url('<?php bloginfo('template_directory'); ?>/assets/images/default.jpg');">
 				<div class="bottom-left">
 					<div class="media-type-indicator">
+
 						<?php if( get_field('media_choice') == 'Video' ): ?>
+						<?php elseif ( has_category( 'Video' )) : ?>
 
 							<i class="fa fa-play fa-2x" aria-hidden="true"></i>
 
-						<?php elseif ( get_field('media_choice') == 'Audio' ): { ?>
+						<?php elseif ( get_field('media_choice') == 'Audio' ): ?>
+						<?php elseif ( has_category( 'Audio' )) : ?>
 
 							<i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
-
-						<?php } ?>
 						
 						<?php endif; ?>
 					</div>
