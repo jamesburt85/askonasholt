@@ -15,6 +15,9 @@
     display: none;
 }
 
+//hiding post author
+p.byline.author { display: none; }
+
 .title-bar {    
     @include breakpoint(medium) {
         display: none;

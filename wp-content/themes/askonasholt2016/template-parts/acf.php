@@ -115,7 +115,7 @@ if ($acf_fields['flexible_content']) {
 						# Loop through the sections
 						foreach ($section['gallery_section'] as $gallery_section) { ?>			
 
-								<li class="accordion-item" data-accordion-item>
+								<li class="accordion-item is-active" data-accordion-item>
 								  	<a href="#" class="accordion-title">
 										<span><?php echo $gallery_section['gallery_description'] ?></span>
 										<span class="more-info">
@@ -138,26 +138,26 @@ if ($acf_fields['flexible_content']) {
 										    	<?php //print_r($repeater['image']); ?>
 										    	</pre> -->
 												
-										<!-- 			<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-													    <a href="<?php echo $image_repeater['image']['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image_repeater['image']['width'] ?>x<?php echo $image_repeater['image']['height'] ?>"> -->
+													<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+													    <a href="<?php echo $image_repeater['image']['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image_repeater['image']['width'] ?>x<?php echo $image_repeater['image']['height'] ?>">
 												       	
 												       		<!-- you need it to be an image as the transition takes this image and animates from it -->
-				<!-- 									        <img src="<?php echo $image_repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" />
+			 									        <img src="<?php echo $image_repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" />
 
 													    </a>
 													    <figcaption itemprop="caption description">
 													    	<?php echo $image_repeater['image_credit']; ?>
-													    </figcaption> -->
-													<!-- </figure>
- -->
+													    </figcaption> 
+													 </figure>
 
 
 
- 													<div class="popup-gallery">
+
+ 												<!-- 	<div class="popup-gallery">
  														<a href="<?php echo $image_repeater['image']; ?>" title="The Cleaner">
  															<img src="<?php echo $image_repeater['image']; ?>">
  														</a>
- 													</div>
+ 													</div> -->
 
 												<?php } ?>
 

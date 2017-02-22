@@ -6667,6 +6667,9 @@ table.hover tbody tr:nth-of-type(even):hover {
 .title-bar {
   display: none; }
 
+p.byline.author {
+  display: none; }
+
 @media screen and (min-width: 40em) {
   .title-bar {
     display: none; } }

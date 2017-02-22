@@ -20,22 +20,22 @@ get_header(); ?>
 			<h3 class="entry-title section-header small-gap"><?php //the_title(); ?></h3>
 			
 			<div class="blog-meta">
-				<!-- <div class="small-12 columns"> -->
-					<?php the_category(); ?>
-					<?php foundationpress_entry_meta(); ?>
-			<!-- 	</div> -->
+				<?php the_category(); ?>
+				<?php foundationpress_entry_meta(); ?>
+				<br>
+				<?php if( get_field('add_author_name') ): ?>	
+					<p> Author: <?php the_field('author_name'); ?></p> 
+				<?php endif; ?>
 			</div>
 
 			<hr/>
 
 			<div class="row">
-				<!-- <div class="small-12 columns"> -->
-					<?php the_content(); ?>
-			<!-- 	</div> -->
+				<?php the_content(); ?>
 			</div>
 			
-
 		</header>
+		
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 
 		<?php get_template_part('template-parts/sharing-block' ); ?>
@@ -64,6 +64,10 @@ get_header(); ?>
 					include(locate_template('template-parts/acf.php'));
 				}
 			?>
+
+			<!-- using ACF Flexible content instead of the_content  -->
+			<?php $acf_fields = get_fields(); ?>
+			<?php include(locate_template('template-parts/acf.php')); ?>
 			
 			<div class="artist-list">
 				

@@ -1,0 +1,67 @@
+{
+    "key": "group_58ad499ac0069",
+    "title": "[ POSTS ] Add Author",
+    "fields": [
+        {
+            "key": "field_58ad49a6619af",
+            "label": "Add Author name?",
+            "name": "add_author_name",
+            "type": "true_false",
+            "instructions": "If author of post is required, please tick",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
+        },
+        {
+            "key": "field_58ad49cf619b0",
+            "label": "Author Name",
+            "name": "author_name",
+            "type": "text",
+            "instructions": "Add author name here",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58ad49a6619af",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1487751656
+}

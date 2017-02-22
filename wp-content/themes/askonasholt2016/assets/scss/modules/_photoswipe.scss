@@ -694,8 +694,21 @@ div#image-gallery {
 
     div.gallery-image {
         height: 200px;
-        background-size: cover;
+        background-size: cover; 
         background-position: center;
     }
-
 }
+//***************************
+//Photoswipe in Accordion  **
+//***************************
+// div#image-gallery {
+//   ul.accordion {
+//     li.accordion-item {
+//         border-top: 1px solid #cccccc;
+//     }
+//     li.accordion-item:last-child {
+//         border-bottom: 1px solid #cccccc;
+//     }
+//   }
+// }
+
