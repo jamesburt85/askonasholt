@@ -523,10 +523,13 @@ get_header(); ?>
 
 			?>
 
-			<!-- using ACF Flexible content instead of the_content  -->
-			<?php $acf_fields = get_fields(); ?>
-			<?php include(locate_template('template-parts/acf.php')); ?>
-
+			<div class="row">
+				<div class="small-12 columns">
+					<!-- using ACF Flexible content instead of the_content  -->
+					<?php $acf_fields = get_fields(); ?>
+					<?php include(locate_template('template-parts/acf.php')); ?>
+				</div>
+			</div>
 		</div>
 
 
