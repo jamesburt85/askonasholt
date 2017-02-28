@@ -6738,7 +6738,8 @@ body.search .blogpost-entry {
   display: inline; }
 
 .hero-heading {
-  font-family: "GeometricSlab703BT-Light"; }
+  font-family: "GeometricSlab703BT-Light";
+  margin-bottom: 0; }
 
 .serif {
   font-family: "GeometricSlab703BT-Light"; }

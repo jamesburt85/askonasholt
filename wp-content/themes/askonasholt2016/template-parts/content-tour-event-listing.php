@@ -26,7 +26,7 @@
 			if (in_array('single-tours-projects',$classes)) { ?>
 			    <ul class="accordion" data-accordion data-allow-all-closed="true">
 			      <li class="accordion-item" data-accordion-item>
-			      <hr />
+			     <!--  <hr /> -->
 			        <a href="#" class="accordion-title"><?php //the_title(); ?>
 			        	<div class="event-listing-details">
 				        	<span class="event-detail"><?php echo $time; ?></span>
@@ -65,9 +65,6 @@
 		        	</div>
 			    </span>
 		<?php } ?>
-
-
-
 
 		<?php //foundationpress_entry_meta(); ?>
 
