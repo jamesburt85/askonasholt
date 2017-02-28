@@ -50,7 +50,7 @@ class rw_videos extends migrate {
                 
                 'post_date' 			=> $row->created_at,                   
                 'post_title'			=> trim($row->title),
-                'post_content'          => $row->description,
+                'post_content'          => htmlspecialchars_decode($row->description),
                 
             );
             
