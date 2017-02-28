@@ -70,7 +70,7 @@
 					</svg>
 				</a>
 			</div>
-<!-- 			<div id="search-toggle" class="header-search-toggle button hide-for-medium">
+			<div id="search-toggle" class="header-search-toggle button hide-for-large">
 
 				<svg width="23px" height="24px" viewBox="1377 56 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -80,7 +80,7 @@
 				    </g>
 				</svg>
 				
-			</div> -->
+			</div>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
@@ -130,7 +130,7 @@
 <!-- 			</div> -->
 
 
-			<div id="search-toggle" class="header-search-toggle button">
+			<div id="search-toggle" class="header-search-toggle button for-large">
 
 				<a class="show-for-large" href="https://www.facebook.com/askonasholt/" target="_blank">
 					<i class="fa fa-facebook fa-2x social-icon" aria-hidden="true"></i>
@@ -154,8 +154,6 @@
 				</svg>
 				
 			</div>
-
-			
 
 		</nav>
 

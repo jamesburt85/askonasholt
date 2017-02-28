@@ -9797,6 +9797,9 @@ div#search-toggle {
   .input-group input#searchsubmit {
     background-color: #BA0C2F; }
 
+.for-large {
+  display: none; }
+
 @media screen and (min-width: 40em) {
   div#search-toggle {
     position: absolute;
@@ -9895,7 +9898,8 @@ body.post-type-archive-events div#archive {
 .artist-filtering-block {
   position: relative;
   border-bottom: 1px solid #cccccc;
-  background: #FBFAF6; }
+  background: #FBFAF6;
+  height: 182px; }
 
 .filter-area {
   text-align: center;
@@ -10067,7 +10071,9 @@ ul.single-page-nav {
   transition: 0.5s;
   background-color: #ffffff; }
   .magazine-item a {
-    color: inherit; }
+    color: inherit;
+    word-wrap: break-word;
+    font-size: 15px; }
   .magazine-item .magazine-item-container {
     padding: 0 1em 1em; }
     .magazine-item .magazine-item-container .read-more {

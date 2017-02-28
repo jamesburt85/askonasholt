@@ -138,6 +138,13 @@ div#search-toggle {
     }
 }
 
+@include breakpoint(small){
+	.for-large {
+		display: none;
+	}
+}
+
+
 //MEDIA QUERIES
 @include breakpoint(medium up){
 	div#search-toggle {
