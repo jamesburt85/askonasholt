@@ -25,7 +25,7 @@
             "elements": "",
             "min": "",
             "max": "",
-            "return_format": "object"
+            "return_format": "id"
         },
         {
             "key": "field_588345ae5dff2",
@@ -70,5 +70,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484999077
+    "modified": 1488213055
 }
