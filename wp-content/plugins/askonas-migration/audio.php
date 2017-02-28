@@ -68,8 +68,8 @@ class rw_audio extends migrate  {
             $post_id = wp_insert_post( $post );                  
             add_post_meta( $post_id, 'migration_created', true );// flag for migration creation
             
-
-            
+            // category
+            wp_set_post_categories( $post_id, [35] ); // audio category
         
 
             // ACF fields
@@ -77,10 +77,7 @@ class rw_audio extends migrate  {
             
             
                 // FORMAT
-                set_post_format( $post_id , 'audio' );
-                
-                // category (audio)
-                wp_set_post_categories( $post_id, [35] );            
+                set_post_format( $post_id , 'audio' );        
             
                 // Audio file
                 $attach_id = $this->audio_attach($row);
