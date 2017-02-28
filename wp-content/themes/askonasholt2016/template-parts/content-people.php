@@ -84,8 +84,10 @@
 					<span class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
 					<a class="serif" href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a>
 					<span class="staff-category"><?php echo $position; ?></span>
-					<br/><br/>
-					<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a><br/>
+					
+					<?php if( have_rows('e_mail') ): ?>
+						<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a>
+					<?php endif; ?>
 					<span><?php echo $telephone_number; ?></span><br/>
 					
 

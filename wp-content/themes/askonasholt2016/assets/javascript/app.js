@@ -502,6 +502,7 @@ var map = null;
     //*******************************************************
     //***** MAGAZINE ITEMS MAKE HEIGHT OF TALLEST    ********
     //*******************************************************
+ if ($(window).width() > 639) {
     var maxheight = 0;
 
     $('div div.magazine-item').each(function () {
@@ -509,9 +510,11 @@ var map = null;
     });
 
     $('div div.magazine-item').height(maxheight);
+ }
 
 
 
+  if ($(window).width() > 639) {
     //video blocks
     var maxheight = 0;
 
@@ -520,7 +523,7 @@ var map = null;
     });
 
     $('.video-description').height(maxheight);
-
+  }
 
 
 
