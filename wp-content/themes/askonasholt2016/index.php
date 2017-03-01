@@ -16,7 +16,7 @@
 get_header(); ?>
 <?php get_template_part( 'template-parts/magazine-filtering' ); ?>
 <div id="page" role="main">
-	<article class="main-content">
+	<article class="main-content infinite-container">
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>

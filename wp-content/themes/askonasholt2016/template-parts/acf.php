@@ -862,7 +862,7 @@ if ($acf_fields['flexible_content']) {
 
 # There's no ACF content
 } else { 
-	the_content(); 
+	//the_content(); 
 };
 
 

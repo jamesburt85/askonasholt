@@ -60,7 +60,7 @@ get_header(); ?>
 					}
 
 					elseif (has_post_format( 'standard' )) {
-						the_content();
+						//the_content();
 						//getting ACF Flexible content navigation
 						$acf_fields = get_fields();
 						include(locate_template('template-parts/acf.php'));
