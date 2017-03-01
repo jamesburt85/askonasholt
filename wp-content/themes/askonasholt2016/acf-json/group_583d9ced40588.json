@@ -26,6 +26,113 @@
             "min": "",
             "max": "",
             "return_format": "object"
+        },
+        {
+            "key": "field_58b59593c7735",
+            "label": "Video Type",
+            "name": "video_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Embed": "Embed",
+                "Youtube": "Youtube",
+                "Vimeo": "Vimeo"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_58b595bbbd0f4",
+            "label": "Embed Script",
+            "name": "embed_script",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58b59593c7735",
+                        "operator": "==",
+                        "value": "Embed"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_58b595d27c5fb",
+            "label": "Youtube Video ID",
+            "name": "youtube_video_id",
+            "type": "text",
+            "instructions": "Enter the Youtube Video ID",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58b59593c7735",
+                        "operator": "==",
+                        "value": "Youtube"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58b595eecbe7f",
+            "label": "Vimeo Video ID",
+            "name": "vimeo_video_id",
+            "type": "text",
+            "instructions": "Enter the Vimeo Video ID",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58b59593c7735",
+                        "operator": "==",
+                        "value": "Vimeo"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -50,5 +157,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484056914
+    "modified": 1488295427
 }

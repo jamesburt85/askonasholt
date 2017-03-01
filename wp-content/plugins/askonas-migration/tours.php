@@ -218,21 +218,23 @@ class rw_tours extends migrate {
         
         $artists = $this->wpdb->get_results( " 
             SELECT
-            artists.type,
-            migrate_touring_partners_wpposts.post_id as wp_touring_partner_id,
-            tours.id as tour_id
+            migrate_touring_partners_wpposts.post_id AS wp_touring_partner_id,
+            tours.id AS tour_id
             FROM
             tours
             left JOIN artist_tour ON tours.id = artist_tour.tour_id
-            left JOIN migrate_touring_partners_wpposts ON artist_tour.artist_id = migrate_artists_wpposts.touring_partners_id
+            left JOIN migrate_touring_partners_wpposts ON artist_tour.artist_id = migrate_touring_partners_wpposts.touring_partners_id
             left JOIN artists ON artist_tour.artist_id = artists.id
-            where artists.type = 'tours'
-            AND tours.status = 'published' 
+            where 
+            artists.type = 'tours' AND
+             tours.status = 'published'
         " );
 
         foreach( $artists as $touring_partner ){
             if( isset($this->tours[ $touring_partner->tour_id ]) ){
-                $this->tours[ $touring_partner->tour_id ]->touring_partners[] = $touring_partner->wp_touring_partner_id;
+                if( $touring_partner->wp_touring_partner_id != '' ) {
+                    $this->tours[ $touring_partner->tour_id ]->touring_partners[] = $touring_partner->wp_touring_partner_id;
+                }
             }
         }        
     }    

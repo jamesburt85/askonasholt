@@ -37,7 +37,18 @@ function the_migrations_to_run(){
         }
         if( $_GET['run'] == 'audio' ){
             audio();         
-        }       
+        }     
+        
+         function video(){
+            
+            $migrate = new rw_videos(  );
+            
+            $migrate->migrate_init();
+            
+        }
+        if( $_GET['run'] == 'video' ){
+            video();         
+        }  
         
         function images(){
             
