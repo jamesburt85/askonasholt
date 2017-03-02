@@ -178,6 +178,58 @@ class rw_staffs extends migrate {
     
     
     
+    public function staff_with_new_urls(){
+        
+        $slugs = $this->wpdb->get_results( "
+            SELECT
+            migrate_staffs_wpposts.staffs_id as staff_id,
+            wp_posts.post_name as slug
+            FROM
+            migrate_staffs_wpposts
+            INNER JOIN wp_posts ON migrate_staffs_wpposts.post_id = wp_posts.ID
+        " );  
+
+        foreach( $slugs as $slug ){
+            
+            if( isset($this->staffs[ $slug->staff_id ]) ){
+                
+                $url = '/about/people/'.$slug->slug;
+                
+                $this->staffs[ $slug->staff_id ]->new_url = $url;
+                
+            }
+        }        
+        
+        
+    }        
     
+    
+    
+    public function geturls(){
+        
+        $D = '/';
+        
+        $this->staff_with_new_urls();
+                
+        $urls = [];
+        
+        foreach( $this->staffs as $id=>$row ){
+            
+            $url = $D. 'about/staff' . $D;    
+                     
+            $url .= $id;
+            
+            $urls[ $url ] = $row->new_url;
+            
+        }
+        
+        $this->insert301( $urls, 6 );
+   
+        return $urls;
+        
+    }        
+    
+    
+
     
 }

@@ -324,7 +324,81 @@ class migrate {
     
     
 
+    public function getParentCats(){
+        
+        $cats = $this->wpdb->get_results( "
+            SELECT
+            *
+            FROM categories
+        " );   
+        
+        $return = [];
+        
+        foreach( $cats as $cat ){
+            
+            $return[ $cat->id ] = $cat;
+            
+        }            
+        
+        return $return;
+        
+    }
 
-    
+    public function insert301( $urls, $group_id ){
+        
+        
+        foreach( $urls as $url_old=>$url_new ){
+            
+            if( $url_new == '' || $url_old == '' ) {
+                continue;
+            }
+            
+            // check not already inserted
+            $test = $this->wpdb->get_results( " SELECT * FROM {$this->wpdb->prefix}redirection_items WHERE url = '{$url_old}' " );
+            
+            if( $test ) {
+                // UPDATE
+                $this->wpdb->query( " UPDATE {$this->wpdb->prefix}redirection_items 
+                                    SET
+                                    group_id = '$group_id',
+                                    status = 'enabled',
+                                    action_type = 'url',
+                                    action_code = '301',
+                                    action_data = '$url_new',
+                                    match_type  =  'url'                                
+                                    WHERE url = '$url_old'
+                " );                
+            } else {
+                // INSERT
+                $this->wpdb->query( " INSERT INTO {$this->wpdb->prefix}redirection_items 
+                                    ( 
+                                        url,
+                                        group_id,
+                                        status,
+                                        action_type,
+                                        action_code,
+                                        action_data,
+                                        match_type                                  
+                                    ) 
+                                    VALUES 
+                                    ( 
+                                        '$url_old', 
+                                        '$group_id',
+                                        'enabled',
+                                        'url',
+                                        '301',
+                                        '$url_new',
+                                        'url'
+                                    ) 
+                " );
+            }
+            
+            
+            
+        }
+        
+        print_r( $urls );  
+        
+    }    
     
 }

@@ -175,4 +175,60 @@ class rw_posts extends migrate {
     
     
     
+    
+    
+    
+    
+    
+    public function posts_with_new_urls(){
+        
+        $slugs = $this->wpdb->get_results( "
+            SELECT
+            migrate_posts_wpposts.posts_id as post_id,
+            wp_posts.post_name as slug
+            FROM
+            migrate_posts_wpposts
+            INNER JOIN wp_posts ON migrate_posts_wpposts.post_id = wp_posts.ID
+        " );  
+
+        foreach( $slugs as $slug ){
+            
+            if( isset($this->posts[ $slug->post_id ]) ){
+                
+                $url = '/'.$slug->slug;
+                
+                $this->posts[ $slug->post_id ]->new_url = $url;
+                
+            }
+        }        
+        
+        
+    }    
+    
+    
+    public function geturls(){
+        
+        $D = '/';
+        
+        $this->posts_with_new_urls();
+                
+        $urls = [];
+        
+        foreach( $this->posts as $id=>$row ){
+            
+            $url = $D. 'news' . $D;    
+                     
+            $url .= $row->slug;
+            
+            $urls[ $url ] = $row->new_url;
+            
+        }
+
+        $this->insert301( $urls, 5 );
+        
+        return $urls;
+        
+    }    
+    
+    
 }

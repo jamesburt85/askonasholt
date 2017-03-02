@@ -126,7 +126,9 @@ function the_migrations_to_run(){
             
             $migrate = new rw_staffs(  );
             
-            $migrate->migrate_init();            
+            //$migrate->migrate_init();     
+
+            $migrate->geturls();             
             
         }
         if( $_GET['run'] == 'staff' ){
@@ -141,9 +143,11 @@ function the_migrations_to_run(){
             
             $migrate = new rw_artists(  );
             
-            $migrate->migrate_init();   
+            //$migrate->migrate_init();   
 
-            //$migrate->delete_all_migrated_data();            
+            //$migrate->delete_all_migrated_data();  
+
+            $migrate->geturls();            
             
         }
         if( $_GET['run'] == 'artists' ){
@@ -155,9 +159,12 @@ function the_migrations_to_run(){
             
             $migrate = new rw_tours_projects(  );
             
-            $migrate->migrate_init(); 
+            //$migrate->migrate_init(); 
 
-            //$migrate->delete_all_migrated_data();             
+            //$migrate->delete_all_migrated_data();    
+
+            $migrate->geturls();             
+           
             
         }
         if( $_GET['run'] == 'tours_projects' ){
@@ -170,9 +177,11 @@ function the_migrations_to_run(){
             
             $migrate = new rw_posts;
             
-            $migrate->migrate_init();
+            //$migrate->migrate_init();
 
-            //$migrate->delete_all_migrated_data();              
+            //$migrate->delete_all_migrated_data();   
+                
+            $migrate->geturls(); 
             
         }
         if( $_GET['run'] == 'posts' ){
@@ -187,9 +196,11 @@ function the_migrations_to_run(){
             
             $migrate = new rw_tours(  );
             
-            $migrate->migrate_init(); 
+            //$migrate->migrate_init(); 
 
-            //$migrate->delete_all_migrated_data();             
+            //$migrate->delete_all_migrated_data(); 
+
+            $migrate->geturls();             
             
         }
         if( $_GET['run'] == 'tours' ){

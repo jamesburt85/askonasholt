@@ -237,7 +237,64 @@ class rw_tours extends migrate {
                 }
             }
         }        
-    }    
+    }  
+
+
+
+
+    public function tours_with_new_urls(){
+        
+        $slugs = $this->wpdb->get_results( "
+            SELECT
+            migrate_tours_wpposts.tours_id as tour_id,
+            wp_posts.post_name as slug
+            FROM
+            migrate_tours_wpposts
+            INNER JOIN wp_posts ON migrate_tours_wpposts.post_id = wp_posts.ID
+        " );  
+
+        foreach( $slugs as $slug ){
+            
+            if( isset($this->tours[ $slug->tour_id ]) ){
+                
+                $url = '/tours-and-projects/upcoming/'.$slug->slug;
+                
+                $this->tours[ $slug->tour_id ]->new_url = $url;
+                
+            }
+        }        
+        
+        
+    }        
+    
+    
+    
+    public function geturls(){
+        
+        $D = '/';
+        
+        $this->tours_with_new_urls();
+                
+        $urls = [];
+        
+        foreach( $this->tours as $id=>$row ){
+            
+            $url = $D. 'tours' . $D;    
+                     
+            $url .= $row->when_slug . $D;
+            
+            $url .= $row->slug;
+            
+            $urls[ $url ] = $row->new_url;
+            
+        }
+        
+        $this->insert301( $urls, 8 );
+        
+
+        return $urls;
+        
+    }     
     
     
 }

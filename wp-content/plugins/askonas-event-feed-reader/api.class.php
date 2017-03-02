@@ -102,10 +102,12 @@ class event_api {
         update_field( 'field_583eeb4d8033c', (string)$event->Time, $post_id ); 
         
         // Date (datepicker)
-        update_field( 'field_582c4525af917', (string)$event->Date, $post_id ); 
+        list($d,$m,$y) = explode('/', (string)$event->Date );
+        $date = "{$y}-{$m}-{$d}";
+        update_field( 'field_582c4525af917', $date, $post_id ); 
         
         //End date (datepicker)
-        update_field( '3field_584185198caee', (string)$event->Date, $post_id );    
+        update_field( '3field_584185198caee', $date, $post_id );    
 
         // Venue (text)
         update_field( 'field_582c4568af918', (string)$event->Venue, $post_id );    
@@ -117,11 +119,7 @@ class event_api {
         update_field( 'field_582c457faf91a', (string)$event->Programme, $post_id );  
         
         // related artsits (relationship)
-        if( is_string($event->artist_ids) ){
-            $artists_arr[] = (array)$event->artist_ids;
-        } else {
-            $artists_arr = (array)$event->artist_ids;
-        }
+        $artists_arr = explode( ',', substr( (string)$event->artist_ids, 1 ) );
         update_field( 'field_583c193f32f52', $artists_arr, $post_id );    
                 
     }
@@ -191,13 +189,12 @@ class event_api {
                     $event->artist_ids = $events[$dupe_key]->artist_ids;
                 }
                 $event->artist_names = $events[$dupe_key]->artist_names;
-            }            
-
+            }
 
             // artist name find
             $artist_lookup = $this->get_wp_artist( $event->Artist );           
             if( $artist_lookup !== null ){
-                $event->artist_ids[] = (string)$artist_lookup->ID;
+                $event->artist_ids = $event->artist_ids .",". $artist_lookup->ID;
             }             
             
             if( isset( $event->artist_names ) ){
@@ -222,7 +219,8 @@ class event_api {
             
 
         }
-               
+       // echo "<pre>";
+       // print_r( $events );exit;
         return $events;
         
     }
@@ -292,7 +290,7 @@ class event_api {
 
 // function whatever(){
     // $event_api = new event_api;
-    // if( $_SERVER['REQUEST_URI'] == '/home/' ){
+    // if( strtok($_SERVER["REQUEST_URI"],'?') == '/home/'&& isset( $_GET['events'] ) ){
     // $event_api->refreshAllEvents();
     // exit();
     // }
