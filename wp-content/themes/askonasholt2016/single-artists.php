@@ -39,7 +39,7 @@ get_header(); ?>
 			<?php echo $bio; ?>
 			<hr>
 		</div>
-		<div class="small-12 large-3 columns artist-contacts">
+		<div class="small-12 large-6 columns artist-contacts">
 			<h4 class="section-header">Contact</h4>
 
 				<?php 
@@ -156,9 +156,9 @@ get_header(); ?>
 			</ul>
 
 		</div>
-		<div class="small-12 large-9 columns show-for-large" id="introduction">
+		<div class="small-12 large-6 columns show-for-large" id="introduction">
 			<h4 class="section-header">Introduction</h4>
-			<p><?php echo $bio; ?></p>
+			<p class="bio"><?php echo $bio; ?></p>
 		</div>
 	</div> <!-- Bio Row END -->
 

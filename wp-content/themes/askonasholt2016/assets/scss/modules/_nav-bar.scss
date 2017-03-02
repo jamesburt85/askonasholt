@@ -138,7 +138,7 @@ div#search-toggle {
     }
 }
 
-@include breakpoint(small){
+@include breakpoint(small only){
 	.for-large {
 		display: none;
 	}
