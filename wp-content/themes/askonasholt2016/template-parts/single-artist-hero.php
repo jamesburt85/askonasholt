@@ -17,10 +17,24 @@
 	<!-- <div class="row"> -->
 		<div class="small-12 medium-6 columns artist-hero-image">
 			<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-			<!-- <div class="artist-header-thumb" style="background-image: url('<?php echo $thumb['0'];?>')"></div> -->
-			<div class="large-6 columns">
-				<img class="artist-header-thumb" src="<?php echo $thumb['0'];?>">
-				<svg width="653px" height="396px" viewBox="55 55 653 396" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<div class="artist-header-thumb" style="background-image: url('<?php echo $thumb['0'];?>')">
+			</div>
+				<svg class="artist-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000">
+				  <title>inline-example</title>
+				  <g id="Layer_1" data-name="Layer 1">
+				    <path class="crescent" d="M1412.28-11H267.2c148,120.76,242.51,304.59,242.51,510.5S415.2,889.24,267.2,1010H1412.28Z" fill="#c7b299"/>
+				  </g>
+<!-- 				  <g id="Layer_2" data-name="Layer 2">
+				    <rect x="568" y="98" width="43" height="43" fill="#fbb03b"/>
+				    <rect x="692" y="338" width="55" height="55" fill="#fbb03b"/>
+				    <rect x="619" y="572" width="53" height="53" fill="#fbb03b"/>
+				    <rect x="735" y="744" width="51" height="51" fill="#fbb03b"/>
+				    <rect x="493" y="847" width="29" height="29" fill="#fbb03b"/>
+				    <rect x="859" y="464" width="68" height="68" fill="#fbb03b"/>
+				  </g> -->
+				</svg>
+
+				<svg viewBox="55 55 653 396" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
 				    <desc>Created with Sketch.</desc>
 				    <defs></defs>
@@ -56,7 +70,13 @@
 				        </g>
 				    </g>
 				</svg>
-			</div>
+
+			
+				<!-- <div class="large-6 columns"> -->
+	<!-- 				<img class="artist-header-thumb" src="<?php echo $thumb['0'];?>">
+	 -->				
+					
+				
 
 		</div>
 

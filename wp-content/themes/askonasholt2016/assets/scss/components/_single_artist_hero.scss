@@ -7,7 +7,7 @@ body.single.single-artists, body.single.single-clients {
 	    height: auto;
 	    position: relative;
 	    .artist-details-area {
-	    	width: 100%;
+	    	//width: 100%;
 	    	//@include center;
 	    }
 	    .artist-details-container {
@@ -82,12 +82,13 @@ div.side-bar-text-area {
 	top: 0;
 	bottom: 0;
 	left: 0;
-	max-height: 28em; //temp
+	//max-height: 28em; //temp
 	overflow: hidden; //temp
 	svg {
 	    top: 0;
+	    height: 101%;
 	    position: absolute;
-	    z-index: -1;
+	    z-index: 99;
 	}
 }
 
@@ -113,3 +114,22 @@ body.single-artists {
 	}
 }
 
+
+.artist-header-thumb {
+	@include full-bg;
+	height: 450px;
+	width: 60%;
+}
+
+svg.artist-circle {
+	height: 100%;
+	left: 10%;
+	//position: inherit;
+	top: 0;
+	bottom: 0;
+	z-index: 9;
+}
+
+path.crescent {
+    fill: #FBFAF6;
+}
