@@ -326,5 +326,86 @@ class rw_tours_projects extends migrate {
     }
         
 
+        
+        
+        
+
+    public function tour_partners_with_new_urls(){
+        
+        $slugs = $this->wpdb->get_results( "
+            SELECT
+            migrate_touring_partners_wpposts.touring_partners_id as id,
+            wp_posts.post_name as slug
+            FROM
+            migrate_touring_partners_wpposts
+            INNER JOIN wp_posts ON migrate_touring_partners_wpposts.post_id = wp_posts.ID
+        " );  
+
+        foreach( $slugs as $slug ){
+            
+            if( isset($this->touring_partners[ $slug->id ]) ){
+                
+                $url = '/tours-and-projects/touring-partner/'.$slug->slug;
+                
+                $this->touring_partners[ $slug->id ]->new_url = $url;
+                
+            }
+        }        
+        
+        
+    }        
+    
+    public function tours_projects_with_old_categories(){
+        
+        $cats = $this->wpdb->get_results( "
+            SELECT
+            categories.*,
+            artists.id as artist_id
+            FROM
+            artists
+            INNER JOIN artist_category ON artists.id = artist_category.artist_id
+            INNER JOIN categories ON artist_category.category_id = categories.id   
+            WHERE artists.status = 'published' 
+        " );
+
+        foreach( $cats as $cat ){
+            
+            if( isset($this->touring_partners[ $cat->artist_id ]) ){
+                $this->touring_partners[ $cat->artist_id ]->categories_old[] = $cat;
+            }
+        }
+                    
+ 
+    }    
+    
+    public function geturls(){
+        
+        $D = '/';
+        
+        $this->tours_projects_with_old_categories();
+        
+        $this->tour_partners_with_new_urls();
+                
+        $urls = [];
+        
+        foreach( $this->touring_partners as $id=>$row ){
+            
+            $url = $D. 'tours-and-projects' . $D;  
+            
+            if( isset( $row->categories_old[0] ) ){
+                $url .= $row->categories_old[0]->slug . $D; 
+            }           
+                       
+            $url .= $row->slug;
+            
+            $urls[ $url ] = $row->new_url;
+            
+        }
+
+        $this->insert301( $urls, 8 );
+
+        return $urls;
+        
+    }         
     
 }

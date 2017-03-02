@@ -456,4 +456,93 @@ class rw_artists extends migrate {
     
     
     
+    public function artists_with_new_urls(){
+        
+        $slugs = $this->wpdb->get_results( "
+            SELECT
+            migrate_artists_wpposts.artists_id as artist_id,
+            migrate_artists_wpposts.post_id,
+            wp_posts.post_name as slug
+            FROM
+            migrate_artists_wpposts
+            INNER JOIN wp_posts ON migrate_artists_wpposts.post_id = wp_posts.ID
+        " );  
+
+        foreach( $slugs as $slug ){
+            
+            if( isset($this->artists[ $slug->artist_id ]) ){
+                
+                $url = '/artists/'.$slug->slug;
+                
+                $this->artists[ $slug->artist_id ]->new_url = $url;
+            }
+        }        
+        
+        
+    }
+    
+    
+    public function artists_with_old_categories(){
+        
+        $cats = $this->wpdb->get_results( "
+            SELECT
+            categories.*,
+            artists.id as artist_id
+            FROM
+            artists
+            INNER JOIN artist_category ON artists.id = artist_category.artist_id
+            INNER JOIN categories ON artist_category.category_id = categories.id   
+            WHERE artists.status = 'published' 
+        " );
+
+        foreach( $cats as $cat ){
+            
+            if( isset($this->artists[ $cat->artist_id ]) ){
+                $this->artists[ $cat->artist_id ]->categories_old[] = $cat;
+            }
+        }
+                    
+ 
+    }
+    
+    
+    
+    public function geturls(){
+        
+        $D = '/';
+        
+        $this->artists_with_new_urls();
+        
+        $this->artists_with_old_categories();
+        
+        $parent_cats = $this->getParentCats();
+        
+        $urls = [];
+        
+        foreach( $this->artists as $id=>$row ){
+            
+            $url = $D. 'artists' . $D;
+            
+            if( isset( $parent_cats[ $row->categories_old[0]->parent_id ] ) ){
+                $url .= $parent_cats[ $row->categories_old[0]->parent_id ]->slug . $D; 
+            }
+            
+            $url .= $row->categories_old[0]->slug . $D;
+            
+            $url .= $row->slug;
+            
+            $urls[ $url ] = $row->new_url;
+            
+        }
+        
+        $this->insert301( $urls, 4 );
+       
+        return $urls;
+        
+    }
+    
+    
+    
+    
+    
 }
