@@ -114,7 +114,7 @@
 			<?php the_title(); ?>
 		</li>
 
-		<li class="single-page-nav_link">
+		<li class="single-page-nav_link active">
 			<a data-scroll="" data-events="scroll" href="#introduction">Introduction</a>
 		</li>
 

@@ -575,6 +575,19 @@ var map = null;
 
 
 
+      //**********************************************
+      //  IN-PAGE NAV MAKE CLICKED ITEM RED      *****
+      //**********************************************
+      $(function(){
+        $('ul.single-page-nav li a').filter(function(){return this.href==location.href}).parent().addClass('active').siblings().removeClass('active')
+        $('ul.single-page-nav li a').click(function(){
+          $(this).parent().addClass('active').siblings().removeClass('active')  
+        })
+      })
+      //DO FOR SCROLLING AS WELL?????
+
+
+
 
       // var infinite = new Waypoint.Infinite({
       //   element: $('.infinite-container')[0]

@@ -10041,17 +10041,21 @@ ul.single-page-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #BA0C2F;
+  background: #fefefe;
   margin-left: 0;
   height: 60px;
-  position: relative; }
+  position: relative;
+  border-bottom: 1px solid #cccccc;
+  border-top: 1px solid #cccccc; }
   ul.single-page-nav li {
     padding: 0 25px;
-    color: white;
+    color: #808080;
     line-height: 60px; }
     ul.single-page-nav li a {
-      color: white;
+      color: #808080;
       font-weight: bold; }
+  ul.single-page-nav li.single-page-nav_link.active a {
+    color: #BA0C2F !important; }
 
 #sticky.stick {
   margin-top: 0 !important;
