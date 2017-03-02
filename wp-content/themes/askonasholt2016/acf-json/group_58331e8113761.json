@@ -138,6 +138,24 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1
+        },
+        {
+            "key": "field_58b73872d3c64",
+            "label": "Extra Text",
+            "name": "extra_text",
+            "type": "wysiwyg",
+            "instructions": "Insert line of text under map",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
         }
     ],
     "location": [
@@ -159,5 +177,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1484488408
+    "modified": 1488402663
 }

@@ -10176,6 +10176,9 @@ body.blog .archive__load-more a:hover {
   color: #ffffff;
   background: #BA0C2F; }
 
+.large-item .magazine-item .magazine-item-thumb {
+  height: 300px; }
+
 .single-magazine-category {
   display: -webkit-box;
   display: -ms-flexbox;

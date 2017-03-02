@@ -100,7 +100,7 @@ get_header(); ?>
 
         <div class="row">
           <div class="small-12 columns">
-            <p>To get in touch with one of our staff directly please go to the <a href="<?php echo site_url(); ?>/people">People</a> page</p>
+            <p><?php the_field('extra_text'); ?></p>
           </div>
         </div>
         

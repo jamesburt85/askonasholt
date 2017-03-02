@@ -21,7 +21,7 @@
 		$telephone_number = get_field('telephone_number');
 		$languages 	= get_field('languages');
 		$position 	= get_field ('position');
-		$languages 		= get_field ('languages');
+		$languages 	= get_field ('languages');
 	?>
 
 	<div class="entry-content">
@@ -85,25 +85,23 @@
 					<a class="serif" href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a>
 					<span class="staff-category"><?php echo $position; ?></span>
 					
-					<?php if( have_rows('e_mail') ): ?>
-						<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a>
-					<?php endif; ?>
-					<span><?php echo $telephone_number; ?></span><br/>
-					
+					<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?>
+					</a>
 
-						<?php if( have_rows('languages') ): ?>
-							<div class="flag-area">
+					<span><br/><?php echo $telephone_number; ?></span>
+
+					<?php if( have_rows('languages') ): ?>
+						<div class="flag-area">
 							<span>Languages:</span>
 							<?php while( have_rows('languages') ): the_row(); ?>
 
-									<img class="flag" src="<?php echo get_template_directory_uri(); ?>/assets/images/flags/4x3/<?php the_sub_field('flags'); ?>.svg" alt="Albania Flag">
+								<img class="flag" src="<?php echo get_template_directory_uri(); ?>/assets/images/flags/4x3/<?php the_sub_field('flags'); ?>.svg" alt="Flag">
 
-								<?php endwhile; ?>
-							</div>
-						<?php endif; ?>
+							<?php endwhile; ?>
+						</div>
+					<?php endif; ?>
 
 				</div>
-					<?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?>
 
 			</div>
 

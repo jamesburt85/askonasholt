@@ -1,5 +1,15 @@
 
-<div class="entry-content small-12 medium-6 large-3 columns animated waypoint is-hidden-onload">
+<!-- Checking if post is featured -->
+<?php if( get_field('featured_post') ): ?>
+	
+	<div class="entry-content small-12 medium-6 large-6 columns animated waypoint is-hidden-onload large-item">
+	
+<?php else: ?>
+
+	<div class="entry-content small-12 medium-6 large-3 columns animated waypoint is-hidden-onload">
+
+<?php endif; // end of if field_name logic ?>
+
 
 	<div class="magazine-item" data-equalizer-watch>
 		<?php if ( has_post_thumbnail() ) { ?>
