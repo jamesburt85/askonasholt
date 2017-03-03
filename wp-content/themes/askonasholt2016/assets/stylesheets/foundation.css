@@ -9775,8 +9775,9 @@ div#search-toggle {
   right: 0;
   top: 30px; }
 
-.post-type-archive-events article {
-  margin: 0; }
+@media screen and (min-width: 40em) {
+  .header-social-area {
+    margin-right: 2em; } }
 
 .menu .active > a {
   color: #BA0C2F;

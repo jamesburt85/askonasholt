@@ -106,9 +106,9 @@ div#search-toggle {
     top: 30px;
 }
 
-.post-type-archive-events {
-	article {
-	    margin: 0;
+@include breakpoint(medium) {
+	.header-social-area {
+		margin-right: 2em;
 	}
 }
 
