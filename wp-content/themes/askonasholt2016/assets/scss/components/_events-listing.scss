@@ -29,3 +29,11 @@
 		}
 	}
 }
+
+
+//getting rid of gap at top on mobile
+.post-type-archive-events {
+	article {
+	    margin: 0;
+	}
+}
