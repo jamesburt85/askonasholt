@@ -57,6 +57,8 @@ get_header(); ?>
 						//getting ACF Flexible content navigation
 						$acf_fields = get_fields();
 						include(locate_template('template-parts/acf.php'));
+						get_template_part( 'template-parts/video-choice' );
+
 					}
 
 					elseif (has_post_format( 'standard' )) {
