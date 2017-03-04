@@ -15737,6 +15737,9 @@ div#video-audio {
 .artist-photo-wrapper:hover .overlay, .magazine-item-thumb:hover .overlay {
   display: block; }
 
+div#video-audio .artist-video-area p {
+  margin-bottom: 0; }
+
 .post-type-archive-artists article, .post-type-archive-clients article, .post-type-archive-people article {
   position: relative;
   padding-bottom: 5em; }

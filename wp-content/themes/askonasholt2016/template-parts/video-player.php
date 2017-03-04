@@ -13,9 +13,11 @@ $video = $acf_fields['flexible_content'][0]['video'];
 
 ?>
 
-<div class="row large-video-row animated waypoint is-hidden-onload" id="waypoint">
+<!-- <div class="row large-video-row animated waypoint is-hidden-onload" id="waypoint">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>" frameborder="0" allowfullscreen></iframe>
-</div>
+</div> -->
+
+<?php get_template_part( 'template-parts/video-choice' ); ?>
 
 <div class="video-description" data-equalizer-watch>
   <?php //echo wpdocs_custom_taxonomies_terms_links(); ?>

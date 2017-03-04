@@ -53,8 +53,6 @@
 			color: $red;
 		}
 	}
-
-
 }
 
 
@@ -214,6 +212,16 @@ div#video-audio {
 		display: block;
 	}
 }
+
+//Home page video section
+div#video-audio {
+	.artist-video-area {
+		p {
+		    margin-bottom: 0;
+		}
+	}
+}
+
 
 
 //Load more button styles

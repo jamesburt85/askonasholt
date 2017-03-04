@@ -279,6 +279,7 @@ role="main"> -->
             <div class="small-12 medium-6 large-3 columns artist-video-area animated waypoint is-hidden-onload">
               <a href="<?php the_permalink(); ?>"> 
                 <?php get_template_part( 'template-parts/video-player' ); ?>
+                <?php //get_template_part( 'template-parts/video-choice' ); ?>
               </a>
             </div>
 

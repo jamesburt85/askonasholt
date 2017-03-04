@@ -85,7 +85,7 @@
             "label": "Youtube Video ID",
             "name": "youtube_video_id",
             "type": "text",
-            "instructions": "Enter the Youtube Video ID",
+            "instructions": "Enter the Youtube Video ID. i.e the characters at the end of this...https:\/\/www.youtube.com\/watch?v=xxxxxxxxxxx",
             "required": 0,
             "conditional_logic": [
                 [
@@ -112,7 +112,7 @@
             "label": "Vimeo Video ID",
             "name": "vimeo_video_id",
             "type": "text",
-            "instructions": "Enter the Vimeo Video ID",
+            "instructions": "Enter the Vimeo Video ID. i.e. just the number at the end of the Vimeo link...https:\/\/vimeo.com\/139568317",
             "required": 0,
             "conditional_logic": [
                 [
@@ -157,5 +157,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488295427
+    "modified": 1488621974
 }
