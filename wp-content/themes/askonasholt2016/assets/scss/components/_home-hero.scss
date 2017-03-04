@@ -25,6 +25,12 @@ body.page {
 			margin: 1em 1em;
 			@include full-bg;
 			position: relative;
+			.center-image--credits {
+			    position: absolute;
+			    bottom: 1em;
+			    right: 1em;
+			    color: #cccccc;
+			}
 		}
 		.slick-dots {
 		    bottom: 3px;

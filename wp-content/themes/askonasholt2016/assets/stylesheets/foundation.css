@@ -15551,6 +15551,11 @@ body.page div.slick-slider .center-image {
   -webkit-background-size: cover;
   background-size: cover;
   position: relative; }
+  body.page div.slick-slider .center-image .center-image--credits {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    color: #cccccc; }
 
 body.page div.slick-slider .slick-dots {
   bottom: 3px; }

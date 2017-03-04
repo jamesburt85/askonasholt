@@ -358,7 +358,7 @@
                                             "label": "Image Credit",
                                             "name": "image_credit",
                                             "type": "text",
-                                            "instructions": "Image credit can be prefixed with \u00a9 and will appear below the image after it is clicked.",
+                                            "instructions": "Image credit will appear below the image after it is clicked. Prefix with \u00a9",
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
@@ -1174,5 +1174,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1487934650
+    "modified": 1488639109
 }

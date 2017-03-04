@@ -32,6 +32,7 @@
 		        $image = get_sub_field('background_image');
 		        $category = get_sub_field('category');
 		        $title = get_sub_field('title');
+		        $image_credits = get_sub_field('image_credits');
 
 		        //print_r($image);
 
@@ -44,10 +45,7 @@
 							<span class="hero-sub-header"><?php echo $category; ?></span>
 							<span class="hero-header"><?php echo $title; ?></span>
 						</div>
-					<!-- 	<div class="padded-text">
-						  <h1><strong>How do I add padding to subsequent lines of an inline text element?</strong></h1>
-						</div> -->
-
+						
 						<?php
 					 	// loop through the rows of data
 					    while ( have_rows('buttons') ) : the_row();
@@ -66,6 +64,11 @@
 						<?php endwhile; ?>
 
 					</div>
+
+					<div class="center-image--credits">
+						<span><?php echo $image_credits; ?></span>
+					</div>
+
 				</div>		        
 
 		        <?php endwhile; ?>

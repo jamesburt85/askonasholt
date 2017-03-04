@@ -87,7 +87,7 @@
             "label": "Photo Credit",
             "name": "photo_credit",
             "type": "text",
-            "instructions": "Ad name of photo credit",
+            "instructions": "Enter name of photo credit prefixed with \u00a9",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -417,5 +417,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1487576529
+    "modified": 1488639070
 }
