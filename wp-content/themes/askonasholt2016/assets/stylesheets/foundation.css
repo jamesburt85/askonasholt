@@ -11471,6 +11471,9 @@ body.post-type-archive-online .archive__load-more {
   .online-item {
     margin-bottom: 25px; } }
 
+.post-type-archive-online .hero-heading.no-show {
+  display: none; }
+
 body.single-online .audio-player, body.single-online .large-video-row {
   padding: 0;
   margin: 50px auto; }

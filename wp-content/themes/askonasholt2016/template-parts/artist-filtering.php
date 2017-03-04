@@ -9,6 +9,7 @@
 
 	<header class="filter-header">
 		<h2 class="hero-heading">Artists</h2>
+		
 		<p><?php //echo $description; ?></p>
 	</header>
 
@@ -21,6 +22,8 @@
 				echo "<ul class='artist-categories'>";
 				// echo "<li></li>";
 				// echo wp_list_categories( 'title_li'=>'Select category' );
+
+
 				echo wp_list_categories( array(
 						'taxonomy'     => 'artist-type',
 				        'orderby' => 'name',
@@ -30,6 +33,9 @@
 				        'show_option_all' => 'all',
 				        'walker'       => new Walker_Category_Find_Parents(),
 				    ) );
+
+
+
 					// $args = array(
 					// 'title_li'=>'Select category',
 					// )

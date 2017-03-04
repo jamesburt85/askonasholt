@@ -14,7 +14,7 @@
 <div class="center-text-hero-header">
 
 	<header class="center-hero-text">
-	  <h2 class="hero-heading"><?php the_title(); ?></h2>
+	  <h2 class="hero-heading no-show"><?php the_title(); ?></h2>
 
 	<?php 
 		if (is_page_template( 'tour_stories' )) {
@@ -26,6 +26,9 @@
 		elseif (is_page_template( 'contact' )) {
 			$myvar = get_field('contact','option');
 		}
+		elseif (is_post_type_archive( 'online' )) { ?>
+			<h2 class="hero-heading">Online Performances</h2>
+		<?php }
 
 		//print_r($myvar);
 	  	$description = get_field('optional_description',$myvar);

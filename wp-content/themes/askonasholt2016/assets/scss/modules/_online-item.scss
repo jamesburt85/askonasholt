@@ -96,6 +96,14 @@ body.post-type-archive-online {
 	}
 }
 
+//Main Online Pgae heder hiding
+
+.post-type-archive-online {
+	.hero-heading.no-show {
+		display: none;
+	}
+}
+
 //************************
 //Single online pages **
 //************************
