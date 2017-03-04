@@ -29,10 +29,23 @@ get_header(); ?>
 				<?php 
 
 				if ( get_field('media_choice') == 'Video' ) { ?>
+					
+					<?php if( get_field('embed_or_external_link') == 'Embed' ) { ?>
+						<div class="row large-video-row">
+						  <iframe width="560" height="315" src="<?php the_field('link'); ?>" frameborder="0" allowfullscreen></iframe>
+						</div>
 
-					<div class="row large-video-row">
-					  <iframe width="560" height="315" src="<?php the_field('link'); ?>" frameborder="0" allowfullscreen></iframe>
-					</div>
+					<?php } ?>
+
+
+					<?php if( get_field('embed_or_external_link') == 'Link' )  { ?>
+
+						<a href="<?php the_field('link'); ?>" target="_blank">
+							<i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;
+							Watch the performance here
+						</a>
+
+					<?php } ?>
 
 				<?php }
 

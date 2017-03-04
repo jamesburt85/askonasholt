@@ -52,6 +52,30 @@
             "return_format": "value"
         },
         {
+            "key": "field_58bab14d0e45c",
+            "label": "Embed or External Link?",
+            "name": "embed_or_external_link",
+            "type": "radio",
+            "instructions": "Click whether this will be an external link or an embed",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Link": "Link",
+                "Embed": "Embed"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value"
+        },
+        {
             "key": "field_5840474c34fd2",
             "label": "Link",
             "name": "link",
@@ -120,5 +144,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483635336
+    "modified": 1488631208
 }
