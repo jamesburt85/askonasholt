@@ -8,37 +8,16 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/center-text-hero' ); ?>
+<?php get_template_part( 'template-parts/single-artist-hero' ); ?>
 
 <div id="single-post" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-		<header>
-			
-			<h3 class="entry-title section-header small-gap"><?php //the_title(); ?></h3>
-			
-			<div class="blog-meta">
-				<!-- <div class="small-12 columns"> -->
-					<?php the_category(); ?>
-					<?php foundationpress_entry_meta(); ?>
-			<!-- 	</div> -->
-			</div>
 
-			<hr/>
-
-			<div class="row">
-				<!-- <div class="small-12 columns"> -->
-					<?php the_content(); ?>
-			<!-- 	</div> -->
-			</div>
-			
-
-		</header>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 
-		<?php get_template_part('template-parts/sharing-block' ); ?>
 
 		<div class="entry-content row">
 			<!-- <div class="small-12 columns"> -->

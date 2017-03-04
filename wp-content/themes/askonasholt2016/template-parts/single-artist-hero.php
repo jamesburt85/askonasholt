@@ -113,7 +113,7 @@
 				
 				<?php if( get_field('photo_credit') ): ?>
 					<div class="credit-wrapper">
-						<span class="photo_credit">Image © <?php echo $photo_credit;?></span>
+						<span class="photo_credit"><?php echo $photo_credit;?></span>
 					</div>
 					
 				<?php endif; ?>

@@ -214,6 +214,11 @@ class Walker_Category_Find_Parents extends Walker_Category {
         # clients post type
         remove_meta_box( 'postimagediv', 'clients', 'side' );
         add_meta_box('postimagediv', __('Client Image'), 'post_thumbnail_meta_box', 'clients', 'normal', 'high');
+
+        # touring-partners post type
+        remove_meta_box( 'postimagediv', 'touring-partners', 'side' );
+        add_meta_box('postimagediv', __('Touring Partner Image'), 'post_thumbnail_meta_box', 'touring-partners', 'normal', 'high');
+
     }
     add_action('do_meta_boxes', 'eb_change_featured_image_title');
 

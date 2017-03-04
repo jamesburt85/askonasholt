@@ -150,9 +150,6 @@ if ($acf_fields['flexible_content']) {
 													    </figcaption> 
 													 </figure>
 
-
-
-
  												<!-- 	<div class="popup-gallery">
  														<a href="<?php echo $image_repeater['image']; ?>" title="The Cleaner">
  															<img src="<?php echo $image_repeater['image']; ?>">

@@ -1,5 +1,5 @@
 // Single Artist Header area
-body.single.single-artists, body.single.single-clients {
+body.single.single-artists, body.single.single-clients, body.single-touring-partners {
 	.artist-header.container {
 	    max-width: 100%;
 	    //background-image: url("../images/light-pattern.png");
@@ -108,6 +108,13 @@ body.single-artists {
 	.magazine-item {
 		margin-bottom: 0;
 	}
+	.artist-header.container {
+		background: $header-beige;
+		z-index: -2;
+	}
+}
+
+body.single-touring-partners {
 	.artist-header.container {
 		background: $header-beige;
 		z-index: -2;

@@ -10,7 +10,6 @@ get_header(); ?>
 
 <?php get_template_part( 'template-parts/single-artist-hero' ); ?>
 
-
 <div id="single-post" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
