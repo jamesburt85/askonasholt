@@ -159,7 +159,7 @@ get_header(); ?>
 		</div>
 		<div class="small-12 large-6 columns show-for-large" id="introduction">
 			<h4 class="section-header">Introduction</h4>
-			<p class="bio"><?php echo $bio; ?></p>
+			<?php echo $bio; ?>
 		</div>
 	</div> <!-- Bio Row END -->
 
@@ -173,6 +173,7 @@ get_header(); ?>
 
 	$videos = get_posts(array(
 		'post_type' => 'post',
+		'posts_per_page' => 4,
 
 		'tax_query' => array(
 		        array(
@@ -200,7 +201,7 @@ get_header(); ?>
 			<div class="row">
 				<h4 class="section-header small-12 columns">Video &amp; Audio</h4>
 
-			<?php
+				<?php
 				foreach( $videos as $post ): setup_postdata( $post ); ?>
 					
 					<div class="small-12 medium-6 large-3 columns artist-video-area">
@@ -208,73 +209,73 @@ get_header(); ?>
 					</div>
 
 				<?php
-
 				endforeach;
 
 				wp_reset_postdata(); ?>
-			<!--  </ul> -->
 			</div>
-	<?php endif; ?>
 
-
-	<div class="row">
-
-			<?php 
-
-			/*
-			*  Query posts for a relationship value.
-			*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
-			*/
-
-			// $theID = get_the_ID();
-
-			$tracks = get_posts(array(
-				'post_type' => 'post',
-
-				'tax_query' => array(
-				        array(
-				            'taxonomy' => 'post_format',
-				            'field' => 'slug',
-				            'terms' => array( 'post-format-audio' ),
-				        )
-				    ),
-
-				'meta_query' => array(
-					array(
-						'key' => 'related_artist', // name of custom field
-						'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-						'compare' => 'LIKE'
-					)
-				)
-			));
-
-			// echo "<pre>";
-			// the_ID();
-			// print_r($tracks);
-			// echo "</pre>";
-
-			?>
-			<?php if( !empty($tracks) ): ?>
-				<!-- <ul> -->
-				<?php
-					foreach( $tracks as $post ): setup_postdata( $post );
-
-						get_template_part( 'template-parts/audio-player' );
-
-					endforeach;
-
-					wp_reset_postdata(); ?>
-				<!--  </ul> -->
 			<?php endif; ?>
 
-		</div>
 
-	</div>
+			<div class="row">
+
+					<?php 
+
+					/*
+					*  Query posts for a relationship value.
+					*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+					*/
+
+					// $theID = get_the_ID();
+
+					$tracks = get_posts(array(
+						'post_type' => 'post',
+						'posts_per_page' => 4,
+
+						'tax_query' => array(
+						        array(
+						            'taxonomy' => 'post_format',
+						            'field' => 'slug',
+						            'terms' => array( 'post-format-audio' ),
+						        )
+						    ),
+
+						'meta_query' => array(
+							array(
+								'key' => 'related_artist', // name of custom field
+								'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+								'compare' => 'LIKE'
+							)
+						)
+					));
+
+					// echo "<pre>";
+					// the_ID();
+					// print_r($tracks);
+					// echo "</pre>";
+
+					?>
+					<?php if( !empty($tracks) ): ?>
+						<!-- <ul> -->
+						<?php
+							foreach( $tracks as $post ): setup_postdata( $post );
+
+								get_template_part( 'template-parts/audio-player' );
+
+							endforeach;
+
+							wp_reset_postdata(); ?>
+						<!--  </ul> -->
+					<?php endif; ?>
+
+			</div>
+
+		</div>
 
 	<div class="performance-schedule row" id="schedule">
 
 		<div class="small-12 columns">
-		
+
 		<!-- Get Events -->
 		  <?php 
 
@@ -378,9 +379,8 @@ get_header(); ?>
 
 
 
-
+	<!-- IS THIS ONE EXTRA??? NEEDED??? -->
 	<div class="performance-schedule row" id="schedule">
-
 		<div class="small-12 columns">
 		
 		<!-- Get Events -->
@@ -485,9 +485,7 @@ get_header(); ?>
 
 	<div class="news-projects" id="news-projects">
 		<div class="row">
-			<div class="small-12 columns">
-				<h4 class="section-header">From The Green Room</h4>
-			</div>
+			
 			<!-- Get news items -->
 			  <?php 
 
@@ -513,9 +511,13 @@ get_header(); ?>
 			      $the_query = new WP_Query( $args );
 
 			    // The Loop
-			    if ( $the_query->have_posts() ) {
+			    if ( $the_query->have_posts() ) { ?>
 
-			      while ( $the_query->have_posts() ) {
+			    <div class="small-12 columns">
+			    	<h4 class="section-header">From The Green Room</h4>
+			    </div>
+
+			    <?php  while ( $the_query->have_posts() ) {
 			        $the_query->the_post();
 
 			        get_template_part( 'template-parts/content-post' );

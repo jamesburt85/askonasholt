@@ -17926,6 +17926,9 @@ body.home {
     transform: translate(-50%, -50%);
     max-width: 90%; } }
 
+.single-touring-partners div#intro h4.section-header, .single-artists div#intro h4.section-header {
+  padding: 0; }
+
 .single-tours-projects .tour-hero {
   position: relative;
   height: 28em;

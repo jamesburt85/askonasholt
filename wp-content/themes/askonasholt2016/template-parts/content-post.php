@@ -42,6 +42,10 @@
 
 						<?php elseif ( has_category( 'Features' )) : ?>
 							<i class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( has_category( 'Innovation' )) : ?>
+							<i class="fa fa-lightbulb-o fa-2x" aria-hidden="true"></i>
+
 						
 						<?php endif; ?>
 
@@ -80,6 +84,9 @@
 
 						<?php elseif ( has_category( 'Features' )) : ?>
 							<i class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( has_category( 'Innovation' )) : ?>
+							<i class="fa fa-lightbulb-o fa-2x" aria-hidden="true"></i>
 
 						
 						<?php endif; ?>

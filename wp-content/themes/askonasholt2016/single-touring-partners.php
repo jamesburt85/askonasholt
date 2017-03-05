@@ -159,7 +159,7 @@ get_header(); ?>
 				</div>
 				<div class="small-12 large-6 columns show-for-large" id="introduction">
 					<h4 class="section-header">Introduction</h4>
-					<p class="bio"><?php echo $bio; ?></p>
+					<?php echo $bio; ?>
 				</div>
 			</div> <!-- Bio Row END -->
 
@@ -196,25 +196,26 @@ get_header(); ?>
 
 			<?php if( $videos ): ?>
 
-				<div class="video-audio-area" id="video-audio">
+			<div class="video-audio-area" id="video-audio">
 
-					<div class="row">
-						<h4 class="section-header small-12 columns">Video &amp; Audio</h4>
+				<div class="row">
+					<h4 class="section-header small-12 columns">Video &amp; Audio</h4>
 
 					<?php
-						foreach( $videos as $post ): setup_postdata( $post ); ?>
-							
-							<div class="small-12 medium-6 large-3 columns artist-video-area">
-								<?php get_template_part( 'template-parts/video-player' ); ?>
-							</div>
+					foreach( $videos as $post ): setup_postdata( $post ); ?>
+						
+						<div class="small-12 medium-6 large-3 columns artist-video-area">
+							<?php get_template_part( 'template-parts/video-player' ); ?>
+						</div>
 
-						<?php
+					<?php
 
-						endforeach;
+					endforeach;
 
-						wp_reset_postdata(); ?>
-					<!--  </ul> -->
-					</div>
+					wp_reset_postdata(); ?>
+				<!--  </ul> -->
+				</div>
+
 			<?php endif; ?>
 
 			<!-- ANY AUDIO POSTS? -->
@@ -272,7 +273,214 @@ get_header(); ?>
 
 			</div>
 
+			<div class="performance-schedule row" id="schedule">
 
+				<div class="small-12 columns">
+				
+				<!-- Get Events -->
+				  <?php 
+
+				    // Query Args
+				      $args = array(
+
+				        'post_type'   => 'events',
+				        'posts_per_page' => 4,
+				        'meta_key'      => 'date',
+				        'orderby'     => 'meta_value',
+				        'order'       => 'ASC',
+
+				        'meta_query' => array(
+				        	array(
+				        		'key' => 'related_touring_partners', // name of custom field
+				        		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+				        		'compare' => 'LIKE'
+				        	)
+				        )
+
+				      );
+
+
+				      // The Query
+				      $the_query = new WP_Query( $args );
+
+				    // The Loop
+				    if ( $the_query->have_posts() ) { ?>
+				    	
+				    	<div class="row press-row show-for-large"><!-- Show for large -->
+				    	<h4 class="section-header small-12 columns">Performance Schedule</h4>
+				    	  <div class="small-12 columns"><!-- Show for large -->
+				    	    <ul class="accordion" data-accordion data-allow-all-closed="true"><!-- Show for large -->
+				      
+				      <?php //echo '<ul>';
+				      while ( $the_query->have_posts() ) {
+				        $the_query->the_post(); ?>
+				<!--         //echo '<li>' . get_the_title() . '</li>';
+
+				        //get_template_part( 'template-parts/.....' ); -->
+				            <?php 
+				              $time = get_field('time');
+				              $date = get_field('date');
+				              $venue = get_field('venue');
+				              $city = get_field('city');
+				              $more_info = get_field('more_info');
+
+				              // if data isn't there, but some TBC info instead
+				              if(!$date){      $date = 'date TBC'; }
+				              if(!$time){      $time = 'time TBC'; }
+				              if(!$venue){     $venue = 'venue TBC'; }
+				              if(!$city){      $city = 'city TBC'; }
+				              if(!$more_info){ $more_info = 'More Info Coming Soon...'; }
+
+				            ?>
+
+				         
+				                <li class="accordion-item" data-accordion-item>
+				                <!-- <hr /> -->
+				                  <a href="#" class="accordion-title"><?php //the_title(); ?>
+				                    
+				                    <div class="event-listing-details">
+				                      <?php //get_template_part( 'template-parts/event-related-artist' ); ?>
+
+				                      <span class="event-detail"><?php echo $time; ?></span>
+				                      <span class="event-detail"><?php echo $date; ?></span>
+				                      <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
+				                      <span class="more-info">More info &nbsp;
+				                          <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				                              <defs></defs>
+				                              <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
+				                          </svg>
+				                      </span>
+				                    </div>
+				                    
+				                  </a>
+
+				                  <div class="accordion-content" data-tab-content>
+				                    <?php echo $more_info; ?>
+				                  </div>
+				                </li> 
+
+				       <?php } ?>
+
+				           </ul> <!-- Show for large -->
+
+				         </div><!-- Show for large -->
+				       </div><!-- Show for large -->
+
+				      <?php //echo '</ul>';
+				      /* Restore original Post Data */
+				      wp_reset_postdata();
+				    } else {
+				      // no posts found
+				    }
+				  ?>
+
+				</div>
+
+			</div>
+
+			<!-- =========================== -->
+			<!-- PROJECTS / GREEN ROOM ===== -->
+			<!-- =========================== -->
+			<div class="news-projects" id="news-projects">
+				<div class="row">
+					<!-- Get news items -->
+					  <?php 
+
+					    // Query Args
+					      $args = array(
+
+					        'post_type'   => 'post',
+					        //'category_slug' => array( 'news', 'interviews', 'features' ),
+					        'category_name'    => 'news, interviews, features, innovation, tour, uncategorized',
+					        'posts_per_page' => 4,
+					        
+					        'meta_query' => array(
+					          array(
+					            'key' => 'related_client', // name of custom field
+					            'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+					            'compare' => 'LIKE',
+					            'category_slug' => array( 'news', 'interviews', 'features' ),
+					          )
+					        )
+					      );
+
+					      // The Query
+					      $the_query = new WP_Query( $args );
+
+					    // The Loop
+					    if ( $the_query->have_posts() ) { ?>
+
+					    	<div class="small-12 columns">
+					    		<h4 class="section-header">From The Green Room</h4>
+					    	</div>
+
+					     <?php while ( $the_query->have_posts() ) {
+					        $the_query->the_post();
+
+					        get_template_part( 'template-parts/content-post' );
+
+					      }
+
+					      /* Restore original Post Data */
+					      wp_reset_postdata();
+					    } else {
+					      // no posts found
+					    } ?>
+					
+				</div>
+				<!-- Do as above section, getting posts related to artist. May have to add relational field in ACF first -->
+			</div>
+
+
+			<!-- =========================== -->
+			<!-- ONLINE      =============== -->
+			<!-- =========================== -->
+			<div class="row live-events">
+
+				<?php
+				  // Query Args
+				  $args = array(
+
+				    'post_type'		=> 'online',
+				    //'post__in'  	=> $tour_artists,
+				    'posts_per_page' => 4,
+				    'meta_query' => array(
+				    	array(
+				    		'key' => 'related_touring_partners', // name of custom field
+				    		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+				    		'compare' => 'LIKE'
+				    	)
+				    )
+				    
+				  );
+
+				  // The Query
+				  $the_query = new WP_Query( $args );
+
+				  // The Loop
+				  if ( $the_query->have_posts() ) {
+				   // echo '<ul>'; ?>
+				  	<div class="small-12 columns">
+				  		<h4 class="section-header">Online Performances</h4>
+				  	</div>
+				  	<?php
+				    
+				    while ( $the_query->have_posts() ) {
+				      $the_query->the_post();
+				      //echo '<li>' . get_the_title() . '</li>';
+				      get_template_part( 'template-parts/content-post' );
+
+				      //get_template_part( 'template-parts/.....' );
+				    }
+				    //echo '</ul>';
+				    /* Restore original Post Data */
+				    wp_reset_postdata();
+				  } else {
+				    // no posts found
+				  }
+				?>
+
+			</div>
 
 		</div>
 		

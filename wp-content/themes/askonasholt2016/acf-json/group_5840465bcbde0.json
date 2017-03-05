@@ -28,6 +28,31 @@
             "return_format": "object"
         },
         {
+            "key": "field_58bc139c58f24",
+            "label": "Related Touring Partners",
+            "name": "related_touring_partners",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "touring-partners"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
             "key": "field_586e488508783",
             "label": "Media Choice",
             "name": "media_choice",
@@ -144,5 +169,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488631208
+    "modified": 1488720861
 }
