@@ -63,7 +63,7 @@ function feature_init()
     );
     
     $args['labels']                 = $labels;
-    $args['supports']               = array('title', 'editor', 'thumbnail');
+    $args['supports']               = array('title');
     // $args['rewrite']                = array('xxx' => 'xxx');
     $args['rewrite']                = array('slug' => 'events');
     $args['menu_icon']              = 'dashicons-calendar-alt';
