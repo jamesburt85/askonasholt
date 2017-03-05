@@ -59,13 +59,13 @@ div.side-bar-text-area {
 //MEDIA QUERIES
 
 @include breakpoint(medium) {
-	body.single.single-artists .artist-header.container .artist-details-area, body.single.single-clients .artist-header.container .artist-details-area {
+	body.single.single-artists .artist-header.container .artist-details-area, body.single.single-clients .artist-header.container .artist-details-area, body.single-touring-partners .artist-header.container .artist-details-area {
 		// /@include center;
 		.artist-details-container {
 			padding: $sitepadding;
 		}
 	}
-	body.single.single-artists, body.single.single-clients {
+	body.single.single-artists, body.single.single-clients, body.single-touring-partners {
 		.artist-header.container {
 			height: 450px;
 		}

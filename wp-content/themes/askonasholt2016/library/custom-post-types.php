@@ -253,7 +253,7 @@ function feature_init()
     );
     
     $args['labels']                 = $labels;
-    $args['supports']               = array('title', 'editor', 'thumbnail', 'excerpt');
+    $args['supports']               = array('title', 'thumbnail', 'excerpt');
     // $args['rewrite']                = array('xxx' => 'xxx');
     $args['rewrite']                = array('slug' => 'tours-and-projects/touring-partners');
     $args['menu_icon']              = 'dashicons-groups';

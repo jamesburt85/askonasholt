@@ -32,7 +32,7 @@
             "label": "Related Client",
             "name": "related_client",
             "type": "relationship",
-            "instructions": "Choose any Clients relating to the item",
+            "instructions": "Choose any Clients \/ Touring Partners relating to the item",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -41,7 +41,7 @@
                 "id": ""
             },
             "post_type": [
-                "clients"
+                "touring-partners"
             ],
             "taxonomy": [],
             "filters": [
@@ -70,5 +70,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488213055
+    "modified": 1488645610
 }

@@ -597,8 +597,14 @@ if ($acf_fields['flexible_content']) {
 											<p class="discoraphy_title"><strong>Label:</strong> <?php echo $discography['label']; ?></p>
 										<?php endif; ?>
 
-										<?php if( $discography['label'] ): ?>
+										<?php if( $discography['release_date'] ): ?>
 											<p class="discoraphy_title"><strong>Release Date:</strong> <?php echo $discography['release_date']; ?></p>
+										<?php endif; ?>
+
+										<?php if( $discography['optional_header'] ): ?>
+											<h4 class="section-header">
+												<?php echo $discography['optional_header']; ?>
+											</h4>
 										<?php endif; ?>
 
 										<?php echo $discography['details']; ?>

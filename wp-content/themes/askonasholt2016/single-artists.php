@@ -138,13 +138,15 @@ get_header(); ?>
 			</div>	<!-- artist-social END	 -->
 
 			<ul class="quick-look-links">
-				<li>
-					<a href="<?php echo $publicity_pack; ?>" target="_blank">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/download-arrow.png">
-						&nbsp;
-						Download Publicity Pack
-					</a>
-				</li>
+				<?php if( get_field('publicity_pack') ): ?>
+					<li>
+						<a href="<?php echo $publicity_pack; ?>" target="_blank">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/download-arrow.png">
+							&nbsp;
+							Download Publicity Pack
+						</a>
+					</li>
+				<?php endif; ?>
 				<li>
 					<a href="mailto:?subject= <?php the_title(); ?> &amp;body=C<?php the_permalink(); ?>">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/share-arrow.png">

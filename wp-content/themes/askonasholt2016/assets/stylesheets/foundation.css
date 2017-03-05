@@ -17209,9 +17209,9 @@ div.side-bar-text-area {
   padding-right: 7px; }
 
 @media screen and (min-width: 40em) {
-  body.single.single-artists .artist-header.container .artist-details-area .artist-details-container, body.single.single-clients .artist-header.container .artist-details-area .artist-details-container {
+  body.single.single-artists .artist-header.container .artist-details-area .artist-details-container, body.single.single-clients .artist-header.container .artist-details-area .artist-details-container, body.single-touring-partners .artist-header.container .artist-details-area .artist-details-container {
     padding: 25px; }
-  body.single.single-artists .artist-header.container, body.single.single-clients .artist-header.container {
+  body.single.single-artists .artist-header.container, body.single.single-clients .artist-header.container, body.single-touring-partners .artist-header.container {
     height: 450px; } }
 
 .artist-hero-image {
@@ -18138,17 +18138,17 @@ body.single.single-post #single-post {
   max-width: 57.375rem;
   margin: 0 auto; }
 
-body.single-online article.main-content, body.single-post article.main-content, body.single-touring-partners article.main-content {
+body.single-online article.main-content, body.single-post article.main-content {
   max-width: 57.375rem;
   margin: 0 auto; }
-  body.single-online article.main-content header, body.single-post article.main-content header, body.single-touring-partners article.main-content header {
+  body.single-online article.main-content header, body.single-post article.main-content header {
     margin-bottom: 25px; }
-  body.single-online article.main-content .side-bar-artist, body.single-post article.main-content .side-bar-artist, body.single-touring-partners article.main-content .side-bar-artist {
+  body.single-online article.main-content .side-bar-artist, body.single-post article.main-content .side-bar-artist {
     border-top: 1px solid #cccccc;
     padding: 12.5px 0;
     width: 100%;
     position: relative; }
-  body.single-online article.main-content span.more-info, body.single-post article.main-content span.more-info, body.single-touring-partners article.main-content span.more-info {
+  body.single-online article.main-content span.more-info, body.single-post article.main-content span.more-info {
     right: 0em;
     position: absolute;
     top: 50%;
@@ -18156,13 +18156,13 @@ body.single-online article.main-content, body.single-post article.main-content, 
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     position: absolute; }
-  body.single-online article.main-content .side-bar-artist:last-child, body.single-post article.main-content .side-bar-artist:last-child, body.single-touring-partners article.main-content .side-bar-artist:last-child {
+  body.single-online article.main-content .side-bar-artist:last-child, body.single-post article.main-content .side-bar-artist:last-child {
     border-bottom: 1px solid #cccccc;
     margin-bottom: 25px; }
-  body.single-online article.main-content .side-bar-artist:first-child, body.single-post article.main-content .side-bar-artist:first-child, body.single-touring-partners article.main-content .side-bar-artist:first-child {
+  body.single-online article.main-content .side-bar-artist:first-child, body.single-post article.main-content .side-bar-artist:first-child {
     margin-top: 25px; }
 
-body.single-online #share-buttons img, body.single-post #share-buttons img, body.single-touring-partners #share-buttons img {
+body.single-online #share-buttons img, body.single-post #share-buttons img {
   width: 35px;
   padding: 5px;
   border: 0;

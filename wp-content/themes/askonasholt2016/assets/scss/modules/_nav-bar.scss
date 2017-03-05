@@ -8,6 +8,7 @@ header#masthead {
 	.top-bar-right {
 	    float: left;
 	    padding-left: 1em;
+	    //@include center(x);
 	}
 	.top-bar .menu a:hover:not(.button) {
 	    background-color: transparent;

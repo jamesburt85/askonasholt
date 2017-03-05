@@ -549,9 +549,10 @@ var map = null;
        // When the page has loaded
        $("#loading-delay").fadeOut(100);
      });
-
-
-
+     // $('#loading-delay').fadeIn(2000, function(){
+     //        this.style.removeAttribute('filter');
+     // });
+     
 
      
       $('.popup-gallery').magnificPopup({
