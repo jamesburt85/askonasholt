@@ -11411,7 +11411,7 @@ div#image-gallery div.gallery-image {
     .online-item .bottom-left .media-type-indicator i {
       color: white;
       background: rgba(186, 12, 47, 0.8);
-      padding: 0.5em;
+      padding: 0.5em 0.5em 0.4em;
       margin-bottom: 1px; }
     .online-item .bottom-left .online-item-container {
       padding: 1em;
@@ -17389,7 +17389,8 @@ div.staff-header li {
   .blog-meta ul.post-categories {
     list-style: none;
     margin-left: 0;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-bottom: 0; }
   .blog-meta a {
     color: initial; }
   .blog-meta p {

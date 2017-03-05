@@ -29,8 +29,22 @@
 						<?php elseif ( has_category( 'Audio' )) : ?>
 
 							<i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( has_category( 'News' )) : ?>
+
+							<i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( has_category( 'Interviews' )) : ?>
+							<i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( has_category( 'Tour' )) : ?>
+							<i class="fa fa-globe fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( has_category( 'Features' )) : ?>
+							<i class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i>
 						
 						<?php endif; ?>
+
 					</div>
 				</div>
 			</div>
@@ -53,6 +67,20 @@
 						<?php elseif ( has_category( 'Audio' )) : ?>
 
 							<i class="fa fa-volume-up fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( has_category( 'News' )) : ?>
+
+							<i class="fa fa-newspaper-o fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( has_category( 'Interviews' )) : ?>
+							<i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( has_category( 'Tour' )) : ?>
+							<i class="fa fa-globe fa-2x" aria-hidden="true"></i>
+
+						<?php elseif ( has_category( 'Features' )) : ?>
+							<i class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i>
+
 						
 						<?php endif; ?>
 					</div>
