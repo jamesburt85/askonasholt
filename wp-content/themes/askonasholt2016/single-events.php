@@ -176,6 +176,10 @@ get_header(); ?>
 			</div>
 		</div>
 
+		<!-- using ACF Flexible content instead of the_content  -->
+		<?php $acf_fields = get_fields(); ?>
+		<?php include(locate_template('template-parts/acf.php')); ?>
+
 
 		<footer>
 			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>

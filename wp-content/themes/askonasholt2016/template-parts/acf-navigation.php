@@ -8,7 +8,6 @@
 // loop through each section in the ACF fields array
 $section_i=0;
 
-
 # If there are sections
 if ($acf_fields['flexible_content']) {
 
@@ -30,7 +29,6 @@ if ($acf_fields['flexible_content']) {
 		</li>
 
 		<?php
-
 
 		$section_i++;
 

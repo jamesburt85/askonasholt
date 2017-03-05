@@ -145,15 +145,18 @@ get_header(); ?>
 									$tour_artists = get_field('tour_artists');
 									//print_r($tour_artists);
 
-									if (!empty($tour_artists)) {
-										foreach ($tour_artists as $artist_id) { 
+									if (!empty($tour_artists)) { ?>
+
+									<h4 class="section-header">Artist(s)</h4>
+										
+										<?php foreach ($tour_artists as $artist_id) { 
 
 											# Get Permalink to artist page:
 											$artist_url = get_permalink($artist_id);
 
 											?> 
 										
-										<h4 class="section-header">Artist(s)</h4>
+										
 											<div class="side-bar-artist"> 
 												
 
@@ -373,14 +376,16 @@ get_header(); ?>
 							$tour_artists = get_field('tour_artists');
 							//print_r($tour_artists);
 
-							if (!empty($tour_artists)) {
-								foreach ($tour_artists as $artist_id) { 
+							if (!empty($tour_artists)) { ?>
+
+							<h4 class="section-header">Artist(s)</h4>
+
+							<?php foreach ($tour_artists as $artist_id) { 
 									# Get Permalink to artist page:
 									$artist_url = get_permalink($artist_id);
 
 									?> 
-								
-								<h4 class="section-header">Artist(s)</h4>
+									
 									<div class="side-bar-artist"> 
 										
 
@@ -403,7 +408,8 @@ get_header(); ?>
 
 										?>
 										
-											<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										
 										<div class="side-bar-artist-details">
 											<a class="side-bar-link" href="<?php echo $artist_url; ?>">
 												<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?>
