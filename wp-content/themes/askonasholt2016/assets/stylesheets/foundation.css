@@ -6667,6 +6667,9 @@ table.hover tbody tr:nth-of-type(even):hover {
 .title-bar {
   display: none; }
 
+.single-format-video .flex-video.widescreen {
+  margin-bottom: 3em; }
+
 p.byline.author {
   display: none; }
 
@@ -15713,7 +15716,10 @@ div#video-audio {
   .artist-video-area .video-description {
     background: #3E3E3E;
     color: #ffffff;
-    padding: 1em; }
+    padding: 1em;
+    word-break: break-word; }
+    .artist-video-area .video-description p {
+      font-size: 1.1rem; }
 
 .video-audio-area {
   max-width: 100vw;

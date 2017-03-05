@@ -15,6 +15,22 @@
 	<div class="entry-content">
 		<?php // the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
 
+	<ul>
+	<?php
+	// we add this, to show all posts in our
+	// Glossary sorted alphabetically
+	if (is_category('news')) 
+	{
+	$args = array( 'posts_per_page' => -1, 'orderby'=> 'title', 'order' => 'ASC' );
+	$glossaryposts = get_posts( $args ); 
+	}
+	foreach( $glossaryposts as $post ) :	setup_postdata($post); 
+	 ?>
+	<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+	<?php endforeach; ?>
+	</ul>
+
+
 	<?php 
 
 		// get VARS

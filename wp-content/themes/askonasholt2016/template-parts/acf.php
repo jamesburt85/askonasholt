@@ -500,8 +500,17 @@ if ($acf_fields['flexible_content']) {
 										
 										<div class="press-details">
 											<span class="text_area_one"><?php echo $press_section['date']; ?></span>
-											<span class="text_area_one"><?php echo $press_section['text_area_one']; ?></span>
-											<span class="text_area_two"><?php echo $press_section['text_area_two']; ?></span>
+											
+											<!-- If there is info in text area 1... -->
+											<?php if( $press_section['text_area_one'] ): ?>
+												<span class="text_area_one"><?php echo $press_section['text_area_one']; ?></span>
+											<?php endif; ?>
+											
+											<!-- If there is info in text area 2... -->
+											<?php if( $press_section['text_area_two'] ): ?>
+												<span class="text_area_two"><?php echo $press_section['text_area_two']; ?></span>
+											<?php endif; ?>
+
 											<br class="hide-for-medium" />
 											<span class="text_area_three"><?php echo $press_section['location']; ?></span>
 										</div>	

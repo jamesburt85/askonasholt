@@ -482,6 +482,11 @@ get_header(); ?>
 
 			</div>
 
+
+			<!-- using ACF Flexible content instead of the_content  -->
+			<?php $acf_fields = get_fields(); ?>
+			<?php include(locate_template('template-parts/acf.php')); ?>
+
 		</div>
 		
 		<footer>

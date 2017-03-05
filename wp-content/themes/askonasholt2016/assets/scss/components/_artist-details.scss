@@ -166,6 +166,10 @@ div#video-audio {
 		background: $bggrey;
 		color: #ffffff;
 		padding: 1em;
+		word-break: break-word;
+		p {
+			font-size: 1.1rem;
+		}
 	}
 }
 

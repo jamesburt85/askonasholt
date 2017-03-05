@@ -10,6 +10,7 @@
 
 ?>
 
+
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns'); ?>>
 
 	<?php //get_template_part( 'template-parts/people-filtering' ); ?>
@@ -113,3 +114,6 @@
 	</footer>
 
 </div>
+
+
+
