@@ -18,7 +18,7 @@
 
 		?>
 
-		<div class="center">
+		<div class="center" id="slick-center-slider">
 			
 			<?php
 		 	// loop through the rows of data

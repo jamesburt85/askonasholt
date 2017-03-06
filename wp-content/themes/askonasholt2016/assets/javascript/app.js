@@ -234,7 +234,7 @@ var map = null;
 //******** SLICK SLIDER *************
 //***********************************
 
-  	$('.center').slick({
+  	$('#slick-center-slider').slick({
   	  centerMode: true,
   	  centerPadding: '60px',
   	  slidesToShow: 1,
@@ -612,7 +612,7 @@ var map = null;
 
 
 
-  	})
+  	});
 
 }(window.jQuery);
 
@@ -623,6 +623,7 @@ var map = null;
     //**********************************************
 
      jQuery(window).load(function() {
+      console.log( 'page has loaded');
        // When the page has loaded
        jQuery("#loading-delay").fadeOut(100);
      });
