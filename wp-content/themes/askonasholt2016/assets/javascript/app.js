@@ -360,6 +360,8 @@ var map = null;
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
       });
 
+
+
     }
 
     QuickLookInit();
@@ -541,18 +543,6 @@ var map = null;
        offset: '80%'
      })
 
-    //**********************************************
-    //    PAGE LOAD DELAY TO AVOID FOUC        *****
-    //**********************************************
-
-     $(window).load(function() {
-       // When the page has loaded
-       $("#loading-delay").fadeOut(100);
-     });
-     // $('#loading-delay').fadeIn(2000, function(){
-     //        this.style.removeAttribute('filter');
-     // });
-     
 
      
       $('.popup-gallery').magnificPopup({
@@ -615,7 +605,7 @@ var map = null;
           $(this).trigger('click');
         }
       });
-      
+
       //-----------------------//
       
 
@@ -625,4 +615,19 @@ var map = null;
   	})
 
 }(window.jQuery);
+
+
+
+    //**********************************************
+    //    PAGE LOAD DELAY TO AVOID FOUC        *****
+    //**********************************************
+
+     jQuery(window).load(function() {
+       // When the page has loaded
+       jQuery("#loading-delay").fadeOut(100);
+     });
+     // $('#loading-delay').fadeIn(2000, function(){
+     //        this.style.removeAttribute('filter');
+     // });
+     
 
