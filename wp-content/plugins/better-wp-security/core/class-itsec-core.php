@@ -25,7 +25,7 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 		private
 			$itsec_files,
 			$itsec_notify,
-			$itsec_sync,
+			$sync_api,
 			$plugin_build,
 			$plugin_file,
 			$plugin_dir,
@@ -74,7 +74,7 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 		public function init( $plugin_file, $plugin_name ) {
 			global $itsec_globals, $itsec_logger, $itsec_lockout;
 
-			$this->plugin_build = 4050; // used to trigger updates
+			$this->plugin_build = 4056; // used to trigger updates
 			$this->plugin_file = $plugin_file;
 			$this->plugin_dir = dirname( $plugin_file ) . '/';
 			$this->current_time = current_time( 'timestamp' );
@@ -156,7 +156,7 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 
 			//Admin bar links
 			if ( ! ITSEC_Modules::get_setting( 'global', 'hide_admin_bar' ) ) {
-				add_action( 'admin_bar_menu', array( $this, 'admin_bar_links' ), 99 );
+				add_action( 'admin_bar_menu', array( $this, 'modify_admin_bar' ), 99 );
 			}
 
 			//See if they're upgrade from Better WP Security
@@ -179,6 +179,9 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 			}
 
 
+			add_action( 'wp_login_failed', array( 'ITSEC_Lib', 'handle_wp_login_failed' ) );
+
+
 			do_action( 'itsec_initialized' );
 		}
 
@@ -192,20 +195,16 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 			return $self->itsec_notify;
 		}
 
-		public static function get_itsec_sync() {
+		public static function get_sync_api() {
 			$self = self::get_instance();
-
-			if ( ! isset( $self->itsec_sync ) ) {
-				require( dirname( __FILE__ ) . '/class-itsec-sync.php' );
-				$self->itsec_sync = new ITSEC_Sync();
-			}
-
-			return $self->itsec_sync;
+			return $self->sync_api;
 		}
 
 		public function register_sync_verbs( $sync_api ) {
-			$itsec_sync = self::get_itsec_sync();
-			$itsec_sync->register_verbs( $sync_api );
+			// For use by the itsec-get-everything verb as it has to run other verbs to get their details.
+			$this->sync_api = $sync_api;
+
+			$sync_api->register( 'itsec-get-everything', 'Ithemes_Sync_Verb_ITSEC_Get_Everything', dirname( __FILE__ ) . '/sync-verbs/itsec-get-everything.php' );
 		}
 
 		public function register_modules() {
@@ -257,8 +256,6 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 
 			static $this_plugin;
 
-			global $itsec_globals;
-
 			if ( empty( $this_plugin ) ) {
 				$this_plugin = str_replace( WP_PLUGIN_DIR . '/', '', self::get_plugin_file() );
 			}
@@ -283,7 +280,6 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 		 */
 		public function add_plugin_meta_links( $meta, $plugin_file ) {
 
-			global $itsec_globals;
 			$plugin_base = str_replace( WP_PLUGIN_DIR . '/', '', self::get_plugin_file() );
 
 			if ( $plugin_base == $plugin_file ) {
@@ -302,16 +298,14 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 		 *
 		 * @return void
 		 */
-		public function admin_bar_links() {
-
-			global $wp_admin_bar, $itsec_globals;
+		public function modify_admin_bar( $wp_admin_bar ) {
 
 			if ( ! ITSEC_Core::current_user_can_manage() ) {
 				return;
 			}
 
 			// Add the Parent link.
-			$wp_admin_bar->add_menu(
+			$wp_admin_bar->add_node(
 				array(
 					'title' => __( 'Security', 'better-wp-security' ),
 					'href'  => self::get_settings_page_url(),
@@ -319,30 +313,30 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 				)
 			);
 
-			$wp_admin_bar->add_menu(
+			$wp_admin_bar->add_node(
 				array(
-					'id'     => 'itsec_admin_bar_settings',
+					'parent' => 'itsec_admin_bar_menu',
 					'title'  => __( 'Settings', 'better-wp-security' ),
 					'href'   => self::get_settings_page_url(),
-					'parent' => 'itsec_admin_bar_menu',
+					'id'     => 'itsec_admin_bar_settings',
 				)
 			);
 
-			$wp_admin_bar->add_menu(
+			$wp_admin_bar->add_node(
 				array(
-					'id'     => 'itsec_admin_bar_security_check',
+					'parent' => 'itsec_admin_bar_menu',
 					'title'  => __( 'Security Check', 'better-wp-security' ),
 					'href'   => self::get_security_check_page_url(),
-					'parent' => 'itsec_admin_bar_menu',
+					'id'     => 'itsec_admin_bar_security_check',
 				)
 			);
 
-			$wp_admin_bar->add_menu(
+			$wp_admin_bar->add_node(
 				array(
-					'id'     => 'itsec_admin_bar_logs',
+					'parent' => 'itsec_admin_bar_menu',
 					'title'  => __( 'Logs', 'better-wp-security' ),
 					'href'   => self::get_logs_page_url(),
-					'parent' => 'itsec_admin_bar_menu',
+					'id'     => 'itsec_admin_bar_logs',
 				)
 			);
 		}
@@ -355,8 +349,6 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 		 * @return void
 		 */
 		public function do_upgrade() {
-
-			global $itsec_globals;
 
 			//require plugin setup information
 			if ( ! class_exists( 'ITSEC_Setup' ) ) {
@@ -475,8 +467,6 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 		 * @return array plugin data
 		 */
 		public function save_plugin_data() {
-
-			global $itsec_globals;
 
 			$save_data = false; //flag to avoid saving data if we don't have to
 

@@ -2,8 +2,8 @@
 Contributors: ithemes, chrisjean, gerroald, mattdanner
 Tags: security, security plugin, malware, hack, secure, block, SSL, admin, htaccess, lockdown, login, protect, protection, anti virus, attack, injection, login security, maintenance, permissions, prevention, authentication, administration, password, brute force, ban, permissions, bots, user agents, xml rpc, security log
 Requires at least: 4.5
-Tested up to: 4.7
-Stable tag: 6.0.0
+Tested up to: 4.7.2
+Stable tag: 6.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -187,6 +187,19 @@ Free support may be available with the help of the community in the <a href="htt
 5. Free malware scan powered by Sucuri SiteCheck.
 
 == Changelog ==
+
+= 6.1.1 =
+ * Bug Fix: Fixed bug that prevented Away Mode from activating on some sites.
+
+= 6.1.0 =
+ * Enhancement: Added logging for failed two-factor, OAuth, and REST API authentications.
+ * Enhancement: Added logging details about the source of login failures and the type of authentication that failed.
+ * Enhancement: Due to improvements in tracking authentication failures, brute force attempts using alternate authentication methods are more reliably found and blocked.
+ * Enhancement: The server's IP is treated as whitelisted and will not be considered for lockouts or bans.
+ * Enhancement: Reduced memory usage when creating a backup.
+ * Enhancement: Changed log entry description of "IP Flagged as bad by iThemes IPCheck" to "IP Flagged by Network Brute Force Protection". This should help clarify the meaning of the log entry.
+ * Enhancement: Improved efficiency of the Network Brute Force Protection feature.
+ * Bug Fix: Fixed bug that prevented Network Brute Force Protection from working properly on some sites.
 
 = 6.0.0 =
  * Bug Fix: Removed "comodo" from the list of user agents blocked by the HackRepair.com blacklist. This ensures that Comodo's AutoSSL feature of cPanel/WHM is able to function.
@@ -1635,5 +1648,5 @@ This release is a complete rewrite from the ground up. Special thanks to Cory Mi
 
 == Upgrade Notice ==
 
-= 6.0.0 =
-Version 6.0.0 adds privacy enhancement for the REST API. It is recommended for all users.
+= 6.1.1 =
+Version 6.1.1 fixes a bug that could prevent Away Mode from functioning. It is recommended for all users.

@@ -45,8 +45,8 @@ final class ITSEC_Lockout {
 		//Register Logger
 		add_filter( 'itsec_logger_modules', array( $this, 'register_logger' ) );
 
-		//Register Sync
-		add_filter( 'itsec_sync_modules', array( $this, 'register_sync' ) );
+		add_action( 'ithemes_sync_register_verbs', array( $this, 'register_sync_verbs' ) );
+		add_filter( 'itsec-filter-itsec-get-everything-verbs', array( $this, 'register_sync_get_everything_verbs' ) );
 
 		add_action( 'itsec-settings-page-init', array( $this, 'init_settings_page' ) );
 		add_action( 'itsec-logs-page-init', array( $this, 'init_settings_page' ) );
@@ -785,30 +785,33 @@ final class ITSEC_Lockout {
 	}
 
 	/**
-	 * Register Lockouts for Sync
+	 * Register verbs for Sync.
 	 *
-	 * @param  array $sync_modules array of logger modules
+	 * @since 3.6.0
 	 *
-	 * @return array                   array of logger modules
+	 * @param Ithemes_Sync_API Sync API object.
 	 */
-	public function register_sync( $sync_modules ) {
+	public function register_sync_verbs( $api ) {
+		$api->register( 'itsec-get-lockouts', 'Ithemes_Sync_Verb_ITSEC_Get_Lockouts', dirname( __FILE__ ) . '/sync-verbs/itsec-get-lockouts.php' );
+		$api->register( 'itsec-release-lockout', 'Ithemes_Sync_Verb_ITSEC_Release_Lockout', dirname( __FILE__ ) . '/sync-verbs/itsec-release-lockout.php' );
+		$api->register( 'itsec-get-temp-whitelist', 'Ithemes_Sync_Verb_ITSEC_Get_Temp_Whitelist', dirname( __FILE__ ) . '/sync-verbs/itsec-get-temp-whitelist.php' );
+		$api->register( 'itsec-set-temp-whitelist', 'Ithemes_Sync_Verb_ITSEC_Set_Temp_Whitelist', dirname( __FILE__ ) . '/sync-verbs/itsec-set-temp-whitelist.php' );
+	}
 
-		$sync_modules['lockout'] = array(
-			'verbs'      => array(
-				'itsec-get-lockouts'       => 'Ithemes_Sync_Verb_ITSEC_Get_Lockouts',
-				'itsec-release-lockout'    => 'Ithemes_Sync_Verb_ITSEC_Release_Lockout',
-				'itsec-get-temp-whitelist' => 'Ithemes_Sync_Verb_ITSEC_Get_Temp_Whitelist',
-				'itsec-set-temp-whitelist' => 'Ithemes_Sync_Verb_ITSEC_Set_Temp_Whitelist',
-			),
-			'everything' => array(
-				'itsec-get-lockouts',
-				'itsec-get-temp-whitelist',
-			),
-			'path'       => dirname( __FILE__ ),
-		);
+	/**
+	 * Filter to add verbs to the response for the itsec-get-everything verb.
+	 *
+	 * @since 3.6.0
+	 *
+	 * @param  array Array of verbs.
+	 *
+	 * @return array Array of verbs.
+	 */
+	public function register_sync_get_everything_verbs( $verbs ) {
+		$verbs['lockout'][] = 'itsec-get-lockouts';
+		$verbs['lockout'][] = 'itsec-get-temp-whitelist';
 
-		return $sync_modules;
-
+		return $verbs;
 	}
 
 	/**

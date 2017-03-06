@@ -578,6 +578,16 @@ body.itsec-modal-open {
 	color: #9c3e3e;
 }
 
+.itsec-notice-message {
+	display: block;
+	clear: both;
+	font-size: 1.125em;
+	margin: 1.5em 0;
+	padding: 1em;
+	border-left: 4px solid #e8e4a7;
+	background: #fff9ec;
+}
+
 /*
  * Security Check
  */

@@ -481,3 +481,14 @@
 2.9.0 - 2016-12-28 - Chris Jean
 	Updated Feature: Updated the "REST API" feature in the WordPress Tweaks section. The feature now has proper support for protecting privacy on your site without preventing the REST API from functioning.
 	Enhancement: Updated Security Check to enforce setting the "REST API" setting to "Restricted Access".
+3.0.0 - 2017-02-07 - Chris Jean
+	Enhancement: Added logging for failed two-factor, OAuth, and REST API authentications.
+	Enhancement: Added logging details about the source of login failures and the type of authentication that failed.
+	Enhancement: Due to improvements in tracking authentication failures, brute force attempts using alternate authentication methods are more reliably found and blocked.
+	Enhancement: The server's IP is treated as whitelisted and will not be considered for lockouts or bans.
+	Enhancement: Reduced memory usage when creating a backup.
+	Enhancement: Changed log entry description of "IP Flagged as bad by iThemes IPCheck" to "IP Flagged by Network Brute Force Protection". This should help clarify the meaning of the log entry.
+	Enhancement: Improved efficiency of the Network Brute Force Protection feature.
+	Bug Fix: Fixed bug that prevented Network Brute Force Protection from working properly on some sites.
+3.0.1 - 2017-02-09 - Chris Jean
+	Bug Fix: Fixed bug that prevented Away Mode from activating on some sites.
