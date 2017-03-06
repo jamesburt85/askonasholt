@@ -12,6 +12,12 @@ get_header(); ?>
 		$pastSeason 		= get_field('past_season', 'option');
 		$pastSeasonID 		= $pastSeason->term_id;
 
+		# Allow tour-year GET var to be set in URL
+		if ( isset( $_GET['tour-year']) && !empty( $_GET['tour-year'])) {
+			$pastSeason = get_term_by( 'slug', sanitize_text_field($_GET['tour-year']), 'tour-season');
+			$pastSeasonID 		= $pastSeason->term_id;
+		}
+
 		//echo $pastSeasonID;
 
 		$args = array(
@@ -31,6 +37,7 @@ get_header(); ?>
 
 
 <!-- <h1>PAST TOURS go here</h1> -->
+
 
 <div id="archive" role="main">
 

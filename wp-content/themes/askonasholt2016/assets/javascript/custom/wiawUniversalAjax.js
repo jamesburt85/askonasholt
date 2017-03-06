@@ -46,6 +46,8 @@
 
 			// Show the ajax loader
 			$(".ajax-spinner").show();
+			// hide the next button
+			$(".archive__load-more").hide();
 
 			// make sure page_num is being read as an INT
 			var page_num = parseInt( page_num);
@@ -84,6 +86,9 @@
 						// Insert the HTML
 						$("#ajax-before-me").before( html);
 
+						// show the next button
+						$(".archive__load-more").show();
+
 						QuickLookInit(); // added this so that the quicklook works after load more. See app.js function called QuickLookInit
 
 					// No results
@@ -91,9 +96,6 @@
 
 						// say no posts
 						$("#ajax-before-me").before( '<div class="alert alert-warning"><p>No further results.</p></div>');
-
-						// hide the next button
-						$(".archive__load-more").hide();
 
 					}
 

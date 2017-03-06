@@ -24,7 +24,14 @@
 		        'posts_per_page' => 4,
 		        'meta_key'      => 'date',
 		        'orderby'     => 'meta_value',
-		        'order'       => 'ASC'
+		        'order'       => 'ASC',
+		        'meta_query'	=> array(
+		        	array(
+		        		'key' => 'date',
+		        		'value' => date('Ymd'),
+		        		'compare' => '>='
+		        	)
+		        )
 		      );
 
 			// The Query

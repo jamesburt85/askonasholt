@@ -594,6 +594,29 @@ var map = null;
       //   element: $('.infinite-container')[0]
       // })
 
+
+
+
+
+
+
+
+
+
+
+
+
+      //
+      // Andy - jQuery.inView
+      //
+
+      $('.archive__load-more a').on('inview', function(event, isInView) {
+        if (isInView) {
+          $(this).trigger('click');
+        }
+      });
+      
+      //-----------------------//
       
 
 
