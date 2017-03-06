@@ -34,10 +34,10 @@ var PATHS = {
     'assets/components/fontawesome/scss',
   ],
   javascript: [
-    'assets/components/what-input/what-input.js',
     'assets/components/foundation-sites/js/foundation.core.js',
     'assets/components/foundation-sites/js/foundation.util.*.js',
 
+    'assets/components/what-input/what-input.js',
     // Paths to individual JS components defined below
     'assets/components/foundation-sites/js/foundation.abide.js',
     'assets/components/foundation-sites/js/foundation.accordion.js',
