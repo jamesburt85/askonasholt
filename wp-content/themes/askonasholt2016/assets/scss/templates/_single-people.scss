@@ -19,6 +19,7 @@ body.single-people{
   .artist-header.people.container {
     height: 28em;
     @include full-bg;
+    background: $header-beige;
     position: relative;
     border-bottom: 1px solid #cccccc;
     .artist-details-area {

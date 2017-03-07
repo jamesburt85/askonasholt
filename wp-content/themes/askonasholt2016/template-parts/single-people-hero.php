@@ -2,7 +2,7 @@
 
 
 
-<div class="artist-header people container" style="background-image: url('<?php //echo $thumb['0'];?><?php echo get_template_directory_uri(); ?>/assets/images/light-pattern.png')">
+<div class="artist-header people container">
 	<div class="row">
 		<div class="artist-details-area">
 

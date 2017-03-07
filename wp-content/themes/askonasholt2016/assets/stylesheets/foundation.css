@@ -18203,6 +18203,7 @@ body.single-people .artist-header.people.container {
   border-bottom: 0;
   -webkit-background-size: cover;
   background-size: cover;
+  background: #FBFAF6;
   position: relative;
   border-bottom: 1px solid #cccccc; }
   body.single-people .artist-header.people.container .artist-details-area {
