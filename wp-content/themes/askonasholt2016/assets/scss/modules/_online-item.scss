@@ -1,4 +1,13 @@
 //individual online posts on archive
+.post-type-archive-events {
+	.bottom-left {
+		.media-type-indicator {
+			i {
+				margin-bottom: 1px;
+			}
+		}
+	}
+}
 
 .online-item {
 	//height: 450px; //temp
@@ -25,8 +34,9 @@
 			i {
 				color: white;
 				background: rgba(186, 12, 47, 0.8);
-				padding: 0.5em 0.5em 0.4em;
-				margin-bottom: 1px;
+				padding: 0.5em 0.5em 0.3em;
+				//margin-bottom: 1px;
+				font-size: 1.5em;
 			}
 		}
 		.online-item-container {

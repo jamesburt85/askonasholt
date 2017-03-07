@@ -11397,6 +11397,9 @@ div#image-gallery div.gallery-image {
   display: -ms-flexbox;
   display: flex; }
 
+.post-type-archive-events .bottom-left .media-type-indicator i {
+  margin-bottom: 1px; }
+
 .online-item {
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -11414,8 +11417,8 @@ div#image-gallery div.gallery-image {
     .online-item .bottom-left .media-type-indicator i {
       color: white;
       background: rgba(186, 12, 47, 0.8);
-      padding: 0.5em 0.5em 0.4em;
-      margin-bottom: 1px; }
+      padding: 0.5em 0.5em 0.3em;
+      font-size: 1.5em; }
     .online-item .bottom-left .online-item-container {
       padding: 1em;
       background: rgba(186, 12, 47, 0.8);
