@@ -24,7 +24,7 @@ get_header(); ?>
             <?php if ( have_rows('vacancy_accordion') ); { ?>
             
               <h4 class="section-header">Vacancies</h4>
-              <div class="press-row vacancies">
+              <div class="press-row vacancies" id="bottom">
                 <ul class="accordion" data-accordion data-allow-all-closed="true">
             <?php while ( have_rows('vacancy_accordion') ) { the_row();
 
