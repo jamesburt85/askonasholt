@@ -10200,11 +10200,10 @@ body.blog .archive__load-more a:hover {
     margin-right: 10px; }
 
 @media screen and (min-width: 40em) {
-  body.page-template-home .magazine-item, body.single-artists .magazine-item, body.page-template-home .video-description {
-    vertical-align: top;
-    display: inline-block;
-    width: 100%;
-    float: left; } }
+  body.page-template-home .magazine-item .video-title, body.single-artists .magazine-item .video-title, body.page-template-home .video-description .video-title {
+    vertical-align: top; }
+  body.page-template-home .magazine-item .magazine-date, body.single-artists .magazine-item .magazine-date, body.page-template-home .video-description .magazine-date {
+    float: right; } }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -15758,7 +15757,8 @@ div#video-audio {
   display: block; }
 
 div#video-audio .artist-video-area p {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  clear: both; }
 
 .post-type-archive-artists article, .post-type-archive-clients article, .post-type-archive-people article {
   position: relative;
@@ -15797,6 +15797,8 @@ div.row.free-text {
   letter-spacing: 1px; }
   .video-meta span.video-title {
     font-weight: bold; }
+  .video-meta .magazine-date {
+    float: right; }
 
 div.people-link-item {
   position: relative; }

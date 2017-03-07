@@ -222,6 +222,7 @@ div#video-audio {
 	.artist-video-area {
 		p {
 		    margin-bottom: 0;
+		    clear: both;
 		}
 	}
 }
@@ -267,6 +268,9 @@ div.row.free-text {
 	letter-spacing: 1px;
 	span.video-title {
 		font-weight: bold;
+	}
+	.magazine-date {
+		float: right;
 	}
 }
 

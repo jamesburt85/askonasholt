@@ -25,7 +25,9 @@ $video = $acf_fields['flexible_content'][0]['video'];
 	  <span class="video-title">
 	  	<?php the_title(); ?>
 	  </span>
-	  <?php the_date('d M Y'); ?>
+	  <span class="magazine-date">
+	  	<?php echo get_the_date('j M Y'); ?>
+	  </span>
 	</div>
   <span class="magazine-item-copy"><?php the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
 </div>

@@ -173,12 +173,17 @@ body.blog {
 
 @include breakpoint(medium) {
 	body.page-template-home .magazine-item, body.single-artists .magazine-item, body.page-template-home .video-description {
-		//height: 450px;
-		vertical-align:top;
-	    display: inline-block;
-	    width:100%;
-	    //height:auto;
-	    float: left;
+		.video-title {
+			//height: 450px;
+			vertical-align:top;
+		    //display: inline-block;
+		    //width:100%;
+		    //height:auto;
+		    //float: left;
+		}
+	    .magazine-date {
+	    	float: right;
+	    }
 	}
 	// .magazine-item {
 	// 	height: 450px;

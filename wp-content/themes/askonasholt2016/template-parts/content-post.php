@@ -118,7 +118,7 @@
 						<?php echo $css_slug; ?>&nbsp;		
 					</span>
 					<span class="magazine-date">
-						<?php the_date('d M Y'); ?>
+						<?php echo get_the_date('j M Y'); ?>
 					</span>
 				</span>
 
