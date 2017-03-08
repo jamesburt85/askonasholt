@@ -7,35 +7,19 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
+global $event_args;
 
+// run query
+$the_query = events_do_query( $event_args );
+
+ 
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry small-12 columns events-listing'); ?>>
-	<header>
+<div  <?php post_class('blogpost-entry small-12 columns events-listing'); ?>>
 
-	</header>
 	<div class="entry-content">
 		
 		  <?php 
-
-		    // Query Args
-		      $args = array(
-		        'post_type'   => 'events',
-		        'posts_per_page' => 4,
-		        'meta_key'      => 'date',
-		        'orderby'     => 'meta_value',
-		        'order'       => 'ASC',
-		        'meta_query'	=> array(
-		        	array(
-		        		'key' => 'date',
-		        		'value' => date('Ymd'),
-		        		'compare' => '>='
-		        	)
-		        )
-		      );
-
-			// The Query
-			$the_query = new WP_Query( $args );
 
 		    // The Loop
 		    if ( $the_query->have_posts() ) { ?>
@@ -44,12 +28,10 @@
 		    	  <div class="small-12 columns">
 		    	    <ul class="accordion" data-accordion data-allow-all-closed="true">
 
-			<?php //echo '<ul>';
-			while ( $the_query->have_posts() ) {
-			$the_query->the_post(); ?>
-		<!--         //echo '<li>' . get_the_title() . '</li>';
+			<?php 
+                    while ( $the_query->have_posts() ) {
+                    $the_query->the_post(); ?>
 
-		        //get_template_part( 'template-parts/.....' ); -->
 		            <?php 
 		              $time = get_field('time');
 		              $date = get_field('date');
@@ -65,7 +47,7 @@
 		              if(!$more_info){ $more_info = 'More Info Coming Soon...'; }
 		            ?>
 
-		                <li class="accordion-item animated waypoint is-hidden-onload" data-accordion-item>
+		                <li class="accordion-item animated waypoint " data-accordion-item>
 		                <hr />
 		                  <a href="#" class="accordion-title"><?php //the_title(); ?>
 		                    
@@ -92,38 +74,6 @@
 		                </li>
 		             
 
-<!-- 		          <div class="row hide-for-large">
-		            <div class="small-12 columns">
-
-		              <ul class="accordion" data-accordion data-allow-all-closed="true">
-		                <li class="accordion-item" data-accordion-item>
-		                <hr />
-		                  <a href="#" class="accordion-title"><?php //the_title(); ?>
-
-		                      <div class="press-details">
-		                        <?php //get_template_part( 'template-parts/event-related-artist' ); ?>
-
-		                        <span class="event-detail"><?php echo $time; ?></span>
-		                        <span class="event-detail"><?php echo $date; ?></span>
-		                        <br class="hide-for-medium" />
-		                        <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
-		                        <span class="more-info">
-		                            <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-		                                <defs></defs>
-		                                <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
-		                            </svg>
-		                        </span>
-		                      </div>
-		                    </a>
-
-		                    <div class="accordion-content" data-tab-content>
-		                      <?php echo $more_info; ?>
-		                    </div>
-		                  </li>
-		                </ul>
-
-		              </div>
-		            </div> -->
 
 		       <?php } ?>
 
@@ -131,18 +81,16 @@
 
 		         </div>
 		       </div>
-		      <? //echo '</ul>';
+		      <?php 
 		      /* Restore original Post Data */
 		      wp_reset_postdata();
 		    } else {
 		      // no posts found
+
 		    }
 		  ?>
 	
 	</div>
 	
-	<footer>
-		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
-	</footer>
 	
 </div>

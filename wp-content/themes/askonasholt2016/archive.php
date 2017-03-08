@@ -87,55 +87,9 @@ get_header(); ?>
 
 	<article class="main-content">
 
-	<?php if ( is_post_type_archive('events') ) {
 
-		get_template_part( 'template-parts/events-hero'); ?>
-		
 
-		<h3 class="section-header center">Browse Upcoming Events</h3>
-
-		<?php get_template_part( 'template-parts/content-events-home'); ?>
-
-		<hr/>
-		
-		<?php
-		// adding in the live events block, if we're on the events archive.
-		get_template_part( 'template-parts/live-events-listing' ); ?>
-
-<!-- 		<div class="events-filtering-bar">
-			Upcoming events:
-			<button class="button" type="#">This Week</button>
-			<button class="button" type="#">Cal</button>
-			In:
-			<input type="#">City/Venue</input>
-			<button class="button" type="#">MAP</button>
-			<button class="button" type="#">LIST</button>
-		</div> -->
-		
-<!-- 		<div id="events-map" class="events-map acf-map row">
-
-			<?php 
-
-				if ( have_posts() ) : ?>
-
-				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-					<?php //  sthe_title(); ?>
-					<?php get_template_part( 'template-parts/content-events-location'); ?>
-				<?php endwhile; ?>
-
-				<?php else : ?>
-					<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-				<?php endif; // End have_posts() check.
-
-			?>
-
-		</div> -->
-
-	<?php }
-
-	if ( have_posts() ) : ?>
+	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
