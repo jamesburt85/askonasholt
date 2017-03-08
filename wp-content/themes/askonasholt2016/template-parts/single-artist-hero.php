@@ -125,55 +125,52 @@
 </div> <!-- Container END -->
 
 	
-	<div id="sticky-anchor"></div>
+<div id="sticky-anchor"></div>
+
+<div class="single-page-nav--container">
+	<div class="row">
+	<ul class="single-page-nav show-for-medium" id="sticky">
 	
-	<div class="single-page-nav--container">
-		<div class="row">
-		<ul class="single-page-nav show-for-medium" id="sticky">
+	<li class="nav-title">
+		<?php the_title(); ?>
+	</li>
+
+	<li class="single-page-nav_link active">
+		<a data-scroll="" data-events="scroll" href="#introduction">Introduction</a>
+	</li>
+
+	<li class="single-page-nav_link">
+		<a data-scroll href="#video-audio">Video &amp; Audio</a>
+	</li>
+
+	<li class="single-page-nav_link">
+		<a data-scroll="" data-events="scroll" href="#schedule">Schedule</a>
+	</li>
+
 		
-		<li class="nav-title">
-			<?php the_title(); ?>
-		</li>
+	<?php if( get_field('email_or_page_link') == 'Email' ): ?>
+		<button class="enquiry-button show-for-medium">
+			<a href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">
+				Make enquiry
+			</a>
+		</button>
+	<?php endif; ?>
 
-		<li class="single-page-nav_link active">
-			<a data-scroll="" data-events="scroll" href="#introduction">Introduction</a>
-		</li>
+	<?php if( get_field('email_or_page_link') == 'Link' ): ?>
 
-		<li class="single-page-nav_link">
-			<a data-scroll href="#video-audio">Video &amp; Audio</a>
-		</li>
-
-		<li class="single-page-nav_link">
-			<a data-scroll="" data-events="scroll" href="#schedule">Schedule</a>
-		</li>
-
-			
-		<?php if( get_field('email_or_page_link') == 'Email' ): ?>
-			<button class="enquiry-button show-for-medium">
-				<a href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">
-					Make enquiry
-				</a>
-			</button>
-		<?php endif; ?>
-
-		<?php if( get_field('email_or_page_link') == 'Link' ): ?>
-
-			<?php $staff_contact = get_field('staff_contact'); ?>
-			<button class="enquiry-button show-for-medium">
-				<a href="<?php echo $staff_contact ?>">
-					Make enquiry
-				</a>
-			</button>
-		<?php endif; ?>
+		<?php $staff_contact = get_field('staff_contact'); ?>
+		<button class="enquiry-button show-for-medium">
+			<a href="<?php echo $staff_contact ?>">
+				Make enquiry
+			</a>
+		</button>
+	<?php endif; ?>
 
 
 
-		<!-- getting ACF Flexible content navigation  -->
-		<?php $acf_fields = get_fields(); ?>
-		<?php include(locate_template('template-parts/acf-navigation.php')); ?>
-			</ul>
-		</div>
-	</div>	
-
-
-
+	<!-- getting ACF Flexible content navigation  -->
+	<?php $acf_fields = get_fields(); ?>
+	<?php include(locate_template('template-parts/acf-navigation.php')); ?>
+		</ul>
+	</div>
+</div>	
