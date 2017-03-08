@@ -114,10 +114,10 @@
 								//echo $category_parent;
 
 						?>
-						
+
 						<!-- If post is online performance -->
 						<?php if( get_post_type() == 'online' ) { ?>
-						    Performances
+						    Performance
 						<?php } ?>
 
 						<!-- other posts -->
