@@ -126,8 +126,10 @@
 
 	
 	<div id="sticky-anchor"></div>
-
-	<ul class="single-page-nav show-for-medium" id="sticky">
+	
+	<div class="single-page-nav--container">
+		<div class="row">
+		<ul class="single-page-nav show-for-medium" id="sticky">
 		
 		<li class="nav-title">
 			<?php the_title(); ?>
@@ -169,4 +171,9 @@
 		<!-- getting ACF Flexible content navigation  -->
 		<?php $acf_fields = get_fields(); ?>
 		<?php include(locate_template('template-parts/acf-navigation.php')); ?>
-	</ul>
+			</ul>
+		</div>
+	</div>	
+
+
+

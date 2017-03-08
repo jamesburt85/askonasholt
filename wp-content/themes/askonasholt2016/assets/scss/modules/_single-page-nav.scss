@@ -1,30 +1,35 @@
 //Red nav bar within tours
 
-ul.single-page-nav {
-    list-style-type: none;
-    display: flex;
-    background: $white;
-    margin-left: 0;
-    height: 60px;
-    position: relative;
+.single-page-nav--container {
+    
     border-bottom: 1px solid #cccccc;
     border-top: 1px solid #cccccc;
-    
-    li {
-    	padding: 0 $sitepadding;
-    	color: #808080;
-        line-height: 60px;
 
-    	a {
-    		color: #808080;
-    		font-weight: bold;
-    	}
+    ul.single-page-nav {
+        list-style-type: none;
+        display: flex;
+        background: $white;
+        margin-left: 0;
+        margin-bottom: 0;
+        height: 60px;
+        position: relative;
+
+        li {
+        	padding: 0 $sitepadding-small;
+        	color: #808080;
+            line-height: 60px;
+
+        	a {
+        		color: #808080;
+        		font-weight: bold;
+        	}
+        }
+
+        li.single-page-nav_link.active a {
+            color: $red !important;
+        }
+
     }
-
-    li.single-page-nav_link.active a {
-        color: $red !important;
-    }
-
 }
 
 //styles for sticking nav after scroll
