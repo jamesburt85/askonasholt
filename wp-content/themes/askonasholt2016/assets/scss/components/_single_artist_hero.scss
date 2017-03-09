@@ -140,3 +140,18 @@ svg.artist-circle {
 path.crescent {
     fill: #FBFAF6;
 }
+
+
+.image-curve {
+	// /@include center(y);
+	position: absolute;
+    top: 34%;
+    /* top: 0; */
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    height: 100%;
+    left: -243px;
+    /* right: 0; */
+    width: 60%;
+    transform: translateY(-50%);
+}
