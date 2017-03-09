@@ -47,13 +47,13 @@ $the_query = events_do_query( $event_args );
 		              if(!$more_info){ $more_info = 'More Info Coming Soon...'; }
 		            ?>
 
-		                <li class="accordion-item animated waypoint " data-accordion-item>
+		                <li class="accordion-item  waypoint " data-accordion-item>
 		                <hr />
 		                  <a href="#" class="accordion-title"><?php //the_title(); ?>
 		                    
 		                    <div class="event-listing-details simple-listing">
-		                      <span class="event-detail"><?php echo $time; ?></span>
-		                      <span class="event-detail"><?php echo $date; ?></span>
+                              <span class="event-detail"><?php echo $date; ?></span>
+		                      <span class="event-detail"><?php echo $time; ?></span>                  
 		                      <div class="show-for-large">
 		                      	<?php get_template_part( 'template-parts/event-related-artist' ); ?>
 		                      </div>

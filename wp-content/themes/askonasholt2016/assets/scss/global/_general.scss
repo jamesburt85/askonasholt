@@ -229,3 +229,27 @@ span.bold {
   
 @font-face {font-family: 'GeometricSlab703BT-Light';src: url('webfonts/328E32_0_0.eot');src: url('webfonts/328E32_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/328E32_0_0.woff2') format('woff2'),url('webfonts/328E32_0_0.woff') format('woff'),url('webfonts/328E32_0_0.ttf') format('truetype');}
 
+@media #{$medium-up} {
+  .valign-middle {
+      display: table;
+      width:100%;
+      > .columns {
+          display: table-cell;
+          vertical-align: middle;
+      }
+
+      > .columns, > [class*="column"] + [class*="column"]:last-child {
+          float: none;
+      }
+  }  
+}
+@media #{$small-only} {
+    .small-margin-top{
+        margin-top:10px;
+    }
+}
+@media #{$medium-only} {
+    .medium-margin-top{
+        margin-top:10px;
+    }
+}

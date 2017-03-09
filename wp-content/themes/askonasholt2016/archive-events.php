@@ -38,30 +38,68 @@ get_header(); ?>
         
 		<h3 class="section-header center">Browse Upcoming Events</h3>
         
-		<div class="events-filtering-bar">
+		<div class="events-filtering-bar" >
+        
+            
         
             <form id="events-form" action="#" method="POST" >
             
                 <input type="hidden" name="page_number" value="<?php echo ($event_args['page_number']+1);?>">
-            
-                Upcoming events:
-                <select name="date_type">
-                    <option value="today">Today</option>
-                    <option value="this_week">This Week</option>
-                    <option value="this_month">This Month</option>
-                    <option value="date">Specefic Day...</option>
-                </select>
                 
-                <input name="date" value="<?php echo $event_args['date'];?>">
-                
-                <i class="fa fa-calandar"></i>
-                
-                In:
-                <input type="#" name="location" placeholder="(enter city or venue)" >
-                
-                <button type="submit">Filter <i class="fa fa-spinner fa-spin" id="events-results-spinner"  style="display:none;"></i></button>
+                <div class="row" >
+                    
+                    <div class="large-6 columns" >
+                        
+                       <div class="row valign-middle">
+                       
+                            <div class="medium-4 columns" >
+                                <span class="inline-label">Upcoming events:</span>
+                            </div>
+                            
+                            <div class="medium-6 small-9 columns" >
+                                <select id="date_type" name="date_type">
+                                    <option value="today">Today</option>
+                                    <option value="this_week">This Week</option>
+                                    <option value="this_month">This Month</option>
+                                    <option value="date" id="date_display" >Specefic Day...</option>
+                                </select>
+                            </div>
+                            
+                            <div class="medium-2 small-3 columns"   >	
+                                <span class="cal-datepicker" id="datepicker" ><i class="fa fa-calendar"></i></span>
+                                <input id="date" name="date" value="<?php echo $event_args['date'];?>" readonly style="display:none;" >
+                            </div>                              
+                            
+                        </div>
+                    
+                    </div>
+                    
+                    <div class="large-6 columns small-margin-top medium-margin-top" >
+                        
+                        <div class="row valign-middle" >
+                        
+                            <div class="medium-4 columns" >
+                                <span class="inline-label">Location:</span>
+                            </div>
+                            
+                            <div class="medium-6 columns" >
+                                <input type="text" name="location" placeholder="(enter city or venue)" >
+                            </div>
+                            
+                            <div class="medium-2 columns"   >
+                                <button class="filter-button" type="submit">Filter <i class="fa fa-spinner fa-spin" id="events-results-spinner"  style="display:none;"></i></button>
+                            </div>
+                            
+                        </div>
+                        
+                  </div>
+
+                   
+                </div>
                 
             </form>
+        
+            
             
 		</div>
         
@@ -72,6 +110,7 @@ get_header(); ?>
 		<hr/>        
 
         <div class="text-center">
+            <div id="no-events-found" style="display:none;">No events found. Please try a different search.</div>
             <button class="button" id="load-more-events" >Load More <i id="load-more-events-spinner" class="fa fa-spinner fa-spin" style="display:none;"></i></button>
         </div>
 

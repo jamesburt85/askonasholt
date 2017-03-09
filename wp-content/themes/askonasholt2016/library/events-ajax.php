@@ -72,6 +72,16 @@ function events_do_query( $event_args ){
             $event_args['start_date'] = date('Y-m-01');
             $event_args['end_date'] = date('Y-m-t');           
             
+        } elseif ( $event_args['date_type'] == 'date' ){
+            
+            $event_args['start_date'] = $event_args['date'];
+            $event_args['end_date'] = $event_args['date'];
+            
+        } else {
+            
+            $event_args['start_date'] = date('Y-m-d');
+            $event_args['end_date'] = date('Y-m-d');   
+            
         }
         
         $args['meta_query'][] =
