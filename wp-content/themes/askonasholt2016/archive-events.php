@@ -44,6 +44,7 @@ get_header(); ?>
         
             <form id="events-form" action="#" method="POST" >
             
+                <input type="hidden" name="per_page" value="<?php echo $event_args['per_page'];?>">            
                 <input type="hidden" name="page_number" value="<?php echo ($event_args['page_number']+1);?>">
                 
                 <div class="row" >
@@ -83,7 +84,7 @@ get_header(); ?>
                             </div>
                             
                             <div class="medium-6 columns" >
-                                <input type="text" name="location" placeholder="(enter city or venue)" >
+                                <input type="text" name="location" placeholder="(enter city or venue)"  value="<?php echo $event_args['location'];?>" >
                             </div>
                             
                             <div class="medium-2 columns"   >
@@ -104,14 +105,17 @@ get_header(); ?>
 		</div>
         
         <div id="events-results">
-            <?php get_template_part( 'template-parts/content-events-home');  ?>
+            <?php 
+                $number_of_results = 0; 
+                get_template_part( 'template-parts/content-events-home');
+            ?>
         </div>
         
 		<hr/>        
 
         <div class="text-center">
             <div id="no-events-found" style="display:none;">No events found. Please try a different search.</div>
-            <button class="button" id="load-more-events" >Load More <i id="load-more-events-spinner" class="fa fa-spinner fa-spin" style="display:none;"></i></button>
+            <button class="button" id="load-more-events" <?php echo ( $event_args['per_page'] == $number_of_results ) ? '' : 'style="display:none;"'; ?> >Load More <i id="load-more-events-spinner" class="fa fa-spinner fa-spin" style="display:none;"></i></button>
         </div>
 
 

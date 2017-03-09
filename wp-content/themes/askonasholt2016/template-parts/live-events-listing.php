@@ -1,7 +1,7 @@
 <h2><a href="<?php //the_permalink(); ?>"><?php //the_title(); ?></a></h2>
 <?php //foundationpress_entry_meta(); ?>
 <div class="row online-performance-header">
-	<h3 class="section-header">Online Performances</h3>
+	<h3 class="section-header">Live & On Demand</h3>
 	<!-- <p>In partnership with ......</p> -->
 </div>
 

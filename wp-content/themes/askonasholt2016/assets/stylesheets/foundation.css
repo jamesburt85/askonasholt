@@ -17393,7 +17393,10 @@ path.crescent {
   margin: 25px 0;
   text-align: center; }
   .events-filtering-bar .inline-label {
-    float: left; }
+    float: right; }
+  @media screen and (max-width: 39.9375em) {
+    .events-filtering-bar .inline-label {
+      float: left; } }
   .events-filtering-bar #date_type, .events-filtering-bar input {
     margin: 0px; }
   .events-filtering-bar .cal-datepicker {

@@ -63,8 +63,14 @@
                 if ( response.indexOf("accordion") >= 0 ){
                     // has results
                     
-                    $('#load-more-events').show();
-                
+                    // count how many rows and if 20 or more then show load more
+                    var number_of_rows = $( $.parseHTML( response ) ).find('li').length;
+                    if( number_of_rows == $('input[name="per_page"]').val() ){
+                        $('#load-more-events').show();
+                    } else {
+                        $('#load-more-events').hide();
+                    }
+                    
                     //  page number
                     $('input[name="page_number"]').val( 2 ); 
                     
@@ -105,7 +111,13 @@
                 if ( response.indexOf("accordion") >= 0 ){
                     // has results
                     
-                    $('#load-more-events').show();
+                    // count how many rows and if 20 or more then show load more
+                    var number_of_rows = $( $.parseHTML( response ) ).find('li').length;
+                    if( number_of_rows == $('input[name="per_page"]').val() ){
+                        $('#load-more-events').show();
+                    } else {
+                        $('#load-more-events').hide();
+                    }
                                       
                     // increase page number
                     page_number = parseInt( $('input[name="page_number"]').val() );

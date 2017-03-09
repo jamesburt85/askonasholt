@@ -6,9 +6,13 @@
     
     
     .inline-label{
-        float:left;
+        float:right;
     }
-    
+    @media #{$small-only} {
+        .inline-label{
+            float:left;
+        }    
+    }
     
     
     #date_type, input{
