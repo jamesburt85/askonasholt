@@ -15,46 +15,46 @@
 	<div class="entry-content">
 		<?php // the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
 
-	<ul>
-	<?php
-	// we add this, to show all posts in our
-	// Glossary sorted alphabetically
-	if (is_category('news')) 
-	{
-	$args = array( 'posts_per_page' => -1, 'orderby'=> 'title', 'order' => 'ASC' );
-	$glossaryposts = get_posts( $args ); 
-	}
-	foreach( $glossaryposts as $post ) :	setup_postdata($post); 
-	 ?>
-	<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-	<?php endforeach; ?>
-	</ul>
+		<ul>
+			<?php
+			// we add this, to show all posts in our
+			// Glossary sorted alphabetically
+			if (is_category('news')) 
+			{
+			$args = array( 'posts_per_page' => -1, 'orderby'=> 'title', 'order' => 'ASC' );
+			$glossaryposts = get_posts( $args ); 
+			}
+			foreach( $glossaryposts as $post ) :	setup_postdata($post); 
+			 ?>
+			<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+			<?php endforeach; ?>
+		</ul>
 
 
-	<?php 
+		<?php 
 
-		// get VARS
-		$first_name = get_field('first_name');
-		$last_name = get_field('last_name');
-		$photo_credit = get_field('photo_credit');
-		$artist_image = get_field('artist_image');
-		$main_category = get_field('main_category');
-		$name = get_field('name');
-		$bio = get_field('bio');
-		$publicity_pack = get_field('publicity_pack');
-		$manager_email = get_field('manager_email');
+			// get VARS
+			$first_name = get_field('first_name');
+			$last_name = get_field('last_name');
+			$photo_credit = get_field('photo_credit');
+			$artist_image = get_field('artist_image');
+			$main_category = get_field('main_category');
+			$name = get_field('name');
+			$bio = get_field('bio');
+			$publicity_pack = get_field('publicity_pack');
+			$manager_email = get_field('manager_email');
 
-		// if no image, use default
-		if (!$artist_photo){
-			$artist_photo = get_template_directory_uri().'/assets/images/default.jpg';
-		}
+			// if no image, use default
+			if (!$artist_photo){
+				$artist_photo = get_template_directory_uri().'/assets/images/default.jpg';
+			}
 
-		// temp. for testing. If no name, then use title.
-		if (!$name){
-			$name = get_the_title();
-		}
+			// temp. for testing. If no name, then use title.
+			if (!$name){
+				$name = get_the_title();
+			}
 
-	?>
+		?>
 
 
 		<!-- <div class="row"> -->
@@ -112,7 +112,7 @@
 									?>
 								</span>
 
-							<?php ?> ?>
+						<!-- 	<?php ?> ?> -->
 
 						<?php endif; ?>
 						
