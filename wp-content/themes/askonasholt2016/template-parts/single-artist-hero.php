@@ -25,7 +25,7 @@
 			
 			<!-- <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/pattern.svg"> -->
 		
-			<div class="image-curve" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/pattern.svg')"></div>	
+			<div class="image-curve" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/pattern-3.svg')"></div>	
 
 		</div>
 
