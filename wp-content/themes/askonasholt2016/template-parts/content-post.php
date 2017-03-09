@@ -136,8 +136,8 @@
 				</p>
 				<span class="magazine-item-copy"><?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
 				
-				<div class="read-more">Read &nbsp;
-				</div>
+<!-- 				<div class="read-more">Read &nbsp;
+				</div> -->
 			</a>
 		</div>
 	</div>

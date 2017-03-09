@@ -632,13 +632,14 @@ var map = null;
 
 
 
-      //
-      // Andy - jQuery.inView
-      //
+      //****************************
+      // Andy - jQuery.inView ******
+      //****************************
 
       $('.archive__load-more a').on('inview', function(event, isInView) {
         if (isInView) {
           $(this).trigger('click');
+          $(".is-hidden-onload").fadeTo(0, 1);
         }
       });
 

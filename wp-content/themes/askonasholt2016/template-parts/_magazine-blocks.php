@@ -31,7 +31,6 @@
 								    $css_slug = $category[0]->slug;
 								}
 								//echo $category_parent;
-
 						?>
 
 					<?php echo $css_slug; ?></span> &nbsp;
@@ -45,7 +44,7 @@
 				</p>
 				<span class="magazine-item-copy"><?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
 				
-				<div class="read-more">Read &nbsp;
+<!-- 				<div class="read-more">Read &nbsp;
 				
 					<span class="eye">
 						<svg width="18px" height="12px" viewBox="-1 -1 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -57,7 +56,7 @@
 						</svg>
 					</span>
 
-				</div>
+				</div> -->
 			</a>
 		</div>
 	</div>

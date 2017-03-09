@@ -87,8 +87,6 @@ get_header(); ?>
 
 	<article class="main-content">
 
-
-
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
