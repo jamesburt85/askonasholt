@@ -7,7 +7,7 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-global $event_args;
+global $event_args, $number_of_results;
 
 // run query
 $the_query = events_do_query( $event_args );
@@ -28,7 +28,7 @@ $the_query = events_do_query( $event_args );
 		    	  <div class="small-12 columns">
 		    	    <ul class="accordion" data-accordion data-allow-all-closed="true">
 
-			<?php 
+			<?php   $number_of_results = 0;
                     while ( $the_query->have_posts() ) {
                     $the_query->the_post(); ?>
 
@@ -75,7 +75,7 @@ $the_query = events_do_query( $event_args );
 		             
 
 
-		       <?php } ?>
+		       <?php $number_of_results++; } ?>
 
 		           </ul>
 
