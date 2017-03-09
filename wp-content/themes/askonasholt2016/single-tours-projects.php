@@ -14,29 +14,33 @@ get_header(); ?>
 <?php get_template_part( 'template-parts/single-tour-project-hero' ); ?>
 	
 	<div id="sticky-anchor"></div>
-	<ul class="single-page-nav show-for-medium" id="sticky">
-		
-		<li class="nav-title">
-			<?php the_title(); ?>
-		</li>
+	<div class="single-page-nav--container">
+		<div class="row">
+			<ul class="single-page-nav show-for-medium" id="sticky">
+				
+				<li class="nav-title">
+					<?php the_title(); ?>
+				</li>
 
-		<li>
-			<a data-scroll data-events="scroll" href="#introduction">Introduction</a>
-		</li>
+				<li>
+					<a data-scroll data-events="scroll" href="#introduction">Introduction</a>
+				</li>
 
-		<li>
-			<a data-scroll="" data-events="scroll" href="#route">Route</a>
-		</li>
+				<li>
+					<a data-scroll="" data-events="scroll" href="#route">Route</a>
+				</li>
 
-		<li>
-			<a data-scroll="" data-events="scroll" href="#schedule">Schedule</a>
-		</li>
+				<li>
+					<a data-scroll="" data-events="scroll" href="#schedule">Schedule</a>
+				</li>
 
-		<!-- getting ACF Flexible content navigation  -->
-		<?php $acf_fields = get_fields(); ?>
-		<?php include(locate_template('template-parts/acf-navigation.php')); ?>
+				<!-- getting ACF Flexible content navigation  -->
+				<?php $acf_fields = get_fields(); ?>
+				<?php include(locate_template('template-parts/acf-navigation.php')); ?>
 
-	</ul>
+			</ul>
+		</div>
+	</div>
 
 <div id="single-post" role="main">
 

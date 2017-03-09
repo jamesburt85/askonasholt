@@ -11,6 +11,32 @@
 ?>
 
 
+<?php 
+
+	// get VARS
+	$first_name = get_field('first_name');
+	$last_name = get_field('last_name');
+	$photo_credit = get_field('photo_credit');
+	$artist_image = get_field('artist_image');
+	$main_category = get_field('main_category');
+	$name = get_field('name');
+	$bio = get_field('bio');
+	$publicity_pack = get_field('publicity_pack');
+	$manager_email = get_field('manager_email');
+
+	// if no image, use default
+	if (!$artist_photo){
+		$artist_photo = get_template_directory_uri().'/assets/images/default.jpg';
+	}
+
+	// temp. for testing. If no name, then use title.
+	if (!$name){
+		$name = get_the_title();
+	}
+
+?>
+
+
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns'); ?>>
 
 	<?php //get_template_part( 'template-parts/people-filtering' ); ?>
@@ -75,6 +101,7 @@
 					<span class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
 					<a class="serif" href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a><br/>
 				</p>
+
 					<?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?>
 
 			</div>
@@ -88,8 +115,26 @@
 
 		<div class="quicklook-content-pic" style="background-image: url('<?php echo $thumb['0'];?>')"></div>
 		<div class="quicklook-content-profile">
+			<span class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
 			<h3><?php the_title(); ?></h3>
-			<h6><?php echo wpdocs_custom_taxonomies_terms_links(); ?></h6>
+			<h6><?php //echo wpdocs_custom_taxonomies_terms_links(); ?></h6>
+			<ul class="quick-look-links">
+				<li>
+					<a href="<?php echo $publicity_pack; ?>" target="_blank">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/download-arrow.png">
+						&nbsp;
+						<span>Download Publicity Pack</span>
+					</a>
+				</li>
+				<li>
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/share-arrow.png">
+					&nbsp;
+					
+					<a class="share-button" href="mailto:?Subject=Artist&amp;Body=<?php the_permalink(); ?>">
+					    <span>Share</span>
+					</a>
+				</li>
+			</ul>
 			<ul>
 				<li><a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a></li>
 
@@ -97,7 +142,8 @@
 		</div>
 
 		<div class="quicklook-content-bio">
-			<?php the_content(); ?>
+			<?php //the_content(); ?>
+			<p><?php echo $bio; ?></p>
 		</div>
 		<div class="quicklook-content-links">
 			<a class="button" href="<?php the_permalink(); ?>">Go to Client Page</a>	

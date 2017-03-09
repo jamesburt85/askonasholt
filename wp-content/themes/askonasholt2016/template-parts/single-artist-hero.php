@@ -127,9 +127,9 @@
 	
 <div id="sticky-anchor"></div>
 
-<div class="single-page-nav--container">
+<div class="single-page-nav--container" id="sticky">
 	<div class="row">
-	<ul class="single-page-nav show-for-medium" id="sticky">
+	<ul class="single-page-nav show-for-medium">
 	
 	<li class="nav-title">
 		<?php the_title(); ?>
