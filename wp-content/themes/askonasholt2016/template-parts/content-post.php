@@ -132,7 +132,10 @@
 				<?php //foundationpress_entry_meta(); ?>
 				
 				<p class="magazine-item-header">
-					<?php the_title(); ?>
+					<?php //the_title(); ?>
+					<?php 
+					echo mb_strimwidth( get_the_title(), 0, 50, '...' ); 
+					?>
 				</p>
 				<span class="magazine-item-copy"><?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
 				

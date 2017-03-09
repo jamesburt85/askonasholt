@@ -10089,7 +10089,8 @@ body.post-type-archive-artists li.cat-item-all a {
     word-wrap: break-word;
     font-size: 15px; }
   .magazine-item .magazine-item-container {
-    padding: 0 1em 1em; }
+    padding: 0 1em 1em;
+    min-height: 125px; }
     .magazine-item .magazine-item-container .read-more {
       font-weight: bold;
       color: #d7d4c5;
