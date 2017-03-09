@@ -30,7 +30,7 @@ var COMPATIBILITY = [
 var PATHS = {
   sass: [
     'assets/components/foundation-sites/scss',
-    'assets/components/motion-ui/src',
+    'assets/components/motion-ui/src',   
     'assets/components/fontawesome/scss',
   ],
   javascript: [
@@ -61,6 +61,9 @@ var PATHS = {
 
     // Motion UI
     'assets/components/motion-ui/motion-ui.js',
+    
+    // datepicker
+    'assets/components/foundation-datepicker/js/foundation-datepicker.js',
 
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/*.js',

@@ -22,7 +22,6 @@
 
 		<div class="artist-header-thumb" style="background-image: url('<?php echo $thumb['0'];?>')">
 			
-
 			
 			<!-- <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/pattern.svg"> -->
 		

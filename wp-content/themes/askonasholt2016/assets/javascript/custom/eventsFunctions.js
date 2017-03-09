@@ -1,6 +1,39 @@
 !function($) {
 
 	$(document).ready( function(){
+        
+        
+        
+        //
+        // date picker
+        //
+        $('#datepicker').fdatepicker({
+            format:'yyyy-mm-dd'    
+        })
+        .on('changeDate', function (ev) {
+            var new_date = $('#datepicker').data('date');
+            // assign to hidden input
+            $('#date').val( new_date );
+            // show in select drop down
+            var dateAr = new_date.split('-');
+            $('#date_display').text( dateAr[2]+'/'+dateAr[1]+'/'+dateAr[0].slice(-2) );
+            $('#date_type').val( 'date' );
+            
+        });
+        
+        
+        //
+        // speceifc day click
+        //
+        $('#date_type').change( function(){
+           // show datepicker
+           if( $(this).val() == 'date' ){
+                $('#datepicker').click();
+           }
+        });
+        
+        
+        
             
         // submit events form
         $('#events-form').on('submit', function(e) {
@@ -9,11 +42,10 @@
             
             $('#events-results-spinner').show();
             $('#load-more-events').hide();
+            $('#no-events-found').hide();
             
             // reset page number
             $('input[name="page_number"]').val( 1 );
-            
-            $('#events-results').html( '' );
             
             var data = $("#events-form").serializeArray();
                         
@@ -41,7 +73,7 @@
                     
                 } else {
                     //no results
-                    
+                    $('#no-events-found').show();
                 }          
                 
             });

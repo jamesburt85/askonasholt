@@ -3,4 +3,34 @@
 	padding: ($sitepadding/2) $sitepadding;
 	margin: $sitepadding 0;
 	text-align: center;
+    
+    
+    .inline-label{
+        float:left;
+    }
+    
+    
+    
+    #date_type, input{
+        margin:0px;
+    }
+    
+    .cal-datepicker{
+        cursor:pointer;
+        background: white;
+        padding: 10px;
+        border-radius: 2px;   
+        line-height:2.5;
+       &:hover{
+          background:$herored;
+          color:white;
+       }
+    }
+    
+    @media #{$small-only} {
+        .filter-button{
+            margin-top:10px;
+        }
+    }
+    
 }
