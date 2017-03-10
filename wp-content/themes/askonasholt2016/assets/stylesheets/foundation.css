@@ -9965,9 +9965,9 @@ body.post-type-archive-events div#archive {
       color: #B49A81;
       margin-bottom: 0; }
       .artist-categories li a:active, .artist-categories li a:focus, .artist-categories li a:hover {
-        background-color: #BA0C2F; }
+        background-color: #BE9A83; }
     .artist-categories li.current-cat a {
-      background-color: #BA0C2F;
+      background-color: #BE9A83;
       color: #fefefe; }
   .artist-categories .children {
     display: none;

@@ -150,14 +150,14 @@ body.post-type-archive-events {
 			&:active,
 			&:focus,
 			&:hover {
-				background-color: $red;
+				background-color: $brand-gold;
 			}
 		
 		}
 
 		&.current-cat {
 			a {
-				background-color: $red;
+				background-color: $brand-gold;
 				color: $white;
 			}
 		}

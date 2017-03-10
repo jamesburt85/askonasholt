@@ -97,6 +97,7 @@
 		<?php } ?>
 
 
+
 		<div class="magazine-item-container">
 			
 				<span class="magazine-category"><?php //echo $main_category; ?>
