@@ -45,7 +45,6 @@
 			<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
 			<div class="title-bar-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/images/askonasholt-logo.png"> -->
 					<svg width="225px" height="50px" viewBox="0 0 225 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
 					    <title>Group 8</title>

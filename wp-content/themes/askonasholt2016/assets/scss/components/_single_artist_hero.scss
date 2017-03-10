@@ -19,7 +19,7 @@ body.single.single-artists, body.single.single-clients, body.single-touring-part
 	    	    font-size: 1.2rem;
 	    	}
 	    }
-	    
+
 	    span.artist-category {
     	    font-size: 13px;
     	    letter-spacing: 1px;
@@ -42,6 +42,41 @@ body.single.single-artists, body.single.single-clients, body.single-touring-part
 		a {
 			color: #ffffff;	
 		}
+	}
+}
+
+@include breakpoint(small only) {
+	body.single.single-artists .artist-header.container, body.single.single-clients .artist-header.container, body.single-touring-partners .artist-header.container {
+			height: 225px;
+			.artist-hero-image {
+				height: 225px;
+				padding-left: 0;
+				padding-right: 0;
+				.artist-header-thumb {
+					height: 225px;
+					width: 100%;
+					.image-curve {
+						display: none;
+					}
+				}
+			}
+	}
+}
+
+@include breakpoint(medium only) {
+	body.single.single-artists .artist-header.container, body.single.single-clients .artist-header.container, body.single-touring-partners .artist-header.container {
+			.artist-hero-image {
+
+				.artist-header-thumb {
+					width: 80%;
+					.image-curve {
+						width: 53%;
+					    background-repeat: no-repeat;
+					    background-position: initial;
+					    right: 0;
+					}
+				}
+			}
 	}
 }
 
@@ -150,7 +185,7 @@ path.crescent {
 
 .image-curve {
 	position: absolute;
-	left: 0;
+	right: 0;
 	top: 0;
 	height: 450px;
 	width: 100%;
