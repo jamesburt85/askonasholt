@@ -24,6 +24,10 @@ function wiaw_archive_ajax() {
 
     # Set up the initial args
     $args = array(
+        'post_type'         => 'artists',
+        'meta_key'          => 'last_name',
+        'orderby'           => 'meta_value',
+        'order'             => 'ASC',
         'posts_per_page'    => $posts_per_page,
         'offset'            => $offset
     );

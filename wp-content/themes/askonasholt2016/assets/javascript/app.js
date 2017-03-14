@@ -375,6 +375,7 @@ var map = null;
     $searchtoggle.on("click", function(e){
       e.preventDefault();
       $('body').toggleClass('search-bar-is-visible');
+      $('#searchform .input-group > input').focus();
     });
 
 

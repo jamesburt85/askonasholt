@@ -75,10 +75,6 @@
   Add your scss files below to structure your project styles
 */
 
-//Global
-@import "global/temp";
-@import "global/general";
-
 // JBMixins
 @import "jbmixins/debug";
 @import "jbmixins/mixins";
@@ -87,6 +83,10 @@
 @import "jbmixins/slick-theme";
 @import "jbmixins/animate";
 //@import "jbmixins/intro";
+
+//Global
+@import "global/temp";
+@import "global/general";
 
 // Modules
 @import "modules/navigation";

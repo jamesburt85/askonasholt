@@ -15,6 +15,15 @@
     display: none;
 }
 
+//center dropdowns
+.dropdown.menu {
+    > li.opens-left {
+        > .is-dropdown-submenu {
+            @include center(x);
+        }
+    }
+}
+
 //temp margin bottom for video single posts. Embed previously too close to bottom
 .single-format-video {
     .flex-video.widescreen {

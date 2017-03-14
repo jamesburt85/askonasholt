@@ -95,7 +95,7 @@
 					} else {
 
 						// say no posts
-						$("#ajax-before-me").before( '<div class="alert alert-warning"><p>No further results.</p></div>');
+						// $("#ajax-before-me").before( '<div class="alert alert-warning"><p>No further results.</p></div>');
 
 					}
 

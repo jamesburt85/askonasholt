@@ -238,7 +238,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
         if ( !$query->is_post_type_archive('tours-projects') || is_admin() || is_page_template() )
             return $query;
 
-        // so this shoudl just effect the /tours-and-projects/upcoming/ which is the main archive...
+        // so this should just effect the /tours-and-projects/upcoming/ which is the main archive...
         $upcomingSeason = get_field('upcoming_season', 'option');
 
         // echo $upcomingSeason;
