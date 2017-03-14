@@ -263,7 +263,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
 
     //**************************************************
-    // only show events that end date is either today or in future...
+    // Order artists by last name
     //**************************************************
     # 
     # // adstyles
