@@ -270,32 +270,28 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
       function be_artists_query( $query ) {
         
-        if( $query->is_main_query() && !$query->is_feed() && !is_admin() ) {
+        if( $query->is_main_query() && !$query->is_feed() && !is_admin() && ($query->is_post_type_archive('artists') || $query->is_tax('artist-type')) ) {
             
             $args = ( array(
-            'post_type'         => 'artists',
             'posts_per_page'    => 4,
             'meta_key'          => 'last_name',
             'orderby'           => 'meta_value',
             'order'             => 'ASC'
              ) );
 
-            # Post Type Archive
-            if ( !empty( $_GET['post_type'])) {
-                $args['post_type'] = $_GET['post_type'];
-
             # Taxonomy Archive
-            } else {
+            if ( !empty( $_GET['taxonomy'])) {
+
                 $args['tax_query'] = array(
                     array(
                         'taxonomy' => $_GET['taxonomy'],
-                        'field'    => 'term',
-                        'terms'    => $_GET['term'],
+                        'field'    => 'slug',
+                        'terms'    => $_GET['term']
                     ),
                 );
 
-                $args['post_type'] = 'any';
-
+            } else {
+                $args['post_type'] = 'artists';
             }
 
             query_posts($args);
