@@ -68,10 +68,6 @@ get_header(); ?>
 
 						<?php echo $blurb; ?>
 
-						<div class="blurb-area" id="menuBar" data-toggler=".expanded">
-							<div class="hidden"><?php echo $extra_blurb_copy; ?></div>
-							<p class="more"><a data-toggle="menuBar"><span class="more">More</span><span class="less">Less</span></a></p>
-						</div>
 					</div>
 
 					<hr/>
@@ -464,10 +460,6 @@ get_header(); ?>
 
 					<?php echo $blurb; ?>
 
-					<div class="blurb-area" id="menuBar" data-toggler=".expanded">
-						<div class="hidden"><?php echo $extra_blurb_copy; ?></div>
-						<p class="more"><a data-toggle="menuBar"><span class="more">More</span><span class="less">Less</span></a></p>
-					</div>
 				</div>
 				
 			</div>
