@@ -87,24 +87,6 @@ get_header(); ?>
 
 	<article class="main-content">
 
-	<?php
-
-		if(is_post_type_archive('artists')) {
-
-			$args = ( array(
-			'post_type'			=> 'artists',
-			'posts_per_page'	=> 4,
-			'meta_key'			=> 'last_name',
-			'orderby'			=> 'meta_value',
-			'order'				=> 'ASC'
-			 ) );
-
-			query_posts($args);
-
-		}
-
-	?>
-
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>

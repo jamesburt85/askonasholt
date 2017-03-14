@@ -268,6 +268,50 @@ class Walker_Category_Find_Parents extends Walker_Category {
     # 
     # // adstyles
 
+      function be_artists_query( $query ) {
+        
+        if( $query->is_main_query() && !$query->is_feed() && !is_admin() ) {
+            
+            $args = ( array(
+            'post_type'         => 'artists',
+            'posts_per_page'    => 4,
+            'meta_key'          => 'last_name',
+            'orderby'           => 'meta_value',
+            'order'             => 'ASC'
+             ) );
+
+            # Post Type Archive
+            if ( !empty( $_GET['post_type'])) {
+                $args['post_type'] = $_GET['post_type'];
+
+            # Taxonomy Archive
+            } else {
+                $args['tax_query'] = array(
+                    array(
+                        'taxonomy' => $_GET['taxonomy'],
+                        'field'    => 'term',
+                        'terms'    => $_GET['term'],
+                    ),
+                );
+
+                $args['post_type'] = 'any';
+
+            }
+
+            query_posts($args);
+
+        }
+
+      }
+      add_action( 'pre_get_posts', 'be_artists_query' );
+
+
+    //**************************************************
+    // only show events that end date is either today or in future...
+    //**************************************************
+    # 
+    # // adstyles
+
       function be_event_query( $query ) {
         
         if( $query->is_main_query() && !$query->is_feed() && !is_admin() && $query->is_post_type_archive( 'events' ) ) {
