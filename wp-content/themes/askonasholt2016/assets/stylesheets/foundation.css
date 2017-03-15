@@ -9749,8 +9749,18 @@ header#masthead {
   z-index: 5;
   border-bottom: 1px solid #cccccc; }
   header#masthead .top-bar-right {
-    float: left;
-    padding-left: 1em; }
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 10; }
+  header#masthead .top-bar .menu li {
+    white-space: nowrap; }
+  header#masthead .top-bar .menu li.is-dropdown-submenu-parent {
+    overflow: hidden; }
+  header#masthead .top-bar .menu li.is-dropdown-submenu-parent:hover {
+    overflow: visible; }
   header#masthead .top-bar .menu a:hover:not(.button):not(.artist-categories li a) {
     background-color: transparent; }
   header#masthead .top-bar .dropdown.menu .submenu {
@@ -9789,8 +9799,7 @@ nav#site-navigation {
   nav#site-navigation::after {
     clear: both; }
   nav#site-navigation .top-bar-left svg {
-    padding-right: 2em;
-    border-right: 1px solid #BA0C2F; }
+    padding-right: 2em; }
   nav#site-navigation .top-bar-left a {
     padding: 0;
     line-height: 84px; }

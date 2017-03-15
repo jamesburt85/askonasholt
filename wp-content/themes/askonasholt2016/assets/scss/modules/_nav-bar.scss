@@ -20,10 +20,20 @@ header#masthead {
 	border-bottom: 1px solid #cccccc;
 
 	.top-bar-right {
-	    float: left;
-	    padding-left: 1em;
-	    //@include center(x);
+	    //float: left;
+	    //padding-left: 1em;
+	    @include center(x);
+	    z-index: 10;
 	}
+	.top-bar .menu li {
+		white-space: nowrap;
+	}
+	.top-bar .menu li.is-dropdown-submenu-parent {
+		overflow: hidden;
+	}
+	.top-bar .menu li.is-dropdown-submenu-parent:hover {
+		overflow: visible;
+	}	
 	.top-bar .menu a:hover:not(.button) {
 	    background-color: transparent;
 	}
@@ -85,7 +95,6 @@ nav#site-navigation {
 
     	svg {
     		padding-right: 2em;
-    	    border-right: 1px solid $brand-red;
     	}
 
     	a {
