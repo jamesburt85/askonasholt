@@ -119,7 +119,7 @@
 				
 				
 						<br>
-						<p class="artist-name serif"><?php //echo $name; ?>
+						<p class="artist-name"><?php //echo $name; ?>
 							<?php echo $first_name; ?>
 							<?php echo $last_name; ?>
 							<?php //the_title() ; ?> 

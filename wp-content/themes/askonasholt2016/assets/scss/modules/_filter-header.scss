@@ -6,9 +6,9 @@
 		position: absolute;
 	    top: 30%;
 	    left: 50%;
-	    -webkit-transform: translate(-50%, -50%);
-	    -ms-transform: translate(-50%, -50%);
-	    transform: translate(-50%, -50%);
+	    -webkit-transform: translate(-50%, -100%);
+	    -ms-transform: translate(-50%, -100%);
+	    transform: translate(-50%, -100%);
 		width: 90%;
 		text-align: center;
 	}
@@ -18,7 +18,11 @@
 	// }
 
 	.artist-categories {
-		@include center(x);
+		position: absolute;
+	    left: 50%;
+	    -webkit-transform: translate(-50%, -100%);
+	    -ms-transform: translate(-50%, -100%);
+	    transform: translate(-50%, -100%);
 		//width: 80%;
 	}
 
@@ -26,7 +30,12 @@
 
 @include breakpoint(medium) {
 	.artist-filtering-block header.filter-header {
-	    @include center;
+		position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    -webkit-transform: translate(-50%, -100%);
+	    -ms-transform: translate(-50%, -100%);
+	    transform: translate(-50%, -100%);
 	    width: 80%;
 	    text-align: center;
 	}

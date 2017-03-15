@@ -116,13 +116,14 @@
     transition: 0.5s;
     font-size: 1.1rem;
     line-height: 1;
+    font-weight: bold;
 
     &:hover:not(.button) {
       background-color: #2a2a2a;
     }
   }
   .menu a:hover {
-    color: gray;
+    color: $brand-red;
   }
 
   .menu a:active, .current-menu-item a {

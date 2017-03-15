@@ -30,9 +30,12 @@
 		// }
 	}
 	.artist-details {
+
+		font-weight: bold;
+
 		span.artist-category {
 			text-transform: uppercase;
-			color: #b38a76;
+			color: initial;
 			font-size: 13px;
 			letter-spacing: 1px;
 		}

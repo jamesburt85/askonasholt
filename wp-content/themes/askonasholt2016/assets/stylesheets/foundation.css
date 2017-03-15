@@ -9479,12 +9479,13 @@ span.bold {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 1.1rem;
-  line-height: 1; }
+  line-height: 1;
+  font-weight: bold; }
   .top-bar .menu a:hover:not(.button):not(.artist-categories li a) {
     background-color: #2a2a2a; }
 
 .top-bar .menu a:hover {
-  color: gray; }
+  color: #BA0C2F; }
 
 .top-bar .menu a:active, .top-bar .current-menu-item a {
   color: #BA0C2F !important; }
@@ -9985,9 +9986,9 @@ body.post-type-archive-events div#archive {
     .artist-categories li a {
       background-color: #fefefe;
       color: #F2F1ED;
-      border: 1px solid #B49A81;
       color: #B49A81;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      padding: 6.25px; }
       .artist-categories li a:active, .artist-categories li a:focus, .artist-categories li a:hover {
         background-color: #BE9A83; }
     .artist-categories li.current-cat a {
@@ -10008,7 +10009,7 @@ body.post-type-archive-events div#archive {
   .artist-categories .current-cat-parent ul.children {
     position: absolute;
     display: inline-block;
-    bottom: -2.5em;
+    bottom: -37.5px;
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -10696,27 +10697,27 @@ header h1 {
   position: absolute;
   top: 30%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
   width: 90%;
   text-align: center; }
 
 .artist-filtering-block .artist-categories {
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%); }
+  -webkit-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%); }
 
 @media screen and (min-width: 40em) {
   .artist-filtering-block header.filter-header {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -100%);
+    -ms-transform: translate(-50%, -100%);
+    transform: translate(-50%, -100%);
     width: 80%;
     text-align: center; } }
 
@@ -15690,15 +15691,17 @@ div.padded-text {
       opacity: 0.9; }
   .artists .artist-photo-wrapper:hover .overlay, .clients .artist-photo-wrapper:hover .overlay {
     display: block; }
-  .artists .artist-details span.artist-category, .clients .artist-details span.artist-category {
-    text-transform: uppercase;
-    color: #b38a76;
-    font-size: 13px;
-    letter-spacing: 1px; }
-  .artists .artist-details a .artist-name, .clients .artist-details a .artist-name {
-    color: initial;
-    -webkit-transition: 0.5s;
-    transition: 0.5s; }
+  .artists .artist-details, .clients .artist-details {
+    font-weight: bold; }
+    .artists .artist-details span.artist-category, .clients .artist-details span.artist-category {
+      text-transform: uppercase;
+      color: initial;
+      font-size: 13px;
+      letter-spacing: 1px; }
+    .artists .artist-details a .artist-name, .clients .artist-details a .artist-name {
+      color: initial;
+      -webkit-transition: 0.5s;
+      transition: 0.5s; }
   .artists .side-bar-artist-details.contact, .clients .side-bar-artist-details.contact {
     line-height: 30px; }
   .artists .artist-details:hover .artist-name, .clients .artist-details:hover .artist-name {

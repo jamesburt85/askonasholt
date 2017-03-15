@@ -9,8 +9,6 @@
 
 	<header class="filter-header">
 		<h2 class="hero-heading">Artists</h2>
-		
-		<p><?php //echo $description; ?></p>
 	</header>
 
 	<div class="row">
