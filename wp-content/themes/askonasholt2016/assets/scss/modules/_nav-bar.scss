@@ -206,6 +206,7 @@ div#search-toggle {
 //     right: 1rem;
 // }
 
+/*
 .menu-item.menu-item-has-children.is-dropdown-submenu-parent:after {
 	content:  url('../images/down-arrow-small.png');
     display: block;
@@ -220,7 +221,7 @@ div#search-toggle {
     //margin-top: 0;
     right: 0
 }
-
+*/
 
 //making main menu dropdowns tranistion open
 @include breakpoint(large up){

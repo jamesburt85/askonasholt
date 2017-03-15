@@ -778,7 +778,7 @@ if ($acf_fields['flexible_content']) {
 
 					?>
 
-					<div class="large-video-row" id="<?php echo $section['unique_id'] ?>>
+					<div class="large-video-row" id="<?php echo $section['unique_id'] ?>">
 						<div class="small-12 columns">
 					  		<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>" frameborder="0" allowfullscreen></iframe>
 					  	</div>

@@ -5,6 +5,11 @@
 //     margin: 0 auto;
 // }
 
+//hide load more button - visibility rather than display: none; as JS function requires
+.archive__load-more {
+    visibility: hidden !important;
+}
+
 //don't showanimated items until js loads
 .is-hidden-onload {
   opacity: 0;
@@ -98,7 +103,8 @@ p.byline.author { display: none; }
     line-height: 60px;
 }
 
-.section-header  {
+.section-header,
+.free-text-area h4  {
     //@include grid-column(12);
     padding-top: $sitepadding;
     padding-bottom: $sitepadding;
@@ -111,9 +117,13 @@ p.byline.author { display: none; }
         color: inherit;
     }
 }
+.free-text-area h4 {
+    padding-top: 0;
+}
 
 @include breakpoint(small only){
-    .section-header  {
+    .section-header,
+    .free-text-area h4  {
        //padding-bottom: 0;
         font-size: 1.4rem;
     }
@@ -125,9 +135,13 @@ div#narrow-text-page {
 }
 
 @include breakpoint(medium up) {
-    .section-header  {
+    .section-header,
+    .free-text-area h4  {
         padding-top: $sitepadding;
         padding-bottom: $sitepadding;
+    }
+    .free-text-area h4 {
+        padding-top: 0;
     }
 }
 

@@ -20,6 +20,11 @@ body.page {
 		    height: 70vh;
 		    @include full-bg;
 		}
+		.slick-slide {
+			&:focus {
+				outline: none;
+			}
+		}
 		.center-image {
 			height: 69vh;
 			margin: 1em 1em;
