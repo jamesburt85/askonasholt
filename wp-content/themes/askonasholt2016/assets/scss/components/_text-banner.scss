@@ -21,7 +21,17 @@
     		}
     		.banner-copy {
     			font-size: 22px;
+                font-weight: bold;
     			line-height: 1.7;
+
+                h4 {
+                    font-family: $serif-font;
+                    font-size: 40px;
+                }
+
+                p {
+                    text-align: left;
+                }
     		}
     	}
     }
@@ -43,7 +53,7 @@
 		.text-banner {
 			margin: 0 auto;
 			padding: $sitepadding-large;
-			max-width: 75%;
+			max-width: 65%;
 		}
 	}
 }

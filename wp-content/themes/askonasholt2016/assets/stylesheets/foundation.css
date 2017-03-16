@@ -9323,8 +9323,8 @@ p.byline.author {
 .free-text-area h4 {
   padding-top: 25px;
   padding-bottom: 25px;
-  font-family: "GeometricSlab703BT-Light";
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  font-weight: bold; }
   .section-header a,
   .free-text-area h4 a {
     font-size: 17px;
@@ -9746,8 +9746,7 @@ body#tinymce {
 SlideUpTopBar for Foundation styles
 */
 header#masthead {
-  z-index: 5;
-  border-bottom: 1px solid #cccccc; }
+  z-index: 5; }
   header#masthead .top-bar-right {
     position: absolute;
     left: 50%;
@@ -10109,12 +10108,12 @@ body.post-type-archive-artists li.cat-item-all a {
     position: relative; }
     .single-page-nav--container ul.single-page-nav li {
       padding: 0 12.5px;
-      color: #808080;
+      color: #b2b2b2;
       line-height: 60px;
-      font-size: 16px; }
+      font-size: 16px;
+      text-transform: uppercase; }
       .single-page-nav--container ul.single-page-nav li a {
-        color: #808080;
-        font-weight: bold; }
+        color: #b2b2b2; }
     .single-page-nav--container ul.single-page-nav li.single-page-nav_link.active a {
       color: #BA0C2F !important; }
 
@@ -10181,7 +10180,8 @@ body.post-type-archive-artists li.cat-item-all a {
   .magazine-item span.magazine-item-copy p {
     font-size: 1.1rem; }
   .magazine-item .magazine-item-header {
-    font-size: 1.1rem; }
+    font-size: 1.1rem;
+    font-weight: bold; }
     .magazine-item .magazine-item-header a {
       color: inherit; }
   .magazine-item .flag-area .flag {
@@ -15639,10 +15639,8 @@ body.page div.slick-slider .slick-dots {
   body.page div.slick-slider .slick-dots li button:before {
     font-size: 14px !important; }
 
-body.page div.slick-slider .slick-dotted {
-  border-bottom: 1px solid #808080; }
-  body.page div.slick-slider .slick-dotted .slick-slider {
-    padding-bottom: 30px !important; }
+body.page div.slick-slider .slick-dotted .slick-slider {
+  padding-bottom: 30px !important; }
 
 body.page div.slick-slider button.slick-next.slick-arrow {
   right: 76px; }
@@ -15653,7 +15651,6 @@ body.page div.slick-slider button.slick-prev.slick-arrow {
 
 body.page .slick-dotted.slick-slider {
   margin-bottom: 0 !important;
-  border-bottom: 1px solid #808080;
   background: #f2f1ed; }
 
 div.padded-text {
@@ -15984,7 +15981,13 @@ button.hero-button {
       line-height: 2; }
     .text-banner-wrapper .text-banner .text-banner-area .banner-copy {
       font-size: 22px;
+      font-weight: bold;
       line-height: 1.7; }
+      .text-banner-wrapper .text-banner .text-banner-area .banner-copy h4 {
+        font-family: "GeometricSlab703BT-Light";
+        font-size: 40px; }
+      .text-banner-wrapper .text-banner .text-banner-area .banner-copy p {
+        text-align: left; }
 
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   .text-banner-wrapper .text-banner {
@@ -15995,7 +15998,7 @@ button.hero-button {
   .text-banner-wrapper .text-banner {
     margin: 0 auto;
     padding: 50px;
-    max-width: 75%; } }
+    max-width: 65%; } }
 
 /* Magnific Popup CSS */
 .mfp-bg {
