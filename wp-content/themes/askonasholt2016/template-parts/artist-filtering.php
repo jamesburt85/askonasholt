@@ -22,7 +22,7 @@
 				// echo wp_list_categories( 'title_li'=>'Select category' );
 
 
-				echo wp_list_categories( array(
+				$category_list = wp_list_categories( array(
 						'taxonomy'     => 'artist-type',
 				        'orderby' => 'name',
 				        'order'=>'ASC',
@@ -30,9 +30,13 @@
 				        'exclude' => 1, // don't show uncategorised
 				        'show_option_all' => 'all',
 				        'walker'       => new Walker_Category_Find_Parents(),
+				        'echo' => 0
 				    ) );
 
+				// a quick hack to replace the url - would be better to create an option for this type of artist to indicate that it should link directly to the artist page
+				$category_list = str_replace('?taxonomy=artist-type&#038;term=partitura-project', 'artists/partitura-project/', $category_list);
 
+				echo $category_list;
 
 					// $args = array(
 					// 'title_li'=>'Select category',
