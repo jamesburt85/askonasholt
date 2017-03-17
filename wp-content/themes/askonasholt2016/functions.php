@@ -228,6 +228,21 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
 
     //**************************************************
+    // filter homepage posts to exclude audio/video
+    //**************************************************
+    # 
+    # // adstyles
+
+    function exclude_categories( $query ) {
+        if ( is_page('home') ) {
+            $query->set( 'cat', '-'.get_cat_ID('audio').',-'.get_cat_ID('video') );
+        }
+    }
+    add_action( 'pre_get_posts', 'exclude_category' );
+
+
+
+    //**************************************************
     // filter the default archive tours-projects archive to just show from one cat
     //**************************************************
     # 
