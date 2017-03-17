@@ -1,6 +1,6 @@
 
 <!-- Checking if post is featured -->
-<?php if( get_field('featured_post') ): ?>
+<?php if( get_field('featured_post') && !is_page('home') ): ?>
 	
 	<div class="entry-content small-12 medium-6 large-6 columns animated waypoint is-hidden-onload large-item">
 	
