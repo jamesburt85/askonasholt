@@ -10038,7 +10038,7 @@ body.post-type-archive-events div#archive {
           background-color: #BA0C2F; }
 
 .term-instrumentalists .artist-categories {
-  bottom: 4em; }
+  bottom: 1em; }
 
 body.post-type-archive-artists li.cat-item-all a {
   background-color: #BA0C2F;
@@ -10105,6 +10105,7 @@ body.post-type-archive-artists li.cat-item-all a {
       font-size: 16px;
       text-transform: uppercase; }
       .single-page-nav--container ul.single-page-nav li a {
+        font-weight: bold;
         color: #b2b2b2; }
     .single-page-nav--container ul.single-page-nav li.single-page-nav_link.active a {
       color: #BA0C2F !important; }

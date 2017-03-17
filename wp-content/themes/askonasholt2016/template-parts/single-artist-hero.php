@@ -31,14 +31,21 @@
 		<div class="small-12 medium-6 columns artist-details-container">
 			<div class="artist-details">
 				<span class="artist-category">
-				<?php echo $main_category; ?>
-				<?php
-					$cat = new WPSEO_Primary_Term('artist-type', get_the_ID());
-					$cat = $cat->get_primary_term();
-					$catName = get_cat_name($cat);
-					echo $catName;
-				?>
+				<?php if(!empty($main_category)): ?>
+
+					<?php echo $main_category; ?>
+
+				<?php else: ?>
+
+					<?php
+						$cat = new WPSEO_Primary_Term('artist-type', get_the_ID());
+						$cat = $cat->get_primary_term();
+						$catName = get_cat_name($cat);
+						echo $catName;
+					?>
 				
+				<?php endif; ?>
+
 				<?php
 				/* FIRST
 				 * Note: This function only returns results from the default “category” taxonomy. For custom taxonomies use get_the_terms().
