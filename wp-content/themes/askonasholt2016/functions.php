@@ -238,7 +238,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
             $query->set( 'cat', '-'.get_cat_ID('audio').',-'.get_cat_ID('video') );
         }
     }
-    add_action( 'pre_get_posts', 'exclude_category' );
+    add_action( 'pre_get_posts', 'exclude_categories' );
 
 
 
