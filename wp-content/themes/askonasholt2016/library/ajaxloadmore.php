@@ -24,10 +24,6 @@ function wiaw_archive_ajax() {
 
     # Set up the initial args
     $args = array(
-        'post_type'         => 'artists',
-        'meta_key'          => 'last_name',
-        'orderby'           => 'meta_value',
-        'order'             => 'ASC',
         'posts_per_page'    => $posts_per_page,
         'offset'            => $offset
     );
@@ -40,6 +36,12 @@ function wiaw_archive_ajax() {
     if ( !empty( $data['post_type'])) {
         $args['post_type'] = $data['post_type'];
 
+        if($args['post_type'] == 'artists') {
+            $args['meta_key'] = 'last_name';
+            $args['orderby'] = 'meta_value';
+            $args['order'] = 'ASC';
+        }
+
     # Taxonomy Archive
     } else {
         $args['tax_query'] = array(
@@ -49,6 +51,12 @@ function wiaw_archive_ajax() {
                 'terms'    => $data['term_id'],
             ),
         );
+
+        if($data['taxonomy'] == 'artist-type') {
+            $args['meta_key'] = 'last_name';
+            $args['orderby'] = 'meta_value';
+            $args['order'] = 'ASC';
+        }        
 
         $args['post_type'] = 'any';
 
