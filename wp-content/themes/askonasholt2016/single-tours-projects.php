@@ -476,7 +476,7 @@ get_header(); ?>
 				  	'post_type'			=> 'events',
 				  	'post__in'  		=> $tour_events, // limited to array of events in tour page
 				  	'posts_per_page'	=> -1,
-				  	'meta_key'			=> 'date_time',
+				  	'meta_key'			=> 'date',
 				  	'orderby'			=> 'meta_value',
 				  	'order'				=> 'ASC',
 			  	);
