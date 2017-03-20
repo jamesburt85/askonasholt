@@ -671,5 +671,19 @@ var map = null;
      // $('#loading-delay').fadeIn(2000, function(){
      //        this.style.removeAttribute('filter');
      // });
-     
 
+
+
+    //*****************************************
+    // Contracting galleries after first ******
+    //*****************************************
+
+    jQuery(window).load(function() {
+
+      $('.single-artists .image-gallery.row .accordion').each(function (i) {
+
+          if (i > 0) { $(this).foundation('up', $(this).find('.accordion-content')); }
+
+      });
+      
+    });
