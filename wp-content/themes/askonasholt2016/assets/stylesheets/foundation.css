@@ -10124,7 +10124,6 @@ body.post-type-archive-artists li.cat-item-all a {
     display: block; } }
 
 .magazine-item {
-  border: 1px solid #dddddd;
   margin-bottom: 2em;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -10134,7 +10133,7 @@ body.post-type-archive-artists li.cat-item-all a {
     word-wrap: break-word;
     font-size: 15px; }
   .magazine-item .magazine-item-container {
-    padding: 0 1em 1em;
+    padding: 0 1em 0;
     min-height: 132px; }
     .magazine-item .magazine-item-container .read-more {
       font-weight: bold;
@@ -10173,6 +10172,7 @@ body.post-type-archive-artists li.cat-item-all a {
   .magazine-item span.magazine-item-copy p {
     font-size: 1.1rem; }
   .magazine-item .magazine-item-header {
+    margin-bottom: 0;
     font-size: 1.1rem;
     font-weight: bold; }
     .magazine-item .magazine-item-header a {
