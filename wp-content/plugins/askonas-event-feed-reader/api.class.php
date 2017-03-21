@@ -45,7 +45,7 @@ class event_api {
 			'meta_key'		=> 'feed_created',
 			'meta_value'	=> true,         
         ]);
-      
+
         $post_ids_saved = [];
         
         foreach( $events as $event ) {
@@ -88,7 +88,7 @@ class event_api {
         foreach( $all_events as $event ){
             
             if( !in_array( $event->ID, $post_ids_saved ) ){
-                wp_delete_post( $event->ID );
+                wp_delete_post( $event->ID, true );
             }
             
         }
@@ -103,7 +103,7 @@ class event_api {
         
         // Date (datepicker)
         list($d,$m,$y) = explode('/', (string)$event->Date );
-        $date = "{$y}-{$m}-{$d}";
+        $date = "{$y}{$m}{$d}";
         update_field( 'field_582c4525af917', $date, $post_id ); 
         
         //End date (datepicker)

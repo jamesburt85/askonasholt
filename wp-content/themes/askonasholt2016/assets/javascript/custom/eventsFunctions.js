@@ -8,7 +8,7 @@
         // date picker
         //
         $('#datepicker').fdatepicker({
-            format:'yyyy-mm-dd'    
+            format:'yyyymmdd'    
         })
         .on('changeDate', function (ev) {
             var new_date = $('#datepicker').data('date');
@@ -16,7 +16,7 @@
             $('#date').val( new_date );
             // show in select drop down
             var dateAr = new_date.split('-');
-            $('#date_display').text( dateAr[2]+'/'+dateAr[1]+'/'+dateAr[0].slice(-2) );
+            $('#date_display').text( new_date.substring(6,8)+'/'+new_date.substring(4,6)+'/'+new_date.substring(2,4) );
             $('#date_type').val( 'date' );
             
         });

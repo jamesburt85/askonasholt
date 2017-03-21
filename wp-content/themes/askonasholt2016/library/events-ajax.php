@@ -8,7 +8,7 @@ function events_set_default_args( $page = '' ){
             'page_number' => 1,
             'per_page'  => 4,
             'date_type' => 'today',
-            'date'  => date('Y-m-d'), 
+            'date'  => date('Ymd'), 
             'location' => '',
         ];
             
@@ -18,7 +18,7 @@ function events_set_default_args( $page = '' ){
         'page_number' => 1,
         'per_page'  => 20,
         'date_type' => 'today',
-        'date'  => date('Y-m-d'), 
+        'date'  => date('Ymd'), 
         'location' => '',
     ];
     
@@ -45,13 +45,14 @@ function events_do_query( $event_args ){
         'post_type'   => 'events',
         'posts_per_page' => $post_per_page,
         'offset'        => $offset,
-        'meta_key'      => 'date',
-        'orderby'     => 'meta_value',
-        'order'       => 'ASC',
+        'orderby'     => array(
+            'date_clause'   => 'ASC',
+            'time_clause'   => 'ASC'
+        ),
       );
       
 		$args['meta_query'] = array(
-			'relation'		=> 'AND',
+			'relation'		=> 'AND',          
 		);	
 
         //
@@ -59,18 +60,18 @@ function events_do_query( $event_args ){
         //
         if( $event_args['date_type'] == 'today' ){
         
-            $event_args['start_date'] = date('Y-m-d');
-            $event_args['end_date'] = date('Y-m-d');
+            $event_args['start_date'] = date('Ymd');
+            $event_args['end_date'] = date('Ymd');
            
         } elseif ( $event_args['date_type'] == 'this_week' ){
             
-            $event_args['start_date'] = date('Y-m-d', strtotime('-'.date('w').' days'));
-            $event_args['end_date'] = date('Y-m-d', strtotime('+'.(6-date('w')).' days'));           
+            $event_args['start_date'] = date('Ymd', strtotime('-'.date('w').' days'));
+            $event_args['end_date'] = date('Ymd', strtotime('+'.(6-date('w')).' days'));           
             
         } elseif ( $event_args['date_type'] == 'this_month' ){
             
-            $event_args['start_date'] = date('Y-m-01');
-            $event_args['end_date'] = date('Y-m-t');           
+            $event_args['start_date'] = date('Ym01');
+            $event_args['end_date'] = date('Ymt');           
             
         } elseif ( $event_args['date_type'] == 'date' ){
             
@@ -79,15 +80,15 @@ function events_do_query( $event_args ){
             
         } else {
             
-            $event_args['start_date'] = date('Y-m-d');
-            $event_args['end_date'] = date('Y-m-d');   
+            $event_args['start_date'] = date('Ymd');
+            $event_args['end_date'] = date('Ymd');   
             
         }
         
         $args['meta_query'][] =
         array(
             'relation' => 'AND',            
-            array(
+            'date_clause' => array(
                 'key' => 'date',
                 'value' => $event_args['start_date'],
                 'compare' => '>='
@@ -96,6 +97,10 @@ function events_do_query( $event_args ){
                 'key' => 'date',
                 'value' => $event_args['end_date'],
                 'compare' => '<='
+            ),
+            'time_clause' => array(
+                'key'=>'time',
+                'compare'=>'EXISTS'
             ),
         );
 

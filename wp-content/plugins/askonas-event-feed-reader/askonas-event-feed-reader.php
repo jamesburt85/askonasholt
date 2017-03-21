@@ -43,7 +43,7 @@ function rw_event_schedule_activation() {
 	}
 
 }
-add_action( 'init', 'rw_event_schedule_activation' );
+add_action( 'wp', 'rw_event_schedule_activation' );
 
 
 
