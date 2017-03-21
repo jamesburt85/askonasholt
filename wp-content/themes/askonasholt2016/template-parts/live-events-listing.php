@@ -40,6 +40,8 @@
 
 </div>
 
-<div class="online-performances-link">
-	<a href="<?php echo site_url(); ?>/online-performances"><button class="button">View All</button></a>
+<div class="columns">
+	<div class="online-performances-link">
+		<a href="<?php echo site_url(); ?>/online-performances"><button class="button">View All</button></a>
+	</div>
 </div>

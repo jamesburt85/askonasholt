@@ -36,7 +36,11 @@ get_header(); ?>
      
         ?>
         
-		<h3 class="section-header" id="browse-upcoming-live-performances">Browse Upcoming Live Performances</h3>
+		<div class="row">
+            <div class="columns">
+                <h3 class="section-header" id="browse-upcoming-live-performances">Browse Upcoming Live Performances</h3>
+            </div>
+        </div>
         
 		<div class="events-filtering-bar" >
         
