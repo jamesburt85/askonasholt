@@ -1,8 +1,10 @@
 <h2><a href="<?php //the_permalink(); ?>"><?php //the_title(); ?></a></h2>
 <?php //foundationpress_entry_meta(); ?>
 <div class="row online-performance-header">
-	<h3 class="section-header" id="online-performances">Online Performances</h3>
-	<!-- <p>In partnership with ......</p> -->
+	<div class="columns">
+		<h3 class="section-header" id="online-performances">Online Performances</h3>
+		<!-- <p>In partnership with ......</p> -->
+	</div>
 </div>
 
 <div class="row live-events animated waypoint is-hidden-onload" id="waypoint">
@@ -40,8 +42,6 @@
 
 </div>
 
-<div class="columns">
-	<div class="online-performances-link">
-		<a href="<?php echo site_url(); ?>/online-performances"><button class="button">View All</button></a>
-	</div>
+<div class="online-performances-link">
+	<a href="<?php echo site_url(); ?>/online-performances"><button class="button">View All</button></a>
 </div>
