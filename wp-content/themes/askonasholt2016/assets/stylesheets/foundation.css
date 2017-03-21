@@ -15698,6 +15698,7 @@ div.padded-text {
       font-size: 13px;
       letter-spacing: 1px; }
     .artists .artist-details a .artist-name, .clients .artist-details a .artist-name {
+      margin-bottom: 0;
       color: initial;
       -webkit-transition: 0.5s;
       transition: 0.5s; }
