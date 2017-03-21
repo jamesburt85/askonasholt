@@ -335,7 +335,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
                'compare' => '>='
             );
 
-            $meta_query = $current_meta[] = $custom_meta;
+            $meta_query = $current_meta = $custom_meta;
             $query->set( 'meta_query', array($meta_query) );
         
             $query->set( 'orderby', 'meta_value_num' );
