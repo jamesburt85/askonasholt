@@ -103,7 +103,7 @@ class event_api {
         
         // Date (datepicker)
         list($d,$m,$y) = explode('/', (string)$event->Date );
-        $date = "{$y}-{$m}-{$d}";
+        $date = "{$y}{$m}{$d}";
         update_field( 'field_582c4525af917', $date, $post_id ); 
         
         //End date (datepicker)
