@@ -42,13 +42,11 @@
 			margin-right: 10px;
 		}
 		span.category {
-			font-weight: bold;
 			//text-transform: capitalize;
 		}
 		span.magazine-date {
 		    float: right;
 		    color: $brand-gold;
-		    font-weight: bold;
 		}
 	}
 	span.magazine-item-copy p {
@@ -57,7 +55,6 @@
 	.magazine-item-header {
 		margin-bottom: 0;
 		font-size: 1.1rem;
-		font-weight: bold;
 		
 		a {
 			color: inherit;
@@ -93,6 +90,11 @@
 			opacity: 1;
 		}
 	}
+}
+.type-people .magazine-item:hover{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
 //staff blocks

@@ -111,7 +111,6 @@ p.byline.author { display: none; }
     //color: $brand-red;
     margin-bottom: 0;
     //@include grid-column(12);
-    font-weight: bold;
     a {
         font-size: 17px;
         color: inherit;
@@ -203,6 +202,16 @@ span.bold {
 
 
 /* Complete Fonts */
+
+@font-face {
+    font-family: "Brown-Pro-Regular";
+    src:url("fonts/lineto-brown-pro-regular.eot");
+    src:url("fonts/lineto-brown-pro-regular.eot?#iefix") format("embedded-opentype"),
+        url("fonts/lineto-brown-pro-regular.woff2") format("woff2"),
+        url("fonts/lineto-brown-pro-regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family: "Brown-Pro-Light";

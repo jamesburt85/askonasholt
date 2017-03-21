@@ -2502,7 +2502,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: "Brown-Pro-Light", AdobeBlank;
+  font-family: "Brown-Pro-Regular", AdobeBlank;
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
@@ -3346,7 +3346,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Brown-Pro-Light", AdobeBlank;
+  font-family: "Brown-Pro-Regular", AdobeBlank;
   font-weight: normal;
   font-style: normal;
   color: inherit;
@@ -9323,8 +9323,7 @@ p.byline.author {
 .free-text-area h4 {
   padding-top: 25px;
   padding-bottom: 25px;
-  margin-bottom: 0;
-  font-weight: bold; }
+  margin-bottom: 0; }
   .section-header a,
   .free-text-area h4 a {
     font-size: 17px;
@@ -9388,6 +9387,13 @@ span.bold {
   font-weight: bold; }
 
 /* Complete Fonts */
+@font-face {
+  font-family: "Brown-Pro-Regular";
+  src: url("fonts/lineto-brown-pro-regular.eot");
+  src: url("fonts/lineto-brown-pro-regular.eot?#iefix") format("embedded-opentype"), url("fonts/lineto-brown-pro-regular.woff2") format("woff2"), url("fonts/lineto-brown-pro-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 @font-face {
   font-family: "Brown-Pro-Light";
   src: url("fonts/lineto-brown-pro-light.eot");
@@ -9479,8 +9485,7 @@ span.bold {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 1.1rem;
-  line-height: 1;
-  font-weight: bold; }
+  line-height: 1; }
   .top-bar .menu a:hover:not(.button):not(.artist-categories li a) {
     background-color: #2a2a2a; }
 
@@ -9981,7 +9986,6 @@ body.post-type-archive-events div#archive {
     float: left;
     margin-bottom: 12.5px;
     text-transform: uppercase;
-    font-weight: bold;
     letter-spacing: 1px; }
     .artist-categories li a {
       background-color: #fefefe;
@@ -10105,7 +10109,6 @@ body.post-type-archive-artists li.cat-item-all a {
       font-size: 16px;
       text-transform: uppercase; }
       .single-page-nav--container ul.single-page-nav li a {
-        font-weight: bold;
         color: #b2b2b2; }
     .single-page-nav--container ul.single-page-nav li.single-page-nav_link.active a {
       color: #BA0C2F !important; }
@@ -10163,18 +10166,14 @@ body.post-type-archive-artists li.cat-item-all a {
       display: -ms-flexbox;
       display: flex;
       margin-right: 10px; }
-    .magazine-item .magazine-category span.category {
-      font-weight: bold; }
     .magazine-item .magazine-category span.magazine-date {
       float: right;
-      color: #BE9A83;
-      font-weight: bold; }
+      color: #BE9A83; }
   .magazine-item span.magazine-item-copy p {
     font-size: 1.1rem; }
   .magazine-item .magazine-item-header {
     margin-bottom: 0;
-    font-size: 1.1rem;
-    font-weight: bold; }
+    font-size: 1.1rem; }
     .magazine-item .magazine-item-header a {
       color: inherit; }
   .magazine-item .flag-area .flag {
@@ -10192,6 +10191,10 @@ body.post-type-archive-artists li.cat-item-all a {
     color: #BA0C2F; }
     .magazine-item:hover .read-more span.eye {
       opacity: 1; }
+
+.type-people .magazine-item:hover {
+  -webkit-box-shadow: none;
+  box-shadow: none; }
 
 .magazine-item-container.staff-header .magazine-item-header p {
   margin-bottom: 0; }
@@ -15687,18 +15690,16 @@ div.padded-text {
       opacity: 0.9; }
   .artists .artist-photo-wrapper:hover .overlay, .clients .artist-photo-wrapper:hover .overlay {
     display: block; }
-  .artists .artist-details, .clients .artist-details {
-    font-weight: bold; }
-    .artists .artist-details span.artist-category, .clients .artist-details span.artist-category {
-      text-transform: uppercase;
-      color: initial;
-      font-size: 13px;
-      letter-spacing: 1px; }
-    .artists .artist-details a .artist-name, .clients .artist-details a .artist-name {
-      margin-bottom: 0;
-      color: initial;
-      -webkit-transition: 0.5s;
-      transition: 0.5s; }
+  .artists .artist-details span.artist-category, .clients .artist-details span.artist-category {
+    text-transform: uppercase;
+    color: initial;
+    font-size: 13px;
+    letter-spacing: 1px; }
+  .artists .artist-details a .artist-name, .clients .artist-details a .artist-name {
+    margin-bottom: 0;
+    color: initial;
+    -webkit-transition: 0.5s;
+    transition: 0.5s; }
   .artists .side-bar-artist-details.contact, .clients .side-bar-artist-details.contact {
     line-height: 30px; }
   .artists .artist-details:hover .artist-name, .clients .artist-details:hover .artist-name {
@@ -15879,7 +15880,6 @@ div.people-link-item:hover .overlay {
 
 .hero-sub-header {
   text-transform: uppercase;
-  font-weight: bold;
   color: #b38a76 !important;
   padding: 8px 8px 2px 8px; }
 
@@ -15972,7 +15972,6 @@ button.hero-button {
       line-height: 2; }
     .text-banner-wrapper .text-banner .text-banner-area .banner-copy {
       font-size: 22px;
-      font-weight: bold;
       line-height: 1.7; }
       .text-banner-wrapper .text-banner .text-banner-area .banner-copy h4 {
         font-family: "GeometricSlab703BT-Light";
@@ -18330,8 +18329,6 @@ img.circle-thumb {
   line-height: 30px; }
   .side-bar-artist img.circle-thumb {
     margin-right: 25px; }
-  .side-bar-artist .side-bar-artist-name {
-    font-weight: bold; }
 
 a.side-bar-link {
   color: initial !important; }
