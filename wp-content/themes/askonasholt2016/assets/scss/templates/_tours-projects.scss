@@ -227,6 +227,14 @@ ul.accordion {
   .accordion-content {
     color: initial;
     border: none;
+
+    font-family: "Brown-Pro-Light", AdobeBlank;
+
+    strong {
+        font-weight: normal;
+        font-family: $body-font-family;
+    }
+
   }
 }
 

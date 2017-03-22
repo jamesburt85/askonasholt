@@ -18364,7 +18364,11 @@ ul.accordion {
     border-bottom: none; }
   ul.accordion .accordion-content {
     color: initial;
-    border: none; }
+    border: none;
+    font-family: "Brown-Pro-Light", AdobeBlank; }
+    ul.accordion .accordion-content strong {
+      font-weight: normal;
+      font-family: "Brown-Pro-Regular", AdobeBlank; }
 
 .accordion-title:before {
   content: '^';
