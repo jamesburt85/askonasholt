@@ -10178,12 +10178,13 @@ body.post-type-archive-artists li.cat-item-all a {
         -webkit-transition: 0.5s;
         transition: 0.5s; }
   .magazine-item .magazine-item-thumb {
-    height: 200px;
+    height: 300px;
     background-position: center center;
     background-repeat: no-repeat;
     border-bottom: 0;
     -webkit-background-size: cover;
-    background-size: cover; }
+    background-size: cover;
+    background-position: 50% 33%; }
   .magazine-item .magazine-category {
     text-transform: uppercase;
     font-size: 0.8rem;
