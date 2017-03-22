@@ -10056,6 +10056,7 @@ body.post-type-archive-events div#archive {
         .artist-categories .current-cat-parent ul.children li.current-cat a:hover {
           background-color: #BA0C2F; }
 
+.term-singers .artist-filtering-block .filter-area,
 .term-instrumentalists .artist-filtering-block .filter-area {
   position: absolute;
   bottom: 0;
@@ -10063,6 +10064,7 @@ body.post-type-archive-events div#archive {
   -ms-transform: translateY(-75%);
   transform: translateY(-75%); }
 
+.term-singers .artist-filtering-block .artist-categories,
 .term-instrumentalists .artist-filtering-block .artist-categories {
   bottom: 0;
   position: absolute;

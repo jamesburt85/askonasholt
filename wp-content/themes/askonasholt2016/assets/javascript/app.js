@@ -647,15 +647,15 @@ var map = null;
       //-----------------------//
 
 
+      if( $('body').hasClass('term-instrumentalists') || $('body').hasClass('term-singers') ) {
+        $('.artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height()+114);
+        $('.filter-area').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height());
 
-      $('.term-instrumentalists .artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .children').height()+115);
-      $('.term-instrumentalists .filter-area').height($('.artist-categories').height()+$('.artist-categories .children').height());
-
-      $( window ).resize(function() {
-        $('.term-instrumentalists .artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .children').height()+115);
-        $('.term-instrumentalists .filter-area').height($('.artist-categories').height()+$('.artist-categories .children').height());
-      });
-
+        $( window ).resize(function() {
+          $('.artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height()+114);
+          $('.filter-area').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height());
+        });
+      }
 
 
   	});
