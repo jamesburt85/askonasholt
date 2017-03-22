@@ -15648,6 +15648,7 @@ body.page div.slick-slider .center-image {
   border-bottom: 0;
   -webkit-background-size: cover;
   background-size: cover;
+  background-position: 50% 33%;
   position: relative; }
   body.page div.slick-slider .center-image .center-image--credits {
     position: absolute;

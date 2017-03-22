@@ -29,6 +29,7 @@ body.page {
 			height: 69vh;
 			margin: 1em 1em;
 			@include full-bg;
+			background-position: 50% 33%;
 			position: relative;
 			.center-image--credits {
 			    position: absolute;
