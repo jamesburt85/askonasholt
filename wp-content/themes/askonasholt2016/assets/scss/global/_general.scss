@@ -165,7 +165,8 @@ p {
     font-size: 1.15rem;
 }
 
-body.single {
+body.single,
+#narrow-text-page {
     article.main-content {
         p {
             font-family: "Brown-Pro-Light", AdobeBlank;

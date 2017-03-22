@@ -9362,13 +9362,16 @@ body.search .blogpost-entry {
 p {
   font-size: 1.15rem; }
 
-body.single article.main-content p {
+body.single article.main-content p,
+#narrow-text-page article.main-content p {
   font-family: "Brown-Pro-Light", AdobeBlank; }
-  body.single article.main-content p strong {
+  body.single article.main-content p strong,
+  #narrow-text-page article.main-content p strong {
     font-weight: normal;
     font-family: "Brown-Pro-Regular", AdobeBlank; }
 
-body.single article.main-content .magazine-item p {
+body.single article.main-content .magazine-item p,
+#narrow-text-page article.main-content .magazine-item p {
   font-family: "Brown-Pro-Regular", AdobeBlank; }
 
 .quicklook-content-bio p {
@@ -11571,8 +11574,6 @@ ul#example-dropdown {
     padding: 0 12.5px 0 0.9375rem; }
   .press-row span.text_area_two, .press-row span.text_area_three {
     padding: 0 12.5px; }
-  .press-row .press-details span:last-child {
-    font-weight: bold; }
   .press-row .press-details span:not(:last-child) {
     border-right: 1px solid #cccccc; }
   .press-row li.accordion-item {
