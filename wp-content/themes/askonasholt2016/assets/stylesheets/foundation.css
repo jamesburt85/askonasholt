@@ -9984,7 +9984,7 @@ body.post-type-archive-events div#archive {
     padding-left: 0; }
   .artist-categories li {
     float: none !important;
-    display: inline;
+    display: inline-block;
     text-align: center; }
   .artist-categories {
     position: absolute;
@@ -10002,7 +10002,7 @@ body.post-type-archive-events div#archive {
   .artist-categories li {
     color: #fefefe;
     float: left;
-    margin-bottom: 12.5px;
+    margin-bottom: 2px;
     text-transform: uppercase;
     letter-spacing: 1px; }
     .artist-categories li a {
@@ -10056,8 +10056,20 @@ body.post-type-archive-events div#archive {
         .artist-categories .current-cat-parent ul.children li.current-cat a:hover {
           background-color: #BA0C2F; }
 
-.term-instrumentalists .artist-categories {
-  bottom: 1em; }
+.term-instrumentalists .artist-filtering-block .filter-area {
+  position: absolute;
+  bottom: 0;
+  -webkit-transform: translateY(-75%);
+  -ms-transform: translateY(-75%);
+  transform: translateY(-75%); }
+
+.term-instrumentalists .artist-filtering-block .artist-categories {
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
 
 body.post-type-archive-artists li.cat-item-all a {
   background-color: #BA0C2F;

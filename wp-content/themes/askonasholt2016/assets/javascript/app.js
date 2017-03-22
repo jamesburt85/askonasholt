@@ -648,8 +648,13 @@ var map = null;
 
 
 
-      
+      $('.term-instrumentalists .artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .children').height()+115);
+      $('.term-instrumentalists .filter-area').height($('.artist-categories').height()+$('.artist-categories .children').height());
 
+      $( window ).resize(function() {
+        $('.term-instrumentalists .artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .children').height()+115);
+        $('.term-instrumentalists .filter-area').height($('.artist-categories').height()+$('.artist-categories .children').height());
+      });
 
 
 
