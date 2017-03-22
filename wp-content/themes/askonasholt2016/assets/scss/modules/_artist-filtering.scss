@@ -207,7 +207,7 @@ body.post-type-archive-events {
 	// }
 	.current-cat.i-have-kids,
 	.current-cat-parent {
-		height: 100px; // temp
+		// height: 100px; // temp
 	}
 	
 	.current-cat,
@@ -223,7 +223,7 @@ body.post-type-archive-events {
 		ul.children {
 			position: absolute;
 			display: inline-block;
-			bottom: -($sitepadding * 1.5);
+			top: 100%;
 			@include center(x);
 			width: 100%;
 

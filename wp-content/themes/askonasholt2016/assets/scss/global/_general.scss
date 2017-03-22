@@ -165,6 +165,32 @@ p {
     font-size: 1.15rem;
 }
 
+body.single {
+    article.main-content {
+        p {
+            font-family: "Brown-Pro-Light", AdobeBlank;
+
+            strong {
+                font-weight: normal;
+                font-family: $body-font-family;
+            }
+        }
+        .magazine-item p {
+            font-family: $body-font-family;
+        }
+    }
+}
+.quicklook-content-bio {
+    p {
+        font-family: "Brown-Pro-Light", AdobeBlank;
+
+        strong {
+            font-weight: normal;
+            font-family: $body-font-family;
+        }
+    } 
+}
+
 @include breakpoint(medium) {
     p {
         font-size: 1.27rem;

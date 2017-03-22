@@ -36,7 +36,7 @@
 	    background: transparent;
 	    border: 1px solid gray;
 	    color: initial;
-	    font-weight: bold;
+	    font-family: $body-font-family;
 	    padding: 0.85em $sitepadding;
 	}
 
@@ -45,7 +45,7 @@
 
 ul.quick-look-links {
 	list-style-type: none;
-	font-weight: bold;
+	font-family: $body-font-family;
 	margin: $sitepadding 0;
 	li {
 		padding: 5px 0;

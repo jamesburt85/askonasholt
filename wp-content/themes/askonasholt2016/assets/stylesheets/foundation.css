@@ -9362,6 +9362,21 @@ body.search .blogpost-entry {
 p {
   font-size: 1.15rem; }
 
+body.single article.main-content p {
+  font-family: "Brown-Pro-Light", AdobeBlank; }
+  body.single article.main-content p strong {
+    font-weight: normal;
+    font-family: "Brown-Pro-Regular", AdobeBlank; }
+
+body.single article.main-content .magazine-item p {
+  font-family: "Brown-Pro-Regular", AdobeBlank; }
+
+.quicklook-content-bio p {
+  font-family: "Brown-Pro-Light", AdobeBlank; }
+  .quicklook-content-bio p strong {
+    font-weight: normal;
+    font-family: "Brown-Pro-Regular", AdobeBlank; }
+
 @media screen and (min-width: 40em) {
   p {
     font-size: 1.27rem;
@@ -10002,9 +10017,6 @@ body.post-type-archive-events div#archive {
     display: none;
     list-style: none;
     margin: 0; }
-  .artist-categories .current-cat.i-have-kids,
-  .artist-categories .current-cat-parent {
-    height: 100px; }
   .artist-categories .current-cat a,
   .artist-categories .current-cat-parent a {
     background-color: #BA0C2F;
@@ -10013,7 +10025,7 @@ body.post-type-archive-events div#archive {
   .artist-categories .current-cat-parent ul.children {
     position: absolute;
     display: inline-block;
-    bottom: -37.5px;
+    top: 100%;
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -17134,12 +17146,12 @@ div#mega-toggle-block-1:after {
     background: transparent;
     border: 1px solid gray;
     color: initial;
-    font-weight: bold;
+    font-family: "Brown-Pro-Regular", AdobeBlank;
     padding: 0.85em 25px; }
 
 ul.quick-look-links {
   list-style-type: none;
-  font-weight: bold;
+  font-family: "Brown-Pro-Regular", AdobeBlank;
   margin: 25px 0; }
   ul.quick-look-links li {
     padding: 5px 0; }
