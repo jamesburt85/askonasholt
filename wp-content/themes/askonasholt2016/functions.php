@@ -305,6 +305,22 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
         $query->set( 'tax_query', $taxquery );
 
+        // exclude tours which have already ended
+
+        $metaquery = array(
+            'meta_key' => 'end_date',
+            'meta_query' => array(
+                array(
+                    'key' => 'end_date',
+                    'value' => date('Ymd', strtotime('now')),
+                    'type' => 'numeric',
+                    'compare' => '>=',
+                ),
+            ),
+        );
+
+        $query->set( 'meta_query', $metaquery );        
+
     }
     add_action( 'pre_get_posts', 'filter_tours_archive_filter_get_posts' );    
 
