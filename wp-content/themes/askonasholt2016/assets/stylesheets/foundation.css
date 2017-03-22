@@ -10178,7 +10178,7 @@ body.post-type-archive-artists li.cat-item-all a {
         -webkit-transition: 0.5s;
         transition: 0.5s; }
   .magazine-item .magazine-item-thumb {
-    height: 300px;
+    height: 250px;
     background-position: center center;
     background-repeat: no-repeat;
     border-bottom: 0;
@@ -10270,7 +10270,7 @@ body.blog .archive__load-more a:hover {
   background: #BA0C2F; }
 
 .large-item .magazine-item .magazine-item-thumb {
-  height: 300px; }
+  height: 250px; }
 
 .single-magazine-category {
   display: -webkit-box;
