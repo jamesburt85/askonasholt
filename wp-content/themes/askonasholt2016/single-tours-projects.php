@@ -115,12 +115,15 @@ get_header(); ?>
 														<span class="side-bar-artist-name"><?php echo get_the_title( $staff_id) ?></span>
 													</a>
 													<br/>
+
+													<?php
+														$position = get_field( 'position', $staff_id );
+													?>
+
+													<span>
+														<?php echo $position; ?>
+													</span>													
 												
-													<?php # If this artist has an artist-type
-													# - Will only EVER return the first result in the artist type array
-													if ( !empty( $artist_types)): ?>
-														<span><?php echo $artist_types[0]->name ?></span>
-													<?php endif ?>
 												</div>
 											</div>
 						<!-- 					<?php # If the artist has an artist type
@@ -346,12 +349,15 @@ get_header(); ?>
 												</span>
 											</a>
 											<br/>
-										
-											<?php # If this artist has an artist-type
-											# - Will only EVER return the first result in the artist type array
-											if ( !empty( $artist_types)): ?>
-												<span><?php echo $artist_types[0]->name ?></span>
-											<?php endif ?>
+
+											<?php
+												$position = get_field( 'position', $staff_id );
+											?>
+
+											<span>
+												<?php echo $position; ?>
+											</span>
+
 										</div>
 									</div>
 				<!-- 					<?php # If the artist has an artist type
