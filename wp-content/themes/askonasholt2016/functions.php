@@ -248,6 +248,39 @@ class Walker_Category_Find_Parents extends Walker_Category {
     # 
     # // adstyles
 
+    function filter_upcoming_tours_archive_filter_get_posts($query) {
+
+        if ( isset( $_REQUEST['term'] ) && $_REQUEST['term'] == '2016-2017' ) {
+
+            // exclude tours which have already ended
+
+            $metaquery = array(
+                'meta_key' => 'end_date',
+                'meta_query' => array(
+                    array(
+                        'key' => 'end_date',
+                        'value' => date('Ymd', strtotime('now')),
+                        'type' => 'numeric',
+                        'compare' => '>=',
+                    ),
+                ),
+            );
+
+            $query->set( 'meta_query', $metaquery );
+
+        }
+
+    }
+    add_action( 'pre_get_posts', 'filter_upcoming_tours_archive_filter_get_posts' );
+
+
+
+    //**************************************************
+    // filter the default archive tours-projects archive to just show from one cat
+    //**************************************************
+    # 
+    # // adstyles
+
     function filter_tours_archive_filter_get_posts($query) {
         // only change tours-projects. if its admin, dont do it, if its a template (like PAST TOURS template) then don't do it.
         if ( !$query->is_post_type_archive('tours-projects') || is_admin() || is_page_template() )
@@ -273,7 +306,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
         $query->set( 'tax_query', $taxquery );
 
     }
-    add_action( 'pre_get_posts', 'filter_tours_archive_filter_get_posts' );
+    add_action( 'pre_get_posts', 'filter_tours_archive_filter_get_posts' );    
 
 
 
