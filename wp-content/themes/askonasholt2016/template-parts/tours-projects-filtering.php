@@ -59,11 +59,14 @@ $queried_object = get_queried_object();
 
 								// label up the current tour
 								$currSeasonLi = $('.cat-item-<?php echo $currentSeasonOBJ->term_id ?>');
+								$upSeasonLi = $('.cat-item-<?php echo $upcomingSeasonOBJ->term_id ?>');
 								console.log($currSeasonLi);
 							
 								// remove all PAST tours (those after the current)
 								$currSeasonLi.css( "display", "none" );
 								$currSeasonLi.prevAll().css( "display", "none" );
+								$upSeasonLi.css( "display", "none" );
+								$upSeasonLi.prevAll().css( "display", "none" );
 
 							});
 						</script>
