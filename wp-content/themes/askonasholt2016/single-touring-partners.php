@@ -68,9 +68,6 @@ get_header(); ?>
 										}
 										//echo $thumb_url;
 
-										# Get post terms as array
-										$artist_types = get_the_terms( $artist_id, 'people-type');
-										//print_r($artist_types);
 										?>
 										
 										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
@@ -88,19 +85,13 @@ get_header(); ?>
 										        </svg>
 										      </a>
 											</span><br/>
-										
-											<?php # If this artist has an artist-type
-											# - Will only EVER return the first result in the artist type array
-											if ( !empty( $artist_types)): ?>
-												<span><?php echo $artist_types[0]->name ?></span>
-											<?php endif ?>
 											
 											<?php 
-												//$position = //get_the_terms( $artist_id, $position);
+												$position = get_field( 'position', $artist_id );
 											?>
 
 											<span>
-												<?php //echo $position; ?>
+												<?php echo $position; ?>
 											</span>
 
 										</div>
