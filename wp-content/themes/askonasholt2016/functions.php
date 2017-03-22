@@ -250,7 +250,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
     function filter_upcoming_tours_archive_filter_get_posts($query) {
 
-        if ( isset( $_REQUEST['term'] ) && $_REQUEST['term'] == '2016-2017' ) {
+        if ( $query->is_main_query() && !$query->is_feed() && !is_admin() && isset( $_REQUEST['term'] ) && $_REQUEST['term'] == '2016-2017' ) {
 
             // exclude tours which have already ended
 
