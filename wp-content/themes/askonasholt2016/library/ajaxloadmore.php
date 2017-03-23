@@ -1,12 +1,4 @@
 <?php 
-
-
-
-
-
-
-
-
 # Archive ajax function
 /*
 ** $_POST['page']       = (int) Page number
@@ -41,6 +33,20 @@ function wiaw_archive_ajax() {
             $args['orderby'] = 'meta_value';
             $args['order'] = 'ASC';
         }
+        // Upcoming Tours
+        if($args['post_type'] == 'tours-projects') {
+            $args['meta_key'] = 'end_date';
+            $args['orderby'] = 'meta_value';
+            $args['order'] = 'DESC';
+            $args['meta_query'] = array(
+                array(
+                    'key' => 'end_date',
+                    'value' => date('Ymd', strtotime('now')),
+                    'type' => 'numeric',
+                    'compare' => '>=',
+                ),
+            );
+        }
 
     # Taxonomy Archive
     } else {
@@ -56,7 +62,21 @@ function wiaw_archive_ajax() {
             $args['meta_key'] = 'last_name';
             $args['orderby'] = 'meta_value';
             $args['order'] = 'ASC';
-        }        
+        }
+        // Past Tours
+        if($data['taxonomy'] == 'tour-season') {
+            $args['meta_key'] = 'end_date';
+            $args['orderby'] = 'meta_value';
+            $args['order'] = 'DESC';
+            $args['meta_query'] = array(
+                array(
+                    'key' => 'end_date',
+                    'value' => date('Ymd', strtotime('now')),
+                    'type' => 'numeric',
+                    'compare' => '<',
+                ),
+            );            
+        }
 
         $args['post_type'] = 'any';
 
