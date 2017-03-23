@@ -264,6 +264,8 @@ class Walker_Category_Find_Parents extends Walker_Category {
                         'compare' => '>=',
                     ),
                 ),
+                'orderby' => 'meta_value',
+                'order' => 'DESC',                
             );
 
             $query->set( 'meta_query', $metaquery );
@@ -317,6 +319,8 @@ class Walker_Category_Find_Parents extends Walker_Category {
                     'compare' => '>=',
                 ),
             ),
+            'orderby' => 'meta_value',
+            'order' => 'DESC',            
         );
 
         $query->set( 'meta_query', $metaquery );        
