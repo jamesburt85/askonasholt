@@ -23,12 +23,21 @@ get_header(); ?>
 		$args = array(
 			'post_type' => 'tours-projects',
 			'tax_query' => array(
-			        array(
-			            'taxonomy' => 'tour-season',
-			            'terms' => $pastSeasonID,
-			            'field' => 'term_id',
-			        )
-			    ),
+			    array(
+			        'taxonomy' => 'tour-season',
+			        'terms' => $pastSeasonID,
+			        'field' => 'term_id',
+			    )
+			),
+            'meta_key' => 'end_date',
+            'meta_query' => array(
+                array(
+                    'key' => 'end_date',
+                    'value' => date('Ymd', strtotime('now')),
+                    'type' => 'numeric',
+                    'compare' => '<',
+                ),
+            ),			
 		);
 
 		$the_query = new WP_Query( $args );

@@ -125,9 +125,7 @@ $queried_object = get_queried_object();
 					if ( !empty( $seasons)): ?>
 					<ul id='example-dropdown' class='tours-projects-categories dropdown-pane' data-dropdown data-auto-focus='true'>
 						<?php # Loop through the seasons
-						foreach ($seasons as $season): 
-							# Skip the current season
-							if ( $season->slug == $currentSeasonOBJ->slug) continue; ?>
+						foreach ($seasons as $season): ?>
 							<li><a href="<?php echo $past_tours_permalink ?>?tour-year=<?php echo $season->slug ?>"><?php echo $season->name ?></a></li>
 						<?php endforeach ?>
 					<?php endif ?>
