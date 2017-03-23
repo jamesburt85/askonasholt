@@ -37,7 +37,9 @@ get_header(); ?>
                     'type' => 'numeric',
                     'compare' => '<',
                 ),
-            ),			
+            ),
+            'orderby' => 'meta_value',
+            'order' => 'DESC',
 		);
 
 		$wp_query = new WP_Query( $args );
