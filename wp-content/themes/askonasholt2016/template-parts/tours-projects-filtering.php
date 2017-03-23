@@ -18,7 +18,12 @@ $queried_object = get_queried_object();
 	}
 
 	if (is_page_template()){
-		$pageName = $pastSeasonOBJ->slug;
+		if ( isset( $_REQUEST['tour-year'] ) ) {
+			$pageName = $_REQUEST['tour-year'];
+		}
+		else {
+			$pageName = $pastSeasonOBJ->slug;
+		}
 	} else if (is_post_type_archive('tours-projects')) {
 		$pageName = $currentSeasonOBJ->slug;
 	} else {

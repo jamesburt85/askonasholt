@@ -12,6 +12,7 @@
 	.filter-header {
 		@include center();
 		width: 90%;
+		z-index: 1;
 	}
 	button.button {
 	    background-color: #fefefe;
@@ -27,6 +28,9 @@
 		color: #ffffff;
 	}
 	ul#example-dropdown {
+		@include center(x);
+		left: 50% !important;
+		margin-left: 0;
 	    list-style-type: none;
 	    text-align: left;
 	    a {

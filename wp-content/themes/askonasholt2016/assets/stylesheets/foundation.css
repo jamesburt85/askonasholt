@@ -9946,7 +9946,8 @@ div#search-toggle {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 90%; }
+    width: 90%;
+    z-index: 1; }
   .filtering-block button.button {
     background-color: #fefefe;
     color: #F2F1ED;
@@ -9959,6 +9960,13 @@ div#search-toggle {
     background-color: #BA0C2F;
     color: #ffffff; }
   .filtering-block ul#example-dropdown {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50% !important;
+    margin-left: 0;
     list-style-type: none;
     text-align: left; }
     .filtering-block ul#example-dropdown a {
