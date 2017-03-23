@@ -264,11 +264,12 @@ class Walker_Category_Find_Parents extends Walker_Category {
                         'compare' => '>=',
                     ),
                 ),
-                'orderby' => 'meta_value',
-                'order' => 'DESC',                
             );
 
             $query->set( 'meta_query', $metaquery );
+
+            $query->set( 'orderby', 'meta_value' );
+            $query->set( 'order', 'DESC' );
 
         }
 
@@ -319,11 +320,12 @@ class Walker_Category_Find_Parents extends Walker_Category {
                     'compare' => '>=',
                 ),
             ),
-            'orderby' => 'meta_value',
-            'order' => 'DESC',            
         );
 
-        $query->set( 'meta_query', $metaquery );        
+        $query->set( 'meta_query', $metaquery );
+
+        $query->set( 'orderby', 'meta_value' );
+        $query->set( 'order', 'DESC' );
 
     }
     add_action( 'pre_get_posts', 'filter_tours_archive_filter_get_posts' );    
