@@ -40,7 +40,7 @@ get_header(); ?>
             ),			
 		);
 
-		$the_query = new WP_Query( $args );
+		$wp_query = new WP_Query( $args );
 
 	?>
 
@@ -52,17 +52,20 @@ get_header(); ?>
 
 	<article class="main-content">
 
-		<?php if ( $the_query->have_posts() ) : ?>
+		<?php if ( $wp_query->have_posts() ) : ?>
 
 			<!-- pagination here -->
 
 			<!-- the loop -->
-			<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+			<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 				<?php get_template_part( 'template-parts/content-tours-projects' ); ?>
 			<?php endwhile; ?>
 			<!-- end of the loop -->
 
 			<!-- pagination here -->
+
+			<?php # Paging
+			wiaw_archive_nav(); ?>
 
 			<?php wp_reset_postdata(); ?>
 
