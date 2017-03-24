@@ -376,6 +376,8 @@ get_header(); ?>
 
 		    	<?php endif; ?>
 
+		        </div>
+
 
 		    	  <div class="small-12 columns"><!-- Show for large -->
 		    	    <ul class="accordion" data-accordion data-allow-all-closed="true"><!-- Show for large -->
