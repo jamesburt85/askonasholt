@@ -185,9 +185,11 @@ get_header(); ?>
 
 	?>
 
-	<?php if( $videos ): ?>
-
+	<?php if( $videos || !empty($tracks) ): ?>
 		<div class="video-audio-area" id="video-audio">
+	<?php endif ?>
+
+	<?php if( $videos ): ?>
 
 			<div class="row">
 				<h4 class="section-header small-6 columns">Video &amp; Audio</h4>
@@ -240,6 +242,7 @@ get_header(); ?>
 				wp_reset_postdata(); ?>
 
 				</div>
+
 			</div>
 
 			<?php endif; ?>
@@ -258,7 +261,7 @@ get_header(); ?>
 
 					$tracks = get_posts(array(
 						'post_type' => 'post',
-						'posts_per_page' => 4,
+						'posts_per_page' => -1,
 
 						'tax_query' => array(
 						        array(
@@ -285,20 +288,37 @@ get_header(); ?>
 					?>
 					<?php if( !empty($tracks) ): ?>
 						<!-- <ul> -->
+				        <div class="row-divider show">
+
 						<?php
-							foreach( $tracks as $post ): setup_postdata( $post );
 
-								get_template_part( 'template-parts/audio-player' );
+						$i = 0;
 
-							endforeach;
+						foreach( $tracks as $post ): setup_postdata( $post ); ?>
 
-							wp_reset_postdata(); ?>
+						<?php $i++; if($i == 5): ?>
+
+						</div><div class="row-divider">
+
+						<?php endif; ?>
+							
+							<?php get_template_part( 'template-parts/audio-player' ); ?>
+
+						<?php
+
+						endforeach;
+
+						wp_reset_postdata(); ?>
+
+						</div>
 						<!--  </ul> -->
 					<?php endif; ?>
 
 			</div>
 
+	<?php if( $videos || !empty($tracks) ): ?>
 		</div>
+	<?php endif ?>
 
 	<div class="performance-schedule row" id="schedule">
 
