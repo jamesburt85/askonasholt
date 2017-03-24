@@ -219,7 +219,7 @@ get_header(); ?>
 	?>	
 
 
-	<?php if( $videos || !empty($tracks) ): ?>
+	<?php if( $videos || $tracks ): ?>
 		<div class="video-audio-area" id="video-audio">
 	<?php endif ?>
 
@@ -228,7 +228,7 @@ get_header(); ?>
 
 		        <div class="small-6 columns view-all">
 
-				<?php if (count($videos) > 4): ?>
+				<?php if (count($videos) > 4 || count($tracks) > 4): ?>
 
 		          <a class="view-link toggle-hidden" href="#">View all &nbsp;
 		            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
