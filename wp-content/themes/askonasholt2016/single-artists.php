@@ -183,7 +183,41 @@ get_header(); ?>
 		)
 	));
 
-	?>
+	/*
+	*  Query posts for a relationship value.
+	*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+	*/
+
+	// $theID = get_the_ID();
+
+	$tracks = get_posts(array(
+		'post_type' => 'post',
+		'posts_per_page' => -1,
+
+		'tax_query' => array(
+		        array(
+		            'taxonomy' => 'post_format',
+		            'field' => 'slug',
+		            'terms' => array( 'post-format-audio' ),
+		        )
+		    ),
+
+		'meta_query' => array(
+			array(
+				'key' => 'related_artist', // name of custom field
+				'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+				'compare' => 'LIKE'
+			)
+		)
+	));
+
+	// echo "<pre>";
+	// the_ID();
+	// print_r($tracks);
+	// echo "</pre>";
+
+	?>	
+
 
 	<?php if( $videos || !empty($tracks) ): ?>
 		<div class="video-audio-area" id="video-audio">
@@ -245,47 +279,11 @@ get_header(); ?>
 
 			</div>
 
-			<?php endif; ?>
+	<?php endif; ?>
 
 
 			<div class="row">
 
-					<?php 
-
-					/*
-					*  Query posts for a relationship value.
-					*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
-					*/
-
-					// $theID = get_the_ID();
-
-					$tracks = get_posts(array(
-						'post_type' => 'post',
-						'posts_per_page' => -1,
-
-						'tax_query' => array(
-						        array(
-						            'taxonomy' => 'post_format',
-						            'field' => 'slug',
-						            'terms' => array( 'post-format-audio' ),
-						        )
-						    ),
-
-						'meta_query' => array(
-							array(
-								'key' => 'related_artist', // name of custom field
-								'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-								'compare' => 'LIKE'
-							)
-						)
-					));
-
-					// echo "<pre>";
-					// the_ID();
-					// print_r($tracks);
-					// echo "</pre>";
-
-					?>
 					<?php if( !empty($tracks) ): ?>
 						<!-- <ul> -->
 				        <div class="row-divider show">
