@@ -647,6 +647,11 @@ var map = null;
       //-----------------------//
 
 
+
+      //****************************
+      // JS fixes for menu positioning ******
+      //****************************
+
       if( $('body').hasClass('term-instrumentalists') || $('body').hasClass('term-singers') ) {
         $('.artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height()+114);
         $('.filter-area').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height());
@@ -656,6 +661,22 @@ var map = null;
           $('.filter-area').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height());
         });
       }
+
+      //-----------------------//
+
+
+
+      //****************************
+      // Toggle hidden content rows ******
+      //****************************
+
+      $('.view-link.toggle-hidden').click(function(e) {
+        e.preventDefault();
+        $(this).parents('.row').find('.row-divider:not(.show)').toggle();
+      });
+
+      //-----------------------//      
+
 
 
   	});
@@ -692,3 +713,5 @@ var map = null;
       });
       
     });
+
+    //-----------------------//

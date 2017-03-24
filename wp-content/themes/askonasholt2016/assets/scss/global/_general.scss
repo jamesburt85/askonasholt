@@ -217,7 +217,7 @@ li.accordion-item, ul#sticky li, footer#footer li, ul.quick-look-links li, ul.po
     margin-top: 0 !important;
 }
 
-//Moving read more arrow down 4px
+//moving read more arrow down 4px
 svg.red-arrow {
     position: relative;
     top: 4px;
@@ -227,6 +227,14 @@ span.bold {
 	font-weight: bold;
 }
 
+//hidden content toggle rows
+.row-divider {
+    display: none;
+
+    &.show {
+        display: block;
+    }
+}
 
 /* Complete Fonts */
 
