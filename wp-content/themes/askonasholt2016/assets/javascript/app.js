@@ -693,13 +693,11 @@ var map = null;
       // Contracting galleries after first ******
       //*****************************************      
 
-      setTimeout(function(){
-        $('.single-artists .image-gallery.row .accordion').each(function (i) {
+      $('.single-artists .image-gallery.row .accordion').each(function (i) {
 
-            if (i > 0) { $(this).foundation('up', $(this).find('.accordion-content')); }
+          if (i > 0) { $(this).foundation('up', $(this).find('.accordion-content')); }
 
-        });
-      }, 1);
+      });
 
       //-----------------------//
 
