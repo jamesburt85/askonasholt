@@ -666,20 +666,6 @@ var map = null;
 
 
 
-      //****************************
-      // Toggle hidden content rows ******
-      //****************************
-
-      $('.view-link.toggle-hidden').click(function(e) {
-        e.preventDefault();
-        $(this).parents('.toggleable-area').find('.row-divider:not(.show)').toggle();
-        $('html,body').animate({ scrollTop: $(this).offset().top }, 'slow');
-      });
-
-      //-----------------------//      
-
-
-
   	});
 
 }(window.jQuery);
@@ -701,18 +687,31 @@ var map = null;
 
 
 
-    //*****************************************
-    // Contracting galleries after first ******
-    //*****************************************
-
     jQuery(window).load(function() {
+
+      //*****************************************
+      // Contracting galleries after first ******
+      //*****************************************      
 
       $('.single-artists .image-gallery.row .accordion').each(function (i) {
 
           if (i > 0) { $(this).foundation('up', $(this).find('.accordion-content')); }
 
       });
+
+      //-----------------------//
+
+
+      //****************************
+      // Toggle hidden content rows ******
+      //****************************
+
+      $('.view-link.toggle-hidden').click(function(e) {
+        e.preventDefault();
+        $(this).parents('.toggleable-area').find('.row-divider:not(.show)').toggle();
+        $('html,body').animate({ scrollTop: $(this).offset().top }, 'slow');
+      });
+
+      //-----------------------//      
       
     });
-
-    //-----------------------//
