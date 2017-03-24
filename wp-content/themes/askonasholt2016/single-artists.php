@@ -223,8 +223,6 @@ get_header(); ?>
 		<div class="video-audio-area" id="video-audio">
 	<?php endif ?>
 
-	<?php if( $videos ): ?>
-
 			<div class="row">
 				<h4 class="section-header small-6 columns">Video &amp; Audio</h4>
 
@@ -248,6 +246,12 @@ get_header(); ?>
 		    	<?php endif; ?>
 
 		        </div>
+
+		    </div>
+
+	<?php if( $videos ): ?>
+
+			<div class="row">
 
 		        <div class="row-divider show">
 
@@ -280,7 +284,6 @@ get_header(); ?>
 			</div>
 
 	<?php endif; ?>
-
 
 			<div class="row">
 
