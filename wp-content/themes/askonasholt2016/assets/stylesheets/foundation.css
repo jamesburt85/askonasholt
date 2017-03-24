@@ -9401,6 +9401,11 @@ svg.red-arrow {
   position: relative;
   top: 4px; }
 
+.toggle-hidden.active svg.red-arrow {
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
 span.bold {
   font-weight: bold; }
 

@@ -666,6 +666,20 @@ var map = null;
 
 
 
+      //****************************
+      // Toggle hidden content rows ******
+      //****************************
+
+      $('.view-link.toggle-hidden').click(function(e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+        $(this).parents('.toggleable-area').find('.row-divider:not(.show)').toggle();
+        $('html,body').animate({ scrollTop: $(this).offset().top-$(this).parent('.view-all').height() }, 'slow');
+      });
+
+      //-----------------------//    
+
+
   	});
 
 }(window.jQuery);
@@ -701,17 +715,5 @@ var map = null;
 
       //-----------------------//
 
-
-      //****************************
-      // Toggle hidden content rows ******
-      //****************************
-
-      $('.view-link.toggle-hidden').click(function(e) {
-        e.preventDefault();
-        $(this).parents('.toggleable-area').find('.row-divider:not(.show)').toggle();
-        $('html,body').animate({ scrollTop: $(this).offset().top }, 'slow');
-      });
-
-      //-----------------------//      
       
     });
