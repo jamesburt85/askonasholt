@@ -17287,7 +17287,7 @@ body.single.single-artists .artist-header.container, body.single.single-clients 
   height: auto;
   position: relative; }
   body.single.single-artists .artist-header.container .artist-details-container, body.single.single-clients .artist-header.container .artist-details-container, body.single-touring-partners .artist-header.container .artist-details-container {
-    padding: 12.5px; }
+    padding: 12.5px 0; }
     body.single.single-artists .artist-header.container .artist-details-container .website, body.single.single-clients .artist-header.container .artist-details-container .website, body.single-touring-partners .artist-header.container .artist-details-container .website {
       font-weight: bold; }
     body.single.single-artists .artist-header.container .artist-details-container i, body.single.single-clients .artist-header.container .artist-details-container i, body.single-touring-partners .artist-header.container .artist-details-container i {
@@ -17349,7 +17349,7 @@ div.side-bar-text-area {
 
 @media screen and (min-width: 40em) {
   body.single.single-artists .artist-header.container .artist-details-area .artist-details-container, body.single.single-clients .artist-header.container .artist-details-area .artist-details-container, body.single-touring-partners .artist-header.container .artist-details-area .artist-details-container {
-    padding: 25px; }
+    padding: 25px 25px 25px 0; }
   body.single.single-artists .artist-header.container, body.single.single-clients .artist-header.container, body.single-touring-partners .artist-header.container {
     height: 450px; } }
 

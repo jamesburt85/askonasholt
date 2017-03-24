@@ -27,8 +27,8 @@
 
 	</div>
 
-	<div class="artist-details-area">
-		<div class="small-12 medium-6 columns artist-details-container">
+	<div class="small-12 medium-6 columns artist-details-area">
+		<div class="artist-details-container">
 			<div class="artist-details">
 				<span class="artist-category">
 				<?php if(!empty($main_category)): ?>

@@ -512,7 +512,9 @@ if ($acf_fields['flexible_content']) {
 											<?php endif; ?>
 
 											<br class="hide-for-medium" />
-											<span class="text_area_three"><?php echo $press_section['location']; ?></span>
+											<?php if( $press_section['location'] ): ?>
+												<span class="text_area_three"><?php echo $press_section['location']; ?></span>
+											<?php endif; ?>
 										</div>	
 
 										<span class="more-info">
