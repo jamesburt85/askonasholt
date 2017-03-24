@@ -672,7 +672,8 @@ var map = null;
 
       $('.view-link.toggle-hidden').click(function(e) {
         e.preventDefault();
-        $(this).parents('.video-audio-area').find('.row-divider:not(.show)').toggle();
+        $(this).parent().parent().find('.row-divider:not(.show)').toggle();
+        $('html,body').animate({ scrollTop: $(this).offset().top }, 'slow');
       });
 
       //-----------------------//      
