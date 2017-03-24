@@ -12,6 +12,8 @@ body.single.single-artists, body.single.single-clients, body.single-touring-part
 	    }
 	    .artist-details-container {
 	    	padding: $sitepadding-small;
+	    	padding-left: 0;
+	    	padding-right: 0;
 	    	.website {
 	    		font-weight: bold;
 	    	}
@@ -101,6 +103,7 @@ div.side-bar-text-area {
 		// /@include center;
 		.artist-details-container {
 			padding: $sitepadding;
+			padding-left: 0;
 		}
 	}
 	body.single.single-artists, body.single.single-clients, body.single-touring-partners {
