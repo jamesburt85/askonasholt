@@ -228,7 +228,7 @@ get_header(); ?>
 
 		        <div class="small-6 columns view-all">
 
-				<?php if (count($videos) > 4 || count($tracks) > 4): ?>
+				<?php if ( count($videos) > 4 || count($tracks) > 4 ): ?>
 
 		          <a class="view-link toggle-hidden" href="#">View all &nbsp;
 		            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -359,6 +359,8 @@ get_header(); ?>
 
 		        <div class="small-6 columns view-all">
 
+				<?php if ( count($the_query) > 4 ): ?>
+
 		          <a class="view-link toggle-hidden" href="#">View all &nbsp;
 		            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		                <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
@@ -368,7 +370,11 @@ get_header(); ?>
 		            </svg>
 		          </a>
 
-		        </div>
+		        <?php else: ?>
+
+		          &nbsp;
+
+		    	<?php endif; ?>
 
 
 		    	  <div class="small-12 columns"><!-- Show for large -->
