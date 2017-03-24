@@ -220,7 +220,7 @@ get_header(); ?>
 
 
 	<?php if( $videos || $tracks ): ?>
-		<div class="video-audio-area" id="video-audio">
+		<div class="video-audio-area toggleable-area" id="video-audio">
 	<?php endif ?>
 
 			<div class="row">
@@ -321,7 +321,7 @@ get_header(); ?>
 		</div>
 	<?php endif ?>
 
-	<div class="performance-schedule row" id="schedule">
+	<div class="performance-schedule row toggleable-area" id="schedule">
 
 		<div class="small-12 columns">
 
@@ -450,7 +450,7 @@ get_header(); ?>
 
 
 	<!-- IS THIS ONE EXTRA??? NEEDED??? -->
-	<div class="performance-schedule row" id="schedule">
+	<div class="performance-schedule row toggleable-area" id="schedule">
 		<div class="small-12 columns">
 		
 		<!-- Get Events -->

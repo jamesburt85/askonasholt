@@ -15817,6 +15817,8 @@ div#video-audio {
 
 .artist-video-area {
   margin-bottom: 25px; }
+  .artist-video-area p object {
+    max-width: 100%; }
   .artist-video-area .row.large-video-row {
     margin: 0;
     margin-left: 0;

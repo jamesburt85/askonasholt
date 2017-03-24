@@ -159,6 +159,11 @@ div#video-audio {
 
 .artist-video-area {
 	margin-bottom: $sitepadding;
+
+	p object {
+		max-width: 100%;
+	}
+
 	.row.large-video-row {
 	    margin: 0;
 	    margin-left: 0;
