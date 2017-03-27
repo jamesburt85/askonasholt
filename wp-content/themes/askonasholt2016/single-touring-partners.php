@@ -369,6 +369,89 @@ get_header(); ?>
 
 			</div>
 
+
+			<div class="past-tours row" id="past-tours">
+
+				<div class="small-12 columns">
+				
+				<!-- Get Past Tours -->
+				  <?php
+
+					$pastSeason = get_field('past_season', 'option');
+
+					$pastSeasonID = $pastSeason->term_id;
+
+				    // Query Args
+				      $args = array(
+
+				        'post_type'   => 'tours-projects',
+						'tax_query' => array(
+						    array(
+								'taxonomy' => 'tour-season',
+								'terms' => $pastSeasonID,
+								'field' => 'term_id',
+						    )
+						),				        
+				        'posts_per_page' => 4,
+				        'meta_key'      => 'end_date',
+				        'orderby'     => 'meta_value',
+				        'order'       => 'DESC',
+
+				        'meta_query' => array(
+				        	array(
+				        		'key' => 'tour_touring_partners', // name of custom field
+				        		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+				        		'compare' => 'LIKE'
+				        	),
+		                    array(
+		                        'key' => 'end_date',
+		                        'value' => date('Ymd', strtotime('now')),
+		                        'type' => 'numeric',
+		                        'compare' => '<',
+		                    ),				        	
+				        )
+
+				      );
+
+
+				      // The Query
+				      $the_query = new WP_Query( $args );
+
+				    // The Loop
+				    if ( $the_query->have_posts() ) { ?>
+				    	
+				    	<div class="row press-row show-for-large"><!-- Show for large -->
+				    	<h4 class="section-header small-12 columns">Past Tours</h4>
+				    	  <div class="small-12 columns"><!-- Show for large -->
+				    	    <ul class="accordion" data-accordion data-allow-all-closed="true"><!-- Show for large -->
+				      
+				      <?php //echo '<ul>';
+				      while ( $the_query->have_posts() ) {
+				        $the_query->the_post(); ?>
+				         
+				                <li class="accordion-item">
+				                  <a href="<?php the_permalink(); ?>" class="accordion-title"><?php the_title(); ?></a>
+				                </li> 
+
+				       <?php } ?>
+
+				           </ul> <!-- Show for large -->
+
+				         </div><!-- Show for large -->
+				       </div><!-- Show for large -->
+
+				      <?php //echo '</ul>';
+				      /* Restore original Post Data */
+				      wp_reset_postdata();
+				    } else {
+				      // no posts found
+				    }
+				  ?>
+
+				</div>
+
+			</div>			
+
 			<!-- =========================== -->
 			<!-- PROJECTS / GREEN ROOM ===== -->
 			<!-- =========================== -->

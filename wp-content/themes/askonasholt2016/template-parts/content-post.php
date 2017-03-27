@@ -14,7 +14,7 @@
 	<div class="magazine-item" data-equalizer-watch>
 		<?php if ( has_post_thumbnail() ) { ?>
 
-			<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+			<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'fp-small' );?>
 			<a href="<?php the_permalink(); ?>">
 			<div class="magazine-item-thumb online-item" style="background-image: url('<?php echo $thumb['0'];?>')">
 				<div class="bottom-left">

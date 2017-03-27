@@ -17,7 +17,7 @@
 
 	<div class="small-12 medium-6 columns artist-hero-image">
 
-		<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+		<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'fp-large' );?>
 
 		<div class="artist-header-thumb" style="background-image: url('<?php echo $thumb['0'];?>')">
 			

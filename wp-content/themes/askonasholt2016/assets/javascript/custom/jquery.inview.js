@@ -117,7 +117,7 @@
       }
 
       if (elementOffset.top + elementSize.height > viewportOffset.top &&
-          elementOffset.top < viewportOffset.top + viewportSize.height &&
+          elementOffset.top < viewportOffset.top + viewportSize.height*2 &&
           elementOffset.left + elementSize.width > viewportOffset.left &&
           elementOffset.left < viewportOffset.left + viewportSize.width) {
         if (!inView) {

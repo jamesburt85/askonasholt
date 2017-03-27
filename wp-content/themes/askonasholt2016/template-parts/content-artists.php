@@ -67,7 +67,7 @@
 				<div class="artist-photo-wrapper">
 					<a href="<?php the_permalink(); ?>">
 						<?php
-							$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+							$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'fp-small' );
 							$thumb = $thumb['0'];
 							if (!$thumb){ // giving default image if no image is set.
 								$thumb = get_template_directory_uri() . '/assets/images/default.jpg';

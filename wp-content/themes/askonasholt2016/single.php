@@ -34,7 +34,7 @@ get_header(); ?>
 
 				<div class="row">
 
-					<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+					<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'fp-large' );?>
 					<?php if($thumb): ?>
 						<div class="tour-hero" style="background-image: url('<?php echo $thumb['0'];?>'); margin-bottom: 1rem;"></div>
 					<?php endif ?>
