@@ -9255,6 +9255,21 @@ pre {
 .temp-testing-mp3 {
   margin-bottom: 100vh; }
 
+body #loading-delay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #BA0C2F !important;
+  z-index: 100001;
+  top: 0; }
+  body #loading-delay .ball-scale-ripple-multiple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+
 .archive__load-more {
   visibility: hidden !important; }
 
@@ -15637,21 +15652,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 [data-whatinput="mouse"] a:focus, button:focus [data-whatinput="touch"] a:focus, button:focus {
   outline: none; }
-
-body.page-template-home #loading-delay {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: #BA0C2F !important;
-  z-index: 100001;
-  top: 0; }
-  body.page-template-home #loading-delay .ball-scale-ripple-multiple {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
 
 body.page div.slick-slider .center.slick-initialized.slick-slider {
   height: 70vh;

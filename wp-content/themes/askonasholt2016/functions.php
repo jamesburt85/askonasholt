@@ -478,7 +478,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
 
 
-
+        // Adding extra weight to Artists post type so that they appear first in search
         add_filter('relevanssi_match', 'extra_user_weight');
          
         function extra_user_weight($match) {
