@@ -10768,9 +10768,9 @@ header h1 {
 .artist-filtering-block .artist-categories {
   position: absolute;
   left: 50%;
-  -webkit-transform: translate(-50%, -100%);
-  -ms-transform: translate(-50%, -100%);
-  transform: translate(-50%, -100%); }
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
 
 @media screen and (min-width: 40em) {
   .artist-filtering-block header.filter-header {

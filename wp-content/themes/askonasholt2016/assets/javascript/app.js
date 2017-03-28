@@ -652,15 +652,13 @@ var map = null;
       // JS fixes for menu positioning ******
       //****************************
 
-      if( $('body').hasClass('term-instrumentalists') || $('body').hasClass('term-singers') ) {
+      $('.artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height()+114);
+      $('.filter-area').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height());
+
+      $( window ).resize(function() {
         $('.artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height()+114);
         $('.filter-area').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height());
-
-        $( window ).resize(function() {
-          $('.artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height()+114);
-          $('.filter-area').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height());
-        });
-      }
+      });
 
       //-----------------------//
 
