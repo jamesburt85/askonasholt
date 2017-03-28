@@ -9409,6 +9409,9 @@ svg.red-arrow {
 span.bold {
   font-weight: bold; }
 
+.row {
+  overflow: hidden; }
+
 .row-divider {
   display: none; }
   .row-divider.show {
@@ -18453,7 +18456,7 @@ span.more-info {
   li.accordion-item .accordion-title {
     line-height: 60px !important; }
   span.more-info {
-    right: 2em; }
+    right: 1.25em; }
   .press-details {
     display: inline-block; } }
 
