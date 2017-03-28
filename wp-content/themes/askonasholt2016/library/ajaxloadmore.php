@@ -37,7 +37,7 @@ function wiaw_archive_ajax() {
         if($args['post_type'] == 'tours-projects') {
             $args['meta_key'] = 'end_date';
             $args['orderby'] = 'meta_value';
-            $args['order'] = 'DESC';
+            $args['order'] = 'ASC';
             $args['meta_query'] = array(
                 array(
                     'key' => 'end_date',

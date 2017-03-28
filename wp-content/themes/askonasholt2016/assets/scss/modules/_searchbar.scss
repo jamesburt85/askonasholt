@@ -29,13 +29,20 @@ body.search-bar-is-visible {
 }
 
 ul.ui-autocomplete {
-  margin: 0;
+  margin: 0 0 0 -38px;
   opacity: 0.9;
+  width: 50vw !important;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
   li.ui-menu-item {
       font-family: "Brown-Pro-Light";;
       font-size: 0.9em;
       background: $brand-red;
-      padding: 2px;
+      padding: 2px 5px;
       color: #ffffff;
       transition: 0.5s;
   }

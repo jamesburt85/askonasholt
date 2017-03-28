@@ -9750,13 +9750,18 @@ body.search-bar-is-visible form#searchform {
     display: none; }
 
 ul.ui-autocomplete {
-  margin: 0;
-  opacity: 0.9; }
+  margin: 0 0 0 -38px;
+  opacity: 0.9;
+  width: 50vw !important;
+  left: 50% !important;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
   ul.ui-autocomplete li.ui-menu-item {
     font-family: "Brown-Pro-Light";
     font-size: 0.9em;
     background: #BA0C2F;
-    padding: 2px;
+    padding: 2px 5px;
     color: #ffffff;
     -webkit-transition: 0.5s;
     transition: 0.5s; }

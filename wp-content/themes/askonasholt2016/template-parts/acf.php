@@ -654,7 +654,7 @@ if ($acf_fields['flexible_content']) {
 				
 				<div class="row free-text" id="<?php echo $section['unique_id'] ?>">
 					<div class="small-12 columns">
-						<span class="free-text-area narrow-text"><?php echo $section['free_text'] ?></span>
+						<span class="free-text-area narrow-text"><h4><?php echo $section['unique_id'] ?></h4><?php echo $section['free_text'] ?></span>
 					</div>
 				</div>
 
