@@ -18395,7 +18395,7 @@ ul.accordion {
   margin-bottom: 0; }
   ul.accordion li.accordion-item .accordion-title {
     display: block;
-    padding: 0;
+    padding: 0 1.5rem;
     font-size: inherit;
     color: inherit;
     position: relative;
@@ -18408,9 +18408,10 @@ ul.accordion {
   ul.accordion :last-child > .accordion-content:last-child {
     border-bottom: none; }
   ul.accordion .accordion-content {
-    color: initial;
     border: none;
-    font-family: "Brown-Pro-Light", AdobeBlank; }
+    padding: 1.5rem;
+    font-family: "Brown-Pro-Light", AdobeBlank;
+    color: initial; }
     ul.accordion .accordion-content strong {
       font-weight: normal;
       font-family: "Brown-Pro-Regular", AdobeBlank; }
