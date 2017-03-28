@@ -56,7 +56,7 @@ get_header(); ?>
       </div>
     </div>
     
-    <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
+    <div class="row" data-equalizer data-equalize-on="medium" id="test-eq testing1234">
     
     <!-- Get news items -->
       <?php 
@@ -66,6 +66,7 @@ get_header(); ?>
 
             'post_type'   => 'post',
             'category_slug' => array( 'news', 'interviews', 'features' ),
+            'cat' => '-'.get_cat_ID('audio').',-'.get_cat_ID('video'),
             'posts_per_page' => 4,
             'tax_query' => array(
                 //array(

@@ -228,21 +228,6 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
 
     //**************************************************
-    // filter homepage posts to exclude audio/video
-    //**************************************************
-    # 
-    # // adstyles
-
-    function exclude_categories( $query ) {
-        if ( is_page('home') ) {
-            $query->set( 'cat', '-'.get_cat_ID('audio').',-'.get_cat_ID('video') );
-        }
-    }
-    add_action( 'pre_get_posts', 'exclude_categories' );
-
-
-
-    //**************************************************
     // filter the default archive tours-projects archive to just show from one cat
     //**************************************************
     # 
@@ -269,7 +254,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
             $query->set( 'meta_query', $metaquery );
 
             $query->set( 'orderby', 'meta_value' );
-            $query->set( 'order', 'DESC' );
+            $query->set( 'order', 'ASC' );
 
         }
 
@@ -325,7 +310,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
         $query->set( 'meta_query', $metaquery );
 
         $query->set( 'orderby', 'meta_value' );
-        $query->set( 'order', 'DESC' );
+        $query->set( 'order', 'ASC' );
 
     }
     add_action( 'pre_get_posts', 'filter_tours_archive_filter_get_posts' );    
@@ -494,7 +479,15 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
 
 
-
+        add_filter('relevanssi_match', 'extra_user_weight');
+         
+        function extra_user_weight($match) {
+            $post_type = relevanssi_get_post_type($match->doc);
+            if ("artists" == $post_type) {
+                $match->weight = $match->weight * 10;
+            }
+            return $match;
+        }
 
 
 
