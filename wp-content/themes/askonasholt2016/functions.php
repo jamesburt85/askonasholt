@@ -270,8 +270,8 @@ class Walker_Category_Find_Parents extends Walker_Category {
     # // adstyles
 
     function filter_tours_archive_filter_get_posts($query) {
-        // only change tours-projects. if its admin, dont do it, if its a template (like PAST TOURS template) then don't do it.
-        if ( !$query->is_post_type_archive('tours-projects') || is_admin() || is_page_template() )
+        // only change tours-projects. if its admin, dont do it, if it's a page template (like PAST TOURS template) or single post then don't do it.
+        if ( !$query->is_post_type_archive('tours-projects') || is_admin() || is_page_template() || is_single() )
             return $query;
 
         // so this should just effect the /tours-and-projects/upcoming/ which is the main archive...
