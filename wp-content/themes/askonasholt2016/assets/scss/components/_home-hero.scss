@@ -1,5 +1,18 @@
 
 
+//Loading delay screen
+body.page-template-home #loading-delay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: $brand-red !important;
+    z-index: 100001;
+    top: 0;
+    .ball-scale-ripple-multiple {
+        @include center;
+    }
+}
+
 //home-hero styles
 body.page {
 	div.slick-slider {

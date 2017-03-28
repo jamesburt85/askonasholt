@@ -123,7 +123,7 @@ $queried_object = get_queried_object();
 					    'hide_empty' => true,
 				        'orderby' => 'name',
 				        'order'		=> DSC,
-				        'exclude' => $upcomingSeasonOBJ->term_id, // don't show Upcoming
+				        'exclude' => 56, // don't show Upcoming
 					) );
 
 					# Are there any seasons

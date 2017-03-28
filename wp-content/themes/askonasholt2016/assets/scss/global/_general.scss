@@ -5,19 +5,6 @@
 //     margin: 0 auto;
 // }
 
-//Loading delay screen
-body #loading-delay {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: $brand-red !important;
-    z-index: 100001;
-    top: 0;
-    .ball-scale-ripple-multiple {
-        @include center;
-    }
-}
-
 //hide load more button - visibility rather than display: none; as JS function requires
 .archive__load-more {
     visibility: hidden !important;
