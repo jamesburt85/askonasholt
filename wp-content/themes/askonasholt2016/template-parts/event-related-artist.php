@@ -5,7 +5,12 @@
 
 
 	if (!empty($related_artists)) {
-		foreach ($related_artists as $artist_id) { ?> 
+		foreach ($related_artists as $artist_id) {
+
+			# Get Permalink to artist page:
+			$artist_url = get_permalink($artist_id);
+
+			?> 
 
 			<div class="side-bar-artist"> <?php
 
@@ -35,7 +40,7 @@
 			<!-- 	</a> -->
 					
 					<div class="side-bar-artist-details simple-listing">
-						<!-- <a class="side-bar-link" href="<?php echo $artist_url; ?>"> -->
+						<a class="side-bar-link" href="<?php echo $artist_url; ?>">
 							<span class="side-bar-artist-name"><?php echo get_the_title( $artist_id) ?></span>&nbsp;<br/>
 
 
@@ -48,7 +53,7 @@
 						//if ( !empty( $artist_types)): ?>
 							<span><?php //echo $artist_types[0]->name ?></span>
 						<?php //endif ?>
-					<!-- 	</a>	 -->			
+						</a>
 					</div>
 				
 
