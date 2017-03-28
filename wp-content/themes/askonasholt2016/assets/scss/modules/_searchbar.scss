@@ -29,9 +29,9 @@ body.search-bar-is-visible {
 }
 
 ul.ui-autocomplete {
-  margin: 0 0 0 -38px;
+  margin: 0;
   opacity: 0.9;
-  width: 50vw !important;
+  width: calc(50vw + 77px) !important;
   left: 50% !important;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
