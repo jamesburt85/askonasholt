@@ -56,7 +56,7 @@ get_header(); ?>
       </div>
     </div>
     
-    <div class="row" data-equalizer data-equalize-on="medium" id="test-eq testing1234">
+    <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
     
     <!-- Get news items -->
       <?php 
