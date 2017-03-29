@@ -15669,7 +15669,7 @@ body.page div.slick-slider .slick-slide:focus {
 
 body.page div.slick-slider .center-image {
   height: 69vh;
-  margin: 1em 1em;
+  margin: 1em 1em 2em;
   background-position: center center;
   background-repeat: no-repeat;
   border-bottom: 0;
