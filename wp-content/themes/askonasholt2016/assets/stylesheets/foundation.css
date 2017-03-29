@@ -18398,7 +18398,7 @@ ul.accordion {
   margin-bottom: 0; }
   ul.accordion li.accordion-item .accordion-title {
     display: block;
-    padding: 0 1.5rem;
+    padding: 0;
     font-size: inherit;
     color: inherit;
     position: relative;
