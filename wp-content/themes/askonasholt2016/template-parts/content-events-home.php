@@ -66,6 +66,9 @@ $the_query = events_do_query( $event_args );
 		                    <div class="show-for-large">
 		                      <?php get_template_part( 'template-parts/event-related-artist' ); ?>
 		                    </div>
+		                    <div class="show-for-large">
+		                      <?php get_template_part( 'template-parts/event-related-touring-partners' ); ?>
+		                    </div>		                    
 		                    <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
 		                  </div>
 		                  
