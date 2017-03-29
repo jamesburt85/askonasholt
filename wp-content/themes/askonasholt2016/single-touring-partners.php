@@ -369,7 +369,7 @@ get_header(); ?>
 
 			</div>
 
-			<div class="upcoming-tours row" id="past-tours">
+			<div class="upcoming-tours row" id="upcoming-tours">
 
 				<div class="small-12 columns">
 				

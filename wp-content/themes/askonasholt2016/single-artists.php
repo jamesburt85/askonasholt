@@ -342,7 +342,13 @@ get_header(); ?>
 		        		'key' => 'related_artists', // name of custom field
 		        		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
 		        		'compare' => 'LIKE'
-		        	)
+		        	),
+                    array(
+                        'key' => 'adstyles_end_date',
+                        'value' => date('Ymd', strtotime('now')),
+                        'type' => 'numeric',
+                        'compare' => '>=',
+                    ),
 		        )
 
 		      );
@@ -478,7 +484,13 @@ get_header(); ?>
 		        		'key' => 'related_artists', // name of custom field
 		        		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
 		        		'compare' => 'LIKE'
-		        	)
+		        	),
+                    array(
+                        'key' => 'adstyles_end_date',
+                        'value' => date('Ymd', strtotime('now')),
+                        'type' => 'numeric',
+                        'compare' => '>=',
+                    ),
 		        )
 
 		      );
@@ -492,12 +504,40 @@ get_header(); ?>
 
 		    	<div class="row press-row hide-for-large"><!-- side for large -->
 
-		    	<h4 class="section-header small-12 columns">Performance Schedule</h4>
+		    	<h4 class="section-header small-6 columns">Performance Schedule</h4>
+
+		        <div class="small-6 columns view-all">
+
+				<?php if ( $the_query->post_count > 4 ): ?>
+
+		          <a class="view-link toggle-hidden" href="#">View all &nbsp;
+		            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		                <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+		                    <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+		                    <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+		                </g>
+		            </svg>
+		          </a>
+
+		        <?php else: ?>
+
+		          &nbsp;
+
+		    	<?php endif; ?>
+
+		        </div>
+
 		    	  <div class="small-12 columns"><!-- side for large -->
 		    	    <ul class="accordion" data-accordion data-allow-all-closed="true"><!-- side for large -->
 		      
 		      <?php //echo '<ul>';
+
+		      $i = 0;
+
 		      while ( $the_query->have_posts() ) {
+
+		      	$i++;
+
 		        $the_query->the_post(); ?>
 		<!--         //echo '<li>' . get_the_title() . '</li>';
 
@@ -519,7 +559,7 @@ get_header(); ?>
 		            ?>
 
 		         
-	                 <li class="accordion-item" data-accordion-item>
+	                 <li class="accordion-item row-divider <?php if($i < 5) { echo 'show'; } ?>" data-accordion-item>
             	        <a href="#" class="accordion-title"><?php //the_title(); ?>
 
             	            <div class="event-listing-details">
