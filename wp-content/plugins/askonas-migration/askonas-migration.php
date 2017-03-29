@@ -30,7 +30,7 @@ function the_migrations_to_run(){
         
         function audio(){
             
-            $migrate = new rw_audio(  );
+            $migrate = new rw_audio( [ 'from'=>939, 'to'=>944 ] );
             
             $migrate->migrate_init();
             
@@ -52,7 +52,7 @@ function the_migrations_to_run(){
         
         function images(){
             
-            $migrate = new rw_images( [ 'from'=>12514, 'to'=>13000 ] );
+            $migrate = new rw_images( [ 'from'=>12743, 'to'=>12841 ] );
             
             $migrate->migrate_init();            
             
@@ -173,15 +173,15 @@ function the_migrations_to_run(){
 
         
         
-        function posts(){
+        function posts(  ){
             
-            $migrate = new rw_posts;
+            $migrate = new rw_posts( [ 'from'=>1728, 'to'=>1763 ] );
             
-            //$migrate->migrate_init();
+            $migrate->migrate_init();
 
             //$migrate->delete_all_migrated_data();   
                 
-            $migrate->geturls(); 
+            //$migrate->geturls(); 
             
         }
         if( $_GET['run'] == 'posts' ){
