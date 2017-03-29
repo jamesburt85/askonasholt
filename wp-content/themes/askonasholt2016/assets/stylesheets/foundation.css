@@ -9255,7 +9255,7 @@ pre {
 .temp-testing-mp3 {
   margin-bottom: 100vh; }
 
-body {
+section.container {
   overflow-x: hidden; }
 
 .archive__load-more {
