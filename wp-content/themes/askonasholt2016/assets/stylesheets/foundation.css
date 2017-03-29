@@ -10196,7 +10196,9 @@ body.post-type-archive-artists li.cat-item-all a {
     min-height: 132px; }
     .magazine-item .magazine-item-container.staff-header {
       min-height: 170px;
-      padding-top: 1em; }
+      padding: 0.5em 1em;
+      -webkit-box-sizing: content-box;
+              box-sizing: content-box; }
     .magazine-item .magazine-item-container .read-more {
       font-weight: bold;
       color: #d7d4c5;
