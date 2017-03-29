@@ -9250,7 +9250,8 @@ pre {
   animation-name: slideOutUp; }
 
 .artists {
-  min-height: 350px; }
+  min-height: 380px;
+  margin-bottom: 0 !important; }
 
 .temp-testing-mp3 {
   margin-bottom: 100vh; }
