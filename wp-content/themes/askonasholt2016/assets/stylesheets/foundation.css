@@ -9807,7 +9807,7 @@ header#masthead {
     background: #BA0C2F; }
     header#masthead .top-bar .dropdown.menu .submenu li a {
       width: 100%;
-      color: white; }
+      color: #fff !important; }
   header#masthead .title-bar {
     background: transparent; }
     header#masthead .title-bar .menu-icon::after {
