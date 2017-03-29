@@ -10193,7 +10193,10 @@ body.post-type-archive-artists li.cat-item-all a {
     font-size: 15px; }
   .magazine-item .magazine-item-container {
     padding: 0 1em 0;
-    min-height: 170px; }
+    min-height: 132px; }
+    .magazine-item .magazine-item-container.staff-header {
+      min-height: 170px;
+      padding-top: 1em; }
     .magazine-item .magazine-item-container .read-more {
       font-weight: bold;
       color: #d7d4c5;
