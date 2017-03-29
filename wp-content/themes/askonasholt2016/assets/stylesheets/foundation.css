@@ -9409,9 +9409,6 @@ svg.red-arrow {
 span.bold {
   font-weight: bold; }
 
-.row {
-  overflow: hidden; }
-
 .row-divider {
   display: none; }
   .row-divider.show {
