@@ -9255,6 +9255,9 @@ pre {
 .temp-testing-mp3 {
   margin-bottom: 100vh; }
 
+body {
+  overflow-x: hidden; }
+
 .archive__load-more {
   visibility: hidden !important; }
 
