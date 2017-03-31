@@ -12,7 +12,9 @@ class event_api {
         if( $_SERVER['REMOTE_ADDR'] == "::1" ) {
             $this->xml_file 		= '..\askonas_event\ToscaActivities.xml'; 
         } else {
-            $this->xml_file 		= '../httpdocs/79.170.44.26/import/ToscaActivities.XML'; // currently relative from wordpress root
+            //$this->xml_file 		= '../httpdocs/79.170.44.26/import/ToscaActivities.XML'; // currently relative from wordpress root
+            $this->xml_file 		= 'import/ToscaActivities.XML'; // currently relative from wordpress root
+            
         }		
 		
 	}
