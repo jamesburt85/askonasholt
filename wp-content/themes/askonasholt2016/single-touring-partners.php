@@ -285,8 +285,14 @@ get_header(); ?>
 				        		'key' => 'related_touring_partners', // name of custom field
 				        		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
 				        		'compare' => 'LIKE'
-				        	)
-				        )
+				        	),
+							array(
+								'key' => 'date',
+								'value' => date('Ymd', strtotime('now')),
+								'type' => 'numeric',
+								'compare' => '>=',
+							),				        	
+				        ),
 
 				      );
 
