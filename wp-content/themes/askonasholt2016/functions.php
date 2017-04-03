@@ -384,7 +384,59 @@ class Walker_Category_Find_Parents extends Walker_Category {
             // $query->set( 'posts_per_page', '4' );
         }
       }
-      add_action( 'pre_get_posts', 'be_event_query' );  
+      add_action( 'pre_get_posts', 'be_event_query' );
+
+
+      //**************************************************
+      // Aplhebetise Touring Partners types by names
+      //**************************************************
+
+      function be_touring_partners_query( $query ) {
+
+          if( $query->is_main_query() && !$query->is_feed() && !is_admin() && ( $query->get('post_type') == 'touring-partners' || $query->is_tax('touring-partners-type') ) ) {
+                
+              $query->set( 'orderby', 'title' );
+              $query->set( 'order', 'ASC' );
+
+          }
+
+      }
+      add_action( 'pre_get_posts', 'be_touring_partners_query' );
+
+
+      //**************************************************
+      // Aplhebetise People Post types by last names
+      //**************************************************
+
+      function be_people_query( $query ) {
+
+          if( $query->is_main_query() && !$query->is_feed() && !is_admin() && ( $query->get('post_type') == 'people' || $query->is_tax('people-type') ) ) {
+                
+              # Taxonomy Archive
+              if ( !empty( $_GET['taxonomy'])) {
+
+                  $taxquery['tax_query'] = array(
+                      array(
+                          'taxonomy' => $_GET['taxonomy'],
+                          'field'    => 'slug',
+                          'terms'    => $_GET['term']
+                      ),
+                  );
+
+                  $query->set( 'tax_query', $taxquery );
+
+              } else {
+                  $args['post_type'] = 'people';
+              }
+
+              $query->set( 'orderby', 'last_name' );
+              $query->set( 'meta_key', 'last_name' );
+              $query->set( 'order', 'ASC' );
+
+          }
+
+      }
+      add_action( 'pre_get_posts', 'be_people_query' );
 
 
 
@@ -421,26 +473,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
                 setcookie( 'number_of_visits', $cookieCount, time()+3600*24*100, COOKIEPATH, COOKIE_DOMAIN );
             }
         }
-
-
-        //**************************************************
-        // Aplhebetise People Post types by last names
-        //**************************************************
-
-        // add_action('pre_get_posts','wpse56753_businesses_default_order');
-        // function wpse56753_businesses_default_order( $query ){
-        //     if( 'people' == $query->get('post_type') ){
-        //         if( $query->get('orderby') == '' )
-        //             $query->set('orderby','wpse_last_word');
-
-        //         if( $query->get('order') == '' )
-        //             $query->set('order','ASC');
-        //     }
-        // }
-
-
-
-
+ 
 
 
         //**************************************************
@@ -484,8 +517,14 @@ class Walker_Category_Find_Parents extends Walker_Category {
         function extra_user_weight($match) {
             $post_type = relevanssi_get_post_type($match->doc);
             if ("artists" == $post_type) {
-                $match->weight = $match->weight * 10;
+                $match->weight = $match->weight * 100;
             }
+            if ("touring-partners" == $post_type) {
+                $match->weight = $match->weight * 50;
+            }
+            if ("people" == $post_type) {
+                $match->weight = $match->weight * 25;
+            }            
             return $match;
         }
 
