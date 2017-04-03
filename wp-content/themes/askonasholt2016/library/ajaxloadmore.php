@@ -47,6 +47,17 @@ function wiaw_archive_ajax() {
                 ),
             );
         }
+        // Touring Partners
+        if($args['post_type'] == 'touring-partners') {
+            $args['orderby'] = 'title';
+            $args['order'] = 'ASC';
+        }
+        // People
+        if($args['post_type'] == 'people') {
+            $args['meta_key'] = 'last_name';            
+            $args['orderby'] = 'last_name';
+            $args['order'] = 'ASC';
+        }
 
     # Taxonomy Archive
     } else {
@@ -57,10 +68,15 @@ function wiaw_archive_ajax() {
                 'terms'    => $data['term_id'],
             ),
         );
-
-        if($data['taxonomy'] == 'artist-type') {
+        // Artists or People
+        if($data['taxonomy'] == 'artist-type' || $data['taxonomy'] == 'people-type') {
             $args['meta_key'] = 'last_name';
             $args['orderby'] = 'meta_value';
+            $args['order'] = 'ASC';
+        }
+        // Touring Partners
+        if($data['taxonomy'] == 'touring-partners-type') {
+            $args['orderby'] = 'title';
             $args['order'] = 'ASC';
         }
         // Past Tours

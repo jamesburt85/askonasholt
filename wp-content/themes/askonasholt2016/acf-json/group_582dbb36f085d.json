@@ -19,6 +19,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_58dd16e2dd0bb",
+            "label": "Last Name",
+            "name": "last_name",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_582dbb96ec1d9",
             "label": "Position",
             "name": "position",
@@ -156,8 +175,8 @@
                 "id": ""
             },
             "collapsed": "",
-            "min": "",
-            "max": "",
+            "min": 0,
+            "max": 0,
             "layout": "table",
             "button_label": "Add Row",
             "sub_fields": [
@@ -200,5 +219,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484588336
+    "modified": 1490884784
 }
