@@ -344,7 +344,7 @@ get_header(); ?>
 		        		'compare' => 'LIKE'
 		        	),
                     array(
-                        'key' => 'adstyles_end_date',
+                        'key' => 'date',
                         'value' => date('Ymd', strtotime('now')),
                         'type' => 'numeric',
                         'compare' => '>=',
@@ -486,7 +486,7 @@ get_header(); ?>
 		        		'compare' => 'LIKE'
 		        	),
                     array(
-                        'key' => 'adstyles_end_date',
+                        'key' => 'date',
                         'value' => date('Ymd', strtotime('now')),
                         'type' => 'numeric',
                         'compare' => '>=',
