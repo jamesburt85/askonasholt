@@ -90,7 +90,7 @@
 			<h3><?php the_title(); ?></h3>
 			<h6><?php echo wpdocs_custom_taxonomies_terms_links(); ?></h6>
 			<ul>
-				<li><a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a></li>
+				<li><a href="mailto:<?php echo $e_mail; ?>?Subject=Enquiry" target="_top"><?php echo $e_mail; ?></a></li>
 
 			</ul>
 		</div>

@@ -83,7 +83,7 @@
 					<a href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a>
 					<span class="staff-category"><?php echo $position; ?></span>
 					
-					<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?>
+					<a href="mailto:<?php echo $e_mail; ?>?Subject=Enquiry" target="_top"><?php echo $e_mail; ?>
 					</a>
 
 					<span><br/><?php echo $telephone_number; ?></span>
@@ -115,7 +115,7 @@
 			<h4 class="serif"><?php the_title(); ?></h4>
 			<?php echo $position; ?>
 			<ul>
-				<li><a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a></li>
+				<li><a href="mailto:<?php echo $e_mail; ?>?Subject=Enquiry" target="_top"><?php echo $e_mail; ?></a></li>
 				<li><?php echo $telephone_number; ?></li>
 				<li>
 					<?php if( have_rows('languages') ): ?>

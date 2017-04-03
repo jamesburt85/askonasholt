@@ -99,7 +99,7 @@
 				
 				<p class="magazine-item-header">
 					<span class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
-					<a class="serif" href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a>
+					<a href="<?php the_permalink(); ?>"><p><?php the_title(); ?></p></a>
 				</p>
 
 					<?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?>
@@ -136,7 +136,7 @@
 				</li>
 			</ul>
 			<ul>
-				<li><a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a></li>
+				<li><a href="mailto:<?php echo $e_mail; ?>?Subject=Enquiry" target="_top"><?php echo $e_mail; ?></a></li>
 
 			</ul>
 		</div>

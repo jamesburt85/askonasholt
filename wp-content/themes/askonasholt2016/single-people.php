@@ -34,7 +34,7 @@ get_header(); ?>
 					<span class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
 					<h1 class="entry-title serif"><?php the_title(); ?></h1>
 					<?php echo $position; ?><br/>
-					<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a><br/>
+					<a href="mailto:<?php echo $e_mail; ?>?Subject=Enquiry" target="_top"><?php echo $e_mail; ?></a><br/>
 					<span><?php echo $telephone_number; ?></span><br/>
 				</div>
 			</div> -->

@@ -26,7 +26,7 @@
 				<span class="position-details"><?php echo $position; ?></span>
 				<br/>
 				<br/>
-				<a href="mailto:<?php echo $e_mail; ?>?Subject=Hello%20again" target="_top"><?php echo $e_mail; ?></a><br/>
+				<a href="mailto:<?php echo $e_mail; ?>?Subject=Enquiry" target="_top"><?php echo $e_mail; ?></a><br/>
 				<span><?php echo $telephone_number; ?></span><br/>
 			</div>
 
