@@ -82,16 +82,19 @@ article#widget_text {
 //**********************
 
 @include breakpoint(small only) {
-  #footer-container, .textwidget, .widget_nav_men {
-    text-align: center;
-  }
   article {
     margin: $sitepadding-small 0;
   }
 }
 
+@include breakpoint(medium down) {
+  #footer-container, .textwidget, .widget_nav_men {
+    text-align: center;
+  }
+}
+
 //align copyright to the right
-@include breakpoint(medium up) {
+@include breakpoint(large up) {
   #footer-container {
     .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
         text-align: right;
