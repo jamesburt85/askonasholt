@@ -72,16 +72,18 @@ body.single-artists {
 }
 
 
-button.hero-button {
-	padding: 10px;
-	margin-top: 3px;
-	background: rgba(186, 12, 47, 0.8);
-	//font-weight: bold;
-
+.hero-text {
 	a {
-		color: white;
-		padding: 10px;
+		display: inline-block;
+		margin-top: 3px;
+		padding: 0 10px;
+		background: rgba(186, 12, 47, 0.8);		
+		color: #fff;
 	}
+	button.hero-button {
+		padding: 10px;
+		color: #fff;
+	}	
 }
 
 .hero-text span p {
