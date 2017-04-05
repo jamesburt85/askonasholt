@@ -25,7 +25,7 @@ if ( is_array($mp3) ) {
 	<a href="<?php the_permalink(); ?>">
 		<div class="audio-info video-meta">
 			<span class="video-title"><?php echo $aristname; ?></span>
-			<?php //the_date('d M Y'); ?> <?php echo $date; ?> <?php echo $trackname; ?> <?php echo $location; ?>
+			<?php //the_date('d M Y'); ?> <?php echo date('j M Y',strtotime($date)); ?> <?php echo $trackname; ?> <?php echo $location; ?>
 		</div>
 	</a>
 </div>
