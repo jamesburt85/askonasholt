@@ -19,7 +19,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_58dd16e2dd0bb",
+            "key": "field_58dd19658c420",
             "label": "Last Name",
             "name": "last_name",
             "type": "text",
@@ -82,9 +82,9 @@
             "return_format": "object"
         },
         {
-            "key": "field_582dbba9ec1da",
-            "label": "Projects",
-            "name": "projects",
+            "key": "field_58e39f29506ad",
+            "label": "Related Touring Partners",
+            "name": "related_touring_partners",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -95,13 +95,11 @@
                 "id": ""
             },
             "post_type": [
-                "tours-projects"
+                "touring-partners"
             ],
             "taxonomy": [],
             "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
+                "search"
             ],
             "elements": "",
             "min": "",
@@ -219,5 +217,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1490884784
+    "modified": 1491314013
 }

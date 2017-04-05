@@ -85,6 +85,12 @@ get_header(); ?>
 					<?php 
 
 						$artist = get_field('artist');
+
+						if(has_post_format( 'audio' ) || has_post_format( 'video' )) {
+							$artist = get_field('related_artist');
+						}
+
+						$touring_partners = get_field('related_client');
 						//print_r($artist);
 
 						if (!empty($artist)) { ?>
@@ -150,7 +156,72 @@ get_header(); ?>
 							
 								<?php
 							}
-						} ?>
+						}
+
+						if (!empty($touring_partners)) { ?>
+
+							<h4 class="section-header">Featured Touring Partner(s)</h4>
+
+							<?php foreach ($touring_partners as $touring_partner_id) { 
+
+								# Get Permalink to artist page:
+								$artist_url = get_permalink($touring_partner_id);	
+
+								?> 
+
+									<div class="side-bar-artist"> <?php
+										# Get featured image id
+										$thumb_id = get_post_thumbnail_id($touring_partner_id);
+										# If theere is not a featured image
+										if ( empty( $thumb_id)) {
+											$thumb_url = 'http://placehold.it/150x150';
+										# Yeay, we haven image ID
+										} else {
+											# Get the image from the image ID
+											$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
+											$thumb_url = $thumb_url_array[0];
+										}
+										//echo $thumb_url;
+
+										# Get post terms as array
+										$artist_types = get_the_terms( $touring_partner_id, 'artist-type');
+
+										?>
+										
+										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										
+										<div class="side-bar-artist-details">
+											<a class="side-bar-link" href="<?php echo $artist_url; ?>">
+												<span class="side-bar-artist-name simple-listing"><?php echo get_the_title( $touring_partner_id) ?></span>&nbsp;<br/>
+											</a>
+											<?php # If this artist has an artist-type
+											# - Will only EVER return the first result in the artist type array
+											//if ( !empty( $artist_types)): ?>
+												<span><?php //echo $artist_types[0]->name ?></span>
+											<?php //endif ?>
+
+											<a href="<?php echo $artist_url; ?>">
+												<span class="more-info show-for-medium">Visit Artist Page</span>
+												<span class="more-info hide-for-medium">View</span>
+											</a>
+										</div>
+
+									</div>
+								
+					<!-- 					<?php # If the artist has an artist type
+								if ( !empty( $artist_types)): ?>
+									<ul>
+									<?php # Loop through all the artist types for this artist,
+									# - and output them all!
+									foreach ($artist_types as $type): ?>
+										<li><?php echo $type->name ?></li>
+									<?php endforeach ?>
+									</ul>
+								<?php endif ?> -->
+							
+								<?php
+							}
+						} ?>						
 				</div>
 
 				
