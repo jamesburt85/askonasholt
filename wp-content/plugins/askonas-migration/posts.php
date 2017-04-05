@@ -10,8 +10,18 @@ class rw_posts extends migrate {
 
     
     public function init(){
+        
+        $where = '';
+        
+        if( isset( $this->id ) ){
+            $where .= " AND id = '{$this->id}' ";
+        }    
+        
+        if( isset( $this->from ) ){
+            $where .= " AND id >= '{$this->from}' AND id <= '{$this->to}' ";
+        }        
              
-        $results = $this->wpdb->get_results( "SELECT * FROM $this->table WHERE status = 'published' AND title != '' " );
+        $results = $this->wpdb->get_results( "SELECT * FROM $this->table WHERE status = 'published' AND title != '' {$where} " );
         
         foreach( $results as $result ){
             

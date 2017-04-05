@@ -10,12 +10,15 @@ class rw_audio extends migrate  {
     
     public function init(){
         
-        if( isset( $this->id ) ){
-            $where = " AND id = '{$this->id}' ";
-        } else {
-            $where = '';
-        }
+        $where = '';
         
+        if( isset( $this->id ) ){
+            $where .= " AND id = '{$this->id}' ";
+        }    
+        
+        if( isset( $this->from ) ){
+            $where .= " AND id >= '{$this->from}' AND id <= '{$this->to}' ";
+        }
                            
         $results = $this->wpdb->get_results( "SELECT * FROM $this->table WHERE status = 'published' {$where} " );
         
