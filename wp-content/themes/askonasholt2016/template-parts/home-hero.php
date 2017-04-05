@@ -55,11 +55,11 @@
 
 						?>
 
-						<button class="hero-button">
-							<a href="<?php echo $button_destination; ?>">
+						<a href="<?php echo $button_destination; ?>">
+							<button class="hero-button">
 								<?php echo $button_text; ?>
-							</a>
-						</button>
+							</button>	
+						</a>
 
 						<?php endwhile; ?>
 
