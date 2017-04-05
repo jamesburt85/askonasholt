@@ -29,7 +29,7 @@
 		<div class="magazine-item">
 			<?php if ( has_post_thumbnail() ) { ?>
 
-				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+				<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'fp-small' );?>
 				<div class="people-link-item">
 					<a class="serif" href="<?php the_permalink(); ?>">
 						<div class="magazine-item-thumb" style="background-image: url('<?php echo $thumb['0'];?>')">
