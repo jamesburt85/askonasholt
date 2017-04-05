@@ -9273,7 +9273,8 @@ section.container {
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
-  transform: translateX(-50%); }
+  transform: translateX(-50%);
+  top: 84px; }
 
 .single-format-video .flex-video.widescreen {
   margin-bottom: 3em; }
@@ -9366,11 +9367,13 @@ body.search .blogpost-entry {
 p {
   font-size: 1.15rem; }
 
-body.single article.main-content p,
-#narrow-text-page article.main-content p {
+body.single article.main-content p, body.single article.main-content li:not(.accordion-item),
+#narrow-text-page article.main-content p,
+#narrow-text-page article.main-content li:not(.accordion-item) {
   font-family: "Brown-Pro-Light", AdobeBlank; }
-  body.single article.main-content p strong,
-  #narrow-text-page article.main-content p strong {
+  body.single article.main-content p strong, body.single article.main-content li:not(.accordion-item) strong,
+  #narrow-text-page article.main-content p strong,
+  #narrow-text-page article.main-content li:not(.accordion-item) strong {
     font-weight: normal;
     font-family: "Brown-Pro-Regular", AdobeBlank; }
 
@@ -9517,7 +9520,8 @@ span.bold {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 1.1rem;
-  line-height: 1; }
+  line-height: 1;
+  outline: none; }
   .top-bar .menu a:hover:not(.button):not(.artist-categories li a) {
     background-color: #2a2a2a; }
 
@@ -15598,6 +15602,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   width: 100%;
   height: 100%; }
 
+#image-gallery ul.accordion li.accordion-item {
+  overflow: hidden; }
+  #image-gallery ul.accordion li.accordion-item a.accordion-title {
+    line-height: 30px; }
+
 .sites-button {
   background: #FF6908;
   font-size: 1.25rem;
@@ -15762,12 +15771,12 @@ div.padded-text {
     display: block; }
   .artists .artist-details span.artist-category, .clients .artist-details span.artist-category {
     text-transform: uppercase;
-    color: initial;
+    color: #0a0a0a;
     font-size: 13px;
     letter-spacing: 1px; }
   .artists .artist-details a .artist-name, .clients .artist-details a .artist-name {
     margin-bottom: 0;
-    color: initial;
+    color: #0a0a0a;
     -webkit-transition: 0.5s;
     transition: 0.5s; }
   .artists .side-bar-artist-details.contact, .clients .side-bar-artist-details.contact {
@@ -16008,13 +16017,16 @@ body.single-artists i.fa.fa-angle-right.slick-arrow {
   padding: 10px;
   cursor: pointer; }
 
-button.hero-button {
-  padding: 10px;
+.hero-text a {
+  display: inline-block;
   margin-top: 3px;
-  background: rgba(186, 12, 47, 0.8); }
-  button.hero-button a {
-    color: white;
-    padding: 10px; }
+  padding: 0 10px;
+  background: rgba(186, 12, 47, 0.8);
+  color: #fff; }
+
+.hero-text button.hero-button {
+  padding: 10px;
+  color: #fff; }
 
 .hero-text span p {
   padding: 10px; }
@@ -17205,7 +17217,7 @@ div#mega-toggle-block-1:after {
   .quicklook-content a.button, .quicklook-content .artist-categories li a, .artist-categories li .quicklook-content a {
     background: transparent;
     border: 1px solid gray;
-    color: initial;
+    color: inherit;
     font-family: "Brown-Pro-Regular", AdobeBlank;
     padding: 0.85em 25px; }
 
@@ -17217,9 +17229,9 @@ ul.quick-look-links {
     padding: 5px 0; }
     ul.quick-look-links li span, ul.quick-look-links li a {
       vertical-align: top;
-      color: initial; }
+      color: inherit; }
   ul.quick-look-links a.share-button {
-    color: initial; }
+    color: inherit; }
 
 body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
   top: -44px;
@@ -17633,8 +17645,8 @@ div.staff-header li {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
     color: #333;
     font-size: 13px;
     line-height: 18px; }
@@ -18041,7 +18053,7 @@ a.view-link:hover svg, .side-bar-artist-name:hover svg, a.tours-details-link:hov
   font-weight: bold;
   font-family: "Brown-Pro-Light", AdobeBlank; }
   .view-all a.view-link {
-    color: initial; }
+    color: inherit; }
 
 #kitchen-sink {
   max-width: 84.375rem;
@@ -18407,7 +18419,7 @@ img.circle-thumb {
     margin-right: 25px; }
 
 a.side-bar-link {
-  color: initial !important; }
+  color: inherit !important; }
 
 ul.accordion {
   margin-bottom: 0; }
@@ -18429,7 +18441,7 @@ ul.accordion {
     border: none;
     padding: 1.5rem;
     font-family: "Brown-Pro-Light", AdobeBlank;
-    color: initial; }
+    color: inherit; }
     ul.accordion .accordion-content strong {
       font-weight: normal;
       font-family: "Brown-Pro-Regular", AdobeBlank; }
@@ -18499,17 +18511,17 @@ body.single.single-post #single-post {
   max-width: 57.375rem;
   margin: 0 auto; }
 
-body.single-online article.main-content, body.single-post article.main-content, body.single-events article.main-content {
+body.single-online article.main-content, body.single-post article.main-content, body.single-events article.main-content, body.single-people article.main-content {
   max-width: 57.375rem;
   margin: 0 auto; }
-  body.single-online article.main-content header, body.single-post article.main-content header, body.single-events article.main-content header {
+  body.single-online article.main-content header, body.single-post article.main-content header, body.single-events article.main-content header, body.single-people article.main-content header {
     margin-bottom: 25px; }
-  body.single-online article.main-content .side-bar-artist, body.single-post article.main-content .side-bar-artist, body.single-events article.main-content .side-bar-artist {
+  body.single-online article.main-content .side-bar-artist, body.single-post article.main-content .side-bar-artist, body.single-events article.main-content .side-bar-artist, body.single-people article.main-content .side-bar-artist {
     border-top: 1px solid #cccccc;
     padding: 12.5px 0;
     width: 100%;
     position: relative; }
-  body.single-online article.main-content span.more-info, body.single-post article.main-content span.more-info, body.single-events article.main-content span.more-info {
+  body.single-online article.main-content span.more-info, body.single-post article.main-content span.more-info, body.single-events article.main-content span.more-info, body.single-people article.main-content span.more-info {
     right: 0em;
     position: absolute;
     top: 50%;
@@ -18517,13 +18529,13 @@ body.single-online article.main-content, body.single-post article.main-content, 
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     position: absolute; }
-  body.single-online article.main-content .side-bar-artist:last-child, body.single-post article.main-content .side-bar-artist:last-child, body.single-events article.main-content .side-bar-artist:last-child {
+  body.single-online article.main-content .side-bar-artist:last-child, body.single-post article.main-content .side-bar-artist:last-child, body.single-events article.main-content .side-bar-artist:last-child, body.single-people article.main-content .side-bar-artist:last-child {
     border-bottom: 1px solid #cccccc;
     margin-bottom: 25px; }
-  body.single-online article.main-content .side-bar-artist:first-child, body.single-post article.main-content .side-bar-artist:first-child, body.single-events article.main-content .side-bar-artist:first-child {
+  body.single-online article.main-content .side-bar-artist:first-child, body.single-post article.main-content .side-bar-artist:first-child, body.single-events article.main-content .side-bar-artist:first-child, body.single-people article.main-content .side-bar-artist:first-child {
     margin-top: 25px; }
 
-body.single-online #share-buttons img, body.single-post #share-buttons img, body.single-events #share-buttons img {
+body.single-online #share-buttons img, body.single-post #share-buttons img, body.single-events #share-buttons img, body.single-people #share-buttons img {
   width: 35px;
   padding: 5px;
   border: 0;
@@ -18563,6 +18575,9 @@ body.single-people .artist-header.people.container {
     width: 100%; }
   body.single-people .artist-header.people.container .people-details-container {
     padding: 25px; }
+    body.single-people .artist-header.people.container .people-details-container .flag-area .flag {
+      height: 13px;
+      width: 25px; }
   body.single-people .artist-header.people.container .artist-header-thumb {
     height: 300px;
     max-width: 400px;
