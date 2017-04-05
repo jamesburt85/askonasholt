@@ -29,6 +29,7 @@ section.container {
     > li.opens-left {
         > .is-dropdown-submenu {
             @include center(x);
+            top: 84px;
         }
     }
 }
@@ -172,7 +173,7 @@ p {
 body.single,
 #narrow-text-page {
     article.main-content {
-        p {
+        p, li:not(.accordion-item) {
             font-family: "Brown-Pro-Light", AdobeBlank;
 
             strong {
