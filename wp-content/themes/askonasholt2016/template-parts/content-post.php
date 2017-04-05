@@ -135,7 +135,7 @@
 				<p class="magazine-item-header">
 					<?php //the_title(); ?>
 					<?php 
-					echo mb_strimwidth( get_the_title(), 0, 50, '...' ); 
+					echo mb_strimwidth( html_entity_decode(get_the_title()), 0, 50, '...' );
 					?>
 				</p>
 				<span class="magazine-item-copy"><?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
