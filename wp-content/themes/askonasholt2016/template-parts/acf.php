@@ -109,13 +109,14 @@ if ($acf_fields['flexible_content']) {
 				
 					<h4 id="<?php echo $gallery_section['unique_id'] ?>" class="section-header">Gallery</h4>
 						
-						<ul class="accordion" data-accordion data-allow-all-closed="true">
+						<ul class="accordion" data-accordion data-allow-all-closed="false">
 						
 						<?php
 						# Loop through the sections
-						foreach ($section['gallery_section'] as $gallery_section) { ?>			
+						$i = 0;
+						foreach ($section['gallery_section'] as $gallery_section) { $i++; ?>
 
-								<li class="accordion-item is-active" data-accordion-item>
+								<li class="accordion-item <?php if($i==1) echo 'is-active'; ?>" data-accordion-item>
 								  	<a href="#" class="accordion-title">
 										<span><?php echo $gallery_section['gallery_description'] ?></span>
 										<span class="more-info">
