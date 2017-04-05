@@ -23,20 +23,28 @@ body.single-people{
     position: relative;
     border-bottom: 1px solid #cccccc;
     .artist-details-area {
-       @include center;
-       margin: 0 auto;
-       width: 100%;
-     }
-     .people-details-container {
+      @include center;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .people-details-container {
       padding: 25px;
-     }
-     .artist-header-thumb {
+
+      //flags for people page
+      .flag-area {
+        .flag {
+          height: 13px;
+          width: 25px;
+        }
+      }
+    }
+    .artist-header-thumb {
       height: 300px;
       max-width: 400px;
       margin: 0 auto;
       @include full-bg;
-     }
-     span.staff-category li {
+    }
+    span.staff-category li {
       color: #BA0C2F;
     }
   }

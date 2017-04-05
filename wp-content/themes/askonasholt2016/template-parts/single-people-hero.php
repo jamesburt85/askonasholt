@@ -28,6 +28,16 @@
 				<br/>
 				<a href="mailto:<?php echo $e_mail; ?>?Subject=Enquiry" target="_top"><?php echo $e_mail; ?></a><br/>
 				<span><?php echo $telephone_number; ?></span><br/>
+				<?php if( have_rows('languages') ): ?>
+					<div class="flag-area">
+						<span>Languages:</span>
+						<?php while( have_rows('languages') ): the_row(); ?>
+
+							<img class="flag" src="<?php echo get_template_directory_uri(); ?>/assets/images/flags/4x3/<?php the_sub_field('flags'); ?>.svg" alt="Flag">
+
+						<?php endwhile; ?>
+					</div>
+				<?php endif; ?>				
 			</div>
 
 		</div>
