@@ -192,7 +192,7 @@ img.circle-thumb {
 }
 
 a.side-bar-link {
-  color: initial !important;
+  color: inherit !important;
 }
 
 //Schedule/Accordion styles
@@ -228,7 +228,7 @@ ul.accordion {
     border: none;
     padding: 1.5rem;
     font-family: "Brown-Pro-Light", AdobeBlank;
-    color: initial;
+    color: inherit;
 
     strong {
         font-weight: normal;

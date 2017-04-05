@@ -33,14 +33,14 @@
 
 		span.artist-category {
 			text-transform: uppercase;
-			color: initial;
+			color: $black;
 			font-size: 13px;
 			letter-spacing: 1px;
 		}
 		a {
 			.artist-name {
 				margin-bottom: 0;
-				color: initial;
+				color: $black;
 				transition: 0.5s;
 			}
 		}
