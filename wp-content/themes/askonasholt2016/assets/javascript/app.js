@@ -25455,14 +25455,31 @@ var map = null;
         $('html,body').animate({ scrollTop: $(this).offset().top-$(this).parent('.view-all').height() }, 'slow');
       });
 
-      //-----------------------//    
+      //-----------------------//  
 
 
   	});
 
+    //****************************
+    // Initialise slick sliders in galery as accordions opened ******
+    //****************************
+
     $("#image-gallery ul[data-accordion] li a").on("click",function(){
       $(this).next().find('.slick-slider').slick('setPosition');
     });
+
+    //-----------------------//  
+
+    //****************************
+    // Detect touch devices and add a class ******
+    //****************************
+
+    if ('ontouchstart' in document) {
+        $('body').addClass('touch-device');
+    }
+
+    //-----------------------//
+
 
 }(window.jQuery);
 

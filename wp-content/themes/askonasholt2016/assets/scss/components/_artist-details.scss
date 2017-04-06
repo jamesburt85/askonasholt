@@ -217,6 +217,9 @@ div#video-audio {
     	}
     }
 }
+body.touch-device .overlay {
+	display: block !important;
+}
 
 .artist-photo-wrapper:hover, .magazine-item-thumb:hover {
 	.overlay {

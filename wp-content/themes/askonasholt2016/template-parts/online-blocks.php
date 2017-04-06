@@ -41,41 +41,39 @@
 						<?php 
 
 							$artist = get_field('artist');
+							$partner = get_field('related_touring_partners');
+							if (!empty($partner)) { $artist = $partner; }
 							//print_r($artist);
 
 							if (!empty($artist)) {
-							//foreach ($artist as $artist_id) { ?>
+							//foreach ($artist as $artist_id) {
+	
+						?>
 											
 							<!-- Only empty the first artist in array -->
-							<?php 
+							<?php
 
-								$artist = get_field('artist');
-								//print_r($artist);
+								foreach ($artist as $artist_id) { 
 
-								if (!empty($artist)) {
+									# Get Permalink to artist page:
+									$artist_url = get_permalink($artist_id);
+
+									# Get featured image id
+									$thumb_id = get_post_thumbnail_id($artist_id);
+
+									# Get post terms as array
+									$artist_types = get_the_terms( $artist_id, 'artist-type');
+
+									?>			
 									
-									foreach ($artist as $artist_id) { 
-
-										# Get Permalink to artist page:
-										$artist_url = get_permalink($artist_id);
-
-										# Get featured image id
-										$thumb_id = get_post_thumbnail_id($artist_id);
-
-										# Get post terms as array
-										$artist_types = get_the_terms( $artist_id, 'artist-type');
-
-										?>			
-										
-										<a href="<?php echo $artist_url; ?>">
-											<span class="online-artist-name">
-												<?php echo get_the_title( $artist_id) ?>
-												&nbsp;
-											</span>
-										</a>
-												
-									<?php }
-								} ?>
+									<a href="<?php echo $artist_url; ?>">
+										<span class="online-artist-name">
+											<?php echo get_the_title( $artist_id) ?>
+											&nbsp;
+										</span>
+									</a>
+											
+								<?php } ?>
 
 							<?php } ?>
 

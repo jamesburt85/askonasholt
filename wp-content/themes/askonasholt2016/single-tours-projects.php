@@ -211,6 +211,76 @@ get_header(); ?>
 										}
 									} ?>
 
+							<br/>
+
+								<?php
+
+									$tour_touring_partners = get_field('tour_touring_partners');
+									//print_r($tour_touring_partners);
+
+									if (!empty($tour_touring_partners)) { ?>
+
+									<h4 class="section-header">Touring Partner(s)</h4>
+										
+										<?php foreach ($tour_touring_partners as $touring_partner_id) { 
+
+											# Get Permalink to artist page:
+											$artist_url = get_permalink($touring_partner_id);
+
+											?> 
+										
+										
+											<div class="side-bar-artist"> 
+												
+
+											<?php
+												# Get featured image id
+												$thumb_id = get_post_thumbnail_id($touring_partner_id);
+												# If theere is not a featured image
+												if ( empty( $thumb_id)) {
+													$thumb_url = 'http://placehold.it/150x150';
+												# Yeay, we haven image ID
+												} else {
+													# Get the image from the image ID
+													$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
+													$thumb_url = $thumb_url_array[0];
+												}
+												//echo $thumb_url;
+
+												# Get post terms as array
+												$artist_types = get_the_terms( $touring_partner_id, 'artist-type');
+
+												?>
+												
+													<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+												<div class="side-bar-artist-details">
+													<a class="side-bar-link" href="<?php echo $artist_url; ?>">
+														<span class="side-bar-artist-name"><?php echo get_the_title( $touring_partner_id) ?></span>
+													</a>
+													<br/>
+												
+													<?php # If this artist has an artist-type
+													# - Will only EVER return the first result in the artist type array
+													if ( !empty( $artist_types)): ?>
+														<span><?php echo $artist_types[0]->name ?></span>
+													<?php endif ?>
+												</div>
+											</div>
+						<!-- 					<?php # If the artist has an artist type
+											if ( !empty( $artist_types)): ?>
+												<ul>
+												<?php # Loop through all the artist types for this artist,
+												# - and output them all!
+												foreach ($artist_types as $type): ?>
+													<li><?php echo $type->name ?></li>
+												<?php endforeach ?>
+												</ul>
+											<?php endif ?> -->
+										
+											<?php
+										}
+									} ?>									
+
 							<?php if( get_field('further_information') == 'yes' ): ?>
 								<h4 class="section-header">Further Info</h4>
 									<?php echo $further_info; ?>
@@ -451,6 +521,83 @@ get_header(); ?>
 									<?php
 								}
 							} ?>
+
+					<br/>
+
+						<?php 
+
+							$tour_touring_partners = get_field('tour_touring_partners');
+							//print_r($tour_touring_partners);
+
+							if (!empty($tour_touring_partners)) { ?>
+
+							<h4 class="section-header">Touring Partner(s)</h4>
+
+							<?php foreach ($tour_touring_partners as $touring_partner_id) { 
+									# Get Permalink to artist page:
+									$artist_url = get_permalink($touring_partner_id);
+
+									?> 
+									
+									<div class="side-bar-artist"> 
+										
+
+									<?php
+										# Get featured image id
+										$thumb_id = get_post_thumbnail_id($touring_partner_id);
+										# If theere is not a featured image
+										if ( empty( $thumb_id)) {
+											$thumb_url = 'http://placehold.it/150x150';
+										# Yeay, we haven image ID
+										} else {
+											# Get the image from the image ID
+											$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
+											$thumb_url = $thumb_url_array[0];
+										}
+										//echo $thumb_url;
+
+										# Get post terms as array
+										$artist_types = get_the_terms( $touring_partner_id, 'artist-type');
+
+										?>
+										
+										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										
+										<div class="side-bar-artist-details">
+											<a class="side-bar-link" href="<?php echo $artist_url; ?>">
+												<span class="side-bar-artist-name"><?php echo get_the_title( $touring_partner_id) ?>
+													&nbsp;
+											        <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+											            <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+											                <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+											                <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+											            </g>
+											        </svg>	
+												</span>
+											</a>
+											<br/>
+										
+											<?php # If this artist has an artist-type
+											# - Will only EVER return the first result in the artist type array
+											if ( !empty( $artist_types)): ?>
+												<span><?php echo $artist_types[0]->name ?></span>
+											<?php endif ?>
+										</div>
+									</div>
+				<!-- 					<?php # If the artist has an artist type
+									if ( !empty( $artist_types)): ?>
+										<ul>
+										<?php # Loop through all the artist types for this artist,
+										# - and output them all!
+										foreach ($artist_types as $type): ?>
+											<li><?php echo $type->name ?></li>
+										<?php endforeach ?>
+										</ul>
+									<?php endif ?> -->
+								
+									<?php
+								}
+							} ?>							
 
 					<br/>
 

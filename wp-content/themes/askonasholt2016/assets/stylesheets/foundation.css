@@ -11560,7 +11560,8 @@ div#image-gallery div.gallery-image {
     background-repeat: no-repeat;
     border-bottom: 0;
     -webkit-background-size: cover;
-    background-size: cover; }
+    background-size: cover;
+    background-position: 50% 33%; }
   .online-item .online-category {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -15896,6 +15897,9 @@ div#video-audio {
     .overlay a.open-popup-link span {
       color: #ffffff;
       font-weight: bold; }
+
+body.touch-device .overlay {
+  display: block !important; }
 
 .artist-photo-wrapper:hover .overlay, .magazine-item-thumb:hover .overlay {
   display: block; }
