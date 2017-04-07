@@ -234,6 +234,27 @@ svg.red-arrow {
         transform: rotate(90deg);
     }
 }
+.accordion-item {
+    .more-info {
+        svg {
+            -ms-transition: 0.2s;
+            -webkit-transition: 0.2s;
+            transition: 0.2s;
+            -ms-transform-origin: 50% 72%;
+            -webkit-transform-origin: 50% 72%;
+            transform-origin: 50% 72%;
+        }
+    }
+    &.is-active {
+        .more-info {
+            svg {
+                -ms-transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
 
 span.bold {
 	font-weight: bold;

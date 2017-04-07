@@ -103,7 +103,7 @@ if ($acf_fields['flexible_content']) {
 			#Image_Gallery
 			case 'image_gallery': ?>
 
-			<div class="image-gallery row" id="image-gallery">
+			<div class="image-gallery row" id="Gallery">
 
 				<div class="small-12 columns">
 				
@@ -653,7 +653,7 @@ if ($acf_fields['flexible_content']) {
 			#Free Text Section
 			case 'free_text_area': ?>
 				
-				<div class="row free-text" id="<?php echo $section['unique_id'] ?>">
+				<div class="row free-text" id="<?php echo str_replace(' ', '-', $section['unique_id']); ?>">
 					<div class="small-12 columns">
 						<span class="free-text-area narrow-text"><h4><?php echo $section['unique_id'] ?></h4><?php echo $section['free_text'] ?></span>
 					</div>

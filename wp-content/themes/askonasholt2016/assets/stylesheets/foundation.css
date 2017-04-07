@@ -9413,6 +9413,18 @@ svg.red-arrow {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg); }
 
+.accordion-item .more-info svg {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -ms-transform-origin: 50% 72%;
+  -webkit-transform-origin: 50% 72%;
+  transform-origin: 50% 72%; }
+
+.accordion-item.is-active .more-info svg {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
 span.bold {
   font-weight: bold; }
 
@@ -11515,7 +11527,7 @@ a.pswp__share--download:hover {
 .my-gallery figcaption {
   display: none; }
 
-div#image-gallery div.gallery-image {
+div#Gallery div.gallery-image {
   height: 200px;
   -webkit-background-size: cover;
           background-size: cover;
@@ -15603,9 +15615,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   width: 100%;
   height: 100%; }
 
-#image-gallery ul.accordion li.accordion-item {
+#Gallery ul.accordion li.accordion-item {
   overflow: hidden; }
-  #image-gallery ul.accordion li.accordion-item a.accordion-title {
+  #Gallery ul.accordion li.accordion-item a.accordion-title {
     line-height: 30px; }
 
 .sites-button {
@@ -17305,6 +17317,15 @@ body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
   border-bottom: 0;
   -webkit-background-size: cover;
   background-size: cover; }
+  .tour-thumbnail a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
 
 .tour-dates-basic {
   padding: 1.25rem 0;
@@ -18042,9 +18063,9 @@ a.view-link svg, .side-bar-artist-name svg, a.tours-details-link svg {
   transition: 0.5s; }
 
 a.view-link:hover svg, .side-bar-artist-name:hover svg, a.tours-details-link:hover svg {
+  -ms-transform: translate(5px, 0);
   -webkit-transform: translate(5px, 0);
-      -ms-transform: translate(5px, 0);
-          transform: translate(5px, 0); }
+  transform: translate(5px, 0); }
 
 .header-row {
   display: -webkit-box;
