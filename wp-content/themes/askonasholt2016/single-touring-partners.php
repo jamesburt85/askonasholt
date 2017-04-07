@@ -185,88 +185,145 @@ get_header(); ?>
 
 			?>
 
+			<?php if( $videos || $tracks ): ?>
+				<div class="video-audio-area toggleable-area" id="video-audio">
+			<?php endif ?>
+
+					<div class="row">
+						<h4 class="section-header small-6 columns">Video &amp; Audio</h4>
+
+				        <div class="small-6 columns view-all">
+
+						<?php if ( count($videos) > 4 || count($tracks) > 4 ): ?>
+
+				          <a class="view-link toggle-hidden" href="#">View all &nbsp;
+				            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				                <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+				                    <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+				                    <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+				                </g>
+				            </svg>
+				          </a>
+
+				        <?php else: ?>
+
+				          &nbsp;
+
+				    	<?php endif; ?>
+
+				        </div>
+
+				    </div>
+
 			<?php if( $videos ): ?>
 
-			<div class="video-audio-area" id="video-audio">
+					<div class="row">
 
-				<div class="row">
-					<h4 class="section-header small-12 columns">Video &amp; Audio</h4>
+				        <div class="row-divider show">
 
-					<?php
-					foreach( $videos as $post ): setup_postdata( $post ); ?>
-						
-						<div class="small-12 medium-6 large-3 columns artist-video-area">
-							<a href="<?php the_permalink(); ?>">
-								<?php get_template_part( 'template-parts/video-player' ); ?>
-							</a>
+						<?php
+
+						$i = 0;
+
+						foreach( $videos as $post ): setup_postdata( $post ); ?>
+
+						<?php $i++; if($i == 5): ?>
+
+						</div><div class="row-divider">
+
+						<?php endif; ?>
+							
+							<div class="small-12 medium-6 large-3 columns artist-video-area">
+								<a href="<?php the_permalink(); ?>"> 
+									<?php get_template_part( 'template-parts/video-player' ); ?>
+								</a>
+							</div>
+
+						<?php
+
+						endforeach;
+
+						wp_reset_postdata(); ?>
+
 						</div>
 
-					<?php
-
-					endforeach;
-
-					wp_reset_postdata(); ?>
-				<!--  </ul> -->
-				</div>
+					</div>
 
 			<?php endif; ?>
 
-			<!-- ANY AUDIO POSTS? -->
-			<div class="row">
+					<!-- ANY AUDIO POSTS? -->
+					<div class="row">
 
-					<?php 
+							<?php 
 
-					/*
-					*  Query posts for a relationship value.
-					*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
-					*/
+							/*
+							*  Query posts for a relationship value.
+							*  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+							*/
 
-					// $theID = get_the_ID();
+							// $theID = get_the_ID();
 
-					$tracks = get_posts(array(
-						'post_type' => 'post',
+							$tracks = get_posts(array(
+								'post_type' => 'post',
 
-						'tax_query' => array(
-						        array(
-						            'taxonomy' => 'post_format',
-						            'field' => 'slug',
-						            'terms' => array( 'post-format-audio' ),
-						        )
-						    ),
+								'tax_query' => array(
+								        array(
+								            'taxonomy' => 'post_format',
+								            'field' => 'slug',
+								            'terms' => array( 'post-format-audio' ),
+								        )
+								    ),
 
-						'meta_query' => array(
-							array(
-								'key' => 'related_client', // name of custom field
-								'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-								'compare' => 'LIKE'
-							)
-						)
-					));
+								'meta_query' => array(
+									array(
+										'key' => 'related_client', // name of custom field
+										'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+										'compare' => 'LIKE'
+									)
+								)
+							));
 
-					// echo "<pre>";
-					// the_ID();
-					// print_r($tracks);
-					// echo "</pre>";
+							// echo "<pre>";
+							// the_ID();
+							// print_r($tracks);
+							// echo "</pre>";
 
-					?>
-					<?php if( !empty($tracks) ): ?>
-						<!-- <ul> -->
-						<?php
-							foreach( $tracks as $post ): setup_postdata( $post );
+							?>
+							<?php if( !empty($tracks) ): ?>
+								<!-- <ul> -->
+						        <div class="row-divider show">
 
-								get_template_part( 'template-parts/audio-player' );
+								<?php
 
-							endforeach;
+								$i = 0;
 
-							wp_reset_postdata(); ?>
-						<!--  </ul> -->
-					<?php endif; ?>
+								foreach( $tracks as $post ): setup_postdata( $post ); ?>
 
+								<?php $i++; if($i == 5): ?>
+
+								</div><div class="row-divider">
+
+								<?php endif; ?>
+									
+									<?php get_template_part( 'template-parts/audio-player' ); ?>
+
+								<?php
+
+								endforeach;
+
+								wp_reset_postdata(); ?>
+
+								</div>
+								<!--  </ul> -->
+							<?php endif; ?>
+
+					</div>
+
+			<?php if( $videos || !empty($tracks) ): ?>
 				</div>
+			<?php endif ?>
 
-			</div>
-
-			<div class="performance-schedule row" id="schedule">
+			<div class="performance-schedule row toggleable-area" id="schedule">
 
 				<div class="small-12 columns">
 				
@@ -277,7 +334,7 @@ get_header(); ?>
 				      $args = array(
 
 				        'post_type'   => 'events',
-				        'posts_per_page' => 4,
+				        'posts_per_page' => -1,
 				        'meta_key'      => 'date',
 				        'orderby'     => 'meta_value',
 				        'order'       => 'ASC',
@@ -306,12 +363,41 @@ get_header(); ?>
 				    if ( $the_query->have_posts() ) { ?>
 				    	
 				    	<div class="row press-row show-for-large"><!-- Show for large -->
-				    	<h4 class="section-header small-12 columns">Performance Schedule</h4>
+				    	<h4 class="section-header small-6 columns">Performance Schedule</h4>
+
+				        <div class="small-6 columns view-all">
+
+						<?php if ( $the_query->post_count > 4 ): ?>
+
+				          <a class="view-link toggle-hidden" href="#">View all &nbsp;
+				            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				                <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+				                    <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+				                    <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+				                </g>
+				            </svg>
+				          </a>
+
+				        <?php else: ?>
+
+				          &nbsp;
+
+				    	<?php endif; ?>
+
+				        </div>
+
+
 				    	  <div class="small-12 columns"><!-- Show for large -->
 				    	    <ul class="accordion" data-accordion data-allow-all-closed="true"><!-- Show for large -->
 				      
 				      <?php //echo '<ul>';
+
+				      $i = 0;
+
 				      while ( $the_query->have_posts() ) {
+
+				      	$i++;
+
 				        $the_query->the_post(); ?>
 				<!--         //echo '<li>' . get_the_title() . '</li>';
 
@@ -333,7 +419,7 @@ get_header(); ?>
 				            ?>
 
 				         
-				                <li class="accordion-item" data-accordion-item>
+				                <li class="accordion-item row-divider <?php if($i < 5) { echo 'show'; } ?>" data-accordion-item>
 				                <!-- <hr /> -->
 				                  <a href="#" class="accordion-title"><?php //the_title(); ?>
 				                    
@@ -448,7 +534,7 @@ get_header(); ?>
 
 			</div>	
 
-			<div class="past-tours row" id="past-tours">
+			<div class="past-tours row toggleable-area" id="past-tours">
 
 				<div class="small-12 columns">
 				
@@ -488,15 +574,44 @@ get_header(); ?>
 				    if ( $the_query->have_posts() ) { ?>
 				    	
 				    	<div class="row press-row show-for-large"><!-- Show for large -->
-				    	<h4 class="section-header small-12 columns">Past Tours</h4>
+				    	<h4 class="section-header small-6 columns">Past Tours</h4>
+
+				        <div class="small-6 columns view-all">
+
+						<?php if ( $the_query->post_count > 4 ): ?>
+
+				          <a class="view-link toggle-hidden" href="#">View all &nbsp;
+				            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				                <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+				                    <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+				                    <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+				                </g>
+				            </svg>
+				          </a>
+
+				        <?php else: ?>
+
+				          &nbsp;
+
+				    	<?php endif; ?>
+
+				        </div>
+
+
 				    	  <div class="small-12 columns"><!-- Show for large -->
 				    	    <ul class="accordion" data-accordion data-allow-all-closed="true"><!-- Show for large -->
 				      
 				      <?php //echo '<ul>';
+
+				      $i = 0;
+
 				      while ( $the_query->have_posts() ) {
+
+				      	$i++;
+
 				        $the_query->the_post(); ?>
 				         
-				                <li class="accordion-item">
+				                <li class="accordion-item row-divider <?php if($i < 5) { echo 'show'; } ?>">
 				                  <a href="<?php the_permalink(); ?>" class="accordion-title"><?php the_title(); ?></a>
 				                </li> 
 
@@ -522,7 +637,7 @@ get_header(); ?>
 			<!-- =========================== -->
 			<!-- PROJECTS / GREEN ROOM ===== -->
 			<!-- =========================== -->
-			<div class="news-projects" id="news-projects">
+			<div class="news-projects toggleable-area" id="news-projects">
 				<div class="row">
 					<!-- Get news items -->
 					  <?php 
@@ -533,7 +648,7 @@ get_header(); ?>
 					        'post_type'   => 'post',
 					        //'category_slug' => array( 'news', 'interviews', 'features' ),
 					        'category_name'    => 'news, interviews, features, innovation, tour, uncategorized',
-					        'posts_per_page' => 4,
+					        'posts_per_page' => -1,
 					        
 					        'meta_query' => array(
 					          array(
@@ -551,11 +666,49 @@ get_header(); ?>
 					    // The Loop
 					    if ( $the_query->have_posts() ) { ?>
 
-					    	<div class="small-12 columns">
+					    	<div class="small-6 columns">
 					    		<h4 class="section-header">From The Green Room</h4>
 					    	</div>
 
-					     <?php while ( $the_query->have_posts() ) {
+					        <div class="small-6 columns view-all">
+
+							<?php if ( $the_query->post_count > 4 ): ?>
+
+					          <a class="view-link toggle-hidden" href="#">View all &nbsp;
+					            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					                <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+					                    <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+					                    <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+					                </g>
+					            </svg>
+					          </a>
+
+					        <?php else: ?>
+
+					          &nbsp;
+
+					    	<?php endif; ?>
+
+					        </div>					    	
+
+						<?php if( $the_query->have_posts() ): ?>
+							<div class="row-divider show">
+						<?php endif ?>
+
+					    <?php
+
+					    $i = 0;
+
+					    while ( $the_query->have_posts() ) {
+
+					    	$i++;
+
+							if($i == 5): ?>
+
+							</div><div class="row-divider">
+
+							<?php endif;
+
 					        $the_query->the_post();
 
 					        get_template_part( 'template-parts/content-post' );
@@ -576,7 +729,7 @@ get_header(); ?>
 			<!-- =========================== -->
 			<!-- ONLINE      =============== -->
 			<!-- =========================== -->
-			<div class="row live-events">
+			<div class="row live-events toggleable-area">
 
 				<?php
 				  // Query Args
@@ -584,7 +737,7 @@ get_header(); ?>
 
 				    'post_type'		=> 'online',
 				    //'post__in'  	=> $tour_artists,
-				    'posts_per_page' => 4,
+				    'posts_per_page' => -1,
 				    'meta_query' => array(
 				    	array(
 				    		'key' => 'related_touring_partners', // name of custom field
@@ -601,12 +754,49 @@ get_header(); ?>
 				  // The Loop
 				  if ( $the_query->have_posts() ) {
 				   // echo '<ul>'; ?>
-				  	<div class="small-12 columns">
+				  	<div class="small-6 columns">
 				  		<h4 class="section-header">Online Performances</h4>
 				  	</div>
-				  	<?php
-				    
+
+			        <div class="small-6 columns view-all">
+
+					<?php if ( $the_query->post_count > 4 ): ?>
+
+			          <a class="view-link toggle-hidden" href="#">View all &nbsp;
+			            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			                <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+			                    <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+			                    <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+			                </g>
+			            </svg>
+			          </a>
+
+			        <?php else: ?>
+
+			          &nbsp;
+
+			    	<?php endif; ?>
+
+			        </div>
+
+					<?php if( $the_query->have_posts() ): ?>
+						<div class="row-divider show">
+					<?php endif ?>
+
+				    <?php
+
+				    $i = 0;
+
 				    while ( $the_query->have_posts() ) {
+
+				      $i++;
+
+					  if($i == 5): ?>
+
+					  </div><div class="row-divider">
+
+					  <?php endif;
+
 				      $the_query->the_post();
 				      //echo '<li>' . get_the_title() . '</li>';
 				      get_template_part( 'template-parts/content-post' );
