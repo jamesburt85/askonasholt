@@ -25464,7 +25464,7 @@ var map = null;
     // Initialise slick sliders in galery as accordions opened ******
     //****************************
 
-    $("#image-gallery ul[data-accordion] li a").on("click",function(){
+    $("#Gallery ul[data-accordion] li a").on("click",function(){
       $(this).next().find('.slick-slider').slick('setPosition');
     });
 
