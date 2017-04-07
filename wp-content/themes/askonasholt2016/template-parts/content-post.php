@@ -2,11 +2,15 @@
 <!-- Checking if post is featured -->
 <?php if( get_field('featured_post') && !is_page('home') ): ?>
 	
-	<div class="entry-content small-12 medium-6 large-6 columns animated waypoint is-hidden-onload large-item">
+	<div class="entry-content small-12 medium-6 large-6 columns waypoint large-item">
 	
 <?php else: ?>
 
+	<?php if(is_page('home')): ?>
 	<div class="entry-content small-12 medium-6 large-3 columns animated waypoint is-hidden-onload">
+	<?php else: ?>
+	<div class="entry-content small-12 medium-6 large-3 columns waypoint">
+	<?php endif; // end of is homepage ?>
 
 <?php endif; // end of if field_name logic ?>
 
