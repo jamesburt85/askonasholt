@@ -44,7 +44,7 @@
 
 			?>
 			<div class="small-12 large-4 columns tour-thumbnail" style="background-image: url('<?php echo $thumb;?>')">
-			
+				<a href="<?php the_permalink(); ?>"></a>
 			</div>
 
 			<div class="small-12 large-8 columns tour-details">
