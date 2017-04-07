@@ -10,6 +10,8 @@
 
 ?>
 
+<?php $i++; if($i % 4 == 0) { echo '</div><div class="animated waypoint is-hidden-onload" id="waypoint">'; } ?>
+
 <div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
 
 	<div class="entry-content">
@@ -33,7 +35,7 @@
 
 		?>
 
-		<div class="row tour-wrapper animated waypoint is-hidden-onload" id="waypoint">
+		<div class="row tour-wrapper">
 			
 			<?php
 				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'fp-medium' );
