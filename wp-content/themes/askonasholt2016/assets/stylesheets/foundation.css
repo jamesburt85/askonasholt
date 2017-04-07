@@ -11669,13 +11669,13 @@ ul#example-dropdown {
 .press-row.vacancies {
   margin-bottom: 50px; }
 
+.discography ul.accordion {
+  border-bottom: 1px solid #cccccc; }
+
 .discography li.accordion-item {
   padding: 25px 0;
   border-top: 1px solid #cccccc;
   font-size: 19px; }
-
-.discography li.accordion-item:last-child {
-  border-bottom: 1px solid #cccccc; }
 
 .discography .press-details {
   display: -webkit-box;

@@ -484,19 +484,51 @@ if ($acf_fields['flexible_content']) {
 			#Press Section
 			case 'press': ?>
 				<!-- <div class="row"> -->
-					<div class="press-row row">
+					<div class="press-row row toggleable-area">
 						
 						<div class="small-12 columns">
 
-							<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Press</h4>
+							<h4 class="section-header small-6 columns" id="<?php echo $section['unique_id'] ?>">Press</h4>
+
+					        <div class="small-6 columns view-all">
+
+							<?php if ( count($section['press_details']) > 4 ): ?>
+
+					          <a class="view-link toggle-hidden" href="#">View all &nbsp;
+					            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					                <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+					                    <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+					                    <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+					                </g>
+					            </svg>
+					          </a>
+
+					        <?php else: ?>
+
+					          &nbsp;
+
+					    	<?php endif; ?>
+
+					    	</div>
+
+						</div>
+
+						<div class="small-12 columns">					    	
 						
 							<ul class="accordion" data-accordion data-allow-all-closed="true">
 								
 								<?php
-								# Loop through the sections
-								foreach ($section['press_details'] as $press_section) { ?>
 
-								<li class="accordion-item" data-accordion-item>
+								$i = 0;
+
+								# Loop through the sections
+								foreach ($section['press_details'] as $press_section) {
+
+								$i++;
+
+								?>
+
+								<li class="accordion-item row-divider <?php if($i < 5) { echo 'show'; } ?>" data-accordion-item>
 								  	<a href="#" class="accordion-title">
 										
 										<div class="press-details">
@@ -570,23 +602,51 @@ if ($acf_fields['flexible_content']) {
 			#Individual Artist's Discography Section
 			case 'discography': ?>
 				
-				<div class="row">
+				<div class="row toggleable-area">
 					<div class="small-12 columns">
-						<h4 class="section-header" id="<?php echo $section['unique_id'] ?>">Discography</h4>
-					</div>
-				</div>
 
-				<div class="row">
+						<h4 class="section-header small-6 columns" id="<?php echo $section['unique_id'] ?>">Discography</h4>
+
+				        <div class="small-6 columns view-all">
+
+						<?php if ( count($section['discography_details']) > 4 ): ?>
+
+				          <a class="view-link toggle-hidden" href="#">View all &nbsp;
+				            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				                <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
+				                    <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
+				                    <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
+				                </g>
+				            </svg>
+				          </a>
+
+				        <?php else: ?>
+
+				          &nbsp;
+
+				    	<?php endif; ?>
+
+				    	</div>
+
+					</div>
+
 					<div class="small-12 columns">
 						<div class="discography">
 								
 							<ul class="accordion" data-accordion data-allow-all-closed="true">
 							
 								<?php
-								# Loop through the sections
-								foreach ($section['discography_details'] as $discography) { ?>
 
-								<li class="accordion-item" data-accordion-item>
+								$i = 0;
+
+								# Loop through the sections
+								foreach ($section['discography_details'] as $discography) {
+
+								$i++;
+
+								?>
+
+								<li class="accordion-item row-divider <?php if($i < 5) { echo 'show'; } ?>" data-accordion-item>
 								  	<a href="#" class="accordion-title">
 										<div class="press-details">
 											<div class="discography-image small-2 columns" style="background-image: url('<?php echo $discography['image']; ?>'); "></div>

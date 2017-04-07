@@ -1,11 +1,11 @@
 .discography {
+	ul.accordion {
+		border-bottom: 1px solid #cccccc;
+	}	
 	li.accordion-item {
 		padding: $sitepadding 0;
 		border-top: 1px solid #cccccc;
 		font-size: 19px;
-	}
-	li.accordion-item:last-child {
-		border-bottom: 1px solid #cccccc;
 	}
 	.press-details {
 		display: flex;
