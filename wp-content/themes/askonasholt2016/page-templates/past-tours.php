@@ -59,9 +59,9 @@ get_header(); ?>
 			<!-- pagination here -->
 
 			<!-- the loop -->
-			<?php $i = 0; echo '<div class="animated waypoint is-hidden-onload" id="waypoint">'; while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-				<?php $i++; get_template_part( 'template-parts/content-tours-projects' ); ?>
-			<?php endwhile; echo '</div>'; ?>
+			<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+				<?php get_template_part( 'template-parts/content-tours-projects' ); ?>
+			<?php endwhile; ?>
 			<!-- end of the loop -->
 
 			<!-- pagination here -->

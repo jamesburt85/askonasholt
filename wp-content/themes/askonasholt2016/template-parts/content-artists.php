@@ -10,7 +10,7 @@
 
 ?>
 
-<div id="post-<?php the_ID(); ?> waypoint" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns artists animated waypoint is-hidden-onload'); ?>>
+<div id="post-<?php the_ID(); ?> waypoint" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns artists animated waypoint'); ?>>
 
 	<div class="entry-content">
 		<?php // the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
