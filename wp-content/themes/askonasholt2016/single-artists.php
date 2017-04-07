@@ -33,12 +33,12 @@ get_header(); ?>
 	?>
 
 	<div class="bio-row row" id="intro">
-		<div class="small-12 large-9 columns hide-for-large" id="introduction">
+		<div class="small-12 large-6 large-push-6 columns" id="introduction">
 			<h4 class="section-header">Introduction</h4>
 			<?php echo $bio; ?>
-			<hr>
+			<hr class="hide-for-large" />
 		</div>
-		<div class="small-12 large-6 columns artist-contacts">
+		<div class="small-12 large-6 large-pull-6 columns artist-contacts">
 			<h4 class="section-header">Contact</h4>
 
 				<?php 
@@ -147,10 +147,6 @@ get_header(); ?>
 				</li>
 			</ul>
 
-		</div>
-		<div class="small-12 large-6 columns show-for-large" id="introduction">
-			<h4 class="section-header">Introduction</h4>
-			<?php echo $bio; ?>
 		</div>
 	</div> <!-- Bio Row END -->
 
