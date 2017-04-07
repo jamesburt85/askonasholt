@@ -17311,6 +17311,7 @@ body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
   text-align: center; }
 
 .tour-thumbnail {
+  position: relative;
   height: 300px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -17345,8 +17346,8 @@ body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
   .tour-details {
     padding: 25px; }
   .tour-thumbnail {
-    height: 100%;
-    position: absolute; } }
+    position: absolute;
+    height: 100%; } }
 
 body.single.single-artists .artist-header.container, body.single.single-clients .artist-header.container, body.single-touring-partners .artist-header.container {
   max-width: 100%;
