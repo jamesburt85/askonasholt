@@ -109,7 +109,7 @@
 	</li>
 
 		
-	<?php if( get_field('email_or_page_link') == 'Email' ): ?>
+<!-- 	<?php if( get_field('email_or_page_link') == 'Email' ): ?>
 		<button class="enquiry-button show-for-medium">
 			<a href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">
 				Make enquiry
@@ -125,7 +125,7 @@
 				Make enquiry
 			</a>
 		</button>
-	<?php endif; ?>
+	<?php endif; ?> -->
 
 
 
