@@ -63,10 +63,10 @@ $the_query = events_do_query( $event_args );
 		                  <div class="event-listing-details simple-listing">
                             <span class="event-detail"><?php echo $date; ?></span>
 		                    <span class="event-detail"><?php echo $time; ?></span>                  
-		                    <div class="show-for-large">
+		                    <div>
 		                      <?php get_template_part( 'template-parts/event-related-artist' ); ?>
 		                    </div>
-		                    <div class="show-for-large">
+		                    <div>
 		                      <?php get_template_part( 'template-parts/event-related-touring-partners' ); ?>
 		                    </div>		                    
 		                    <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
