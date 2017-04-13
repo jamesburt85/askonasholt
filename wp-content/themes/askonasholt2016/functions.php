@@ -445,16 +445,16 @@ class Walker_Category_Find_Parents extends Walker_Category {
       //**************************************************
 
 
-        add_action( 'template_redirect', 'my_cookie_redirect' );
+        // add_action( 'template_redirect', 'my_cookie_redirect' );
 
-        function my_cookie_redirect() {
-            // if the cookie count is greater or equal to 3 and we're on the splash page...
-            if ($_COOKIE['number_of_visits'] >= 3 && is_front_page()) {
-                $homeID = get_field('homepage', 'option');
-                wp_redirect( get_permalink($homeID) );
-                exit;
-            }
-        }
+        // function my_cookie_redirect() {
+        //     // if the cookie count is greater or equal to 3 and we're on the splash page...
+        //     if ($_COOKIE['number_of_visits'] >= 3 && is_front_page()) {
+        //         $homeID = get_field('homepage', 'option');
+        //         wp_redirect( get_permalink($homeID) );
+        //         exit;
+        //     }
+        // }
 
 
 
