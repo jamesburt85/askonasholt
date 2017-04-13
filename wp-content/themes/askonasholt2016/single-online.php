@@ -51,7 +51,7 @@ get_header(); ?>
 
 				elseif ( get_field('media_choice') == 'Audio' ) { ?>
 
-					<?php if( get_field('embed_or_external_link') == 'Link' && !empty( get_field('link') ) )  { ?>
+					<?php if( get_field('embed_or_external_link') == 'Link' && get_field('link') ) { ?>
 
 						<a href="<?php the_field('link'); ?>" target="_blank">
 							<i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;
@@ -60,13 +60,13 @@ get_header(); ?>
 
 					<?php } ?>
 
-					<?php if( get_field('embed_or_external_link') == 'Embed' && !empty(get_field('link') ) )  { ?>
+					<?php if( get_field('embed_or_external_link') == 'Embed' && get_field('link') ) { ?>
 
 						<?php the_field('link'); ?>
 
 					<?php } ?>					
 
-					<?php if( !empty(get_field('audio')) ) { ?>
+					<?php if( get_field('audio') ) { ?>
 
 						<?php get_template_part('template-parts/audio-player' ); ?>
 
