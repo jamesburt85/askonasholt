@@ -50,11 +50,27 @@ get_header(); ?>
 				<?php }
 
 				elseif ( get_field('media_choice') == 'Audio' ) { ?>
-				 	
-				 	<?php //$audio = the_field('audio'); ?>
 
-				 	<?php get_template_part('template-parts/audio-player' ); ?>
+					<?php if( get_field('embed_or_external_link') == 'Link' && !empty( get_field('link') ) )  { ?>
 
+						<a href="<?php the_field('link'); ?>" target="_blank">
+							<i class="fa fa-external-link" aria-hidden="true"></i>&nbsp;
+							Listen to the performance here
+						</a>
+
+					<?php } ?>
+
+					<?php if( get_field('embed_or_external_link') == 'Embed' && !empty(get_field('link') ) )  { ?>
+
+						<?php the_field('link'); ?>
+
+					<?php } ?>					
+
+					<?php if( !empty(get_field('audio')) ) { ?>
+
+						<?php get_template_part('template-parts/audio-player' ); ?>
+
+					<?php } ?>
 
 				<?php } ?>
 
