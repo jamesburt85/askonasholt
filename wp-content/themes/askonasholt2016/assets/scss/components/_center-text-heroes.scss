@@ -1,15 +1,18 @@
 //Center Test Hero styles
 
 .center-text-hero-header {
-	position: relative;
-	height: 182px !important;
+	position: relative;	
+	display: table;
+	width: 100%;	
+	min-height: 182px;
 	@include full-bg;
 	text-align: center;
 	border-bottom: 1px solid #cccccc;
 	background: $header-beige;
 	.center-hero-text {
-		@include center;
-		width: 90%;
+    	display: table-cell;
+    	vertical-align: middle;
+    	padding: 25px 10%;
 		p {
 			margin-bottom: 0;
 		}
@@ -19,7 +22,7 @@
 // MEDIA QUERIES
 @include breakpoint(medium up) {
 	.center-text-hero-header {
-		height: 182px !important;
+		min-height: 182px;
 		margin-bottom: $sitepadding-large;
 	}
 }

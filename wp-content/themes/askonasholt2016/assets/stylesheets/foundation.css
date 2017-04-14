@@ -16511,7 +16511,9 @@ div#mega-toggle-block-1:after {
 
 .center-text-hero-header {
   position: relative;
-  height: 182px !important;
+  display: table;
+  width: 100%;
+  min-height: 182px;
   background-position: center center;
   background-repeat: no-repeat;
   border-bottom: 0;
@@ -16521,19 +16523,15 @@ div#mega-toggle-block-1:after {
   border-bottom: 1px solid #cccccc;
   background: #FBFAF6; }
   .center-text-hero-header .center-hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 90%; }
+    display: table-cell;
+    vertical-align: middle;
+    padding: 25px 10%; }
     .center-text-hero-header .center-hero-text p {
       margin-bottom: 0; }
 
 @media screen and (min-width: 40em) {
   .center-text-hero-header {
-    height: 182px !important;
+    min-height: 182px;
     margin-bottom: 50px; } }
 
 @-webkit-keyframes plyr-progress {
@@ -18506,7 +18504,9 @@ body.single-people article.main-content {
   margin: 0 auto; }
 
 body.single-people .artist-header.people.container {
-  height: 28em;
+  display: table;
+  width: 100%;
+  min-height: 28em;
   background-position: center center;
   background-repeat: no-repeat;
   border-bottom: 0;
@@ -18515,6 +18515,9 @@ body.single-people .artist-header.people.container {
   background: #FBFAF6;
   position: relative;
   border-bottom: 1px solid #cccccc; }
+  body.single-people .artist-header.people.container > .row {
+    display: table-cell;
+    vertical-align: middle; }
   body.single-people .artist-header.people.container .artist-details-area {
     position: absolute;
     top: 50%;
@@ -18522,6 +18525,7 @@ body.single-people .artist-header.people.container {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    position: relative;
     margin: 0 auto;
     width: 100%; }
   body.single-people .artist-header.people.container .people-details-container {
@@ -18544,5 +18548,9 @@ body.single-people .artist-header.people.container {
 @media screen and (max-width: 39.9375em) {
   body.single div#single-post {
     margin: 0 auto; } }
+
+@media screen and (max-width: 63.9375em) {
+  body.single div#single-post {
+    padding: 0 25px; } }
 
 /*# sourceMappingURL=foundation.css.map */
