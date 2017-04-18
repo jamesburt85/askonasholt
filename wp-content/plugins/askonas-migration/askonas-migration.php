@@ -177,11 +177,11 @@ function the_migrations_to_run(){
             
             $migrate = new rw_posts( [ 'from'=>1728, 'to'=>1763 ] );
             
-            $migrate->migrate_init();
+            //$migrate->migrate_init();
 
             //$migrate->delete_all_migrated_data();   
                 
-            //$migrate->geturls(); 
+            $migrate->geturls(); 
             
         }
         if( $_GET['run'] == 'posts' ){
