@@ -1,13 +1,6 @@
 .filtering-block {
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-ms-flex-direction: column;
-    -webkit-flex-direction: column;
-    flex-direction: column; 
-    -ms-justify-content: center;
-    -webkit-justify-content: center;
-    justify-content: center;
+	display: table;
+	width: 100%;
 	background-color: $header-beige;
 	position: relative;
 	@include full-bg;
@@ -15,6 +8,10 @@
 	min-height: 182px;
 	text-align: center;
 	border-bottom: 1px solid #cccccc;
+	.filtering-block-inner {
+		display: table-cell;
+		vertical-align: middle;
+	}
 	.hero-heading {
 		font-family: $serif-font;
 	}

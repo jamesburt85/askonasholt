@@ -9970,17 +9970,8 @@ div#search-toggle {
     display: none; } }
 
 .filtering-block {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-  -ms-justify-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: table;
+  width: 100%;
   background-color: #FBFAF6;
   position: relative;
   background-position: center center;
@@ -9991,6 +9982,9 @@ div#search-toggle {
   min-height: 182px;
   text-align: center;
   border-bottom: 1px solid #cccccc; }
+  .filtering-block .filtering-block-inner {
+    display: table-cell;
+    vertical-align: middle; }
   .filtering-block .hero-heading {
     font-family: "GeometricSlab703BT-Light"; }
   .filtering-block header.filter-header {

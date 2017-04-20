@@ -36,7 +36,7 @@ $queried_object = get_queried_object();
 
 <div class="filtering-block tours-projects-block">
 
-	<header class="filter-header">
+	<header class="filtering-block-inner filter-header">
 
 		<div class="row">
 
