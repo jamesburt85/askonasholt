@@ -1,4 +1,4 @@
-<div class="artist-filtering-block">
+<div class="filtering-block artist-filtering-block">
 
 	<?php 
 		$myvar = get_field('people','option');
@@ -9,7 +9,7 @@
 
 	<header class="filter-header">
 		<h2 class="hero-heading">People</h2>
-		<p><?php //echo $description; ?></p>
+		<!-- <p><?php //echo $description; ?></p> -->
 		<?php //foundationpress_entry_meta(); ?>
 	</header>
 

@@ -1,18 +1,27 @@
 .filtering-block {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column; 
+    -ms-justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 	background-color: $header-beige;
 	position: relative;
 	@include full-bg;
 	//min-height: 200px;
-	height: 182px;
+	min-height: 182px;
 	text-align: center;
 	border-bottom: 1px solid #cccccc;
 	.hero-heading {
 		font-family: $serif-font;
 	}
-	.filter-header {
-		@include center();
-		width: 90%;
-		z-index: 1;
+	header.filter-header {
+		margin: 0 auto;
+		width: 95%;
+		text-align: center;
 	}
 	button.button {
 	    background-color: #fefefe;
@@ -36,5 +45,9 @@
 	    a {
 	    	color: initial;
 	    }
+	}
+	.row {
+		width: 100%;
+		max-width: none;
 	}
 }

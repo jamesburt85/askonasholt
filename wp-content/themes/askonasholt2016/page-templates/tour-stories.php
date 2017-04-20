@@ -17,7 +17,7 @@ get_header(); ?>
       </header> -->
       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
       
-      <div class="artist-filtering-block">
+      <div class="filtering-block artist-filtering-block">
         
         <?php get_template_part( 'template-parts/tour-stories-filtering' ); ?>
 

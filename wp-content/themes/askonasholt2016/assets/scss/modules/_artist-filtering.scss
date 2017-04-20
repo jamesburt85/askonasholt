@@ -9,7 +9,7 @@ body.post-type-archive-events {
     position: relative;
     border-bottom: 1px solid #cccccc;
     background: $header-beige;
-    height: 182px;
+    min-height: 182px;
 }
 
 .filter-area {
@@ -29,112 +29,24 @@ body.post-type-archive-events {
 	}
 
 	.artist-categories li {
-		float: none !important;
-		display: inline-block;
 		text-align: center;
 	}
 	.artist-categories {
-		@include center(x);
+
 	}
 
 }
 
-//making categoried fit on one line //END
-
-
-// .artist-categories {
-// 	position: absolute;
-// 	bottom: 0;
-// 	// width: 100%;
-// 	list-style: none;
-// 	margin: 0;
-// 	li {
-// 		color: $white;
-// 		float: left;
-// 		margin-right: ($sitepadding / 2);
-// 		margin-bottom: ($sitepadding / 2);
-// 		a {
-// 			// color: $white;
-// 			@extend .button;
-// 			background-color: $white;
-// 			color: $lightbrown;
-// 			border: 1px solid $brown;
-// 			color: $brown;
-// 			margin-bottom: 0;
-// 			&:active,
-// 			&:focus,
-// 			&:hover {
-// 				background-color: $red;
-// 			}
-// 		}
-
-// 		&.current-cat {
-// 			a {
-// 				background-color: $red;
-// 				color: $white;
-// 			}
-// 		}
-		
-// 		&.current-cat-parent,
-// 		&.current-cat-ancestor {
-// 			a {
-// 				background-color: $red;
-// 				color: $white;
-// 			}
-// 			.children {
-// 				a {
-// 					background-color: $bggrey;
-// 					color: $white;
-// 					&:hover {
-// 						background-color: $red;
-// 					}
-// 				}
-				
-// 			}
-// 		}
-		
-// 	}
-
-// 	.children {
-// 		display: none;
-// 		list-style: none;
-// 		margin: 0;
-// 	}
-	
-// 	.current-cat,
-// 	.current-cat-parent {
-// 		a { 
-// 			background-color: $white;
-// 			color: $lightbrown;
-// 			border: 1px solid $brown;
-// 			color: $brown;
-// 		}
-// 		ul.children {
-// 			margin-left: ($sitepadding / 2);
-// 			display: block;
-// 			float: right;
-// 			li {
-// 				float: left;
-// 				margin-bottom: 0;
-// 			}
-// 		}
-// 	}
-
-// }
-
-
 .artist-categories {
-	position: absolute;
-	bottom: 1em;
 	// width: 100%;
 	list-style: none;
-	margin: 0;
+	margin: 0 auto;
 	max-width: 95%;
 	li {
+		display: inline-block;
 		color: $white;
-		float: left;
 		//margin-right: ($sitepadding / 2);
-		margin-bottom: 2px;
+		margin: 2.5px 2.5px 0;
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		a {
@@ -160,98 +72,57 @@ body.post-type-archive-events {
 				color: $white;
 			}
 		}
-
-		// &.current-cat {
-		// 	a {
-		// 		background-color: $red;
-		// 		color: $white;
-		// 	}
-		// }
-		
-		// &.current-cat-parent,
-		// &.current-cat-ancestor {
-		// 	a {
-		// 		background-color: $red;
-		// 		color: $white;
-		// 	}
-		// 	.children {
-		// 		a {
-		// 			background-color: $bggrey;
-		// 			color: $white;
-		// 			&:hover {
-		// 				background-color: $red;
-		// 			}
-		// 		}
-				
-		// 	}
-		// }
 		
 	}
 
-	.children {
-		display: none;
-		list-style: none;
-		margin: 0;
-		// &:before {
-		// 	content: 'yeah';
-		// 	display: block;
-		// 	width: 100px; // temp
-		// }
-	}
-
-	// first parent
-	// .current-cat {
-	// 	// height: 100px; // temp
-	// 	// position: relative;
-	// 	// width:  100%;
-	// }
 	.current-cat.i-have-kids,
 	.current-cat-parent {
-		// height: 100px; // temp
+
 	}
 	
 	.current-cat,
 	.current-cat-parent {
-		a { 
-			// background-color: $white;
-			// color: $lightbrown;
-			// border: 1px solid $brown;
-			// color: $brown;
+		a {
 			background-color: $red;
 			color: $white;
 		}
-		ul.children {
-			position: absolute;
-			display: inline-block;
-			top: 100%;
-			@include center(x);
-			width: 100%;
+	}
 
-			li {
-				float: left;
-				margin-bottom: 0;
-				a {
-					background-color: $brown;
-					&:active,
-					&:focus,
-					&:hover {
-						background-color: $red;
-					}
-				}
-				&.current-cat {
-					a {
-						background-color: $red;
-						&:active,
-						&:focus,
-						&:hover {
-							background-color: $red;
-						}
-					}
+}
+
+ul.children {
+	clear: both;
+	margin: 0 0 10px 0;
+	width: 100%;
+	list-style: none;
+
+	li {
+		display: inline-block;
+		margin: 2.5px 2.5px 0;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		a {
+			padding: 6.25px;
+			background-color: $brown;
+			font-size: 0.9rem;
+			color: $white;
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: $red;
+			}
+		}
+		&.current-cat {
+			a {
+				background-color: $red;
+				&:active,
+				&:focus,
+				&:hover {
+					background-color: $red;
 				}
 			}
 		}
 	}
-
 }
 
 //Styles for when instrumentalists term is clicked. Move row up to allow children room underneath
@@ -260,17 +131,11 @@ body.post-type-archive-events {
 	.artist-filtering-block {
 
 		.filter-area {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-    		-webkit-transform: translateY(-75%);
-    		-ms-transform: translateY(-75%);
-    		transform: translateY(-75%);
+			
 		}
 
 		.artist-categories {
-			bottom: 0;
-			@include center(x);
+			
 		}
 
 	}
@@ -291,11 +156,10 @@ body.post-type-archive-artists {
 //MEDIA QUERIES **************
 
 @include breakpoint(small only) {
-  ul.artist-categories {
+  ul.artist-categories,
+  ul.children {
   	width: 100%;
   	li {
-  		margin-right: 2.5px;
-  		margin-bottom: 2.5px;
   		a {
   			padding: 0.85em 0.5em;
   			font-size: 10px;
@@ -308,7 +172,7 @@ body.post-type-archive-artists {
 }
 @include breakpoint(medium) {
 	.artist-filtering-block  {
-		height: 182px;
+		min-height: 182px;
 		margin-bottom: 3em;
 	}
 }

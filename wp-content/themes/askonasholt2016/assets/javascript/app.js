@@ -25432,13 +25432,13 @@ var map = null;
       // JS fixes for menu positioning ******
       //****************************
 
-      $('.artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height()+114);
-      $('.filter-area').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height());
+      // $('.artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height()+114);
+      // $('.filter-area').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height());
 
-      $( window ).resize(function() {
-        $('.artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height()+114);
-        $('.filter-area').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height());
-      });
+      // $( window ).resize(function() {
+      //   $('.artist-filtering-block').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height()+114);
+      //   $('.filter-area').height($('.artist-categories').height()+$('.artist-categories .current-cat .children').height());
+      // });
 
       //-----------------------//
 

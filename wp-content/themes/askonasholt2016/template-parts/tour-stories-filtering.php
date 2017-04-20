@@ -12,7 +12,7 @@
 
 	<header class="filter-header">
 		<h2 class="hero-heading">Tour Stories</h2>
-	<!-- 	<p><?php //echo $description ?></p> -->
+		<!-- <p><?php //echo $description; ?></p> -->
 	</header>
 
 
