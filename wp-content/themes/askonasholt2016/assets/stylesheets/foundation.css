@@ -10032,7 +10032,8 @@ body.post-type-archive-events div#archive {
   position: relative;
   border-bottom: 1px solid #cccccc;
   background: #FBFAF6;
-  min-height: 182px; }
+  min-height: 182px;
+  padding: 10px 0; }
 
 .filter-area {
   text-align: center;
@@ -10073,7 +10074,7 @@ body.post-type-archive-events div#archive {
 
 ul.children {
   clear: both;
-  margin: 0 0 10px 0;
+  margin: 0;
   width: 100%;
   list-style: none; }
   ul.children li {

@@ -10,6 +10,7 @@ body.post-type-archive-events {
     border-bottom: 1px solid #cccccc;
     background: $header-beige;
     min-height: 182px;
+    padding: 10px 0;
 }
 
 .filter-area {
@@ -92,7 +93,7 @@ body.post-type-archive-events {
 
 ul.children {
 	clear: both;
-	margin: 0 0 10px 0;
+	margin: 0;
 	width: 100%;
 	list-style: none;
 
