@@ -151,97 +151,56 @@ role="main"> -->
       </div>
     </div>   
 
-  <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
-      <?php 
+    <div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
+        <?php 
 
-      /*
-      *  Query posts for a relationship value.
-      *  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
-      */
-      $videos = get_posts(array(
-        'post_type' => 'post',
-        'category_slug' => 'video',
-        'posts_per_page' => 4,
-        'category'         => 'video',
-        'category_name'    => 'video',
+        /*
+        *  Query posts for a relationship value.
+        *  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
+        */
+        $videos = get_posts(array(
+          'post_type' => 'post',
+          'category_slug' => 'video',
+          'posts_per_page' => 4,
+          'category'         => 'video',
+          'category_name'    => 'video',
 
-        // 'meta_query' => array(
-        //   array(
-        //     'key' => 'artist', // name of custom field
-        //     'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-        //     'compare' => 'LIKE'
-        //   )
-        // )
-      ));
+          // 'meta_query' => array(
+          //   array(
+          //     'key' => 'artist', // name of custom field
+          //     'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+          //     'compare' => 'LIKE'
+          //   )
+          // )
+        ));
 
-      ?>
+        ?>
 
-      <?php if( $videos ): ?>
-        <!-- <ul> -->
-        <?php
-          foreach( $videos as $post ):
-            setup_postdata( $post );
-
-            //get_template_part( 'template-parts/content-post' );
-
-          ?>
-
-            <div class="small-12 medium-6 large-3 columns artist-video-area animated waypoint is-hidden-onload">
-              <a href="<?php the_permalink(); ?>"> 
-                <?php get_template_part( 'template-parts/video-player' ); ?>
-              </a>
-            </div>
-
+        <?php if( $videos ): ?>
+          <!-- <ul> -->
           <?php
+            foreach( $videos as $post ):
+              setup_postdata( $post );
 
-          endforeach;
+              //get_template_part( 'template-parts/content-post' );
 
-          wp_reset_postdata();
+            ?>
 
-          ?>
-        <!--  </ul> -->
-      <?php endif; ?>
+              <div class="small-12 medium-6 large-3 columns artist-video-area animated waypoint is-hidden-onload">
+                <a href="<?php the_permalink(); ?>"> 
+                  <?php get_template_part( 'template-parts/video-player' ); ?>
+                </a>
+              </div>
 
-  </div>
+            <?php
 
-    <div class="row">
+            endforeach;
 
-      <?php 
+            wp_reset_postdata();
 
-      /*
-      *  Query posts for a relationship value.
-      *  This method uses the meta_query LIKE to match the string "123" to the database value a:1:{i:0;s:3:"123";} (serialized array)
-      */
-
-      $tracks = get_posts(array(
-        'post_type' => 'post',
-        'category_slug' => 'audio',
-        'posts_per_page' => 3,
-        'category'         => 'audio',
-        'category_name'    => 'audio',
-
-        // 'meta_query' => array(
-        //   array(
-        //     'key' => 'artist', // name of custom field
-        //     'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-        //     'compare' => 'LIKE'
-        //   )
-        // )
-      ));
-
-      ?>
-      <?php if( $tracks ): ?>
-        <!-- <ul> -->
-        <?php
-          foreach( $tracks as $post ): setup_postdata( $post );
-          
-            get_template_part( 'template-parts/audio-player' );
-
-          endforeach;
-
-          wp_reset_postdata(); ?>
-        <!--  </ul> -->
-      <?php endif; ?>
+            ?>
+          <!--  </ul> -->
+        <?php endif; ?>
 
     </div>
 

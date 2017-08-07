@@ -146,7 +146,7 @@
 			<p><?php echo $bio; ?></p>
 		</div>
 		<div class="quicklook-content-links">
-			<a class="button" href="<?php the_permalink(); ?>">Go to Client Page</a>	
+			<a class="button" href="<?php the_permalink(); ?>">Go to Touring Partner Page</a>
 		</div>
 
 	</div>

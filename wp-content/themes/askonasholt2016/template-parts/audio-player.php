@@ -18,7 +18,7 @@ if ( is_array($mp3) ) {
 ?>
 
 <div class="small-12 columns audio-player animated waypoint is-hidden-onload" >
-	<audio controls>
+	<audio preload="none" controls>
 		<source src="<?php echo $mp3; ?>" type="audio/mp3">
 		<source src="/path/to/audio.ogg" type="audio/ogg">
 	</audio>
