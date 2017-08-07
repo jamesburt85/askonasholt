@@ -13,8 +13,7 @@ class event_api {
             $this->xml_file 		= '..\askonas_event\ToscaActivities.xml'; 
         } else {
             //$this->xml_file 		= '../httpdocs/79.170.44.26/import/ToscaActivities.XML'; // currently relative from wordpress root
-            $this->xml_file 		= 'import/ToscaActivities.XML'; // currently relative from wordpress root
-            
+            $this->xml_file 		= 'import/ToscaActivities.XML'; // currently relative from wordpress root           
         }		
 		
 	}
@@ -266,17 +265,14 @@ class event_api {
      // lookup post_title (exact match) in post_type = artists
     private function get_wp_artist( $name ){
         global $wpdb;
+
+        $name = sanitize_text_field( html_entity_decode( $name ) );
         
-        $name = sanitize_text_field( $name );
-        
-        $artist = $wpdb->get_row( "SELECT * FROM $wpdb->posts WHERE post_title = '" . $name . "' AND post_type = 'artists' " );
+        $artist = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->posts WHERE post_title = %s AND post_type = 'artists'", $name ) );
 
         return $artist;   
         
-    }
-    
-    
-    
+    }  
     
     
     private function xml_to_object(){
@@ -290,11 +286,11 @@ class event_api {
     
 }
 
-// function whatever(){
-    // $event_api = new event_api;
-    // if( strtok($_SERVER["REQUEST_URI"],'?') == '/home/'&& isset( $_GET['events'] ) ){
-    // $event_api->refreshAllEvents();
-    // exit();
-    // }
-// }
-// add_action( 'init', 'whatever' );
+function whatever(){
+    $event_api = new event_api;
+    if( strtok($_SERVER["REQUEST_URI"],'?') == '/home/'&& isset( $_GET['events'] ) ){
+    $event_api->refreshAllEvents();
+    exit();
+    }
+}
+add_action( 'init', 'whatever' );
