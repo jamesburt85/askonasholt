@@ -176,9 +176,7 @@
             foreach( $videos as $post ): setup_postdata( $post ); ?>
              
               <div class="small-12 medium-6 large-3 columns artist-video-area">
-                <a href="<?php the_permalink(); ?>">
-                  <?php get_template_part( 'template-parts/video-player' ); ?>
-                </a>
+                <?php get_template_part( 'template-parts/video-player' ); ?>
               </div>
 
             <?php

@@ -1,0 +1,107 @@
+//Repeated Hero styles
+.hero-sub-header {
+	text-transform: uppercase;
+	color: #b38a76 !important;
+	padding: 8px 8px 2px 8px;
+}
+
+span.hero-blurb p {
+	margin-bottom: 0;
+}
+
+.hero-header {
+	color: white;
+	font-size: 35px;
+	padding: 11px;
+	font-family: $serif-font;
+}
+
+.hero-copy {
+	color: white;
+	padding: 10px;
+}
+
+//Arrows on home slider
+i.fa.fa-angle-left.slick-arrow {
+	left: 1em;
+	position: absolute;
+	top: 42%;
+	// font-size: 50px;
+	z-index: 9;
+	color: white;
+	background: rgba(0,0,0,0.8);
+	padding: 10px;
+	cursor: pointer;
+}
+
+i.fa.fa-angle-right.slick-arrow {
+	right: 1em;
+	position: absolute;
+	top: 42%;
+	// font-size: 50px;
+	z-index: 9;
+	color: white;
+	background: rgba(0,0,0,0.8);
+	padding: 10px;
+	cursor: pointer;
+}
+
+//Arrows on Single Artist slider
+body.single-artists {
+	i.fa.fa-angle-left.slick-arrow {
+		left: 0;
+		position: absolute;
+		top: 42%;
+		z-index: 9;
+		color: white;
+		background: rgba(186,12,47,0.8);
+		padding: 10px;
+		cursor: pointer;
+	}
+
+	i.fa.fa-angle-right.slick-arrow {
+		right: 0;
+		position: absolute;
+		top: 42%;
+		z-index: 9;
+		color: white;
+		background: rgba(186,12,47,0.8);
+		padding: 10px;
+		cursor: pointer;
+	}
+}
+
+
+.hero-text {
+	a {
+		display: inline-block;
+		margin-top: 3px;
+		padding: 0 10px;
+		background: rgba(186, 12, 47, 0.8);		
+		color: #fff;
+	}
+	button.hero-button {
+		padding: 10px;
+		color: #fff;
+	}	
+}
+
+.hero-text span p {
+	padding: 10px;
+}
+
+.hero-text span, .hero-text button, .hero-text span p {
+	//background: $herored;
+}
+
+//@include breakpoint(medium) {
+  .hero-text {
+  	max-width: 80%;
+  }
+//}
+
+@include breakpoint(medium) {
+	.hero-header {
+		font-size: 45px;
+	}
+}

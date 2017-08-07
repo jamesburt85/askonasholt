@@ -1,0 +1,60 @@
+//In-page nav tiles at bottom of page
+.more-page-links {
+	// margin: $sitepadding-large 0;
+	border-top: 1px solid #cccccc;
+	text-align: center;
+	margin: 2em 0;
+	ul.submenu.page-nav-buttons {
+		list-style-type: none;
+		text-align: center;
+		li {
+			@include breakpoint(small) {
+				@include grid-column(12);
+			}
+			@include breakpoint(medium) {
+				@include grid-column(6);
+			}
+			@include breakpoint(large) {
+				width: 20%;
+			}
+			font-size: 14px;
+		}
+
+		li.page_item.page-item-54.current_page_item.active {
+		    display: none;
+		}
+
+		//styling page nav buttons similar to filter buttons
+		li.page_item {
+		    background-color: #fefefe;
+		    color: #B49A81 !important;
+		    margin-bottom: $sitepadding;
+		    margin-top: $sitepadding;
+		    padding-left: 0;
+		    padding-right: 0;
+		    a {
+		    	color: #B49A81;
+		    	text-transform: uppercase;
+		    	letter-spacing: 1px;
+		    	width: 100%;
+		    	border: 1px solid #B49A81;
+		    	line-height: 1;
+		    	padding: 1em;
+		    	transition: 0.5s;
+		    }
+		    a:hover {
+		    	background-color: #9e0a28;
+		    	color: #fff;
+		    }
+		}
+	}
+}
+
+@include breakpoint(medium up) {
+	.more-page-links {
+		li.page_item {
+		    margin-bottom: $sitepadding-large;
+		    margin-top: $sitepadding-large;
+		}
+	}
+}

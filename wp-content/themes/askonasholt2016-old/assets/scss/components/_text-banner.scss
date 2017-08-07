@@ -1,0 +1,58 @@
+//#acf flexible text-banner
+.text-banner-wrapper {
+	max-width: 100%;
+    left: 0;
+    //position: absolute;
+    margin: $sitepadding 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .text-banner {
+    	text-align: center;
+    	max-width: 90%;
+    	margin: 0 auto;
+        padding: $sitepadding-large 0;
+
+    	.text-banner-area {
+    		.banner-header {
+    			font-size: 24px;
+    			line-height: 2;
+    		}
+    		.banner-copy {
+    			font-size: 22px;
+    			line-height: 1.7;
+
+                h4 {
+                    font-family: $serif-font;
+                    font-size: 40px;
+                }
+
+                p {
+                    text-align: left;
+                }
+    		}
+    	}
+    }
+}
+
+//medium styles
+@include breakpoint(medium only) {
+	.text-banner-wrapper {
+		.text-banner {
+			margin: 0 4rem;
+			padding: $sitepadding;
+		}
+	}
+}
+
+//large-up styles
+@include breakpoint(large up) {
+	.text-banner-wrapper {
+		.text-banner {
+			margin: 0 auto;
+			padding: $sitepadding-large;
+			max-width: 65%;
+		}
+	}
+}

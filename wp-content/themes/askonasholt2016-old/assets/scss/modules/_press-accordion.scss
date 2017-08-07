@@ -1,0 +1,45 @@
+.press-row {
+	font-size: 19px;
+	//border-top: 1px solid #cccccc;
+	span.text_area_one {
+		padding: 0 $sitepadding-small 0 0.9375rem;
+	}
+	span.text_area_two, span.text_area_three {
+		padding: 0 $sitepadding-small;
+	}
+	.press-details span:last-child {
+		// font-weight: bold;
+	}
+	.press-details span:not(:last-child) {
+		border-right: 1px solid #cccccc;
+	}
+	li.accordion-item {
+	    border-top: 1px solid #cccccc;
+	}
+	li.accordion-item:last-child {
+		border-bottom: 1px solid #cccccc;
+	}
+}
+
+@include breakpoint(small only) {
+	.press-row li.accordion-item {
+		padding: 1em 0;
+	}
+	.event-listing-details {
+	    line-height: 2;
+	}
+
+}
+
+@include breakpoint(medium up) {
+	span.text_area_one {
+		padding: 0 $sitepadding-small 0 0.9375rem;
+	}
+	span.text_area_two, span.text_area_three {
+		padding: 0 $sitepadding-small;
+	}
+}
+//padding to vacancies accordion on careers page
+.press-row.vacancies {
+    margin-bottom: 50px;
+}

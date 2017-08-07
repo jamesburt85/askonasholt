@@ -1,0 +1,200 @@
+{
+    "key": "group_582c4285559a9",
+    "title": "[TOURS] Event Details",
+    "fields": [
+        {
+            "key": "field_583eeb4d8033c",
+            "label": "Time",
+            "name": "time",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "H:i",
+            "return_format": "H:i"
+        },
+        {
+            "key": "field_582c4525af917",
+            "label": "Date",
+            "name": "date",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d M Y",
+            "return_format": "d M Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_584185198caee",
+            "label": "End Date",
+            "name": "adstyles_end_date",
+            "type": "date_picker",
+            "instructions": "This won't appear on the site, it's just for the inner workings of the site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "Ymd",
+            "first_day": 1
+        },
+        {
+            "key": "field_582c4568af918",
+            "label": "Venue",
+            "name": "venue",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_582c4579af919",
+            "label": "City",
+            "name": "city",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_582c457faf91a",
+            "label": "More info",
+            "name": "more_info",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_5836bb72cd9b0",
+            "label": "Map location",
+            "name": "map_location",
+            "type": "google_map",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "center_lat": "51.518076",
+            "center_lng": "-0.114689",
+            "zoom": "",
+            "height": ""
+        },
+        {
+            "key": "field_583c193f32f52",
+            "label": "Related Artists",
+            "name": "related_artists",
+            "type": "relationship",
+            "instructions": "Choose any Artists relate to the tour",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "artists"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_58b0470550e4a",
+            "label": "Related Touring Partners",
+            "name": "related_touring_partners",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "touring-partners"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1487947555
+}

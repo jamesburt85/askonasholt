@@ -168,11 +168,7 @@ body.single-touring-partners {
 	width: 70%;
 	//position: relative;
 }
-@include breakpoint(medium up) {
-	.artist-header-thumb {
-		border-radius: 0 25% 25% 0 / 0 50% 50% 0;
-	}
-}
+
 
 
 //Artist image curve

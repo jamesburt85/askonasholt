@@ -1,0 +1,39 @@
+.sites-button {
+  background: #FF6908;
+  font-size: 1.25rem;
+  font-weight: bold;
+  box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
+  border-radius: 3px;
+  border: none;
+}
+
+.normal-button a {
+	background-color: #fefefe;
+	color: #B49A81;
+	border: 1px solid #B49A81;
+	color: #B49A81;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+	padding: 0.85em 1em;
+	margin: 0 0 1rem 0;
+	font-size: 0.9rem;
+	transition: 0.5s;
+}
+
+.normal-button a:hover {
+    background-color: #BA0C2F;
+    color: #ffffff;
+}
+
+.filter-button{
+    background-color: $herored;
+    color: #ffffff;
+    padding:10px;
+    min-width:100px;
+    width:100%;
+    border-radius:2px;
+    &:hover{
+        opacity:0.7;
+    }
+}

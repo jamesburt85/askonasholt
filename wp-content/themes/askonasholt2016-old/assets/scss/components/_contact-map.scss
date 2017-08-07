@@ -1,0 +1,14 @@
+#map {
+	height: 500px; //temp
+	background-color: #000000;
+}
+
+.contact-details-section {
+	padding: 10px 0;
+}
+
+//remove text 'MENU' next to burger
+div#mega-toggle-block-1:after {
+	display: none;
+}
+

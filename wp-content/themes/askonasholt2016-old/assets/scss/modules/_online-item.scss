@@ -1,0 +1,142 @@
+//individual online posts on archive
+.post-type-archive-events {
+	.bottom-left {
+		.media-type-indicator {
+			i {
+				margin-bottom: 1px;
+			}
+		}
+	}
+}
+
+.online-item {
+	//height: 450px; //temp
+	//border: 1px solid gray;
+	//margin-bottom: 2em;
+	transition: 0.5s;
+	background-color: #ffffff;
+	position: relative;
+	margin-bottom: 25px;
+
+	a {
+		color: inherit;
+	}
+
+	span.online-artist-name {
+	    text-transform: uppercase;
+	    font-size: 85%;
+	}
+
+	.bottom-left {
+		position: absolute;
+		bottom: 0;
+		.media-type-indicator {
+			i {
+				color: white;
+				background: rgba(186, 12, 47, 0.8);
+				padding: 0.5em 0.5em 0.3em;
+				//margin-bottom: 1px;
+				font-size: 1.5em;
+			}
+		}
+		.online-item-container {
+			padding: 1em;
+		    background: rgba(186, 12, 47, 0.8);
+		    color: #ffffff;
+		    span.side-bar-artist-name {
+		    	text-transform: uppercase;
+		    }
+		}
+	}
+	
+	.online-item-thumb {
+	    height: 300px;
+	    @include full-bg;
+	    background-position: 50% 33%;
+	}
+	
+	.online-category {
+		display: flex;
+		li {
+			list-style-type: none;
+			text-transform: uppercase;
+			display: flex;
+			margin-right: 10px;
+		}
+		span.category {
+			font-weight: bold;
+		}
+	}
+	span.online-item-copy p {
+	    font-size: 15px;
+	}
+	.online-item-header {
+		margin: 1em 0 0 0;
+		
+		a {
+			color: inherit;
+		}
+	}
+
+}
+
+.online-performances-link {
+    text-align: center;
+    button {
+	    background: transparent;
+	    border: 1px solid gray;
+	    color: initial;
+	    font-weight: bold;
+	    padding: 0.85em 25px;
+	    margin: $sitepadding-large;
+	}
+}
+
+body.post-type-archive-online {
+	article.main-content {
+		position: relative;
+	}
+	.archive__load-more {
+		@include center(x);
+		bottom: 0;
+	}
+}
+
+@include breakpoint(small only){
+	.online-item {
+		margin-bottom: 25px;
+	}
+}
+
+//Main Online Pgae heder hiding
+
+.post-type-archive-online {
+	.hero-heading.no-show {
+		display: none;
+	}
+}
+
+//************************
+//Single online pages **
+//************************
+
+body.single-online {
+	.audio-player, .large-video-row {
+		padding: 0;
+		margin: $sitepadding-large auto;
+	}
+}
+
+.single-online-category {
+	display: flex;
+	li {
+		list-style-type: none;
+		text-transform: uppercase;
+		display: flex;
+		margin-right: 10px;
+	}
+}
+
+ul#example-dropdown {
+    width: auto;
+}

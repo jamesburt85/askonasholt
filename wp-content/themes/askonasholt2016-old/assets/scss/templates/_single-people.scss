@@ -1,0 +1,74 @@
+// ONLINE Page Styles
+
+//SINGLE ONLINE STRESMS ********************************
+
+body.single-people{
+  article.main-content {
+    max-width: 57.375rem;
+    margin: 0 auto;
+  }
+  // .single-staff-header {
+  //   margin: $sitepadding-large 0;
+  //   height: 28rem;
+  //   .header-info {
+  //     @include center;
+  //     margin: 0 auto
+  //   }
+  // }
+
+  .artist-header.people.container {
+    display: table;
+    width: 100%;
+    min-height: 28em;
+    @include full-bg;
+    background: $header-beige;
+    position: relative;
+    border-bottom: 1px solid #cccccc;
+    >.row {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .artist-details-area {
+      @include center;
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .people-details-container {
+      padding: 25px;
+
+      //flags for people page
+      .flag-area {
+        .flag {
+          height: 13px;
+          width: 25px;
+        }
+      }
+    }
+    .artist-header-thumb {
+      height: 300px;
+      max-width: 400px;
+      margin: 0 auto;
+      @include full-bg;
+    }
+    span.staff-category li {
+      color: #BA0C2F;
+    }
+  }
+}
+
+@include breakpoint(small only) {
+  body.single{
+    div#single-post {
+      //max-width: 90%;
+      margin: 0 auto;
+    }
+  }
+}
+@include breakpoint(medium down) {
+  body.single{
+    div#single-post {
+      padding: 0 25px;
+    }
+  }
+}

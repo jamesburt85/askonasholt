@@ -67,7 +67,7 @@ var PATHS = {
     'assets/components/foundation-datepicker/js/foundation-datepicker.js',
 
     // Include your own custom scripts (located in the custom folder)
-    // 'assets/javascript/custom/*.js',
+    'assets/javascript/custom/*.js',
   ],
   phpcs: [
     '**/*.php',

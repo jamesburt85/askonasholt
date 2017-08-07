@@ -1,0 +1,179 @@
+body.post-type-archive-events {
+	div#archive {
+	    margin: 0;
+	    max-width: 100%;
+	}
+}
+
+.artist-filtering-block {
+    position: relative;
+    border-bottom: 1px solid #cccccc;
+    background: $header-beige;
+    min-height: 182px;
+    padding: 10px 0;
+}
+
+.filter-area {
+	text-align: center;
+	width: 100%;
+}
+
+
+
+//making categories fit on one line
+
+@include breakpoint(medium up) {
+	.artist-categories {
+		//display: -webkit-box;
+		width: 100%;
+		padding-left: 0;
+	}
+
+	.artist-categories li {
+		text-align: center;
+	}
+	.artist-categories {
+
+	}
+
+}
+
+.artist-categories {
+	// width: 100%;
+	list-style: none;
+	margin: 0 auto;
+	max-width: 95%;
+	li {
+		display: inline-block;
+		color: $white;
+		//margin-right: ($sitepadding / 2);
+		margin: 2.5px 2.5px 0;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		a {
+			// color: $white;
+			@extend .button;
+			background-color: $white;
+			color: $lightbrown;
+			color: $brown;
+			margin-bottom: 0;
+			padding: ($sitepadding / 4);
+			
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: $brand-gold;
+			}
+		
+		}
+
+		&.current-cat {
+			a {
+				background-color: $brand-gold;
+				color: $white;
+			}
+		}
+		
+	}
+
+	.current-cat.i-have-kids,
+	.current-cat-parent {
+
+	}
+	
+	.current-cat,
+	.current-cat-parent {
+		a {
+			background-color: $red;
+			color: $white;
+		}
+	}
+
+}
+
+ul.children {
+	clear: both;
+	margin: 0;
+	width: 100%;
+	list-style: none;
+
+	li {
+		display: inline-block;
+		margin: 2.5px 2.5px 0;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		a {
+			padding: 6.25px;
+			background-color: $brown;
+			font-size: 0.9rem;
+			color: $white;
+			&:active,
+			&:focus,
+			&:hover {
+				background-color: $red;
+			}
+		}
+		&.current-cat {
+			a {
+				background-color: $red;
+				&:active,
+				&:focus,
+				&:hover {
+					background-color: $red;
+				}
+			}
+		}
+	}
+}
+
+//Styles for when instrumentalists term is clicked. Move row up to allow children room underneath
+.term-singers,
+.term-instrumentalists {
+	.artist-filtering-block {
+
+		.filter-area {
+			
+		}
+
+		.artist-categories {
+			
+		}
+
+	}
+}
+
+/// highlight show all on archive page
+body.post-type-archive-artists {
+	li.cat-item-all {
+		a {
+			background-color: $red;
+			color: $white;
+		}
+	}
+}
+
+
+
+//MEDIA QUERIES **************
+
+@include breakpoint(small only) {
+  ul.artist-categories,
+  ul.children {
+  	width: 100%;
+  	li {
+  		a {
+  			padding: 0.85em 0.5em;
+  			font-size: 10px;
+  		}
+  	}
+  }
+  h2.hero-heading {
+  	    font-size: 2rem;	
+  }
+}
+@include breakpoint(medium) {
+	.artist-filtering-block  {
+		min-height: 182px;
+		margin-bottom: 3em;
+	}
+}

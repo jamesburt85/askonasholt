@@ -1,0 +1,28 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3313202, 2016-11-25T07:28:36-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: GeometricSlab703BT-Light by Bitstream
+ * URL: http://www.myfonts.com/fonts/bitstream/geometric-slabserif-703/light/
+ * Copyright: Copyright 1990-2003 Bitstream Inc. All rights reserved.
+ * Licensed pageviews: 100,000
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3313202
+ * 
+ * © 2016 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/328e32");
+
+  
+@font-face {font-family: 'GeometricSlab703BT-Light';src: url('webfonts/328E32_0_0.eot');src: url('webfonts/328E32_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/328E32_0_0.woff2') format('woff2'),url('webfonts/328E32_0_0.woff') format('woff'),url('webfonts/328E32_0_0.ttf') format('truetype');}
+ 

@@ -1,0 +1,355 @@
+//General styles throughout site
+
+section.container {
+    overflow-x: hidden;
+}
+
+// div#page-full-width {
+//     max-width: 57.375rem;
+//     margin: 0 auto;
+// }
+
+//hide load more button - visibility rather than display: none; as JS function requires
+.archive__load-more {
+    visibility: hidden !important;
+}
+
+//don't showanimated items until js loads
+.is-hidden-onload {
+  opacity: 0;
+}
+
+//stopping flash of dropdown on small devices
+.title-bar {
+    display: none;
+}
+
+//center dropdowns
+.dropdown.menu {
+    > li.opens-left {
+        > .is-dropdown-submenu {
+            @include center(x);
+            top: 84px;
+        }
+    }
+}
+
+//temp margin bottom for video single posts. Embed previously too close to bottom
+.single-format-video {
+    .flex-video.widescreen {
+        margin-bottom: 3em;
+    }
+}
+
+//hiding post author
+p.byline.author { display: none; }
+
+
+//add margin to video in acf
+.large-video-row {
+    margin: 50px 0;
+}
+
+.title-bar {    
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+
+.top-bar {
+    display: none;
+
+    @include breakpoint(medium) {
+        display: block;
+    }
+}
+
+#cookie-notice .button.bootstrap {
+    background-color: #ffffff;
+    background-image: none;
+    color: $brand-red;
+}
+
+#cookie-notice .button.bootstrap:hover {
+    background-color: #ffffff;
+    background-image: none;
+    color: $brand-red;
+}
+
+//remove padding as 'columns' will add this
+#single-post .main-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.event-listing-details.simple-listing {
+    .side-bar-artist {
+        line-height: 60px;
+    }
+}
+
+.link-banner {
+    margin-top: $sitepadding-large;
+}
+
+.page-template-home {
+    .link-banner {
+        margin-top: 0;
+    }
+}
+
+.full-width {
+    hr {
+        max-width: 100%;
+    }
+}
+
+.simple-listing {
+    line-height: 60px;
+}
+
+.section-header,
+.free-text-area h4  {
+    //@include grid-column(12);
+    padding-top: $sitepadding;
+    padding-bottom: $sitepadding;
+    //color: $brand-red;
+    margin-bottom: 0;
+    //@include grid-column(12);
+    a {
+        font-size: 17px;
+        color: inherit;
+    }
+}
+.free-text-area h4 {
+    padding-top: 0;
+}
+
+@include breakpoint(small only){
+    .section-header,
+    .free-text-area h4  {
+       //padding-bottom: 0;
+        font-size: 1.4rem;
+    }
+}
+
+div#narrow-text-page {
+    max-width: 57rem;
+    margin: 0 auto;
+}
+
+@include breakpoint(medium up) {
+    .section-header,
+    .free-text-area h4  {
+        padding-top: $sitepadding;
+        padding-bottom: $sitepadding;
+    }
+    .free-text-area h4 {
+        padding-top: 0;
+    }
+}
+
+//Search Page Styles to make all inline
+body.search {
+  .blogpost-entry {
+    display: inline;
+  }
+}
+
+
+.hero-heading {
+    font-family: $serif-font;
+    margin-bottom: 0;
+}
+
+.serif {
+    font-family: $serif-font;
+}
+
+p {
+    font-size: 1.15rem;
+}
+
+body.single,
+#narrow-text-page {
+    article.main-content {
+        p, li:not(.accordion-item) {
+            font-family: "Brown-Pro-Light", AdobeBlank;
+
+            strong {
+                font-weight: normal;
+                font-family: $body-font-family;
+            }
+        }
+        .magazine-item p {
+            font-family: $body-font-family;
+        }
+    }
+}
+.quicklook-content-bio {
+    p {
+        font-family: "Brown-Pro-Light", AdobeBlank;
+
+        strong {
+            font-weight: normal;
+            font-family: $body-font-family;
+        }
+    } 
+}
+
+@include breakpoint(medium) {
+    p {
+        font-size: 1.27rem;
+        line-height: 1.8;
+    }
+}
+
+li {
+    font-size: 20px;
+}
+
+li.accordion-item, ul#sticky li, footer#footer li, ul.quick-look-links li, ul.post-categories li {
+    font-size: inherit;
+}
+
+//reduce gap before entry meta on Green Room single post-categories
+.entry-title.section-header.small-gap {
+    padding-bottom: 0;
+}
+
+//remove margin above footer
+#footer-container {
+    margin-top: 0 !important;
+}
+
+//moving read more arrow down 4px
+svg.red-arrow {
+    position: relative;
+    top: 4px;
+}
+.toggle-hidden.active {
+    svg.red-arrow {
+        -ms-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+.accordion-item {
+    .more-info {
+        svg {
+            -ms-transition: 0.2s;
+            -webkit-transition: 0.2s;
+            transition: 0.2s;
+            -ms-transform-origin: 50% 72%;
+            -webkit-transform-origin: 50% 72%;
+            transform-origin: 50% 72%;
+        }
+    }
+    &.is-active {
+        .more-info {
+            svg {
+                -ms-transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+span.bold {
+	font-weight: bold;
+}
+
+//hidden content toggle rows
+.row-divider {
+    display: none;
+
+    &.show {
+        display: block;
+    }
+}
+
+/* Complete Fonts */
+
+@font-face {
+    font-family: "Brown-Pro-Regular";
+    src:url("fonts/lineto-brown-pro-regular.eot");
+    src:url("fonts/lineto-brown-pro-regular.eot?#iefix") format("embedded-opentype"),
+        url("fonts/lineto-brown-pro-regular.woff2") format("woff2"),
+        url("fonts/lineto-brown-pro-regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brown-Pro-Light";
+    src:url("fonts/lineto-brown-pro-light.eot");
+    src:url("fonts/lineto-brown-pro-light.eot?#iefix") format("embedded-opentype"),
+        url("fonts/lineto-brown-pro-light.woff2") format("woff2"),
+        url("fonts/lineto-brown-pro-light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brown-Pro-Reclinlight";
+    src:url("fonts/lineto-brown-pro-reclinlight.eot");
+    src:url("fonts/lineto-brown-pro-reclinlight.eot?#iefix") format("embedded-opentype"),
+        url("fonts/lineto-brown-pro-reclinlight.woff2") format("woff2"),
+        url("fonts/lineto-brown-pro-reclinlight.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Subsetted */
+
+@font-face {
+    font-family: "Brown-Pro-Light-S";
+    src:url("fonts_subsetted/lineto-brown-pro-light.eot");
+    src:url("fonts_subsetted/lineto-brown-pro-light.eot?#iefix") format("embedded-opentype"),
+        url("fonts_subsetted/lineto-brown-pro-light.woff2") format("woff2"),
+        url("fonts_subsetted/lineto-brown-pro-light.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brown-Pro-Reclinlight-S";
+    src:url("fonts_subsetted/lineto-brown-pro-reclinlight.eot");
+    src:url("fonts_subsetted/lineto-brown-pro-reclinlight.eot?#iefix") format("embedded-opentype"),
+        url("fonts_subsetted/lineto-brown-pro-reclinlight.woff2") format("woff2"),
+        url("fonts_subsetted/lineto-brown-pro-reclinlight.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+//Serif font
+@import url("//hello.myfonts.net/count/328e32");
+  
+@font-face {font-family: 'GeometricSlab703BT-Light';src: url('webfonts/328E32_0_0.eot');src: url('webfonts/328E32_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/328E32_0_0.woff2') format('woff2'),url('webfonts/328E32_0_0.woff') format('woff'),url('webfonts/328E32_0_0.ttf') format('truetype');}
+
+@media #{$medium-up} {
+  .valign-middle {
+      display: table;
+      width:100%;
+      > .columns {
+          display: table-cell;
+          vertical-align: middle;
+      }
+
+      > .columns, > [class*="column"] + [class*="column"]:last-child {
+          float: none;
+      }
+  }  
+}
+@media #{$small-only} {
+    .small-margin-top{
+        margin-top:10px;
+    }
+}
+@media #{$medium-only} {
+    .medium-margin-top{
+        margin-top:10px;
+    }
+}
