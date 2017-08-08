@@ -30,6 +30,7 @@
 
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
-<a href="http://pape-mache.com/" title="Wordpress website development, London" rel="author"></a>
+<a href="http://pape-mache.com/" title="WordPress website development, London" rel="author"></a>
+<a href="http://jburt.co.uk" title="WordPress website development, London" rel="author"></a>
 </body>
 </html>

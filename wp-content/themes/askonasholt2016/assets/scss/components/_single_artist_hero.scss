@@ -82,6 +82,12 @@ body.single.single-artists, body.single.single-clients, body.single-touring-part
 	}
 }
 
+@include breakpoint(medium up) {
+	.artist-header-thumb {
+		border-radius: 0 25% 25% 0 / 0 50% 50% 0;
+	}
+}
+
 div.side-bar-text-area {
 	margin-top: $sitepadding;
 	p {

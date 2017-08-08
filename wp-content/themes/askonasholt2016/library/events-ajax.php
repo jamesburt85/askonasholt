@@ -6,10 +6,12 @@ function events_set_default_args( $page = '' ){
     if( $page == 'home' ){
         return [
             'page_number' => 1,
-            'per_page'  => 4,
+            'per_page'  => 10,
             'date_type' => 'today',
             'date'  => date('Ymd'), 
             'location' => '',
+            'meta_key' => 'editors_pick',
+            'meta_value' => 'yes',
         ];
             
     }
