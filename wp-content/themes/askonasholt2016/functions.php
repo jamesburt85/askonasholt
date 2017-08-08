@@ -294,9 +294,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
         $query->set( 'tax_query', $taxquery );
 
         // exclude tours which have already ended
-
         $metaquery = array(
-            'meta_key' => 'end_date',
             'meta_query' => array(
                 array(
                     'key' => 'end_date',
@@ -309,8 +307,9 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
         $query->set( 'meta_query', $metaquery );
 
-        $query->set( 'orderby', 'meta_value' );
-        $query->set( 'order', 'ASC' );
+        $query->set('orderby', 'meta_value');   
+        $query->set('meta_key', 'start_date');   
+        $query->set('order', 'ASC');
 
     }
     add_action( 'pre_get_posts', 'filter_tours_archive_filter_get_posts' );    
