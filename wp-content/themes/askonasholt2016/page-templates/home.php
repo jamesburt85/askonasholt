@@ -135,7 +135,7 @@ role="main"> -->
     <div class="row">
       <div class="small-6 columns header-row">
         <h4 class="section-header">
-          Latest Video &amp; Audio &nbsp;
+          Featured Videos
           <br class="hide-for-medium" />
         </h4> 
       </div>
@@ -164,8 +164,8 @@ role="main"> -->
           'posts_per_page' => 4,
           'category'         => 'video',
           'category_name'    => 'video',
-          'meta_key' => 'editors_pick',
-          'meta_value' => 'yes',          
+          'meta_key' => 'show_on_homepage',
+          'meta_value' => true,
 
           // 'meta_query' => array(
           //   array(
