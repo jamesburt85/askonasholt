@@ -164,6 +164,8 @@ role="main"> -->
           'posts_per_page' => 4,
           'category'         => 'video',
           'category_name'    => 'video',
+          'meta_key' => 'editors_pick',
+          'meta_value' => 'yes',          
 
           // 'meta_query' => array(
           //   array(

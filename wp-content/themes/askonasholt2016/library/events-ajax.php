@@ -10,8 +10,6 @@ function events_set_default_args( $page = '' ){
             'date_type' => 'today',
             'date'  => date('Ymd'), 
             'location' => '',
-            'meta_key' => 'editors_pick',
-            'meta_value' => 'yes',
         ];
             
     }
