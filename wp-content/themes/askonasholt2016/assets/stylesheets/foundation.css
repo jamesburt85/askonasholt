@@ -9273,8 +9273,7 @@ section.container {
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  top: 84px; }
+  transform: translateX(-50%); }
 
 .single-format-video .flex-video.widescreen {
   margin-bottom: 3em; }
@@ -9367,13 +9366,11 @@ body.search .blogpost-entry {
 p {
   font-size: 1.15rem; }
 
-body.single article.main-content p, body.single article.main-content li:not(.accordion-item),
-#narrow-text-page article.main-content p,
-#narrow-text-page article.main-content li:not(.accordion-item) {
+body.single article.main-content p,
+#narrow-text-page article.main-content p {
   font-family: "Brown-Pro-Light", AdobeBlank; }
-  body.single article.main-content p strong, body.single article.main-content li:not(.accordion-item) strong,
-  #narrow-text-page article.main-content p strong,
-  #narrow-text-page article.main-content li:not(.accordion-item) strong {
+  body.single article.main-content p strong,
+  #narrow-text-page article.main-content p strong {
     font-weight: normal;
     font-family: "Brown-Pro-Regular", AdobeBlank; }
 
@@ -9412,18 +9409,6 @@ svg.red-arrow {
   -ms-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg); }
-
-.accordion-item .more-info svg {
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  -ms-transform-origin: 50% 72%;
-  -webkit-transform-origin: 50% 72%;
-  transform-origin: 50% 72%; }
-
-.accordion-item.is-active .more-info svg {
-  -ms-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg); }
 
 span.bold {
   font-weight: bold; }
@@ -9532,8 +9517,7 @@ span.bold {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 1.1rem;
-  line-height: 1;
-  outline: none; }
+  line-height: 1; }
   .top-bar .menu a:hover:not(.button):not(.artist-categories li a) {
     background-color: #2a2a2a; }
 
@@ -9710,14 +9694,12 @@ article#widget_text div.text-widget ul li {
   padding: 0 0 1.4rem 1rem !important; }
 
 @media screen and (max-width: 39.9375em) {
+  #footer-container, .textwidget, .widget_nav_men {
+    text-align: center; }
   article {
     margin: 12.5px 0; } }
 
-@media screen and (max-width: 63.9375em) {
-  #footer-container, .textwidget, .widget_nav_men {
-    text-align: center; } }
-
-@media screen and (min-width: 64em) {
+@media screen and (min-width: 40em) {
   #footer-container .column:last-child:not(:first-child), #footer-container .columns:last-child:not(:first-child), #footer-container .columns:last-child:not(:first-child) {
     text-align: right; }
   #footer-container li:not(:last-child) {
@@ -11461,7 +11443,7 @@ a.pswp__share--download:hover {
 .my-gallery figcaption {
   display: none; }
 
-div#Gallery div.gallery-image {
+div#image-gallery div.gallery-image {
   height: 200px;
   -webkit-background-size: cover;
           background-size: cover;
@@ -11506,8 +11488,7 @@ div#Gallery div.gallery-image {
     background-repeat: no-repeat;
     border-bottom: 0;
     -webkit-background-size: cover;
-    background-size: cover;
-    background-position: 50% 33%; }
+    background-size: cover; }
   .online-item .online-category {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -11603,13 +11584,13 @@ ul#example-dropdown {
 .press-row.vacancies {
   margin-bottom: 50px; }
 
-.discography ul.accordion {
-  border-bottom: 1px solid #cccccc; }
-
 .discography li.accordion-item {
   padding: 25px 0;
   border-top: 1px solid #cccccc;
   font-size: 19px; }
+
+.discography li.accordion-item:last-child {
+  border-bottom: 1px solid #cccccc; }
 
 .discography .press-details {
   display: -webkit-box;
@@ -15549,11 +15530,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   width: 100%;
   height: 100%; }
 
-#Gallery ul.accordion li.accordion-item {
-  overflow: hidden; }
-  #Gallery ul.accordion li.accordion-item a.accordion-title {
-    line-height: 30px; }
-
 .sites-button {
   background: #FF6908;
   font-size: 1.25rem;
@@ -15967,16 +15943,14 @@ body.single-artists i.fa.fa-angle-right.slick-arrow {
   padding: 10px;
   cursor: pointer; }
 
-.hero-text a {
+.hero-text-area a {
   display: inline-block;
   margin-top: 3px;
   padding: 0 10px;
   background: rgba(186, 12, 47, 0.8);
   color: #fff; }
-
-.hero-text button.hero-button {
-  padding: 10px;
-  color: #fff; }
+  .hero-text-area a button.hero-button {
+    padding: 10px; }
 
 .hero-text span p {
   padding: 10px; }
@@ -17165,7 +17139,7 @@ div#mega-toggle-block-1:after {
   .quicklook-content a.button, .quicklook-content .artist-categories li a, .artist-categories li .quicklook-content a {
     background: transparent;
     border: 1px solid gray;
-    color: inherit;
+    color: initial;
     font-family: "Brown-Pro-Regular", AdobeBlank;
     padding: 0.85em 25px; }
 
@@ -17177,9 +17151,9 @@ ul.quick-look-links {
     padding: 5px 0; }
     ul.quick-look-links li span, ul.quick-look-links li a {
       vertical-align: top;
-      color: inherit; }
+      color: initial; }
   ul.quick-look-links a.share-button {
-    color: inherit; }
+    color: initial; }
 
 body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
   top: -44px;
@@ -17343,6 +17317,10 @@ body.single.single-artists .enquiry-button, body.single.single-clients .enquiry-
       background-repeat: no-repeat;
       background-position: initial;
       right: 0; } }
+
+@media screen and (min-width: 40em) {
+  .artist-header-thumb {
+    border-radius: 0 25% 25% 0 / 0 50% 50% 0; } }
 
 div.side-bar-text-area {
   margin-top: 25px; }
@@ -18394,17 +18372,17 @@ body.single.single-post #single-post {
   max-width: 57.375rem;
   margin: 0 auto; }
 
-body.single-online article.main-content, body.single-post article.main-content, body.single-events article.main-content, body.single-people article.main-content {
+body.single-online article.main-content, body.single-post article.main-content, body.single-events article.main-content {
   max-width: 57.375rem;
   margin: 0 auto; }
-  body.single-online article.main-content header, body.single-post article.main-content header, body.single-events article.main-content header, body.single-people article.main-content header {
+  body.single-online article.main-content header, body.single-post article.main-content header, body.single-events article.main-content header {
     margin-bottom: 25px; }
-  body.single-online article.main-content .side-bar-artist, body.single-post article.main-content .side-bar-artist, body.single-events article.main-content .side-bar-artist, body.single-people article.main-content .side-bar-artist {
+  body.single-online article.main-content .side-bar-artist, body.single-post article.main-content .side-bar-artist, body.single-events article.main-content .side-bar-artist {
     border-top: 1px solid #cccccc;
     padding: 12.5px 0;
     width: 100%;
     position: relative; }
-  body.single-online article.main-content span.more-info, body.single-post article.main-content span.more-info, body.single-events article.main-content span.more-info, body.single-people article.main-content span.more-info {
+  body.single-online article.main-content span.more-info, body.single-post article.main-content span.more-info, body.single-events article.main-content span.more-info {
     right: 0em;
     position: absolute;
     top: 50%;
@@ -18412,13 +18390,13 @@ body.single-online article.main-content, body.single-post article.main-content, 
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     position: absolute; }
-  body.single-online article.main-content .side-bar-artist:last-child, body.single-post article.main-content .side-bar-artist:last-child, body.single-events article.main-content .side-bar-artist:last-child, body.single-people article.main-content .side-bar-artist:last-child {
+  body.single-online article.main-content .side-bar-artist:last-child, body.single-post article.main-content .side-bar-artist:last-child, body.single-events article.main-content .side-bar-artist:last-child {
     border-bottom: 1px solid #cccccc;
     margin-bottom: 25px; }
-  body.single-online article.main-content .side-bar-artist:first-child, body.single-post article.main-content .side-bar-artist:first-child, body.single-events article.main-content .side-bar-artist:first-child, body.single-people article.main-content .side-bar-artist:first-child {
+  body.single-online article.main-content .side-bar-artist:first-child, body.single-post article.main-content .side-bar-artist:first-child, body.single-events article.main-content .side-bar-artist:first-child {
     margin-top: 25px; }
 
-body.single-online #share-buttons img, body.single-post #share-buttons img, body.single-events #share-buttons img, body.single-people #share-buttons img {
+body.single-online #share-buttons img, body.single-post #share-buttons img, body.single-events #share-buttons img {
   width: 35px;
   padding: 5px;
   border: 0;
