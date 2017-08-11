@@ -69,7 +69,7 @@
 				<h2 class="artist-name hero-heading"><?php the_title(); ?></h2>
 				
 				<?php if( get_field('optional_text_area') ): ?>
-					<p><?php echo $optional_text_area ?></p>
+					<p><?php echo $optional_text_area; ?></p>
 				<?php endif; ?>
 				
 				<?php if( get_field('photo_credit') ): ?>

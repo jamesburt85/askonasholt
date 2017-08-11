@@ -341,9 +341,15 @@ get_header(); ?>
 				
 			  	<div id="route" class="route-map show-flightpath acf-map row">
 				
+			  	<?php $i = 0; ?>
+
 				<?php while ( $the_query->have_posts() ) {
+						$i++;
 			      		$the_query->the_post();
-			      		get_template_part( 'template-parts/content-tour-event-location' );
+			      		$map_marker[$i] = get_field('map_location');
+			      		if($map_marker[$i] != $map_marker[$i-1]) {
+			      			get_template_part( 'template-parts/content-tour-event-location' );
+			      		}
 			    } ?>
 				
 				</div>

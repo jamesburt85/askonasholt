@@ -20,6 +20,7 @@ function wiaw_archive_ajax() {
         'offset'            => $offset
     );
 
+
     # Is this a post type archive, or a taxonomy archive
     $data = $_POST['data'];
 
@@ -34,6 +35,9 @@ function wiaw_archive_ajax() {
         }
         // Upcoming Tours
         if($args['post_type'] == 'tours-projects') {
+            $args['meta_key'] = 'end_date';
+            $args['orderby'] = 'meta_value';
+            $args['order'] = 'ASC';
             $args['meta_query'] = array(
                 array(
                     'key' => 'end_date',
@@ -42,9 +46,6 @@ function wiaw_archive_ajax() {
                     'compare' => '>=',
                 ),
             );
-            $args['orderby'] = 'meta_value';
-            $args['meta_key'] = 'start_date';            
-            $args['order'] = 'ASC';            
         }
         // Touring Partners
         if($args['post_type'] == 'touring-partners') {

@@ -219,6 +219,8 @@ get_header(); ?>
 		<div class="video-audio-area toggleable-area" id="video-audio">
 	<?php endif ?>
 
+		<?php if ( count($videos) || count($tracks) ): ?>
+
 			<div class="row">
 				<h4 class="section-header small-6 columns">Video &amp; Audio</h4>
 
@@ -244,6 +246,8 @@ get_header(); ?>
 		        </div>
 
 		    </div>
+
+		<?php endif ?>
 
 	<?php if( $videos ): ?>
 
@@ -317,46 +321,45 @@ get_header(); ?>
 		</div>
 	<?php endif ?>
 
-	<div class="performance-schedule row toggleable-area" id="schedule">
+	<!-- Get Events -->
+	<?php 
 
-		<div class="small-12 columns">
+    // Query Args
+    $args = array(
 
-		<!-- Get Events -->
-		  <?php 
+        'post_type'   => 'events',
+        'posts_per_page' => -1,
+        'meta_key'      => 'date',
+        'orderby'     => 'meta_value',
+        'order'       => 'ASC',
 
-		    // Query Args
-		      $args = array(
+        'meta_query' => array(
+        	array(
+        		'key' => 'related_artists', // name of custom field
+        		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+        		'compare' => 'LIKE'
+        	),
+            array(
+                'key' => 'date',
+                'value' => date('Ymd', strtotime('now')),
+                'type' => 'numeric',
+                'compare' => '>=',
+            ),
+        )
 
-		        'post_type'   => 'events',
-		        'posts_per_page' => -1,
-		        'meta_key'      => 'date',
-		        'orderby'     => 'meta_value',
-		        'order'       => 'ASC',
+    );
 
-		        'meta_query' => array(
-		        	array(
-		        		'key' => 'related_artists', // name of custom field
-		        		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-		        		'compare' => 'LIKE'
-		        	),
-                    array(
-                        'key' => 'date',
-                        'value' => date('Ymd', strtotime('now')),
-                        'type' => 'numeric',
-                        'compare' => '>=',
-                    ),
-		        )
+	// The Query
+	$the_query = new WP_Query( $args );
 
-		      );
+	// The Loop
+	if ( $the_query->have_posts() ) { ?>
 
+		<div class="performance-schedule row toggleable-area" id="schedule">
 
-		      // The Query
-		      $the_query = new WP_Query( $args );
-
-		    // The Loop
-		    if ( $the_query->have_posts() ) { ?>
+			<div class="small-12 columns">		    
 		    	
-		    	<div class="row press-row show-for-large"><!-- Show for large -->
+		    	<div class="row press-row">
 		    	<h4 class="section-header small-6 columns">Performance Schedule</h4>
 
 		        <div class="small-6 columns view-all">
@@ -423,7 +426,7 @@ get_header(); ?>
 		                      <span class="event-detail"><?php echo $time; ?></span>
 		                      <span class="event-detail"><?php echo $date; ?></span>
 		                      <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
-		                      <span class="more-info">More info &nbsp;
+		                      <span class="more-info"><span class="show-for-large">More info &nbsp;</span>
 		                          <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 		                              <defs></defs>
 		                              <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
@@ -440,162 +443,24 @@ get_header(); ?>
 
 		       <?php } ?>
 
-		           </ul> <!-- Show for large -->
+		           </ul>
 
-		         </div><!-- Show for large -->
-		       </div><!-- Show for large -->
+		         </div>
+		       </div>
 
-		      <?php //echo '</ul>';
-		      /* Restore original Post Data */
-		      wp_reset_postdata();
-		    } else {
-		      // no posts found
-		    }
-		  ?>
+			</div>
 
 		</div>
 
-	</div>
+		    <?php //echo '</ul>';
+		    /* Restore original Post Data */
+		    wp_reset_postdata();
 
+		} else {
+		    // no posts found
+		}
 
-
-	<!-- IS THIS ONE EXTRA??? NEEDED??? -->
-	<div class="performance-schedule row toggleable-area" id="schedule">
-		<div class="small-12 columns">
-		
-		<!-- Get Events -->
-		  <?php 
-
-		    // Query Args
-		      $args = array(
-
-		        'post_type'   => 'events',
-		        'posts_per_page' => -1,
-		        'meta_key'      => 'date',
-		        'orderby'     => 'meta_value',
-		        'order'       => 'ASC',
-
-		        'meta_query' => array(
-		        	array(
-		        		'key' => 'related_artists', // name of custom field
-		        		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-		        		'compare' => 'LIKE'
-		        	),
-                    array(
-                        'key' => 'date',
-                        'value' => date('Ymd', strtotime('now')),
-                        'type' => 'numeric',
-                        'compare' => '>=',
-                    ),
-		        )
-
-		      );
-
-
-		      // The Query
-		      $the_query = new WP_Query( $args );
-
-		    // The Loop
-		    if ( $the_query->have_posts() ) { ?>
-
-		    	<div class="row press-row hide-for-large"><!-- side for large -->
-
-		    	<h4 class="section-header small-6 columns">Performance Schedule</h4>
-
-		        <div class="small-6 columns view-all">
-
-				<?php if ( $the_query->post_count > 4 ): ?>
-
-		          <a class="view-link toggle-hidden" href="#">View all &nbsp;
-		            <svg class="red-arrow" width="19px" height="19px" viewBox="469 852 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-		                <g id="Group-6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(470.000000, 853.000000)">
-		                    <path d="M2.33453917,14.1812268 L13.6654423,2.88473916" id="Path-2" stroke="#BA0C2F" transform="translate(7.999991, 8.532983) rotate(45.000000) translate(-7.999991, -8.532983) "></path>
-		                    <polyline id="Path-3" stroke="#BA0C2F" transform="translate(10.324505, 8.521204) rotate(45.000000) translate(-10.324505, -8.521204) " points="14.5739552 12.7712037 14.5739552 4.27120371 6.07505388 4.27120371"></polyline>
-		                </g>
-		            </svg>
-		          </a>
-
-		        <?php else: ?>
-
-		          &nbsp;
-
-		    	<?php endif; ?>
-
-		        </div>
-
-		    	  <div class="small-12 columns"><!-- side for large -->
-		    	    <ul class="accordion" data-accordion data-allow-all-closed="true"><!-- side for large -->
-		      
-		      <?php //echo '<ul>';
-
-		      $i = 0;
-
-		      while ( $the_query->have_posts() ) {
-
-		      	$i++;
-
-		        $the_query->the_post(); ?>
-		<!--         //echo '<li>' . get_the_title() . '</li>';
-
-		        //get_template_part( 'template-parts/.....' ); -->
-		            <?php 
-		              $time = get_field('time');
-		              $date = get_field('date');
-		              $venue = get_field('venue');
-		              $city = get_field('city');
-		              $more_info = get_field('more_info');
-
-		              // if data isn't there, but some TBC info instead
-		              if(!$date){      $date = 'date TBC'; }
-		              if(!$time){      $time = 'time TBC'; }
-		              if(!$venue){     $venue = 'venue TBC'; }
-		              if(!$city){      $city = 'city TBC'; }
-		              if(!$more_info){ $more_info = 'More Info Coming Soon...'; }
-
-		            ?>
-
-		         
-	                 <li class="accordion-item row-divider <?php if($i < 5) { echo 'show'; } ?>" data-accordion-item>
-            	        <a href="#" class="accordion-title"><?php //the_title(); ?>
-
-            	            <div class="event-listing-details">
-            	              <?php //get_template_part( 'template-parts/event-related-artist' ); ?>
-
-            	              <span class="event-detail"><?php echo $time; ?></span><!-- <br/> -->
-            	              <span class="event-detail"><?php echo $date; ?></span><br/>
-            	              <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
-            	              <span class="more-info">
-            	                  <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            	                      <defs></defs>
-            	                      <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
-            	                  </svg>
-            	              </span>
-            	            </div>
-            	          </a>
-
-            	          <div class="accordion-content" data-tab-content>
-            	            <?php echo $more_info; ?>
-            	          </div>
-            	        </li>
-
-		       <?php } ?>
-
-		           </ul> <!-- Show for small -->
-
-		         </div><!-- Show for small -->
-		       </div><!-- Show for small -->
-
-		      <?php //echo '</ul>';
-		      /* Restore original Post Data */
-		      wp_reset_postdata();
-		    } else {
-		      // no posts found
-		    }
-		  ?>
-
-		 </div>
-	</div>
-
+	?>
 
 	<div class="news-projects toggleable-area" id="news-projects">
 		<div class="row">

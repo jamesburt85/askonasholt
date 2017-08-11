@@ -108,10 +108,15 @@ $queried_object = get_queried_object();
 
 				?>
 
-				<button class="button" type="button" data-toggle="example-dropdown">Select Season</button>
-
 				<?php # Past Tour List
-				if ( $pageIsPastTour): 
+
+				if ( $pageIsPastTour):
+
+				?>
+
+					<button class="button" type="button" data-toggle="example-dropdown">Select Season</button>
+
+				<?php
 
 					# Get the past tours page object
 					$past_tours_page = get_field('past_tours','option');
@@ -135,25 +140,7 @@ $queried_object = get_queried_object();
 						<?php endforeach ?>
 					<?php endif ?>
 
-
-
-
-				<?php else: // Future tours 
-
-					echo "<ul id='example-dropdown' class='tours-projects-categories dropdown-pane' data-dropdown data-auto-focus='true'>";
-					echo wp_list_categories( array(
-							'taxonomy'     => 'tour-season',
-					        'orderby' => 'name',
-					        'order'		=> DSC,
-					        'title_li' => '',
-					        'exclude' => 1, // don't show uncategorised
-					        'walker'       => new Walker_Category_Find_Parents(),
-					    ) );
-				
-					echo "</ul>";
-
-				endif; ?>
-
+				<?php endif; ?>
 
 			</div>
 		

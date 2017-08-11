@@ -54,7 +54,10 @@
                 "id": ""
             },
             "message": "",
-            "default_value": 0
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_58a9bc002928b",
@@ -80,14 +83,15 @@
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 1
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_58a40ca8dcbf7",
             "label": "Photo Credit",
             "name": "photo_credit",
             "type": "text",
-            "instructions": "Enter name of photo credit prefixed with \u00a9",
+            "instructions": "Enter name of photo credit prefixed with ©",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -106,7 +110,7 @@
             "label": "Main Category",
             "name": "main_category",
             "type": "text",
-            "instructions": "Enter the main category",
+            "instructions": "ONLY ENTER IF YOU WISH TO DISPLAY INSTEAD OF THE CATEGORY. e.g. if you want singular 'Conductor' rather than plural, enter it here. Otherwise the category will be used.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -152,7 +156,8 @@
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 1
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_584163b1dbd9d",
@@ -205,7 +210,8 @@
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 1
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_583d71e52cdc8",
@@ -357,8 +363,8 @@
                 "id": ""
             },
             "collapsed": "",
-            "min": "",
-            "max": "",
+            "min": 0,
+            "max": 0,
             "layout": "table",
             "button_label": "Add Row",
             "sub_fields": [
@@ -367,7 +373,7 @@
                     "label": "Social Media Name",
                     "name": "social_media_name",
                     "type": "text",
-                    "instructions": "Pick an icon from http:\/\/fontawesome.io\/icons\/   \r\ni.e. instagram, facebook, twitter",
+                    "instructions": "Pick an icon from http:\/\/fontawesome.io\/icons\/   \r\ni.e. instagram, facebook-official, twitter",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -417,5 +423,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1488639070
+    "modified": 1502372201
 }

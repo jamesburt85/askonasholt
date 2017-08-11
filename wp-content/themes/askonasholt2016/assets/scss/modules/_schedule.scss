@@ -1,4 +1,7 @@
-.schedule {
-
-
+@include breakpoint(medium up) {
+	.schedule {
+		h4.section-header {
+			padding-top: 11px;
+		}
+	}
 }

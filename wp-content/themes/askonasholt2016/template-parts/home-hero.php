@@ -39,6 +39,19 @@
 		        ?>
 
 				<div class="center-image" style="background-image: url('<?php echo $image['url']; ?>')">
+
+					<?php
+				 	// loop through the rows of data
+				    while ( have_rows('buttons') ) : the_row();
+
+					$button_destination = get_sub_field('button_destination');
+
+					?>
+
+					<a class="hero-link" href="<?php echo $button_destination; ?>"></a>
+
+					<?php endwhile; ?>
+
 					<div class="hero-text-area hero-text">
 						
 						<div class="padded-text">

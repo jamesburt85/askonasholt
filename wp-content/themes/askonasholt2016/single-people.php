@@ -66,6 +66,15 @@ get_header(); ?>
 			<?php 
 
 				$artists = get_field('related_artists');
+
+				// Obtain list of columns
+				foreach ($artists as $key => $row) {
+					$artist_name[$key] = get_the_title($row);
+				}
+
+				// Sort the data by restaurant name column, ascending
+				array_multisort($artist_name, SORT_ASC, $artists);
+
 				$touring_partners = get_field('related_touring_partners');
 				//print_r($artist);
 

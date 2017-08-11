@@ -72,7 +72,7 @@ body.single.single-artists, body.single.single-clients, body.single-touring-part
 				.artist-header-thumb {
 					width: 80%;
 					.image-curve {
-						width: 53%;
+						width: 57%;
 					    background-repeat: no-repeat;
 					    background-position: initial;
 					    right: 0;
@@ -83,7 +83,7 @@ body.single.single-artists, body.single.single-clients, body.single-touring-part
 }
 
 @include breakpoint(medium up) {
-	.artist-header-thumb {
+	.artist-hero-image .artist-header-thumb {
 		border-radius: 0 25% 25% 0 / 0 50% 50% 0;
 	}
 }

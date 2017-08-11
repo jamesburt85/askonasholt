@@ -68,6 +68,7 @@ function feature_init()
     $args['rewrite']                = array('slug' => 'events');
     $args['menu_icon']              = 'dashicons-calendar-alt';
     $args['show_in_menu']           = true;
+    // $args['capability_type']        = 'event';
     
     register_post_type('events', $args);
 
@@ -100,6 +101,7 @@ function feature_init()
     $args['rewrite']                = array('slug' => 'artists');
     $args['menu_icon']              = 'dashicons-admin-customizer';
     $args['show_in_menu']           = true;
+    // $args['capability_type']        = 'artist';
     
     register_post_type('artists', $args);
 
@@ -153,6 +155,7 @@ function feature_init()
     $args['rewrite']                = array('slug' => 'tours-and-projects/upcoming');
     $args['menu_icon']              = 'dashicons-format-audio';
     $args['show_in_menu']           = true;
+    // $args['capability_type']        = 'tours-projects';
     
     register_post_type('tours-projects', $args);
 
@@ -206,6 +209,7 @@ function feature_init()
     $args['rewrite']                = array('slug' => 'about/people');
     $args['menu_icon']              = 'dashicons-admin-users';
     $args['show_in_menu']           = true;
+    // $args['capability_type']        = 'people';
     
     register_post_type('people', $args);
 
@@ -258,6 +262,7 @@ function feature_init()
     $args['rewrite']                = array('slug' => 'tours-and-projects/touring-partners');
     $args['menu_icon']              = 'dashicons-groups';
     $args['show_in_menu']           = true;
+    // $args['capability_type']        = 'touring-partners';
     
     register_post_type('touring-partners', $args);
 
@@ -311,6 +316,7 @@ function feature_init()
     $args['rewrite']                = array('slug' => 'online-performances');
     $args['menu_icon']              = 'dashicons-welcome-view-site';
     $args['show_in_menu']           = true;
+    // $args['capability_type']        = 'online';
     
     register_post_type('online', $args);
 

@@ -24,6 +24,12 @@ body.page {
 			&:focus {
 				outline: none;
 			}
+			a.hero-link {
+				position: absolute;
+				z-index: 1;
+				width: 100%;
+				height: 100%;
+			}
 		}
 		.center-image {
 			height: 69vh;

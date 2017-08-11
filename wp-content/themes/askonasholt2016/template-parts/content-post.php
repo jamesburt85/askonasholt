@@ -130,7 +130,7 @@
 
 					</span>
 					<span class="magazine-date">
-						<?php echo get_the_date('j M Y'); ?>
+						<?php if( !is_search() || get_post_type() == 'post' ) { echo get_the_date('j M Y'); } ?>
 					</span>
 				</span>
 

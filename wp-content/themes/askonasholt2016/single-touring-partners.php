@@ -189,6 +189,8 @@ get_header(); ?>
 				<div class="video-audio-area toggleable-area" id="video-audio">
 			<?php endif ?>
 
+				<?php if ( count($videos) || count($tracks) ): ?>
+
 					<div class="row">
 						<h4 class="section-header small-6 columns">Video &amp; Audio</h4>
 
@@ -214,6 +216,8 @@ get_header(); ?>
 				        </div>
 
 				    </div>
+
+				<?php endif ?>
 
 			<?php if( $videos ): ?>
 
@@ -322,45 +326,45 @@ get_header(); ?>
 			<?php if( $videos || !empty($tracks) ): ?>
 				</div>
 			<?php endif ?>
-
-			<div class="performance-schedule row toggleable-area" id="schedule">
-
-				<div class="small-12 columns">
 				
-				<!-- Get Events -->
-				  <?php 
+			<!-- Get Events -->
+			<?php 
 
-				    // Query Args
-				      $args = array(
+		    // Query Args
+		    $args = array(
 
-				        'post_type'   => 'events',
-				        'posts_per_page' => -1,
-				        'meta_key'      => 'date',
-				        'orderby'     => 'meta_value',
-				        'order'       => 'ASC',
+		        'post_type'   => 'events',
+		        'posts_per_page' => -1,
+		        'meta_key'      => 'date',
+		        'orderby'     => 'meta_value',
+		        'order'       => 'ASC',
 
-				        'meta_query' => array(
-				        	array(
-				        		'key' => 'related_touring_partners', // name of custom field
-				        		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
-				        		'compare' => 'LIKE'
-				        	),
-							array(
-								'key' => 'date',
-								'value' => date('Ymd', strtotime('now')),
-								'type' => 'numeric',
-								'compare' => '>=',
-							),				        	
-				        ),
+		        'meta_query' => array(
+		        	array(
+		        		'key' => 'related_touring_partners', // name of custom field
+		        		'value' => '"' . get_the_ID() . '"', // matches exaclty "123", not just 123. This prevents a match for "1234"
+		        		'compare' => 'LIKE'
+		        	),
+					array(
+						'key' => 'date',
+						'value' => date('Ymd', strtotime('now')),
+						'type' => 'numeric',
+						'compare' => '>=',
+					),				        	
+		        ),
 
-				      );
+		    );
 
 
-				      // The Query
-				      $the_query = new WP_Query( $args );
+		    // The Query
+		    $the_query = new WP_Query( $args );
 
-				    // The Loop
-				    if ( $the_query->have_posts() ) { ?>
+		    // The Loop
+		    if ( $the_query->have_posts() ) { ?>
+
+				<div class="performance-schedule row toggleable-area" id="schedule">
+
+					<div class="small-12 columns">				    
 				    	
 				    	<div class="row press-row show-for-large"><!-- Show for large -->
 				    	<h4 class="section-header small-6 columns">Performance Schedule</h4>
@@ -429,7 +433,7 @@ get_header(); ?>
 				                      <span class="event-detail"><?php echo $time; ?></span>
 				                      <span class="event-detail"><?php echo $date; ?></span>
 				                      <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
-				                      <span class="more-info">More info &nbsp;
+				                      <span class="more-info"><span class="show-for-large">More info &nbsp;</span>
 				                          <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				                              <defs></defs>
 				                              <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
@@ -451,17 +455,18 @@ get_header(); ?>
 				         </div><!-- Show for large -->
 				       </div><!-- Show for large -->
 
-				      <?php //echo '</ul>';
-				      /* Restore original Post Data */
-				      wp_reset_postdata();
-				    } else {
-				      // no posts found
-				    }
-				  ?>
+					</div>
 
 				</div>
 
-			</div>
+					<?php //echo '</ul>';
+					/* Restore original Post Data */
+					wp_reset_postdata();
+
+				} else {
+					// no posts found
+				}
+			?>
 
 			<div class="upcoming-tours row" id="upcoming-tours">
 
