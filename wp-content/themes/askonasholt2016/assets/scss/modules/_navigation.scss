@@ -7,8 +7,6 @@
   @include hide-for(large);
 }
 
-
-
 // Mobile menu
 .off-canvas {
   > ul.menu {
@@ -29,9 +27,7 @@
   }
 }
 
-
-//// styling mobile menu ///////
-//// this is a bit hacky, but that's mega menu for you :) ///////
+/* styling mobile menu */
 
 @include breakpoint(small only){
 
@@ -115,6 +111,7 @@
     transition: 0.5s;
     font-size: 1.1rem;
     line-height: 1;
+    outline: none;
 
     &:hover:not(.button) {
       background-color: #2a2a2a;

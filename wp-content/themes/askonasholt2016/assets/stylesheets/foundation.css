@@ -9507,6 +9507,7 @@ span.bold {
       -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
 
+/* styling mobile menu */
 .top-bar .menu .home a {
   font-size: 1rem;
   color: #B9B9B9; }
@@ -9520,7 +9521,8 @@ span.bold {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 1.1rem;
-  line-height: 1; }
+  line-height: 1;
+  outline: none; }
   .top-bar .menu a:hover:not(.button):not(.artist-categories li a) {
     background-color: #2a2a2a; }
 
