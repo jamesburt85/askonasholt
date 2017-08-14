@@ -314,8 +314,9 @@ span.more-info {
     }
 }
 
-//single artist page give space between multiple related staff
-.single-artists {
+//single artist/touring partners page give space between multiple related staff
+.single-artists,
+.single-touring-partners {
   .side-bar-artist {
       padding: 5px 0;
   }

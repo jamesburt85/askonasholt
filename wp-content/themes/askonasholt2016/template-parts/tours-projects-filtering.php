@@ -85,7 +85,7 @@ $queried_object = get_queried_object();
 						?>
 						<!-- <p><?php //echo $description; ?></p> -->
 						<!-- <h2><?php //echo $pageName; ?></h2> -->
-						<p><?php echo str_replace("-"," / ",$pageName); ?></p>
+						<!-- <p><?php echo str_replace("-"," / ",$pageName); ?></p> -->
 
 						<script>
 							$(document).ready(function(){

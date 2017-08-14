@@ -275,21 +275,21 @@ class Walker_Category_Find_Parents extends Walker_Category {
             return $query;
 
         // so this should just effect the /tours-and-projects/upcoming/ which is the main archive...
-        $upcomingSeason = get_field('upcoming_season', 'option');
+        // $upcomingSeason = get_field('upcoming_season', 'option');
 
         // echo $upcomingSeason;
         // print_r($upcomingSeason);
 
-        $upcomingSeasonID = $upcomingSeason->term_id;
+        // $upcomingSeasonID = $upcomingSeason->term_id;
 
-        $taxquery = array(
-            array(
-                'taxonomy' => 'tour-season',
-                'field' => 'id',
-                'terms' => array( $upcomingSeasonID ),
-                'operator'=> 'IN'
-            )
-        );
+        // $taxquery = array(
+        //     array(
+        //         'taxonomy' => 'tour-season',
+        //         'field' => 'id',
+        //         'terms' => array( $upcomingSeasonID ),
+        //         'operator'=> 'IN'
+        //     )
+        // );
 
         // $query->set( 'tax_query', $taxquery );
 
@@ -309,8 +309,11 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
         $query->set( 'meta_query', $metaquery );
 
-        $query->set( 'orderby', 'meta_value' );
-        $query->set( 'order', 'ASC' );
+        $query->set('orderby', 'meta_value');   
+        $query->set('meta_key', 'start_date');   
+        $query->set('order', 'ASC');
+
+        $query->set('posts_per_page', -1);
 
     }
     add_action( 'pre_get_posts', 'filter_tours_archive_filter_get_posts' );    

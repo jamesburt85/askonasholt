@@ -10146,7 +10146,8 @@ body.post-type-archive-artists li.cat-item-all a {
   position: fixed;
   top: 0;
   z-index: 10;
-  width: 100%; }
+  width: 100%;
+  background: #fff; }
 
 @media screen and (max-width: 1120px) {
   ul.single-page-nav li.single-page-nav_link {
@@ -18363,7 +18364,8 @@ span.more-info {
   .press-details {
     display: inline-block; } }
 
-.single-artists .side-bar-artist {
+.single-artists .side-bar-artist,
+.single-touring-partners .side-bar-artist {
   padding: 5px 0; }
 
 @media screen and (min-width: 64em) {
@@ -18386,17 +18388,17 @@ body.single.single-post #single-post {
   max-width: 57.375rem;
   margin: 0 auto; }
 
-body.single-online article.main-content, body.single-post article.main-content, body.single-events article.main-content {
+body.single-online article.main-content, body.single-post article.main-content, body.single-events article.main-content, body.single-people article.main-content {
   max-width: 57.375rem;
   margin: 0 auto; }
-  body.single-online article.main-content header, body.single-post article.main-content header, body.single-events article.main-content header {
+  body.single-online article.main-content header, body.single-post article.main-content header, body.single-events article.main-content header, body.single-people article.main-content header {
     margin-bottom: 25px; }
-  body.single-online article.main-content .side-bar-artist, body.single-post article.main-content .side-bar-artist, body.single-events article.main-content .side-bar-artist {
+  body.single-online article.main-content .side-bar-artist, body.single-post article.main-content .side-bar-artist, body.single-events article.main-content .side-bar-artist, body.single-people article.main-content .side-bar-artist {
     border-top: 1px solid #cccccc;
     padding: 12.5px 0;
     width: 100%;
     position: relative; }
-  body.single-online article.main-content span.more-info, body.single-post article.main-content span.more-info, body.single-events article.main-content span.more-info {
+  body.single-online article.main-content span.more-info, body.single-post article.main-content span.more-info, body.single-events article.main-content span.more-info, body.single-people article.main-content span.more-info {
     right: 0em;
     position: absolute;
     top: 50%;
@@ -18404,13 +18406,13 @@ body.single-online article.main-content, body.single-post article.main-content, 
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     position: absolute; }
-  body.single-online article.main-content .side-bar-artist:last-child, body.single-post article.main-content .side-bar-artist:last-child, body.single-events article.main-content .side-bar-artist:last-child {
+  body.single-online article.main-content .side-bar-artist:last-child, body.single-post article.main-content .side-bar-artist:last-child, body.single-events article.main-content .side-bar-artist:last-child, body.single-people article.main-content .side-bar-artist:last-child {
     border-bottom: 1px solid #cccccc;
     margin-bottom: 25px; }
-  body.single-online article.main-content .side-bar-artist:first-child, body.single-post article.main-content .side-bar-artist:first-child, body.single-events article.main-content .side-bar-artist:first-child {
+  body.single-online article.main-content .side-bar-artist:first-child, body.single-post article.main-content .side-bar-artist:first-child, body.single-events article.main-content .side-bar-artist:first-child, body.single-people article.main-content .side-bar-artist:first-child {
     margin-top: 25px; }
 
-body.single-online #share-buttons img, body.single-post #share-buttons img, body.single-events #share-buttons img {
+body.single-online #share-buttons img, body.single-post #share-buttons img, body.single-events #share-buttons img, body.single-people #share-buttons img {
   width: 35px;
   padding: 5px;
   border: 0;

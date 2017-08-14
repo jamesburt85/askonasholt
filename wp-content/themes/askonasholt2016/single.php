@@ -86,12 +86,28 @@ get_header(); ?>
 
 						$artist = get_field('artist');
 
+						// Obtain list of columns
+						foreach ($artist as $key => $row) {
+							$artist_name[$key] = get_the_title($row);
+						}
+
+						// Sort the data by restaurant name column, ascending
+						array_multisort($artist_name, SORT_ASC, $artist);
+
 						if(has_post_format( 'audio' ) || has_post_format( 'video' )) {
 							$artist = get_field('related_artist');
 						}
 
 						$touring_partners = get_field('related_client');
 						//print_r($artist);
+
+						// Obtain list of columns
+						foreach ($touring_partners as $key => $row) {
+							$touring_partner_name[$key] = get_the_title($row);
+						}
+
+						// Sort the data by restaurant name column, ascending
+						array_multisort($touring_partner_name, SORT_ASC, $touring_partners);
 
 						if (!empty($artist)) { ?>
 
