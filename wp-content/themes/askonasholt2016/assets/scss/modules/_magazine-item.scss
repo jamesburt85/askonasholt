@@ -2,7 +2,6 @@
 .magazine-item {
 	margin-bottom: 2em;
 	transition: 0.5s;
-	background-color: #ffffff;
 
 	a {
 		color: inherit;
@@ -11,12 +10,11 @@
 	}
 
 	.magazine-item-container {
-		padding: 0 1em 0;
 		min-height: 132px;
 
 		&.staff-header {
     		min-height: 220px;
-    		padding: 0.5em 1em;
+    		padding: 0.5em 0;
     		box-sizing: content-box;
 		}
 
@@ -54,6 +52,7 @@
 		}
 		span.magazine-date {
 		    float: right;
+		    line-height: 2em;
 		    color: $brand-gold;
 		}
 	}
@@ -106,6 +105,10 @@
 .magazine-item-container.staff-header {
 	.magazine-item-header p {
 		margin-bottom: 0;
+	}
+	li,
+	.magazine-item-header li {
+		color: #0a0a0a;
 	}
 }
 

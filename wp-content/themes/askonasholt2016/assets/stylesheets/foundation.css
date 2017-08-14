@@ -9422,6 +9422,9 @@ span.bold {
   .row-divider.show {
     display: block; }
 
+#introduction li {
+  font-family: "Brown-Pro-Light", AdobeBlank; }
+
 /* Complete Fonts */
 @font-face {
   font-family: "Brown-Pro-Regular";
@@ -10162,18 +10165,16 @@ body.post-type-archive-artists li.cat-item-all a {
 .magazine-item {
   margin-bottom: 2em;
   -webkit-transition: 0.5s;
-  transition: 0.5s;
-  background-color: #ffffff; }
+  transition: 0.5s; }
   .magazine-item a {
     color: inherit;
     word-wrap: break-word;
     font-size: 15px; }
   .magazine-item .magazine-item-container {
-    padding: 0 1em 0;
     min-height: 132px; }
     .magazine-item .magazine-item-container.staff-header {
       min-height: 220px;
-      padding: 0.5em 1em;
+      padding: 0.5em 0;
       -webkit-box-sizing: content-box;
               box-sizing: content-box; }
     .magazine-item .magazine-item-container .read-more {
@@ -10207,6 +10208,7 @@ body.post-type-archive-artists li.cat-item-all a {
       margin-right: 10px; }
     .magazine-item .magazine-category span.magazine-date {
       float: right;
+      line-height: 2em;
       color: #BE9A83; }
   .magazine-item span.magazine-item-copy p {
     font-size: 1.1rem; }
@@ -10234,6 +10236,10 @@ body.post-type-archive-artists li.cat-item-all a {
 
 .magazine-item-container.staff-header .magazine-item-header p {
   margin-bottom: 0; }
+
+.magazine-item-container.staff-header li,
+.magazine-item-container.staff-header .magazine-item-header li {
+  color: #0a0a0a; }
 
 body.blog article.main-content {
   position: relative; }
@@ -17154,7 +17160,7 @@ div#mega-toggle-block-1:after {
   .quicklook-content a.button, .quicklook-content .artist-categories li a, .artist-categories li .quicklook-content a {
     background: transparent;
     border: 1px solid gray;
-    color: initial;
+    color: inherit;
     font-family: "Brown-Pro-Regular", AdobeBlank;
     padding: 0.85em 25px; }
 
@@ -17166,9 +17172,9 @@ ul.quick-look-links {
     padding: 5px 0; }
     ul.quick-look-links li span, ul.quick-look-links li a {
       vertical-align: top;
-      color: initial; }
+      color: inherit; }
   ul.quick-look-links a.share-button {
-    color: initial; }
+    color: inherit; }
 
 body.post-type-archive-artists .mfp-close-btn-in .mfp-close {
   top: -44px;
@@ -18384,6 +18390,8 @@ span.more-info {
 body.single.single-post #single-post {
   max-width: 57.375rem;
   margin: 0 auto; }
+  body.single.single-post #single-post .main-content .row li {
+    font-family: "Brown-Pro-Light", AdobeBlank; }
 
 body.single-online article.main-content, body.single-post article.main-content, body.single-events article.main-content, body.single-people article.main-content {
   max-width: 57.375rem;
