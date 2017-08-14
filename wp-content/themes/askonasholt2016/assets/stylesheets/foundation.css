@@ -9323,7 +9323,7 @@ p.byline.author {
 .simple-listing {
   line-height: 60px; }
 
-.row.toggleable-area .small-12.columns .section-header.small-6.columns {
+.row.toggleable-area:not(.past-tours) .small-12.columns .section-header.small-6.columns {
   padding-left: 0; }
 
 .section-header,
@@ -17324,16 +17324,9 @@ body.single.single-artists .enquiry-button, body.single.single-clients .enquiry-
 
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   body.single.single-artists .artist-header.container .artist-hero-image .artist-header-thumb, body.single.single-clients .artist-header.container .artist-hero-image .artist-header-thumb, body.single-touring-partners .artist-header.container .artist-hero-image .artist-header-thumb {
-    width: 80%; }
+    width: 100%; }
     body.single.single-artists .artist-header.container .artist-hero-image .artist-header-thumb .image-curve, body.single.single-clients .artist-header.container .artist-hero-image .artist-header-thumb .image-curve, body.single-touring-partners .artist-header.container .artist-hero-image .artist-header-thumb .image-curve {
-      width: 57%;
-      background-repeat: no-repeat;
-      background-position: initial;
-      right: 0; } }
-
-@media screen and (min-width: 40em) {
-  .artist-hero-image .artist-header-thumb {
-    border-radius: 0 25% 25% 0 / 0 50% 50% 0; } }
+      right: -60%; } }
 
 div.side-bar-text-area {
   margin-top: 25px; }
@@ -17393,7 +17386,7 @@ body.single-touring-partners .artist-header.container {
   background-size: cover;
   background-position: 50% 33%;
   height: 450px;
-  width: 70%; }
+  width: 100%; }
 
 svg.artist-circle {
   height: 100%;
@@ -17407,12 +17400,12 @@ path.crescent {
 
 .image-curve {
   position: absolute;
-  right: 0;
+  right: -70%;
   top: 0;
-  height: 450px;
+  height: 100%;
   width: 100%;
   background-repeat: no-repeat;
-  background-position: right 0; }
+  background-position: initial; }
 
 .more-page-links {
   border-top: 1px solid #cccccc;

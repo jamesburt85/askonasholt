@@ -277,7 +277,7 @@
           // The Loop
           if ( $the_query->have_posts() ) { ?>
             
-            <div class="row press-row show-for-large"><!-- Show for large -->
+            <div class="row press-row"><!-- Show for large -->
             <h4 class="section-header small-12 columns">Performance Schedule</h4>
               <div class="small-12 columns"><!-- Show for large -->
                 <ul class="accordion" data-accordion data-allow-all-closed="true"><!-- Show for large -->

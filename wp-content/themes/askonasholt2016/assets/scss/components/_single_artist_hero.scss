@@ -70,23 +70,20 @@ body.single.single-artists, body.single.single-clients, body.single-touring-part
 			.artist-hero-image {
 
 				.artist-header-thumb {
-					width: 80%;
+					width: 100%;
 					.image-curve {
-						width: 57%;
-					    background-repeat: no-repeat;
-					    background-position: initial;
-					    right: 0;
+					    right: -60%;
 					}
 				}
 			}
 	}
 }
 
-@include breakpoint(medium up) {
-	.artist-hero-image .artist-header-thumb {
-		border-radius: 0 25% 25% 0 / 0 50% 50% 0;
-	}
-}
+// @include breakpoint(medium up) {
+// 	.artist-hero-image .artist-header-thumb {
+// 		border-radius: 0 25% 25% 0 / 0 50% 50% 0;
+// 	}
+// }
 
 div.side-bar-text-area {
 	margin-top: $sitepadding;
@@ -171,7 +168,7 @@ body.single-touring-partners {
 	@include full-bg;
 	background-position: 50% 33%;
 	height: 450px;
-	width: 70%;
+	width: 100%;
 	//position: relative;
 }
 
@@ -195,10 +192,10 @@ path.crescent {
 
 .image-curve {
 	position: absolute;
-	right: 0;
+	right: -70%;
 	top: 0;
-	height: 450px;
+	height: 100%;
 	width: 100%;
 	background-repeat: no-repeat;
-	background-position: right 0;
+	background-position: initial;
 }
