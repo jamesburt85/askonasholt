@@ -166,9 +166,9 @@ body.single-touring-partners {
 
 .artist-header-thumb {
 	@include full-bg;
-	background-position: 50% 33%;
+	background-position: center center;
 	height: 450px;
-	width: 100%;
+	width: 75%;
 	//position: relative;
 }
 
@@ -192,10 +192,10 @@ path.crescent {
 
 .image-curve {
 	position: absolute;
-	right: -70%;
+	right: -50%;
 	top: 0;
 	height: 100%;
 	width: 100%;
 	background-repeat: no-repeat;
-	background-position: initial;
+	background-position: left center;
 }

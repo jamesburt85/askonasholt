@@ -9323,7 +9323,7 @@ p.byline.author {
 .simple-listing {
   line-height: 60px; }
 
-.row.toggleable-area:not(.past-tours) .small-12.columns .section-header.small-6.columns {
+.row.toggleable-area:not(.past-tours):not(.performance-schedule) .small-12.columns .section-header.small-6.columns {
   padding-left: 0; }
 
 .section-header,
@@ -9967,6 +9967,7 @@ div#search-toggle {
   -webkit-background-size: cover;
   background-size: cover;
   min-height: 182px;
+  height: 182px;
   text-align: center;
   border-bottom: 1px solid #cccccc; }
   .filtering-block .filtering-block-inner {
@@ -17384,9 +17385,9 @@ body.single-touring-partners .artist-header.container {
   border-bottom: 0;
   -webkit-background-size: cover;
   background-size: cover;
-  background-position: 50% 33%;
+  background-position: center center;
   height: 450px;
-  width: 100%; }
+  width: 75%; }
 
 svg.artist-circle {
   height: 100%;
@@ -17400,12 +17401,12 @@ path.crescent {
 
 .image-curve {
   position: absolute;
-  right: -70%;
+  right: -50%;
   top: 0;
   height: 100%;
   width: 100%;
   background-repeat: no-repeat;
-  background-position: initial; }
+  background-position: left center; }
 
 .more-page-links {
   border-top: 1px solid #cccccc;
