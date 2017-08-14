@@ -29,6 +29,7 @@ section.container {
     > li.opens-left {
         > .is-dropdown-submenu {
             @include center(x);
+            top: 84px;
         }
     }
 }

@@ -9273,7 +9273,8 @@ section.container {
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
-  transform: translateX(-50%); }
+  transform: translateX(-50%);
+  top: 84px; }
 
 .single-format-video .flex-video.widescreen {
   margin-bottom: 3em; }

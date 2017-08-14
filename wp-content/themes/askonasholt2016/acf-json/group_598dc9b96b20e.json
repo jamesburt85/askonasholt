@@ -28,18 +28,14 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
-            }
-        ],
-        [
+            },
             {
                 "param": "post_format",
                 "operator": "==",
                 "value": "video"
-            }
-        ],
-        [
+            },
             {
-                "param": "user_role",
+                "param": "current_user_role",
                 "operator": "==",
                 "value": "administrator"
             }
@@ -53,5 +49,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1502469063
+    "modified": 1502720619
 }
