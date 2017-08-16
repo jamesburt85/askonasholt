@@ -9399,6 +9399,9 @@ li {
 li.accordion-item, ul#sticky li, footer#footer li, ul.quick-look-links li, ul.post-categories li {
   font-size: inherit; }
 
+li.accordion-item {
+  clear: both; }
+
 .entry-title.section-header.small-gap {
   padding-bottom: 0; }
 

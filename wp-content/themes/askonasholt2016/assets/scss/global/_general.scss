@@ -215,6 +215,10 @@ li.accordion-item, ul#sticky li, footer#footer li, ul.quick-look-links li, ul.po
     font-size: inherit;
 }
 
+li.accordion-item {
+    clear: both;
+}
+
 //reduce gap before entry meta on Green Room single post-categories
 .entry-title.section-header.small-gap {
     padding-bottom: 0;
