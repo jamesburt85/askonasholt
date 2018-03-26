@@ -17,26 +17,6 @@ get_header(); ?>
       </header> -->
       <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
 
-      <div class="entry-content">
-          <?php the_content(); ?>
-      </div>
-
-
-      <ul>
-      <?php
-      // we add this, to show all posts in our
-      // Glossary sorted alphabetically
-      if (is_category('news')) 
-      {
-      $args = array( 'posts_per_page' => -1, 'orderby'=> 'title', 'order' => 'ASC' );
-      $glossaryposts = get_posts( $args ); 
-      }
-      foreach( $glossaryposts as $post ) :  setup_postdata($post); 
-       ?>
-      <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-      <?php endforeach; ?>
-      </ul>
-
     <div class="row">
       <div class="small-6 columns header-row">
         <h3 class="section-header">
