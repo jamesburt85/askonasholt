@@ -13,23 +13,6 @@
 <div id="post-<?php the_ID(); ?> waypoint" <?php post_class('blogpost-entry small-12 medium-6 large-3 columns artists waypoint'); ?>>
 
 	<div class="entry-content">
-		<?php // the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
-
-		<ul>
-			<?php
-			// we add this, to show all posts in our
-			// Glossary sorted alphabetically
-			if (is_category('news')) 
-			{
-			$args = array( 'posts_per_page' => -1, 'orderby'=> 'title', 'order' => 'ASC' );
-			$glossaryposts = get_posts( $args ); 
-			}
-			foreach( $glossaryposts as $post ) :	setup_postdata($post); 
-			 ?>
-			<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-			<?php endforeach; ?>
-		</ul>
-
 
 		<?php 
 
@@ -168,8 +151,6 @@
 		<a class="button" href="<?php the_permalink(); ?>">View Artist Page</a>
 		&nbsp;
 		&nbsp;
-		<!-- <a class="button" href="#">Make Enquiry</a> -->
-		<!-- <a class="button" href="mailto:<?php echo $manager_email; ?>?Subject=Enquiry">Make Enquiry</a> -->
 
 		<?php if( get_field('email_or_page_link') == 'Email' ): ?>
 			
