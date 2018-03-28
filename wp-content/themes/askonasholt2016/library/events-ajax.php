@@ -52,7 +52,7 @@ function events_do_query( $event_args ){
       );
       
 		$args['meta_query'] = array(
-			'relation'		=> 'AND',          
+			'relation'		=> 'AND',
 		);	
 
         //
@@ -60,8 +60,7 @@ function events_do_query( $event_args ){
         //
         if( $event_args['date_type'] == 'today' ){
         
-            $event_args['start_date'] = date('Ymd');
-            $event_args['end_date'] = date('Ymd');
+            $event_args['single_date'] = date('Ymd');
            
         } elseif ( $event_args['date_type'] == 'this_week' ){
             
@@ -74,37 +73,50 @@ function events_do_query( $event_args ){
             $event_args['end_date'] = date('Ymt');           
             
         } elseif ( $event_args['date_type'] == 'date' ){
-            
-            $event_args['start_date'] = $event_args['date'];
-            $event_args['end_date'] = $event_args['date'];
-            
+
+            $event_args['single_date'] = $event_args['date'];
+
         } else {
             
-            $event_args['start_date'] = date('Ymd');
-            $event_args['end_date'] = date('Ymd');   
+            $event_args['single_date'] = date('Ymd');
             
         }
-        
-        $args['meta_query'][] =
-        array(
-            'relation' => 'AND',            
-            'date_clause' => array(
-                'key' => 'date',
-                'value' => $event_args['start_date'],
-                'compare' => '>='
-            ),
+
+        if( isset( $event_args['single_date'] ) ){
+
+            $args['meta_query'][] =
             array(
-                'key' => 'date',
-                'value' => $event_args['end_date'],
-                'compare' => '<='
-            ),
-            'time_clause' => array(
-                'key'=>'time',
-                'compare'=>'EXISTS'
-            ),
-        );
+                'relation' => 'AND',            
+                'date_clause' => array(
+                    'key'       => 'date',
+                    'value'     => $event_args['single_date'],
+                    'compare' => '=',
+                    'type'    => 'DATE',
+                ),
+                'time_clause' => array(
+                    'key'=>'time',
+                    'compare'=>'EXISTS'
+                ),
+            );
 
+        } else {
 
+            $args['meta_query'][] =
+            array(
+                'relation' => 'AND',            
+                'date_clause' => array(
+                    'key'       => 'date',
+                    'value'     => array( $event_args['start_date'], $event_args['end_date'] ),
+                    'compare' => 'BETWEEN',
+                    'type'    => 'DATE',
+                ),
+                'time_clause' => array(
+                    'key'=>'time',
+                    'compare'=>'EXISTS'
+                ),
+            );
+
+        }
 
       //      
       // location query
