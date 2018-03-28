@@ -51,9 +51,9 @@ function events_do_query( $event_args ){
         ),
       );
       
-		$args['meta_query'] = array(
-			'relation'		=> 'AND',
-		);	
+        $args['meta_query'] = array(
+            'relation'      => 'AND',
+        );  
 
         //
         // dates    
@@ -126,14 +126,14 @@ function events_do_query( $event_args ){
             array(
                 'relation' => 'OR',
                 array(
-                    'key'		=> 'venue',
-                    'value'		=> $event_args['location'],
-                    'compare'	=> 'LIKE'
+                    'key'       => 'venue',
+                    'value'     => $event_args['location'],
+                    'compare'   => 'LIKE'
                 ),
                 array(
-                    'key'		=> 'city',
-                    'value'		=> $event_args['location'],
-                    'compare'	=> 'LIKE'
+                    'key'       => 'city',
+                    'value'     => $event_args['location'],
+                    'compare'   => 'LIKE'
                 ),            
            );
       }
@@ -154,10 +154,10 @@ function get_events(){
      global $event_args;
      
      $data = $_POST['data'];
-	 $event_args = array();
-	 foreach( $data as $d ){	
-	 	$event_args[$d['name']] = $d['value'];		
-	 }
+     $event_args = array();
+     foreach( $data as $d ){    
+        $event_args[$d['name']] = $d['value'];      
+     }
         
      get_template_part( 'template-parts/content-events-home'); 
          
