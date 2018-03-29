@@ -534,7 +534,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
 
 
 
-
+        add_filter('acf/settings/remove_wp_meta_box', '__return_true');
 
 
 

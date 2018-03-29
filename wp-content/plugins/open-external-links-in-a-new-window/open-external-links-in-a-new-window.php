@@ -1,12 +1,26 @@
 <?php
 /*
 Plugin Name: Open external links in a new window
-Plugin URI: http://wordpress.org/extend/plugins/open-external-links-in-a-new-window/
+Plugin URI: https://wordpress.org/extend/plugins/open-external-links-in-a-new-window/
 Description: Opens all external links in a new window. XHTML Strict compliant and search engine optimized (SEO).
 Author: Kristian Risager Larsen
-Version: 1.3.1
-Author URI: http://kezze.dk
+Version: 1.3.2
+Author URI: https://kristianrisagerlarsen.dk
 Text Domain: open-external-links-in-a-new-window
+License:     GPL2
+ 
+This plugin is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+any later version.
+ 
+This plugin is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+ 
+You should have received a copy of the GNU General Public License
+along with this plugin. If not, see https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html .
 */
 
 load_plugin_textdomain('open-external-links-in-a-new-window', false, basename( dirname( __FILE__ ) ) );

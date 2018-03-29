@@ -101,6 +101,8 @@ get_header(); ?>
 						$touring_partners = get_field('related_client');
 						//print_r($artist);
 
+						print_r($touring_partners);
+
 						// Obtain list of columns
 						foreach ($touring_partners as $key => $row) {
 							$touring_partner_name[$key] = get_the_title($row);

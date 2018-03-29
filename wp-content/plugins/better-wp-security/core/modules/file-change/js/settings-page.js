@@ -1,48 +1,56 @@
 jQuery( document ).ready( function ( $ ) {
-	/**
-	 * Show the file tree in the settings.
-	 */
-	$( '.jquery_file_tree' ).fileTree(
-		{
-			root         : itsec_file_change_settings.ABSPATH,
-			script       : ajaxurl,
-			expandSpeed  : -1,
-			collapseSpeed: -1,
-			multiFolder  : false
 
-		}, function ( file ) {
+	itsecSettingsPage.events.on( 'modulesReloaded', initializeFileTrees );
 
-			$( '#itsec-file-change-file_list' ).val( file.substring( itsec_file_change_settings.ABSPATH.length ) + "\n" + $( '#itsec-file-change-file_list' ).val() );
+	function initializeFileTrees() {
 
-		}, function ( directory ) {
+		/**
+		 * Show the file tree in the settings.
+		 */
+		$( '.jquery_file_tree' ).fileTree(
+			{
+				root         : itsec_file_change_settings.ABSPATH,
+				script       : ajaxurl,
+				expandSpeed  : -1,
+				collapseSpeed: -1,
+				multiFolder  : false
 
-			$( '#itsec-file-change-file_list' ).val( directory.substring( itsec_file_change_settings.ABSPATH.length ) + "\n" + $( '#itsec-file-change-file_list' ).val() );
+			}, function ( file ) {
 
-		}
-	);
+				$( '#itsec-file-change-file_list' ).val( file.substring( itsec_file_change_settings.ABSPATH.length ) + "\n" + $( '#itsec-file-change-file_list' ).val() );
+
+			}, function ( directory ) {
+
+				$( '#itsec-file-change-file_list' ).val( directory.substring( itsec_file_change_settings.ABSPATH.length ) + "\n" + $( '#itsec-file-change-file_list' ).val() );
+
+			}
+		);
+	}
+
+	initializeFileTrees();
 
 	/**
 	 * Performs a one-time file scan
 	 */
-	$( '#itsec-file-change-one_time_check' ).click(function( e ) {
+	$( document ).on( 'click', '#itsec-file-change-one_time_check', function( e ) {
 		e.preventDefault();
-		
+
 		//let user know we're working
 		$( '#itsec-file-change-one_time_check' )
 			.removeClass( 'button-primary' )
 			.addClass( 'button-secondary' )
 			.attr( 'value', itsec_file_change_settings.scanning_button_text )
 			.prop( 'disabled', true );
-		
+
 		var data = {
 			'method': 'one-time-scan'
 		};
-		
+
 		$( '#itsec_file_change_status' ).html( '' );
-		
-		itsecSettingsPage.sendModuleAJAXRequest( 'file-change', data, function( results ) {
+
+		itsecUtil.sendModuleAJAXRequest( 'file-change', data, function( results ) {
 			$( '#itsec_file_change_status' ).html( '' );
-			
+
 			if ( false === results.response ) {
 				$( '#itsec_file_change_status' ).append( '<div class="updated fade inline"><p><strong>' + itsec_file_change_settings.no_changes + '</strong></p></div>' );
 			} else if ( true === results.response ) {
@@ -56,7 +64,7 @@ jQuery( document ).ready( function ( $ ) {
 			} else {
 				$( '#itsec_file_change_status' ).append( '<div class="error inline"><p><strong>' + itsec_file_change_settings.unknown_error + '</strong></p></div>' );
 			}
-			
+
 			$( '#itsec-file-change-one_time_check' )
 				.removeClass( 'button-secondary' )
 				.addClass( 'button-primary' )

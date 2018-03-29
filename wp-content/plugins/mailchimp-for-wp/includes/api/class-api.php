@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Takes care of requests to the MailChimp API
+ * Takes care of requests to the MailChimp API (version 2.0, deprecated)
  *
  * @access public
  * @uses WP_HTTP
@@ -81,7 +81,7 @@ class MC4WP_API {
 	 * @return bool
 	 */
 	private function show_connection_error( $message ) {
-		$message .= '<br /><br />' . sprintf( '<a href="%s">' . __( 'Read more about common connectivity issues.', 'mailchimp-for-wp' ) . '</a>', 'https://mc4wp.com/kb/solving-connectivity-issues/#utm_source=wp-plugin&utm_medium=mailchimp-for-wp&utm_campaign=settings-notice' );
+		$message .= '<br /><br />' . sprintf( '<a href="%s">' . __( 'Read more about common connectivity issues.', 'mailchimp-for-wp' ) . '</a>', 'https://kb.mc4wp.com/solving-connectivity-issues/#utm_source=wp-plugin&utm_medium=mailchimp-for-wp&utm_campaign=settings-notice' );
 		return $this->show_error( $message );
 	}
 

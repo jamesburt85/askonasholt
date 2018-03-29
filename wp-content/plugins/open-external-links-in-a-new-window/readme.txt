@@ -9,7 +9,7 @@ Stable tag: trunk
 Opens all (or specific) external links in a new window. XHTML Strict compliant and search engine optimized (SEO).
 
 == Description ==
-Opens external links (starting with `http://` or `https://`) in a separate browser window (or tab). You can also specify certain URLs that should either be forced to open in a new window or ignored.
+Opens external links (starting with `http://` or `https://`) in a separate browser tab (or window). You can also specify certain URLs that should either be forced to open in a new window or ignored.
 The plugin produces XHTML Strict compliant code and is also search engine optimized (SEO).
 This is done using JavaScript's `window.open()`-function.
 
@@ -21,13 +21,13 @@ Inspired by the [Zap_NewWindow](http://www.zappelfillip.de/2005-12-05/zap_newwin
 The banner is a [photo](http://www.flickr.com/photos/monja/1367946568/in/photostream/) by [Monja Da Riva](http://www.monja.it/).
 
 **Translations**
-Danish by [Kristian Risager Larsen](http://kristianrisagerlarsen.dk).
+Danish by [Kristian Risager Larsen](https://kristianrisagerlarsen.dk).
 Dutch by [Paul Staring](http://www.collectief-it.nl/)
 Lithuanian by [Vincent G](http://Host1Free.com).
 Other translations will be appreciated!
 
 **Known bugs**
-* The plugin conflicts with other plugins that change the links' `onClick´-attribute.
+The plugin conflicts with other plugins that change the links' `onClick´-attribute.
 
 == Installation ==
 1. Copy the plugin to /wp-content/plugins/
@@ -35,6 +35,9 @@ Other translations will be appreciated!
 1. Eventually, change the settings in Settings->External links.
 
 == Changelog ==
+
+= 1.3.2 =
+Updated: Danish translation
 
 = 1.3.1 =
 Verified compatibility with Wordpress 4.0

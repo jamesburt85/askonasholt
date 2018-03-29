@@ -3,8 +3,8 @@ Contributors: dfactory
 Donate link: http://www.dfactory.eu/
 Tags: cookie, cookies, notice, notification, notify, cookie, cookie compliance, cookie law, eu cookie, privacy, privacy directive, consent, Bootstrap
 Requires at least: 3.3
-Tested up to: 4.7.2
-Stable tag: 1.2.38
+Tested up to: 4.9.2
+Stable tag: 1.2.41
 License: MIT License
 License URI: http://opensource.org/licenses/MIT
 
@@ -25,11 +25,13 @@ For more information, check out plugin page at [dFactory](http://www.dfactory.eu
 * Option to accept cookies on scroll
 * Option to set on scroll offset
 * Option to refuse functional cookies
+* Option to reload the page after cookies are accepted
 * Select the position of the cookie message box
 * Animate the message box after cookie is accepted
 * Select bottons style from None, WordPress and Bootstrap
 * Set the text and bar background colors
 * WPML and Polylang compatible
+* SEO friendly
 * .pot file for translations included
 
 = Usage: =
@@ -59,6 +61,17 @@ No questions yet.
 1. screenshot-1.png
 
 == Changelog ==
+
+= 1.2.41 =
+* Fix: Infinite redirection loop with scroll enabled
+
+= 1.2.40 =
+* Fix: Div align center on some themes
+* Tweak: Extended list of allowed HTML tags in refuse code
+* Tweak: Minified CSS and JS
+
+= 1.2.39 =
+* New: Option to reload the page after cookies are accepted
 
 = 1.2.38 =
 * Tweak: Move frontend cookie js functions before the document ready call, thanks to [fgreinus](https://github.com/fgreinus)
@@ -221,6 +234,5 @@ Initial release
 
 == Upgrade Notice ==
 
-= 1.2.38 =
-* Tweak: Move frontend cookie js functions before the document ready call
-* Tweak: Adjust functional javascript code handling 
+= 1.2.41 =
+* Fix: Infinite redirection loop with scroll enabled

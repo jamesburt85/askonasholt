@@ -7,14 +7,18 @@ class event_api {
         
         // set large limits for scripts to run
         ini_set('max_execution_time', 1200); 
-        ini_set('memory_limit', '256M');   
+        ini_set('memory_limit', '4095M');   
+		ini_set("allow_url_fopen", 1);
         
-        if( $_SERVER['REMOTE_ADDR'] == "::1" ) {
-            $this->xml_file 		= '..\askonas_event\ToscaActivities.xml'; 
-        } else {
-            //$this->xml_file 		= '../httpdocs/79.170.44.26/import/ToscaActivities.XML'; // currently relative from wordpress root
-            $this->xml_file 		= 'import/ToscaActivities.XML'; // currently relative from wordpress root           
-        }		
+        // if( $_SERVER['REMOTE_ADDR'] == "::1" ) {
+            // $this->xml_file 		= '..\askonas_event\ToscaActivities.xml'; 
+        // } else {
+            // //$this->xml_file 		= '../httpdocs/79.170.44.26/import/ToscaActivities.XML'; // currently relative from wordpress root
+            // $this->xml_file 		= 'import/ToscaActivities.XML'; // currently relative from wordpress root    	
+        // }
+
+        $this->xml_file 		= 'http://feeds.overturehq.com/feeds/7418ed17/0/3/performances.xml';   
+		//$this->xml_file 		= '..\askonas_event\ToscaActivities.xml'; 
 		
 	}
 
@@ -26,6 +30,10 @@ class event_api {
        $data = $this->xml_to_object();
               
        $events = $this->events_xml_walker( $data );
+	   
+	   // echo "<pre>";
+	   // print_r( $events );
+	   // exit();
        
        $this->save_events_into_wp( $events );
         
@@ -33,7 +41,25 @@ class event_api {
     
     
     
-    
+    public function delete_all_feed_events(){
+		
+		global $wpdb;
+		
+        $all_events = get_posts([
+			//'fields'          => 'ids',
+            'posts_per_page'  => -1,
+            'post_type'     => 'events',
+            'post_status'	=> 'publish',
+			'meta_key'		=> 'feed_created',
+			'meta_value'	=> true,         
+        ]);
+				
+		foreach( $all_events as $event ) {
+			$wpdb->delete( $wpdb->posts, array( 'ID' => $event->ID ) );
+			//wp_delete_post( $event, true );
+		}
+		
+	}
     
     
     private function save_events_into_wp( $events ){
@@ -75,7 +101,7 @@ class event_api {
             $this->wp_event_acf_update( $event, $post_id );             
                       
             $post_ids_saved[] = $post_id;
-   
+
         }
         
         // clean up non updated or inserted events previously inserted by the feed
@@ -85,11 +111,13 @@ class event_api {
     
     
     private function remove_events_not_in_xml( $all_events, $post_ids_saved ){
-        
+		
+        global $wpdb;
+		
         foreach( $all_events as $event ){
             
             if( !in_array( $event->ID, $post_ids_saved ) ){
-                wp_delete_post( $event->ID, true );
+                $wpdb->delete( $wpdb->posts, array( 'ID' => $event->ID ) );
             }
             
         }
@@ -122,7 +150,11 @@ class event_api {
         // related artsits (relationship)
         $artists_arr = explode( ',', substr( (string)$event->artist_ids, 1 ) );
         update_field( 'field_583c193f32f52', $artists_arr, $post_id );    
-                
+		
+		// location field (field_5836bb72cd9b0)
+		$location = array("address" => (string)$event->address_string, "lat" => (string)$event->Latitude, "lng" => (string)$event->Longitude);
+        update_field( 'field_5836bb72cd9b0', $location, $post_id );     
+		
     }
     
     
@@ -163,14 +195,17 @@ class event_api {
             ///////////////////////////////////////////////////////////
 
             $event->Artist = trim( $event->Artist );
-
+			$event->City = strtoupper( $event->City );
             
             // clean data
             if( $event->Time == 'TBA' ){ $event->Time = '00:00'; }
             
             // timestamp
             list($d,$m,$y) = explode('/', $event->Date );
-            $event->timestamp = "{$y}-{$m}-{$d} ".$event->Time.':00';       
+            $event->timestamp = "{$y}-{$m}-{$d} ".$event->Time.':00';  
+
+			// create address
+			$event->address_string = $this->create_event_address_string( $event ); 
             
             // unique import id
             $event->count = $count;
@@ -253,6 +288,14 @@ class event_api {
         
         
     }
+	
+	private function create_event_address_string( $event ){
+		
+        $string = $event->Venue.", ".$event->City.", ".$event->Country;
+        
+        return $string;	
+		
+	}
     
     private function create_event_unique_string( $event ){
         
@@ -276,8 +319,17 @@ class event_api {
     
     
     private function xml_to_object(){
-        
-        $xml = simplexml_load_file( $this->xml_file ) or die("Error: Cannot create object");   
+		
+		
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $this->xml_file);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		// get the result of http query
+		$output = curl_exec($ch);
+		curl_close($ch);
+
+       
+        $xml = simplexml_load_string( $output ) or die("Error: Cannot create object");   
 
         return $xml;
         
@@ -286,11 +338,4 @@ class event_api {
     
 }
 
-function whatever(){
-    $event_api = new event_api;
-    if( strtok($_SERVER["REQUEST_URI"],'?') == '/home/'&& isset( $_GET['events'] ) ){
-    $event_api->refreshAllEvents();
-    exit();
-    }
-}
-add_action( 'init', 'whatever' );
+

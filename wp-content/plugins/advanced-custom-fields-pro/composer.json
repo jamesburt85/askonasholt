@@ -1,0 +1,19 @@
+{
+  "name": "amlgroup/acf_pro",
+  "description": "ACF Professional Plugin",
+  "keywords": ["wordpress", "plugin"],
+  "homepage": "http://www.aml-group.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "AML Group",
+      "email": "digital@aml-group.com",
+      "homepage": "http://www.aml-group.com"
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=5.3.0",
+    "composer/installers": ">=v1.0.6"
+  }
+}

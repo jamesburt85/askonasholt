@@ -1,7 +1,7 @@
 <?php
 
 final class ITSEC_File_Change_Settings_Page extends ITSEC_Module_Settings_Page {
-	private $script_version = 1;
+	private $script_version = 2;
 
 
 	public function __construct() {
@@ -126,14 +126,6 @@ final class ITSEC_File_Change_Settings_Page extends ITSEC_Module_Settings_Page {
 			</td>
 		</tr>
 		<tr>
-			<th scope="row"><label for="itsec-file-change-email"><?php _e( 'Email File Change Notifications', 'better-wp-security' ); ?></label></th>
-			<td>
-				<?php $form->add_checkbox( 'email' ); ?>
-				<label for="itsec-file-change-email"><?php _e( 'Email file change notifications', 'better-wp-security' ); ?></label>
-				<p class="description"><?php _e( 'Notifications will be sent to all emails set to receive notifications on the global settings page.', 'better-wp-security' ); ?></p>
-			</td>
-		</tr>
-		<tr>
 			<th scope="row"><label for="itsec-file-change-notify_admin"><?php _e( 'Display File Change Admin Warning', 'better-wp-security' ); ?></label></th>
 			<td>
 				<?php $form->add_checkbox( 'notify_admin' ); ?>
@@ -155,11 +147,9 @@ final class ITSEC_File_Change_Settings_Page extends ITSEC_Module_Settings_Page {
 	 *
 	 * @since 4.0.0
 	 *
-	 * @return void
+	 * @return string
 	 */
 	public function get_filetree_data( $data ) {
-
-		global $itsec_globals;
 
 		$directory = sanitize_text_field( $data['dir'] );
 		$directory = urldecode( $directory );

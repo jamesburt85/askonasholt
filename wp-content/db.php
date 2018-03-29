@@ -1,0 +1,1 @@
+/Users/theopape/Sites/askonasholt/wp-content/plugins/query-monitor/wp-content/db.php
