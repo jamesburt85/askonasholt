@@ -25461,13 +25461,11 @@ var map = null;
   	});
 
     //****************************
-    // Initialise slick sliders in galery as accordions opened (also disable open in external window JS) ******
+    // Initialise slick sliders in galery as accordions opened ******
     //****************************
 
     $("#Gallery ul[data-accordion] li a").on("click",function(){
       $(this).next().find('.slick-slider').slick('setPosition');
-
-      $('.my-gallery a').prop('onclick',null).off('click');
     });
 
     //-----------------------//  
