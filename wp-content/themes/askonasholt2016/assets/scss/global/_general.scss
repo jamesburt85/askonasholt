@@ -84,7 +84,12 @@ p.byline.author { display: none; }
 
 .event-listing-details.simple-listing {
     .side-bar-artist {
+        min-width: 320px;
         line-height: 60px;
+
+        &+.side-bar-artist {
+            margin-top: 0.5em;
+        }
     }
 }
 
@@ -105,7 +110,7 @@ p.byline.author { display: none; }
 }
 
 .simple-listing {
-    line-height: 60px;
+    line-height: 30px;
 }
 
 .row.toggleable-area:not(.past-tours):not(.performance-schedule) .small-12.columns .section-header.small-6.columns {

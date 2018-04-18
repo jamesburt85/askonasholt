@@ -480,26 +480,6 @@ if ($acf_fields['flexible_content']) {
 
 								<li class="accordion-item row-divider <?php if($i < 5) { echo 'show'; } ?>" data-accordion-item>
 								  	<a href="#" class="accordion-title">
-										
-										<div class="press-details">
-											<span class="text_area_one"><?php echo $press_section['date']; ?></span>
-											
-											<!-- If there is info in text area 1... -->
-											<?php if( $press_section['text_area_one'] ): ?>
-												<span class="text_area_one"><?php echo $press_section['text_area_one']; ?></span>
-											<?php endif; ?>
-											
-											<!-- If there is info in text area 2... -->
-											<?php if( $press_section['text_area_two'] ): ?>
-												<span class="text_area_two"><?php echo $press_section['text_area_two']; ?></span>
-											<?php endif; ?>
-
-											<br class="hide-for-medium" />
-											<?php if( $press_section['location'] ): ?>
-												<span class="text_area_three"><?php echo $press_section['location']; ?></span>
-											<?php endif; ?>
-										</div>	
-
 										<span class="more-info">
 											<span class="show-for-large">More info &nbsp;</span>
 										    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -509,6 +489,26 @@ if ($acf_fields['flexible_content']) {
 										</span>
 
 									</a>
+										
+									<div class="press-details">
+										<span class="text_area_one"><?php echo $press_section['date']; ?></span>
+										
+										<!-- If there is info in text area 1... -->
+										<?php if( $press_section['text_area_one'] ): ?>
+											<span class="text_area_one"><?php echo $press_section['text_area_one']; ?></span>
+										<?php endif; ?>
+										
+										<!-- If there is info in text area 2... -->
+										<?php if( $press_section['text_area_two'] ): ?>
+											<span class="text_area_two"><?php echo $press_section['text_area_two']; ?></span>
+										<?php endif; ?>
+
+										<br class="hide-for-medium" />
+										<?php if( $press_section['location'] ): ?>
+											<span class="text_area_three"><?php echo $press_section['location']; ?></span>
+										<?php endif; ?>
+									</div>
+
 									<div class="accordion-content" data-tab-content>
 									  <?php echo $press_section['press_article']; ?>
 									</div>
@@ -598,20 +598,19 @@ if ($acf_fields['flexible_content']) {
 
 								<li class="accordion-item row-divider <?php if($i < 5) { echo 'show'; } ?>" data-accordion-item>
 								  	<a href="#" class="accordion-title">
-										<div class="press-details">
-											<div class="discography-image small-2 columns" style="background-image: url('<?php echo $discography['image']; ?>'); "></div>
-											<span class="discoraphy_title"><?php echo $discography['title']; ?></span>
-
-											<span class="more-info">
-												<span class="show-for-large">More info &nbsp;</span>
-											    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-											        <defs></defs>
-											        <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
-											    </svg>
-											</span>
-
-										</div>	
+										<span class="more-info">
+											<span class="show-for-large">More info &nbsp;</span>
+										    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										        <defs></defs>
+										        <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
+										    </svg>
+										</span>										
 									</a>
+
+									<div class="press-details">
+										<div class="discography-image small-2 columns" style="background-image: url('<?php echo $discography['image']; ?>'); "></div>
+										<span class="discoraphy_title"><?php echo $discography['title']; ?></span>
+									</div>
 
 									<div class="accordion-content" data-tab-content>
 

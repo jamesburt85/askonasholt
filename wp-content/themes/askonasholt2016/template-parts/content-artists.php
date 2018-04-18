@@ -90,8 +90,8 @@
 									<?php
 										$cat = new WPSEO_Primary_Term('artist-type', get_the_ID());
 										$cat = $cat->get_primary_term();
-										$catName = get_cat_name($cat);
-										echo $catName;
+										$catName = get_term($cat);
+										echo $catName->name;
 									?>
 								</span>
 

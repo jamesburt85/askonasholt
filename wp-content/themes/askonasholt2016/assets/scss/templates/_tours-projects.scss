@@ -177,7 +177,12 @@ img.circle-thumb {
 }
 
 .press-details {
-  line-height: 60px !important;
+  display: flex !important;
+  flex-wrap: wrap;  
+  line-height: 30px;
+  align-items: center;  
+  min-height: 60px;
+  padding: 0.5em 3em 0.5em 0;
   span.more-info {
       line-height: 60px !important;
   }
@@ -186,9 +191,20 @@ img.circle-thumb {
 .side-bar-artist {
     display: flex;
     line-height: 30px;
+    align-items: center;
+
     img.circle-thumb {
         margin-right: $sitepadding;
     }
+
+    a {
+      position: relative;
+    }
+}
+@include breakpoint(large down) {
+  .side-bar-artist {
+    padding: 5px 0;
+  }
 }
 
 a.side-bar-link {
@@ -200,25 +216,32 @@ ul.accordion {
   margin-bottom: 0;
   
   li.accordion-item {
+    clear: both;    
+    position: relative;
+    min-height: 60px;    
+
     .accordion-title {
-        display: block;
-        padding: 0;
-        //line-height: 1;
-        font-size: inherit;
-        color: inherit;
-        position: relative;
-        border: none;
-        border-bottom: 0;
-        // display: -webkit-box !important;
-        // display: -ms-flexbox !important;
-        // display: flex !important;
-        //line-height: 2 !important;
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+      border: none;
+      border-bottom: 0;
+      line-height: 60px !important;
+      padding: 0.5em 0;
+
+      .image-gallery & {
+        line-height: normal !important;
+      }
     }
     .accordion-title:hover, .accordion-title:focus {
       background-color: transparent;
     }
     hr {
-      margin: 0.5em;
+      margin: 0 0.5em;
     }
   }
   :last-child > .accordion-content:last-child {
@@ -229,6 +252,10 @@ ul.accordion {
     padding: 1.5rem;
     font-family: "Brown-Pro-Light", AdobeBlank;
     color: inherit;
+
+    .image-gallery & {
+      padding-top: 60px;
+    }
 
     strong {
         font-weight: normal;
@@ -254,20 +281,30 @@ body.post-type-archive-events {
 }
 
 :last-child:not(.is-active) > .accordion-title {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .event-listing-details {
-    padding: 0 1.5rem;
-    font-size: 19px;
-    .side-bar-artist-details {
-        // line-height: 30px;
-    }
+  padding: 0.5em 10.5rem 0.5em 1.5rem;
+  font-size: 19px;
+
+  .side-bar-artist-details {
+    // line-height: 30px;
+  }
+  .event-detail:first-child {
+    white-space: nowrap;
+  }
 }
 
 span.more-info {
-    right: 1em;
-    position: absolute;
+  position: absolute;  
+  top: 0;
+  right: 1em;
+}
+.accordion-item.is-active {
+  span.more-info svg {
+    transform: rotate(180deg) translateY(-9px);
+  }
 }
 
 .accordion-title:before {
@@ -282,9 +319,11 @@ span.more-info {
 //MEDIA QUERIES
 @include breakpoint(small only) {
   .event-listing-details {
+      line-height: 30px;    
       font-size: 19px;
       // text-align: center;
-      padding-right: 12px;
+      padding-left: 0.5rem;
+      padding-right: 3.5rem;
       .side-bar-artist-details {
         text-align: left;   
       }
@@ -295,23 +334,22 @@ span.more-info {
   }
 }
 
-
+.event-detail {
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 
 @include breakpoint(medium) {
   span.side-bar-artist-name, .event-detail {
     padding-right: $sitepadding;
   }
-  li.accordion-item {
-    .accordion-title {
-      line-height: 60px !important;
-    }
-  }
   span.more-info {
-      right: 1.25em;
-    }
-    .press-details {
-      display: inline-block;
-    }
+    right: 1.25em;
+  }
+  .press-details {
+    display: inline-block;
+  }
 }
 
 //single artist/touring partners page give space between multiple related staff
@@ -323,9 +361,15 @@ span.more-info {
 }
 
 @include breakpoint(large up) {
+  .events-listing span.more-info {
+    line-height: 82px !important;
+  }
+}
+@include breakpoint(xlarge up) {
   .event-listing-details {
     display: flex !important;
-    line-height: 60px !important;
+    min-height: 60px;
+    align-items: center;
   }
 }
 

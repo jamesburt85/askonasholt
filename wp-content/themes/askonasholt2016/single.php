@@ -160,18 +160,7 @@ get_header(); ?>
 										</div>
 
 									</div>
-								
-					<!-- 					<?php # If the artist has an artist type
-								if ( !empty( $artist_types)): ?>
-									<ul>
-									<?php # Loop through all the artist types for this artist,
-									# - and output them all!
-									foreach ($artist_types as $type): ?>
-										<li><?php echo $type->name ?></li>
-									<?php endforeach ?>
-									</ul>
-								<?php endif ?> -->
-							
+
 								<?php
 							}
 						}
@@ -225,18 +214,7 @@ get_header(); ?>
 										</div>
 
 									</div>
-								
-					<!-- 					<?php # If the artist has an artist type
-								if ( !empty( $artist_types)): ?>
-									<ul>
-									<?php # Loop through all the artist types for this artist,
-									# - and output them all!
-									foreach ($artist_types as $type): ?>
-										<li><?php echo $type->name ?></li>
-									<?php endforeach ?>
-									</ul>
-								<?php endif ?> -->
-							
+
 								<?php
 							}
 						} ?>						

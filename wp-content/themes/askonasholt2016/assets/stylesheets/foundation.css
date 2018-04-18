@@ -9310,7 +9310,10 @@ p.byline.author {
   padding-right: 0 !important; }
 
 .event-listing-details.simple-listing .side-bar-artist {
+  min-width: 320px;
   line-height: 60px; }
+  .event-listing-details.simple-listing .side-bar-artist + .side-bar-artist {
+    margin-top: 0.5em; }
 
 .link-banner {
   margin-top: 50px; }
@@ -9322,7 +9325,7 @@ p.byline.author {
   max-width: 100%; }
 
 .simple-listing {
-  line-height: 60px; }
+  line-height: 30px; }
 
 .row.toggleable-area:not(.past-tours):not(.performance-schedule) .small-12.columns .section-header.small-6.columns {
   padding-left: 0; }
@@ -11585,8 +11588,6 @@ ul#example-dropdown {
     border-bottom: 1px solid #cccccc; }
 
 @media screen and (max-width: 39.9375em) {
-  .press-row li.accordion-item {
-    padding: 1em 0; }
   .event-listing-details {
     line-height: 2; } }
 
@@ -17501,7 +17502,7 @@ path.crescent {
 .events-listing {
   padding: 0.5rem 0; }
   .events-listing .accordion {
-    padding: 1rem 0; }
+    padding: 1rem 0 0; }
   .events-listing .accordion {
     font-size: 19px; }
 
@@ -18285,7 +18286,17 @@ img.circle-thumb {
   display: flex; }
 
 .press-details {
-  line-height: 60px !important; }
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  line-height: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 60px;
+  padding: 0.5em 3em 0.5em 0; }
   .press-details span.more-info {
     line-height: 60px !important; }
 
@@ -18293,27 +18304,48 @@ img.circle-thumb {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  line-height: 30px; }
+  line-height: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
   .side-bar-artist img.circle-thumb {
     margin-right: 25px; }
+  .side-bar-artist a {
+    position: relative; }
+
+@media screen and (max-width: 74.9375em) {
+  .side-bar-artist {
+    padding: 5px 0; } }
 
 a.side-bar-link {
   color: inherit !important; }
 
 ul.accordion {
   margin-bottom: 0; }
-  ul.accordion li.accordion-item .accordion-title {
-    display: block;
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
+  ul.accordion li.accordion-item {
+    clear: both;
     position: relative;
-    border: none;
-    border-bottom: 0; }
-  ul.accordion li.accordion-item .accordion-title:hover, ul.accordion li.accordion-item .accordion-title:focus {
-    background-color: transparent; }
-  ul.accordion li.accordion-item hr {
-    margin: 0.5em; }
+    min-height: 60px; }
+    ul.accordion li.accordion-item .accordion-title {
+      position: absolute;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+      border: none;
+      border-bottom: 0;
+      line-height: 60px !important;
+      padding: 0.5em 0; }
+      .image-gallery ul.accordion li.accordion-item .accordion-title {
+        line-height: normal !important; }
+    ul.accordion li.accordion-item .accordion-title:hover, ul.accordion li.accordion-item .accordion-title:focus {
+      background-color: transparent; }
+    ul.accordion li.accordion-item hr {
+      margin: 0 0.5em; }
   ul.accordion :last-child > .accordion-content:last-child {
     border-bottom: none; }
   ul.accordion .accordion-content {
@@ -18321,6 +18353,8 @@ ul.accordion {
     padding: 1.5rem;
     font-family: "Brown-Pro-Light", AdobeBlank;
     color: inherit; }
+    .image-gallery ul.accordion .accordion-content {
+      padding-top: 60px; }
     ul.accordion .accordion-content strong {
       font-weight: normal;
       font-family: "Brown-Pro-Regular", AdobeBlank; }
@@ -18337,31 +18371,44 @@ ul.accordion {
   border-bottom: none; }
 
 .event-listing-details {
-  padding: 0 1.5rem;
+  padding: 0.5em 10.5rem 0.5em 1.5rem;
   font-size: 19px; }
+  .event-listing-details .event-detail:first-child {
+    white-space: nowrap; }
 
 span.more-info {
-  right: 1em;
-  position: absolute; }
+  position: absolute;
+  top: 0;
+  right: 1em; }
+
+.accordion-item.is-active span.more-info svg {
+  -webkit-transform: rotate(180deg) translateY(-9px);
+      -ms-transform: rotate(180deg) translateY(-9px);
+          transform: rotate(180deg) translateY(-9px); }
 
 .accordion-title:before {
   display: none !important; }
 
 @media screen and (max-width: 39.9375em) {
   .event-listing-details {
+    line-height: 30px;
     font-size: 19px;
-    padding-right: 12px; }
+    padding-left: 0.5rem;
+    padding-right: 3.5rem; }
     .event-listing-details .side-bar-artist-details {
       text-align: left; }
   a.view-link {
     padding-top: 25px;
     padding-bottom: 25px; } }
 
+.event-detail {
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
 @media screen and (min-width: 40em) {
   span.side-bar-artist-name, .event-detail {
     padding-right: 25px; }
-  li.accordion-item .accordion-title {
-    line-height: 60px !important; }
   span.more-info {
     right: 1.25em; }
   .press-details {
@@ -18372,11 +18419,18 @@ span.more-info {
   padding: 5px 0; }
 
 @media screen and (min-width: 64em) {
+  .events-listing span.more-info {
+    line-height: 82px !important; } }
+
+@media screen and (min-width: 75em) {
   .event-listing-details {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
-    line-height: 60px !important; } }
+    min-height: 60px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; } }
 
 @media screen and (max-width: 39.9375em) {
   .press-details {

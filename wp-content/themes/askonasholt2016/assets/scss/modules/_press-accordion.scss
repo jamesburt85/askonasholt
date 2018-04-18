@@ -22,9 +22,6 @@
 }
 
 @include breakpoint(small only) {
-	.press-row li.accordion-item {
-		padding: 1em 0;
-	}
 	.event-listing-details {
 	    line-height: 2;
 	}

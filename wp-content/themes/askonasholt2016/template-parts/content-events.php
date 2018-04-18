@@ -39,16 +39,7 @@
 			<div class="small-12 columns">
 				<ul class="accordion press-row" data-accordion data-allow-all-closed="true">
 				  <li class="accordion-item" data-accordion-item>
-				    
 				    <a href="#" class="accordion-title">
-			    		<div class="event-related-artists">
-			    	  		<?php get_template_part( 'template-parts/event-related-artist' ); ?>		
-			    		</div>			
-					  	<div class="event-time event-detail"><?php echo $time; ?></div>
-					    <div class="event-date event-detail"><?php echo $date; ?></div>
-					    <div class="event-venue event-detail"><?php echo $venue; ?></div>
-					    <div class="event-city event-detail"><?php echo $city; ?></div>
-
 				    	<span class="more-info">More info &nbsp;
 				    	    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 				    	        <defs></defs>
@@ -56,6 +47,14 @@
 				    	    </svg>
 				    	</span>
 				    </a>
+
+		    		<div class="event-related-artists">
+		    	  		<?php get_template_part( 'template-parts/event-related-artist' ); ?>		
+		    		</div>
+				  	<div class="event-time event-detail"><?php echo $time; ?></div>
+				    <div class="event-date event-detail"><?php echo $date; ?></div>
+				    <div class="event-venue event-detail"><?php echo $venue; ?></div>
+				    <div class="event-city event-detail"><?php echo $city; ?></div>
 
 				    <div class="accordion-content" data-tab-content>
 				      <?php echo $more_info; ?>

@@ -110,6 +110,7 @@ get_header(); ?>
 										?>
 										
 										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+
 										<div class="side-bar-artist-details">
 											<a class="side-bar-link" href="<?php echo $staff_url; ?>">
 												<span class="side-bar-artist-name"><?php echo get_the_title( $staff_id) ?>

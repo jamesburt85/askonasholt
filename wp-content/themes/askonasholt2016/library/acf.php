@@ -32,53 +32,10 @@ if ($acf_fields['flexible_content']) {
 		switch ( $section['acf_fc_layout']) {
 
 
-			
-
-
 			#Artist Details
 			case 'artist_details': ?>
 				
 				<div class="row">
-					<!-- <div class="small-12 medium-6 large-3 columns">	
-						
-						<div class="artist-photo-wrapper">
-							<a href="<?php the_permalink(); ?>">
-								<div class="artist-thumb" style="background-image: url('<?php echo $section['artist_photo'] ?>')">
-								</div>
-							</a>
-							
-							<div class="overlay zoom-gallery">
-								<a href="#">
-									<i class="fa fa-eye" aria-hidden="true"></i>Quick Look
-								</a>
-							</div>
-						</div>	
-
-						<div class="artist-details">
-							<a href="<?php the_permalink(); ?>">
-								<span class="artist-category"><?php echo $section['main_category']; ?></span>
-								<br>
-								<span class="artist-name"><?php echo $section['name']; ?></span>
-							</a>
-						</div>
-
-					</div> -->
-
-<!-- 					<div class="zoom-gallery">
- -->						<!--
-
-						Width/height ratio of thumbnail and the main image must match to avoid glitches.
-
-						If ratios are different, you may add CSS3 opacity transition to the main image to make the change less noticable.
-
-						 -->
-					<!-- 	<a href="http://farm4.staticflickr.com/3763/9204547649_0472680945_o.jpg" data-source="http://500px.com/photo/32736307" title="Into The Blue" style="width:193px;height:125px;">
-							<img src="http://farm4.staticflickr.com/3763/9204547649_7de96ee188_t.jpg" width="193" height="125">
-						</a>
-						<a href="http://farm3.staticflickr.com/2856/9207329420_7f2a668b06_o.jpg" data-source="http://500px.com/photo/32554131" title="Light Sabre" style="width:82px;height:125px;">
-							<img src="http://farm3.staticflickr.com/2856/9207329420_e485948b01_t.jpg" width="82px" height="125">
-						</a>
-					</div> -->
 
 				</div>
 
@@ -498,26 +455,6 @@ if ($acf_fields['flexible_content']) {
 
 								<li class="accordion-item" data-accordion-item>
 								  	<a href="#" class="accordion-title">
-										
-										<div class="press-details">
-											<span class="text_area_one"><?php echo $press_section['date']; ?></span>
-											
-											<!-- If there is info in text area 1... -->
-											<?php if( $press_section['text_area_one'] ): ?>
-												<span class="text_area_one"><?php echo $press_section['text_area_one']; ?></span>
-											<?php endif; ?>
-											
-											<!-- If there is info in text area 2... -->
-											<?php if( $press_section['text_area_two'] ): ?>
-												<span class="text_area_two"><?php echo $press_section['text_area_two']; ?></span>
-											<?php endif; ?>
-
-											<br class="hide-for-medium" />
-											<?php if( $press_section['location'] ): ?>
-												<span class="text_area_three"><?php echo $press_section['location']; ?></span>
-											<?php endif; ?>
-										</div>	
-
 										<span class="more-info">
 											<span class="show-for-large">More info &nbsp;</span>
 										    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -526,7 +463,27 @@ if ($acf_fields['flexible_content']) {
 										    </svg>
 										</span>
 
-									</a>
+									</a>								  		
+										
+									<div class="press-details">
+										<span class="text_area_one"><?php echo $press_section['date']; ?></span>
+										
+										<!-- If there is info in text area 1... -->
+										<?php if( $press_section['text_area_one'] ): ?>
+											<span class="text_area_one"><?php echo $press_section['text_area_one']; ?></span>
+										<?php endif; ?>
+										
+										<!-- If there is info in text area 2... -->
+										<?php if( $press_section['text_area_two'] ): ?>
+											<span class="text_area_two"><?php echo $press_section['text_area_two']; ?></span>
+										<?php endif; ?>
+
+										<br class="hide-for-medium" />
+										<?php if( $press_section['location'] ): ?>
+											<span class="text_area_three"><?php echo $press_section['location']; ?></span>
+										<?php endif; ?>
+									</div>
+
 									<div class="accordion-content" data-tab-content>
 									  <?php echo $press_section['press_article']; ?>
 									</div>
@@ -588,20 +545,19 @@ if ($acf_fields['flexible_content']) {
 
 								<li class="accordion-item" data-accordion-item>
 								  	<a href="#" class="accordion-title">
-										<div class="press-details">
-											<div class="discography-image small-2 columns" style="background-image: url('<?php echo $discography['image']; ?>'); "></div>
-											<span class="discoraphy_title"><?php echo $discography['title']; ?></span>
-
-											<span class="more-info">
-												<span class="show-for-large">More info &nbsp;</span>
-											    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-											        <defs></defs>
-											        <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
-											    </svg>
-											</span>
-
-										</div>	
+										<span class="more-info">
+											<span class="show-for-large">More info &nbsp;</span>
+										    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										        <defs></defs>
+										        <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
+										    </svg>
+										</span>
 									</a>
+
+									<div class="press-details">
+										<div class="discography-image small-2 columns" style="background-image: url('<?php echo $discography['image']; ?>'); "></div>
+										<span class="discoraphy_title"><?php echo $discography['title']; ?></span>
+									</div>
 
 									<div class="accordion-content" data-tab-content>
 
@@ -666,47 +622,6 @@ if ($acf_fields['flexible_content']) {
 
 			#Individual Artist's Repertoire Section
 			case 'repertoire': ?>
-				
-<!-- 				<div class="press-row row" id="<?php echo $section['unique_id'] ?>">
-
-					<div class="small-12 columns">
-					
-						<h4 class="section-header">Repertoire</h4>
-					
-						<ul class="accordion" data-accordion data-allow-all-closed="true">
-							
-							<?php
-							# Loop through the sections
-							foreach ($section['repertoire'] as $repertoire) { ?>
-
-							<li class="accordion-item" data-accordion-item>
-							  	<a href="#" class="accordion-title">
-									
-									<div class="press-details">
-										<span class="text_area_one"><?php echo $repertoire['repertoire_title']; ?></span>
-									</div>	
-
-									<span class="more-info">
-										<span class="show-for-large">More info &nbsp;</span>
-									    <svg width="19px" height="19px" viewBox="1365 1803 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									        <defs></defs>
-									        <polyline id="Path-3-Copy-2" stroke="#BA0C2F" stroke-width="1" fill="none" transform="translate(1374.485830, 1812.485830) rotate(135.000000) translate(-1374.485830, -1812.485830) " points="1380.48583 1818.48661 1380.48583 1806.48505 1368.48583 1806.48505"></polyline>
-									    </svg>
-									</span>
-
-								</a>
-								<div class="accordion-content" data-tab-content>
-								  <?php echo $repertoire['repertoire_details']; ?>
-								</div>
-							</li>
-
-							<?php } ?>
-
-						</ul>
-
-					</div>
-					
-				</div> -->
 
 				<div class="press-row row" id="<?php echo $section['unique_id'] ?>">
 					<div class="small-12 columns">
@@ -786,49 +701,6 @@ if ($acf_fields['flexible_content']) {
 					  		<iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video; ?>" frameborder="0" allowfullscreen></iframe>
 					  	</div>
 					</div>
-
-					<!-- <div class="video-description">
-					  <?php //echo wpdocs_custom_taxonomies_terms_links(); ?>
-					  	<div class="video-meta">
-						  <span class="video-title">
-						  	<?php //the_title(); ?>
-						  </span>
-						  <?php //the_date('d M Y'); ?>
-						</div>
-					  <span class="magazine-item-copy"><?php //the_excerpt( __( 'Continue reading...', 'foundationpress' ) ); ?></span>
-					</div> -->
-
-
-					<?php 
-
-					  // // Query Args
-					  // $args = array(
-
-					  //   'post_type' => 'post', // this might need to 
-					  //   'post__in'  => $video,
-					    
-					  // );
-
-					  // // The Query
-					  // $the_query = new WP_Query( $args );
-
-					  // // The Loop
-					  // if ( $the_query->have_posts() ) {
-
-					  //   while ( $the_query->have_posts() ) {
-
-					  //     $the_query->the_post();
-
-					  //     get_template_part( 'template-parts/video-player' );
-
-					  //   }
-
-					  //   /* Restore original Post Data */
-					  //   wp_reset_postdata();
-					  // } else {
-					  //   // no posts found
-					  // }
-					?>
 
 				</div>
 
