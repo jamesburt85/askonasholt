@@ -9,9 +9,22 @@ section.container {
 //     margin: 0 auto;
 // }
 
+.ajax-spinner {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    .ball-scale-ripple-multiple {
+        transform: translateY(-85px);
+
+        > div {
+            border-color: #BA0C2F;
+        }
+    }
+}
 //hide load more button - visibility rather than display: none; as JS function requires
 .archive__load-more {
-    visibility: hidden !important;
+    // visibility: hidden !important;
 }
 
 //don't showanimated items until js loads

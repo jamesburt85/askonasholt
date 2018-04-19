@@ -9259,8 +9259,19 @@ pre {
 section.container {
   overflow-x: hidden; }
 
-.archive__load-more {
-  visibility: hidden !important; }
+.ajax-spinner {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+      -ms-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%); }
+  .ajax-spinner .ball-scale-ripple-multiple {
+    -webkit-transform: translateY(-85px);
+        -ms-transform: translateY(-85px);
+            transform: translateY(-85px); }
+    .ajax-spinner .ball-scale-ripple-multiple > div {
+      border-color: #BA0C2F; }
 
 .is-hidden-onload {
   opacity: 0; }
@@ -15800,6 +15811,8 @@ div#video-audio {
   margin-bottom: 25px; }
   .artist-video-area p object {
     max-width: 100%; }
+    .artist-video-area p object embed {
+      max-width: 100%; }
   .artist-video-area .row.large-video-row {
     margin: 0;
     margin-left: 0;
@@ -18121,6 +18134,7 @@ a.view-link:hover svg, .side-bar-artist-name:hover svg, a.tours-details-link:hov
         padding-right: 0.9375rem; } }
 
 #archive {
+  position: relative;
   max-width: 84.375rem;
   margin-left: auto;
   margin-right: auto; }
@@ -18296,7 +18310,7 @@ img.circle-thumb {
       -ms-flex-align: center;
           align-items: center;
   min-height: 60px;
-  padding: 0.5em 3em 0.5em 0; }
+  padding: 0.5em 10.5rem 0.5em 0; }
   .press-details span.more-info {
     line-height: 60px !important; }
 
@@ -18428,14 +18442,22 @@ span.more-info {
     display: -ms-flexbox !important;
     display: flex !important;
     min-height: 60px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; } }
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline; } }
 
 @media screen and (max-width: 39.9375em) {
   .press-details {
-    line-height: 2 !important;
-    display: initial; } }
+    display: initial;
+    padding-right: 3.5rem;
+    line-height: 2 !important; } }
+
+.discography span.more-info {
+  line-height: 168px; }
+
+@media screen and (max-width: 39.9375em) {
+  .discography span.more-info {
+    line-height: 90px; } }
 
 .page-template-narrow-text-page #page-full-width {
   max-width: 57.375rem;

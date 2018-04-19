@@ -182,9 +182,9 @@ img.circle-thumb {
   line-height: 30px;
   align-items: center;  
   min-height: 60px;
-  padding: 0.5em 3em 0.5em 0;
+  padding: 0.5em 10.5rem 0.5em 0;
   span.more-info {
-      line-height: 60px !important;
+    line-height: 60px !important;
   }
 }
 
@@ -194,7 +194,7 @@ img.circle-thumb {
     align-items: center;
 
     img.circle-thumb {
-        margin-right: $sitepadding;
+      margin-right: $sitepadding;
     }
 
     a {
@@ -369,18 +369,27 @@ span.more-info {
   .event-listing-details {
     display: flex !important;
     min-height: 60px;
-    align-items: center;
+    align-items: baseline;
   }
 }
 
 @include breakpoint(small only) {
   .press-details {
-    line-height: 2 !important;
     display: initial;
+    padding-right: 3.5rem;    
+    line-height: 2 !important;
+
     span.more-info {
         //line-height: 1 !important;
     }
   }
 }
 
-
+.discography span.more-info {
+  line-height: 168px;
+}
+@include breakpoint(small only) {
+  .discography span.more-info {
+    line-height: 90px;
+  }
+}
