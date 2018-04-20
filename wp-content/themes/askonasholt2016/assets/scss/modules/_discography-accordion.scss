@@ -9,14 +9,17 @@
 	}
 	.press-details {
 		display: flex;
+		flex-wrap: nowrap;
 		.discoraphy_title, .more-info {
-			line-height: 75px !important;
+			// line-height: 75px !important;
+			line-height: 30px !important;
 			margin-left: $sitepadding;
 		}
 		.discography-image {
 			@include full-bg;
 			height: 75px;
 			width: 75px;
+			min-width: 75px;
 		}
 	}
 }

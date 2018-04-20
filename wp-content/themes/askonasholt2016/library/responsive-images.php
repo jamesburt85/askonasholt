@@ -21,12 +21,17 @@ add_image_size( 'fp-small', 640 );
 add_image_size( 'fp-medium', 1024 );
 add_image_size( 'fp-large', 1200 );
 
+add_image_size( 'thumbnail-medium', 400, 400, true );
+add_image_size( 'thumbnail-large', 800, 800, true );
+
 // Register the new image sizes for use in the add media modal in wp-admin
 function foundationpress_custom_sizes( $sizes ) {
 	return array_merge( $sizes, array(
 		'fp-small'  => __( 'FP Small' ),
 		'fp-medium' => __( 'FP Medium' ),
 		'fp-large'  => __( 'FP Large' ),
+		'thumbnail-medium'  => __( 'Thumbnail Medium' ),
+		'thumbnail-large'  => __( 'Thumbnail Large' ),
 	) );
 }
 add_filter( 'image_size_names_choose', 'foundationpress_custom_sizes' );

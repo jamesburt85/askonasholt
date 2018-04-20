@@ -99,7 +99,7 @@ if ($acf_fields['flexible_content']) {
 													    <a href="<?php echo $image_repeater['image']['url']; ?>" itemprop="contentUrl" data-size="<?php echo $image_repeater['image']['width'] ?>x<?php echo $image_repeater['image']['height'] ?>">
 												       	
 												       		<!-- you need it to be an image as the transition takes this image and animates from it -->
-			 									        <img src="<?php echo $image_repeater['image']['sizes']['large']; ?>" itemprop="thumbnail" alt="Image description" />
+			 									        <img src="<?php echo $image_repeater['image']['sizes']['thumbnail-medium']; ?>" itemprop="thumbnail" alt="<?php echo $image_repeater['image']['title']; ?>" />
 
 													    </a>
 													    <figcaption itemprop="caption description">
@@ -172,10 +172,10 @@ if ($acf_fields['flexible_content']) {
 						                item.title = figureEl.children[1].innerHTML; 
 						            }
 
-						            if(linkEl.children.length > 0) {
+						            // if(linkEl.children.length > 0) {
 						                // <img> thumbnail element, retrieving thumbnail url
-						                item.msrc = linkEl.children[0].getAttribute('src');
-						            } 
+						                // item.msrc = linkEl.children[0].getAttribute('src');
+						            // }
 
 						            item.el = figureEl; // save link to element for getThumbBoundsFn
 						            items.push(item);
@@ -272,6 +272,10 @@ if ($acf_fields['flexible_content']) {
 
 						        // define options (if needed)
 						        options = {
+
+									showHideOpacity: true,
+									getThumbBoundsFn: false,
+									showAnimationDuration: 0,
 
 						            // define gallery index (for URL)
 						            galleryUID: galleryElement.getAttribute('data-pswp-uid'),

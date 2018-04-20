@@ -108,9 +108,12 @@
 }
 
 img.circle-thumb {
-  height: 60px;
-  width: 60px;
-  border-radius: 60px;
+  // height: 60px;
+  // width: 60px;
+  // border-radius: 60px;
+  height: 57.5px;
+  width: 57.5px;
+  border-radius: 57.5px;
 }
 
 .tour-hero {
@@ -253,6 +256,10 @@ ul.accordion {
     font-family: "Brown-Pro-Light", AdobeBlank;
     color: inherit;
 
+    a {
+      position: relative;
+    }
+
     .image-gallery & {
       padding-top: 60px;
     }
@@ -362,7 +369,8 @@ span.more-info {
 
 @include breakpoint(large up) {
   .events-listing span.more-info {
-    line-height: 82px !important;
+    // line-height: 82px !important;
+    line-height: 78px !important;
   }
 }
 @include breakpoint(xlarge up) {

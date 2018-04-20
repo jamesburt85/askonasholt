@@ -11622,9 +11622,11 @@ ul#example-dropdown {
 .discography .press-details {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap; }
   .discography .press-details .discoraphy_title, .discography .press-details .more-info {
-    line-height: 75px !important;
+    line-height: 30px !important;
     margin-left: 25px; }
   .discography .press-details .discography-image {
     background-position: center center;
@@ -11633,7 +11635,8 @@ ul#example-dropdown {
     -webkit-background-size: cover;
     background-size: cover;
     height: 75px;
-    width: 75px; }
+    width: 75px;
+    min-width: 75px; }
 
 @media screen and (min-width: 40em) {
   .discography .press-details .discoraphy_title, .discography .press-details .more-info {
@@ -15891,8 +15894,8 @@ div#video-audio .artist-video-area p {
     opacity: 0; }
 
 div.row.free-text {
-  margin: 25px auto 0 auto;
-  padding: 25px 0;
+  margin: 0 auto 0 auto;
+  padding: 50px 0;
   border-top: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc; }
 
@@ -18251,9 +18254,9 @@ div#share-buttons ul {
   border-radius: 55px; }
 
 img.circle-thumb {
-  height: 60px;
-  width: 60px;
-  border-radius: 60px; }
+  height: 57.5px;
+  width: 57.5px;
+  border-radius: 57.5px; }
 
 .tour-hero {
   position: relative;
@@ -18367,6 +18370,8 @@ ul.accordion {
     padding: 1.5rem;
     font-family: "Brown-Pro-Light", AdobeBlank;
     color: inherit; }
+    ul.accordion .accordion-content a {
+      position: relative; }
     .image-gallery ul.accordion .accordion-content {
       padding-top: 60px; }
     ul.accordion .accordion-content strong {
@@ -18434,7 +18439,7 @@ span.more-info {
 
 @media screen and (min-width: 64em) {
   .events-listing span.more-info {
-    line-height: 82px !important; } }
+    line-height: 78px !important; } }
 
 @media screen and (min-width: 75em) {
   .event-listing-details {
