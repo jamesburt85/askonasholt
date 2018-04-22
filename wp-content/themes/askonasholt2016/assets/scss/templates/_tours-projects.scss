@@ -202,6 +202,10 @@ img.circle-thumb {
 
     a {
       position: relative;
+
+      .artist-list & {
+        position: static;
+      }
     }
 }
 @include breakpoint(large down) {
