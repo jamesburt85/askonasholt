@@ -7,6 +7,9 @@ body.page-template-home #loading-delay {
     z-index: 100001;
     top: 0;
 }
+body:not(.page-template-home) #loading-delay {
+	display: none;
+}
 
 //home-hero styles
 body.page {

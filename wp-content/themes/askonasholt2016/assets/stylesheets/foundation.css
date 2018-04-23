@@ -9382,9 +9382,9 @@ section.container {
       -ms-transform: translate(-50%, -100%);
           transform: translate(-50%, -100%); }
   .ajax-spinner .logoAnimation {
-    -webkit-transform: translate(-50%, -85px);
-        -ms-transform: translate(-50%, -85px);
-            transform: translate(-50%, -85px);
+    -webkit-transform: translate(-50%, -98px);
+        -ms-transform: translate(-50%, -98px);
+            transform: translate(-50%, -98px);
     border-color: #BA0C2F; }
     .ajax-spinner .logoAnimation > div {
       -webkit-animation: rotateLogoSpinner 2s infinite;
@@ -15746,6 +15746,9 @@ body.page-template-home #loading-delay {
   background: #BA0C2F !important;
   z-index: 100001;
   top: 0; }
+
+body:not(.page-template-home) #loading-delay {
+  display: none; }
 
 body.page div.slick-slider .center.slick-initialized.slick-slider {
   height: 70vh;

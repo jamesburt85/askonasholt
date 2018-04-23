@@ -331,7 +331,7 @@ class Walker_Category_Find_Parents extends Walker_Category {
         if( $query->is_main_query() && !$query->is_feed() && !is_admin() && ($query->is_post_type_archive('artists') || $query->is_tax('artist-type')) ) {
             
             $args = ( array(
-            'posts_per_page'    => 4,
+            'posts_per_page'    => 8,
             'meta_key'          => 'last_name',
             'orderby'           => 'meta_value',
             'order'             => 'ASC'
