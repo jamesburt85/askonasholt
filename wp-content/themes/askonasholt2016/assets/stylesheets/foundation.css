@@ -17590,10 +17590,10 @@ path.crescent {
       padding-left: 0;
       padding-right: 0; }
       .more-page-links ul.submenu.page-nav-buttons li.page_item a {
+        display: inline-block;
         color: #B49A81;
         text-transform: uppercase;
         letter-spacing: 1px;
-        width: 100%;
         border: 1px solid #B49A81;
         line-height: 1;
         padding: 1em;
