@@ -9259,6 +9259,62 @@ pre {
 section.container {
   overflow-x: hidden; }
 
+@-webkit-keyframes rotateLogo {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  25% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg); } }
+
+@keyframes rotateLogo {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  25% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg); } }
+
+@-webkit-keyframes rotateLogoSpinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  25% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg); } }
+
+@keyframes rotateLogoSpinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  25% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg); } }
+
 .logoAnimation,
 .logoAnimationH,
 .logoAnimationALeft,
@@ -9330,8 +9386,14 @@ section.container {
         -ms-transform: translate(-50%, -85px);
             transform: translate(-50%, -85px);
     border-color: #BA0C2F; }
-    .ajax-spinner .logoAnimation > div > div {
-      border-color: #BA0C2F; }
+    .ajax-spinner .logoAnimation > div {
+      -webkit-animation: rotateLogoSpinner 2s infinite;
+              animation: rotateLogoSpinner 2s infinite; }
+      .ajax-spinner .logoAnimation > div:first-child {
+        -webkit-animation: rotateLogoSpinner 1.5s infinite;
+                animation: rotateLogoSpinner 1.5s infinite; }
+      .ajax-spinner .logoAnimation > div > div {
+        border-color: #BA0C2F; }
 
 .is-hidden-onload {
   opacity: 0; }
@@ -15676,34 +15738,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 [data-whatinput="mouse"] a:focus, button:focus [data-whatinput="touch"] a:focus, button:focus {
   outline: none; }
-
-@-webkit-keyframes rotateLogo {
-  0% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); }
-  25% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); }
-  50% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); }
-  100% {
-    -webkit-transform: rotate(720deg);
-            transform: rotate(720deg); } }
-
-@keyframes rotateLogo {
-  0% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); }
-  25% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); }
-  50% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); }
-  100% {
-    -webkit-transform: rotate(720deg);
-            transform: rotate(720deg); } }
 
 body.page-template-home #loading-delay {
   position: fixed;

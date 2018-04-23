@@ -4,6 +4,19 @@ section.container {
     overflow-x: hidden;
 }
 
+@keyframes rotateLogo {
+    0% { transform: rotate(360deg); }
+    25% { transform: rotate(360deg); }
+    50% { transform: rotate(360deg); }
+    100% { transform: rotate(720deg); }
+}
+@keyframes rotateLogoSpinner {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(360deg); }
+    50% { transform: rotate(360deg); }
+    100% { transform: rotate(720deg); }
+}
+
 .logoAnimation,
 .logoAnimationH,
 .logoAnimationALeft,
@@ -65,8 +78,16 @@ section.container {
         transform: translate(-50%, -85px);
         border-color: #BA0C2F;
 
-        > div > div {
-            border-color: #BA0C2F;
+        > div {
+            animation: rotateLogoSpinner 2s infinite;
+
+            &:first-child {
+                animation: rotateLogoSpinner 1.5s infinite;
+            }
+
+            > div {
+                border-color: #BA0C2F;
+            }
         }
     }
 }

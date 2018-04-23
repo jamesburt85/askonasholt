@@ -1,10 +1,3 @@
-@keyframes rotateLogo {
-    0% { transform: rotate(360deg); }
-    25% { transform: rotate(360deg); }
-    50% { transform: rotate(360deg); }
-    100% { transform: rotate(720deg); }
-}
-
 //Loading delay screen
 body.page-template-home #loading-delay {
     position: fixed;
