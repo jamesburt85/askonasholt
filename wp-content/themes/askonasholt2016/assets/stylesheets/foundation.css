@@ -9259,6 +9259,65 @@ pre {
 section.container {
   overflow-x: hidden; }
 
+.logoAnimation,
+.logoAnimationH,
+.logoAnimationALeft,
+.logoAnimationARight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.logoAnimation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  border: 2px solid white;
+  border-radius: 50px; }
+
+.logoAnimation > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-animation: rotateLogo 2s infinite;
+          animation: rotateLogo 2s infinite; }
+
+.logoAnimation > div:first-child {
+  -webkit-animation: rotateLogo 1.5s infinite;
+          animation: rotateLogo 1.5s infinite; }
+
+.logoAnimationH {
+  display: inline-block;
+  width: 22.5px;
+  height: 71.25px;
+  border-left: 2px solid #fff;
+  border-right: 2.5px solid #fff; }
+
+.logoAnimationALeft {
+  display: inline-block;
+  width: 19.5px;
+  height: 71.25px;
+  border-left: 2px solid #fff;
+  -webkit-transform: translate(-50%, -50%) rotate(30deg);
+      -ms-transform: translate(-50%, -50%) rotate(30deg);
+          transform: translate(-50%, -50%) rotate(30deg); }
+
+.logoAnimationARight {
+  display: inline-block;
+  width: 0px;
+  height: 72px;
+  border-right: 2px solid #fff;
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+      -ms-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg); }
+
 .ajax-spinner {
   position: absolute;
   bottom: 0;
@@ -9266,11 +9325,12 @@ section.container {
   -webkit-transform: translate(-50%, -100%);
       -ms-transform: translate(-50%, -100%);
           transform: translate(-50%, -100%); }
-  .ajax-spinner .ball-scale-ripple-multiple {
-    -webkit-transform: translateY(-85px);
-        -ms-transform: translateY(-85px);
-            transform: translateY(-85px); }
-    .ajax-spinner .ball-scale-ripple-multiple > div {
+  .ajax-spinner .logoAnimation {
+    -webkit-transform: translate(-50%, -85px);
+        -ms-transform: translate(-50%, -85px);
+            transform: translate(-50%, -85px);
+    border-color: #BA0C2F; }
+    .ajax-spinner .logoAnimation > div > div {
       border-color: #BA0C2F; }
 
 .is-hidden-onload {
@@ -15652,58 +15712,6 @@ body.page-template-home #loading-delay {
   background: #BA0C2F !important;
   z-index: 100001;
   top: 0; }
-  body.page-template-home #loading-delay .logoAnimation,
-  body.page-template-home #loading-delay .logoAnimationH,
-  body.page-template-home #loading-delay .logoAnimationALeft,
-  body.page-template-home #loading-delay .logoAnimationARight {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
-  body.page-template-home #loading-delay .logoAnimation {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    width: 75px;
-    height: 75px;
-    border: 2px solid white;
-    border-radius: 50px; }
-  body.page-template-home #loading-delay .logoAnimation > div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-animation: rotateLogo 2s infinite;
-            animation: rotateLogo 2s infinite; }
-  body.page-template-home #loading-delay .logoAnimation > div:first-child {
-    -webkit-animation: rotateLogo 1.5s infinite;
-            animation: rotateLogo 1.5s infinite; }
-  body.page-template-home #loading-delay .logoAnimationH {
-    display: inline-block;
-    width: 22.5px;
-    height: 71.25px;
-    border-left: 2px solid #fff;
-    border-right: 2.5px solid #fff; }
-  body.page-template-home #loading-delay .logoAnimationALeft {
-    display: inline-block;
-    width: 19.5px;
-    height: 71.25px;
-    border-left: 2px solid #fff;
-    -webkit-transform: translate(-50%, -50%) rotate(30deg);
-        -ms-transform: translate(-50%, -50%) rotate(30deg);
-            transform: translate(-50%, -50%) rotate(30deg); }
-  body.page-template-home #loading-delay .logoAnimationARight {
-    display: inline-block;
-    width: 0px;
-    height: 72px;
-    border-right: 2px solid #fff;
-    -webkit-transform: translate(-50%, -50%) rotate(90deg);
-        -ms-transform: translate(-50%, -50%) rotate(90deg);
-            transform: translate(-50%, -50%) rotate(90deg); }
 
 body.page div.slick-slider .center.slick-initialized.slick-slider {
   height: 70vh;

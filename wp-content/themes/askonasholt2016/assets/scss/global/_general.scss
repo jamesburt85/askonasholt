@@ -4,6 +4,53 @@ section.container {
     overflow-x: hidden;
 }
 
+.logoAnimation,
+.logoAnimationH,
+.logoAnimationALeft,
+.logoAnimationARight {
+    @include center;
+}
+.logoAnimation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);        
+    width: 75px;
+    height: 75px;
+    border: 2px solid white;
+    border-radius: 50px;
+}
+.logoAnimation > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: rotateLogo 2s infinite;
+}
+.logoAnimation > div:first-child {
+    animation: rotateLogo 1.5s infinite;
+}
+.logoAnimationH {
+    display: inline-block;      
+    width: 22.5px;
+    height: 71.25px;
+    border-left: 2px solid #fff;
+    border-right: 2.5px solid #fff;
+}
+.logoAnimationALeft {
+    display: inline-block;
+    width: 19.5px;
+    height: 71.25px;
+    border-left: 2px solid #fff;
+    transform: translate(-50%, -50%) rotate(30deg);
+}
+.logoAnimationARight {
+    display: inline-block;      
+    width: 0px;
+    height: 72px;
+    border-right: 2px solid #fff;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
 // div#page-full-width {
 //     max-width: 57.375rem;
 //     margin: 0 auto;
@@ -14,10 +61,11 @@ section.container {
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -100%);
-    .ball-scale-ripple-multiple {
-        transform: translateY(-85px);
+    .logoAnimation {
+        transform: translate(-50%, -85px);
+        border-color: #BA0C2F;
 
-        > div {
+        > div > div {
             border-color: #BA0C2F;
         }
     }

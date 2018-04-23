@@ -132,11 +132,22 @@ if ( !function_exists('wiaw_universal_ajax')) {
             <div id="ajax-before-me"></div>
 
             <div class="ajax-spinner">
-                <div class="ball-scale-ripple-multiple">
+                <div class="logoAnimation">
+                    <div>
+                        <div class="logoAnimationH"></div>
+                    </div>
+                    <div>
+                    <div class="logoAnimationALeft"></div>
+                    <div class="logoAnimationARight"></div>
+                    </div>
+                </div>
+
+                <!-- <div class="ball-scale-ripple-multiple">
                     <div></div>
                     <div></div>
                     <div></div>
-                </div>                
+                </div> -->
+
                 <!-- <div class="bounce1"></div>
                 <div class="bounce2"></div>
                 <div class="bounce3"></div> -->
