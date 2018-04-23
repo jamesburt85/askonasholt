@@ -16,30 +16,6 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header>
-
-			<!-- <?php 
-				$position = get_field('position');
-				$e_mail = get_field('e-mail');
-				$telephone_number = get_field('telephone_number');
-				$languages = get_field('languages');
-				$position = get_field ('position');
-			?>
-
-			<div class="row single-staff-header">
-				<div class="small-12 medium-2 columns">
-					<?php the_post_thumbnail( 'thumbnail' ); ?>
-				</div>
-
-				<div class="small-12 medium-10 columns">
-					<span class="staff-category"><?php echo wpdocs_custom_taxonomies_terms_links(); ?></span>
-					<h1 class="entry-title serif"><?php the_title(); ?></h1>
-					<?php echo $position; ?><br/>
-					<a href="mailto:<?php echo $e_mail; ?>?Subject=Enquiry" target="_top"><?php echo $e_mail; ?></a><br/>
-					<span><?php echo $telephone_number; ?></span><br/>
-				</div>
-			</div> -->
-			
-			
 			<?php //foundationpress_entry_meta(); ?>
 		</header>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
@@ -127,17 +103,6 @@ get_header(); ?>
 								</div>
 
 							</div>
-						
-			<!-- 					<?php # If the artist has an artist type
-						if ( !empty( $artist_types)): ?>
-							<ul>
-							<?php # Loop through all the artist types for this artist,
-							# - and output them all!
-							foreach ($artist_types as $type): ?>
-								<li><?php echo $type->name ?></li>
-							<?php endforeach ?>
-							</ul>
-						<?php endif ?> -->
 					
 						<?php
 					}
@@ -186,17 +151,6 @@ get_header(); ?>
 								</div>
 
 							</div>
-						
-			<!-- 					<?php # If the artist has an artist type
-						if ( !empty( $artist_types)): ?>
-							<ul>
-							<?php # Loop through all the artist types for this artist,
-							# - and output them all!
-							foreach ($artist_types as $type): ?>
-								<li><?php echo $type->name ?></li>
-							<?php endforeach ?>
-							</ul>
-						<?php endif ?> -->
 					
 						<?php
 					}					

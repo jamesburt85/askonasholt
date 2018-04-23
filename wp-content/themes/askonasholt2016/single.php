@@ -99,9 +99,9 @@ get_header(); ?>
 						}
 
 						$touring_partners = get_field('related_client');
-						//print_r($artist);
+						// print_r($artist);
 
-						print_r($touring_partners);
+						// print_r($touring_partners);
 
 						// Obtain list of columns
 						foreach ($touring_partners as $key => $row) {
@@ -141,7 +141,9 @@ get_header(); ?>
 
 										?>
 										
-										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										<a href="<?php echo $artist_url; ?>">
+											<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										</a>
 										
 										<div class="side-bar-artist-details">
 											<a class="side-bar-link" href="<?php echo $artist_url; ?>">
