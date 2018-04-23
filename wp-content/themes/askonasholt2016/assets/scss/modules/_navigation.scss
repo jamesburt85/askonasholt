@@ -121,7 +121,7 @@
     color: $brand-red;
   }
 
-  .menu a:active, .current-menu-item a {
+  .menu a:active, .current-menu-item > a {
     color: $brand-red !important;
   }
 

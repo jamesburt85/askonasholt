@@ -13,9 +13,11 @@
 		min-height: 132px;
 
 		&.staff-header {
-    		min-height: 220px;
-    		padding: 0.5em 0;
-    		box-sizing: content-box;
+			body:not(.post-type-archive-touring-partners) & {
+    			min-height: 220px;
+    		}    			
+			padding: 0.5em 0;
+			box-sizing: content-box;
 		}
 
 		.read-more {
@@ -201,4 +203,16 @@ body.blog {
 	// }
 }
 
-
+@media screen and (min-width: 40em) {
+	.medium-6:nth-child(2n+1):not(:first-child) {
+	    clear: both;
+	}
+}
+@media screen and (min-width: 64em) {
+	.medium-6:nth-child(2n+1):not(:first-child) {
+	    clear: none;
+	}	
+	.large-3:nth-child(4n+1):not(:first-child) {
+	    clear: both;
+	}
+}

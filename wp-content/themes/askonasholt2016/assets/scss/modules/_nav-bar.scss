@@ -139,7 +139,9 @@ div#search-toggle {
 	}
 }
 
-.menu .active > a {
+.menu .active > a,
+.post-type-archive-artists .menu-item-27 > a,
+.post-type-archive-tours-projects .menu-item-21295 > a {
 	color: $brand-red;
     background: transparent !important;
 }
@@ -154,7 +156,8 @@ div#search-toggle {
 }
 
 
-.top-bar .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item {
+.top-bar .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item,
+.post-type-archive-artists #menu-item-324635 {
 	background: #da183f !important;
 	a {
 		color: #ffffff !important;

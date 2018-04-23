@@ -9669,7 +9669,7 @@ span.bold {
 .top-bar .menu a:hover {
   color: #BA0C2F; }
 
-.top-bar .menu a:active, .top-bar .current-menu-item a {
+.top-bar .menu a:active, .top-bar .current-menu-item > a {
   color: #BA0C2F !important; }
 
 .top-bar .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item {
@@ -10012,7 +10012,9 @@ div#search-toggle {
   .header-social-area {
     margin-right: 2em; } }
 
-.menu .active > a {
+.menu .active > a,
+.post-type-archive-artists .menu-item-27 > a,
+.post-type-archive-tours-projects .menu-item-21295 > a {
   color: #BA0C2F;
   background: transparent !important; }
 
@@ -10023,9 +10025,11 @@ div#search-toggle {
   color: #BA0C2F !important;
   background: transparent; }
 
-.top-bar .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item {
+.top-bar .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item,
+.post-type-archive-artists #menu-item-324635 {
   background: #da183f !important; }
-  .top-bar .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item a {
+  .top-bar .menu-item.current-menu-item.is-submenu-item.is-dropdown-submenu-item a,
+  .post-type-archive-artists #menu-item-324635 a {
     color: #ffffff !important; }
 
 .input-group {
@@ -10216,7 +10220,8 @@ ul.children {
       ul.children li.current-cat a:active, ul.children li.current-cat a:focus, ul.children li.current-cat a:hover {
         background-color: #BA0C2F; }
 
-body.post-type-archive-artists li.cat-item-all a {
+body.post-type-archive-artists li.cat-item-all a,
+body.blog li.cat-item-all a {
   background-color: #BA0C2F;
   color: #fefefe; }
 
@@ -10309,10 +10314,11 @@ body.post-type-archive-artists li.cat-item-all a {
   .magazine-item .magazine-item-container {
     min-height: 132px; }
     .magazine-item .magazine-item-container.staff-header {
-      min-height: 220px;
       padding: 0.5em 0;
       -webkit-box-sizing: content-box;
               box-sizing: content-box; }
+      body:not(.post-type-archive-touring-partners) .magazine-item .magazine-item-container.staff-header {
+        min-height: 220px; }
     .magazine-item .magazine-item-container .read-more {
       font-weight: bold;
       color: #d7d4c5;
@@ -10437,6 +10443,16 @@ body.blog .archive__load-more a:hover {
     vertical-align: top; }
   body.page-template-home .magazine-item .magazine-date, body.single-artists .magazine-item .magazine-date, body.page-template-home .video-description .magazine-date {
     float: right; } }
+
+@media screen and (min-width: 40em) {
+  .medium-6:nth-child(2n+1):not(:first-child) {
+    clear: both; } }
+
+@media screen and (min-width: 64em) {
+  .medium-6:nth-child(2n+1):not(:first-child) {
+    clear: none; }
+  .large-3:nth-child(4n+1):not(:first-child) {
+    clear: both; } }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
