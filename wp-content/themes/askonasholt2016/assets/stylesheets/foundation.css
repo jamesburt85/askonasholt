@@ -15617,6 +15617,34 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [data-whatinput="mouse"] a:focus, button:focus [data-whatinput="touch"] a:focus, button:focus {
   outline: none; }
 
+@-webkit-keyframes rotateLogo {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  25% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg); } }
+
+@keyframes rotateLogo {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  25% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  50% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg); } }
+
 body.page-template-home #loading-delay {
   position: fixed;
   width: 100vw;
@@ -15624,13 +15652,58 @@ body.page-template-home #loading-delay {
   background: #BA0C2F !important;
   z-index: 100001;
   top: 0; }
-  body.page-template-home #loading-delay .ball-scale-ripple-multiple {
+  body.page-template-home #loading-delay .logoAnimation,
+  body.page-template-home #loading-delay .logoAnimationH,
+  body.page-template-home #loading-delay .logoAnimationALeft,
+  body.page-template-home #loading-delay .logoAnimationARight {
     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
+  body.page-template-home #loading-delay .logoAnimation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 75px;
+    height: 75px;
+    border: 2px solid white;
+    border-radius: 50px; }
+  body.page-template-home #loading-delay .logoAnimation > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-animation: rotateLogo 2s infinite;
+            animation: rotateLogo 2s infinite; }
+  body.page-template-home #loading-delay .logoAnimation > div:first-child {
+    -webkit-animation: rotateLogo 1.5s infinite;
+            animation: rotateLogo 1.5s infinite; }
+  body.page-template-home #loading-delay .logoAnimationH {
+    display: inline-block;
+    width: 22.5px;
+    height: 71.25px;
+    border-left: 2px solid #fff;
+    border-right: 2.5px solid #fff; }
+  body.page-template-home #loading-delay .logoAnimationALeft {
+    display: inline-block;
+    width: 19.5px;
+    height: 71.25px;
+    border-left: 2px solid #fff;
+    -webkit-transform: translate(-50%, -50%) rotate(30deg);
+        -ms-transform: translate(-50%, -50%) rotate(30deg);
+            transform: translate(-50%, -50%) rotate(30deg); }
+  body.page-template-home #loading-delay .logoAnimationARight {
+    display: inline-block;
+    width: 0px;
+    height: 72px;
+    border-right: 2px solid #fff;
+    -webkit-transform: translate(-50%, -50%) rotate(90deg);
+        -ms-transform: translate(-50%, -50%) rotate(90deg);
+            transform: translate(-50%, -50%) rotate(90deg); }
 
 body.page div.slick-slider .center.slick-initialized.slick-slider {
   height: 70vh;

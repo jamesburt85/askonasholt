@@ -19,11 +19,13 @@
 	<body <?php body_class(); ?>>
 		
 		<div id="loading-delay">
-			<div class="loader">
-				<div class="ball-scale-ripple-multiple">
-					<div></div>
-					<div></div>
-					<div></div>
+			<div class="logoAnimation">
+				<div>
+					<div class="logoAnimationH"></div>
+				</div>
+				<div>
+				<div class="logoAnimationALeft"></div>
+				<div class="logoAnimationARight"></div>
 				</div>
 			</div>
 		</div>
