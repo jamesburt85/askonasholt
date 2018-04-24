@@ -16605,7 +16605,8 @@ div#mega-toggle-block-1:after {
   background-size: cover;
   text-align: center;
   border-bottom: 1px solid #cccccc;
-  background: #FBFAF6; }
+  background: #FBFAF6;
+  margin-bottom: 25px; }
   .center-text-hero-header .center-hero-text {
     display: table-cell;
     vertical-align: middle;
@@ -17573,7 +17574,7 @@ path.crescent {
 .more-page-links {
   border-top: 1px solid #cccccc;
   text-align: center;
-  margin: 2em 0; }
+  margin: 2em 0 -34px; }
   .more-page-links ul.submenu.page-nav-buttons {
     list-style-type: none;
     text-align: center; }
@@ -18301,8 +18302,6 @@ a.view-link:hover svg, .side-bar-artist-name:hover svg, a.tours-details-link:hov
       #single-post .main-content {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
-  #single-post article {
-    margin-bottom: 50px; }
 
 div#share-buttons ul {
   list-style: none;
