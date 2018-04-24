@@ -16055,6 +16055,7 @@ div.people-link-item:hover .overlay {
     margin-top: 0;
     margin: 0 auto; }
   body.page-template-home div#video-audio {
+    clear: both;
     margin-top: 50px; } }
 
 .hero-sub-header {

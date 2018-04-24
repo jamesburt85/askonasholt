@@ -315,6 +315,7 @@ div.people-link-item:hover {
 	// }
 	body.page-template-home {
 		div#video-audio {
+			clear: both;
 			margin-top: $sitepadding-large;
 		}
 	}

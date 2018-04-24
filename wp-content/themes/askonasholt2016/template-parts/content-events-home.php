@@ -15,7 +15,7 @@ $the_query = events_do_query( $event_args );
  
 ?>
 
-<div  <?php post_class('blogpost-entry small-12 columns events-listing'); ?>>
+<div <?php post_class('blogpost-entry small-12 columns events-listing'); ?>>
 
 	<div class="entry-content">
 		
@@ -23,8 +23,24 @@ $the_query = events_do_query( $event_args );
 
 		    // The Loop
 		    if ( $the_query->have_posts() ) { ?>
-		    	
+
 		    	<div class="row">
+
+			  	  <div id="events-map" class="acf-map">
+				
+			  	  <?php $i = 0; ?>
+
+				  <?php while ( $the_query->have_posts() ) {
+					$i++;
+			      	$the_query->the_post();
+			      	$map_marker[$i] = get_field('map_location');
+			      	if($map_marker[$i] != $map_marker[$i-1]) {
+			      	  get_template_part( 'template-parts/content-tour-event-location' );
+			      	}
+			      } ?>
+				
+				  </div>
+
 		    	  <div class="small-12 columns">
 		    	    <ul class="accordion" data-accordion data-allow-all-closed="true">
 

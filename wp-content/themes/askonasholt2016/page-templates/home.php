@@ -101,6 +101,7 @@ role="main"> -->
       </svg>
     </a>
   </div>
+</div>  
 <!-- Get Events -->
 <?php 
 
@@ -108,7 +109,6 @@ role="main"> -->
     get_template_part( 'template-parts/content-events-home');  
 
 ?>
-</div>  
 
 <div class="video-audio-area" id="video-audio">
     
