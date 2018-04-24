@@ -18313,6 +18313,7 @@ div#share-buttons ul {
     right: calc(4em - 10px);
     top: calc(21.4em - 10px);
     background: #fefefe;
+    background: rgba(254, 254, 254, 0.5);
     padding: 10px;
     border-radius: 10px; }
     div#share-buttons ul {
