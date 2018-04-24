@@ -70,7 +70,9 @@ get_header(); ?>
 
 										?>
 										
-										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										<a href="<?php echo $artist_url; ?>">
+											<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										</a>
 										
 										<div class="side-bar-artist-details contact">
 											<a class="side-bar-link" href="<?php echo $artist_url; ?>">

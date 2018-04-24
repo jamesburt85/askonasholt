@@ -109,7 +109,9 @@ get_header(); ?>
 
 										?>
 										
-										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										<a href="<?php echo $staff_url; ?>">
+											<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										</a>
 
 										<div class="side-bar-artist-details">
 											<a class="side-bar-link" href="<?php echo $staff_url; ?>">
@@ -189,7 +191,9 @@ get_header(); ?>
 
 										?>
 										
-										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										<a href="<?php echo $artist_url; ?>">
+											<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										</a>
 										
 										<div class="side-bar-artist-details">
 											<a class="side-bar-link" href="<?php echo $artist_url; ?>">
@@ -266,7 +270,9 @@ get_header(); ?>
 
 										?>
 										
-										<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										<a href="<?php echo $artist_url; ?>">
+											<img class="circle-thumb" src="<?php echo $thumb_url ?>">
+										</a>
 										
 										<div class="side-bar-artist-details">
 											<a class="side-bar-link" href="<?php echo $artist_url; ?>">
