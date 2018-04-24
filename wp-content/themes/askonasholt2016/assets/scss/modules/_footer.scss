@@ -81,18 +81,14 @@ article#widget_text {
 // Footer Media Queries*
 //**********************
 
-@include breakpoint(small only) {
-  #footer-container, .textwidget, .widget_nav_men {
-    text-align: center;
-  }
-  article {
-    margin: $sitepadding-small 0;
-  }
-}
-
 @include breakpoint(medium down) {
   #footer-container, .textwidget, .widget_nav_men {
     text-align: center;
+  }
+  #footer-container {
+    article {
+      margin: $sitepadding-small 0;
+    }
   }
 }
 
