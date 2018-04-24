@@ -9844,7 +9844,11 @@ article#widget_text div.text-widget ul li {
   article {
     margin: 12.5px 0; } }
 
-@media screen and (min-width: 40em) {
+@media screen and (max-width: 63.9375em) {
+  #footer-container, .textwidget, .widget_nav_men {
+    text-align: center; } }
+
+@media screen and (min-width: 64em) {
   #footer-container .column:last-child:not(:first-child), #footer-container .columns:last-child:not(:first-child), #footer-container .columns:last-child:not(:first-child) {
     text-align: right; }
   #footer-container li:not(:last-child) {
