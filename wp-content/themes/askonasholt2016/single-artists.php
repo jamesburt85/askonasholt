@@ -385,6 +385,20 @@ get_header(); ?>
 
 		        </div>
 
+			  	  <div id="events-map" class="acf-map">
+				
+			  	  <?php $i = 0; ?>
+
+				  <?php while ( $the_query->have_posts() ) {
+					$i++;
+			      	$the_query->the_post();
+			      	$map_marker[$i] = get_field('map_location');
+			      	if($map_marker[$i] != $map_marker[$i-1]) {
+			      	  get_template_part( 'template-parts/content-tour-event-location' );
+			      	}
+			      } ?>
+				
+				  </div>
 
 		    	  <div class="small-12 columns"><!-- Show for large -->
 		    	    <ul class="accordion" data-accordion data-allow-all-closed="true"><!-- Show for large -->
