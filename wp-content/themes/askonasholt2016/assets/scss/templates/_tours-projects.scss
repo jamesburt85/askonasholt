@@ -7,7 +7,14 @@
 .single-touring-partners, .single-artists {
   div#intro {
     h4.section-header {
-        padding: 0;
+      padding: 0;
+
+      @include breakpoint(small only) {
+        padding-top: $sitepadding;
+      }
+      @include breakpoint(medium down) {
+        padding-bottom: $sitepadding-small;
+      }
     }
   }
 }

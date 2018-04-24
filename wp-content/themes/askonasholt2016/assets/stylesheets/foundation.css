@@ -18328,6 +18328,12 @@ div#share-buttons ul {
 
 .single-touring-partners div#intro h4.section-header, .single-artists div#intro h4.section-header {
   padding: 0; }
+  @media screen and (max-width: 39.9375em) {
+    .single-touring-partners div#intro h4.section-header, .single-artists div#intro h4.section-header {
+      padding-top: 25px; } }
+  @media screen and (max-width: 63.9375em) {
+    .single-touring-partners div#intro h4.section-header, .single-artists div#intro h4.section-header {
+      padding-bottom: 12.5px; } }
 
 .single-tours-projects .tour-hero {
   position: relative;
