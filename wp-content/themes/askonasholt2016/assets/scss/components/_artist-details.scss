@@ -298,6 +298,11 @@ div.people-link-item:hover {
 	}
 }
 
+body.page-template-home {
+	div#video-audio {
+		clear: both;
+	}
+}
 
 @include breakpoint(medium) {
 	.single-clients {
@@ -315,7 +320,6 @@ div.people-link-item:hover {
 	// }
 	body.page-template-home {
 		div#video-audio {
-			clear: both;
 			margin-top: $sitepadding-large;
 		}
 	}
