@@ -335,6 +335,11 @@ span.more-info {
       // text-align: center;
       padding-left: 0.5rem;
       padding-right: 3.5rem;
+
+      .event-detail:last-child {
+        margin-right: -3rem;
+      }
+
       .side-bar-artist-details {
         text-align: left;   
       }

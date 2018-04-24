@@ -18554,6 +18554,8 @@ span.more-info {
     font-size: 19px;
     padding-left: 0.5rem;
     padding-right: 3.5rem; }
+    .event-listing-details .event-detail:last-child {
+      margin-right: -3rem; }
     .event-listing-details .side-bar-artist-details {
       text-align: left; }
   a.view-link {
