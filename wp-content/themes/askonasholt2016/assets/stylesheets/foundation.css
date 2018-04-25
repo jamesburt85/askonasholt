@@ -14,6 +14,7 @@
  * Licensed under MIT Open Source
  */
 @import url("//hello.myfonts.net/count/328e32");
+@import url("//hello.myfonts.net/count/362236");
 #wpadminbar {
   position: fixed !important; }
 
@@ -9497,11 +9498,11 @@ body.search .blogpost-entry {
   display: inline; }
 
 .hero-heading {
-  font-family: "GeometricSlab703BT-Light";
+  font-family: "GeometricSlab703TL-Light";
   margin-bottom: 0; }
 
 .serif {
-  font-family: "GeometricSlab703BT-Light"; }
+  font-family: "GeometricSlab703TL-Light"; }
 
 p {
   font-size: 1.15rem; }
@@ -9602,6 +9603,11 @@ span.bold {
   font-family: 'GeometricSlab703BT-Light';
   src: url("webfonts/328E32_0_0.eot");
   src: url("webfonts/328E32_0_0.eot?#iefix") format("embedded-opentype"), url("webfonts/328E32_0_0.woff2") format("woff2"), url("webfonts/328E32_0_0.woff") format("woff"), url("webfonts/328E32_0_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'GeometricSlab703TL-Light';
+  src: url("webfonts/362236_1_0.eot");
+  src: url("webfonts/362236_1_0.eot?#iefix") format("embedded-opentype"), url("webfonts/362236_1_0.woff2") format("woff2"), url("webfonts/362236_1_0.woff") format("woff"), url("webfonts/362236_1_0.ttf") format("truetype"); }
 
 @media screen and (min-width: 40em) {
   .valign-middle {
@@ -10118,7 +10124,7 @@ div#search-toggle {
     display: table-cell;
     vertical-align: middle; }
   .filtering-block .hero-heading {
-    font-family: "GeometricSlab703BT-Light"; }
+    font-family: "GeometricSlab703TL-Light"; }
   .filtering-block header.filter-header {
     margin: 0 auto;
     width: 95%;
@@ -16073,7 +16079,7 @@ span.hero-blurb p {
   color: white;
   font-size: 35px;
   padding: 11px;
-  font-family: "GeometricSlab703BT-Light"; }
+  font-family: "GeometricSlab703TL-Light"; }
 
 .hero-copy {
   color: white;
@@ -16158,7 +16164,7 @@ body.single-artists i.fa.fa-angle-right.slick-arrow {
       font-size: 22px;
       line-height: 1.7; }
       .text-banner-wrapper .text-banner .text-banner-area .banner-copy h4 {
-        font-family: "GeometricSlab703BT-Light";
+        font-family: "GeometricSlab703TL-Light";
         font-size: 40px; }
       .text-banner-wrapper .text-banner .text-banner-area .banner-copy p {
         text-align: left; }
