@@ -3,6 +3,10 @@
 	height: 400px;
 	border: #ccc solid 1px;
 	margin: 20px 0;
+
+	&#events-map {
+		margin-top: 0;
+	}
 }
 
 /* fixes potential theme css conflict */

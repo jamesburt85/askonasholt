@@ -24893,7 +24893,7 @@ function new_map( $el, showflightpath ) {
 *  @return  n/a
 */
 
-
+var infowindow = null;
 
 function add_marker( $marker, map ) {
 
@@ -24917,13 +24917,17 @@ function add_marker( $marker, map ) {
   // if marker contains HTML, add it to an infoWindow
   if( $marker.html() )
   {
-    // create info window
-    var infowindow = new google.maps.InfoWindow({
-      content   : $marker.html()
-    });
 
     // show info window when marker is clicked
     google.maps.event.addListener(marker, 'click', function() {
+
+      if (infowindow) {
+        infowindow.close();
+      }
+      // create info window
+      infowindow = new google.maps.InfoWindow({
+        content   : $marker.html()
+      });
 
       infowindow.open( map, marker );
 

@@ -10905,6 +10905,8 @@ header h1 {
   height: 400px;
   border: #ccc solid 1px;
   margin: 20px 0; }
+  .acf-map#events-map {
+    margin-top: 0; }
 
 /* fixes potential theme css conflict */
 .acf-map img {
