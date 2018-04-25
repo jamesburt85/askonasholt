@@ -9430,14 +9430,14 @@ p.byline.author {
       display: block; } }
 
 #cookie-notice .button.bootstrap, #cookie-notice .artist-categories li a.bootstrap, .artist-categories li #cookie-notice a.bootstrap {
-  background-color: #ffffff;
-  background-image: none;
-  color: #BA0C2F; }
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #BA0C2F !important; }
 
 #cookie-notice .button.bootstrap:hover, #cookie-notice .artist-categories li a.bootstrap:hover, .artist-categories li #cookie-notice a.bootstrap:hover {
-  background-color: #ffffff;
-  background-image: none;
-  color: #BA0C2F; }
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #BA0C2F !important; }
 
 #single-post .main-content {
   padding-left: 0 !important;
@@ -9906,6 +9906,7 @@ body.search-bar-is-visible form#searchform {
 
 ul.ui-autocomplete {
   margin: 0;
+  padding: 0;
   opacity: 0.9;
   width: calc(50vw + 77px) !important;
   left: 50% !important;

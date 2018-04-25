@@ -147,15 +147,15 @@ p.byline.author { display: none; }
 }
 
 #cookie-notice .button.bootstrap {
-    background-color: #ffffff;
-    background-image: none;
-    color: $brand-red;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: $brand-red !important;
 }
 
 #cookie-notice .button.bootstrap:hover {
-    background-color: #ffffff;
-    background-image: none;
-    color: $brand-red;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: $brand-red !important;
 }
 
 //remove padding as 'columns' will add this
