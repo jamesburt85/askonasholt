@@ -16,7 +16,7 @@ function events_set_default_args( $page = '' ){
     
     return [
         'page_number' => 1,
-        'per_page'  => 20,
+        'per_page'  => -1,
         'date_type' => 'today',
         'date'  => date('Ymd'), 
         'location' => '',

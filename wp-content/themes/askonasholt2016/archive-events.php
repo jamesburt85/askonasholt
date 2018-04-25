@@ -65,7 +65,7 @@ get_header(); ?>
                                 <select id="date_type" name="date_type">
                                     <option value="today">Today</option>
                                     <option value="this_week">This Week</option>
-                                    <option value="this_month">This Month</option>
+                                    <!-- <option value="this_month">This Month</option> -->
                                     <option value="date" id="date_display" >Specific Day...</option>
                                 </select>
                             </div>
