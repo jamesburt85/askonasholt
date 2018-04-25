@@ -20,3 +20,8 @@
 	margin: 50px auto
 }
 
+.marker-container {
+	.side-bar-artist + .side-bar-artist {
+		margin-top: 10px;
+	}
+}

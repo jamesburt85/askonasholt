@@ -34,7 +34,7 @@
 
 <div class="marker" data-lat="<?php echo $map_location['lat']; ?>" data-lng="<?php echo $map_location['lng']; ?>">
 
-  <div class="simple-listing">
+  <div class="marker-container">
     <span class="event-detail"><?php echo $date; ?></span>
     <span class="event-detail"><?php echo $time; ?></span>                  
     <div>
