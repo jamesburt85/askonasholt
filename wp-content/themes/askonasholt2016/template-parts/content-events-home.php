@@ -81,10 +81,8 @@ $the_query = events_do_query( $event_args );
 		                    <span class="event-detail"><?php echo $time; ?></span>                  
 		                    <div>
 		                      <?php get_template_part( 'template-parts/event-related-artist' ); ?>
-		                    </div>
-		                    <div>
 		                      <?php get_template_part( 'template-parts/event-related-touring-partners' ); ?>
-		                    </div>		                    
+		                    </div>
 		                    <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
 		                  </div>
 		                  

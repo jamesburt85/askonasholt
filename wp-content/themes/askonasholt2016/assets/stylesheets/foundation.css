@@ -9334,8 +9334,8 @@ section.container {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 75px;
-  height: 75px;
+  width: 76px;
+  height: 76px;
   border: 2px solid white;
   border-radius: 50px; }
 
@@ -9352,15 +9352,15 @@ section.container {
 
 .logoAnimationH {
   display: inline-block;
-  width: 22.5px;
-  height: 71.25px;
+  width: 24px;
+  height: 72px;
   border-left: 2px solid #fff;
-  border-right: 2.5px solid #fff; }
+  border-right: 2px solid #fff; }
 
 .logoAnimationALeft {
   display: inline-block;
-  width: 19.5px;
-  height: 71.25px;
+  width: 20px;
+  height: 72px;
   border-left: 2px solid #fff;
   -webkit-transform: translate(-50%, -50%) rotate(30deg);
       -ms-transform: translate(-50%, -50%) rotate(30deg);
@@ -9383,10 +9383,12 @@ section.container {
       -ms-transform: translate(-50%, -100%);
           transform: translate(-50%, -100%); }
   .ajax-spinner .logoAnimation {
-    -webkit-transform: translate(-50%, -98px);
-        -ms-transform: translate(-50%, -98px);
-            transform: translate(-50%, -98px);
-    border-color: #BA0C2F; }
+    -webkit-transform: translate(-50%, -85.5px);
+        -ms-transform: translate(-50%, -85.5px);
+            transform: translate(-50%, -85.5px);
+    border-color: #BA0C2F;
+    width: 50px;
+    height: 50px; }
     .ajax-spinner .logoAnimation > div {
       -webkit-animation: rotateLogoSpinner 2s infinite;
               animation: rotateLogoSpinner 2s infinite; }
@@ -9395,6 +9397,14 @@ section.container {
                 animation: rotateLogoSpinner 1.5s infinite; }
       .ajax-spinner .logoAnimation > div > div {
         border-color: #BA0C2F; }
+    .ajax-spinner .logoAnimation .logoAnimationH {
+      width: 16px;
+      height: 46px; }
+    .ajax-spinner .logoAnimation .logoAnimationALeft {
+      width: 14px;
+      height: 46px; }
+    .ajax-spinner .logoAnimation .logoAnimationARight {
+      height: 46px; }
 
 .is-hidden-onload {
   opacity: 0; }
@@ -9813,6 +9823,8 @@ ul.dropdown.menu.vertical.submenu.is-dropdown-submenu.first-sub:before {
       line-height: 1; }
       #footer-container #footer li a {
         padding: 0; }
+        #footer-container #footer li a:last-child i {
+          padding-right: 0; }
     #footer-container #footer li {
       padding: 0 0 1rem 0 !important; }
     #footer-container #footer h6 {
@@ -10014,6 +10026,8 @@ div#search-toggle {
   position: absolute;
   right: 0;
   top: 30px; }
+  body.logged-in .header-social-area {
+    top: 62px; }
 
 @media screen and (min-width: 40em) {
   .header-social-area {
@@ -10239,8 +10253,9 @@ body.blog li.cat-item-all a {
     width: 100%; }
     ul.artist-categories li a,
     ul.children li a {
+      margin-bottom: 2px;
       padding: 0.85em 0.5em;
-      font-size: 10px; }
+      font-size: 11px; }
   h2.hero-heading {
     font-size: 2rem; } }
 
@@ -10907,6 +10922,8 @@ header h1 {
   margin: 20px 0; }
   .acf-map#events-map {
     margin-top: 0; }
+  .acf-map .marker {
+    display: none; }
 
 /* fixes potential theme css conflict */
 .acf-map img {
@@ -10918,6 +10935,11 @@ header h1 {
 
 .marker-container .side-bar-artist {
   margin: 5px 0; }
+
+@media screen and (max-width: 39.9375em) {
+  body.single div#single-post .acf-map#events-map {
+    margin-left: -25px;
+    width: calc(100% + 60px); } }
 
 @media screen and (min-width: 40em) {
   .schedule h4.section-header {
@@ -11761,6 +11783,14 @@ ul#example-dropdown {
 
 .press-row.vacancies {
   margin-bottom: 50px; }
+  .press-row.vacancies ul.accordion li.accordion-item .accordion-title {
+    position: relative;
+    padding: 0.5em 8.25em 0.5em 1em;
+    line-height: 40px !important; }
+  .press-row.vacancies span.more-info {
+    top: 10px; }
+  .press-row.vacancies ul.accordion .accordion-content {
+    padding: 0 .5rem .5rem; }
 
 .discography li.accordion-item {
   padding: 25px 0;
@@ -16045,6 +16075,9 @@ div.row.free-text {
   padding: 50px 0;
   border-top: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc; }
+  .clear-section:last-child div.row.free-text {
+    border-bottom: 0;
+    padding-bottom: 0; }
 
 .video-meta {
   text-transform: uppercase;
@@ -16153,7 +16186,7 @@ body.single-artists i.fa.fa-angle-right.slick-arrow {
 .text-banner-wrapper {
   max-width: 100%;
   left: 0;
-  margin: 25px 0;
+  margin: 0 0 12.5px;
   -webkit-background-size: cover;
           background-size: cover;
   background-repeat: no-repeat;
@@ -18167,11 +18200,15 @@ a.view-link:hover svg, .side-bar-artist-name:hover svg, a.tours-details-link:hov
 
 .view-all {
   text-align: right;
-  line-height: 90px;
+  line-height: 85px;
   font-weight: bold;
   font-family: "Brown-Pro-Light", AdobeBlank; }
   .view-all a.view-link {
     color: inherit; }
+
+@media screen and (max-width: 39.9375em) {
+  .view-all {
+    line-height: 75px; } }
 
 #kitchen-sink {
   max-width: 84.375rem;
@@ -18389,12 +18426,6 @@ div#share-buttons ul {
 .single-tours-projects a.slick-slide img {
   padding: 10px; }
 
-.single-tours-projects .side-bar-artist img.circle-thumb {
-  margin-right: 25px; }
-
-.single-tours-projects .side-bar-artist .side-bar-artist-name {
-  font-weight: bold; }
-
 .image-source-link {
   color: #98C3D1; }
 
@@ -18596,6 +18627,10 @@ span.more-info {
 .single-artists .side-bar-artist,
 .single-touring-partners .side-bar-artist {
   padding: 5px 0; }
+
+.single-touring-partners ul.accordion li.accordion-item .accordion-title {
+  position: relative;
+  line-height: 40px !important; }
 
 @media screen and (min-width: 64em) {
   .events-listing span.more-info {

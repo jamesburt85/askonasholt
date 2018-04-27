@@ -39,4 +39,18 @@
 //padding to vacancies accordion on careers page
 .press-row.vacancies {
     margin-bottom: 50px;
+
+    ul.accordion li.accordion-item .accordion-title {
+    	position: relative;
+    	padding: 0.5em 8.25em 0.5em 1em;
+		line-height: 40px !important;
+    }
+
+    span.more-info {
+    	top: 10px;
+    }
+
+    ul.accordion .accordion-content {
+    	padding: 0 .5rem .5rem;
+    }
 }

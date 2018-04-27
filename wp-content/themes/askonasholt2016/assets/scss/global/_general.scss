@@ -28,8 +28,8 @@ section.container {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);        
-    width: 75px;
-    height: 75px;
+    width: 76px;
+    height: 76px;
     border: 2px solid white;
     border-radius: 50px;
 }
@@ -44,15 +44,15 @@ section.container {
 }
 .logoAnimationH {
     display: inline-block;      
-    width: 22.5px;
-    height: 71.25px;
+    width: 24px;
+    height: 72px;
     border-left: 2px solid #fff;
-    border-right: 2.5px solid #fff;
+    border-right: 2px solid #fff;
 }
 .logoAnimationALeft {
     display: inline-block;
-    width: 19.5px;
-    height: 71.25px;
+    width: 20px;
+    height: 72px;
     border-left: 2px solid #fff;
     transform: translate(-50%, -50%) rotate(30deg);
 }
@@ -75,8 +75,10 @@ section.container {
     left: 50%;
     transform: translate(-50%, -100%);
     .logoAnimation {
-        transform: translate(-50%, -98px);
+        transform: translate(-50%, -85.5px);
         border-color: #BA0C2F;
+        width: 50px;
+        height: 50px;
 
         > div {
             animation: rotateLogoSpinner 2s infinite;
@@ -89,6 +91,19 @@ section.container {
                 border-color: #BA0C2F;
             }
         }
+
+        .logoAnimationH {
+            width: 16px;
+            height: 46px;
+        }
+        .logoAnimationALeft {
+            width: 14px;
+            height: 46px;
+        }
+        .logoAnimationARight {
+            height: 46px;
+        }
+
     }
 }
 //hide load more button - visibility rather than display: none; as JS function requires

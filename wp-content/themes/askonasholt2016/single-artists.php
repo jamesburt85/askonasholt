@@ -572,7 +572,7 @@ get_header(); ?>
 
 	
 
-	<div class="row live-events toggleable-area">
+	<div class="row live-events">
 
 		<?php
 		  // Query Args

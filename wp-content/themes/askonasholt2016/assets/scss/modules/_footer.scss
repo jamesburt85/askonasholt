@@ -20,6 +20,10 @@
         line-height: 1;
         a {
           padding: 0;
+
+          &:last-child i {
+            padding-right: 0;
+          }
         }
     }
     //keeps even spacing at top and bottom of footer

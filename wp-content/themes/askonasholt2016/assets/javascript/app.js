@@ -24908,6 +24908,7 @@ function add_marker( $marker, map ) {
   // create marker
   var marker = new google.maps.Marker({
     position  : latlng,
+    icon: '/wp-content/themes/askonasholt2016/assets/images/AH_map_marker.png',
     map     : map
   });
 
@@ -24992,7 +24993,7 @@ function add_flightpath( map ) {
    var flightPath = new google.maps.Polyline({
      path: flightPlanCoordinates,
      geodesic: true,
-     strokeColor: '#FF0000',
+     strokeColor: '#BA0C2F',
      strokeOpacity: 1.0,
      strokeWeight: 2
    });

@@ -78,17 +78,7 @@
           padding: 10px;
       }
   }
-  
-  //related artist details
-  .side-bar-artist {
-      //display: flex;
-      img.circle-thumb {
-          margin-right: $sitepadding;
-      }
-      .side-bar-artist-name {
-        font-weight: bold;
-      }
-  }
+
 }
 
 .image-source-link {
@@ -380,6 +370,13 @@ span.more-info {
 .single-touring-partners {
   .side-bar-artist {
       padding: 5px 0;
+  }
+}
+
+.single-touring-partners {
+  ul.accordion li.accordion-item .accordion-title {
+    position: relative;
+    line-height: 40px !important;
   }
 }
 

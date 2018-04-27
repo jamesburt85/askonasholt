@@ -131,6 +131,10 @@ div#search-toggle {
     position: absolute;
     right: 0;
     top: 30px;
+
+    body.logged-in & {
+    	top: 62px;
+    }
 }
 
 @include breakpoint(medium) {

@@ -35,15 +35,15 @@
 <div class="marker" data-lat="<?php echo $map_location['lat']; ?>" data-lng="<?php echo $map_location['lng']; ?>">
 
   <div class="marker-container">
-    <span class="event-detail"><?php echo $date; ?></span>
-    <span class="event-detail"><?php echo $time; ?></span>                  
     <div>
       <?php get_template_part( 'template-parts/event-related-artist' ); ?>
-    </div>
-    <div>
       <?php get_template_part( 'template-parts/event-related-touring-partners' ); ?>
-    </div>		                    
-    <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
+    </div>
+    <span class="event-detail"><?php echo $date; ?></span>
+    <span class="event-detail"><?php echo $time; ?></span>    
+    <div>
+      <span class="event-detail"><?php echo $venue; ?>,&nbsp;<?php echo $city; ?></span>
+    </div>
   </div>
   
   <div class="accordion-content" data-tab-content>

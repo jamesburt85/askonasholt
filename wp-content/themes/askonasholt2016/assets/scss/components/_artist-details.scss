@@ -274,6 +274,11 @@ div.row.free-text {
     padding: $sitepadding*2 0;
     border-top: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
+
+    .clear-section:last-child & {
+		border-bottom: 0;
+		padding-bottom: 0;    	
+    }
 }
 
 .video-meta {

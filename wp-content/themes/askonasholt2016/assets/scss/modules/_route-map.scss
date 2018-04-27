@@ -7,6 +7,10 @@
 	&#events-map {
 		margin-top: 0;
 	}
+
+	.marker {
+		display: none;
+	}
 }
 
 /* fixes potential theme css conflict */
@@ -23,5 +27,12 @@
 .marker-container {
 	.side-bar-artist {
 		margin: 5px 0;
+	}
+}
+
+@include breakpoint(small only) {
+	body.single div#single-post .acf-map#events-map {
+	    margin-left: -25px;
+	    width: calc(100% + 60px);
 	}
 }

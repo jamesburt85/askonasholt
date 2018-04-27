@@ -230,7 +230,7 @@ a.view-link:hover, .side-bar-artist-name:hover, a.tours-details-link:hover {
 
 .view-all {
     text-align: right;
-    line-height: 90px;
+    line-height: 85px;
     font-weight: bold;
     //line-height: 1;
     font-family: "Brown-Pro-Light", AdobeBlank;
@@ -239,10 +239,8 @@ a.view-link:hover, .side-bar-artist-name:hover, a.tours-details-link:hover {
     }
 }
 
-// @include breakpoint(medium) {
-//   .header-row {
-//       a.view-link {
-//           line-height: 95px;
-//       }
-//   }
-// }
+@include breakpoint(small only) {
+  .view-all {
+    line-height: 75px;
+  }
+}
