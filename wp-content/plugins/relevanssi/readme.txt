@@ -5,7 +5,7 @@ Tags: search, relevance, better search
 Requires at least: 4.0
 Tested up to: 5.0
 Requires PHP: 5.6
-Stable tag: 4.0.7
+Stable tag: 4.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,7 +17,7 @@ Relevanssi replaces the standard WordPress search with a better search engine, w
 
 This is the free version of Relevanssi. There's also Relevanssi Premium, which has added features. For more information about Premium, see [Relevanssi.com](https://www.relevanssi.com/).
 
-Do note that using Relevanssi may require large amounts (hundreds of megabytes) of database space. If your hosting setup has a limited amount of space for database tables, using Relevanssi may cause problems. In those cases use of Relevanssi cannot be recommended.
+Do note that using Relevanssi may require large amounts (hundreds of megabytes) of database space (for a reasonable estimate, multiply the size of your `wp_posts database table by three). If your hosting setup has a limited amount of space for database tables, using Relevanssi may cause problems. In those cases use of Relevanssi cannot be recommended.
 
 = Key features =
 * Search results sorted in the order of relevance, not by date.
@@ -28,6 +28,7 @@ Do note that using Relevanssi may require large amounts (hundreds of megabytes) 
 * Highlight search terms in the documents when user clicks through search results.
 * Search comments, tags, categories and custom fields.
 * Multisite friendly.
+* bbPress support.
 
 = Advanced features =
 * Adjust the weighting for titles, tags and comments.
@@ -43,7 +44,7 @@ Do note that using Relevanssi may require large amounts (hundreds of megabytes) 
 * Disable indexing of post content and post titles with a simple filter hook.
 
 = Premium features (only in Relevanssi Premium) =
-* Indexing PDF content.
+* Indexing attachment content (PDF, Office, Open Office).
 * Improved spelling correction in "Did you mean?" suggestions.
 * Searching across multiple sites in the same multisite installation.
 * Search and index user profiles.
@@ -129,35 +130,61 @@ Each document database is full of useless words. All the little words that appea
 
 == Changelog ==
 
-= 4.0.7 =
-* Recent post bonus is now applied to searches.
-* Exact term setting can now be disabled.
-* Users of Members plugin would have drafts appear in search results. This is now fixed.
+= 4.1.2 =
+* Choosing "CSS Style" for highlighting was not possible. That is now fixed.
+* Gutenberg reusable block indexing was fatally broken with the latest Gutenberg version. That has been updated.
+* Relevanssi now by default respects the WooCommerce "exclude from search" setting.
+* `post__not_in` still didn't work properly, it does now.
+* New filter: `relevanssi_comparison_order` can be used to define the sorting order when sorting the results by post type.
+* "Did you mean" process included a very slow query. It is now cached, leading in some cases to massive performance improvements (we're talking about several seconds here).
+* Highlights inside `code` and similar blocks are handled better now.
 
-= 4.0.6 =
-* Indexing bugs squashed.
-* Missing tag and category weight settings returned.
-* Fusion builder shortcodes are removed from excerpts.
-* MemberPress post control was backwards.
-* User searches page reset buttons fixed.
-* WPML language filter fix.
+= 4.1.1.2 =
+* Fixes the broken User searches page.
 
-= 4.0.5 =
-* Relevanssi code has been reviewed and modified to follow WordPress coding standards. As a result, there have been minor improvements all around the code to make things more robust and secure.
-* Custom field detail is no longer serialized. It's now JSON. If you use custom field detail, rebuild the index and change your code to use json_decode() instead of unserialize().
-* `relevanssi_the_tags()` and `relevanssi_get_the_tags()` now have different set of parameters, more in line with `the_tags()` and `get_the_tags()`.
-* Taxonomy indexing settings were emptied out if you saved another options tab. That is now fixed.
-* Improvements to WPML support; WPML is now less likely to be confused in multisite searches.
-* Updated filter: `relevanssi_search_ok` now gets the WP_Query object as a parameter, which is helpful if you're not using the global $wp_query.
-* ACF Flexible Content field indexing didn't work properly, possibly due to a change in ACF. That should now work better.
+= 4.1.1.1 =
+* Adding the missing Gutenberg compatibility file.
+
+= 4.1.1 =
+* Relevanssi can now index Gutenberg reusable blocks. (This functionality broke once already before release, so that can happen, since Gutenberg is still in very active development.)
+* The `post__in` and `post__not_in` parameters didn't work, and are now fixed. `post_parent__in` and `post_parent__not_in` are also improved.
+* You can use named meta queries for sorting posts. Meta query sorting is improved in other ways as well.
+* Log export didn't work properly.
+* Adding stopwords from the common word list has been fixed.
+* The `relevanssi_get_words_having` filter hook is now also applied to the free version Did you mean queries.
+* New filters: `relevanssi_1day` and `relevanssi_7days` can be used to adjust the number of days for log displays, so instead of 1, 7 and 30 days you can have anything you want.
+
+= 4.1.0.1 =
+* Actually working admin search.
+
+= 4.1 =
+* New feature: You can now export the search log as a CSV file.
+* New feature: Admin Search page allows you to perform searches in WP admin using Relevanssi.
+* New filter: `relevanssi_admin_search_capability` can be used to adjust who sees the admin search page.
+* New filter: `relevanssi_entities_inside_pre` and `relevanssi_entities_inside_code` adjust how HTML entities are handled inside `pre` and `code` tags.
+* Numeric meta values (`meta_value_num`) are now sorted as numbers and not strings.
+* Pinned posts have `$post->relevanssi_pinned` set to 1 for debugging purposes, but you can also use this for styling the posts in the search results templates.
+* The Did you mean feature has been toned down a bit, to make the suggestions slightly less weird in some cases.
+* Post parent parameters now accept 0 as a value, making it easier to search for children of any post or posts without a parent.
+* Polylang compatibility has been improved.
+* Phrases with apostrophes inside work better.
+* The `relevanssi_excerpt` filter hook got a second parameter that holds the post ID.
+* Custom field sorting actually works now.
+* WP Search Suggest compatibility added.
 
 == Upgrade notice ==
 
-= 4.0.7 =
-* Small bug fixes.
+= 4.1.2 =
+* Better compatibility with Gutenberg, new features.
 
-= 4.0.6 =
-* Indexing bugs fixed and WPML support corrected.
+= 4.1.1.2 =
+* Fixes the broken User searches page.
 
-= 4.0.5 =
-* Codebase review, lots of small improvements everywhere.
+= 4.1.1.1 =
+* Adding the missing Gutenberg compatibility file.
+
+= 4.1.1 =
+* Minor improvements here and there, particularly in custom field sorting.
+
+= 4.1 =
+* New features and plenty of small fixes.

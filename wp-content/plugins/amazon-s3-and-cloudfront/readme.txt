@@ -1,61 +1,74 @@
-=== WP Offload S3 Lite ===
-Contributors: bradt, deliciousbrains
-Tags: uploads, amazon, s3, amazon s3, mirror, admin, media, cdn, cloudfront
-Requires at least: 4.6
-Tested up to: 4.9
-Stable tag: 1.3.2
+=== WP Offload Media Lite for Amazon S3 and DigitalOcean Spaces ===
+Contributors: bradt, deliciousbrains, ianmjones
+Tags: uploads, amazon, s3, amazon s3, digitalocean, digitalocean spaces, mirror, admin, media, cdn, cloudfront
+Requires at least: 4.7
+Tested up to: 5.0
+Requires PHP: 5.5
+Stable tag: 2.0.1
 License: GPLv3
 
-Copies files to Amazon S3 as they are uploaded to the Media Library. Optionally configure Amazon CloudFront for faster delivery.
+Copies files to Amazon S3 or DigitalOcean Spaces as they are uploaded to the Media Library. Optionally configure Amazon CloudFront or another CDN for faster delivery.
 
 == Description ==
 
+FORMERLY WP OFFLOAD S3 LITE
+
 https://www.youtube.com/watch?v=_PVybEGaRXc
 
-This plugin automatically copies images, videos, documents, and any other media added through WordPress' media uploader to [Amazon S3](http://aws.amazon.com/s3/). It then automatically replaces the URL to each media file with their respective Amazon S3 URL or, if you have configured [Amazon CloudFront](http://aws.amazon.com/cloudfront/), the respective CloudFront URL. Image thumbnails are also copied to Amazon S3 and delivered through S3/CloudFront.
+This plugin automatically copies images, videos, documents, and any other media added through WordPress' media uploader to [Amazon S3](http://aws.amazon.com/s3/) or [DigitalOcean Spaces](https://www.digitalocean.com/products/spaces/). It then automatically replaces the URL to each media file with their respective Amazon S3 or DigitalOcean Spaces URL or, if you have configured [Amazon CloudFront](http://aws.amazon.com/cloudfront/) or another CDN with or without a custom domain, that URL instead. Image thumbnails are also copied to the bucket and delivered through the correct remote URL.
 
-Uploading files *directly* to your Amazon S3 account is not currently supported by this plugin. They are uploaded to your server first, then copied to Amazon S3. There is an option to automatically remove the files from your server once they are copied to Amazon S3 however.
+Uploading files *directly* to your Amazon S3 or DigitalOcean Spaces account is not currently supported by this plugin. They are uploaded to your server first, then copied to the bucket. There is an option to automatically remove the files from your server once they are copied to the bucket however.
 
-If you're adding this plugin to a site that's been around for a while, your existing media files will not be copied or served from Amazon S3. Only newly uploaded files will be copied and served from Amazon S3. The pro upgrade has an upload tool to handle existing media files.
+If you're adding this plugin to a site that's been around for a while, your existing media files will not be copied to or served from Amazon S3 or DigitalOcean Spaces. Only newly uploaded files will be copied to and served from the bucket. The pro upgrade has an upload tool to handle existing media files.
+
+**Image Optimization**
+
+Although WP Offload Media doesn't include image optimization features, we work closely with the author of [EWWW Image Optimizer](https://wordpress.org/plugins/ewww-image-optimizer/) to ensure they always work well together. Not only do we recommend EWWW Image Optimizer but we officially support its integration with WP Offload Media.
 
 **PRO Upgrade with Email Support and More Features**
 
-* Upload existing Media Library to Amazon S3
-* Control Amazon S3 files from the Media Library
-* [Assets addon](https://deliciousbrains.com/wp-offload-s3/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=assets%2Baddon#addons) - Serve your CSS & JS from Amazon S3/CloudFront
-* [WooCommerce addon](https://deliciousbrains.com/wp-offload-s3/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=woocommerce%2Baddon#addons)
-* [Easy Digital Downloads addon](https://deliciousbrains.com/wp-offload-s3/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=edd%2Baddon#addons)
+* Upload existing Media Library to Amazon S3 or DigitalOcean Spaces
+* Control offloaded files from the Media Library
+* [Assets Pull addon](https://deliciousbrains.com/wp-offload-media/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=assets%2Baddon#addons) - Serve your CSS, JS and fonts via CloudFront or another CDN
+* [WooCommerce integration](https://deliciousbrains.com/wp-offload-media/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=woocommerce%2Baddon#integrations)
+* [Easy Digital Downloads integration](https://deliciousbrains.com/wp-offload-media/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=edd%2Baddon#integrations)
 * PriorityExpert&trade; email support
 
-[Compare pro vs free &rarr;](https://deliciousbrains.com/wp-offload-s3/upgrade/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting)
+[Compare pro vs free &rarr;](https://deliciousbrains.com/wp-offload-media/upgrade/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting)
 
 The video below runs through the pro upgrade features...
 
 https://www.youtube.com/watch?v=55xNGnbJ_CY
 
-*This plugin has been completely rewritten, but was originally a fork of
-[Amazon S3 for WordPress with CloudFront](http://wordpress.org/extend/plugins/tantan-s3-cloudfront/)
-which is a fork of [Amazon S3 for WordPress](http://wordpress.org/extend/plugins/tantan-s3/), also known as tantan-s3.*
-
 == Installation ==
 
-1. Install the required [Amazon Web Services plugin](http://wordpress.org/extend/plugins/amazon-web-services/) using WordPress' built-in installer
-2. Follow the instructions to setup your AWS access keys
-3. Install this plugin using WordPress' built-in installer
-4. Access the *S3 and CloudFront* option under *AWS* and configure
+1. Install this plugin using WordPress' built-in installer
+2. Access the *Offload Media* option under *Settings*
+3. Follow the instructions to set up your AWS or DigitalOcean access keys and configure
+
+Check out the [Quick Start Guide](https://deliciousbrains.com/wp-offload-media/doc/quick-start-guide/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting) for more information on configuring WP Offload Media.
 
 == Frequently Asked Questions ==
 
 = What are the minimum requirements? =
 
-You can see the minimum requirements [here](https://deliciousbrains.com/wp-offload-s3/pricing/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=requirements#requirements).
+You can see the minimum requirements [here](https://deliciousbrains.com/wp-offload-media/pricing/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=requirements#requirements).
+
+= Do you offer email support? =
+
+If you upgrade to the pro version of [WP Offload Media](https://deliciousbrains.com/wp-offload-media/upgrade/?utm_campaign=WP%2BOffload%2BS3&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting), we will gladly provide you with email support. We take pride in delivering exceptional customer support. We do not provide email support for the free version.
 
 == Screenshots ==
 
-1. Choosing/creating a bucket
-2. Settings screen
+1. Select Cloud Storage Provider
+2. Select or Create Bucket
+3. Settings Screen
+3. Custom Domain Used With CDN
 
 == Upgrade Notice ==
+
+= 2.0 =
+This is a major upgrade that introduces support for DigitalOcean Spaces, renames the plugin to WP Offload Media Lite, and coincidentally upgrades some of its database settings. You may not be able to downgrade to WP Offload S3 Lite 1.x after upgrading to WP Offload Media Lite 2.0+.
 
 = 1.1 =
 This is a major change, which ensures S3 URLs are no longer saved in post content. Instead, local URLs are filtered on page generation and replaced with the S3 version. If you depend on the S3 URLs being stored in post content you will need to make modifications to support this version.
@@ -64,6 +77,42 @@ This is a major change, which ensures S3 URLs are no longer saved in post conten
 This version requires PHP 5.3.3+ and the Amazon Web Services plugin
 
 == Changelog ==
+
+= WP Offload Media Lite 2.0.1 - 2018-12-17 =
+* Improvement: Streamlined UI for setting Storage Provider and Bucket
+* Bug fix: On/Off switches in settings look reversed
+* Bug fix: Latest upgrade routine runs on fresh install
+* Bug fix: Defined settings still found in database
+* Bug fix: More Info links in Storage Provider settings incorrect
+* Tested: WordPress 5.0
+
+= WP Offload Media Lite 2.0 - 2018-09-24 =
+* [Release Summary Blog Post](https://deliciousbrains.com/wp-offload-s3-is-now-wp-offload-media-and-adds-support-for-digitalocean-spaces/)
+* New: DigitalOcean Spaces is now supported
+* New: Plugin name updated from WP Offload S3 Lite to WP Offload Media Lite
+* Improvement: More logical UI layout and better description of each setting
+
+= WP Offload S3 Lite 1.4.3 - 2018-08-02 =
+* Bug fix: Images remotely edited via stream wrapper sometimes set as private on S3
+
+= WP Offload S3 Lite 1.4.2 - 2018-07-03 =
+* Bug fix: Error getting bucket region
+* Bug fix: Child themes with missing or broken style.css break diagnostic info
+
+= WP Offload S3 Lite 1.4.1 - 2018-06-21 =
+* Bug fix: Incorrect filesize saved to metadata when image removed from local server
+
+= WP Offload S3 Lite 1.4 - 2018-06-12 =
+* New: Using AWS PHP SDK v3
+* New: Requires PHP 5.5+
+* Improvement: Supported AWS S3 regions updated and names changed to match current AWS nomenclature
+* Bug fix: PHP Warning: Declaration of AS3CF_Stream_Wrapper::register should be compatible with Aws\S3\StreamWrapper::register
+* Bug fix: File size not stored in _wp_attachment_metadata for audio/video files
+* Bug fix: Image srcset uses full size image if metadata size is stored as string
+* Bug fix: PHP Warning: preg_match() expects parameter 2 to be string, array given
+* Bug fix: SQL syntax error when using `attachment_url_to_postid()` with non-ascii file name
+* Tested: WordPress 4.9.6
+* Tested: Gutenberg 3.0
 
 = WP Offload S3 Lite 1.3.2 - 2018-02-22 =
 * Bug fix: Fatal error: Uncaught Error: Call to undefined method Composer\Autoload\ClassLoader::setClassMapAuthoritative()

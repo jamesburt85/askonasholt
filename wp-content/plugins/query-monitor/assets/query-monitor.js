@@ -1,17 +1,8 @@
-/*
-Copyright 2009-2017 John Blackbourn
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-*/
+/**
+ * Front-end functionality for Query Monitor.
+ *
+ * @package query-monitor
+ */
 
 var QM_i18n = {
 
@@ -33,7 +24,7 @@ var QM_i18n = {
 			num_int   = Math.floor( number ),
 			num_str   = num_int.toString(),
 			fraction  = num_float.substring( num_float.indexOf( '.' ) + 1, num_float.length ),
-			o = '';
+			o         = '';
 
 		if ( num_str.length > 3 ) {
 			for ( i = num_str.length; i > 3; i -= 3 ) {
@@ -57,11 +48,11 @@ var QM_i18n = {
 if ( window.jQuery ) {
 
 	jQuery( function($) {
-		var minheight = 100;
-		var maxheight = ( $(window).height() - 50 );
-		var container = $('#query-monitor');
+		var minheight             = 100;
+		var maxheight             = ( $(window).height() - 50 );
+		var container             = $('#query-monitor');
 		var container_storage_key = 'qm-container-height';
-		var container_pinned_key = 'qm-container-pinned';
+		var container_pinned_key  = 'qm-container-pinned';
 
 		if ( $('#query-monitor').hasClass('qm-peek') ) {
 			minheight = 27;
@@ -70,8 +61,17 @@ if ( window.jQuery ) {
 		$('#query-monitor').removeClass('qm-no-js').addClass('qm-js');
 
 		var link_click = function(e){
-			show_panel( $( this ).attr('href') );
+			var href = $( this ).attr('href') || $( this ).data('qm-href');
+			show_panel( href );
+			$(href).focus();
+			$('#wp-admin-bar-query-monitor').removeClass('hover');
 			e.preventDefault();
+		};
+
+		var stripes = function( table ) {
+			table.each(function() {
+				$(this).find('tbody tr').removeClass('qm-odd').not('[class*="qm-hide-"]').filter(':even').addClass('qm-odd');
+			} );
 		};
 
 		var show_panel = function( panel ) {
@@ -84,13 +84,13 @@ if ( window.jQuery ) {
 				container.height( minheight );
 			}
 
-			$('#qm-panel-menu').find('a').removeClass('qm-selected-menu');
-			var selected_menu = $('#qm-panel-menu').find('a[href="' + panel + '"]').addClass('qm-selected-menu');
+			$('#qm-panel-menu').find('button').removeClass('qm-selected-menu');
+			var selected_menu = $('#qm-panel-menu').find('[data-qm-href="' + panel + '"]').addClass('qm-selected-menu');
 
 			if ( selected_menu.length ) {
 				var selected_menu_pos = selected_menu.position();
-				var menu_height = $('#qm-panel-menu').height();
-				var menu_scroll = $('#qm-panel-menu').scrollTop();
+				var menu_height       = $('#qm-panel-menu').height();
+				var menu_scroll       = $('#qm-panel-menu').scrollTop();
 
 				if ( ( selected_menu_pos.top > ( menu_height + menu_scroll ) ) || ( selected_menu_pos.top < menu_scroll ) ) {
 					$('#qm-panel-menu').scrollTop( selected_menu_pos.top - ( menu_height / 2 ) );
@@ -99,11 +99,15 @@ if ( window.jQuery ) {
 
 			$('.qm-title-heading select').val(panel);
 
-			if ( localStorage.getItem( container_pinned_key ) ) {
-				localStorage.setItem( container_pinned_key, panel );
-			}
+			localStorage.setItem( container_pinned_key, panel );
 
-			$( panel ).find('.qm-filter').change();
+			var filters = $( panel ).find('.qm-filter');
+
+			if ( filters.length ) {
+				filters.change();
+			} else {
+				stripes( $(panel).find('table') );
+			}
 
 		};
 
@@ -114,21 +118,19 @@ if ( window.jQuery ) {
 			if ( window.qm && window.qm.menu ) {
 				$('#wp-admin-bar-query-monitor')
 					.addClass(qm.menu.top.classname)
+					.attr('dir','ltr')
 					.find('a').eq(0)
-					.html(qm.menu.top.title)
-				;
+					.html(qm.menu.top.title);
 
 				$.each( qm.menu.sub, function( i, el ) {
 
 					var new_menu = $('#wp-admin-bar-query-monitor-placeholder')
 						.clone()
-						.attr('id','wp-admin-bar-' + el.id)
-					;
+						.attr('id','wp-admin-bar-' + el.id);
 					new_menu
 						.find('a').eq(0)
 						.html(el.title)
-						.attr('href',el.href)
-					;
+						.attr('href',el.href);
 
 					if ( ( typeof el.meta != 'undefined' ) && ( typeof el.meta.classname != 'undefined' ) ) {
 						new_menu.addClass(el.meta.classname);
@@ -150,7 +152,7 @@ if ( window.jQuery ) {
 			$('#qm-overview').addClass('qm-panel-show');
 		}
 
-		$('#qm-panel-menu').find('a').on('click',link_click);
+		$('#qm-panel-menu').find('button').on('click',link_click);
 
 		$('#query-monitor').find('.qm-filter').on('change',function(e){
 
@@ -179,9 +181,9 @@ if ( window.jQuery ) {
 					tr.filter('[data-qm-' + hilite + '*="' + val + '"]').addClass('qm-highlight');
 				}
 				tr.not('[data-qm-' + filter + '*="' + val + '"]').addClass('qm-hide-' + filter);
-				$(this).addClass('qm-highlight');
+				$(this).closest('th').addClass('qm-filtered');
 			} else {
-				$(this).removeClass('qm-highlight');
+				$(this).closest('th').removeClass('qm-filtered');
 			}
 
 			var matches = tr.filter(':visible');
@@ -195,19 +197,20 @@ if ( window.jQuery ) {
 				time = QM_i18n.number_format( time, 4 );
 			}
 
-			var results = table.find('.qm-items-shown');
-			results.find('.qm-items-number').text( QM_i18n.number_format( matches.length, 0 ) );
-			results.find('.qm-items-time').text(time);
-
-			if ( table.find('.qm-filter.qm-highlight').length ) {
-				results.removeClass('qm-hide');
+			if ( table.find('.qm-filtered').length ) {
+				var count = matches.length + ' / ' + tr.length;
 			} else {
-				results.addClass('qm-hide');
+				var count = matches.length;
 			}
+
+			table.find('.qm-items-number').text(count);
+			table.find('.qm-items-time').text(time);
+
+			stripes(table);
 		});
 
 		$('#query-monitor').find('.qm-filter').each(function () {
-			var key = $(this).attr('id');
+			var key   = $(this).attr('id');
 			var value = localStorage.getItem( key );
 			if ( value !== null ) {
 				// Escape the following chars with a backslash before passing into jQ selectors: [ ] ( ) ' " \
@@ -226,13 +229,14 @@ if ( window.jQuery ) {
 			$('#qm-' + target).find('.qm-filter').not('[data-filter="' + filter + '"]').val('').removeClass('qm-highlight').change();
 			$('#qm-' + target).find('[data-filter="' + filter + '"]').val(value).addClass('qm-highlight').change();
 			show_panel( '#qm-' + target );
+			$('#qm-' + target).focus();
 			e.preventDefault();
 		});
 
 		$('#query-monitor').find('.qm-toggle').on('click',function(e){
-			var el = $(this);
+			var el           = $(this);
 			var currentState = el.attr('aria-expanded');
-			var newState = 'true';
+			var newState     = 'true';
 			if (currentState === 'true') {
 				newState = 'false';
 			}
@@ -278,6 +282,16 @@ if ( window.jQuery ) {
 
 		});
 
+		$('.qm').find('tbody a,tbody button').on('focus',function(e){
+			$(this).closest('tr').addClass('qm-hovered');
+		}).on('blur',function(e){
+			$(this).closest('tr').removeClass('qm-hovered');
+		});
+
+		$('#query-monitor').find('.qm table').on('sorted.qm',function(){
+			stripes( $(this) );
+		});
+
 		$( document ).ajaxSuccess( function( event, response, options ) {
 
 			var errors = response.getResponseHeader( 'X-QM-php_errors-error-count' );
@@ -304,8 +318,7 @@ if ( window.jQuery ) {
 					if ( ! qm.ajax_errors[error.type] ) {
 						$('#wp-admin-bar-query-monitor')
 							.addClass('qm-' + error.type)
-							.find('a').first().append('<span class="ab-label qm-ajax-' + error.type + '"> &nbsp; Ajax: ' + error.type + '</span>')
-						;
+							.find('a').first().append('<span class="ab-label qm-ajax-' + error.type + '"> &nbsp; Ajax: ' + error.type + '</span>');
 					}
 				}
 
@@ -317,21 +330,26 @@ if ( window.jQuery ) {
 				console.groupEnd();
 			}
 
+			$( '#qm-ajax-errors' ).show();
+
 			return event;
 
 		} );
 
 		$('.qm-auth').on('click',function(e){
-			var action = $(this).data('action');
+			var state  = $('#qm-settings').data('qm-state');
+			var action = ( 'off' === state ? 'on' : 'off' );
 
 			$.ajax(qm_l10n.ajaxurl,{
 				type : 'POST',
+				context : this,
 				data : {
 					action : 'qm_auth_' + action,
 					nonce  : qm_l10n.auth_nonce[action]
 				},
 				success : function(response){
-					alert( response.data );
+					$(this).text( $(this).data('qm-text-' + action) );
+					$('#qm-settings').attr('data-qm-state',action).data('qm-state',action);
 				},
 				dataType : 'json',
 				xhrFields: {
@@ -383,7 +401,7 @@ if ( window.jQuery ) {
 
 		$(window).on('resize', function(){
 			var maxheight = ( $(window).height() - toolbarHeight );
-			var h = container.height();
+			var h         = container.height();
 
 			if ( h < minheight ) {
 				container.height( minheight );
@@ -395,33 +413,23 @@ if ( window.jQuery ) {
 		});
 
 		$('.qm-button-container-close').click(function(){
-			$('#query-monitor').removeClass('qm-show');
+			$('#query-monitor').removeClass('qm-show').height('');
 			localStorage.removeItem( container_pinned_key );
-			$('.qm-button-container-pin').removeClass( 'qm-button-active' );
 		});
 
-		$('.qm-button-container-pin').click(function(){
-			if ( $(this).hasClass( 'qm-button-active' ) ) {
-				localStorage.removeItem( container_pinned_key );
-			} else {
-				localStorage.setItem( container_pinned_key, '#' + $('.qm-panel-show').first().attr('id') );
-			}
-
-			$(this).toggleClass( 'qm-button-active' );
-		});
-
-		$('.qm-button-container-settings').click(function(){
+		$('.qm-button-container-settings,a[href="#qm-settings"]').click(function(){
 			show_panel( '#qm-settings' );
+			$('#qm-settings').focus();
 		});
 
 		var pinned = localStorage.getItem( container_pinned_key );
 		if ( pinned && $( pinned ).length ) {
 			show_panel( pinned );
-			$('.qm-button-container-pin').addClass( 'qm-button-active' );
 		}
 
 		$('.qm-title-heading select').change(function(){
 			show_panel( $(this).val() );
+			$($(this).val()).focus();
 		});
 
 	} );
@@ -438,11 +446,11 @@ if ( window.jQuery ) {
 	 * Author: Gajus Kuizinas <g.kuizinas@anuary.com>
 	 */
 	(function ($) {
-		$.qm = $.qm || {};
+		$.qm           = $.qm || {};
 		$.qm.tableSort = function (settings) {
 			// @param	object	columns	NodeList table colums.
 			// @param	integer	row_width	defines the number of columns per row.
-			var table_to_array	= function (columns, row_width) {
+			var table_to_array = function (columns, row_width) {
 				columns = Array.prototype.slice.call(columns, 0);
 
 				var rows      = [];
@@ -452,7 +460,7 @@ if ( window.jQuery ) {
 					var row	= [];
 
 					for (var k = 0; k < row_width; k++) {
-						var e = columns[i + k];
+						var e    = columns[i + k];
 						var data = e.dataset.qmSortWeight;
 
 						if (data === undefined) {
@@ -480,24 +488,24 @@ if ( window.jQuery ) {
 				var table = $(this);
 
 				table.find('.qm-sortable-column').on('click', function (e) {
-					var desc = ! $(this).hasClass('qm-sorted-desc');
+					var desc  = ! $(this).hasClass('qm-sorted-desc');
 					var index = $(this).index();
 
-					table.find('thead th').removeClass('qm-sorted-asc qm-sorted-desc');
+					table.find('thead th').removeClass('qm-sorted-asc qm-sorted-desc').attr('aria-sort','none');
 
 					if ( desc ) {
-						$(this).addClass('qm-sorted-desc');
+						$(this).addClass('qm-sorted-desc').attr('aria-sort','descending');
 					} else {
-						$(this).addClass('qm-sorted-asc');
+						$(this).addClass('qm-sorted-asc').attr('aria-sort','ascending');
 					}
 
 					table.find('tbody').each(function () {
-						var tbody = $(this);
-						var rows = this.rows;
-						var columns = this.getElementsByTagName('td');
+						var tbody   = $(this);
+						var rows    = this.rows;
+						var columns = this.querySelectorAll('th,td');
 
 						if (this.data_matrix === undefined) {
-							this.data_matrix = table_to_array(columns, $(rows[0]).find('td').length);
+							this.data_matrix = table_to_array(columns, $(rows[0]).find('th,td').length);
 						}
 
 						var data = this.data_matrix;
@@ -531,6 +539,9 @@ if ( window.jQuery ) {
 
 						table.append(tbody);
 					});
+
+					table.trigger('sorted.qm');
+
 					e.preventDefault();
 				});
 			});
@@ -539,16 +550,25 @@ if ( window.jQuery ) {
 
 }
 
-if ( ( 'undefined' === typeof jQuery ) || ! jQuery ) {
-	window.addEventListener('load', function() {
+window.addEventListener('load', function() {
+	if ( ( 'undefined' === typeof jQuery ) || ! window.jQuery ) {
 		/* Fallback for running without jQuery (`QM_NO_JQUERY`) */
 		document.getElementById( 'query-monitor' ).className += ' qm-broken';
 		console.error( document.getElementById( 'qm-broken' ).textContent );
+
+		if ( 'undefined' === typeof jQuery ) {
+			console.error( 'QM error from JS: undefined jQuery' );
+		}
+
+		if ( ! window.jQuery ) {
+			console.error( 'QM error from JS: no jQuery' );
+		}
+
 		var menu_item = document.getElementById( 'wp-admin-bar-query-monitor' );
 		if ( menu_item ) {
 			menu_item.addEventListener( 'click', function() {
 				document.getElementById( 'query-monitor' ).className += ' qm-show';
 			} );
 		}
-	} );
-}
+	}
+} );

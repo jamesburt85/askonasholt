@@ -6,9 +6,11 @@ import Fetcher from './utils/fetcher';
 		module: 'advanced',
 
 		init: function () {
-			let self           = this,
-				common_form    = $('form[id="advanced-db-settings"], form[id="advanced-general-settings"]'),
-				delete_entries = $('#wphb-db-delete-all, #wphb-db-row-delete');
+			let self                  = this,
+				common_form           = $('form[id="advanced-db-settings"], form[id="advanced-general-settings"]'),
+				system_info_dropdown  = $('#wphb-system-info-dropdown'),
+                hash                    = window.location.hash,
+				delete_entries        = $('#wphb-db-delete-all, #wphb-db-row-delete');
 
 			/**
 			 * Process form submit for advanced tools forms
@@ -25,7 +27,6 @@ import Fetcher from './utils/fetcher';
 				e.preventDefault();
 
 				const spinner = $(this).parent().find('.sui-icon-loader');
-
 				spinner.removeClass('sui-hidden');
 
 				Fetcher.advanced.saveSettings( $(this).serialize(), $(this).attr('id') )
@@ -51,6 +52,42 @@ import Fetcher from './utils/fetcher';
 				$('.schedule-box').toggle();
 			});
 
+            /**
+             * Show initial system information table.
+             */
+            $('#wphb-system-info-php').removeClass('sui-hidden');
+            if ( hash ) {
+            	const system = hash.replace('#','');
+                $('.wphb-sys-info-table').addClass('sui-hidden');
+                $('#wphb-system-info-' + system).removeClass('sui-hidden');
+                system_info_dropdown.val(system).trigger('sui:change');
+			}
+
+            /**
+             * Show/hide system information tables on dropdown change.
+             */
+            system_info_dropdown.change( function(e) {
+            	e.preventDefault();
+            	$('.wphb-sys-info-table').addClass('sui-hidden');
+                $('#wphb-system-info-' + $(this).val()).removeClass('sui-hidden');
+                location.hash = $(this).val();
+            });
+
+			/**
+			 * Paste default values to url strings option.
+			 *
+			 * @since 1.9.0
+			 */
+			$('#wphb-adv-paste-value').on('click', function(e) {
+            	e.preventDefault();
+            	let url_strings = $('textarea[name="url_strings"]');
+            	if ( '' === url_strings.val() ) {
+					url_strings.val( url_strings.attr('placeholder') );
+				} else {
+					url_strings.val( url_strings.val() + '\n' + url_strings.attr('placeholder') );
+				}
+			});
+
 			return this;
 		},
 
@@ -67,9 +104,7 @@ import Fetcher from './utils/fetcher';
 			modal.find( 'p' ).html( dialog );
 			modal.find( '.wphb-delete-db-row' ).attr( 'data-type', type );
 
-            let el = document.getElementById('wphb-database-cleanup-modal');
-            let dia = new A11yDialog(el);
-            dia.show();
+            SUI.dialogs["wphb-database-cleanup-modal"].show();
 		},
 
 		/**
@@ -78,9 +113,7 @@ import Fetcher from './utils/fetcher';
 		 * @param type Data type to delete from db (See data-type element for each row in the code).
 		 */
 		confirmDelete: function ( type ) {
-            let el = document.getElementById('wphb-database-cleanup-modal');
-            let dialog = new A11yDialog(el);
-            dialog.hide();
+            SUI.dialogs["wphb-database-cleanup-modal"].hide();
 
 			let row;
 			let footer = $('.box-advanced-db .sui-box-footer');
@@ -92,13 +125,17 @@ import Fetcher from './utils/fetcher';
 			}
 
 			const spinner = row.find('.sui-icon-loader');
+			const button = row.find('#wphb-db-row-delete');
+			console.log(button);
 
 			spinner.removeClass('sui-hidden');
+            button.addClass('sui-hidden');
 
 			Fetcher.advanced.deleteSelectedData( type )
 				.then( ( response ) => {
-                    WPHB_Admin.notices.show( 'wphb-notice-advanced-tools', true, 'success', response.message );
+                    WPHB_Admin.notices.show( 'wphb-notice-advanced-tools', false, 'success', response.message );
 					spinner.addClass('sui-hidden');
+                    button.removeClass('sui-hidden');
 
 					for ( let prop in response.left ) {
 						if ( 'total' === prop ) {
@@ -113,8 +150,8 @@ import Fetcher from './utils/fetcher';
 					}
 				})
 				.catch( ( error ) => {
-					WPHB_Admin.notices.show( 'wphb-notice-advanced-tools', true, 'error', error );
-					spinner.removeClass('visible');
+					WPHB_Admin.notices.show( 'wphb-notice-advanced-tools', false, 'error', error );
+					spinner.addClass('sui-hidden');
 				});
 		}
 	}

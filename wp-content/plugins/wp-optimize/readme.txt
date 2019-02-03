@@ -3,8 +3,8 @@ Contributors: DavidAnderson, ruhanirabin, DNutbourne, aporter, snightingale
 Donate link: https://david.dw-perspective.org.uk/donate
 Tags: comments, spam, optimize, database, revisions, users, posts, trash, schedule, automatic, clean, phpmyadmin, meta, postmeta, responsive, mobile
 Requires at least: 3.8
-Tested up to: 4.9
-Stable tag: 2.2.3
+Tested up to: 5.0
+Stable tag: 2.2.11
 License: GPLv2+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,11 @@ When you use this plugin for the first time or just updated to major version, ma
 <strong>Seamless Graphical User Interface:</strong> for superb clarity in scheduling and managing of multi-site optimizations.
 
 <strong>WP-CLI support:</strong> provides a way to manage optimizations from command-line interface.
+
+<strong>Lazy Loading:</strong> lazy loading is the technique of only loading parts of a web-page when it is visible to the user.
+
+
+<strong>Optimization Preview:</strong> gives users the ability to preview, select and remove data and records available for optimization from the database.
 
 = Translations =
 
@@ -138,11 +143,75 @@ Please check your database for corrupted tables. That can happen, usually your w
 
 == Changelog ==
 
+= 2.2.11 - 16/Jan/2019 =
+
+* FIX: A regression in the "identify table by owner" feature caused optimizing to silently fail on some tables
+* TWEAK: Added ability to exclude lazy load images by class
+
+= 2.2.10 - 11/Jan/2019 =
+
+* FEATURE: Added the ability to download unused images list (Premium version) as a CSV file
+* FIX: Load scripts and styles only on WP-Optimize pages
+* FIX: Fix a possible fatal error due to missing get_plugins() function
+* TWEAK: Remember selected optimizations on Database page
+* TWEAK: Prevent PHP notices when saving settings or optimizing in some circumstances
+
+= 2.2.9 - 03/Jan/2019 =
+
+* FIX: Change a newly-introduced fragment that was not compatible with PHP 5.2
+* TWEAK: Tweak some other code that had PHP 5.2 compatibility issues
+
+= 2.2.7 - 31/December/2018 =
+
+* RE-FACTOR: Refactoring and reorganisation of the UI
+* TWEAK: Added feature to view unused images as list
+* TWEAK: Fix sorting sizes columns in Tables information to take into account textual modifiers
+* FIX: MetaSlider images detected as unused
+* FIX: Preview for Trashed posts optimization doesn't work
+* FIX: Unselected optimizations could be run on a scheduled run
+
+= 2.2.6 - 30/October/2018 =
+
+* FEATURE: Added Gzip compression support
+* FIX: Unexpected content in the footer after preview popup closed
+* TWEAK: Mark as supporting WordPress 5.0
+* TWEAK: Update seasonal notices
+* TWEAK: Removed redundant checkbox for Lazy Loading settings
+* FEATURE: Remove orphaned database tables, and identify (many) known tables by plugin.
+
+= 2.2.5 - 24/August/2018 =
+
+* FEATURE: Preview data before deleting. (Premium)
+* FEATURE: Lazy Loading for images, iframes and videos. (Premium)
+* FEATURE: Added custom capabilities wpo_prevent_run_optimizations and wpo_prevent_manage_options (Premium)
+* FIX: Correct tables order sorting
+* FIX: Wrong numbers in total cleaned field
+* FIX: Don't show incorrect overhead value if option innodb_file_per_table disabled
+* TWEAK: Added option to clean "all" transient options and network-wide transient options for multisite WordPress installation
+* TWEAK: Links to UpdraftPlus automatically Install/Activate UpdraftPlus plugin
+* TWEAK: FAQ links point to getwpo.com
+* TWEAK: Auto-draft, revision posts and pingback comments removing with their meta data
+* TWEAK: Scheduler is not using the WordPress timezone settings
+* TWEAK: Detecting corrupted tables in background.
+* TWEAK: Unused Images optimization correctly detects images in pages built with popular plugins - Page Builder by SiteOrigin, Visual Composer, Beaver Builder, Elementor.
+* TWEAK: Paginate unused images
+* TWEAK: Added checkbox for select all optimizations
+* TWEAK: Prevent deleting homepage images in image optimization
+* TWEAK: Override the default multisite site list fetch limit of 100 sites
+
+= 2.2.4 - 07/May/2018 =
+
+* TWEAK: Changed the term 'Automatic' to 'Scheduled'.
+* TWEAK: Show correct table type for views
+* TWEAK: Fixed string spelling and syntax errors
+* TWEAK: Disabled Simple History logging option if plugin is not installed.
+* TWEAK: Prevented PHP notices in repair tables functionality
+
 = 2.2.3 - 04/Apr/2018 =
 
 * FEATURE: Added the ability to repair corrupted database tables
 * FIX: Fixed dismiss notices functionality
-* FIX: When detecting potentially unused images, exclude those found mentionned in the options table(s)
+* FIX: When detecting potentially unused images, exclude those found mentioned in the options table(s)
 * TWEAK: Load WPO translations (logger classes info included) when template is pulled for UpdraftCentral-WPO module
 * TWEAK: Add get_js_translation command for the UpdraftCentral WPO module
 * TWEAK: Added logging for fatal errors
@@ -397,4 +466,4 @@ Please check your database for corrupted tables. That can happen, usually your w
 * Fix Interface
 
 == Upgrade Notice ==
-* 2.2.3 : 2.2 has lots of new features, tweaks and fixes; including the introduction of a Premium version with even more features. 2.2.3 adds a feature for detecting and fixing MySQL corruption, plus some fixes and tweaks.
+* 2.2.11 : Fix a silent failure in optimization for some tables. A recommended update for all.

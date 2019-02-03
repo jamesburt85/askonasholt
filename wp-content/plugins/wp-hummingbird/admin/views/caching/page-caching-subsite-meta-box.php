@@ -4,8 +4,9 @@
  *
  * @package Hummingbird
  *
- * @var string        $deactivate_url  Deactivate URL.
- * @var bool|WP_Error $error           Error if present.
+ * @var string        $deactivate_url    Deactivate URL.
+ * @var bool|WP_Error $error             Error if present.
+ * @var bool          $can_deactivate    Is deactivating page caching on subsites enabled.
  */
 
 ?>
@@ -23,6 +24,27 @@
 	<?php endif; ?>
 </div><!-- end row -->
 
+<div class="sui-box-settings-row">
+	<div class="sui-box-settings-col-1">
+		<span class="sui-settings-label"><?php esc_html_e( 'Cache Control', 'wphb' ); ?></span>
+		<span class="sui-description">
+			<?php esc_html_e( 'By default your subsite inherits your network admin’s cache settings.', 'wphb' ); ?>
+		</span>
+	</div>
+	<div class="sui-box-settings-col-2">
+		<span class="sui-description">
+				<?php
+				/* translators: %s: code snippet. */
+				printf(
+					__( 'For any pages/post/post types/taxonomies you don’t want to cache, use the <code>%s</code> constant to instruct Hummingbird not to cache specific pages or templates.', 'wphb' ),
+					esc_attr( 'define(\'DONOTCACHEPAGE\', true);', 'wphb' )
+				);
+				?>
+		</span>
+	</div>
+</div>
+
+<?php if ( $can_deactivate ) : ?>
 	<div class="sui-box-settings-row">
 		<div class="sui-box-settings-col-1">
 			<span class="sui-settings-label"><?php esc_html_e( 'Deactivate', 'wphb' ); ?></span>
@@ -39,3 +61,4 @@
 			</span>
 		</div>
 	</div>
+<?php endif; ?>

@@ -31,7 +31,7 @@ class WP_Hummingbird_Settings {
 	 *
 	 * @var array
 	 */
-	private static $network_modules = array( 'minify', 'page_cache', 'performance' );
+	private static $network_modules = array( 'minify', 'page_cache', 'performance', 'advanced' );
 
 	/**
 	 * Return the plugin instance.
@@ -58,10 +58,11 @@ class WP_Hummingbird_Settings {
 	 */
 	public static function get_default_settings() {
 		$defaults = array(
-			'minify' => array(
+			'minify'      => array(
 				'enabled'     => false,
-				'use_cdn'     => false,
+				'use_cdn'     => true,
 				'log'         => false,
+				'file_path'   => '',
 				// Only for multisites. Toggles minification in a subsite
 				// By default is true as if 'minify'-'enabled' is set to false, this option has no meaning.
 				'minify_blog' => true,
@@ -71,7 +72,7 @@ class WP_Hummingbird_Settings {
 					'scripts' => array(),
 					'styles'  => array(),
 				),
-				'dont_minify' => array(
+				'minify'      => array(
 					'scripts' => array(),
 					'styles'  => array(),
 				),
@@ -93,28 +94,34 @@ class WP_Hummingbird_Settings {
 				),
 			),
 			'uptime'      => array(
+				'enabled'       => false,
+				'notifications' => array(
+					'enabled' => false,
+				),
+				'reports'       => array(
+					'enabled' => false,
+				),
+			),
+			'gravatar'    => array(
 				'enabled' => false,
 			),
-			'gravatar' => array(
-				'enabled'    => false,
-			),
 			'page_cache'  => array(
-				'enabled'    => false,
+				'enabled'      => false,
 				// Only for multisites. Toggles page caching in a subsite
 				// By default is true as if 'page_cache'-'enabled' is set to false, this option has no meaning.
-				'cache_blog' => true,
-				'control'    => false,
-				// Accepts: 'manual', 'auto' and 'none'.
-				'detection'  => 'manual',
+				'cache_blog'   => true,
+				'control'      => false,
+				'detection'    => 'manual', // Accepts: manual, auto and none.
+				'pages_cached' => 0,
 			),
-			'caching' => array(
+			'caching'     => array(
 				// Always enabled, so no 'enabled' option.
 				'expiry_css'        => '8d/A691200',
 				'expiry_javascript' => '8d/A691200',
 				'expiry_media'      => '8d/A691200',
 				'expiry_images'     => '8d/A691200',
 			),
-			'cloudflare' => array(
+			'cloudflare'  => array(
 				'enabled'      => false,
 				'connected'    => false,
 				'email'        => '',
@@ -129,27 +136,20 @@ class WP_Hummingbird_Settings {
 				'reports'       => false,
 				'subsite_tests' => false,
 				'dismissed'     => false,
-				'last_score'    => '',
+				'last_score'    => 0,
 			),
-			'advanced' => array(
+			'advanced'    => array(
 				'query_string' => false,
 				'emoji'        => false,
-				'prefetch'     => array(
-					'//fonts.googleapis.com',
-					'//fonts.gstatic.com',
-					'//ajax.googleapis.com',
-					'//apis.google.com',
-					'//google-analytics.com',
-					'//www.google-analytics.com',
-					'//ssl.google-analytics.com',
-					'//youtube.com',
-					'//s.gravatar.com',
-				),
+				'prefetch'     => array(),
 				'db_cleanups'  => false,
 			),
-			'rss' => array(
+			'rss'         => array(
 				'enabled'  => true,
 				'duration' => 3600,
+			),
+			'settings'    => array(
+				'accessible_colors' => false,
 			),
 		);
 
@@ -175,9 +175,10 @@ class WP_Hummingbird_Settings {
 		}
 
 		$options = array(
-			'minify'      => array( 'minify_blog', 'view', 'block', 'dont_minify', 'combine', 'position', 'defer', 'inline' ),
+			'minify'      => array( 'minify_blog', 'view', 'block', 'minify', 'combine', 'position', 'defer', 'inline' ),
 			'page_cache'  => array( 'cache_blog' ),
 			'performance' => array( 'dismissed', 'last_score' ),
+			'advanced'    => array( 'query_string', 'emoji', 'prefetch' ),
 		);
 
 		return $options[ $module ];
@@ -193,7 +194,8 @@ class WP_Hummingbird_Settings {
 	 * @return array
 	 */
 	private static function filter_multisite_options( $options ) {
-		$network_options = $blog_options = array();
+		$network_options = array();
+		$blog_options    = array();
 
 		foreach ( $options as $module => $setting ) {
 			/*
@@ -205,8 +207,9 @@ class WP_Hummingbird_Settings {
 			}
 
 			$data = array_fill_keys( self::get_blog_option_names( $module ), self::get_blog_option_names( $module ) );
+
 			$network_options[ $module ] = array_diff_key( $setting, $data );
-			$blog_options[ $module ] = array_intersect_key( $setting, $data );
+			$blog_options[ $module ]    = array_intersect_key( $setting, $data );
 		}
 
 		// array_filter will remove all empty values.
@@ -243,9 +246,9 @@ class WP_Hummingbird_Settings {
 		if ( ! is_multisite() ) {
 			$options = get_option( 'wphb_settings', array() );
 		} else {
-			$blog_options = get_option( 'wphb_settings', array() );
+			$blog_options    = get_option( 'wphb_settings', array() );
 			$network_options = get_site_option( 'wphb_settings', array() );
-			$options = array_merge_recursive( $blog_options, $network_options );
+			$options         = array_merge_recursive( $blog_options, $network_options );
 		}
 
 		$defaults = self::get_default_settings();
@@ -272,9 +275,9 @@ class WP_Hummingbird_Settings {
 	 */
 	public static function update_settings( $new_settings, $for_module = false ) {
 		if ( $for_module ) {
-			$options = self::get_settings();
+			$options                = self::get_settings();
 			$options[ $for_module ] = $new_settings;
-			$new_settings = $options;
+			$new_settings           = $options;
 		}
 
 		if ( ! is_multisite() ) {
@@ -337,8 +340,8 @@ class WP_Hummingbird_Settings {
 	 */
 	private static function is_exception( $module, $options, $option_name ) {
 		$exceptions = array(
-			'page_cache' => 'blog-admins',
 			'minify'     => 'super-admins',
+			'page_cache' => 'blog-admins',
 		);
 
 		if ( isset( $exceptions[ $module ] ) && $exceptions[ $module ] === $options[ $option_name ] ) {
@@ -357,7 +360,9 @@ class WP_Hummingbird_Settings {
 	 */
 	public static function update_setting( $option_name, $value, $for_module = false ) {
 		$options = self::get_settings( $for_module );
+
 		$options[ $option_name ] = $value;
+
 		self::update_settings( $options, $for_module );
 	}
 

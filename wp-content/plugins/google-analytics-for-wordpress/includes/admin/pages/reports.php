@@ -100,7 +100,7 @@ function monsterinsights_reports_page() {
 								 * not be used by other developers. This hook's behavior may be modified
 								 * or the hook may be removed at any time, without warning.
 								 */
-								do_action( 'monsterinsights_tab_reports_actions' ); 
+								do_action( 'monsterinsights_tab_reports_actions', $report->name ); 
 								?> 
 							</div>
 						</div>
@@ -193,7 +193,7 @@ function monsterinsights_refresh_reports_data() {
 		);
 		wp_send_json_success( array( 'html' => $data  ) );
 	} else {
-		wp_send_json_error( array( 'message' => $data['error'] ) );
+		wp_send_json_error( array( 'message' => $data['error'], 'data' => $data['data'] ) );
 	}
 }
 add_action( 'wp_ajax_monsterinsights_refresh_reports', 'monsterinsights_refresh_reports_data' );

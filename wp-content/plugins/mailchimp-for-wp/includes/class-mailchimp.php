@@ -76,8 +76,9 @@ class MC4WP_MailChimp {
 						$args['interests']["{$interest_id}"] = $interest_status;
 					}
 				}
-			} else {
-				// delete list member so we can re-add it...
+			} else if( $args['status']  === 'pending' && $existing_member_data->status === 'pending' ) {
+				// if status is "pending", delete & then re-subscribe
+				// this ensures that a new double opt-in email is send out
 				$this->get_api()->delete_list_member( $list_id, $email_address );
 			}
 		} catch( MC4WP_API_Resource_Not_Found_Exception $e ) {
@@ -103,6 +104,7 @@ class MC4WP_MailChimp {
 	}
 
 	/**
+	* Changes the subscriber status to "unsubscribed" 
 	*
 	* @param string $list_id
 	* @param string $email_address
@@ -114,6 +116,31 @@ class MC4WP_MailChimp {
 
 		try {
 			$this->get_api()->update_list_member( $list_id, $email_address, array( 'status' => 'unsubscribed' ) );
+		} catch( MC4WP_API_Resource_Not_Found_Exception $e ) {
+			// if email wasn't even on the list: great.
+			return true;
+		} catch( MC4WP_API_Exception $e ) {
+			$this->error_code = $e->getCode();
+			$this->error_message = $e;
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	* Deletes the subscriber from the given list.
+	*
+	* @param string $list_id
+	* @param string $email_address
+	*
+	* @return boolean
+	*/
+	public function list_unsubscribe_delete( $list_id, $email_address ) {
+		$this->reset_error();
+
+		try {
+			$this->get_api()->delete_list_member( $list_id, $email_address );
 		} catch( MC4WP_API_Resource_Not_Found_Exception $e ) {
 			// if email wasn't even on the list: great.
 			return true;
@@ -265,8 +292,17 @@ class MC4WP_MailChimp {
 	* @return array
 	*/
 	public function fetch_list_ids() {
+		/**
+		 * Filters the amount of MailChimp lists to fetch.
+		 *
+		 * If you increase this, it might be necessary to increase your PHP configuration to allow for a higher max_execution_time.
+		 *
+		 * @param int 
+		 */
+		$limit = apply_filters( 'mc4wp_mailchimp_list_limit', 200 );
+
 		try{
-			$lists_data = $this->get_api()->get_lists( array( 'count' => 200, 'fields' => 'lists.id' ) );
+			$lists_data = $this->get_api()->get_lists( array( 'count' => $limit, 'fields' => 'lists.id' ) );
 		} catch( MC4WP_API_Exception $e ) {
 			return array();
 		}

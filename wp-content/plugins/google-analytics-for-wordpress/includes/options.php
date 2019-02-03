@@ -94,7 +94,7 @@ function monsterinsights_get_ua() {
  * @return string The UA to use.
  */
 function monsterinsights_get_network_ua() {
-	if ( is_multisite() ) {	
+	if ( ! is_multisite() ) {
 		return '';
 	}
 	
@@ -385,3 +385,27 @@ function monsterinsights_export_settings() {
 	}
 	return wp_json_encode( $settings );
 }
+
+/**
+ * Always return 'analytics' when grabbing the tracking mode.
+ *
+ * @param string $value The value to override.
+ *
+ * @return string
+ */
+function monsterinsights_force_tracking_mode( $value ) {
+	return 'analytics';
+}
+add_filter( 'monsterinsights_get_option_tracking_mode', 'monsterinsights_force_tracking_mode' );
+
+/**
+ * Always return 'js' when grabbing the events mode.
+ *
+ * @param string $value The value to override.
+ *
+ * @return string
+ */
+function monsterinsights_force_events_mode( $value ) {
+	return 'js';
+}
+add_filter( 'monsterinsights_get_option_events_mode', 'monsterinsights_force_events_mode' );

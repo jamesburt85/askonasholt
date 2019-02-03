@@ -1,9 +1,25 @@
-<?php if ( $error ) : ?>
+<?php
+/**
+ * Performance summary meta box.
+ *
+ * @package Hummingbird
+ *
+ * @var bool     $error             Was there an error during performance scan.
+ * @var string   $error_text        Error text.
+ * @var string   $error_details     Error details.
+ * @var string   $retry_url         Url to start a new performance scan.
+ * @var bool     $report_dismissed  If performance report is dismissed.
+ * @var bool     $can_run_test      If there is no cool down period and user can run a new test.
+ * @var stdClass $last_test         Last test details.
+ * @var bool     $is_subsite        Is this a subsite.
+ */
+
+if ( $error ) : ?>
 	<div class="sui-box-body">
 		<div class="sui-notice sui-notice-error wphb-notice-box">
 			<p><?php echo $error_text; ?></p>
 			<div id="wphb-error-details">
-				<p><code style="background:white;"><?php echo $error_details; ?></code></p>
+				<p><code><?php echo $error_details; ?></code></p>
 			</div>
 			<div class="sui-notice-buttons">
 				<a href="<?php echo esc_url( $retry_url ); ?>" class="sui-button sui-button-primary button-notice"><?php esc_html_e( 'Try again', 'wphb' ); ?></a>
@@ -49,8 +65,16 @@
 						<a href="<?php echo esc_url( $retry_url ); ?>"  class="sui-button sui-button-primary"><?php esc_html_e( 'Run Test', 'wphb' ); ?></a>
 					<?php
 					else :
-						/* translators: %d: number of minutes. */
-						$tooltip = sprintf( __( 'Hummingbird is just catching her breath - you can run another test in %d minutes', 'wphb' ), esc_attr( $can_run_test ) );
+						$tooltip = sprintf(
+							/* translators: %d: number of minutes. */
+							_n(
+								'Hummingbird is just catching her breath - you can run another test in %d minute',
+								'Hummingbird is just catching her breath - you can run another test in %d minutes',
+								$can_run_test,
+								'wphb'
+							),
+							number_format_i18n( $can_run_test )
+						);
 						?>
 						<span class="sui-tooltip sui-tooltip-constrained" disabled="disabled" data-tooltip="<?php echo esc_attr( $tooltip ); ?>" aria-hidden="true">
 							<a href="<?php echo esc_url( $retry_url ); ?>" disabled class="sui-button sui-button-primary"><?php esc_html_e( 'Run Test', 'wphb' ); ?></a>
@@ -71,27 +95,16 @@
 		<?php
 		foreach ( $last_test->rule_result as $rule => $rule_result ) :
 			if ( ! $report_dismissed ) :
-				switch ( $rule_result->impact_score_class ) {
-					case 'aplus':
-					case 'a':
-					case 'b':
-						$impact_score_class = 'success';
-						$impact_icon_class = 'check-tick';
-						break;
-					case 'c':
-					case 'd':
-						$impact_score_class = 'warning';
-						$impact_icon_class = 'warning-alert';
-						break;
-					case 'e':
-					case 'f':
-						$impact_score_class = 'error';
-						$impact_icon_class = 'warning-alert';
-						break;
-					default:
-						$impact_score_class = 'dismissed';
-						$impact_icon_class = 'warning-alert';
-				}
+				if ( 85 <= $rule_result->impact_score ) :
+					$impact_score_class = 'success';
+					$impact_icon_class = 'check-tick';
+				elseif ( 65 <= $rule_result->impact_score ) :
+					$impact_score_class = 'warning';
+					$impact_icon_class = 'warning-alert';
+				else :
+					$impact_score_class = 'error';
+					$impact_icon_class = 'warning-alert';
+				endif;
 			endif;
 			$colspan = '';
 			if ( $is_subsite && 'server' === $rule_result->type ) :
@@ -101,11 +114,11 @@
 			$has_url_blocks = ! empty( $rule_result->urlblocks ) && is_array( $rule_result->urlblocks ) && ! empty( $rule_result->urlblocks[0] );
 			?>
 			<tr class="sui-accordion-item sui-<?php echo esc_attr( $impact_score_class ); ?>">
-				<td class="sui-accordion-item-title">
+				<td class="sui-accordion-item-title"  width="40%">
 					<i class="sui-icon-<?php echo esc_attr( $impact_icon_class ); ?> sui-<?php echo esc_attr( $impact_score_class ); ?>"></i> <?php echo esc_html( $rule_result->label ); ?>
 				</td>
 				<td>
-					<div class="sui-circle-score sui-grade-<?php echo esc_attr( $rule_result->impact_score_class ); ?> sui-tooltip"
+					<div class="sui-circle-score sui-grade-<?php echo esc_attr( $impact_score_class ); ?> sui-tooltip"
 						 data-tooltip="<?php echo esc_html( $rule_result->impact_score ); ?>/100" data-score="<?php echo esc_attr( $rule_result->impact_score ); ?>"></div>
 				</td>
 				<td class="sui-hidden-xs sui-hidden-sm wphb-performance-report-item-type <?php echo esc_attr( $impact_score_class ); ?>" <?php echo esc_attr( $colspan ); ?>>
@@ -123,11 +136,11 @@
 				</td>
 
 				<?php if ( 'disabled' !== $impact_score_class ) : ?>
-					<td class="sui-hidden-xs sui-hidden-sm sui-hidden-md">
+					<td>
 						<span class="sui-accordion-open-indicator">
 							<?php if ( ! empty( $rule_result->summary ) || ! empty( $rule_result->tip ) ) : ?>
-								<?php if ( 100 !== $rule_result->impact_score && ( ! $is_subsite && 'server' !== $rule_result->type ) && ! $report_dismissed ) : ?>
-									<a class="sui-button sui-button-ghost"><?php esc_html_e( 'Improve', 'wphb' ); ?></a>
+								<?php if ( $rule_result->impact_score < 85 && ( ! $is_subsite && 'server' !== $rule_result->type ) && ! $report_dismissed ) : ?>
+									<a class="sui-button sui-button-ghost sui-hidden-xs sui-hidden-sm sui-hidden-md"><?php esc_html_e( 'Improve', 'wphb' ); ?></a>
 								<?php endif; ?>
 							<i class="sui-icon-chevron-down"></i>
 							<?php endif; ?>

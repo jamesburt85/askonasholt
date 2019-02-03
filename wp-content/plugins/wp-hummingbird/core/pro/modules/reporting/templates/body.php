@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$args = compact( 'last_test', 'params' );
+$args = compact( 'last_test', 'params' );		  	 	 	 	 	 		   	 
 ?>
 
 <table class="body" style="background-color: #e9ebe7; border-collapse: collapse; border-spacing: 0; color: #555555; font-family: Arial, sans-serif; font-size: 15px; font-weight: normal; height: 100%; line-height: 26px; margin: 0; padding: 0; text-align: left; vertical-align: top; width: 100%;">

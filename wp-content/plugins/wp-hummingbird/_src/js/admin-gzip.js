@@ -1,5 +1,4 @@
 import Fetcher from './utils/fetcher';
-import Clipboard from './utils/clipboard';
 
 (function($) {
     WPHB_Admin.gzip = {
@@ -18,8 +17,6 @@ import Clipboard from './utils/clipboard';
                 troubleshootingLink = $("#troubleshooting-link"),
                 troubleshootingLinkLiteSpeed = $("#troubleshooting-link-litespeed");
 
-            new Clipboard('.wphb-code-snippet .button');
-            
             instructionsList.each(function() {
                 self.$serverInstructions[$(this).data("server")] = $(this);
             });
@@ -30,8 +27,6 @@ import Clipboard from './utils/clipboard';
                 self.showServerInstructions(value);
                 self.setServer(value);
                 self.selectedServer = value;
-                // Update tab size on select change.
-                self.updateTabSize();
             });
             configureLink.on('click', function(e) {
                 e.preventDefault();
@@ -64,13 +59,6 @@ import Clipboard from './utils/clipboard';
             } else {
                 $("#enable-cache-wrap").hide();
             }
-        },
-        updateTabSize: function() {
-            let jq      = $( '#wphb-server-instructions-' + this.selectedServer.toLowerCase() ).find( '.sui-tabs' ),
-                current = jq.find('.sui-tab > input:checked').parent(),
-                content = current.find('.sui-tab-content');
-
-            jq.height( content.outerHeight() + current.outerHeight() - 6 );
         },
 
         setServer: function( value ) {

@@ -20,6 +20,21 @@ class WP_Hummingbird_Core {
 	public $hub_endpoints;
 
 	/**
+	 * Hummingbird REST endpoints
+	 *
+	 * @var WP_Hummingbird_REST_Endpoints
+	 */
+	public $rest_endpoints;
+
+	/**
+	 * Hummingbird logs
+	 *
+	 * @since 1.9.2
+	 * @var WP_Hummingbird_Logger
+	 */
+	public $logger;
+
+	/**
 	 * Saves the modules object instances
 	 *
 	 * @var array
@@ -36,18 +51,24 @@ class WP_Hummingbird_Core {
 
 		$this->load_modules();
 
-		if ( WP_Hummingbird_Utils::can_execute_php() && current_user_can( WP_Hummingbird_Utils::get_admin_capability() ) ) {
-			// Return is user has no proper permissions.
-			if ( ! ( is_super_admin() || is_blog_admin() ) ) {
-				return;
-			}
+		// Return is user has no proper permissions.
+		if ( ! ( is_super_admin() || is_blog_admin() ) ) {
+			return;
+		}
 
+		if ( WP_Hummingbird_Utils::can_execute_php() && current_user_can( WP_Hummingbird_Utils::get_admin_capability() ) ) {
 			$minify    = WP_Hummingbird_Settings::get_setting( 'enabled', 'minify' );
 			$pc_module = WP_Hummingbird_Settings::get_setting( 'enabled', 'page_cache' );
 
-			// Do not stric compare $pc_module to true, because it can also be 'blog-admins'.
+			// Do not strict compare $pc_module to true, because it can also be 'blog-admins'.
 			if ( ! is_multisite() || ( is_multisite() && ( ( 'super-admin' === $minify && is_super_admin() ) || true === $minify || true == $pc_module ) ) ) {
 				add_action( 'admin_bar_menu', array( $this, 'admin_bar_menu' ), 100 );
+
+				add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_global' ) );
+				add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_global' ) );
+
+				// Defer the loading of the global js.
+				add_filter( 'script_loader_tag', array( $this, 'add_defer_attribute' ), 10, 2 );
 			}
 		}
 	}
@@ -63,7 +84,11 @@ class WP_Hummingbird_Core {
 		/* @noinspection PhpIncludeInspection */
 		include_once WPHB_DIR_PATH . 'core/class-hub-endpoints.php';
 		/* @noinspection PhpIncludeInspection */
+		include_once WPHB_DIR_PATH . 'core/class-rest-endpoints.php';
+		/* @noinspection PhpIncludeInspection */
 		include_once WPHB_DIR_PATH . 'core/class-logger.php';
+		/* @noinspection PhpIncludeInspection */
+		include_once WPHB_DIR_PATH . 'core/class-gdpr.php';
 	}
 
 	/**
@@ -72,12 +97,22 @@ class WP_Hummingbird_Core {
 	 * @since 1.7.2
 	 */
 	private function init() {
+		// Init GDPR policy.
+		WP_Hummingbird_GDPR::get_instance();
+
 		// Init the API.
 		$this->api = new WP_Hummingbird_API();
 
 		// Init Hub endpoints.
 		$this->hub_endpoints = new WP_Hummingbird_Hub_Endpoints();
 		$this->hub_endpoints->init();
+
+		// Init Hummingbird REST endpoints.
+		$this->rest_endpoints = new WP_Hummingbird_REST_Endpoints();
+		$this->rest_endpoints->init();
+
+		// Init logger.
+		$this->logger = WP_Hummingbird_Logger::get_instance();
 	}
 
 	/**
@@ -88,17 +123,17 @@ class WP_Hummingbird_Core {
 		 * Filters the modules slugs list
 		 */
 		$modules = apply_filters( 'wp_hummingbird_modules', array(
-			'minify'       => __( 'Minify', 'wphb' ),
-			'gzip'         => __( 'Gzip', 'wphb' ),
-			'caching'      => __( 'Caching', 'wphb' ),
-			'performance'  => __( 'Performance', 'wphb' ),
-			'uptime'       => __( 'Uptime', 'wphb' ),
-			'smush'        => __( 'Smush', 'wphb' ),
-			'cloudflare'   => __( 'Cloudflare', 'wphb' ),
-			'gravatar'     => __( 'Gravatar Caching', 'wphb' ),
-			'page_cache'   => __( 'Page Caching', 'wphb' ),
-			'advanced'     => __( 'Advanced Tools', 'wphb' ),
-			'rss'          => __( 'RSS Caching', 'wphb' ),
+			'minify'      => __( 'Minify', 'wphb' ),
+			'gzip'        => __( 'Gzip', 'wphb' ),
+			'caching'     => __( 'Caching', 'wphb' ),
+			'performance' => __( 'Performance', 'wphb' ),
+			'uptime'      => __( 'Uptime', 'wphb' ),
+			'smush'       => __( 'Smush', 'wphb' ),
+			'cloudflare'  => __( 'Cloudflare', 'wphb' ),
+			'gravatar'    => __( 'Gravatar Caching', 'wphb' ),
+			'page_cache'  => __( 'Page Caching', 'wphb' ),
+			'advanced'    => __( 'Advanced Tools', 'wphb' ),
+			'rss'         => __( 'RSS Caching', 'wphb' ),
 		) );
 
 		// Do not load minification for PHP less than 5.3.
@@ -146,6 +181,7 @@ class WP_Hummingbird_Core {
 			}
 
 			$this->modules[ $module ] = $module_obj;
+			$this->logger->register_module( $module );
 		}
 	}
 
@@ -194,32 +230,47 @@ class WP_Hummingbird_Core {
 
 		/* @var WP_Hummingbird_Module_Page_Cache $pc_module */
 		$pc_module = WP_Hummingbird_Utils::get_module( 'page_cache' );
-		$options = $pc_module->get_options();
+		$options   = $pc_module->get_options();
 
 		if ( $pc_module->is_active() && $options['control'] ) {
-			$pc_link = admin_url( 'admin.php?page=wphb-caching&view=main' );
-
-			if ( ! is_main_network() || ! is_main_site() ) {
-				$purge_url = add_query_arg( array(
-					'type' => 'pc-purge-subsite',
-					'run'  => 'true',
-				), $pc_link );
-			} else {
-				$purge_url = add_query_arg( array(
-					'type' => 'pc-purge',
-					'run'  => 'true',
-				), $pc_link );
-			}
-			$purge_url = wp_nonce_url( $purge_url, 'wphb-run-caching' );
-
 			$admin_bar->add_menu( $menu_args );
 			$admin_bar->add_menu( array(
 				'id'     => 'wphb-clear-cache',
 				'title'  => __( 'Clear page cache', 'wphb' ),
-				'href'   => $purge_url,
 				'parent' => 'wphb',
+				'href'   => '#',
 			));
 		}
+	}
+
+	/**
+	 * Enqueue global scripts.
+	 *
+	 * @since 1.9.3
+	 */
+	public function enqueue_global() {
+		wp_enqueue_script(
+			'wphb-global',
+			WPHB_DIR_URL . 'admin/assets/js/global.min.js',
+			array(),
+			WPHB_VERSION,
+			true
+		);
+		wp_localize_script( 'wphb-global', 'wphbGlobal',
+			array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) )
+		);
+	}
+
+	/**
+	 * Defer global scripts.
+	 *
+	 * @since 1.9.3
+	 */
+	public function add_defer_attribute( $tag, $handle ) {
+		if ( 'wphb-global' !== $handle ) {
+			return $tag;
+		}
+		return str_replace( ' src', ' defer="defer" src', $tag );
 	}
 
 }

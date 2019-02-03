@@ -20,24 +20,22 @@ class QM_Output_Html_DB_Callers extends QM_Output_Html {
 			return;
 		}
 
-		$total_time  = 0;
-
-		echo '<div class="qm" id="' . esc_attr( $this->collector->id() ) . '">';
+		$total_time = 0;
 
 		if ( ! empty( $data['times'] ) ) {
-			echo '<table class="qm-sortable">';
-			echo '<caption>' . esc_html( $this->collector->name() ) . '</caption>';
+			$this->before_tabular_output();
+
 			echo '<thead>';
 			echo '<tr>';
 			echo '<th scope="col">' . esc_html__( 'Caller', 'query-monitor' ) . '</th>';
 
 			foreach ( $data['types'] as $type_name => $type_count ) {
-				echo '<th scope="col" class="qm-num qm-ltr qm-sortable-column">';
+				echo '<th scope="col" class="qm-num qm-ltr qm-sortable-column" role="columnheader" aria-sort="none">';
 				echo $this->build_sorter( $type_name ); // WPCS: XSS ok;
 				echo '</th>';
 			}
 
-			echo '<th scope="col" class="qm-num qm-sorted-desc qm-sortable-column">';
+			echo '<th scope="col" class="qm-num qm-sorted-desc qm-sortable-column" role="columnheader" aria-sort="descending">';
 			echo $this->build_sorter( __( 'Time', 'query-monitor' ) ); // WPCS: XSS ok;
 			echo '</th>';
 			echo '</tr>';
@@ -46,8 +44,8 @@ class QM_Output_Html_DB_Callers extends QM_Output_Html {
 			echo '<tbody>';
 
 			foreach ( $data['times'] as $row ) {
-				$total_time  += $row['ltime'];
-				$stime = number_format_i18n( $row['ltime'], 4 );
+				$total_time += $row['ltime'];
+				$stime       = number_format_i18n( $row['ltime'], 4 );
 
 				echo '<tr>';
 				echo '<td class="qm-ltr"><a href="#" class="qm-filter-trigger" data-qm-target="db_queries-wpdb" data-qm-filter="caller" data-qm-value="' . esc_attr( $row['caller'] ) . '"><code>' . esc_html( $row['caller'] ) . '</code></a></td>';
@@ -81,23 +79,23 @@ class QM_Output_Html_DB_Callers extends QM_Output_Html {
 			echo '</tr>';
 
 			echo '</tfoot>';
-			echo '</table>';
 
+			$this->after_tabular_output();
 		} else {
+			$this->before_non_tabular_output();
 
 			echo '<div class="qm-none">';
 			echo '<p>' . esc_html__( 'None', 'query-monitor' ) . '</p>';
 			echo '</div>';
 
+			$this->after_non_tabular_output();
 		}
-
-		echo '</div>';
-
 	}
 
 	public function admin_menu( array $menu ) {
+		$dbq = QM_Collectors::get( 'db_queries' );
 
-		if ( $dbq = QM_Collectors::get( 'db_queries' ) ) {
+		if ( $dbq ) {
 			$dbq_data = $dbq->get_data();
 			if ( isset( $dbq_data['times'] ) ) {
 				$menu[] = $this->menu( array(
@@ -112,7 +110,8 @@ class QM_Output_Html_DB_Callers extends QM_Output_Html {
 }
 
 function register_qm_output_html_db_callers( array $output, QM_Collectors $collectors ) {
-	if ( $collector = QM_Collectors::get( 'db_callers' ) ) {
+	$collector = $collectors::get( 'db_callers' );
+	if ( $collector ) {
 		$output['db_callers'] = new QM_Output_Html_DB_Callers( $collector );
 	}
 	return $output;

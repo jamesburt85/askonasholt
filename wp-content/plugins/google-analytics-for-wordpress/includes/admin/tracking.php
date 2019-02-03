@@ -43,7 +43,6 @@ class MonsterInsights_Tracking {
 		if ( $tracking_mode === false ) {
 			$tracking_mode = 'analytics';
 		}
-
 		if ( $events_mode === false ) {
 			$events_mode = 'none';
 		}
@@ -91,10 +90,12 @@ class MonsterInsights_Tracking {
 		$data['autoupdate']    = $update_mode;
 		$data['pro']           = (int) monsterinsights_is_pro_version();
 		$data['sites']         = $count_b;
-		$data['usagetracking'] = get_option( 'monsterinsights_usage_tracking_config', $tracking );
+		$data['usagetracking'] = get_option( 'monsterinsights_usage_tracking_config', false );
 		$data['usercount']     = function_exists( 'get_user_count' ) ? get_user_count() : 'Not Set';
 		$data['usesauth']      = $usesauth;
 		$data['timezoneoffset']= date('P');
+		$data['installed_lite']= get_option( 'monsterinsights_installed_lite', array() );
+		$data['installed_pro'] = get_option( 'monsterinsights_installed_pro', array() );
 
 
 

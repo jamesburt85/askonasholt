@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - User Role Editor - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-01-31 04:57:42+0000\n"
+"PO-Revision-Date: 2019-01-15 05:15:25+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,10 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: en_GB\n"
 "Project-Id-Version: Plugins - User Role Editor - Stable (latest release)\n"
+
+#: includes/classes/capability.php:54
+msgid "Error: this word is used by WordPress as a role ID"
+msgstr "Error: this word is used by WordPress as a role ID"
 
 #: includes/settings-template.php:107
 msgid "columns"
@@ -19,27 +23,27 @@ msgstr "columns"
 msgid "Show capabilities in"
 msgstr "Show capabilities in"
 
-#: includes/settings-template.php:43
+#: includes/settings-template.php:42
 msgid "Tools"
 msgstr "Tools"
 
-#: includes/classes/view.php:297
+#: includes/classes/view.php:322
 msgid "Columns:"
 msgstr "Columns:"
 
-#: includes/classes/view.php:294
+#: includes/classes/view.php:319
 msgid "Granted Only"
 msgstr "Granted Only"
 
-#: includes/classes/view.php:278
+#: includes/classes/view.php:303
 msgid "Granted"
 msgstr "Granted"
 
-#: includes/classes/view.php:278
+#: includes/classes/view.php:303
 msgid "Total"
 msgstr "Total"
 
-#: includes/classes/view.php:278
+#: includes/classes/view.php:303
 msgid "Group"
 msgstr "Group"
 
@@ -47,30 +51,30 @@ msgstr "Group"
 msgid "Switch&nbsp;To"
 msgstr "Switch&nbsp;To"
 
-#: includes/classes/user-role-editor.php:728
+#: includes/classes/user-role-editor.php:732
 msgid "If any plugins (such as WooCommerce, S2Member and many others) have changed user roles and capabilities during installation, all those changes will be LOST!"
 msgstr "If any plugins (such as WooCommerce, S2Member and many others) have changed user roles and capabilities during installation, all those changes will be LOST!"
 
-#: includes/classes/user-role-editor.php:727
+#: includes/classes/user-role-editor.php:731
 msgid " Resetting will restore default user roles and capabilities from WordPress core."
 msgstr " Resetting will restore default user roles and capabilities from WordPress core."
 
-#: includes/classes/user-role-editor.php:726
+#: includes/classes/user-role-editor.php:730
 msgid "DANGER!"
 msgstr "DANGER!"
 
-#: includes/classes/user-role-editor.php:677
-#: includes/classes/user-role-editor.php:724
+#: includes/classes/user-role-editor.php:681
+#: includes/classes/user-role-editor.php:728
 msgid "No"
 msgstr "No"
 
-#: includes/classes/user-role-editor.php:676
-#: includes/classes/user-role-editor.php:723
+#: includes/classes/user-role-editor.php:680
+#: includes/classes/user-role-editor.php:727
 msgid "Yes"
 msgstr "Yes"
 
-#: includes/classes/user-role-editor.php:675
-#: includes/classes/user-role-editor.php:722
+#: includes/classes/user-role-editor.php:679
+#: includes/classes/user-role-editor.php:726
 msgid "Confirm"
 msgstr "Confirm"
 
@@ -110,31 +114,31 @@ msgstr "Tools: Reset: User Roles were initialised"
 msgid "Show confirmation dialog before save changes made to a current role."
 msgstr "Show confirmation dialogue before save changes made to a current role."
 
-#: includes/classes/screen-help.php:25 includes/settings-template.php:87
+#: includes/classes/screen-help.php:25 includes/settings-template.php:86
 msgid "Confirm role update"
 msgstr "Confirm role update"
 
-#: includes/classes/role-additional-options.php:121
+#: includes/classes/role-additional-options.php:113
 msgid "Additional Options"
 msgstr "Additional Options"
 
-#: includes/classes/role-additional-options.php:69
+#: includes/classes/role-additional-options.php:53
 msgid "Hide admin bar"
 msgstr "Hide admin bar"
 
-#: includes/classes/grant-roles.php:326
+#: includes/classes/grant-roles.php:324
 msgid "Select role(s) which you wish to grant!"
 msgstr "Select role(s) which you wish to grant!"
 
-#: includes/classes/grant-roles.php:325
+#: includes/classes/grant-roles.php:323
 msgid "Select users to which you wish to grant roles!"
 msgstr "Select users to which you wish to grant roles!"
 
-#: includes/classes/grant-roles.php:324
+#: includes/classes/grant-roles.php:322
 msgid "Grant roles to selected users"
 msgstr "Grant roles to selected users"
 
-#: includes/classes/grant-roles.php:299
+#: includes/classes/view.php:273
 msgid "Working..."
 msgstr "Working..."
 
@@ -178,11 +182,11 @@ msgstr "Can not edit user or invalid data at the users list"
 msgid "Not enough permissions"
 msgstr "Not enough permissions"
 
-#: includes/classes/capability.php:200
+#: includes/classes/capability.php:211
 msgid "capabilities were removed successfully"
 msgstr "capabilities were removed successfully"
 
-#: includes/classes/capability.php:186 includes/classes/capability.php:191
+#: includes/classes/capability.php:197 includes/classes/capability.php:202
 msgid "There are no capabilities available for deletion!"
 msgstr "There are no capabilities available for deletion!"
 
@@ -231,18 +235,16 @@ msgstr "WooCommerce"
 msgid "Custom Post Types"
 msgstr "Custom Post Types"
 
-#. Author of the plugin/theme
+#. Author of the plugin
 msgid "Vladimir Garagulya"
 msgstr "Vladimir Garagulya"
 
-#. Description of the plugin/theme
+#. Description of the plugin
 msgid "Change/add/delete WordPress user roles and capabilities."
 msgstr "Change/add/delete WordPress user roles and capabilities."
 
-#. #-#-#-#-#  user-role-editor-code.pot (User Role Editor 4.40.1)  #-#-#-#-#
-#. Plugin URI of the plugin/theme
-#. #-#-#-#-#  user-role-editor-code.pot (User Role Editor 4.40.1)  #-#-#-#-#
-#. Author URI of the plugin/theme
+#. Plugin URI of the plugin
+#. Author URI of the plugin
 msgid "https://www.role-editor.com"
 msgstr "https://www.role-editor.com"
 
@@ -270,11 +272,11 @@ msgstr "Network Super Admin"
 msgid "Custom capabilities"
 msgstr "Custom capabilities"
 
-#: includes/classes/view.php:291
+#: includes/classes/view.php:316
 msgid "Quick filter:"
 msgstr "Quick filter:"
 
-#: includes/classes/role-view.php:391 includes/classes/tools.php:44
+#: includes/classes/tools.php:44 includes/classes/role-view.php:391
 msgid "Apply to All Sites"
 msgstr "Apply to All Sites"
 
@@ -282,7 +284,7 @@ msgstr "Apply to All Sites"
 msgid "If checked, then apply action to ALL sites of this Network"
 msgstr "If checked, then apply action to ALL sites of this Network"
 
-#: includes/classes/role-view.php:364 includes/classes/user-view.php:155
+#: includes/classes/user-view.php:155 includes/classes/role-view.php:364
 msgid "Show capabilities in human readable form"
 msgstr "Show capabilities in human readable form"
 
@@ -290,119 +292,119 @@ msgstr "Show capabilities in human readable form"
 msgid "Select Role and change its capabilities:"
 msgstr "Select Role and change its capabilities:"
 
-#: includes/settings-template.php:208
+#: includes/settings-template.php:207
 msgid "Allow non super administrators to create, edit, and delete users"
 msgstr "Allow non super administrators to create, edit, and delete users"
 
-#: includes/settings-template.php:182
+#: includes/settings-template.php:181
 msgid "Note for multisite environment: take into account that other default roles should exist at the site, in order to be assigned to the new registered users."
 msgstr "Note for multisite environment: take into account that other default roles should exist at the site, in order to be assigned to the new registered users."
 
-#: includes/settings-template.php:176
+#: includes/settings-template.php:175
 msgid "Other default roles for new registered user: "
 msgstr "Other default roles for new registered user: "
 
-#: includes/settings-template.php:169
+#: includes/settings-template.php:168
 msgid "Primary default role: "
 msgstr "Primary default role: "
 
-#: includes/settings-template.php:121 includes/settings-template.php:157
-#: includes/settings-template.php:189 includes/settings-template.php:221
+#: includes/settings-template.php:121 includes/settings-template.php:156
+#: includes/settings-template.php:188 includes/settings-template.php:220
 msgid "Save"
 msgstr "Save"
 
-#: includes/settings-template.php:47
+#: includes/settings-template.php:46
 msgid "About"
 msgstr "About"
 
-#: includes/settings-template.php:17
+#: includes/settings-template.php:16
 msgid "User Role Editor - Options"
 msgstr "User Role Editor - Options"
 
-#: includes/classes/user-role-editor.php:697
+#: includes/classes/user-role-editor.php:701
 msgid " Capability name (ID) must contain latin characters, digits, hyphens or underscore only!"
 msgstr " Capability name (ID) must contain latin characters, digits, hyphens or underscore only!"
 
-#: includes/classes/user-role-editor.php:696
+#: includes/classes/user-role-editor.php:700
 msgid " Capability name (ID) can not be empty!"
 msgstr " Capability name (ID) can not be empty!"
 
-#: includes/classes/user-role-editor.php:695
+#: includes/classes/user-role-editor.php:699
 msgid "Warning! Be careful - removing critical capability could crash some plugin or other custom code"
 msgstr "Warning! Be careful - removing critical capability could crash some plugin or other custom code"
 
-#: includes/classes/user-role-editor.php:693
+#: includes/classes/user-role-editor.php:697
 msgid "Set New Default Role"
 msgstr "Set New Default Role"
 
-#: includes/classes/user-role-editor.php:692
+#: includes/classes/user-role-editor.php:696
 msgid "Default Role"
 msgstr "Default Role"
 
-#: includes/classes/user-role-editor.php:691
-#: includes/classes/user-role-editor.php:731
+#: includes/classes/user-role-editor.php:695
+#: includes/classes/user-role-editor.php:735
 msgid "Continue?"
 msgstr "Continue?"
 
-#: includes/classes/user-role-editor.php:729
+#: includes/classes/user-role-editor.php:733
 msgid "For more information on how to undo undesired changes and restore plugin capabilities go to"
 msgstr "For more information on how to undo undesired changes and restore plugin capabilities go to"
 
-#: includes/classes/tools.php:50 includes/classes/user-role-editor.php:725
+#: includes/classes/tools.php:50 includes/classes/user-role-editor.php:729
 msgid "Reset"
 msgstr "Reset"
 
-#: includes/classes/user-role-editor.php:690
 #: includes/classes/user-role-editor.php:694
+#: includes/classes/user-role-editor.php:698
 msgid "Delete Capability"
 msgstr "Delete Capability"
 
-#: includes/classes/user-role-editor.php:689
+#: includes/classes/user-role-editor.php:693
 msgid "Add Capability"
 msgstr "Add Capability"
 
-#: includes/classes/user-role-editor.php:688
+#: includes/classes/user-role-editor.php:692
 msgid "Cancel"
 msgstr "Cancel"
 
-#: includes/classes/user-role-editor.php:687
+#: includes/classes/user-role-editor.php:691
 msgid "Delete Role"
 msgstr "Delete Role"
 
-#: includes/classes/user-role-editor.php:685
+#: includes/classes/user-role-editor.php:689
 msgid "Add Role"
 msgstr "Add Role"
 
-#: includes/classes/user-role-editor.php:684
+#: includes/classes/user-role-editor.php:688
 msgid " WordPress does not support numeric Role name (ID). Add latin characters to it."
 msgstr " WordPress does not support numeric Role name (ID). Add latin characters to it."
 
-#: includes/classes/user-role-editor.php:683
+#: includes/classes/user-role-editor.php:687
 msgid " Role name (ID) must contain latin characters, digits, hyphens or underscore only!"
 msgstr " Role name (ID) must contain latin characters, digits, hyphens or underscore only!"
 
-#: includes/classes/user-role-editor.php:682
+#: includes/classes/user-role-editor.php:686
 msgid " Role name (ID) can not be empty!"
 msgstr " Role name (ID) can not be empty!"
 
-#: includes/classes/user-role-editor.php:681
-#: includes/classes/user-role-editor.php:686
+#: includes/classes/user-role-editor.php:685
+#: includes/classes/user-role-editor.php:690
 msgid "Rename Role"
 msgstr "Rename Role"
 
-#: includes/classes/user-role-editor.php:680
+#: includes/classes/user-role-editor.php:684
 msgid "Add New Role"
 msgstr "Add New Role"
 
-#: includes/classes/user-role-editor.php:679
+#: includes/classes/user-role-editor.php:683
 msgid "Please confirm permissions update"
 msgstr "Please confirm permissions update"
 
-#: includes/classes/user-role-editor.php:678
+#: includes/classes/user-role-editor.php:682
 msgid "Update"
 msgstr "Update"
 
-#: includes/classes/user-role-editor.php:604
+#: includes/classes/user-role-editor.php:608
 msgid "You do not have sufficient permissions to manage options for User Role Editor."
 msgstr "You do not have sufficient permissions to manage options for User Role Editor."
 
@@ -415,26 +417,28 @@ msgstr "Default Roles are updated"
 msgid "User Role Editor options are updated"
 msgstr "User Role Editor options are updated"
 
+#: includes/classes/user-role-editor.php:547
 #: includes/classes/capabilities-groups-manager.php:121
-#: includes/classes/user-role-editor.php:543 includes/settings-template.php:37
+#: includes/settings-template.php:36
 msgid "Multisite"
 msgstr "Multisite"
 
-#: includes/classes/user-role-editor.php:537 includes/settings-template.php:32
+#: includes/classes/user-role-editor.php:541 includes/settings-template.php:31
 msgid "Default Roles"
 msgstr "Default Roles"
 
-#: includes/classes/user-role-editor.php:531 includes/settings-template.php:27
+#: includes/classes/user-role-editor.php:535 includes/settings-template.php:26
 msgid "Additional Modules"
 msgstr "Additional Modules"
 
+#: includes/classes/user-role-editor.php:529
 #: includes/classes/capabilities-groups-manager.php:112
-#: includes/classes/user-role-editor.php:525 includes/settings-template.php:21
+#: includes/settings-template.php:20
 msgid "General"
 msgstr "General"
 
-#: includes/classes/user-role-editor.php:476
-#: includes/classes/user-role-editor.php:489
+#: includes/classes/user-role-editor.php:480
+#: includes/classes/user-role-editor.php:493
 msgid "Settings"
 msgstr "Settings"
 
@@ -478,31 +482,31 @@ msgid "Other Roles"
 msgstr "Other Roles"
 
 #: includes/classes/screen-help.php:84
-msgid "Allow non super-admininstrators to create, edit and delete users"
-msgstr "Allow non super-admininstrators to create, edit and delete users"
+msgid "Allow non super-administrators to create, edit and delete users"
+msgstr "Allow non super-administrators to create, edit and delete users"
 
 #: includes/classes/screen-help.php:65
 msgid "Other default roles for new registered user"
 msgstr "Other default roles for new registered user"
 
-#: includes/classes/screen-help.php:47 includes/settings-template.php:142
+#: includes/classes/screen-help.php:47 includes/settings-template.php:141
 msgid "Count users without role"
 msgstr "Count users without role"
 
-#: includes/classes/screen-help.php:27 includes/settings-template.php:95
+#: includes/classes/screen-help.php:27 includes/settings-template.php:94
 msgid "Edit user capabilities"
 msgstr "Edit user capabilities"
 
-#: includes/classes/role-view.php:374 includes/classes/screen-help.php:21
-#: includes/classes/user-view.php:165 includes/settings-template.php:79
+#: includes/classes/user-view.php:165 includes/classes/role-view.php:374
+#: includes/classes/screen-help.php:21 includes/settings-template.php:78
 msgid "Show deprecated capabilities"
 msgstr "Show deprecated capabilities"
 
-#: includes/classes/screen-help.php:18 includes/settings-template.php:71
+#: includes/classes/screen-help.php:18 includes/settings-template.php:70
 msgid "Show capabilities in the human readable form"
 msgstr "Show capabilities in the human readable form"
 
-#: includes/classes/screen-help.php:15 includes/settings-template.php:63
+#: includes/classes/screen-help.php:15 includes/settings-template.php:61
 msgid "Show Administrator role at User Role Editor"
 msgstr "Show Administrator role at User Role Editor"
 
@@ -511,11 +515,11 @@ msgstr "Show Administrator role at User Role Editor"
 msgid "User Role Editor Options page help"
 msgstr "User Role Editor Options page help"
 
-#: includes/classes/ure-lib.php:2013
+#: includes/classes/lib.php:2081
 msgid "Denied: %s"
 msgstr "Denied: %s"
 
-#: includes/classes/grant-roles.php:241 includes/classes/user-view.php:98
+#: includes/classes/user-view.php:98 includes/classes/grant-roles.php:241
 msgid "&mdash; No role for this site &mdash;"
 msgstr "&mdash; No role for this site &mdash;"
 
@@ -527,39 +531,39 @@ msgstr "None"
 msgid "Delete All Unused Roles"
 msgstr "Delete All Unused Roles"
 
-#: includes/classes/ure-lib.php:1833
+#: includes/classes/lib.php:1901
 msgid "FAQ"
 msgstr "FAQs"
 
-#: includes/classes/ure-lib.php:1832 includes/classes/user-role-editor.php:502
+#: includes/classes/lib.php:1900 includes/classes/user-role-editor.php:506
 msgid "Changelog"
 msgstr "Changelog"
 
-#: includes/classes/ure-lib.php:1831
+#: includes/classes/lib.php:1899
 msgid "Plugin download"
 msgstr "Plugin download"
 
-#: includes/classes/ure-lib.php:1830
+#: includes/classes/lib.php:1898
 msgid "Plugin webpage"
 msgstr "Plugin webpage"
 
-#: includes/classes/ure-lib.php:1829
+#: includes/classes/lib.php:1897
 msgid "Author's website"
 msgstr "Author's website"
 
-#: includes/classes/ure-lib.php:1828
+#: includes/classes/lib.php:1896
 msgid "Version:"
 msgstr "Version:"
 
-#: includes/classes/capability.php:197
+#: includes/classes/capability.php:208
 msgid "Capability %s was removed successfully"
 msgstr "Capability %s was removed successfully"
 
-#: includes/classes/capability.php:96
+#: includes/classes/capability.php:103
 msgid "Capability %s exists already"
 msgstr "Capability %s exists already"
 
-#: includes/classes/capability.php:94
+#: includes/classes/capability.php:101
 msgid "Capability %s was added successfully"
 msgstr "Capability %s was added successfully"
 
@@ -567,382 +571,381 @@ msgstr "Capability %s was added successfully"
 msgid "Error: Capability name must contain latin characters and digits only!"
 msgstr "Error: Capability name must contain latin characters and digits only!"
 
-#: includes/classes/ure-lib.php:1653
+#: includes/classes/lib.php:1718
 msgid "Export"
 msgstr "Export"
 
-#: includes/classes/ure-lib.php:1652
+#: includes/classes/lib.php:1717
 msgid "Delete themes"
 msgstr "Delete themes"
 
-#: includes/classes/ure-lib.php:1651
+#: includes/classes/lib.php:1716
 msgid "Edit theme options"
 msgstr "Edit theme options"
 
-#: includes/classes/ure-lib.php:1650
+#: includes/classes/lib.php:1715
 msgid "Promote users"
 msgstr "Promote users"
 
-#: includes/classes/ure-lib.php:1649
+#: includes/classes/lib.php:1714
 msgid "Add users"
 msgstr "Add users"
 
-#: includes/classes/ure-lib.php:1648
+#: includes/classes/lib.php:1713
 msgid "Remove users"
 msgstr "Remove users"
 
-#: includes/classes/ure-lib.php:1647
+#: includes/classes/lib.php:1712
 msgid "List users"
 msgstr "List users"
 
-#: includes/classes/ure-lib.php:1646
+#: includes/classes/lib.php:1711
 msgid "Update core"
 msgstr "Update core"
 
-#: includes/classes/ure-lib.php:1645
+#: includes/classes/lib.php:1710
 msgid "Install themes"
 msgstr "Install themes"
 
-#: includes/classes/ure-lib.php:1644
+#: includes/classes/lib.php:1709
 msgid "Update themes"
 msgstr "Update themes"
 
-#: includes/classes/ure-lib.php:1643
+#: includes/classes/lib.php:1708
 msgid "Install plugins"
 msgstr "Install plugins"
 
-#: includes/classes/ure-lib.php:1642
+#: includes/classes/lib.php:1707
 msgid "Delete plugins"
 msgstr "Delete plugins"
 
-#: includes/classes/ure-lib.php:1641
+#: includes/classes/lib.php:1706
 msgid "Update plugins"
 msgstr "Update plugins"
 
-#: includes/classes/ure-lib.php:1640
+#: includes/classes/lib.php:1705
 msgid "Edit dashboard"
 msgstr "Edit dashboard"
 
-#: includes/classes/ure-lib.php:1639
+#: includes/classes/lib.php:1704
 msgid "Unfiltered upload"
 msgstr "Unfiltered upload"
 
-#: includes/classes/ure-lib.php:1638
+#: includes/classes/lib.php:1703
 msgid "Create users"
 msgstr "Create users"
 
-#: includes/classes/ure-lib.php:1637
+#: includes/classes/lib.php:1702
 msgid "Delete users"
 msgstr "Delete users"
 
-#: includes/classes/ure-lib.php:1636
+#: includes/classes/lib.php:1701
 msgid "Read private pages"
 msgstr "Read private pages"
 
-#: includes/classes/ure-lib.php:1635
+#: includes/classes/lib.php:1700
 msgid "Edit private pages"
 msgstr "Edit private pages"
 
-#: includes/classes/ure-lib.php:1634
+#: includes/classes/lib.php:1699
 msgid "Delete private pages"
 msgstr "Delete private pages"
 
-#: includes/classes/ure-lib.php:1633
+#: includes/classes/lib.php:1698
 msgid "Read private posts"
 msgstr "Read private posts"
 
-#: includes/classes/ure-lib.php:1632
+#: includes/classes/lib.php:1697
 msgid "Edit private posts"
 msgstr "Edit private posts"
 
-#: includes/classes/ure-lib.php:1631
+#: includes/classes/lib.php:1696
 msgid "Delete private posts"
 msgstr "Delete private posts"
 
-#: includes/classes/ure-lib.php:1630
+#: includes/classes/lib.php:1695
 msgid "Delete published posts"
 msgstr "Delete published posts"
 
-#: includes/classes/ure-lib.php:1629
+#: includes/classes/lib.php:1694
 msgid "Delete others posts"
 msgstr "Delete others posts"
 
-#: includes/classes/ure-lib.php:1628
+#: includes/classes/lib.php:1693
 msgid "Delete posts"
 msgstr "Delete posts"
 
-#: includes/classes/ure-lib.php:1627
+#: includes/classes/lib.php:1692
 msgid "Delete published pages"
 msgstr "Delete published pages"
 
-#: includes/classes/ure-lib.php:1626
+#: includes/classes/lib.php:1691
 msgid "Delete others pages"
 msgstr "Delete others pages"
 
-#: includes/classes/ure-lib.php:1625
+#: includes/classes/lib.php:1690
 msgid "Delete pages"
 msgstr "Delete pages"
 
-#: includes/classes/ure-lib.php:1624
+#: includes/classes/lib.php:1689
 msgid "Publish pages"
 msgstr "Publish pages"
 
-#: includes/classes/ure-lib.php:1623
+#: includes/classes/lib.php:1688
 msgid "Edit published pages"
 msgstr "Edit published pages"
 
-#: includes/classes/ure-lib.php:1622
+#: includes/classes/lib.php:1687
 msgid "Edit others pages"
 msgstr "Edit others pages"
 
-#: includes/classes/ure-lib.php:1621
+#: includes/classes/lib.php:1686
 msgid "Level 0"
 msgstr "Level 0"
 
-#: includes/classes/ure-lib.php:1620
+#: includes/classes/lib.php:1685
 msgid "Level 1"
 msgstr "Level 1"
 
-#: includes/classes/ure-lib.php:1619
+#: includes/classes/lib.php:1684
 msgid "Level 2"
 msgstr "Level 2"
 
-#: includes/classes/ure-lib.php:1618
+#: includes/classes/lib.php:1683
 msgid "Level 3"
 msgstr "Level 3"
 
-#: includes/classes/ure-lib.php:1617
+#: includes/classes/lib.php:1682
 msgid "Level 4"
 msgstr "Level 4"
 
-#: includes/classes/ure-lib.php:1616
+#: includes/classes/lib.php:1681
 msgid "Level 5"
 msgstr "Level 5"
 
-#: includes/classes/ure-lib.php:1615
+#: includes/classes/lib.php:1680
 msgid "Level 6"
 msgstr "Level 6"
 
-#: includes/classes/ure-lib.php:1614
+#: includes/classes/lib.php:1679
 msgid "Level 7"
 msgstr "Level 7"
 
-#: includes/classes/ure-lib.php:1613
+#: includes/classes/lib.php:1678
 msgid "Level 8"
 msgstr "Level 8"
 
-#: includes/classes/ure-lib.php:1612
+#: includes/classes/lib.php:1677
 msgid "Level 9"
 msgstr "Level 9"
 
-#: includes/classes/ure-lib.php:1611
+#: includes/classes/lib.php:1676
 msgid "Level 10"
 msgstr "Level 10"
 
-#: includes/classes/ure-lib.php:1610
+#: includes/classes/lib.php:1675
 msgid "Read"
 msgstr "Read"
 
-#: includes/classes/ure-lib.php:1609
+#: includes/classes/lib.php:1674
 msgid "Edit pages"
 msgstr "Edit pages"
 
-#: includes/classes/ure-lib.php:1608
+#: includes/classes/lib.php:1673
 msgid "Publish posts"
 msgstr "Publish posts"
 
-#: includes/classes/ure-lib.php:1607
+#: includes/classes/lib.php:1672
 msgid "Edit published posts"
 msgstr "Edit published posts"
 
-#: includes/classes/ure-lib.php:1606
+#: includes/classes/lib.php:1671
 msgid "Edit others posts"
 msgstr "Edit others posts"
 
-#: includes/classes/ure-lib.php:1605
+#: includes/classes/lib.php:1670
 msgid "Edit posts"
 msgstr "Edit posts"
 
-#: includes/classes/ure-lib.php:1604
+#: includes/classes/lib.php:1669
 msgid "Unfiltered html"
 msgstr "Unfiltered html"
 
-#: includes/classes/ure-lib.php:1603
+#: includes/classes/lib.php:1668
 msgid "Import"
 msgstr "Import"
 
-#: includes/classes/ure-lib.php:1602
+#: includes/classes/lib.php:1667
 msgid "Upload files"
 msgstr "Upload files"
 
-#: includes/classes/ure-lib.php:1601
+#: includes/classes/lib.php:1666
 msgid "Manage links"
 msgstr "Manage links"
 
-#: includes/classes/ure-lib.php:1600
+#: includes/classes/lib.php:1665
 msgid "Manage categories"
 msgstr "Manage categories"
 
-#: includes/classes/ure-lib.php:1599
+#: includes/classes/lib.php:1664
 msgid "Moderate comments"
 msgstr "Moderate comments"
 
-#: includes/classes/ure-lib.php:1598
+#: includes/classes/lib.php:1663
 msgid "Manage options"
 msgstr "Manage options"
 
-#: includes/classes/ure-lib.php:1597
+#: includes/classes/lib.php:1662
 msgid "Edit files"
 msgstr "Edit files"
 
-#: includes/classes/ure-lib.php:1596
+#: includes/classes/lib.php:1661
 msgid "Edit users"
 msgstr "Edit users"
 
-#: includes/classes/ure-lib.php:1595
+#: includes/classes/lib.php:1660
 msgid "Edit plugins"
 msgstr "Edit plugins"
 
-#: includes/classes/ure-lib.php:1594
+#: includes/classes/lib.php:1659
 msgid "Activate plugins"
 msgstr "Activate plugins"
 
-#: includes/classes/ure-lib.php:1593
+#: includes/classes/lib.php:1658
 msgid "Edit themes"
 msgstr "Edit themes"
 
-#: includes/classes/ure-lib.php:1592
+#: includes/classes/lib.php:1657
 msgid "Switch themes"
 msgstr "Switch themes"
 
-#: includes/classes/ure-lib.php:1590
+#: includes/classes/lib.php:1655
 msgid "Subscriber"
 msgstr "Subscriber"
 
-#: includes/classes/ure-lib.php:1589
+#: includes/classes/lib.php:1654
 msgid "Contributor"
 msgstr "Contributor"
 
-#: includes/classes/ure-lib.php:1588
+#: includes/classes/lib.php:1653
 msgid "Author"
 msgstr "Author"
 
-#: includes/classes/ure-lib.php:1587
+#: includes/classes/lib.php:1652
 msgid "Editor"
 msgstr "Editor"
 
-#: includes/classes/ure-lib.php:1571
+#: includes/classes/lib.php:1636
 msgid "This role does not exist - "
 msgstr "This role does not exist - "
 
-#: includes/classes/ure-lib.php:1569
+#: includes/classes/lib.php:1634
 msgid "Can not set Administrator role as a default one"
 msgstr "Can not set Administrator role as a default one"
 
-#: includes/classes/ure-lib.php:1566
+#: includes/classes/lib.php:1629
 msgid "Default role for new users is set to %s successfully"
 msgstr "Default role for new users is set to %s successfully"
 
-#: includes/classes/ure-lib.php:1563
+#: includes/classes/lib.php:1631
 msgid "Error encountered during default role change operation"
 msgstr "Error encountered during default role change operation"
 
-#: includes/classes/ure-lib.php:1532
+#: includes/classes/lib.php:1596
 msgid "Role %s is deleted successfully"
 msgstr "Role %s is deleted successfully"
 
-#: includes/classes/ure-lib.php:1530
+#: includes/classes/lib.php:1594
 msgid "Unused roles are deleted successfully"
 msgstr "Unused roles are deleted successfully"
 
-#: includes/classes/ure-lib.php:1528
+#: includes/classes/lib.php:1592
 msgid "Error encountered during role delete operation"
 msgstr "Error encountered during role delete operation"
 
-#: includes/classes/ure-lib.php:1456
+#: includes/classes/lib.php:1520
 msgid "Role %s is renamed to %s successfully"
 msgstr "Role %s is renamed to %s successfully"
 
-#: includes/classes/ure-lib.php:1448
+#: includes/classes/lib.php:1512
 msgid "Role %s does not exists"
 msgstr "Role %s does not exist"
 
-#: includes/classes/ure-lib.php:1441
+#: includes/classes/lib.php:1505
 msgid "Error: Empty role display name is not allowed."
 msgstr "Error: Empty role display name is not allowed."
 
-#: includes/classes/ure-lib.php:1423
+#: includes/classes/lib.php:1487
 msgid "Error: Role ID is empty!"
 msgstr "Error: Role ID is empty!"
 
-#: includes/classes/ure-lib.php:1400
+#: includes/classes/lib.php:1464
 msgid "Role %s is created successfully"
 msgstr "Role %s is created successfully"
 
-#: includes/classes/ure-lib.php:1398
+#: includes/classes/lib.php:1462
 msgid "Error is encountered during new role create operation"
 msgstr "Error is encountered during new role create operation"
 
-#: includes/classes/ure-lib.php:1383
+#: includes/classes/lib.php:1447
 msgid "Role %s exists already"
 msgstr "Role %s exists already"
 
-#: includes/classes/ure-lib.php:1368 includes/classes/ure-lib.php:1434
+#: includes/classes/lib.php:1432 includes/classes/lib.php:1498
 msgid "Error: WordPress does not support numeric Role name (ID). Add latin characters to it."
 msgstr "Error: WordPress does not support numeric Role name (ID). Add latin characters to it."
 
-#: includes/classes/ure-lib.php:1364 includes/classes/ure-lib.php:1430
+#: includes/classes/lib.php:1428 includes/classes/lib.php:1494
 msgid "Error: Role ID must contain latin characters, digits, hyphens or underscore only!"
 msgstr "Error: Role ID must contain latin characters, digits, hyphens or underscore only!"
 
-#: includes/classes/capability.php:72 includes/classes/capability.php:179
-#: includes/classes/ure-lib.php:1111 includes/classes/ure-lib.php:1355
-#: includes/classes/ure-lib.php:1470 includes/classes/ure-lib.php:1517
-#: includes/classes/user-role-editor.php:637
+#: includes/classes/capability.php:79 includes/classes/capability.php:190
+#: includes/classes/lib.php:1173 includes/classes/lib.php:1419
+#: includes/classes/lib.php:1534 includes/classes/lib.php:1581
+#: includes/classes/user-role-editor.php:641
 msgid "Insufficient permissions to work with User Role Editor"
 msgstr "Insufficient permissions to work with User Role Editor"
 
-#: includes/classes/ure-lib.php:413
+#: includes/classes/lib.php:451
 msgid "User Roles are restored to WordPress default values. "
 msgstr "User Roles are restored to WordPress default values. "
 
-#: includes/classes/ure-lib.php:355
-msgid "Error occured during user update"
-msgstr "Error occured during user update"
+#: includes/classes/lib.php:393
+msgid "Error occurred during user update"
+msgstr "Error occurred during user update"
 
-#: includes/classes/ure-lib.php:350
+#: includes/classes/lib.php:388
 msgid "User capabilities are updated successfully"
 msgstr "User capabilities are updated successfully"
 
-#: includes/classes/ure-lib.php:343
-msgid "Error occured during role(s) update"
-msgstr "Error occured during role(s) update"
+#: includes/classes/lib.php:381
+msgid "Error occurred during role(s) update"
+msgstr "Error occurred during role(s) update"
 
-#: includes/classes/ure-lib.php:337
+#: includes/classes/lib.php:375
 msgid "Roles are updated for all network"
 msgstr "Roles are updated for all network"
 
-#: includes/classes/ure-lib.php:335
+#: includes/classes/lib.php:373
 msgid "Role is updated successfully"
 msgstr "Role is updated successfully"
 
-#: includes/classes/ure-lib.php:292
+#: includes/classes/lib.php:312
 msgid "does not exist"
 msgstr "does not exist"
 
-#: includes/classes/ure-lib.php:291
+#: includes/classes/lib.php:311
 msgid "Role"
 msgstr "Role"
 
-#: includes/classes/ure-lib.php:291
+#: includes/classes/lib.php:309 includes/classes/lib.php:311
 msgid "Error: "
 msgstr "Error: "
 
-#. #-#-#-#-#  user-role-editor-code.pot (User Role Editor 4.40.1)  #-#-#-#-#
-#. Plugin Name of the plugin/theme
+#. Plugin Name of the plugin
+#: includes/classes/lib.php:246 includes/classes/user-role-editor.php:557
+#: includes/classes/user-role-editor.php:588
 #: includes/classes/capabilities-groups-manager.php:75
-#: includes/classes/ure-lib.php:230 includes/classes/user-role-editor.php:553
-#: includes/classes/user-role-editor.php:584
 msgid "User Role Editor"
 msgstr "User Role Editor"
 
@@ -966,6 +969,6 @@ msgstr "Display Role Name: "
 msgid "Role name (ID): "
 msgstr "Role name (ID): "
 
-#: includes/classes/ure-lib.php:207
+#: includes/classes/lib.php:223
 msgid "Error: wrong request"
 msgstr "Error: wrong request"

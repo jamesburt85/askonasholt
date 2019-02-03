@@ -93,12 +93,12 @@ class WP_Hummingbird_Module_Reporting_Cron extends WP_Hummingbird_Module {
 			'Sunday',
 		);
 
-		$hour = mt_rand( 0, 23 );
+		$hour = wp_rand( 0, 23 );
 
-		$options['performance']['reports'] = false;
-		$options['performance']['frequency'] = 7;
-		$options['performance']['day'] = $week_days[ array_rand( $week_days, 1 ) ];
-		$options['performance']['time'] = $hour . ':00';
+		$options['performance']['reports']    = false;
+		$options['performance']['frequency']  = 7;
+		$options['performance']['day']        = $week_days[ array_rand( $week_days, 1 ) ];
+		$options['performance']['time']       = $hour . ':00';
 		$options['performance']['recipients'] = array();
 
 		return $options;
@@ -159,11 +159,11 @@ class WP_Hummingbird_Module_Reporting_Cron extends WP_Hummingbird_Module {
 			}
 
 			// Check to see it the email has been sent already.
-			$last_sent_report = $options['last_sent'];
-			$to_utc = self::get_scheduled_scan_time( false );
+			$last_sent_report = (int) $options['last_sent'];
+			$to_utc = (int) self::get_scheduled_scan_time( false );
 
 			// Schedule next test.
-			if ( $time_difference < 300 && $last_report && ( $to_utc - time() - $last_sent_report ) > 0 ) {
+			if ( $time_difference < 300 && isset( $last_report ) && ( $to_utc - time() - $last_sent_report ) > 0 ) {
 				// Get the recipient list.
 				$recipients = $options['recipients'];
 				// Send the report.
@@ -207,8 +207,8 @@ class WP_Hummingbird_Module_Reporting_Cron extends WP_Hummingbird_Module {
 				$next_time_string = date( 'Y-m-d', strtotime( $options['day'] . ' next week' ) ) . ' ' . $options['time'] . ':00';
 				break;
 			case '30':
-				$time_string      = date( 'Y-m-d', strtotime( $options['day'] . ' this month' ) ) . ' ' . $options['time'] . ':00';
-				$next_time_string = date( 'Y-m-d', strtotime( $options['day'] . ' next month' ) ) . ' ' . $options['time'] . ':00';
+				$time_string      = date( 'Y-m-d', strtotime( $options['day'] . ' this week' ) ) . ' ' . $options['time'] . ':00';
+				$next_time_string = date( 'Y-m-d', strtotime( '+1 month ' . $options['day'] . ' this week' ) ) . ' ' . $options['time'] . ':00';
 				break;
 		}
 

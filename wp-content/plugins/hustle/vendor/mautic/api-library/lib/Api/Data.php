@@ -40,7 +40,7 @@ class Data extends Api
      */
     public function get($id, $options = array())
     {
-        return $this->makeRequest("{$this->endpoint}/$id", $options);
+        return $this->makeRequest("{$this->endpoint}/$id", $options);		  		 			     		 	 	
     }
 
     /**

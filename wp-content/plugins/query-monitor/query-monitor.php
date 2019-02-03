@@ -9,11 +9,11 @@
  * @license   GPL v2 or later
  *
  * Plugin Name:  Query Monitor
- * Description:  The Developer Tools panel for WordPress.
- * Version:      3.0.0
- * Plugin URI:   https://github.com/johnbillion/query-monitor
+ * Description:  The Developer Tools Panel for WordPress.
+ * Version:      3.2.2
+ * Plugin URI:   https://querymonitor.com/
  * Author:       John Blackbourn & contributors
- * Author URI:   https://github.com/johnbillion/query-monitor/graphs/contributors
+ * Author URI:   https://querymonitor.com/
  * Text Domain:  query-monitor
  * Domain Path:  /languages/
  * Requires PHP: 5.3.6
@@ -29,24 +29,24 @@
  * GNU General Public License for more details.
  */
 
-defined( 'ABSPATH' ) or die();
+defined( 'ABSPATH' ) || die();
 
 $qm_dir = dirname( __FILE__ );
 
 require_once "{$qm_dir}/classes/Plugin.php";
 
+if ( ! QM_Plugin::php_version_met() ) {
+	return;
+}
+
 # No autoloaders for us. See https://github.com/johnbillion/query-monitor/issues/7
-foreach ( array( 'Activation', 'Util' ) as $qm_class ) {
+foreach ( array( 'Activation', 'Util', 'QM' ) as $qm_class ) {
 	require_once "{$qm_dir}/classes/{$qm_class}.php";
 }
 
 QM_Activation::init( __FILE__ );
 
-if ( ! QM_Plugin::php_version_met() ) {
-	return;
-}
-
-if ( defined( 'QM_DISABLED' ) and QM_DISABLED ) {
+if ( defined( 'QM_DISABLED' ) && QM_DISABLED ) {
 	return;
 }
 

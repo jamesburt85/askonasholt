@@ -22,32 +22,35 @@
 	<div class="sui-summary-details">
 		<?php
 		if ( $last_report && ! is_wp_error( $last_report ) && ! $report_dismissed ) :
-			$error_class = ( 'aplus' === $last_report->data->score_class || 'a' === $last_report->data->score_class || 'b' === $last_report->data->score_class ) ? 'success' : 'warning';
-			$icon_class = ( 'aplus' === $last_report->data->score_class || 'a' === $last_report->data->score_class || 'b' === $last_report->data->score_class ) ? 'check-tick' : 'info';
+			if ( 85 <= $last_report->data->score ) {
+				$error_class = 'success';
+				$icon_class  = 'check-tick';
+			} elseif ( 65 <= $last_report->data->score ) {
+				$error_class = 'warning';
+				$icon_class  = 'warning-alert';
+			} else {
+				$error_class = 'error';
+				$icon_class  = 'warning-alert';
+			}
 			?>
 			<span class="sui-summary-large"><?php echo esc_html( $last_report->data->score ); ?></span>
 			<i class="sui-icon-<?php echo esc_attr( $icon_class ); ?> sui-lg sui-<?php echo esc_attr( $error_class ); ?>"></i>
 			<span class='sui-summary-percent'>/100</span>
-			<?php
-		elseif ( $is_doing_report ) :
-			?>
-			<span class="wphb-scan-progress-text"></span>
-			<?php
-		elseif ( $report_dismissed ) :
-			?>
+		<?php elseif ( $is_doing_report ) : ?>
+			<div class="sui-progress-text sui-icon-loader sui-loading">
+		<?php elseif ( $report_dismissed && isset( $last_report->data->score ) ) : ?>
 			<span class="sui-summary-large"><?php echo esc_html( $last_report->data->score ); ?></span>
 			<i class="sui-icon-info sui-lg"></i>
 			<span class='sui-summary-percent'>/100</span>
-			<?php
-		else :
-			?>
+		<?php else : ?>
 			&mdash;
 		<?php endif; ?>
 		<span class="sui-summary-sub"><?php esc_html_e( 'Current performance score', 'wphb' ); ?></span>
 		<?php
 		if ( $last_report && ! is_wp_error( $last_report ) ) {
 			$data_time = strtotime( get_date_from_gmt( date( 'Y-m-d H:i:s', $last_report->data->time ) ) );
-			echo date_i18n( get_option( 'date_format' ), $data_time ); ?>
+			echo date_i18n( get_option( 'date_format' ), $data_time );
+			?>
 			<span class="sui-summary-detail">
 					<?php printf( _x( 'at %s', 'Time of the last performance report', 'wphb' ), date_i18n( get_option( 'time_format' ), $data_time ) ); ?>
 				</span>
@@ -56,7 +59,8 @@
 			esc_html_e( 'Running scan...', 'wphb' );
 		} else {
 			esc_html_e( 'Never', 'wphb' );
-		} ?>
+		}
+		?>
 		<span class="sui-summary-sub"><?php esc_html_e( 'Last test', 'wphb' ); ?></span>
 	</div>
 </div>
@@ -94,7 +98,7 @@
 			<span class="sui-list-label"><?php esc_html_e( 'Last Down', 'wphb' ); ?></span>
 			<span class="sui-list-detail">
 					<?php if ( ! WP_Hummingbird_Utils::is_member() ) : ?>
-						<a class="sui-button button-content-cta button-ghost"  href="<?php echo WP_Hummingbird_Utils::get_link( 'plugin', 'hummingbird_dash_summary_pro_tag' ); ?>" target="_blank">
+						<a class="sui-button sui-button-ghost sui-button-green"  href="<?php echo WP_Hummingbird_Utils::get_link( 'plugin', 'hummingbird_dash_summary_pro_tag' ); ?>" target="_blank">
 							<?php esc_html_e( 'Pro Feature', 'wphb' ); ?>
 						</a>
 					<?php elseif ( is_wp_error( $uptime_report ) || ( ! $uptime_active ) ) : ?>

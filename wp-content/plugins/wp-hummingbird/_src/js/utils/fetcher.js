@@ -31,6 +31,7 @@ function Fetcher() {
 		        const action = actionPrefix + 'notice_dismiss';
 		        return request( action, { id }, 'POST' );
             },
+
             /**
              * Dismiss CloudFlare dash notice
              */
@@ -39,19 +40,61 @@ function Fetcher() {
                 return request( action, {}, 'POST' );
             }
         },
+
 		/**
 		 * Caching module actions.
          */
         caching: {
-            /**
+			/**
+			 * Activate browser caching.
+			 *
+			 * @since 1.9.0
+			 */
+			activate: () => {
+        		const action = actionPrefix + 'caching_activate';
+        		return request( action, {}, 'POST' )
+					.then( ( response ) => {
+						return response;
+					});
+			},
+
+			/**
+			 * Unified save settings method.
+			 *
+			 * @since 1.9.0
+			 */
+			saveSettings: ( module, data ) => {
+				const action = actionPrefix + module + '_save_settings';
+				return request( action, { data }, 'POST' )
+					.then( ( response ) => {
+						return response;
+					});
+			},
+
+			/**
+			 * Clear cache for selected module.
+			 *
+			 * @since 1.9.0
+			 */
+			clearCache: ( module ) => {
+				const action = actionPrefix + 'clear_module_cache';
+				return request( action, { module }, 'POST' )
+					.then( ( response ) => {
+						return response;
+					});
+			},
+
+			/**
              * Set expiration for browser caching.
              *
-             * @param type File type.
              * @param expiry_times Type expiry times.
              */
-            setExpiration: ( type, expiry_times ) => {
+            setExpiration: ( expiry_times ) => {
                 const action = actionPrefix + 'caching_set_expiration';
-                return request( action, { type, expiry_times }, 'POST' );
+                return request( action, { expiry_times }, 'POST' )
+					.then( ( response ) => {
+						return response;
+					});
             },
             /**
              * Set server type.
@@ -78,13 +121,13 @@ function Fetcher() {
             },
 
 			/**
-			 * Save settings from rss cache settings.
+			 * Update htaccess file.
 			 *
-			 * @param data
+			 * @returns {*}
 			 */
-			saveSettings: ( data ) => {
-				const action = actionPrefix + 'caching_save_settings';
-				return request( action, { data }, 'POST' )
+			updateHtaccess: () => {
+            	const action = actionPrefix + 'caching_update_htaccess';
+				return request( action, {}, 'POST' )
 					.then( ( response ) => {
 						return response;
 					});
@@ -101,14 +144,11 @@ function Fetcher() {
             },
 
 			/**
-			 * Save settings in cache module.
-			 *
-			 * @since 1.8.1
-			 * @param data
+			 * Re-check expiry in meta box header button action.
 			 */
-			saveOtherSettings: ( data ) => {
-            	const action = actionPrefix + 'caching_save_other_settings';
-            	return request( action, { data }, 'POST' )
+			recheckExpiry: () => {
+				const action = actionPrefix + 'caching_recheck_expiry';
+				return request( action, {}, 'POST' )
 					.then( ( response ) => {
 						return response;
 					});
@@ -149,6 +189,14 @@ function Fetcher() {
 			 */
 			purgeCache: () => {
                 const action = actionPrefix + 'cloudflare_purge_cache';
+                return request( action, {}, 'POST' );
+            },
+
+			/**
+             * Recheck Cloudflare zones.
+			 */
+			recheckZones: () => {
+                const action = actionPrefix + 'cloudflare_recheck_zones';
                 return request( action, {}, 'POST' );
             }
         },
@@ -247,7 +295,10 @@ function Fetcher() {
              */
             finishCheck: () => {
                 const action = actionPrefix + 'minification_finish_scan';
-                return request( action, {}, 'POST' );
+                return request( action, {}, 'POST' )
+					.then( ( response ) => {
+						return response;
+					});
             },
 
 			/**
@@ -269,6 +320,32 @@ function Fetcher() {
 					.then( ( response ) => {
 						return response;
 					});
+			},
+
+			/**
+			 * Update custom asset path
+			 *
+			 * @since 1.9
+			 *
+			 * @param value
+			 */
+			updateAssetPath: ( value ) => {
+				const action = actionPrefix + 'minification_update_asset_path';
+				return request( action, { value }, 'POST' );
+			},
+
+			/**
+			 * Reset individual file.
+			 *
+			 * @since 1.9.2
+			 *
+			 * @param {string} value
+			 *
+			 * @returns {*}
+			 */
+			resetAsset: ( value ) => {
+				const action = actionPrefix + 'minification_reset_asset';
+				return request( action, { value }, 'POST' );
 			}
         },
 
@@ -285,30 +362,6 @@ function Fetcher() {
                     .then( ( response ) => {
                        return response;
                     });
-            },
-
-            /**
-             * Add a single email/name recipient to the reports list.
-             *
-             * @param email
-             * @param name
-             */
-            addRecipient: ( email, name ) => {
-                const action = actionPrefixPro + 'performance_add_recipient';
-                return request( action, { email, name }, 'POST' )
-                    .then( ( response ) => {
-                        return response;
-                    });
-            },
-
-            /**
-             * Save reporting settings on performance page.
-             *
-             * @param data From data.
-             */
-            saveReportsSettings: ( data ) => {
-                const action = actionPrefixPro + 'performance_save_reports_settings';
-                return request( action, { data }, 'POST' );
             },
 
             /**
@@ -360,6 +413,80 @@ function Fetcher() {
 				const action = actionPrefixPro + 'advanced_db_schedule';
 				return request( action, {}, 'POST' );
 			}
+		},
+
+		/**
+		 * Logger module actions.
+		 *
+		 * @since 1.9.2
+		 */
+		logger: {
+			/**
+			 * Clear logs.
+			 *
+			 * @param {string} module  Module slug.
+			 */
+			clear: ( module ) => {
+				const action = actionPrefix + 'logger_clear';
+				return request( action, { module }, 'POST' )
+					.then( ( response ) => {
+						return response;
+					});
+			}
+		},
+
+		/**
+		 * Settings actions.
+		 */
+		settings: {
+			/**
+			 * Save settings from HB admin settings.
+			 *
+			 * @param form_data
+			 */
+			saveSettings: ( form_data ) => {
+				const action = actionPrefix + 'admin_settings_save_settings';
+				return request( action, { form_data }, 'POST' )
+					.then( ( response ) => {
+						return response;
+					});
+			},
+		},
+
+		/**
+		 * Common actions that are used by several modules.
+		 *
+		 * @since 1.9.3
+		 */
+		common: {
+			/**
+			 * Add recipient for Performance and Uptime reports.
+			 *
+			 * @param {string} module  Module name.
+			 * @param {string} email   Email.
+			 * @param {string} name    User.
+			 */
+			addRecipient: ( module, email, name ) => {
+				const action = actionPrefixPro + 'add_recipient';
+				return request( action, { module, email, name }, 'POST' )
+					.then( ( response ) => {
+					return response;
+				});
+			},
+
+			/**
+			 * Save report settings for Performance and Uptime modules.
+			 *
+			 * @param {string} module  Module name.
+			 * @param {array}  data    From data.
+			 */
+			saveReportsSettings: ( module, data ) => {
+				const action = actionPrefixPro + 'save_report_settings';
+				return request( action, { module, data }, 'POST' )
+					.then( ( response ) => {
+						return response;
+					});
+			},
 		}
     };
 

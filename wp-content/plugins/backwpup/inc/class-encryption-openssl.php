@@ -12,22 +12,118 @@
  */
 class BackWPup_Encryption_OpenSSL {
 
+	/**
+	 * Prefix
+	 *
+	 * @var string
+	 */
 	const PREFIX = 'OSSL$';
 
+	/**
+	 * Cipher Method
+	 *
+	 * @var string
+	 */
 	private static $cipher_method;
 
+	private $key;
+
+	private $key_type;
+
 	/**
+	 * Supported
+	 *
 	 * @return bool
 	 */
 	public static function supported() {
 
 		return
-			version_compare( PHP_VERSION, '5.3.0', '>=' )
-			&& function_exists( 'openssl_get_cipher_methods' )
+			function_exists( 'openssl_get_cipher_methods' )
 			&& self::cipher_method();
 	}
 
+    /**
+     * BackWPup_Encryption_OpenSSL constructor
+     *
+     * @param string $enc_key
+     * @param string $key_type
+     */
+    public function __construct($enc_key, $key_type)
+    {
+        $this->key = md5((string)$enc_key);
+        $this->key_type = (string)$key_type;
+    }
+
+    /**
+     * Encrypt a string using Open SSL lib with  AES-256-CTR cypher
+     *
+     * @param string $string value to encrypt.
+     *
+     * @return string encrypted string
+     */
+    public function encrypt($string)
+    {
+        if (!is_string($string) || !$string) {
+            return '';
+        }
+
+        $nonce = openssl_random_pseudo_bytes(openssl_cipher_iv_length(self::cipher_method()));
+        $openssl_raw_data = defined('OPENSSL_RAW_DATA') ? OPENSSL_RAW_DATA : 1;
+        $encrypted = openssl_encrypt(
+            $string,
+            self::cipher_method(),
+            $this->key,
+            $openssl_raw_data,
+            $nonce
+        );
+
+        return BackWPup_Encryption::PREFIX . self::PREFIX . $this->key_type . base64_encode($nonce . $encrypted);
+    }
+
+    /**
+     * Decrypt a string using Open SSL lib with  AES-256-CTR cypher
+     *
+     * @param string $string value to decrypt.
+     *
+     * @return string decrypted string
+     */
+    public function decrypt($string)
+    {
+        if (
+            !is_string($string)
+            || !$string
+            || strpos($string, BackWPup_Encryption::PREFIX . self::PREFIX . $this->key_type) !== 0
+        ) {
+            return '';
+        }
+
+        $no_prefix = substr($string,
+            strlen(BackWPup_Encryption::PREFIX . self::PREFIX . $this->key_type));
+
+        $encrypted = base64_decode($no_prefix, true);
+        if ($encrypted === false) {
+            return '';
+        }
+
+        $nonce_size = openssl_cipher_iv_length(self::cipher_method());
+        $nonce = substr($encrypted, 0, $nonce_size);
+        $to_decrypt = substr($encrypted, $nonce_size);
+        $openssl_raw_data = defined('OPENSSL_RAW_DATA') ? OPENSSL_RAW_DATA : true;
+
+        $decrypted = openssl_decrypt(
+            $to_decrypt,
+            self::cipher_method(),
+            $this->key,
+            $openssl_raw_data,
+            $nonce
+        );
+
+        return $decrypted;
+    }
+
 	/**
+	 * Cipher Method
+	 *
 	 * @return string
 	 */
 	private static function cipher_method() {
@@ -55,94 +151,5 @@ class BackWPup_Encryption_OpenSSL {
 		self::$cipher_method = reset( $all_methods );
 
 		return self::$cipher_method;
-	}
-
-	/**
-	 * @param string $enc_key
-	 * @param string $key_type
-	 */
-	public function __construct( $enc_key, $key_type ) {
-
-		$this->key      = md5( (string) $enc_key );
-		$this->key_type = (string) $key_type;
-	}
-
-	/**
-	 *
-	 * Encrypt a string using Open SSL lib with  AES-256-CTR cypher
-	 *
-	 * @param string $string value to encrypt.
-	 *
-	 * @return string encrypted string
-	 */
-	public function encrypt( $string ) {
-
-		if ( ! is_string( $string ) || ! $string ) {
-			return '';
-		}
-
-		$base64_encode = '';
-		$args          = array(
-			$string,
-			self::cipher_method(),
-			$this->key,
-			OPENSSL_RAW_DATA,
-		);
-
-		if ( 1 === version_compare( PHP_VERSION, '5.3.2' ) ) {
-			$args[] = openssl_random_pseudo_bytes( openssl_cipher_iv_length( self::cipher_method() ) );
-
-			// Include nonce if possible.
-			$base64_encode .= end( $args );
-		}
-
-		$encrypted = call_user_func_array( 'openssl_encrypt', $args );
-
-		$base64_encode .= $encrypted;
-
-		return BackWPup_Encryption::PREFIX . self::PREFIX . $this->key_type . base64_encode( $base64_encode );
-	}
-
-	/**
-	 *
-	 * Decrypt a string using Open SSL lib with  AES-256-CTR cypher
-	 *
-	 * @param string $string value to decrypt.
-	 *
-	 * @return string decrypted string
-	 */
-	public function decrypt( $string ) {
-
-		if (
-			! is_string( $string )
-			|| ! $string
-			|| strpos( $string, BackWPup_Encryption::PREFIX . self::PREFIX . $this->key_type ) !== 0
-		) {
-			return '';
-		}
-
-		$no_prefix  = substr( $string, strlen( BackWPup_Encryption::PREFIX . self::PREFIX . $this->key_type ) );
-		$encrypted  = base64_decode( $no_prefix, true );
-		$to_decrypt = $encrypted;
-		$args       = array(
-			$to_decrypt,
-			self::cipher_method(),
-			$this->key,
-			OPENSSL_RAW_DATA,
-		);
-
-		if ( $encrypted === false ) {
-			return '';
-		}
-
-		if ( 1 === version_compare( PHP_VERSION, '5.3.2' ) ) {
-			$nonce_size = openssl_cipher_iv_length( self::cipher_method() );
-			$nonce      = substr( $encrypted, 0, $nonce_size );
-
-			$args[0] = substr( $encrypted, $nonce_size );
-			$args[]  = $nonce;
-		}
-
-		return call_user_func_array( 'openssl_decrypt', $args );
 	}
 }

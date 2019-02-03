@@ -20,24 +20,23 @@ class QM_Output_Html_DB_Components extends QM_Output_Html {
 			return;
 		}
 
-		$total_time  = 0;
-		$span = count( $data['types'] ) + 2;
+		$total_time = 0;
+		$span       = count( $data['types'] ) + 2;
 
-		echo '<div class="qm" id="' . esc_attr( $this->collector->id() ) . '">';
-		echo '<table class="qm-sortable">';
-		echo '<caption>' . esc_html( $this->collector->name() ) . '</caption>';
+		$this->before_tabular_output();
+
 		echo '<thead>';
 
 		echo '<tr>';
 		echo '<th scope="col">' . esc_html__( 'Component', 'query-monitor' ) . '</th>';
 
 		foreach ( $data['types'] as $type_name => $type_count ) {
-			echo '<th scope="col" class="qm-num qm-sortable-column">';
+			echo '<th scope="col" class="qm-num qm-sortable-column" role="columnheader" aria-sort="none">';
 			echo $this->build_sorter( $type_name ); // WPCS: XSS ok;
 			echo '</th>';
 		}
 
-		echo '<th scope="col" class="qm-num qm-sorted-desc qm-sortable-column">';
+		echo '<th scope="col" class="qm-num qm-sorted-desc qm-sortable-column" role="columnheader" aria-sort="descending">';
 		echo $this->build_sorter( __( 'Time', 'query-monitor' ) ); // WPCS: XSS ok;
 		echo '</th>';
 		echo '</tr>';
@@ -47,10 +46,10 @@ class QM_Output_Html_DB_Components extends QM_Output_Html {
 		echo '<tbody>';
 
 		foreach ( $data['times'] as $row ) {
-			$total_time  += $row['ltime'];
+			$total_time += $row['ltime'];
 
 			echo '<tr>';
-			echo '<td><a href="#" class="qm-filter-trigger" data-qm-target="db_queries-wpdb" data-qm-filter="component" data-qm-value="' . esc_attr( $row['component'] ) . '">' . esc_html( $row['component'] ) . '</a></td>';
+			echo '<td class="qm-row-component"><a href="#" class="qm-filter-trigger" data-qm-target="db_queries-wpdb" data-qm-filter="component" data-qm-value="' . esc_attr( $row['component'] ) . '">' . esc_html( $row['component'] ) . '</a></td>';
 
 			foreach ( $data['types'] as $type_name => $type_count ) {
 				if ( isset( $row['types'][ $type_name ] ) ) {
@@ -81,9 +80,7 @@ class QM_Output_Html_DB_Components extends QM_Output_Html {
 		echo '</tr>';
 		echo '</tfoot>';
 
-		echo '</table>';
-		echo '</div>';
-
+		$this->after_tabular_output();
 	}
 
 	public function admin_menu( array $menu ) {
@@ -93,7 +90,9 @@ class QM_Output_Html_DB_Components extends QM_Output_Html {
 			return $menu;
 		}
 
-		if ( $dbq = QM_Collectors::get( 'db_queries' ) ) {
+		$dbq = QM_Collectors::get( 'db_queries' );
+
+		if ( $dbq ) {
 			$dbq_data = $dbq->get_data();
 			if ( isset( $dbq_data['component_times'] ) ) {
 				$menu[] = $this->menu( array(
@@ -108,7 +107,8 @@ class QM_Output_Html_DB_Components extends QM_Output_Html {
 }
 
 function register_qm_output_html_db_components( array $output, QM_Collectors $collectors ) {
-	if ( $collector = QM_Collectors::get( 'db_components' ) ) {
+	$collector = $collectors::get( 'db_components' );
+	if ( $collector ) {
 		$output['db_components'] = new QM_Output_Html_DB_Components( $collector );
 	}
 	return $output;

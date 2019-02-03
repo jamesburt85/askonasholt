@@ -1,20 +1,25 @@
 <?php
-/** @var WP_Hummingbird_Performance_Report_Page $this */
-$last_test = WP_Hummingbird_Module_Performance::get_last_report();
-?>
+/**
+ * Render page.
+ *
+ * @package Hummingbird
+ *
+ * @var array|wp_error $report  Report, set in render_inner_content().
+ */
 
-<?php if ( $this->has_meta_boxes( 'summary' ) ) : ?>
-	<?php $this->do_meta_boxes( 'summary' ); ?>
-<?php endif; ?>
+if ( $this->has_meta_boxes( 'summary' ) ) {
+	$this->do_meta_boxes( 'summary' );
+} ?>
 
 <div class="sui-row-with-sidenav">
-	<?php if ( $last_test ) : ?>
+	<?php if ( $report ) : ?>
 		<?php $this->show_tabs(); ?>
 		<?php $this->do_meta_boxes( $this->get_current_tab() ); ?>
 	<?php else : ?>
 		<?php $this->do_meta_boxes( 'main' ); ?>
 	<?php endif; ?>
 </div><!-- end row -->
+<?php WP_Hummingbird_Utils::get_modal( 'add-recipient' ); ?>
 
 <script>
 	jQuery(document).ready( function() {

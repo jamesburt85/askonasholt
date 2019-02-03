@@ -6,6 +6,10 @@ class WP_Optimization_orphandata extends WP_Optimization {
 
 	public $ui_sort_order = 10000;
 
+	public $available_for_saving = true;
+
+	public $support_preview = false;
+
 	/**
 	 * Do actions after optimize() function.
 	 */
@@ -18,7 +22,6 @@ class WP_Optimization_orphandata extends WP_Optimization {
 
 		$this->logger->info($message);
 		$this->register_output($message);
-
 	}
 
 	/**

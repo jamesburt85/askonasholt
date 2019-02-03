@@ -53,7 +53,12 @@ jQuery(document).ready(function($){
     $("#relevanssi_index_taxonomies").click(function() {
         taxonomies.toggleClass('screen-reader-text', !this.checked);
     });
-    
+
+	var post_type_archives = $("#posttypearchives");
+    $("#relevanssi_index_post_type_archives").click(function() {
+        post_type_archives.toggleClass('screen-reader-text', !this.checked);
+    });
+
     var fields_content = $("#index_field_input");
     var fields_select = $("#relevanssi_index_fields_select");
     fields_select.change(function() {
@@ -120,7 +125,6 @@ jQuery(document).ready(function($){
 		$("#relevanssi_word_boundaries").attr('disabled', !this.checked);
 		$("#relevanssi_show_matches").attr('disabled', !this.checked);
 		$("#relevanssi_show_matches_text").attr('disabled', !this.checked);
-		$("#relevanssi_highlight_docs_external").attr('disabled', !this.checked);
 	});
 
 	$("#relevanssi_searchblogs_all").click(function() {
@@ -167,6 +171,7 @@ jQuery(document).ready(function($) {
 					'total_seconds' : 0,
 					'limit' : 10,
 					'extend' : true,
+					'security' : nonce.indexing_nonce,
 				};
 				process_indexing_step(args);
 			}
@@ -308,3 +313,91 @@ function rlv_format_approximate_time(total_seconds) {
 
 	return time;
 }
+
+jQuery(document).ready(function($) {
+	$('#search').click(function(e) {
+		var results = document.getElementById("results");
+		results.innerHTML = 'Searching...';
+		e.preventDefault();
+		jQuery.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			data: {
+				action: 'relevanssi_admin_search',
+				args: document.getElementById('args').value,
+				posts_per_page: document.getElementById('posts_per_page').value,
+				s: document.getElementById('s').value,
+				security : nonce.searching_nonce,
+			},
+			dataType: 'json',
+			success: function(response) {
+				results.innerHTML = response;
+			}
+		});
+	});
+
+	// Show the filters on the "Admin search" page.
+	$(document).on('click', '#show_filters', function(e) {
+		$('#relevanssi_filter_list').toggle();
+		$('#show_filters').toggle();
+		$('#hide_filters').toggle();
+	});
+
+	// Hide the filters on the "Admin search" page.
+	$(document).on('click', '#hide_filters', function(e) {
+		$('#relevanssi_filter_list').toggle();
+		$('#show_filters').toggle();
+		$('#hide_filters').toggle();
+	});
+
+	$(document).on('click', '#next_page', function(e) {
+		var results = document.getElementById("results");
+		e.preventDefault();
+		var offset = parseInt(document.getElementById('offset').innerHTML);
+		var posts = parseInt(document.getElementById('posts_per_page').value);
+		offset = offset + posts;
+		results.innerHTML = 'Searching...';
+		jQuery.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			data: {
+				action: 'relevanssi_admin_search',
+				args: document.getElementById('args').value,
+				posts_per_page: document.getElementById('posts_per_page').value,
+				s: document.getElementById('s').value,
+				offset: offset,
+				security : nonce.searching_nonce,
+			},
+			dataType: 'json',
+			success: function(response) {
+				results.innerHTML = response;
+			}
+		});
+	});
+
+	$(document).on('click', '#prev_page', function(e) {
+		var results = document.getElementById("results");
+		e.preventDefault();
+		var offset = parseInt(document.getElementById('offset').innerHTML);
+		var posts = parseInt(document.getElementById('posts_per_page').value);
+		offset = offset - posts;
+		if ( offset < 0 ) offset = 0;
+		results.innerHTML = 'Searching...';
+		jQuery.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			data: {
+				action: 'relevanssi_admin_search',
+				args: document.getElementById('args').value,
+				posts_per_page: document.getElementById('posts_per_page').value,
+				s: document.getElementById('s').value,
+				offset: offset,
+				security : nonce.searching_nonce,
+			},
+			dataType: 'json',
+			success: function(response) {
+				results.innerHTML = response;
+			}
+		});
+	});
+});

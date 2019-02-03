@@ -31,7 +31,7 @@ if ( ! class_exists( 'AS3CF_Compatibility_Check' ) ) {
 		protected $plugin_slug;
 
 		/**
-		 * @var string The name of the plugin, e.g. WP Offload S3
+		 * @var string The name of the plugin, e.g. WP Offload Media
 		 */
 		protected $plugin_name;
 
@@ -321,6 +321,7 @@ if ( ! class_exists( 'AS3CF_Compatibility_Check' ) ) {
 			$sdk_errors = $this->get_sdk_requirements_errors();
 			if ( ! empty( $sdk_errors ) ) {
 				$sdk_errors = $this->get_sdk_error_msg() . $hide_notice_msg;
+
 				return $this->set_error_msg( $sdk_errors );
 			}
 
@@ -368,7 +369,7 @@ if ( ! class_exists( 'AS3CF_Compatibility_Check' ) ) {
 				global $as3cfpro;
 				if ( ! empty( $as3cfpro ) && $as3cfpro->get_plugin_slug( true ) === $this->parent_plugin_slug ) {
 					// Don't show update link for addons of a licensed plugin where the license is invalid
-					if ( ! $as3cfpro->is_valid_licence() ) {
+					if ( ! $as3cfpro->is_valid_licence( false, true ) ) {
 						$msg .= ' ' . sprintf( __( 'A valid license for %s is required to update.', 'amazon-s3-and-cloudfront' ), $this->get_parent_plugin_name() );
 						$msg .= $hide_notice_msg;
 
@@ -406,7 +407,7 @@ if ( ! class_exists( 'AS3CF_Compatibility_Check' ) ) {
 				global $as3cfpro;
 				if ( ! empty( $as3cfpro ) && $as3cfpro->get_plugin_slug( true ) === $this->parent_plugin_slug ) {
 					// Don't show update link for addons of a licensed plugin where the license is invalid
-					if ( ! $as3cfpro->is_valid_licence() ) {
+					if ( ! $as3cfpro->is_valid_licence( false, true ) ) {
 						$upgrade_msg = ' ' . sprintf( __( 'A valid license for %s is required to update.', 'amazon-s3-and-cloudfront' ), $this->get_parent_plugin_name() );
 					}
 				}
@@ -531,7 +532,7 @@ if ( ! class_exists( 'AS3CF_Compatibility_Check' ) ) {
 		}
 
 		/**
-		 * Checks if another version of WP Offload S3 (Lite) is active and deactivates it.
+		 * Checks if another version of WP Offload Media (Lite) is active and deactivates it.
 		 * To be hooked on `activated_plugin` so other plugin is deactivated when current plugin is activated.
 		 *
 		 * @param string $plugin
@@ -615,8 +616,8 @@ if ( ! class_exists( 'AS3CF_Compatibility_Check' ) ) {
 
 			$errors = array();
 
-			if ( version_compare( PHP_VERSION, '5.3.3', '<' ) ) {
-				$errors[] = __( 'a PHP version less than 5.3.3', 'amazon-s3-and-cloudfront' );
+			if ( version_compare( PHP_VERSION, '5.5', '<' ) ) {
+				$errors[] = __( 'a PHP version less than 5.5', 'amazon-s3-and-cloudfront' );
 			}
 
 			if ( ! function_exists( 'curl_version' ) ) {
@@ -664,7 +665,7 @@ if ( ! class_exists( 'AS3CF_Compatibility_Check' ) ) {
 				return '';
 			}
 
-			$msg = __( 'The official Amazon&nbsp;Web&nbsp;Services SDK requires PHP 5.3.3+ and cURL 7.16.2+ compiled with OpenSSL and zlib. Your server currently has', 'amazon-s3-and-cloudfront' );
+			$msg = __( 'The official Amazon&nbsp;Web&nbsp;Services SDK requires PHP 5.5+ and cURL 7.16.2+ compiled with OpenSSL and zlib. Your server currently has', 'amazon-s3-and-cloudfront' );
 
 			if ( count( $errors ) > 1 ) {
 				$last_one = ' and ' . array_pop( $errors );

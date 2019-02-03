@@ -1,8 +1,101 @@
 Plugin Name: Hummingbird Pro
 Author: Ignacio Cruz, Ricardo Freitas, Anton Vanyukov
-Tested up to: 4.9.4
+Tested up to: 4.9.8
 
 Change Log:
+
+= 1.9.3 ( 2018-10-01 ) =
+- New: Download and clear Asset Optimization logs on multisite
+- New: Color accessibility option
+- New: wphb_shold_cache_request_pre action hook to exclude requests from caching
+- New: Whitelabeling option when used with Dashboard plugin
+- Enhance: Remove activation redirect to plugin page, add pointer for new users
+- Enhance: Do not cache pages with wp_woocommerce_session_* cookies
+- Enhance: Do not redirect to plugin page after clearing cache
+- Enhance: Compatibility with Hub actions
+- Enhance: Do not recreate advanced-cache.php if already exists
+- Enhance: WPMU DEV hosting integration with Asset Optimization
+- Fix: Do not trigger new Asset Optimization scan in filters
+- Fix: UI overlapping issues on Asset Optimization page
+- Fix: Loader icons not showing progress in Database Optimization module
+- Fix: Compatibility with Ultimate Branding
+- Fix: Page caching not properly processing late init scripts
+- Fix: PHP warnings in settings-hooks.php
+
+= 1.9.2 ( 2018-08-15 ) =
+- New: Asset Optimization ability to regenerate single files
+- New: Auto clear out logs that are older than 30 days
+- New: Action hooks: wphb_get_performance_report, wphb_clear_page_cache and wphb_delete_db_data
+- New: REST API endpoints for gzip compression, browser caching and clearing caches
+- New: GDPR policy text
+- Enhance: Improve support for Bedrock installations
+- Enhance: Improve tooltips on Asset Optimization page
+- Enhance: Improve UI in Asset Optimization module
+- Enhance: Log file control for Asset Optimization and Page Caching modules
+- Fix: Errors in Asset Optimization module on WordPress versions 4.6 and lower
+- Fix: Messages in Asset Optimization dashboard module in network admin
+- Fix: PHP warnings after ignoring performance reports
+- Fix: Incorrect stats calculations in Asset Optimization module, when there are assets bigger than 1 Mb in size
+- Fix: Asset optimization scans getting stuck on some installs
+- Fix: Compatibility with WordPress 4.6
+
+= 1.9.1 ( 2018-06-19 ) =
+- New: Icons for modules on Dashboard page
+- New: Summary module meta box on caching pages
+- New: Retain Asset Optimization settings on recheck of files
+- Enhance: Optimize stylesheets and javascript code
+- Enhance: Replace plugin menu icon font with inline SVG
+- Enhance: Various UI/UX improvements
+- Enhance: Compression savings calculations
+- Enhance: Database cleanup module to use builtin WordPress functions to clean expired transients
+- Enhance: Cloudflare meta box behavior
+- Enhance: Handling of individual expiry settings in Browser Caching module
+- Enhance: Better sync with the Hub
+- Fix: Gzip compression not properly detected on some sites
+- Fix: PHP warning during cron performance report
+- Fix: PHP warning after clicking on configure link on the Dashboard Advanced Tools meta box
+- Fix: RTL styles in CDN will now be processed correctly
+- Fix: Asset Optimization module incorrectly showing 0% savings
+- Fix: Asset Optimization module include/exclude toggle not enabling Publish Changes button
+- Fix: Translation strings
+- Fix: Clear cache button on admin tab not working properly on some installs
+
+= 1.9.0 ( 2018-05-29 ) =
+- New: Page caching dynamic page types
+- New: Define the path where to store optimized assets
+- New: Advanced Tools now available on multisite installs
+- Fix: Asset optimization error during minify process
+- Fix: Remove invalid link to configure browser caching in IIS 6
+- Fix: Hide clear cache notice when setting file change detection to auto
+- Fix: Incorrect link on the Gzip compression and Browser caching modules
+- Fix: Performance report colors, icons and buttons
+- Enhance: Asset Optimization UI
+- Enhance: Asset Optimization re-check expiry button functionality
+- Enhance: Asset Optimization handling of root-relative URLs when using CDN
+- Enhance: Asset Optimization fonts moved to Other section in the file list
+- Enhance: Asset Optimization size handling of compressed assets
+- Enhance: Publish changes notice is now less invasive
+- Enhance: Error handling in Cloudflare module
+- Enhance: Optimize performance on Caching modules
+- Enhance: Prefetch DNS values are empty by default, with the ability to auto paste in recommended defaults
+- Enhance: Clear cache notices will not show on subsites in a multisite network
+- Enhance: Hummingbird will no longer store user selected server type and always show detected server
+
+= 1.8.2 ( 2018-04-24 ) =
+- New: System Information module in Advanced Tools
+- Enhance: Improve caching notices
+- Enhance: Remove clear cache notice in Asset Optimizztion when re-checking files
+- Enhance: Asset Optimization performance improvements
+- Enhance: Asset Optimization log option in multisite moved to network settings
+- Fix: Performance test previous score not updated
+- Fix: Links in performance reports in multisite are not always redirecting to correct page
+- Fix: PHP 5.2 compatibility
+- Fix: Various UI fixes and improvements
+- Fix: Browser caching changes not reflected when selecting LiteSpeed server
+- Fix: Asset Optimization incorrect states for some files
+- Fix: CDN option changing state during a new scan
+- Fix: Remove wphb_minify_clear_files cron task when Asset Optimization module is not enabled
+- Fix: Warnings during ignore performance report
 
 = 1.8.1 ( 2018-04-11 ) =
 - New: Option to auto clear cache on plugin/theme update
@@ -103,7 +196,7 @@ Change Log:
 - Enhance: Improve page caching descriptions
 
 = 1.7.0.1 ( 2017-11-02 ) =
--Fix: White screen when trying to clear cache after plugin/theme update on multisite install
+- Fix: White screen when trying to clear cache after plugin/theme update on multisite install
 
 = 1.7.0 ( 2017-11-02 ) =
 - New: Page caching
@@ -358,4 +451,4 @@ Enhance: Search by extension in minification page
 - First release
 
 
-578537-1524041593-au
+578537-1549146041-au

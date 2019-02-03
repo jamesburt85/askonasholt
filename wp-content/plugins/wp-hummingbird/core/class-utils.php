@@ -30,6 +30,8 @@ class WP_Hummingbird_Utils {
 	 * can_execute_php()
 	 * get_http2_status()
 	 * get_status()
+	 * calculate_sum()
+	 * sanitize_bool()
 	 *
 	 ***************************/
 
@@ -75,8 +77,23 @@ class WP_Hummingbird_Utils {
 	 * @return string
 	 */
 	public static function src_to_path( $src ) {
-		$path = ltrim( wp_parse_url( $src, PHP_URL_PATH ), '/' );
-		$path = path_join( $_SERVER['DOCUMENT_ROOT'], $path );
+		$path = wp_parse_url( $src );
+
+		// Scheme will not be set on a URL.
+		$url = isset( $path['scheme'] );
+
+		$path = ltrim( $path['path'], '/' );
+
+		/**
+		 * DOCUMENT_ROOT does not always store the correct path. For example, Bedrock appends /wp/ to the default dir.
+		 * So if the source is a URL, we can safely use DOCUMENT_ROOT, else see if ABSPATH is defined.
+		 */
+		if ( $url ) {
+			$path = path_join( $_SERVER['DOCUMENT_ROOT'], $path );
+		} else {
+			$root = defined( 'ABSPATH' ) ? ABSPATH : $_SERVER['DOCUMENT_ROOT'];
+			$path = path_join( $root, $path );
+		}
 
 		return apply_filters( 'wphb_src_to_path', $path, $src );
 	}
@@ -87,30 +104,18 @@ class WP_Hummingbird_Utils {
 	 * @param int $ver Current version number of scripts.
 	 */
 	public static function enqueue_admin_scripts( $ver ) {
-		wp_enqueue_script( 'wphb-admin', WPHB_DIR_URL . 'admin/assets/js/admin.min.js', array( 'jquery', 'underscore' ), $ver );
+		wp_enqueue_script( 'wphb-admin', WPHB_DIR_URL . 'admin/assets/js/app.min.js', array( 'jquery', 'underscore', 'wphb-wpmudev-sui' ), $ver, true );
 
 		$i10n = array(
-			'recheckURL' => add_query_arg( array(
-				'view' => 'browser',
-				'run'  => 'true',
-			), self::get_admin_menu_url( 'caching' ) ),
-			'htaccessErrorURL' => add_query_arg( array(
-				'view'           => 'browser',
-				'htaccess-error' => 'true',
-			), self::get_admin_menu_url( 'caching' ) ),
-			'cacheEnabled' => WP_Hummingbird_Module_Server::is_htaccess_written( 'caching' ),
+			'errorCachePurge'        => __( 'There was an error during the cache purge. Check folder permissions are 755
+										for /wp-content/wphb-cache or delete directory manually.', 'wphb' ),
+			'successGravatarPurge'   => __( 'Gravatar cache purged.', 'wphb' ),
+			'successPageCachePurge'  => __( 'Page cache purged.', 'wphb' ),
+			'errorRecheckStatus'     => __( 'There was an error re-checking the caching status, please try again later.', 'wphb' ),
+			'successRecheckStatus'   => __( 'Browser caching status updated.', 'wphb' ),
+			'successCloudflarePurge' => __( 'Cloudflare cache successfully purged. Please wait 30 seconds for the purge to complete.', 'wphb' ),
 		);
 		wp_localize_script( 'wphb-admin', 'wphbCachingStrings', $i10n );
-
-		if ( self::can_execute_php() ) {
-			$i10n = array(
-				'checkFilesNonce'       => wp_create_nonce( 'wphb-minification-check-files' ),
-				'chartNonce'            => wp_create_nonce( 'wphb-chart' ),
-				'finishedCheckURLsLink' => self::get_admin_menu_url( 'minification' ),
-				'discardAlert'          => __( 'Are you sure? All your changes will be lost', 'wphb' ),
-			);
-			wp_localize_script( 'wphb-admin', 'wphbMinificationStrings', $i10n );
-		}
 
 		$i10n = array(
 			'finishedTestURLsLink' => self::get_admin_menu_url( 'performance' ),
@@ -124,23 +129,10 @@ class WP_Hummingbird_Utils {
 		);
 		wp_localize_script( 'wphb-admin', 'wphbDashboardStrings', $i10n );
 
-		$toggle_uptime_nonce = wp_create_nonce( 'wphb-toggle-uptime' );
+		$url  = add_query_arg( '_wpnonce', wp_create_nonce( 'wphb-toggle-uptime' ), self::get_admin_menu_url( 'uptime' ) );
 		$i10n = array(
-			'enableUptimeURL' => add_query_arg(
-				array(
-					'_wpnonce' => $toggle_uptime_nonce,
-					'action'   => 'enable',
-				),
-				self::get_admin_menu_url( 'uptime' )
-			),
-			'disableUptimeURL' => add_query_arg(
-				array(
-					'_wpnonce' => $toggle_uptime_nonce,
-					'action'   => 'disable',
-				),
-				self::get_admin_menu_url( 'uptime' )
-			),
-
+			'enableUptimeURL'  => add_query_arg( 'action', 'enable', $url ),
+			'disableUptimeURL' => add_query_arg( 'action', 'disable', $url ),
 		);
 		wp_localize_script( 'wphb-admin', 'wphbUptimeStrings', $i10n );
 
@@ -155,19 +147,26 @@ class WP_Hummingbird_Utils {
 			'nonces' => array(
 				'HBFetchNonce' => wp_create_nonce( 'wphb-fetch' ),
 			),
+			'urls'   => array(
+				'cachingEnabled' => add_query_arg( 'view', 'caching', self::get_admin_menu_url( 'caching' ) ),
+			),
 			'strings' => array(
-				'errorSettingsUpdate' => __( 'Error updating settings', 'wphb' ),
-				'successUpdate'       => __( 'Settings updated', 'wphb' ),
-				'deleteAll'           => __( 'Delete All', 'wphb' ),
-				'db_delete'           => __( 'Are you sure you wish to delete', 'wphb' ),
-				'db_entries'          => __( 'database entries', 'wphb' ),
-				'db_backup'           => __( 'Make sure you have a current backup just in case.', 'wphb' ),
+				'htaccessUpdated'       => __( 'Your .htaccess file has been updated', 'wphb' ),
+				'htaccessUpdatedFailed' => __( 'There was an error updating the .htaccess file', 'wphb' ),
+				'errorSettingsUpdate'   => __( 'Error updating settings', 'wphb' ),
+				'successUpdate'         => __( 'Settings updated', 'wphb' ),
+				'deleteAll'             => __( 'Delete All', 'wphb' ),
+				'db_delete'             => __( 'Are you sure you wish to delete', 'wphb' ),
+				'db_entries'            => __( 'database entries', 'wphb' ),
+				'db_backup'             => __( 'Make sure you have a current backup just in case.', 'wphb' ),
+				'successRecipientAdded' => __( ' has been added as a recipient but you still need to save your changes below to set this live.', 'wphb' ),
 			),
 		);
 
 		if ( self::can_execute_php() ) {
 			/* @var WP_Hummingbird_Module_Minify $minify_module */
 			$minify_module = self::get_module( 'minify' );
+
 			$is_scanning = $minify_module->scanner->is_scanning();
 
 			if ( $minify_module->is_on_page() || $is_scanning ) {
@@ -184,7 +183,10 @@ class WP_Hummingbird_Utils {
 						),
 					),
 					'strings' => array(
-						'discardAlert' => __( 'Are you sure? All your changes will be lost', 'wphb' ),
+						'discardAlert'  => __( 'Are you sure? All your changes will be lost', 'wphb' ),
+						'queuedTooltip' => __( 'This file is queued for compression. It will get optimized when someone visits a page that requires it.', 'wphb' ),
+						'excludeFile'   => __( "Don't load file", 'wphb' ),
+						'includeFile'   => __( 'Re-include', 'wphb' ),
 					),
 					'links' => array(
 						'minification' => self::get_admin_menu_url( 'minification' ),
@@ -324,12 +326,12 @@ class WP_Hummingbird_Utils {
 	 * Get gzip or caching status data.
 	 *
 	 * @param string $module  Accepts: 'caching', 'gzip'.
-	 * @param bool   $api     Query API.
+	 * @param bool   $api     Query API (if needed).
 	 *
 	 * @return array|bool
 	 */
 	public static function get_status( $module, $api = false ) {
-		if ( ! in_array( $module, array( 'gzip', 'caching' ) ) ) {
+		if ( ! in_array( $module, array( 'gzip', 'caching' ), true ) ) {
 			return false;
 		}
 
@@ -342,8 +344,56 @@ class WP_Hummingbird_Utils {
 			return $mod->status;
 		}
 
-		$mod->get_analysis_data( true );
+		$mod->get_analysis_data();
 		return $mod->status;
+	}
+
+	/**
+	 * This function will calculate the sum of file sizes in an array.
+	 *
+	 * We need this, because Asset Optimization module will store 'original_size' and 'compressed_size' values as
+	 * strings, and such strings will contain &nbsp; instead of spaces, thus making it impossible to sum all the
+	 * values with array_sum().
+	 *
+	 * @since 1.9.2
+	 *
+	 * @param array $arr  Array of items with sizes as strings.
+	 *
+	 * @return int|mixed
+	 */
+	public static function calculate_sum( $arr ) {
+		$sum = 0;
+
+		foreach ( $arr as $item => $value ) {
+			if ( is_null( $value ) ) {
+				continue;
+			}
+
+			// Remove spaces.
+			$sum += (float) str_replace( '&nbsp;', '', $value );
+		}
+
+		return $sum;
+	}
+
+	/**
+	 * WP function. Available in WP since 4.7.
+	 *
+	 * @param string|bool $value  Value to sanitize.
+	 *
+	 * @return bool
+	 */
+	public static function sanitize_bool( $value ) {
+		// String values are translated to `true`; make sure 'false' is false.
+		if ( is_string( $value ) ) {
+			$value = strtolower( $value );
+			if ( in_array( $value, array( 'false', '0' ), true ) ) {
+				$value = false;
+			}
+		}
+
+		// Everything else will map nicely to boolean.
+		return (boolean) $value;
 	}
 
 	/***************************
@@ -592,6 +642,7 @@ class WP_Hummingbird_Utils {
 	 * human_read_time_diff()
 	 * get_days_of_week()
 	 * get_times()
+	 * get_days_of_month()
 	 *
 	 ***************************/
 
@@ -614,10 +665,10 @@ class WP_Hummingbird_Utils {
 		$minute_in_seconds = 60;
 
 		$minutes = 0;
-		$hours = 0;
-		$days = 0;
-		$months = 0;
-		$years = 0;
+		$hours   = 0;
+		$days    = 0;
+		$months  = 0;
+		$years   = 0;
 
 		while ( $seconds >= $year_in_seconds ) {
 			$years ++;
@@ -645,6 +696,7 @@ class WP_Hummingbird_Utils {
 		}
 
 		$diff = new stdClass();
+
 		$diff->y = $years;
 		$diff->m = $months;
 		$diff->d = $days;
@@ -691,7 +743,7 @@ class WP_Hummingbird_Utils {
 		if ( 7 === get_option( 'start_of_week' ) ) {
 			$timestamp = strtotime( 'next Sunday' );
 		}
-		$days      = array();
+		$days = array();
 		for ( $i = 0; $i < 7; $i ++ ) {
 			$days[]    = strftime( '%A', $timestamp );
 			$timestamp = strtotime( '+1 day', $timestamp );
@@ -701,7 +753,7 @@ class WP_Hummingbird_Utils {
 	}
 
 	/**
-	 * Return times frame for selectbox
+	 * Return times frame for select box
 	 *
 	 * @since 1.4.5
 	 *
@@ -717,6 +769,22 @@ class WP_Hummingbird_Utils {
 		}
 
 		return apply_filters( 'wphb_scan_get_times', $data );
+	}
+
+	/**
+	 * Return days of the month.
+	 *
+	 * @since 1.9.3
+	 *
+	 * @return array
+	 */
+	public static function get_days_of_month() {
+		$days = array();
+		for ( $i = 1; $i <= 28; $i++ ) {
+			$days[] = $i;
+		}
+
+		return apply_filters( 'wphb_scan_get_days_of_week', $days );
 	}
 
 	/***************************
@@ -912,11 +980,26 @@ class WP_Hummingbird_Utils {
 	 *
 	 * @param string $module Module slug.
 	 *
-	 * @return WP_Hummingbird_Module|bool
+	 * @return bool|WP_Hummingbird_Module|WP_Hummingbird_Module_Page_Cache|WP_Hummingbird_Module_GZip|WP_Hummingbird_Module_Minify|WP_Hummingbird_Module_Cloudflare
 	 */
 	public static function get_module( $module ) {
 		$modules = self::get_modules();
 		return isset( $modules[ $module ] ) ? $modules[ $module ] : false;
+	}
+
+	/**
+	 * Get a module instance
+	 *
+	 * @since 1.9.3
+	 *
+	 * @param string $module Module slug.
+	 *
+	 * @return bool|WP_Hummingbird_Module
+	 */
+	public static function get_pro_module( $module ) {
+		/* @var WP_Hummingbird $hummingbird */
+		$hummingbird = WP_Hummingbird::get_instance();
+		return isset( $hummingbird->pro->modules[ $module ] ) ? $hummingbird->pro->modules[ $module ] : false;
 	}
 
 	/**
@@ -1003,11 +1086,16 @@ class WP_Hummingbird_Utils {
 				$issues = count( $report ) - count( array_filter( $report ) );
 				break;
 			case 'performance':
-				$last_report = WP_Hummingbird_Module_Performance::get_last_report();
-				if ( ! $last_report || is_wp_error( $last_report ) ) {
+				if ( ! $report ) {
+					$report = WP_Hummingbird_Module_Performance::get_last_report();
+				}
+
+				// No report - break.
+				if ( ! $report || is_wp_error( $report ) ) {
 					break;
 				}
-				$last_report = $last_report->data;
+
+				$last_report = $report->data;
 				foreach ( $last_report->rule_result as $recommendation ) {
 					if ( 'a' !== $recommendation->impact_score_class ) {
 						$issues++;
@@ -1068,6 +1156,41 @@ class WP_Hummingbird_Utils {
 		$quick_setup = get_option( 'wphb-quick-setup' );
 		$quick_setup['finished'] = true;
 		update_option( 'wphb-quick-setup', $quick_setup );
+		wp_send_json_success( array(
+			'finished' => false,
+		));
+	}
+
+	/**
+	 * Flag to hide wpmudev branding image.
+	 *
+	 * @since 1.9.3
+	 *
+	 * @return bool
+	 */
+	public static function hide_wpmudev_branding() {
+		if ( self::is_member() ) {
+			return apply_filters( 'wpmudev_branding_hide_branding', false );
+		}
+
+		return false;
+
+	}
+
+	/**
+	 * Flag to hide wpmudev doc link.
+	 *
+	 * @since 1.9.3
+	 *
+	 * @return bool
+	 */
+	public static function hide_wpmudev_doc_link() {
+		if ( self::is_member() ) {
+			return apply_filters( 'wpmudev_branding_hide_doc_link', false );
+		}
+
+		return false;
+
 	}
 
 }

@@ -7,12 +7,13 @@ window.eml = window.eml || { l10n: {} };
     var media = wp.media,
         Attachments = media.model.Attachments,
         Query = media.model.Query,
+        l10n_defaults = { media_orderby: 'date', media_order: 'DESC' },
         original = {};
 
 
 
     _.extend( eml.l10n, wpuxss_eml_media_models_l10n );
-
+    _.defaults( eml.l10n, l10n_defaults );
 
 
     original.Attachment = {
@@ -73,6 +74,7 @@ window.eml = window.eml || { l10n: {} };
         saveMenuOrder: function() {
 
             var nonce = wp.media.model.settings.post.nonce || eml.l10n.bulk_edit_nonce;
+
 
             if ( 'menuOrder' !== this.props.get('orderby') ) {
                 return;
@@ -223,8 +225,8 @@ window.eml = window.eml || { l10n: {} };
 
         return new Attachments( null, {
             props: _.extend( _.defaults( props || {}, {
-                orderby: eml.l10n.media_orderby || 'date',
-                order: eml.l10n.media_order || 'DESC'
+                orderby: eml.l10n.media_orderby,
+                order: eml.l10n.media_order
             } ), { query: true } )
         });
     };
@@ -234,7 +236,7 @@ window.eml = window.eml || { l10n: {} };
     media.compare = function( a, b, ac, bc ) {
 
         if ( parseInt( eml.l10n.natural_sort ) &&
-             'title' === eml.l10n.media_orderby ) {
+             'string' === typeof a && 'string' == typeof b ) {
             return this.natCompare( a, b );
         }
         else if ( _.isEqual( a, b ) ) {
@@ -257,6 +259,7 @@ window.eml = window.eml || { l10n: {} };
             codeB = 1,
             posA = 0,
             posB = 0,
+            leadingZeros = /^0+(?=\d)/,
             alphabet = String.alphabet;
 
 
@@ -276,6 +279,10 @@ window.eml = window.eml || { l10n: {} };
                 : code < 123 ? code + 5        // a-z
                 : code - 63;
         }
+
+
+        a = a.replace(leadingZeros, '');
+        b = b.replace(leadingZeros, '');
 
 
         if ((a+="") != (b+="")) for (;codeB;) {

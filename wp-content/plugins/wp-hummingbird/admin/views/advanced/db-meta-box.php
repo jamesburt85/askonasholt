@@ -30,18 +30,19 @@
 			<div>
 				<?php echo esc_html( $field['title'] ); ?>
 				<span class="sui-tooltip sui-tooltip-constrained" data-tooltip="<?php echo esc_attr( $field['tooltip'] ); ?>">
-					<i class="wphb-icon hb-wpmudev-icon-info"></i>
+					<i class="sui-icon-info" aria-hidden="true"></i>
 				</span>
 			</div>
 			<div class="wphb-db-items"><?php echo absint( $field['value'] ); ?></div>
 			<div>
 				<span class="spinner standalone"></span>
+				<i class="sui-icon-loader sui-loading sui-hidden" aria-hidden="true"></i>
 				<a id="wphb-db-row-delete"
 				   class="wphb-db-row-delete sui-tooltip sui-tooltip-top-left"
 				   data-tooltip="<?php esc_attr_e( 'Delete entries', 'wphb' ); ?>"
 				   data-type="<?php echo esc_attr( $type ); ?>"
 				   data-entries="<?php echo absint( $field['value'] ); ?>">
-					<i class="wphb-icon hb-fi-trash"></i>
+					<i class="sui-icon-trash" aria-hidden="true"></i>
 				</a>
 			</div>
 		</div>

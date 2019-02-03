@@ -30,20 +30,81 @@ if ( ! class_exists( 'WP_Hummingbird_Installer' ) ) {
 			/* @noinspection PhpIncludeInspection */
 			include_once WPHB_DIR_PATH . 'core/class-utils.php';
 			/* @noinspection PhpIncludeInspection */
-			include_once( WPHB_DIR_PATH . 'core/class-settings.php' );
+			include_once WPHB_DIR_PATH . 'core/class-settings.php';
 			/* @noinspection PhpIncludeInspection */
-			include_once( WPHB_DIR_PATH . 'core/class-abstract-module.php' );
+			include_once WPHB_DIR_PATH . 'core/class-abstract-module.php';
 			/* @noinspection PhpIncludeInspection */
-			include_once( WPHB_DIR_PATH . 'core/modules/class-module-uptime.php' );
+			include_once WPHB_DIR_PATH . 'core/modules/class-module-uptime.php';
 			/* @noinspection PhpIncludeInspection */
-			include_once( WPHB_DIR_PATH . 'core/modules/class-module-cloudflare.php' );
+			include_once WPHB_DIR_PATH . 'core/modules/class-module-cloudflare.php';
 
 			update_site_option( 'wphb_version', WPHB_VERSION );
 
 			// Add uptime notice.
 			update_site_option( 'wphb-notice-uptime-info-show', 'yes' );
 
+			add_action( 'admin_enqueue_scripts', array( 'WP_Hummingbird_Installer', 'admin_pointer' ) );
+
 			do_action( 'wphb_activate' );
+		}
+
+		/**
+		 * Add custom admin pointer using wp-pointer.
+		 *
+		 * @since 1.9.2
+		 */
+		public static function admin_pointer() {
+			// Get dismissed pointers meta.
+			$dismissed_pointers = get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true );
+			$dismissed_pointers = explode( ',', (string) $dismissed_pointers );
+
+			// If pointer is not found in dismissed pointers, show.
+			if ( in_array( 'wphb_pointer', $dismissed_pointers, true ) ) {
+				return;
+			}
+
+			// Enqueue wp-pointer styles and scripts.
+			wp_enqueue_style( 'wp-pointer' );
+			wp_enqueue_script( 'wp-pointer' );
+
+			// Register our custom pointer.
+			add_action( 'admin_print_footer_scripts', array( 'WP_Hummingbird_Installer', 'register_admin_pointer' ) );
+		}
+
+		/**
+		 * Register custom pointer to wp-pointer.
+		 *
+		 * Use WordPress dismiss-wp-pointer action on pointer dismissal to store dismissal flag in meta via ajax.
+		 *
+		 * @since 1.9.2
+		 */
+		public static function register_admin_pointer() {
+			// Pointer content.
+			$content  = '<h3>' . __( 'Get Humming', 'wphb' ) . '</h3>';
+			$content .= '<p>' . __( 'Run performance tests, enable caching and optimize your assets here.', 'wphb' ) . '</p>';
+			?>
+
+			<script type="text/javascript">
+				//<![CDATA[
+				jQuery( document ).ready( function( $ ) {
+					// jQuery selector to point the message to.
+					$( '#toplevel_page_wphb' ).pointer({
+						content: '<?php echo $content; ?>',
+						position: {
+							edge: 'left',
+							align: 'center'
+						},
+						close: function() {
+							$.post( ajaxurl, {
+								pointer: 'wphb_pointer',
+								action: 'dismiss-wp-pointer'
+							});
+						}
+					}).pointer( 'open' );
+				});
+				//]]>
+			</script>
+			<?php
 		}
 
 		/**
@@ -66,7 +127,6 @@ if ( ! class_exists( 'WP_Hummingbird_Installer' ) ) {
 
 			delete_option( 'wphb_cache_folder_error' );
 			delete_site_option( 'wphb_version' );
-			delete_site_option( 'wphb-server-type' );
 			delete_site_option( 'wphb-gzip-api-checked' );
 			delete_site_option( 'wphb-caching-api-checked' );
 			delete_site_option( 'wphb-cloudflare-dash-notice' );
@@ -123,40 +183,6 @@ if ( ! class_exists( 'WP_Hummingbird_Installer' ) ) {
 					define( 'WPHB_UPGRADING', true );
 				}
 
-				if ( version_compare( $version, '1.0-RC-7', '<' ) ) {
-					delete_site_option( 'wphb-server-type' );
-				}
-
-				if ( version_compare( $version, '1.1', '<' ) ) {
-					$options  = WP_Hummingbird_Settings::get_settings();
-					$defaults = WP_Hummingbird_Settings::get_default_settings();
-
-					if ( isset( $options['caching_expiry_css/javascript'] ) ) {
-						$options['caching_expiry_css']        = $options['caching_expiry_css/javascript'];
-						$options['caching_expiry_javascript'] = $options['caching_expiry_css/javascript'];
-						unset( $options['caching_expiry_css/javascript'] );
-					} else {
-						$options['caching_expiry_css']        = $defaults['caching_expiry_css'];
-						$options['caching_expiry_javascript'] = $defaults['caching_expiry_javascript'];
-					}
-
-					WP_Hummingbird_Settings::update_settings( $options );
-					$module = new WP_Hummingbird_Module_Caching( 'caching', 'caching' );
-					$module->get_analysis_data( true );
-				}
-
-				if ( version_compare( $version, '1.1.1', '<' ) ) {
-					$options = WP_Hummingbird_Settings::get_setting( 'network_version' );
-					if ( empty( $options ) ) {
-						WP_Hummingbird_Settings::update_settings( WP_Hummingbird_Settings::get_default_settings() );
-					}
-				}
-
-				if ( version_compare( $version, '1.3', '<' ) ) {
-					$module = new WP_Hummingbird_Module_Cloudflare( 'cloudflare', 'cloudflare' );
-					$module->has_cloudflare( true );
-				}
-
 				if ( version_compare( $version, '1.7.1', '<' ) ) {
 					self::upgrade_1_7_1();
 				}
@@ -171,6 +197,14 @@ if ( ! class_exists( 'WP_Hummingbird_Installer' ) ) {
 
 				if ( version_compare( $version, '1.8.0.4', '<' ) ) {
 					self::upgrade_1_8_0_4();
+				}
+
+				if ( version_compare( $version, '1.9.0', '<' ) ) {
+					self::upgrade_1_9_0();
+				}
+
+				if ( version_compare( $version, '1.9.2', '<' ) ) {
+					self::upgrade_1_9_2();
 				}
 
 				update_site_option( 'wphb_version', WPHB_VERSION );
@@ -190,6 +224,10 @@ if ( ! class_exists( 'WP_Hummingbird_Installer' ) ) {
 
 			if ( version_compare( $version, '1.8.0', '<' ) ) {
 				self::upgrade_1_8();
+			}
+
+			if ( version_compare( $version, '1.9.2', '<' ) ) {
+				self::upgrade_1_9_2();
 			}
 
 			update_option( 'wphb_version', WPHB_VERSION );
@@ -223,6 +261,8 @@ if ( ! class_exists( 'WP_Hummingbird_Installer' ) ) {
 		/**
 		 * Add new dismissable Uptime notice.
 		 * Add new option for asset optimization logging.
+		 *
+		 * @deprecated 1.9.0
 		 */
 		private static function upgrade_1_7_2() {
 			// Add uptime notice.
@@ -454,6 +494,62 @@ if ( ! class_exists( 'WP_Hummingbird_Installer' ) ) {
 			if ( WP_Hummingbird_Utils::is_member() && $options['reports'] ) {
 				wp_schedule_single_event( WP_Hummingbird_Module_Reporting_Cron::get_scheduled_scan_time(), 'wphb_performance_scan' );
 			}
+		}
+
+		/**
+		 * Upgrade to 1.9
+		 *
+		 * Remove wphb-server-type option, because we are not using it anymore.
+		 */
+		private static function upgrade_1_9_0() {
+			delete_site_option( 'wphb-server-type' );
+			delete_metadata( 'user', '', 'wphb-server-type', '', true );
+		}
+
+		/**
+		 * Upgrade to 1.9.2
+		 *
+		 * Change the default behavior of AO - do not compress assets by default.
+		 */
+		private static function upgrade_1_9_2() {
+			/**
+			 * Do not compress assets by default.
+			 */
+			$settings = WP_Hummingbird_Settings::get_settings( 'minify' );
+
+			if ( ! isset( $settings['dont_minify'] ) ) {
+				return;
+			}
+
+			$dont_minify = $settings['dont_minify'];
+			unset( $settings['dont_minify'] );
+
+			$collection = WP_Hummingbird_Utils::get_module( 'minify' )->get_resources_collection();
+			$options['minify'] = array(
+				'styles'  => array(),
+				'scripts' => array(),
+			);
+
+			foreach ( $dont_minify as $type => $handles ) {
+				$settings['minify'][ $type ] = array();
+				$type_collection = wp_list_pluck( $collection[ $type ], 'handle' );
+				foreach ( $type_collection as $type_handle ) {
+					if ( ! in_array( $type_handle, $handles ) ) {
+						$options['minify'][ $type ][] = $type_handle;
+					}
+				}
+			}
+
+			WP_Hummingbird_Settings::update_settings( $settings, 'minify' );
+
+			/**
+			 * Log class has changed. Clear out old log files.
+			 */
+			if ( ! class_exists( 'WP_Hummingbird_Logger' ) ) {
+				/* @noinspection PhpIncludeInspection */
+				include_once WPHB_DIR_PATH . 'core/class-logger.php';
+			}
+			WP_Hummingbird_Logger::cleanup();
 		}
 
 	}

@@ -1,21 +1,26 @@
 Hustle.define("Pop_Up.View", function($, doc, win){
+
 	"use strict";
 
 	return Hustle.View.extend({
+
 		el: '.wpmudev-hustle-popup-wizard-view',
 		preview: false,
 		preview_model: false,
+
 		events: {
-			'click .wpmudev-button-save': 'save_changes',
-			'click .wpmudev-button-continue': 'save_continue',
-			'click .wpmudev-button-finish': 'save_finish',
-			'click .wpmudev-button-cancel': 'cancel',
-			'click .wpmudev-button-back': 'back',
-			'change .wpmudev-menu .wpmudev-select': 'mobile_navigate',
+			'click .wpmudev-button-save'           : 'save_changes',
+			'click .wpmudev-button-continue'       : 'save_continue',
+			'click .wpmudev-button-finish'         : 'save_finish',
+			'click .wpmudev-button-cancel'         : 'cancel',
+			'click .wpmudev-button-back'           : 'back',
+			'change .wpmudev-menu .wpmudev-select' : 'mobile_navigate',
 		},
-		init: function( opts ){
-			this.content_view = opts.content_view;
-			this.design_view = opts.design_view;
+
+		init: function( opts ) {
+
+			this.content_view  = opts.content_view;
+			this.design_view   = opts.design_view;
 			this.settings_view = opts.settings_view;
 
 			// unset listeners
@@ -25,6 +30,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			//this.stopListening( this.design_view.model, 'change', this.handle_preview );
 			this.stopListening( this.design_view.model, 'change', this.design_view_changed );
 			this.stopListening( this.settings_view.model, 'change', this.settings_view_changed );
+
 			$(document).off( 'click', 'ul.wpmudev-cta-target-options li', $.proxy( this.toggle_cta_options, this ) );
 			$(document).off( 'click', 'ul.wpmudev-after-submit-options li', $.proxy( this.toggle_submit_options, this ) );
 			$(document).off( 'click', 'ul.wpmudev-feature-image-position-options li', $.proxy( this.toggle_feature_image_position_options, this ) );
@@ -38,6 +44,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			$(document).off( 'click', '.hustle-modal-close .hustle-icon', $.proxy( this.close_preview, this ) );
 			$(document).off( 'click', '.wpmudev-modal-mask', $.proxy( this.close_preview, this ) );
 			$(document).off( 'click', '.wph-reset-color-palette', $.proxy( this.reset_color_palette, this ) );
+
 			// Get rid of escape key listener.
 			$(document).off( 'keydown', $.proxy( this.escape_key, this ) );
 			//Hustle.Events.off( 'popup.preview.prepare', $.proxy( this.handle_preview, this ) );
@@ -49,6 +56,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			//this.listenTo( this.design_view.model, 'change', this.handle_preview );
 			this.listenTo( this.design_view.model, 'change', this.design_view_changed );
 			this.listenTo( this.settings_view.model, 'change', this.settings_view_changed );
+
 			$(document).on( 'click', 'ul.wpmudev-cta-target-options li', $.proxy( this.toggle_cta_options, this ) );
 			$(document).on( 'click', 'ul.wpmudev-after-submit-options li', $.proxy( this.toggle_submit_options, this ) );
 			$(document).on( 'click', 'ul.wpmudev-feature-image-position-options li', $.proxy( this.toggle_feature_image_position_options, this ) );
@@ -66,23 +74,28 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 
 			// Add escape key listener.
 			$(document).on( 'keydown', $.proxy( this.escape_key, this ) );
+
 			// Success Message Autoclosing.
 			Hustle.Events.on( 'modules.view.preview.success', $.proxy( this.preview_success_message_delay, this ) );
 			//Hustle.Events.on( 'popup.preview.prepare', $.proxy( this.handle_preview, this ) );
 
 			return this.render();
 		},
-		render: function(){
+
+		render: function() {
+
 			// content view
-			this.content_view.target_container.html('');
+			this.content_view.target_container.html( '' );
 			this.content_view.render();
 			this.content_view.delegateEvents();
 			this.content_view.target_container.append( this.content_view.$el );
 			this.content_view.after_render();
 
 			// manually trigger this change to reflect what's been saved
-			var use_email_collection = parseInt(this.content_view.model.get('use_email_collection'), 10);
+			var use_email_collection = parseInt( this.content_view.model.get( 'use_email_collection' ), 10 );
+
 			this.use_email_collection_changed( use_email_collection, false );
+
 			if ( use_email_collection ) {
 				this.after_successful_submission_changed(this.content_view.model.get('after_successful_submission'));
 			}
@@ -101,11 +114,13 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 
 			Hustle.Events.trigger("modules.view.rendered", this);
 		},
-		set_content_from_tinymce: function(keep_silent) {
+
+		set_content_from_tinymce: function( keep_silent ) {
 
 			keep_silent = keep_silent || false;
 
 			if ( typeof tinyMCE !== 'undefined' ) {
+
 				// main_content editor
 				var main_content_editor = tinyMCE.get('main_content'),
 					$main_content_textarea = this.$('textarea#main_content'),
@@ -119,152 +134,217 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 					success_message = ( $success_message_textarea.attr('aria-hidden') === 'true' ) ? success_message_editor.getContent() : $success_message_textarea.val();
 
 				this.content_view.model.set( 'success_message', success_message, {silent: keep_silent} );
+
+				// gdpr_message editor
+				var gdpr_message_editor = tinyMCE.get('gdpr_message'),
+					$gdpr_message_textarea = this.$('textarea#gdpr_message'),
+					gdpr_message = ( $gdpr_message_textarea.attr('aria-hidden') === 'true' ) ? gdpr_message_editor.getContent() : $gdpr_message_textarea.val();
+
+				this.content_view.model.set( 'gdpr_message', gdpr_message, {silent: keep_silent} );
 			}
 		},
-				open_preview: function(e) {
-						e.preventDefault();
-						e.stopPropagation();
+		
+		open_preview: function(e) {
 
-						this.handle_preview();
-				},
-				handle_preview: function() {
-						this.set_content_from_tinymce(true);
-						this.sanitize_data();
+			e.preventDefault();
+			e.stopPropagation();
 
-						var $preview_content = this.$('#wph-preview-modal .wpmudev-modal-mask').siblings('.hustle-modal');
+			this.handle_preview();
+		},
 
-						if ( $preview_content.length ) {
-								$preview_content.remove();
+		handle_preview: function() {
+
+			this.set_content_from_tinymce(true);
+			this.sanitize_data();
+
+			var $preview_content = this.$('#wph-preview-modal .wpmudev-modal-mask').siblings('.hustle-modal');
+
+			if ( $preview_content.length ) {
+				$preview_content.remove();
+			}
+
+			var me           = this,
+				main_content = me.content_view.model.get('main_content'),
+				nonce        = $(".wpmudev-preview").data("nonce")
+				;
+
+			if ( main_content.search(/\[/g) === -1 ) {
+
+				// If no shortcodes are used, bypass ajax for speed.
+				me.render_preview(me.content_view.model.toJSON());
+
+			} else {
+
+				// If shortcodes are used, trigger ajax.
+				// Render shortcodes in main content.
+				$.ajax({
+					type: "POST",
+					url: ajaxurl,
+					dataType: "json",
+					data: {
+						action: 'hustle_shortcode_render',
+						content: main_content,
+						_ajax_nonce: nonce
+					},
+					success: function(res) {
+
+						if ( res && res.data && res.data.content ) {
+
+							// Update content model with rendered shortcode content.
+							var content_model = _.extend( me.content_view.model.toJSON(), {
+								main_content: res.data.content
+							} );
+							
+							me.render_preview( content_model );
+
 						}
+					},
+					error: function() {}
+				});
+			}
+		},
 
-								var me = this,
-								main_content = me.content_view.model.get('main_content'),
-								nonce = $(".wpmudev-preview").data("nonce")
-						;
-						// If no shortcodes are used, bypass ajax for speed.
-						if (main_content.search(/\[/g) === -1) {
-							me.render_preview(me.content_view.model.toJSON());
-						// If shortcodes are used, trigger ajax.
-						} else {
-							// Render shortcodes in main content.
-							$.ajax({
-									type: "POST",
-									url: ajaxurl,
-									dataType: "json",
-									data: {
-											action: 'hustle_shortcode_render',
-											content: main_content,
-											_ajax_nonce: nonce
-									},
-									success: function(res) {
-										if (res && res.data && res.data.content) {
-											// Update content model with rendered shortcode content.
-											var content_model = _.extend(me.content_view.model.toJSON(), {
-												main_content: res.data.content
-											});
-											me.render_preview(content_model);
-										}
-									},
-									error: function() {
-									}
-							});
+		render_preview: function( content_model ) {
+
+			var me = this,
+			sitekey = $(".wpmudev-preview").data("sitekey"),
+			$preview_modal = this.$('#wph-preview-modal'),
+			is_optin_active = this.content_view.model.get('use_email_collection'),
+			template = ( _.isTrue( is_optin_active ) )
+					? Optin.template("wpmudev-hustle-modal-with-optin-tpl")
+					: Optin.template("wpmudev-hustle-modal-without-optin-tpl"),
+			data = _.extend(
+				me.model.toJSON(),
+				{
+						content: content_model,
+						design: me.design_view.model.toJSON(),
+						settings: me.settings_view.model.toJSON()
+				}
+			);
+			data.unique_id = '';
+			
+			// Append to preview after content updated.
+			$preview_modal.append(template(data));
+			$preview_modal.addClass('hui-module-type--popup');
+			/**
+			 * reCAPTCHA
+			 * @since 3.0.7
+			 */
+			if (
+				'1' === content_model.use_email_collection
+				&& 'undefined' !== typeof content_model.form_elements.recaptcha
+				&& sitekey
+			) {
+				$preview_modal.find('.hustle-modal-body button').attr('disabled', true );
+
+				grecaptcha.ready( function() {
+					grecaptcha.render('hustle-modal-recaptcha' + data.module_id, {
+						'sitekey' : sitekey,
+						'callback': function() {
+							$preview_modal.find('.hustle-modal-body button').removeAttr('disabled' );
 						}
-				},
-				render_preview: function(content_model) {
-					var me = this,
-						is_optin_active = this.content_view.model.get('use_email_collection'),
-						template = ( _.isTrue( is_optin_active ) )
-								? Optin.template("wpmudev-hustle-modal-with-optin-tpl")
-								: Optin.template("wpmudev-hustle-modal-without-optin-tpl"),
+					});
+				});
+			}
+			
+			// Apply custom CSS and preview styles after content is appended.
+			me.apply_custom_css();
+			me.apply_preview_styles();
+			me.after_preview_render();
 
-						data = _.extend(
-							me.model.toJSON(),
-							{
-									content: content_model,
-									design: me.design_view.model.toJSON(),
-									settings: me.settings_view.model.toJSON()
-							}
-						)
-					;
-					// Append to preview after content updated.
-					me.$('#wph-preview-modal').append(template(data));
-					// Apply custom CSS and preview styles after content is appended.
-					me.apply_custom_css();
-					me.apply_preview_styles();
-					me.after_preview_render();
-					Hustle.Events.trigger("modules.view.rendered", me);
-				},
-				after_preview_render: function() {
-					var me = this,
-					$preview = this.$('#wph-preview-modal').addClass('wpmudev-modal-active'),
-					$modal = $preview.find('.hustle-modal'),
-					animation_in = this.settings_view.model.get('animation_in');
+			Hustle.Events.trigger("modules.view.rendered", me);
+		},
 
-					$('body').addClass('wpmudev-modal-is_active');
+		after_preview_render: function() {
+			
+			var me = this,
+				$preview = this.$( '#wph-preview-modal' ).addClass( 'wpmudev-modal-active' ),
+				$modal = $preview.find( '.hustle-modal' ),
+				$success = $preview.find( '.hustle-modal-success' ),
+				animation_in = this.settings_view.model.get( 'animation_in' );
 
-					if ($modal.hasClass('hustle-animated')) {
-							setTimeout(function(){
-									$modal.addClass('hustle-animate-' + animation_in ); // hustle-animate-{animate_in}
-									me.apply_custom_size();
-							}, 100);
-					} else {
-							this.apply_custom_size();
-					}
-				},
+			$( 'body' ).addClass( 'wpmudev-modal-is_active' );
+
+			$success.css({
+				'height': $preview.find( '.hustle-modal-body' ).height() + 'px'
+			});
+
+			if ($modal.hasClass( 'hustle-animated' )) {
+
+				setTimeout(function(){
+					
+					$modal.addClass( 'hustle-animate-' + animation_in ); // hustle-animate-{animate_in}
+					me.apply_custom_size();
+
+				}, 100);
+
+			} else {
+
+				this.apply_custom_size();
+
+			}
+		},
+
 		apply_preview_styles: function() {
+
 			var me = this,
 				content_data = this.content_view.model.toJSON(),
 				design_data = this.design_view.model.toJSON(),
 				style = design_data.style;
 
-			if ( _.isTrue(content_data.use_email_collection) ) {
-				// skip and proceed to previewing with optin
+			// skip and proceed to previewing with optin
+			if ( _.isTrue( content_data.use_email_collection ) ) {
 				this.apply_preview_optin_styles();
 				return;
 			}
 
 			// modal parts
-			var $preview_modal = this.$('#wph-preview-modal'),
-				$modal = $preview_modal.find('.hustle-modal'),
-				$modal_body = $modal.find('.hustle-modal-body'),
-				$modal_body_cabriolet = $modal.find('.hustle-modal-body section'),
-				$modal_title = $modal.find('.hustle-modal-title'),
-				$modal_subtitle_color = $modal.find('.hustle-modal-subtitle'),
-				$img_container = $modal.find('.hustle-modal-image'),
-				$content = $modal.find('article, .hustle-modal-message'),
-				$content_bq = $modal.find('article blockquote, .hustle-modal-message blockquote'),
-				$content_link = $modal.find('article a, .hustle-modal-message a'),
-				$cta_button = $modal.find('.hustle-modal-cta'),
-				$close_container = $modal.find('.hustle-modal-close'),
-				$close_button = $modal.find('.hustle-modal-close svg path'),
-				$overlay = $preview_modal.find('.wpmudev-modal-mask');
+			var $preview_modal        = this.$( '#wph-preview-modal' ),
+				$modal                = $preview_modal.find( '.hustle-modal' ),
+				$overlay              = $preview_modal.find( '.wpmudev-modal-mask' ),
+				$modal_body           = $modal.find( '.hustle-modal-body' ),
+				$modal_body_cabriolet = $modal.find( '.hustle-modal-body section' ),
+				$modal_title          = $modal.find( '.hustle-modal-title' ),
+				$modal_subtitle_color = $modal.find( '.hustle-modal-subtitle' ),
+				$img_container        = $modal.find( '.hustle-modal-image' ),
+				$content              = $modal.find( '.hustle-modal-message' ),
+				$content_bq           = $modal.find( 'article blockquote, .hustle-modal-message blockquote' ),
+				$content_link         = $modal.find( 'article a, .hustle-modal-message a' ),
+				$cta_button           = $modal.find( '.hustle-modal-cta' ),
+				$close_container      = $modal.find( '.hustle-modal-close' ),
+				$close_button         = $modal.find( '.hustle-modal-close svg path' ),
+				$gdpr_content         = $modal.find( '.hustle-gdpr-box .hustle-gdpr-content' ),
+				$gdpr_input           = $modal.find( '.hustle-gdpr-box .hustle-gdpr-checkbox input' ),
+				$gdpr_checkbox        = $modal.find( '.hustle-gdpr-box .hustle-gdpr-checkbox span' )
+				;
 
-			// main_bg_color
+			// Colors Palette: Basic
+			// Main background
 			if ( style === 'cabriolet' ) {
 				$modal_body_cabriolet.css( 'background-color', design_data.main_bg_color );
 			} else {
 				$modal_body.css( 'background-color', design_data.main_bg_color );
 			}
 
-			// title_color
-			$modal_title.css( 'color', design_data.title_color );
-
-			// subtitle_color
-			$modal_subtitle_color.css( 'color', design_data.subtitle_color );
-
-			// image_container_bg
+			// Colors Palette: Basic
+			// Image container
 			$img_container.css( 'background-color', design_data.image_container_bg );
 
-			// content_color
+			// Colors Palette: Basic
+			// Title color
+			$modal_title.css( 'color', design_data.title_color );
+
+			// Colors Palette: Basic
+			// Subtitle color
+			$modal_subtitle_color.css( 'color', design_data.subtitle_color );
+
+			// Colors Palette: Basic
+			// Content color
 			$content.css( 'color', design_data.content_color );
 			$content_bq.css( 'border-left-color', design_data.link_static_color );
-			$content_bq.mouseover(function(){
-				$(this).css( 'border-left-color', design_data.link_hover_color );
-			}).mouseout(function(){
-				$(this).css( 'border-left-color', design_data.link_static_color );
-			});
 
-			// link color
+			// Colors Palette: Basic
+			// Link color
 			$content_link.css( 'color', design_data.link_static_color );
 			$content_link.mouseover(function(){
 				$(this).css( 'color', design_data.link_hover_color );
@@ -272,24 +352,69 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				$(this).css( 'color', design_data.link_static_color );
 			});
 
-			// cta button
+			// Colors Palette: Basic
+			// CTA Button
 			$cta_button.css({
 				'background-color': design_data.cta_button_static_bg,
 				'color': design_data.cta_button_static_color,
 			});
 			$cta_button.mouseover(function(){
+
 				$(this).css({
 					'background-color': design_data.cta_button_hover_bg,
 					'color': design_data.cta_button_hover_color,
 				});
 			}).mouseout(function(){
+
 				$(this).css({
 					'background-color': design_data.cta_button_static_bg,
 					'color': design_data.cta_button_static_color,
 				});
 			});
 
-			// close button
+			// Colors Palette: GDPR Field
+			if ( _.isTrue( content_data.show_gdpr ) ) {
+
+				// GDPR Content
+				$gdpr_content.css( 'color', design_data.gdpr_content );
+
+				// GDPR Checkbox
+				if ( _.isTrue( design_data.gdpr_border ) ) {
+					var gdpr_border_style = design_data.gdpr_border_weight + 'px ' +
+						design_data.gdpr_border_type + ' ' +
+						design_data.gdpr_border_color;
+					$gdpr_checkbox.css({
+						'border': gdpr_border_style,
+						'border-radius': design_data.gdpr_border_radius + 'px'
+					});
+				}
+				$gdpr_checkbox.css({
+					'background-color': design_data.gdpr_chechbox_background_static,
+					'color': design_data.gdpr_checkbox_icon
+				});
+
+				// GDPR Checkbox (active)
+				$gdpr_input.click(function(){
+
+					$gdpr_checkbox.toggleClass('gdpr-is-active', function(){
+
+						if ( $gdpr_checkbox.hasClass('gdpr-is-active') ) {
+
+							$gdpr_checkbox.css({
+								'background-color': design_data.gdpr_checkbox_background_active
+							});
+						} else {
+
+							$gdpr_checkbox.css({
+								'background-color': design_data.gdpr_chechbox_background_static
+							});
+						}
+					});
+				});
+			}
+
+			// Colors Palette: Additional Settings
+			// Close (x) Button
 			$close_button.css( 'fill', design_data.close_button_static_color );
 			$close_container.mouseover(function(){
 				$close_button.css( 'fill', design_data.close_button_hover_color );
@@ -297,7 +422,8 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				$close_button.css( 'fill', design_data.close_button_static_color );
 			});
 
-			// overlay_bg
+			// Colors Palette: Additional Settings
+			// Overlay Background
 			$overlay.css( 'background-color', design_data.overlay_bg );
 
 			// feature image
@@ -306,16 +432,19 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				vertical_fit = '';
 
 			if ( design_data.feature_image_fit === 'contain' || design_data.feature_image_fit === 'cover' ) {
+
 				if ( design_data.feature_image_horizontal === 'custom' ) {
 					horizontal_fit = design_data.feature_image_horizontal_px + 'px';
 				} else {
 					horizontal_fit = design_data.feature_image_horizontal;
 				}
+
 				if ( design_data.feature_image_vertical === 'custom' ) {
 					vertical_fit = design_data.feature_image_vertical_px + 'px';
 				} else {
 					vertical_fit = design_data.feature_image_vertical;
 				}
+
 				$feature_image.css({
 					'background-position': horizontal_fit + ' ' + vertical_fit,
 					'object-position': horizontal_fit + ' ' + vertical_fit
@@ -324,9 +453,10 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 
 			// border, drop shadow
 			if ( _.isTrue( design_data.border ) ) {
-				var border_style = design_data.border_weight + 'px '
-					+ design_data.border_type + ' '
-					+ design_data.border_color;
+
+				var border_style = design_data.border_weight + 'px ' +
+					design_data.border_type + ' ' +
+					design_data.border_color;
 
 				if ( style === 'cabriolet' ) {
 
@@ -334,38 +464,37 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 						'border': border_style,
 						'border-radius': design_data.border_radius + 'px'
 					});
-
 				} else {
 
 					$modal_body.css({
 						'border': border_style,
 						'border-radius': design_data.border_radius + 'px'
 					});
-
 				}
 			}
+
 			if ( _.isTrue( design_data.drop_shadow ) ) {
-				var box_shadow = design_data.drop_shadow_x + 'px '
-					+ design_data.drop_shadow_y + 'px '
-					+ design_data.drop_shadow_blur + 'px '
-					+ design_data.drop_shadow_spread + 'px '
-					+ design_data.drop_shadow_color;
+
+				var box_shadow = design_data.drop_shadow_x + 'px ' +
+					design_data.drop_shadow_y + 'px ' +
+					design_data.drop_shadow_blur + 'px ' +
+					design_data.drop_shadow_spread + 'px ' +
+					design_data.drop_shadow_color;
 
 				if ( style === 'cabriolet' ) {
 
 					$modal.find("section").css({
 						'box-shadow': box_shadow
 					});
-
 				} else {
 
 					$modal_body.css({
 						'box-shadow': box_shadow
 					});
-
 				}
 			}
 		},
+
 		apply_preview_optin_styles: function() {
 			// do the preview styles here with optin enabled
 			var me = this,
@@ -374,26 +503,31 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				layout = design_data.form_layout;
 
 			// modal parts
-			var $preview_modal = this.$('#wph-preview-modal'),
-				$modal = $preview_modal.find('.hustle-modal'),
-				$modal_body = $modal.find('.hustle-modal-body'),
-				$modal_success = $modal.find('.hustle-modal-success'),
-				$modal_title = $modal.find('.hustle-modal-title'),
-				$modal_subtitle_color = $modal.find('.hustle-modal-subtitle'),
-				$content = $modal.find('article'),
-				$content_bq = $modal.find('article blockquote'),
-				$content_link = $modal.find('article a:not(.hustle-modal-cta)'),
-				$input = $modal.find('.hustle-modal-optin_field'),
-				$input_icon = $input.find('label .hustle-modal-optin_icon .hustle-icon path'),
-				$placeholder = $input.find('label .hustle-modal-optin_placeholder'),
-				$button = $modal.find('.hustle-modal-optin_button button'),
-				$checkbox = $modal.find('.hustle-modal-mc_checkbox input+label, .hustle-modal-mc_checkbox input:checked+label'),
-				$radio = $modal.find('.hustle-modal-mc_radio input+label, .hustle-modal-mc_radio input:checked+label'),
-				$close_container = $modal.find('.hustle-modal-close'),
-				$close_button = $modal.find('.hustle-modal-close svg path');
+			var $preview_modal             = this.$( '#wph-preview-modal' ),
+				$modal                     = $preview_modal.find( '.hustle-modal' ),
+				$modal_body                = $modal.find( '.hustle-modal-body' ),
+				$modal_success             = $modal.find( '.hustle-modal-success' ),
+				$modal_title               = $modal.find( '.hustle-modal-title' ),
+				$modal_subtitle_color      = $modal.find( '.hustle-modal-subtitle' ),
+				$content                   = $modal.find( 'article' ),
+				$content_bq                = $modal.find( 'article blockquote' ),
+				$content_link              = $modal.find( 'article a:not(.hustle-modal-cta)' ),
+				$field                     = $modal.find( '.hustle-modal-optin_field' ),
+				$input                     = $field.find( 'input' ),
+				$input_icon                = $field.find( 'label .hustle-modal-optin_icon .hustle-icon path' ),
+				$placeholder               = $field.find( 'label .hustle-modal-optin_placeholder' ),
+				$button                    = $modal.find( '.hustle-modal-optin_button button' ),
+				$checkbox                  = $modal.find( '.hustle-modal-mc_checkbox input+label, .hustle-modal-mc_checkbox input:checked+label' ),
+				$radio                     = $modal.find( '.hustle-modal-mc_radio input+label, .hustle-modal-mc_radio input:checked+label' ),
+				$close_container           = $modal.find( '.hustle-modal-close' ),
+				$close_button              = $modal.find( '.hustle-modal-close svg path' ),
+				$gdpr_content              = $modal.find( '.hustle-gdpr-box .hustle-gdpr-content' ),
+				$gdpr_input                = $modal.find( '.hustle-gdpr-box .hustle-gdpr-checkbox input' ),
+				$gdpr_checkbox             = $modal.find( '.hustle-gdpr-box .hustle-gdpr-checkbox span' )
+				;
 
 			// main_bg_color
-			$modal_body.css( 'background-color', design_data.main_bg_color );
+			$modal_body.find( 'section' ).css( 'background-color', design_data.main_bg_color );
 			// success bg
 			$modal_success.css( 'background-color', design_data.main_bg_color );
 
@@ -444,15 +578,56 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				});
 			});
 
+			// Colors Palette: GDPR Field
+			if ( _.isTrue( content_data.show_gdpr ) ) {
+
+				// GDPR Content
+				$gdpr_content.css( 'color', design_data.gdpr_content );
+
+				// GDPR Checkbox
+				if ( _.isTrue( design_data.gdpr_border ) ) {
+					var gdpr_border_style = design_data.gdpr_border_weight + 'px ' +
+						design_data.gdpr_border_type + ' ' +
+						design_data.gdpr_border_color;
+					$gdpr_checkbox.css({
+						'border': gdpr_border_style,
+						'border-radius': design_data.gdpr_border_radius + 'px'
+					});
+				}
+				$gdpr_checkbox.css({
+					'background-color': design_data.gdpr_chechbox_background_static,
+					'color': design_data.gdpr_checkbox_icon
+				});
+
+				// GDPR Checkbox (active)
+				$gdpr_input.click(function(){
+
+					$gdpr_checkbox.toggleClass('gdpr-is-active', function(){
+
+						if ( $gdpr_checkbox.hasClass('gdpr-is-active') ) {
+
+							$gdpr_checkbox.css({
+								'background-color': design_data.gdpr_checkbox_background_active
+							});
+						} else {
+
+							$gdpr_checkbox.css({
+								'background-color': design_data.gdpr_chechbox_background_static
+							});
+						}
+					});
+				});
+			}
+
 			// optin inputs
-			$input.find('input').css( 'color', design_data.optin_form_field_text_static_color );
+			$input.css( 'color', design_data.optin_form_field_text_static_color );
 			$input.css( 'background-color', design_data.optin_input_static_bg );
-			$input.mouseover(function(){
+			$field.mouseover(function(){
 				$(this).find('input').css( 'color', design_data.optin_form_field_text_hover_color );
-				$(this).css( 'background-color', design_data.optin_input_hover_bg );
+				$(this).find('input').css( 'background-color', design_data.optin_input_hover_bg );
 			}).mouseout(function(){
 				$(this).find('input').css( 'color', design_data.optin_form_field_text_static_color );
-				$(this).css( 'background-color', design_data.optin_input_static_bg );
+				$(this).find('input').css( 'background-color', design_data.optin_input_static_bg );
 			});
 
 			// optin_input_icon
@@ -483,13 +658,13 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				mc_group_title = '.hustle-modal .hustle-modal-optin_form .hustle-modal-mc_title label',
 				mc_group_labels = '.hustle-modal .hustle-modal-optin_form .hustle-modal-mc_groups .hustle-modal-mc_option .hustle-modal-mc_label label',
 				overlay_bg = '.wpmudev-ui .wpmudev-modal .wpmudev-modal-mask',
-				checkbox_styles = checkbox_selector + ' { color: '+ design_data.optin_check_radio_static_bg +'; }'
-					+ checkbox_checked_selector + ' { color: '+ design_data.optin_check_radio_tick_color +'; }'
-					+ radio_selector + ' { color: '+ design_data.optin_check_radio_static_bg +'; }'
-					+ radio_checked_selector + ' { color: '+ design_data.optin_check_radio_tick_color +'; }'
-					+ mc_group_title + ' { color: '+ design_data.optin_mailchimp_title_color +'; }'
-					+ mc_group_labels + ' { color: '+ design_data.optin_mailchimp_labels_color +'; }'
-					+ overlay_bg + ' { background-color: '+ design_data.overlay_bg +'; }';
+				checkbox_styles = checkbox_selector + ' { color: '+ design_data.optin_check_radio_static_bg +'; }' +
+					checkbox_checked_selector + ' { color: '+ design_data.optin_check_radio_tick_color +'; }' +
+					radio_selector + ' { color: '+ design_data.optin_check_radio_static_bg +'; }' +
+					radio_checked_selector + ' { color: '+ design_data.optin_check_radio_tick_color +'; }' +
+					mc_group_title + ' { color: '+ design_data.optin_mailchimp_title_color +'; }' +
+					mc_group_labels + ' { color: '+ design_data.optin_mailchimp_labels_color +'; }' +
+					overlay_bg + ' { background-color: '+ design_data.overlay_bg +'; }';
 
 			if ( $styles_el.length ) {
 				$styles_el.remove();
@@ -528,9 +703,9 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 
 			// modal border
 			if ( _.isTrue( design_data.border ) ) {
-				var border_style = design_data.border_weight + 'px '
-					+ design_data.border_type + ' '
-					+ design_data.border_color;
+				var border_style = design_data.border_weight + 'px ' +
+					design_data.border_type + ' ' +
+					design_data.border_color;
 
 				$modal_body.css({
 					'border': border_style,
@@ -540,11 +715,11 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 
 			// drop shadow
 			if ( _.isTrue( design_data.drop_shadow ) ) {
-				var box_shadow = design_data.drop_shadow_x + 'px '
-					+ design_data.drop_shadow_y + 'px '
-					+ design_data.drop_shadow_blur + 'px '
-					+ design_data.drop_shadow_spread + 'px '
-					+ design_data.drop_shadow_color;
+				var box_shadow = design_data.drop_shadow_x + 'px ' +
+					design_data.drop_shadow_y + 'px ' +
+					design_data.drop_shadow_blur + 'px ' +
+					design_data.drop_shadow_spread + 'px ' +
+					design_data.drop_shadow_color;
 
 				$modal_body.css({
 					'box-shadow': box_shadow
@@ -553,9 +728,9 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 
 			// form fields border
 			if ( _.isTrue( design_data.form_fields_border ) ) {
-				var field_border_style = design_data.form_fields_border_weight + 'px '
-					+ design_data.form_fields_border_type + ' '
-					+ design_data.form_fields_border_color;
+				var field_border_style = design_data.form_fields_border_weight + 'px ' +
+					design_data.form_fields_border_type + ' ' +
+					design_data.form_fields_border_color;
 
 				$input.css({
 					'border': field_border_style,
@@ -565,9 +740,9 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 
 			// button border
 			if ( _.isTrue( design_data.button_border ) ) {
-				var button_border_style = design_data.button_border_weight + 'px '
-					+ design_data.button_border_type + ' '
-					+ design_data.button_border_color;
+				var button_border_style = design_data.button_border_weight + 'px ' +
+					design_data.button_border_type + ' ' +
+					design_data.button_border_color;
 
 				$button.css({
 					'border': button_border_style,
@@ -576,6 +751,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			}
 
 		},
+
 		apply_custom_size: function() {
 			var me = this,
 				content_data = this.content_view.model.toJSON(),
@@ -592,180 +768,28 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			if ( _.isTrue( design_data.customize_size ) ) {
 				$modal.css({
 					'width': design_data.custom_width + 'px',
-					'max-width': 'none'
+					'max-width': 'unset',
+					'height': design_data.custom_height + 'px',
+					'max-height': 'unset',
 				});
-
-				// adjust
-				if ( style === 'simple' && _.isFalse( content_data.use_email_collection ) ) {
-					var calc_close = $modal.find('.hustle-modal-close').height() + 15, // add "15" for close margin
-						modal_content = $modal.find('.hustle-modal-content');
-
-					$modal_body.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px)'
-					});
-
-					modal_content.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px)',
-						'overflow-y': 'auto'
-					});
-				}
-				if ( style === 'minimal' && _.isFalse( content_data.use_email_collection ) ) {
-					var calc_close = $modal.find('.hustle-modal-close').height() + 15, // add "15" for close margin
-						modal_section = $modal.find('section'),
-						modal_message = $modal.find('.hustle-modal-message');
-
-					if ( _.isTrue( content_data.has_title ) && ( content_data.title !== '' || content_data.sub_title !== '' ) ) {
-						var calc_header = $modal.find('header').outerHeight();
-					} else {
-						var calc_header = 0;
-					}
-
-					if ( _.isTrue( content_data.show_cta ) && ( content_data.cta_label !== '' && content_data.cta_url !== '' ) ) {
-						var calc_footer = $modal.find('footer').innerHeight();
-					} else {
-						var calc_footer = 0;
-					}
-
-					modal_section.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px - ' + calc_header + 'px - ' + calc_footer + 'px)'
-					});
-
-					modal_message.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px - ' + calc_header + 'px - ' + calc_footer + 'px)',
-						'overflow-y': 'auto'
-					});
-				}
-				if ( style === 'cabriolet' && _.isFalse( content_data.use_email_collection ) ) {
-					var calc_header = $modal.find('header').height() + 20, // add "20" for header margin.
-						modal_section = $modal.find('section'),
-						modal_message = $modal.find('.hustle-modal-message');
-
-					modal_section.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_header + 'px)'
-					});
-
-					modal_message.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_header + 'px)',
-						'overflow-y': 'auto'
-					});
-				}
-				if ( layout === 'one' && _.isTrue( content_data.use_email_collection ) ) {
-					var calc_close = $modal.find('.hustle-modal-close').height() + 15, // add "15" for close margin
-						calc_footer = $modal.find('footer').height(),
-						modal_image = $modal.find('.hustle-modal-image'),
-						modal_section = $modal.find('section'),
-						modal_article = $modal.find('article');
-
-					modal_section.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px - ' + calc_footer + 'px)'
-					});
-
-					if (
-						modal_section.hasClass('hustle-modal-image_above') ||
-						modal_section.hasClass('hustle-modal-image_below')
-					) {
-						var avg_height = design_data.custom_height + calc_close + calc_footer;
-
-						if (modal_section.height() < 250 ) {
-							modal_section.css({
-								'overflow-y': 'auto'
-							});
-						} else {
-							modal_article.css({
-								'height': 'calc(' + modal_section.height() + 'px - ' + modal_image.height() + 'px)',
-								'overflow-y': 'auto'
-							});
-						}
-					} else {
-						modal_article.css({
-							'max-height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px - ' + calc_footer + 'px)',
-							'overflow-y': 'auto'
-						});
-
-						modal_image.css({
-							'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px - ' + calc_footer + 'px)'
-						});
-					}
-				}
-				if ( layout === 'two' && _.isTrue( content_data.use_email_collection ) ) {
-					var calc_close = $modal.find('.hustle-modal-close').height() + 15, // add "15" for close margin
-						calc_footer = $modal.find('footer').height(),
-						modal_body = $modal.find('.hustle-modal-body'),
-						modal_section = $modal.find('section'),
-						modal_article = $modal.find('article');
-
-					modal_body.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px)'
-					});
-
-					modal_section.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px - ' + calc_footer + 'px)'
-					});
-
-					modal_article.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px - ' + calc_footer + 'px)',
-						'overflow-y': 'auto'
-					});
-				}
-				if ( layout === 'three' && _.isTrue( content_data.use_email_collection ) ) {
-					var calc_close = $modal.find('.hustle-modal-close').height() + 15, // add "15" for close margin
-						calc_image = $modal.find('.hustle-modal-image').height(),
-						modal_article = $modal.find('article');
-
-					$modal_body.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px)'
-					});
-
-					modal_article.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px - ' + calc_image + 'px)',
-						'overflow-y': 'auto'
-					});
-				}
-				if ( layout === 'four' && _.isTrue( content_data.use_email_collection ) ) {
-					var calc_close = $modal.find('.hustle-modal-close').height() + 15, // add "15" for close margin
-						calc_image = $modal.find('.hustle-modal-image').height(),
-						calc_wrap = design_data.custom_height - calc_close - calc_image,
-						optin_wrap = $modal.find('.hustle-modal-optin_wrap'),
-						modal_article = $modal.find('article');
-
-					$modal_body.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px)'
-					});
-
-					modal_article.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px)',
-						'overflow-y': 'auto'
-					});
-
-					optin_wrap.css({
-						'height': 'calc(' + design_data.custom_height + 'px - ' + calc_close + 'px - ' + calc_image + 'px)',
-						'overflow-y': 'auto'
-					});
-
-					if ( $modal.find('.hustle-modal-optin_form').innerHeight() > calc_wrap ) {
-						optin_wrap.css({
-							'align-items': 'flex-start'
-						});
-					}
-				}
 			}
 		},
+
 		apply_custom_css: function() {
 			// Get rid of old styles.
 			var $styles_el = $('#hustle-module-custom-styles');
 			$styles_el.remove();
-
 			var customize_css = this.design_view.model.toJSON().customize_css;
 			// If custom CSS is enabled, add styles.
 			if (customize_css === 1 || customize_css === '1') {
 				// custom css
 				var custom_css = this.design_view.model.get('custom_css'),
-					nonce = $("#hustle_custom_css").data("nonce");
+					nonce = $('.wpmudev-preview').data('customCssNonce');
 
 				if ( _.isEmpty(custom_css) || typeof nonce === 'undefined' ) {
 					return;
 				}
-
+				
 				$.ajax({
 					type: "POST",
 					url: ajaxurl,
@@ -785,11 +809,11 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 						}
 					},
 					error: function() {
-
 					}
 				});
 			}
 		},
+
 		close_preview: function(e) {
 			e.stopPropagation();
 
@@ -828,6 +852,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				$('body').removeClass('wpmudev-modal-is_active');
 			}
 		},
+
 		sanitize_data: function() {
 			// cta_url
 			var cta_url = this.content_view.model.get('cta_url');
@@ -839,18 +864,56 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			// custom css
 			this.design_view.update_custom_css();
 		},
+
+		provider_add_custom_fields: function(id, nonce, changed, me) {
+			var active_email_service = me.content_view.model.get('active_email_service');
+			if (
+				Module.Utils.service_supports_fields( 0, active_email_service ) !== true || 
+				(
+					! ('form_elements' in changed) && 
+					! ('email_services' in changed) &&
+					! ('active_email_service' in changed)
+				) 
+			) {
+				return;
+			}
+			if ( typeof me.content_view.model.get('form_elements') === 'object' ) {
+				var post_data = JSON.stringify(me.content_view.model.get('form_elements')),
+					active_email_service = me.content_view.model.get('active_email_service'),
+					module_id = id,
+					data = {
+						'action' : 'add_module_fields',
+						'_ajax_nonce'  : nonce,
+						'data'   : post_data,
+						'provider' : active_email_service,
+						'module_id' : module_id
+					};
+
+				$.post( ajaxurl, data, function( response ){
+
+				}).fail(function( response ) {
+					console.log('There was an error saving the custom fields.');
+				});
+			}
+		},
+
 		save: function($btn) {
 			if ( !Module.Validate.validate_module_name() ) return false;
 
+			var changed = this.content_view.model.changed;
+
 			this.set_content_from_tinymce(true);
 			this.sanitize_data();
-
+	
 			// preparing the data
 			var me = this,
+				id = ( !$btn.data('id') ) ? '-1' : $btn.data('id'),
+				nonce =  $btn.data('nonce'),
 				module = this.model.toJSON(),
 				content = this.content_view.model.toJSON(),
 				design = this.design_view.model.toJSON(),
 				settings = this.settings_view.model.toJSON();
+
 
 			// ajax save here
 			return $.ajax({
@@ -858,8 +921,8 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				type: 'POST',
 				data: {
 					action: 'hustle_save_popup_module',
-					_ajax_nonce: $btn.data('nonce'),
-					id: ( !$btn.data('id') ) ? '-1' : $btn.data('id'),
+					_ajax_nonce: nonce,
+					id: id,
 					module: module,
 					content: content,
 					design: design,
@@ -867,16 +930,18 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 					shortcode_id: me._get_shortcode_id()
 				},
 				complete: function(resp) {
+					me.provider_add_custom_fields(id, nonce, changed, me);
 					var response = resp.responseJSON;
 				}
 			});
 		},
+
 		save_changes: function(e) {
 			e.preventDefault();
 			var me = this,
-				$btn = $(e.target);
-				
-			me.$('.wpmudev-button-save, .wpmudev-button-continue').addClass('wpmudev-button-onload').prop('disabled', true);
+				$btn = $(e.currentTarget);
+
+			me.$('.wpmudev-button-save, .wpmudev-button-continue, .wpmudev-button-finish').addClass('wpmudev-button-onload').prop('disabled', true);
 			var save = this.save($btn);
 
 			if ( save ) {
@@ -896,22 +961,32 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 						$btn.data( 'id', resp.data );
 						$btn.siblings().data( 'id', resp.data );
 						Module.hasChanges = false;
+
+						// redirect from the last page
+						var current = optin_vars.current.section || false;
+						if ( 'settings' === current ) {
+							var module_id = resp.data;
+							if ( $btn.hasClass( 'wpmudev-button-finish' ) ) {
+								return window.location.replace( '?page=' + optin_vars.current.listing_page + '&module=' + module_id );
+							}
+						}
 					}
 				} ).always( function() {
-					me.$('.wpmudev-button-save, .wpmudev-button-continue').removeClass('wpmudev-button-onload').prop('disabled', false);
+					me.$('.wpmudev-button-save, .wpmudev-button-continue, .wpmudev-button-finish').removeClass('wpmudev-button-onload').prop('disabled', false);
 				});
 			} else {
 				// If saving did not work, remove loading icon.
-				me.$('.wpmudev-button-save, .wpmudev-button-continue').removeClass('wpmudev-button-onload').prop('disabled', false);
+				me.$('.wpmudev-button-save, .wpmudev-button-continue, .wpmudev-button-finish').removeClass('wpmudev-button-onload').prop('disabled', false);
 			}
 		},
+
 		save_continue: function(e) {
 			e.preventDefault();
 			var me = this;
 			// Disable buttons during save.
-			me.$('.wpmudev-button-save, .wpmudev-button-continue').addClass('wpmudev-button-onload').prop('disabled', true);
+			me.$('.wpmudev-button-save, .wpmudev-button-continue, .wpmudev-button-finish').addClass('wpmudev-button-onload').prop('disabled', true);
 
-			var save = this.save($(e.target));
+			var save = this.save($(e.currentTarget));
 			if ( save ) {
 				save.done( function(resp) {
 					if (typeof resp === 'string') {
@@ -937,16 +1012,20 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				} );
 			} else {
 				// If saving did not work, remove loading icon.
-				me.$('.wpmudev-button-save, .wpmudev-button-continue').removeClass('wpmudev-button-onload').prop('disabled', false);
+				me.$('.wpmudev-button-save, .wpmudev-button-continue, .wpmudev-button-finish').removeClass('wpmudev-button-onload').prop('disabled', false);
 			}
 		},
+
 		save_finish: function(e) {
 			e.preventDefault();
 			var me = this;
+			//fix for old module where after_close is empty
+			me.$('select[data-attribute="after_close"]').trigger('change');
 			// Disable buttons during save.
-			me.$('.wpmudev-button-save, .wpmudev-button-continue').addClass('wpmudev-button-onload').prop('disabled', true);
+			me.$('.wpmudev-button-save, .wpmudev-button-continue, .wpmudev-button-finish').addClass('wpmudev-button-onload').prop('disabled', true);
 
-			var save = this.save($(e.target));
+			this.model.set( 'active', 1, { silent:true } );
+			var save = this.save($(e.currentTarget));
 			if ( save ) {
 				save.done( function(resp) {
 					if ( resp.success ) {
@@ -956,15 +1035,17 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 					}
 				} );
 			} else {
-				me.$('.wpmudev-button-save, .wpmudev-button-continue').removeClass('wpmudev-button-onload').prop('disabed', false);
+				me.$('.wpmudev-button-save, .wpmudev-button-continue, .wpmudev-button-finish').removeClass('wpmudev-button-onload').prop('disabed', false);
 			}
 		},
+
 		cancel: function(e) {
 			e.preventDefault();
 			window.onbeforeunload = null;
 			window.location.replace( '?page=' + optin_vars.current.listing_page );
 			return;
 		},
+
 		back: function(e) {
 			e.preventDefault();
 			var me = this;
@@ -979,6 +1060,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			}
 			return;
 		},
+
 		mobile_navigate: function(e) {
 			e.preventDefault();
 			var value = e.target.value;
@@ -991,27 +1073,33 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				window.location.replace( this.$('.wpmudev-menu-settings-link a').attr('href') );
 			}
 		},
+
 		//on type or paste
 		validate_modal_name : function(e) {
 			Module.Validate.on_change_validate_module_name(e);
 		},
+
 		update_base_model: function(e) {
 			var changed = e.changed;
 
 			// for module_name
 			if ( 'module_name' in changed ) {
-				this.model.set( 'module_name', changed['module_name'], { silent:true } )
+				this.model.set( 'module_name', changed['module_name'], { silent:true } );
 			}
-
 		},
+
 		content_view_changed: function(model) {
+
 			var changed = model.changed,
 				key = Object.keys(changed);
 
 			// has_title
 			if ( 'has_title' in changed ) {
+
 				var $target_div = this.$('#wph-wizard-content-title-textboxes');
+
 				if ( $target_div.length ) {
+
 					if ( changed['has_title'] ) {
 						$target_div.removeClass('wpmudev-hidden');
 					} else if ( !$target_div.hasClass('wpmudev-hidden') ) {
@@ -1044,6 +1132,18 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				}
 			}
 
+			// show_gdpr
+			if ( 'show_gdpr' in changed ) {
+				var $target_div = this.$('#wph-wizard-content-gdpr-message');
+				if ( $target_div.length ) {
+					if ( changed['show_gdpr'] ) {
+						$target_div.removeClass('wpmudev-hidden');
+					} else if ( !$target_div.hasClass('wpmudev-hidden') ) {
+						$target_div.addClass('wpmudev-hidden');
+					}
+				}
+			}
+
 			// use_email_collection
 			if ( 'use_email_collection' in changed ) {
 				this.use_email_collection_changed( changed['use_email_collection'], true );
@@ -1068,6 +1168,20 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				}
 			}
 
+			// save_local_list
+			if ( 'save_local_list' in changed ) {
+				var $target_div = this.$('#wph-wizard-content-local_list_name');
+				if ( $target_div.length ) {
+					if ( changed['save_local_list'] ) {
+						$target_div.addClass('wpmudev-show');
+						$target_div.removeClass('wpmudev-hidden');
+					} else {
+						$target_div.addClass('wpmudev-hidden');
+						$target_div.removeClass('wpmudev-show');
+					}
+				}
+			}
+
 			// email service was toggled
 			if ( key[0].indexOf('_service_provider') !== -1 ) {
 				var service = key[0].replace( '_service_provider', '' );
@@ -1075,6 +1189,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			}
 
 		},
+
 		design_view_changed: function(model) {
 			var changed = model.changed;
 
@@ -1218,6 +1333,22 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				}
 			}
 
+			// gdpr_border
+			if ( 'gdpr_border' in changed ) {
+				var $target = this.$('#wph-wizard-design-gdpr-border-options');
+				if ( $target.length ) {
+					if ( changed['gdpr_border'] ) {
+						if ( !$target.hasClass('wpmudev-show') ) {
+							$target.addClass('wpmudev-show');
+						}
+						$target.removeClass('wpmudev-hidden');
+					} else {
+						$target.removeClass('wpmudev-show');
+						$target.addClass('wpmudev-hidden');
+					}
+				}
+			}
+
 			// drop_shadow
 			if ( 'drop_shadow' in changed ) {
 				var $target = this.$('#wph-wizard-design-shadow-options');
@@ -1267,6 +1398,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			}
 
 		},
+
 		settings_view_changed: function(model) {
 			var changed = model.changed;
 
@@ -1319,6 +1451,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			}
 
 		},
+
 		display_triggers_changed: function(model) {
 			var changed = model.changed;
 
@@ -1334,6 +1467,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			}
 
 		},
+
 		update_color_palette: function(style) {
 			var me = this,
 				use_email_collection = parseInt(this.content_view.model.get('use_email_collection'), 10);
@@ -1356,6 +1490,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				}
 			}
 		},
+
 		reset_color_palette: function(){
 			var me = this,
 				style = this.$('#wph-wizard-design-palette .select2-selection__rendered').attr('title').toLowerCase().replace(/\s/g, '_');
@@ -1377,20 +1512,27 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			}
 
 		},
+
 		use_email_collection_changed: function( value, is_from_event ) {
 			var $target_email = this.$('#wph-wizard-content-email'),
 				$target_email_options = this.$('#wph-wizard-content-email-options'),
 				$target_form_elements = this.$('#wph-wizard-content-form_elements'),
+				$target_gdpr = this.$('#wph-wizard-content-gdpr'),
+				$target_gdpr_message = this.$('#wph-wizard-content-gdpr-message'),
 				$target_form_submission = this.$('#wph-wizard-content-form_submission'),
 				$target_message = this.$('#wph-wizard-content-form_message'),
-				$target_message_options = this.$('#wph-wizard-content-form_success');
+				$target_message_options = this.$('#wph-wizard-content-form_success'),
+				$target_recaptcha = this.$('#wph-wizard-content-recaptcha');
 
 			if ( parseInt(value, 10) ) {
 				$target_email.removeClass('last');
 				$target_email_options.removeClass('wpmudev-hidden_table');
 				$target_email_options.addClass('wpmudev-show_table');
 				$target_form_elements.show();
+				$target_gdpr.show();
+				$target_gdpr_message.show();
 				$target_form_submission.show();
+				$target_recaptcha.show();
 				this.after_successful_submission_changed(this.content_view.model.get('after_successful_submission'));
 
 				// set default style for pop up with optin
@@ -1403,9 +1545,12 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				$target_email_options.removeClass('wpmudev-show_table');
 				$target_email_options.addClass('wpmudev-hidden_table');
 				$target_form_elements.hide();
+				$target_gdpr.hide();
+				$target_gdpr_message.hide();
 				$target_form_submission.hide();
 				$target_message.hide();
 				$target_message_options.hide();
+				$target_recaptcha.hide();
 
 				// set default style for pop up with no optin
 				if ( is_from_event ) {
@@ -1413,6 +1558,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				}
 			}
 		},
+
 		after_successful_submission_changed: function(value) {
 			var $target_redirect_url = this.$('#wph-wizard-content-form_submission_redirect_url'),
 				$target_message = this.$('#wph-wizard-content-form_message'),
@@ -1436,6 +1582,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 				}
 			}
 		},
+
 		toggle_cta_options: function(e) {
 			var $li = $(e.target).closest('li'),
 				$input = $li.find('input');
@@ -1446,6 +1593,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			$li.siblings().removeClass('current');
 			this.content_view.model.set( 'cta_target', $input.val(), {silent:true} );
 		},
+
 		toggle_submit_options: function(e) {
 			var $li = $(e.target).closest('li'),
 				$input = $li.find('input');
@@ -1456,6 +1604,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			$li.siblings().removeClass('current');
 			this.content_view.model.set( 'after_successful_submission', $input.val() );
 		},
+
 		toggle_feature_image_position_options: function(e) {
 			var $li = $(e.target).closest('li'),
 				$input = $li.find('input');
@@ -1466,6 +1615,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			$li.siblings().removeClass('current');
 			this.design_view.model.set( 'feature_image_position', $input.val(), {silent:true} );
 		},
+
 		toggle_feature_image_fit_options: function(e) {
 			var $li = $(e.target).closest('li'),
 				$input = $li.find('input');
@@ -1476,6 +1626,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			$li.siblings().removeClass('current');
 			this.design_view.model.set( 'feature_image_fit', $input.val(), {silent:false} );
 		},
+
 		toggle_feature_image_horizontal_options: function(e) {
 			var $li = $(e.target).closest('li'),
 				$input = $li.find('input');
@@ -1486,6 +1637,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			$li.siblings().removeClass('current');
 			this.design_view.model.set( 'feature_image_horizontal', $input.val(), {silent:false} );
 		},
+
 		toggle_feature_image_vertical_options: function(e) {
 			var $li = $(e.target).closest('li'),
 				$input = $li.find('input');
@@ -1496,6 +1648,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			$li.siblings().removeClass('current');
 			this.design_view.model.set( 'feature_image_vertical', $input.val(), {silent:false} );
 		},
+
 		toggle_form_fields_icon_options: function(e) {
 			var $li = $(e.target).closest('li'),
 				$input = $li.find('input');
@@ -1506,6 +1659,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			$li.siblings().removeClass('current');
 			this.design_view.model.set( 'form_fields_icon', $input.val(), {silent:false} );
 		},
+
 		toggle_form_fields_proximity_options: function(e) {
 			var $li = $(e.target).closest('li'),
 				$input = $li.find('input');
@@ -1516,6 +1670,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			$li.siblings().removeClass('current');
 			this.design_view.model.set( 'form_fields_proximity', $input.val(), {silent:false} );
 		},
+
 		toggle_display_triggers: function(e) {
 			var $li = $(e.target).closest('li'),
 				$input = $li.find('input');
@@ -1527,6 +1682,7 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 			this.settings_view.model.set( 'triggers.trigger', $input.val(), {silent:true}  );
 			this.display_triggers_changed( this.settings_view.model.get('triggers') );
 		},
+
 		handle_email_service: function(service, enable) {
 			var email_services = this.content_view.model.get('email_services');
 
@@ -1566,9 +1722,11 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 
 			this.content_view.model.set( 'email_services', email_services );
 		},
+
 		_get_shortcode_id: function(){
 			return this.content_view.model.get('module_name').trim().toLowerCase().replace(/\s+/g, '-');
 		},
+
 		escape_key: function(e) {
 			// If escape key, close.
 			if (e.keyCode === 27) {
@@ -1609,7 +1767,6 @@ Hustle.define("Pop_Up.View", function($, doc, win){
 					}
 				}, on_success_time );
 			}
-
 		}
 	});
 

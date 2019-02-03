@@ -4,7 +4,7 @@
  * Plugin URI:  https://premium.wpmudev.org/project/wpmu-dev-dashboard/
  * Description: Brings the powers of WPMU DEV directly to you. It will revolutionize how you use WordPress. Activate now!
  * Author:      WPMU DEV
- * Version:     4.5.1
+ * Version:     4.6
  * Author URI:  https://premium.wpmudev.org/
  * Text Domain: wpmudev
  * Domain Path: includes/languages/
@@ -44,7 +44,7 @@ class WPMUDEV_Dashboard {
 	 *
 	 * @var string (Version number)
 	 */
-	static public $version = '4.5.1';
+	static public $version = '4.6';
 
 	/**
 	 * Holds the API module.
@@ -136,10 +136,10 @@ class WPMUDEV_Dashboard {
 		require_once 'includes/class-wpmudev-dashboard-upgrader.php';
 		require_once 'includes/class-wpmudev-dashboard-notice.php';
 
-		self::$site = new WPMUDEV_Dashboard_Site( __FILE__ );
-		self::$api = new WPMUDEV_Dashboard_Api();
-		self::$remote = new WPMUDEV_Dashboard_Remote();
-		self::$notice = new WPMUDEV_Dashboard_Message();
+		self::$site     = new WPMUDEV_Dashboard_Site( __FILE__ );
+		self::$api      = new WPMUDEV_Dashboard_Api();
+		self::$remote   = new WPMUDEV_Dashboard_Remote();
+		self::$notice   = new WPMUDEV_Dashboard_Message();
 		self::$upgrader = new WPMUDEV_Dashboard_Upgrader();
 
 		/*
@@ -193,7 +193,7 @@ class WPMUDEV_Dashboard {
 
 		// Force refresh of all data when plugin is activated.
 		WPMUDEV_Dashboard::$site->set_option( 'refresh_profile_flag', 1 );
-		WPMUDEV_Dashboard::$api->refresh_projects_data();
+		add_action( 'shutdown', array( WPMUDEV_Dashboard::$api, 'refresh_projects_data' ) ); // this needs to trigger after init to prevent Call to undefined function wp_get_current_user() errors.
 		WPMUDEV_Dashboard::$site->schedule_shutdown_refresh();
 	}
 

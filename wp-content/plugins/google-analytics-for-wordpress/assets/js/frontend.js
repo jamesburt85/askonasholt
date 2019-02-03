@@ -11,11 +11,12 @@
  * @since 6.0.12
  */
 var MonsterInsights = function(){
-	// MonsterInsights JS  events tracking works on all major browsers, including IE starting at IE 7, via polyfills for any major JS fucntion used that
-	// is not supported by at least  95% of the global and/or US browser marketshare. Currently, IE 7 & 8 which as of 2/14/17 have under 0.25% global marketshare, require
-	// us to polyfill Array.prototype.lastIndexOf, and if they continue to drop, we might remove this polyfill at some point. In that case note that events tracking
-	// for IE 7/8 will continue to work, with the exception of events tracking of downloads.
-	var lastClicked = [];
+	/* MonsterInsights JS  events tracking works on all major browsers, including IE starting at IE 7, via polyfills for any major JS function used that
+	   is not supported by at least  95% of the global and/or US browser marketshare. Currently, IE 7 & 8 which as of 2/14/17 have under 0.25% global marketshare, require
+	   us to polyfill Array.prototype.lastIndexOf, and if they continue to drop, we might remove this polyfill at some point. In that case note that events tracking
+	   for IE 7/8 will continue to work, with the exception of events tracking of downloads. */
+	var lastClicked  = [];
+	var internalAsOutboundCategory = '';
 	
 	this.setLastClicked = function(valuesArray,fieldsArray,tracked){ 
 		valuesArray = typeof valuesArray !== 'undefined' ? valuesArray : [];
@@ -30,8 +31,16 @@ var MonsterInsights = function(){
 		return lastClicked;
 	};
 
+	this.setInternalAsOutboundCategory = function( category ){
+		internalAsOutboundCategory = category;
+	};
+
+	this.getInternalAsOutboundCategory = function () {
+		return internalAsOutboundCategory;
+	};
+
 	function __gaTrackerIsDebug () {
-		if ( monsterinsights_frontend.is_debug_mode === "true" || window.monsterinsights_debug_mode ) {
+		if ( window.monsterinsights_debug_mode ) {
 			 return true;
 		} else {
 			return false;
@@ -82,10 +91,11 @@ var MonsterInsights = function(){
 	}
 
 	function __gaTrackerGetExtension( extension ) {
+		extension = extension.toString();
 		extension = extension.substring( 0, (extension.indexOf( "#" ) == -1 ) ? extension.length : extension.indexOf( "#" ) ); /* Remove the anchor at the end, if there is one */
 		extension = extension.substring( 0, (extension.indexOf( "?" ) == -1 ) ? extension.length : extension.indexOf( "?" ) ); /* Remove the query after the file name, if there is one */
 		extension = extension.substring( extension.lastIndexOf( "/" ) + 1, extension.length ); /* Remove everything before the last slash in the path */
-		if ( extension.length > 0 && extension.indexOf('.') !== -1 ) { // If there's a period left in the URL, then there's a extension. Else it is not a extension.
+		if ( extension.length > 0 && extension.indexOf('.') !== -1 ) { /* If there's a period left in the URL, then there's a extension. Else it is not a extension. */
 			extension = extension.substring( extension.indexOf( "." ) + 1 ); /* Remove everything but what's after the first period */
 			return extension;
 		} else {
@@ -94,7 +104,7 @@ var MonsterInsights = function(){
 	}
 
 	function __gaTrackerLoaded() {
-		return __gaTracker.hasOwnProperty( "loaded" ) && __gaTracker.loaded == true; // jshint ignore:line
+		return typeof(__gaTracker) !== 'undefined' && __gaTracker && __gaTracker.hasOwnProperty( "loaded" ) && __gaTracker.loaded == true; /* jshint ignore:line */
 	}
 
 	function __gaTrackerTrackedClick( event ) {
@@ -112,8 +122,9 @@ var MonsterInsights = function(){
 	function __gaTrackerGetInboundPaths() {
 		var inbound_paths = [];
 		if ( typeof monsterinsights_frontend.inbound_paths == 'string' ) {
-			inbound_paths = monsterinsights_frontend.inbound_paths.split(",");
+			inbound_paths = JSON.parse( monsterinsights_frontend.inbound_paths );
 		}
+
 		return inbound_paths;
 	}
 
@@ -145,36 +156,43 @@ var MonsterInsights = function(){
 		var hostname            = el.hostname;
 		var protocol            = el.protocol;
 		var pathname       		= el.pathname;
+		link 					= link.toString();
 		var index, len;
+		var category 			=  el.getAttribute("data-vars-ga-category");
+
+		if ( category ) {
+			return category;
+		}
 
 		if ( link.match( /^javascript\:/i ) ) {
-			type = 'internal'; // if it's a JS link, it's internal
-		} else if ( __gaTrackerStringTrim( protocol ) == 'tel' || __gaTrackerStringTrim( protocol ) == 'tel:' ) { /* If it's a telephone link */
+			type = 'internal'; /* if it's a JS link, it's internal */
+		} else if ( protocol && protocol.length > 0 && ( __gaTrackerStringTrim( protocol ) == 'tel' || __gaTrackerStringTrim( protocol ) == 'tel:' ) ) { /* If it's a telephone link */
 			type = "tel"; 
-		} else if ( __gaTrackerStringTrim( protocol ) == 'mailto' ||  __gaTrackerStringTrim( protocol ) == 'mailto:' ) { /* If it's a email */
+		} else if ( protocol && protocol.length > 0 && ( __gaTrackerStringTrim( protocol ) == 'mailto' ||  __gaTrackerStringTrim( protocol ) == 'mailto:' ) ) { /* If it's a email */
 			type = "mailto"; 
-		} else if ( hostname.length > 0 && currentdomain.length > 0 && ! hostname.endsWith( currentdomain ) ) { /* If it's a outbound */
+		} else if ( hostname && currentdomain && hostname.length > 0 && currentdomain.length > 0 && ! hostname.endsWith( currentdomain ) ) { /* If it's a outbound */
 			type = "external"; 
-		} else if ( inbound_paths.length > 0 && pathname.length > 0 ) { /* If it's an internal as outbound */
-			for ( index = 0, len = inbound_paths.length; index < len; ++index ) {
-				if ( inbound_paths[ index ].length > 0 && pathname.startsWith( inbound_paths[ index ] ) ) {
-					type = "internal-as-outbound";
+		} else if ( pathname && JSON.stringify( inbound_paths ) != "{}" && pathname.length > 0 ) { /* If it's an internal as outbound */
+			for ( index in inbound_paths ) {
+			  if ( inbound_paths[ index ].path.length > 0 && inbound_paths[ index ].label.length > 0 && pathname.startsWith( inbound_paths[ index ].path ) ) {
+					type         				= "internal-as-outbound";
+					internalAsOutboundCategory  = "outbound-link-" + inbound_paths[ index ].label;
 					break;
 				}
 			}
 		/* Enable window.monsterinsights_experimental_mode at your own risk. We might eventually remove it. Also you may/can/will burn through GA quota for your property quickly. */
-		} else if ( window.monsterinsights_experimental_mode && hostname.length > 0 && document.domain.length > 0 && hostname !== document.domain ) { /* If it's a cross-hostname link */
+		} else if ( hostname && window.monsterinsights_experimental_mode && hostname.length > 0 && document.domain.length > 0 && hostname !== document.domain ) { /* If it's a cross-hostname link */
 			type = "cross-hostname";
-		} 
+		}
 
-		if ( type === 'unknown' && download_extensions.length > 0 && extension.length > 0 ) { /* If it's a download */
+		if ( extension && ( type === 'unknown' || 'external' === type ) && download_extensions.length > 0 && extension.length > 0 ) { /* If it's a download */
 			for ( index = 0, len = download_extensions.length; index < len; ++index ) {
 				if ( download_extensions[ index ].length > 0 && ( link.endsWith( download_extensions[ index ] ) || download_extensions[ index ]  == extension ) ) {
 					type = "download";
 					break;
 				}
 			}
-		} 
+		}
 
 		if ( type === 'unknown' ) {
 			type = 'internal';
@@ -183,6 +201,7 @@ var MonsterInsights = function(){
 	}
 
 	function __gaTrackerLinkTarget( el, event ) {
+
 		/* Is actual target set and not _(self|parent|top)? */
 		var target = ( el.target && !el.target.match( /^_(self|parent|top)$/i ) ) ? el.target : false;
 
@@ -198,7 +217,7 @@ var MonsterInsights = function(){
 		var valuesArray   = [];
 		var fieldsArray;
 
-		// Start Values Array
+		/* Start Values Array */
 		valuesArray.el         = el;
 		valuesArray.ga_loaded  = __gaTrackerLoaded();
 		valuesArray.click_type = __gaTrackerTrackedClickType( event );
@@ -216,17 +235,17 @@ var MonsterInsights = function(){
 		}
 
 		/* if a link with valid href has been clicked */
-		if ( el && el.href ) {
+		if ( el && el.href && ! el.hasAttribute('xlink:href') ) {
 			var link                		= el.href;														/* What link are we tracking */
 			var extension           		= __gaTrackerGetExtension( el.href );							/* What extension is this link */
 			var download_extensions 		= __gaTrackerGetDownloadExtensions(); 							/* Let's get the extensions to track */
 			var inbound_paths       		= __gaTrackerGetInboundPaths(); 								/* Let's get the internal paths to track */
 			var home_url            		= monsterinsights_frontend.home_url; 							/* Let's get the url to compare for external/internal use */
-			var track_download_as   		= monsterinsights_frontend.track_download_as; 					/* should downloads be tracked as events or pageviews */
-			var internal_label      		= "outbound-link-" + monsterinsights_frontend.internal_label; 	/* What is the prefix for internal-as-external links */
 			var currentdomain       		= __gaTrackerGetDomain();										/* What domain are we on? */
 			var type                		= __gaTrackerLinkType( el ); 									/* What type of link is this? */
 			var target 						= __gaTrackerLinkTarget( el, event );							/* Is a new tab/window being opened? */
+			var action 						= el.getAttribute("data-vars-ga-action");
+			var label 						= el.getAttribute("data-vars-ga-label");
 
 			/* Element */
 			valuesArray.el                  = el;					/* el is an a element so we can parse it */
@@ -244,8 +263,6 @@ var MonsterInsights = function(){
 			valuesArray.download_extensions = download_extensions;  /* Let's get the extensions to track */
 			valuesArray.inbound_paths       = inbound_paths; 		/* Let's get the internal paths to track */
 			valuesArray.home_url            = home_url;				/* Let's get the url to compare for external/internal use */
-			valuesArray.track_download_as   = track_download_as; 	/* should downloads be tracked as events or pageviews */
-			valuesArray.internal_label      = internal_label;		/* What is the prefix for internal-as-external links */
 
 			/* Parsed/Logic */
 			valuesArray.link                = link; 				/* What link are we tracking */
@@ -278,32 +295,27 @@ var MonsterInsights = function(){
 					valuesArray.exit = 'internal-as-outbound';
 					__gaTrackerNotSend( valuesArray );
 				};
-				
+				var __gaTrackerNoRedirectCrossHostname = function() {
+					valuesArray.exit = 'cross-hostname';
+					__gaTrackerNotSend( valuesArray );
+				};
+
 				if ( target || type == 'mailto' || type == 'tel' ) { /* If target opens a new window then just track */
 					if ( type == 'download' ) {
-						if ( track_download_as == 'pageview' ) {
-							fieldsArray = { 
-								hitType : 'pageview',
-								page    : link,
-							};
-							
-							__gaTrackerSend( valuesArray, fieldsArray );
-						} else {
-							fieldsArray = {
-								hitType       : 'event',
-								eventCategory : 'download',
-								eventAction   : link,
-								eventLabel    : valuesArray.title,
-							};
+						fieldsArray = {
+							hitType       : 'event',
+							eventCategory : 'download',
+							eventAction   : action || link,
+							eventLabel    : label  || valuesArray.title,
+						};
 
-							__gaTrackerSend( valuesArray, fieldsArray );
-						}
+						__gaTrackerSend( valuesArray, fieldsArray );
 					} else if ( type == 'tel' ) {
 						fieldsArray = {
 							hitType       : 'event',
 							eventCategory : 'tel',
-							eventAction   : link,
-							eventLabel    : valuesArray.title.replace('tel:', ''),
+							eventAction   : action || link,
+							eventLabel    : label  || valuesArray.title.replace('tel:', ''),
 						};
 
 						__gaTrackerSend( valuesArray, fieldsArray );
@@ -311,17 +323,17 @@ var MonsterInsights = function(){
 						fieldsArray = {
 							hitType       : 'event',
 							eventCategory : 'mailto',
-							eventAction   : link,
-							eventLabel    : valuesArray.title.replace('mailto:', ''),
+							eventAction   : action || link,
+							eventLabel    : label  || valuesArray.title.replace('mailto:', ''),
 						};
 
 						__gaTrackerSend( valuesArray, fieldsArray );
 					} else if ( type == 'internal-as-outbound' ) {
 						fieldsArray = {
 							hitType       : 'event',
-							eventCategory : internal_label,
-							eventAction   : link,
-							eventLabel    : valuesArray.title,
+							eventCategory : internalAsOutboundCategory,
+							eventAction   : action || link,
+							eventLabel    : label  || valuesArray.title,
 						};
 
 						__gaTrackerSend( valuesArray, fieldsArray );
@@ -329,8 +341,8 @@ var MonsterInsights = function(){
 						fieldsArray = {
 							hitType: 'event',
 							eventCategory:'outbound-link',
-							eventAction: link,
-							eventLabel: valuesArray.title,
+							eventAction: action || link,
+							eventLabel:  label  || valuesArray.title,
 						};
 
 						__gaTrackerSend( valuesArray, fieldsArray );
@@ -338,14 +350,25 @@ var MonsterInsights = function(){
 						fieldsArray = {
 							hitType: 'event',
 							eventCategory:'cross-hostname',
-							eventAction: link,
-							eventLabel: valuesArray.title,
+							eventAction: action || link,
+							eventLabel:  label  || valuesArray.title,
 						};
 
 						__gaTrackerSend( valuesArray, fieldsArray );
 					} else {
-						valuesArray.exit = 'type';
-						__gaTrackerNotSend( valuesArray );
+						if ( type && type != 'internal' ) {
+							fieldsArray = {
+								hitType: 'event',
+								eventCategory: type,
+								eventAction:   action || link,
+								eventLabel:    label  || valuesArray.title,
+							};
+
+							__gaTrackerSend( valuesArray, fieldsArray );
+						} else {
+							valuesArray.exit = 'type';
+							__gaTrackerNotSend( valuesArray );
+						}
 					}
 				} else { 
 					/* Prevent standard click, track then open */
@@ -358,27 +381,17 @@ var MonsterInsights = function(){
 							}
 						}
 					}
-					
+
 					if ( type == 'download' ) {
-						if ( track_download_as == 'pageview' ) {
-							fieldsArray = {
-								hitType       : 'pageview',
-								page 		  : link,
-								hitCallback   : __gaTrackerHitBack,
-							};
+						fieldsArray = {
+							hitType       : 'event',
+							eventCategory : 'download',
+							eventAction   : action || link,
+							eventLabel    : label  || valuesArray.title,
+							hitCallback   : __gaTrackerHitBack,
+						};
 
-							__gaTrackerSend( valuesArray, fieldsArray );
-						} else {
-							fieldsArray = {
-								hitType       : 'event',
-								eventCategory : 'download',
-								eventAction   : link,
-								eventLabel    : valuesArray.title,
-								hitCallback   : __gaTrackerHitBack,
-							};
-
-							__gaTrackerSend( valuesArray, fieldsArray );
-						}
+						__gaTrackerSend( valuesArray, fieldsArray );
 					} else if ( type == 'internal-as-outbound' ) {
 						window.onbeforeunload = function(e) {
 							if (! event.defaultPrevented ) {
@@ -391,9 +404,9 @@ var MonsterInsights = function(){
 
 							fieldsArray = {
 								hitType       : 'event',
-								eventCategory : internal_label,
-								eventAction   : link,
-								eventLabel    : valuesArray.title,
+								eventCategory : internalAsOutboundCategory,
+								eventAction   : action || link,
+								eventLabel    : label  || valuesArray.title,
 								hitCallback   : __gaTrackerHitBack,
 							};
 
@@ -413,12 +426,12 @@ var MonsterInsights = function(){
 									event.returnValue = false;
 								}
 							}
-							
+
 							fieldsArray = {
 								hitType       : 'event',
 								eventCategory : 'outbound-link',
-								eventAction   : link,
-								eventLabel    : valuesArray.title,
+								eventAction   : action || link,
+								eventLabel    : label  || valuesArray.title,
 								hitCallback   : __gaTrackerHitBack,
 							};
 
@@ -428,7 +441,7 @@ var MonsterInsights = function(){
 
 							__gaTrackerSend( valuesArray, fieldsArray );
 							setTimeout( __gaTrackerHitBack, 1000 );
-						};						
+						};
 					} else if ( type == 'cross-hostname' ) {
 						window.onbeforeunload = function(e) {
 							if (! event.defaultPrevented ) {
@@ -442,8 +455,8 @@ var MonsterInsights = function(){
 							fieldsArray = {
 								hitType       : 'event',
 								eventCategory : 'cross-hostname',
-								eventAction   : link,
-								eventLabel    : valuesArray.title,
+								eventAction   : action || link,
+								eventLabel    : label  || valuesArray.title,
 								hitCallback   : __gaTrackerHitBack,
 							};
 
@@ -455,16 +468,30 @@ var MonsterInsights = function(){
 							setTimeout( __gaTrackerHitBack, 1000 );
 						};						
 					} else {
-						valuesArray.exit = 'type';
-						__gaTrackerNotSend( valuesArray );
+						if ( type && type !== 'internal' ) {
+							fieldsArray = {
+								hitType: 'event',
+								eventCategory: type,
+								eventAction:   action || link,
+								eventLabel:    label  || valuesArray.title,
+								hitCallback   : __gaTrackerHitBack,
+							};
+
+							__gaTrackerSend( valuesArray, fieldsArray );
+						} else {
+							valuesArray.exit = 'type';
+							__gaTrackerNotSend( valuesArray );
+						}
 					}
 
-					if ( type != 'external' && type != 'internal-as-outbound' ) {
+					if ( type != 'external' && type != 'cross-hostname' && type != 'internal-as-outbound' ) {
 						/* Run hitCallback again if GA takes longer than 1 second */
 						setTimeout( __gaTrackerHitBack, 1000 );
 					} else {
 						if ( type == 'external' ) {
 							setTimeout( __gaTrackerNoRedirectExternal, 1100 );
+						} else if ( type == 'cross-hostname' ) {
+							setTimeout( __gaTrackerNoRedirectCrossHostname, 1100 );
 						} else {
 							setTimeout( __gaTrackerNoRedirectInboundAsExternal, 1100 );
 						}
@@ -481,7 +508,7 @@ var MonsterInsights = function(){
 	}
 	var prevHash = window.location.hash;
 	function __gaTrackerHashChangeEvent() {
-		// Todo: Ready this section for JS unit testing
+		/* Todo: Ready this section for JS unit testing */
 		if ( monsterinsights_frontend.hash_tracking === "true" && prevHash != window.location.hash ) {
 			prevHash = window.location.hash;
 			__gaTracker('set', 'page', location.pathname + location.search + location.hash );
@@ -540,7 +567,7 @@ var MonsterInsights = function(){
 
 		var n, k,
 		  t = Object(this),
-		  len = t.length >>> 0; // jshint ignore:line
+		  len = t.length >>> 0; /* jshint ignore:line */
 		if (len === 0) {
 		  return -1;
 		}
@@ -551,7 +578,7 @@ var MonsterInsights = function(){
 		  if (n != n) {
 			n = 0;
 		  }
-		  else if (n != 0 && n != (1 / 0) && n != -(1 / 0)) { // jshint ignore:line
+		  else if (n != 0 && n != (1 / 0) && n != -(1 / 0)) { /* jshint ignore:line */
 			n = (n > 0 || -1) * Math.floor(Math.abs(n));
 		  }
 		}

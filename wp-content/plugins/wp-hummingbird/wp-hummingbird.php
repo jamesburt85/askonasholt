@@ -1,15 +1,17 @@
 <?php
 /**
 Plugin Name: Hummingbird Pro
-Version: 1.8.1
+Version:     1.9.3
 Plugin URI:  https://premium.wpmudev.org/project/wp-hummingbird/
 Description: Hummingbird zips through your site finding new ways to make it load faster, from file compression and minification to browser caching – because when it comes to pagespeed, every millisecond counts.
-Author: WPMU DEV
-Author URI: http://premium.wpmudev.org
-Network: true
+Author:      WPMU DEV
+Author URI:  http://premium.wpmudev.org
+Network:     true
 Text Domain: wphb
 Domain Path: /languages
-WDP ID: 1081721
+WDP ID:      1081721
+
+@package Hummingbird
  */
 
 /*
@@ -32,7 +34,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 */
 
 if ( ! defined( 'WPHB_VERSION' ) ) {
-	define( 'WPHB_VERSION', '1.8.1' );
+	define( 'WPHB_VERSION', '1.9.3' );
 }
 
 if ( ! defined( 'WPHB_DIR_PATH' ) ) {
@@ -45,10 +47,10 @@ if ( ! defined( 'WPHB_DIR_URL' ) ) {
 
 if ( file_exists( trailingslashit( plugin_dir_path( __FILE__ ) ) . 'free-mods.php' ) ) {
 	/* @noinspection PhpIncludeInspection */
-	include_once( 'free-mods.php' );
+	include_once 'free-mods.php';
 }
 
-if ( defined( 'WPHB_WPORG' ) && WPHB_WPORG && 'wp-hummingbird/wp-hummingbird.php' != plugin_basename( __FILE__ ) ) {
+if ( defined( 'WPHB_WPORG' ) && WPHB_WPORG && 'wp-hummingbird/wp-hummingbird.php' !== plugin_basename( __FILE__ ) ) {
 	// Add notice to rate the free version.
 	$free_installation = get_site_option( 'wphb-free-install-date' );
 	if ( empty( $free_installation ) ) {
@@ -58,7 +60,7 @@ if ( defined( 'WPHB_WPORG' ) && WPHB_WPORG && 'wp-hummingbird/wp-hummingbird.php
 
 	// This plugin is the free version so if the Pro version is activated we need to deactivate this one.
 	if ( ! function_exists( 'is_plugin_active' ) ) {
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		include_once ABSPATH . 'wp-admin/includes/plugin.php';
 	}
 
 	$pro_installed = false;
@@ -161,12 +163,14 @@ if ( ! class_exists( 'WP_Hummingbird' ) ) {
 
 			// Add upgrade schedule.
 			add_action( 'wphb_upgrade_to_pro', array( $this, 'upgrade_to_pro' ) );
-			$running_cron_update = get_site_option( 'wphb_cron_update_running' );
 			// Try to update to pro version is user can do that.
-			if ( self::is_free_installed() && self::can_install_pro() && empty( $running_cron_update ) ) {
-				// Schedule upgrade.
-				wp_schedule_single_event( time(), 'wphb_upgrade_to_pro' );
-				update_site_option( 'wphb_cron_update_running', true );
+			if ( self::is_free_installed() && self::can_install_pro() ) {
+				$running_cron_update = get_site_option( 'wphb_cron_update_running' );
+				if ( empty( $running_cron_update ) ) {
+					// Schedule upgrade.
+					wp_schedule_single_event( time(), 'wphb_upgrade_to_pro' );
+					update_site_option( 'wphb_cron_update_running', true );
+				}
 			}
 
 			add_action( 'init', array( $this, 'maybe_clear_all_cache' ) );
@@ -204,7 +208,7 @@ if ( ! class_exists( 'WP_Hummingbird' ) ) {
 			$pro_class = WPHB_DIR_PATH . 'core/pro/class-pro.php';
 			if ( is_readable( $pro_class ) ) {
 				/* @noinspection PhpIncludeInspection */
-				include_once( $pro_class );
+				include_once $pro_class;
 
 				$this->pro = WP_Hummingbird_Pro::get_instance();
 				$this->pro->init();
@@ -215,28 +219,34 @@ if ( ! class_exists( 'WP_Hummingbird' ) ) {
 		 * Clear all cache?
 		 */
 		public function maybe_clear_all_cache() {
-			if ( isset( $_GET['wphb-clear'] ) && current_user_can( WP_Hummingbird_Utils::get_admin_capability() ) ) {
-				self::flush_cache();
-
-				WP_Hummingbird_Settings::update_setting( 'last_score', '', 'performance' );
-
-				if ( 'all' === $_GET['wphb-clear'] ) {
-					WP_Hummingbird_Settings::reset_to_defaults();
-					delete_option( 'wphb-quick-setup' );
-				}
-
-					wp_safe_redirect( remove_query_arg( 'wphb-clear' ) );
-					exit;
+			if ( ! isset( $_GET['wphb-clear'] ) || ! current_user_can( WP_Hummingbird_Utils::get_admin_capability() ) ) {
+				return;
 			}
+
+			self::flush_cache();
+
+			WP_Hummingbird_Settings::update_setting( 'last_score', 0, 'performance' );
+
+			if ( 'all' === $_GET['wphb-clear'] ) {
+				WP_Hummingbird_Settings::reset_to_defaults();
+				delete_option( 'wphb-quick-setup' );
+			}
+
+			wp_safe_redirect( remove_query_arg( 'wphb-clear' ) );
+			exit;
 		}
 
 		/**
 		 * Flush all WP Hummingbird Cache
 		 */
 		public static function flush_cache() {
-			/* @var WP_Hummingbird $hummingbird */
-			$hummingbird = WP_Hummingbird::get_instance();
-			/* @var WP_Hummingbird_Module $module */
+			$hummingbird = self::get_instance();
+
+			/**
+			 * Hummingbird module.
+			 *
+			 * @var WP_Hummingbird_Module $module
+			 */
 			foreach ( $hummingbird->core->modules as $module ) {
 				if ( ! $module->is_active() ) {
 					continue;
@@ -252,11 +262,7 @@ if ( ! class_exists( 'WP_Hummingbird' ) ) {
 				WP_Hummingbird_Module_Server::unsave_htaccess( 'caching' );
 			}
 
-			/* @var WP_Hummingbird_Module_Cloudflare $cf_module */
-			$cf_module = WP_Hummingbird_Utils::get_module( 'cloudflare' );
-			$cf_module->disconnect();
-
-			delete_metadata( 'user', '', 'wphb-server-type', '', true );
+			WP_Hummingbird_Utils::get_module( 'cloudflare' )->disconnect();
 		}
 
 		/**
@@ -272,13 +278,13 @@ if ( ! class_exists( 'WP_Hummingbird' ) ) {
 		private function includes() {
 			// Core files.
 			/* @noinspection PhpIncludeInspection */
-			include_once( WPHB_DIR_PATH . 'core/class-installer.php' );
+			include_once WPHB_DIR_PATH . 'core/class-installer.php';
 			/* @noinspection PhpIncludeInspection */
-			include_once( WPHB_DIR_PATH . 'core/class-core.php' );
+			include_once WPHB_DIR_PATH . 'core/class-core.php';
 			/* @noinspection PhpIncludeInspection */
-			include_once( WPHB_DIR_PATH . 'core/class-filesystem.php' );
+			include_once WPHB_DIR_PATH . 'core/class-filesystem.php';
 			/* @noinspection PhpIncludeInspection */
-			include_once( WPHB_DIR_PATH . 'core/integration.php' );
+			include_once WPHB_DIR_PATH . 'core/integration.php';
 
 			// Helpers files.
 			/* @noinspection PhpIncludeInspection */
@@ -289,7 +295,7 @@ if ( ! class_exists( 'WP_Hummingbird' ) ) {
 			if ( is_admin() ) {
 				// Load only admin files.
 				/* @noinspection PhpIncludeInspection */
-				include_once( WPHB_DIR_PATH . 'admin/class-admin.php' );
+				include_once WPHB_DIR_PATH . 'admin/class-admin.php';
 			}
 
 		}
@@ -367,7 +373,7 @@ if ( ! class_exists( 'WP_Hummingbird' ) ) {
 			}
 		}
 	}
-} // End if().
+}
 
 register_activation_hook( 'core/class-installer.php', array( 'WP_Hummingbird_Installer', 'activate' ) );
 register_deactivation_hook( __FILE__, array( 'WP_Hummingbird_Installer', 'deactivate' ) );

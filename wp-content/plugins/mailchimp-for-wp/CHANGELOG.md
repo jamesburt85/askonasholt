@@ -1,6 +1,98 @@
 Changelog
 =========
 
+#### 4.3.3 - December 31, 2018
+
+**Fixes**
+
+- Update WPForms integration to properly detect if the WPForms plugin is activated.
+
+**Improvements**
+
+- Write API request parameters to the debug log in case of connection timeouts. 
+- Update JavaScript dependencies.
+
+
+#### 4.3.2 - December 11, 2018
+
+**Fixes**
+
+- Use of `readonly` function, which is only available in WordPress 4.9 or later.
+
+
+#### 4.3.1 - November 28, 2018
+
+**Fixes**
+
+- Fatal error on PHP versions older than 5.5
+
+
+#### 4.3 - November 28, 2018
+
+**Additions**
+
+- Added `MC4WP_API_KEY` PHP constant which can be used to set your MailChimp API key.
+- Add `mc4wp_mailchimp_list_limit` filter hook to modify the maximum number of MailChimp lists to fetch. Defaults to 200.
+
+**Improvements**
+
+- Apply `mc4wp_integration_gravity-forms_options` filter hook on Gravity Forms integration options so the checkbox can be prechecked and the checkbox label text modified.
+- The `updated_subscriber` JS event is now fired forms not using AJAX as well (when applicable).
+
+
+#### 4.2.5 - Sep 11, 2018
+
+**Improvements**
+
+- Only re-add subscriber to list if we want to re-trigger a double opt-in confirmation email.
+- Change Gravity Forms field name to "MailChimp for WordPress"
+- Get rid of cached result of MailChimp API connection.
+
+
+#### 4.2.4 - July 9, 2018
+
+**Improvements**
+
+- Ensure type-safety on some global variables.
+- Stop showing trashed forms immediately.
+- Pre-check MailChimp list when creating a new form if there is only 1 list.
+- Send `null` for unknown values in usage tracking data (only when opted-in).
+
+**Additions**
+
+- Add methods for accessing MailChimp's e-commerce promo code endpoints to API class.
+
+
+#### 4.2.3 - June 11, 2018
+
+**Fixes**
+
+- Don't wrap "agree to terms" input in hyperlink element.
+- Allow [ENTER] key again after field helper overlay is closed.
+
+**Improvements**
+
+- Fallback to meta-refresh if redirect fails because of "headers already sent" error.
+
+
+
+#### 4.2.2 - May 22, 2018
+
+**Fixes**
+
+- Events Manager integration was not working with logged-in users.
+- Form preview URL should respect admin HTTP(S) scheme.
+- Removed use of PHP 5.4 function.
+
+**Improvements**
+
+- Add "agree to terms" checkbox to field helper.
+
+**Additions**
+
+- Add filter `mc4wp_http_request_args`.
+
+
 #### 4.2.1 - April 11, 2018
 
 **Fixes**

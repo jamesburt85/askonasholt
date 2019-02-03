@@ -5,9 +5,11 @@
  * @package Hummingbird
  *
  * @var bool          $admins_can_disable  Blog admins can disable page caching.
+ * @var bool          $blog_is_frontpage   Is the Blog set as the Frontpage.
  * @var string        $deactivate_url      Deactivate URL.
  * @var string        $download_url        Download logs URL.
  * @var bool|WP_Error $error               Error if present.
+ * @var bool|string   $logs_link           Link to the log file.
  * @var array         $pages               A list of page types.
  * @var array         $settings            Settings array.
  */
@@ -17,11 +19,11 @@
 	<p><?php esc_html_e( 'Hummingbird stores static HTML copies of your pages and posts to decrease page load time.', 'wphb' ); ?></p>
 
 	<?php if ( is_wp_error( $error ) ) : ?>
-		<div class="wphb-caching-error wphb-notice wphb-notice-error">
+		<div class="wphb-caching-error sui-notice sui-notice-error">
 			<p><?php echo $error->get_error_message(); ?></p>
 		</div>
 	<?php else : ?>
-		<div class="wphb-caching-success wphb-notice wphb-notice-success">
+		<div class="wphb-caching-success sui-notice sui-notice-success">
 			<p><?php esc_html_e( 'Page caching is currently active.', 'wphb' ); ?></p>
 		</div>
 	<?php endif; ?>
@@ -31,24 +33,59 @@
 	<div class="sui-box-settings-col-1">
 		<span class="sui-settings-label"><?php esc_html_e( 'Page Types', 'wphb' ); ?></span>
 		<span class="sui-description">
-			<?php esc_html_e( 'Select which page types you wish to cache. Note: You can exclude individual post/pages with URL string rules in Exclusions section below.', 'wphb' ); ?>
+			<?php esc_html_e( 'Select which page types you wish to cache.', 'wphb' ); ?>
+			<?php ( ! is_multisite() ) ? esc_html_e( ' Select which page types you wish to cache.', 'wphb' ) : false; ?>
 		</span>
+		<?php if ( is_multisite() ) : ?>
+			<span class="sui-description">
+				<?php esc_html_e( 'Subsites will inherit the settings you use here, except any additional custom post types or taxonomies will be cached by default.', 'wphb' ); ?>
+			</span>
+			<span class="sui-description">
+				<?php esc_html_e( 'Your subsite admins can use the DONOTCACHEPAGE constant to prevent caching on their custom post types.', 'wphb' ); ?>
+			</span>
+		<?php endif; ?>
 	</div>
 	<div class="sui-box-settings-col-2">
 
-		<div class="wphb-dash-table three-columns sui-margin-bottom">
+		<div class="wphb-dash-table three-columns">
 			<?php foreach ( $pages as $page_type => $page_name ) : ?>
 				<div class="wphb-dash-table-row">
 					<div><?php echo esc_html( $page_name ); ?></div>
-					<span class="sub"><?php echo esc_html( $page_type ); ?></span>
+					<?php if ( 'home' === $page_type && $blog_is_frontpage ) : ?>
+						<span class="sui-tag sui-tag-inactive"><?php esc_html_e( 'Your blog is your frontpage', 'wphb' ); ?></span>
+					<?php else : ?>
+						<span class="sub"><?php echo esc_html( $page_type ); ?></span>
+						<label class="sui-toggle">
+							<input type="checkbox" name="page_types[<?php echo esc_attr( $page_type ); ?>]" id="<?php echo esc_attr( $page_type ); ?>" <?php checked( in_array( $page_type, $settings['page_types'],  true ) ); ?>>
+							<span class="sui-toggle-slider"></span>
+						</label>
+					<?php endif; ?>
+				</div>
+			<?php endforeach; ?>
+			<?php foreach ( $custom_post_types  as $post_type ) : ?>
+				<div class="wphb-dash-table-row">
+					<div><?php echo esc_html( $post_type->label ); ?></div>
+					<span class="sub"><?php echo esc_html( $post_type->name ); ?></span>
 					<label class="sui-toggle">
-						<input type="checkbox" name="page_types[<?php echo esc_attr( $page_type ); ?>]" id="<?php echo esc_attr( $page_type ); ?>" <?php checked( in_array( $page_type, $settings['page_types'] ) ); ?>>
+						<input type="hidden" name="custom_post_types[<?php echo esc_attr( $post_type->name ); ?>]" value="1">
+						<input type="checkbox" name="custom_post_types[<?php echo esc_attr( $post_type->name ); ?>]" id="<?php echo esc_attr( $post_type->name ); ?>" <?php checked( ! in_array( $post_type->name, $settings['custom_post_types'], true ) ); ?> value="0">
 						<span class="sui-toggle-slider"></span>
 					</label>
 				</div>
 			<?php endforeach; ?>
 		</div>
 
+		<div class="sui-notice sui-notice-sm">
+			<p>
+				<?php
+				/* translators: %s: code snippet. */
+				printf(
+					__( 'You can use the <code>%s</code> constant to instruct Hummingbird not to cache specific pages or templates.', 'wphb' ),
+					esc_attr( 'define(\'DONOTCACHEPAGE\', true);', 'wphb' )
+				);
+				?>
+			</p>
+		</div>
 	</div>
 </div>
 
@@ -111,26 +148,27 @@
 		</label>
 		<label for="debug-log"><?php esc_html_e( 'Enable debug log', 'wphb' ); ?></label>
 		<span class="sui-description sui-toggle-description">
-			<?php
-			esc_html_e( 'If you’re having issues with page caching, turn on the debug log to get insight into what’s going on.', 'wphb' );
-			if ( $settings['settings']['debug_log'] ) {
-				if ( file_exists( WP_CONTENT_DIR . '/wphb-logs/page-caching-log.php' ) ) {
-					?>
-					<div class="clear"></div>
-					<a href="<?php echo esc_url( $download_url ); ?>" target="_blank" class="sui-button sui-button-ghost" id="wphb-pc-log-button"><?php esc_html_e( 'Download Logs', 'wphb' ); ?></a>
-					<div class="clear"></div>
+			<?php esc_html_e( 'If you’re having issues with page caching, turn on the debug log to get insight into what’s going on.', 'wphb' ); ?>
+		</span>
+		<div class="sui-description sui-toggle-description sui-border-frame with-padding wphb-logging-box <?php echo $settings['settings']['debug_log'] ? '' : 'sui-hidden'; ?>">
+			<?php esc_html_e( 'Debug logging is active. Logs are stored for 30 days, you can download the
+				log file below.', 'wphb' ); ?>
 
-					<?php
-					printf(
-					/* translators: %s: File location */
-						esc_html__( 'Location: %s', 'wphb' ),
-						esc_url( get_home_url() . '/wp-content/wphb-logs/page-caching-log.php' )
-					);
-				}
-			}
-			?>
-	</span>
+			<div class="wphb-logging-buttons">
+				<a href="<?php echo esc_url( $download_url ); ?>" class="sui-button sui-button-ghost" <?php disabled( ! $logs_link, true ); ?>>
+					<i class="sui-icon-download" aria-hidden="true"></i>
+					<?php esc_html_e( 'Download Logs', 'wphb' ); ?>
+				</a>
+				<a href="#" class="sui-button sui-button-ghost sui-button-red wphb-logs-clear" data-module="page_cache" <?php disabled( ! $logs_link, true ); ?>>
+					<i class="sui-icon-trash" aria-hidden="true"></i>
+					<?php esc_html_e( 'Clear', 'wphb' ); ?>
+				</a>
+			</div>
 
+			<?php if ( $logs_link ) : ?>
+				<a href="<?php echo esc_url( $logs_link ) ?>" target="_blank"><?php echo esc_url( $logs_link ) ?></a>
+			<?php endif; ?>
+		</div>
 	</div><!-- end sui-box-settings-col-2 -->
 </div><!-- end row -->
 
@@ -169,7 +207,12 @@
 			<textarea class="sui-form-control" name="url_strings"><?php foreach ( $settings['exclude']['url_strings'] as $url_string ) { echo $url_string . PHP_EOL; }?></textarea>
 		</div>
 		<span class="sui-description sui-with-bottom-border">
-			<?php echo __( 'For example, if you want to not cache any pages that are nested under your Forums area you might add "/forums/" as a rule. When Hummingbird goes to cache pages, she will ignore any URL that contains "/forums/". To exclude a specific page you might add "/forums/thread-title". Accepts regular expression syntax, for more complex exclusions it can be helpful to test on <a href="https://regex101.com" target="_blank">regex101.com</a>.', 'wphb' ); ?>
+			<?php echo __( 'For example, if you want to not cache any pages that are nested under your Forums
+				area you might add "/forums/" as a rule. When Hummingbird goes to cache pages, she will ignore any
+				URL that contains "/forums/". To exclude a specific page you might add "/forums/thread-title". Accepts
+				regular expression syntax, for more complex exclusions it can be helpful to test
+				on <a href="https://regex101.com" target="_blank">regex101.com</a>. Note: Hummingbird will auto convert
+				your input into valid regex syntax.', 'wphb' ); ?>
 		</span>
 		<span class="sui-settings-label"><?php esc_html_e( 'User agents', 'wphb' ); ?></span>
 		<span class="sui-description">
@@ -189,7 +232,7 @@
 		</span>
 	</div>
 	<div class="sui-box-settings-col-2 wphb-deactivate-pc">
-		<a href="<?php echo esc_url( $deactivate_url ); ?>" class="sui-button sui-button-ghost button-large">
+		<a href="<?php echo esc_url( $deactivate_url ); ?>" class="sui-button sui-button-ghost">
 			<?php esc_html_e( 'Deactivate', 'wphb' ); ?>
 		</a>
 		<span class="sui-description">

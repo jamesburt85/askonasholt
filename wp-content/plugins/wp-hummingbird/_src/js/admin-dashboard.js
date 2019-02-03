@@ -17,15 +17,18 @@ import Fetcher from './utils/fetcher';
                 Fetcher.dashboard.toggleMinification( value )
                     .then( () => {
                         // If disabled, uncheck CDN checkbox and disable it.
-                        const CDNcheckbox = $('input[name="use_cdn"]');
-                        const CDNtooltip  = $('span[id="cdn_tooltip"]');
+                        const CDNcheckbox    = $('input[name="use_cdn"]');
+                        const CDNtooltip     = $('span[id="cdn_tooltip"]');
+                        const enabledNotice  = $('#wphb-notice-minification-enabled');
                         if ( 'false' === value ) {
                             CDNcheckbox.prop( 'checked', false );
                             CDNcheckbox.prop( 'disabled', true );
                             CDNtooltip.attr( 'tooltip', $('input[id="cdn_disabled_tooltip"]').val() );
+                            enabledNotice.addClass( 'sui-hidden' );
                         } else {
                             CDNcheckbox.prop( 'disabled', false );
                             CDNtooltip.attr( 'tooltip', $('input[id="cdn_enabled_tooltip"]').val() );
+                            enabledNotice.addClass( 'sui-hidden' );
                         }
 						WPHB_Admin.notices.show( 'wphb-notice-minification-settings-updated' );
                     });
@@ -36,6 +39,14 @@ import Fetcher from './utils/fetcher';
                 Fetcher.minification.toggleCDN( value )
                     .then( () => {
 						WPHB_Admin.notices.show( 'wphb-notice-minification-settings-updated' );
+                    });
+            });
+
+            $("input[type=checkbox][name=debug_log]").change( function() {
+                Fetcher.minification.toggleLog( $(this).is(':checked') )
+                    .then( () => {
+                        WPHB_Admin.notices.show( 'wphb-notice-minification-settings-updated' );
+                        $('#wphb-minification-debug-log').toggleClass('sui-hidden');
                     });
             });
 
@@ -65,23 +76,12 @@ import Fetcher from './utils/fetcher';
         },
 
 		/**
-         * Run quick setup.
-		 */
-		startQuickSetup: function () {
-            // Show quick setup modal
-            let el = document.getElementById('wphb-quick-setup-modal');
-            let dialog = new A11yDialog(el);
-            dialog.show();
-
-        },
-
-		/**
          * Skip quick setup.
 		 */
 		skipSetup: function () {
             Fetcher.dashboard.skipSetup()
                 .then( () => {
-                    window.location.reload(true);
+                    location.reload();
                 });
         },
 
@@ -90,9 +90,7 @@ import Fetcher from './utils/fetcher';
 		 */
 		runPerformanceTest: function() {
 			// Show performance test modal
-            let el = document.getElementById('run-performance-test-modal');
-            let dialog = new A11yDialog(el);
-            dialog.show();
+            SUI.dialogs['run-performance-test-modal'].show();
 
 			// Run performance test
 			const module = window.WPHB_Admin.getModule('performance');
