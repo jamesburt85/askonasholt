@@ -117,7 +117,18 @@ class event_api {
         foreach( $all_events as $event ){
             
             if( !in_array( $event->ID, $post_ids_saved ) ){
-                $wpdb->delete( $wpdb->posts, array( 'ID' => $event->ID ) );
+                //$wpdb->delete( $wpdb->posts, array( 'ID' => $event->ID ) );
+                $result = $wpdb->query( 
+                    $wpdb->prepare("
+                        DELETE posts,pm
+                        FROM ".$wpdb->posts." posts
+                        LEFT JOIN ".$wpdb->prefix."postmeta pm ON pm.post_id = posts.ID
+                        WHERE posts.post_type = 'events'
+                        AND posts.ID = %d
+                        ",
+                        $event->ID
+                    ) 
+                );
             }
             
         }
