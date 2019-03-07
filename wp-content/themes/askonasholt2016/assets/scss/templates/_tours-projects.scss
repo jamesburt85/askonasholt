@@ -363,7 +363,10 @@ span.more-info {
   padding-top: 5px;
   padding-right: $sitepadding;
   padding-bottom: 5px;
-  text-align: center;
+
+  &:nth-child(2) {
+    text-align: center;
+  }
 }
 
 @include breakpoint(medium) {
