@@ -71,6 +71,15 @@ body.single-artists {
 	}
 }
 
+//Arrows on Touring Partner slider
+body.single-touring-partners {
+	i.fa.fa-angle-left.slick-arrow {
+		left: 0;
+	}
+	i.fa.fa-angle-right.slick-arrow {
+		right: 0;
+	}
+}
 
 .hero-text-area {
 	a {
