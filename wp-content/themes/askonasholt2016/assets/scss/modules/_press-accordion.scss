@@ -23,7 +23,7 @@
 
 @include breakpoint(small only) {
 	.event-listing-details {
-	    line-height: 2;
+	    line-height: 1.5;
 	}
 
 }
@@ -44,10 +44,6 @@
     	position: relative;
     	padding: 0.5em 8.25em 0.5em 1em;
 		line-height: 40px !important;
-    }
-
-    span.more-info {
-    	top: 10px;
     }
 
     ul.accordion .accordion-content {
