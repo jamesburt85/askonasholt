@@ -728,6 +728,7 @@ get_header(); ?>
 					      // no posts found
 					    } ?>
 					
+							</div>
 				</div>
 				<!-- Do as above section, getting posts related to artist. May have to add relational field in ACF first -->
 			</div>
@@ -818,14 +819,14 @@ get_header(); ?>
 				  }
 				?>
 
-			</div>
+					</div>
 
 
 			<!-- using ACF Flexible content instead of the_content  -->
 			<?php $acf_fields = get_fields(); ?>
 			<?php include(locate_template('template-parts/acf.php')); ?>
 
-		</div>
+			</div>
 		
 		<footer>
 			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>

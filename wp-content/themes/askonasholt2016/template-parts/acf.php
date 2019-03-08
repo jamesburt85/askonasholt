@@ -60,7 +60,7 @@ if ($acf_fields['flexible_content']) {
 			#Image_Gallery
 			case 'image_gallery': ?>
 
-			<div class="image-gallery" id="Gallery">
+			<div class="image-gallery row" id="Gallery">
 
 				<div class="small-12 columns">
 				
