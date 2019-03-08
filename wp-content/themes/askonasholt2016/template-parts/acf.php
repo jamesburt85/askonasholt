@@ -32,9 +32,6 @@ if ($acf_fields['flexible_content']) {
 		switch ( $section['acf_fc_layout']) {
 
 
-			
-
-
 			#Artist Details
 			case 'artist_details': ?>
 				
@@ -63,7 +60,7 @@ if ($acf_fields['flexible_content']) {
 			#Image_Gallery
 			case 'image_gallery': ?>
 
-			<div class="image-gallery row" id="Gallery">
+			<div class="image-gallery" id="Gallery">
 
 				<div class="small-12 columns">
 				
@@ -495,7 +492,10 @@ if ($acf_fields['flexible_content']) {
 									</a>
 										
 									<div class="press-details">
-										<span class="text_area_one"><?php echo $press_section['date']; ?></span>
+										<!-- If there is a date... -->
+										<?php if( $press_section['date'] ): ?>
+											<span class="text_area_one"><?php echo $press_section['date']; ?></span>
+										<?php endif; ?>
 										
 										<!-- If there is info in text area 1... -->
 										<?php if( $press_section['text_area_one'] ): ?>
