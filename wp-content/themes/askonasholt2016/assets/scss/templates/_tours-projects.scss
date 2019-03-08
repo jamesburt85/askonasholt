@@ -359,7 +359,6 @@ span.more-info {
 
 .event-detail {
   display: inline-block;
-  min-width: 107px;
   padding-top: 5px;
   padding-right: $sitepadding;
   padding-bottom: 5px;
@@ -370,6 +369,9 @@ span.more-info {
 }
 
 @include breakpoint(medium) {
+  .event-detail {
+    min-width: 107px;
+  }
   span.more-info {
     right: 1.25em;
   }
