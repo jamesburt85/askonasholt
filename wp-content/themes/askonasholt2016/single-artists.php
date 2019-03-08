@@ -654,17 +654,16 @@ get_header(); ?>
 		  }
 		?>
 
-	</div>
+			</div>
 	
+	</div>
 
 	<!-- using ACF Flexible content instead of the_content  -->
 	<?php $acf_fields = get_fields(); ?>
 	<?php include(locate_template('template-parts/acf.php')); ?>
 
-
-
 	<?php //edit_post_link( __( 'Edit', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
-</div>
+
 		<footer>
 			<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
 			<p><?php the_tags(); ?></p>
