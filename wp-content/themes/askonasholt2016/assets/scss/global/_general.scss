@@ -212,7 +212,8 @@ p.byline.author { display: none; }
     line-height: 30px;
 }
 
-.row.toggleable-area:not(.past-tours):not(.performance-schedule) .small-12.columns .section-header.small-6.columns {
+.row.toggleable-area:not(.past-tours):not(.performance-schedule) .small-12.columns .section-header.small-6.columns,
+.single .row.live-events .small-12.columns .section-header.small-6.columns {
     padding-left: 0;
 }
 .section-header,
