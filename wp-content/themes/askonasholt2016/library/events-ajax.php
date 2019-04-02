@@ -3,16 +3,15 @@
 // default args 
 function events_set_default_args( $page = '' ){
     
-    if( $page == 'home' ){
-        return [
-            'page_number' => 1,
-            'per_page'  => 10,
-            'date_type' => 'today',
-            'date'  => date('Ymd'), 
-            'location' => '',
-        ];
-            
-    }
+    // if( $page == 'home' ){
+    //     return [
+    //         'page_number' => 1,
+    //         'per_page'  => 10,
+    //         'date_type' => 'today',
+    //         'date'  => date('Ymd'), 
+    //         'location' => '',
+    //     ];
+    // }
     
     return [
         'page_number' => 1,
