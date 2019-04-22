@@ -6,8 +6,8 @@ function events_set_default_args( $page = '' ){
     // if( $page == 'home' ){
     //     return [
     //         'page_number' => 1,
-    //         'per_page'  => 10,
-    //         'date_type' => 'today',
+    //         'per_page'  => -1,
+    //         'date_type' => 'today_onwards',
     //         'date'  => date('Ymd'), 
     //         'location' => '',
     //     ];
@@ -71,6 +71,10 @@ function events_do_query( $event_args ){
             $event_args['start_date'] = date('Ym01');
             $event_args['end_date'] = date('Ymt');           
             
+        } elseif ( $event_args['date_type'] == 'today_onwards' ){
+
+            $event_args['single_date_onwards'] = date('Ymd');
+
         } elseif ( $event_args['date_type'] == 'date' ){
 
             $event_args['single_date'] = $event_args['date'];
@@ -90,6 +94,23 @@ function events_do_query( $event_args ){
                     'key'       => 'date',
                     'value'     => $event_args['single_date'],
                     'compare' => '=',
+                    'type'    => 'DATE',
+                ),
+                'time_clause' => array(
+                    'key'=>'time',
+                    'compare'=>'EXISTS'
+                ),
+            );
+
+        } elseif( isset( $event_args['single_date_onwards'] ) ){
+
+            $args['meta_query'][] =
+            array(
+                'relation' => 'AND',            
+                'date_clause' => array(
+                    'key'       => 'date',
+                    'value'     => $event_args['single_date_onwards'],
+                    'compare' => '>=',
                     'type'    => 'DATE',
                 ),
                 'time_clause' => array(

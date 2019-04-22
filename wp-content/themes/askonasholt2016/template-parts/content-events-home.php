@@ -12,7 +12,6 @@ global $event_args, $number_of_results;
 // run query
 $the_query = events_do_query( $event_args );
 
- 
 ?>
 
 <div <?php post_class('blogpost-entry small-12 columns events-listing'); ?>>
