@@ -49,14 +49,13 @@ $queried_object = get_queried_object();
 
 						<!-- PAST -->
 						<?php 
-							$myvar = get_field('past-tours','option');
-							//print_r($myvar);
-							$description = get_field('optional_description',$myvar);
-							//print_r($description);
+							$description = get_field('optional_description');
 						?>
 
 						<h2 class="hero-heading">Past Tours &amp; Projects</h2>
-						<!-- <p><?php //echo $description; ?></p> -->
+						<?php if($description) : ?>
+						<h3 class="hero-header-text"><p><?php echo $description; ?></p></h3>
+						<?php endif; ?>
 						<p><?php echo str_replace("-"," / ",$pageName); ?></p>
 
 						<script>
@@ -77,14 +76,9 @@ $queried_object = get_queried_object();
 
 						<!-- UPCOMING -->
 						<h2 class="hero-heading">Upcoming Tours &amp; Projects</h2>
-						<?php 
-							$myvar = get_field('upcoming','option');
-							//print_r($myvar);
-							$description = get_field('optional_description',$myvar);
-							//print_r($description);
-						?>
-						<!-- <p><?php //echo $description; ?></p> -->
-						<!-- <h2><?php //echo $pageName; ?></h2> -->
+						<?php if ( !empty(get_the_archive_description()) ) : ?>
+						<h3 class="hero-header-text"><?php the_archive_description(); ?></h3>
+						<?php endif; ?>
 						<!-- <p><?php echo str_replace("-"," / ",$pageName); ?></p> -->
 
 						<script>

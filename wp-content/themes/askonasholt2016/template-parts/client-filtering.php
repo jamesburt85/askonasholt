@@ -1,18 +1,16 @@
-
 <div class="filtering-block artist-filtering-block">
 	
 	<?php 
-		$myvar = get_field('touring-partners','option');
-		//print_r($myvar);
-		$description = get_field('optional_description',$myvar);
-		//print_r($description);
+		$description = get_field('optional_description');
 	?>
 
 	<div class="filtering-block-inner">
 
 		<header class="filter-header">
 			<h2 class="hero-heading">Touring Partners</h2>
-			<!-- <p><?php //echo $description; ?></p> -->
+			<?php if ( !empty(get_the_archive_description()) ) : ?>
+			<h3 class="hero-header-text"><?php the_archive_description(); ?></h3>
+			<?php endif; ?>
 
 			<?php //foundationpress_entry_meta(); ?>
 		</header>

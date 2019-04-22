@@ -1,16 +1,12 @@
 <div class="filtering-block artist-filtering-block">
 
-	<?php 
-		$myvar = get_field('artists','option');
-		//print_r($myvar);
-		$description = get_field('optional_description',$myvar);
-		//print_r($description);
-	?>
-
 	<div class="filtering-block-inner">
 
 		<header class="filter-header">
 			<h2 class="hero-heading">Artists</h2>
+			<?php if ( !empty(get_the_archive_description()) ) : ?>
+			<h3 class="hero-header-text"><?php the_archive_description(); ?></h3>
+			<?php endif; ?>
 		</header>
 
 		<div class="row">
@@ -50,7 +46,7 @@
 					);
 					$categories = get_categories( $args );
 					foreach ( $categories as $category ) {
-						echo '<li' . ( ( get_queried_object()->term_id === $category->term_id )? ' class="current-cat"' : '' ) . ( ( get_queried_object()->parent === $category->term_id )? ' class="current-cat-parent"' : '' ) . '><a href="' . get_category_link( $category->term_id ) . '" rel="bookmark">' . $category->name . '' . $category->description . '</a></li>';
+						echo '<li' . ( ( get_queried_object()->term_id === $category->term_id )? ' class="current-cat"' : '' ) . ( ( get_queried_object()->parent === $category->term_id )? ' class="current-cat-parent"' : '' ) . '><a href="' . get_category_link( $category->term_id ) . '" rel="bookmark">' . $category->name . '</a></li>';
 					}				
 
 					echo '</ul>';
@@ -68,7 +64,7 @@
 					    echo '<ul class="children">';
 
 						foreach ($children as $c) {
-						    $kids .= '<li' . ( ( get_queried_object()->term_id === $c->term_id )? ' class="current-cat"' : '' ) . '><a href="' . get_category_link( $c->term_id ) . '" rel="bookmark">' . $c->name . '' . $c->description . '</a></li>';
+						    $kids .= '<li' . ( ( get_queried_object()->term_id === $c->term_id )? ' class="current-cat"' : '' ) . '><a href="' . get_category_link( $c->term_id ) . '" rel="bookmark">' . $c->name . '</a></li>';
 						}
 
 						// a quick hack to replace the url - would be better to create an option for this type of artist to indicate that it should link directly to the artist page

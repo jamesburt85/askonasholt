@@ -1,20 +1,16 @@
 <div class="filtering-block magazine-filtering-block">
 
 	<?php
-		//getting id of page
-		$myvar = get_field('the_green_room','option');
-		//print_r($myvar);
-		
-		//getting description from that page
-		$description = get_field('optional_description',$myvar);
-		//print_r($description);
+		$description = get_field('optional_description');
 	?>
 
 	<div class="filtering-block-inner">
 
 		<header class="filter-header">
 			<h2 class="hero-heading">The Green Room</h2>
-			<!-- <p><?php //echo $description; ?></p> -->
+			<?php if($description) : ?>
+			<h3 class="hero-header-text"><p><?php echo $description; ?></p></h3>
+			<?php endif; ?>
 		</header>
 
 
